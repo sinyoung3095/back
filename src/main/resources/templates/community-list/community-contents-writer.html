@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link data-vue-meta="1" rel="shortcut icon" href="../../static/images/member/icon.png">
+    
+    <link rel="stylesheet" href="../../static/font/didactgothic.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/roboto-cyrillic-700-normal-d010f1f324e111a22e53.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/roboto-cyrillic-ext-700-normal-be4d02458ce53887dc37.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/roboto-greek-700-normal-50e795c1345353b0e996.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/roboto-greek-ext-700-normal-bd9854c751441ccc1a70.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/roboto-latin-700-normal-227c93190fe7f82de3f8.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/roboto-latin-ext-700-normal-ed67ad54b1a8f5d21150.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
+
+    <link rel="stylesheet" href="../../static/css/community-list/community-contents-writer.css">
+    <title>게시글 제목</title>
+</head>
+<body>
+    <div id="app" data-is-loaded="true">
+        <div class="__cov-progress" style="background-color: rgb(105, 59, 242); position: fixed; top: 0px; left: 0px; width: 0%; height: 2px;"></div>
+        <!-- 스크롤 내리면 보이는 라인 -->
+        <div id="app-sticky-nav" class="vue-portal-target">
+            <section class="fixed show">
+                <section class="fixed-wrapper">
+                    <h2 class="fixed-title prisma-typography body16:medium primary"> 게시글 제목 </h2>
+                    <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M20.77%2015.174c.37%200%20.675.276.723.634l.007.099v5.86c0%20.371-.275.678-.632.726l-.099.007H3.231a.732.732%200%200%201-.724-.633l-.007-.1v-5.86a.732.732%200%200%201%201.455-.1l.007.1v5.128h16.076v-5.128c0-.37.275-.677.632-.726l.1-.007zM12.412%201.628l.09.072%206.377%206.05a.734.734%200%200%201%20.028%201.036.73.73%200%200%201-.949.098l-.084-.069-5.145-4.881v11.973a.732.732%200%200%201-1.454.1l-.007-.1V3.933L6.125%208.815a.73.73%200%200%201-.953.045l-.08-.074a.734.734%200%200%201-.045-.955l.073-.08%206.378-6.05.046-.039a.734.734%200%200%201%20.014-.01l-.06.048a.73.73%200%200%201%20.213-.14c.005%200%20.009-.002.013-.004a.724.724%200%200%201%20.69.072z'%20fill='%232D2D2D'%20fill-rule='evenodd'/%3e%3c/svg%3e" alt="공유하기" class="icon">
+                    <div class="dropdown b-dropdown btn-group" id="__BVID__745">
+                        <button aria-haspopup="true" aria-expanded="false" type="button" class="btn dropdown-toggle btn-secondary" id="__BVID__745__BV_toggle_"></button>
+                        <ul role="menu" tabindex="-1" class="dropdown-menu dropdown-menu-right" aria-labelledby="__BVID__745__BV_toggle_" style="position: absolute; transform: translate3d(-116px, 24px, 0px); top: 0px; left: 0px; will-change: transform;">
+                            <li role="presentation">
+                                <a role="menuitem" href="#" target="_self" class="dropdown-item">게시글 수정하기</a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+        </div>
+        <ul class="prisma-toast-container"></ul>
+        <!-- body -->
+        <div id="app-body"><div class="community-container container">
+            <div class="soomgo-life-container">
+                <section class="post-detail-container" postslug="687faa09107c220451edda9f-특정-가전-두꺼비집만-자꾸-떨어집니다">
+                    <div class="soomgo-life-post-detail">
+                        <div class="post-header">
+                            <!-- 커뮤니티 > 상담 게시판 -->
+                            <div class="post-category-subject">
+                                <ol class="category-breadcrumb list-inline">
+                                    <li class="category-breadcrumb-item">
+                                        <a href="" class="breadcrumb-item" data-testid="soomgo-life-home-breadcrumb">
+                                            <span class="prisma-typography body14:regular quaternary">커뮤니티</span>
+                                        </a>
+                                    </li>
+                                    <p class="breadcrumb-divider"></p>
+                                    <li class="category-breadcrumb-item">
+                                        <a href="" class="breadcrumb-item">
+                                            <span class="prisma-typography body14:regular quaternary">상담 게시판</span>
+                                        </a>
+                                    </li>
+                                </ol>
+                            </div>
+                            <!-- 카테고리/게시글 제목/지역 -->
+                            <div class="post-header-title-wrapper has-service">
+                                <!-- 고민 카테고리 -->
+                                <p class="post-service-name">자아/성격, 정신건강</p>
+                                <h1 class="post-header-title prisma-typography headline24 primary"> 게시글 제목 </h1>
+                                <!-- 증상 -->
+                                <p class="post-address-info">우울, 스트레스</p>
+                            </div>
+                            <div class="user-profile-bar-container">
+                                <div class="ambassador-badge" style="display: none;">
+                                    <span class="sg-icon-v1 fill" style="width: 0.875rem; height: 0.875rem; --svg-color: #693BF2;">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.5164 2.38426C12.7028 1.49089 11.2972 1.49089 10.4835 2.38426L9.43731 3.53309C9.02613 3.98459 8.43514 4.22939 7.82512 4.20088L6.27298 4.12834C5.06596 4.07193 4.07199 5.0659 4.1284 6.2729L4.20094 7.82506C4.22945 8.43507 3.98466 9.02607 3.53315 9.43725L2.38432 10.4835C1.49095 11.2971 1.49095 12.7027 2.38432 13.5164L3.53315 14.5626C3.98466 14.9738 4.22945 15.5648 4.20094 16.1749L4.1284 17.727C4.07199 18.9339 5.06596 19.928 6.27297 19.8716L7.82512 19.799C8.43514 19.7705 9.02613 20.0152 9.43731 20.4668L10.4835 21.6156C11.2972 22.509 12.7028 22.509 13.5164 21.6156L14.5627 20.4668C14.9738 20.0152 15.5648 19.7705 16.1749 19.799L17.727 19.8716C18.934 19.928 19.928 18.9339 19.8716 17.727L19.799 16.1749C19.7705 15.5648 20.0153 14.9738 20.4668 14.5626L21.6156 13.5164C22.5091 12.7027 22.5091 11.2971 21.6156 10.4835L20.4668 9.43725C20.0153 9.02607 19.7705 8.43507 19.799 7.82506L19.8716 6.27291C19.928 5.0659 18.934 4.07193 17.727 4.12834L16.1749 4.20088C15.5648 4.22939 14.9738 3.98459 14.5627 3.53309L13.5164 2.38426ZM16.1503 10.5633C16.494 10.2197 16.494 9.66261 16.1503 9.31899C15.8067 8.97537 15.2496 8.97537 14.906 9.31899L10.8238 13.4012L9.0938 11.6712C8.75019 11.3276 8.19307 11.3276 7.84945 11.6712C7.50583 12.0148 7.50583 12.5719 7.84945 12.9155L10.2016 15.2677C10.3666 15.4327 10.5904 15.5254 10.8238 15.5254C11.0572 15.5254 11.281 15.4327 11.446 15.2677L16.1503 10.5633Z" fill="black"></path>
+                                        </svg>
+                                    </span> 명예고수 
+                                </div>
+                                <div class="observer-container">
+                                    <!-- 게시글 작성자 정보 -->
+                                    <div class="user-profile-wrapper">
+                                        <div class="user-profile-area">
+                                            <img alt="직장인" class="profile-image" src="https://static.cdn.soomgo.com/upload/profile/1e2809f2-c3f7-4a59-b156-e4a9161d7d49.jpg?webp=1" src="https://static.cdn.soomgo.com/upload/profile/1e2809f2-c3f7-4a59-b156-e4a9161d7d49.jpg?webp=1" lazy="loaded">
+                                            <div class="profile-post-info">
+                                                <span class="user-name prisma-typography body14:medium primary">작성자</span>
+                                                <span class="post-created-at prisma-typography body12:regular primary">2025. 07. 23 · 조회 47</span>
+                                            </div>
+                                        </div>
+                                        <div class="post-actions">
+                                            <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M20.77%2015.174c.37%200%20.675.276.723.634l.007.099v5.86c0%20.371-.275.678-.632.726l-.099.007H3.231a.732.732%200%200%201-.724-.633l-.007-.1v-5.86a.732.732%200%200%201%201.455-.1l.007.1v5.128h16.076v-5.128c0-.37.275-.677.632-.726l.1-.007zM12.412%201.628l.09.072%206.377%206.05a.734.734%200%200%201%20.028%201.036.73.73%200%200%201-.949.098l-.084-.069-5.145-4.881v11.973a.732.732%200%200%201-1.454.1l-.007-.1V3.933L6.125%208.815a.73.73%200%200%201-.953.045l-.08-.074a.734.734%200%200%201-.045-.955l.073-.08%206.378-6.05.046-.039a.734.734%200%200%201%20.014-.01l-.06.048a.73.73%200%200%201%20.213-.14c.005%200%20.009-.002.013-.004a.724.724%200%200%201%20.69.072z'%20fill='%232D2D2D'%20fill-rule='evenodd'/%3e%3c/svg%3e" alt="공유하기" class="icon">
+                                            <div class="dropdown b-dropdown btn-group" id="__BVID__12597">
+                                                <button aria-haspopup="true" aria-expanded="false" type="button" class="btn dropdown-toggle btn-secondary" id="__BVID__12597__BV_toggle_"></button>
+                                                <ul role="menu" tabindex="-1" class="dropdown-menu dropdown-menu-right" aria-labelledby="__BVID__12597__BV_toggle_" style="position: absolute; transform: translate3d(-116px, 24px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                                    <li role="presentation">
+                                                        <a role="menuitem" href="#" target="_self" class="dropdown-item">게시글 수정하기</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="v-portal" style="display: none;"></div>
+                            </div>
+                        </div>
+                        <hr class="hr-divider">
+                        <div class="body-container" style="padding-bottom: 40px;">
+                            <div class="body-contents">
+                                <p class="text prisma-typography body16:regular primary"><span>베란다 제외 리모델링 한지는 1년정도 되었습니다 리모델링 하면서 전기 배선도 손을 봤구요 지금까지는 아무 문제 없었는데 장마 끝나기 이틀 전부터 인덕션 연결된 두꺼비집만 자꾸 떨어집니다 
+
+올려도 2-4시간 후면 다시 떨어져 있고 인덕션 코드를 빼고 올려도 떨어져 있더라구요 집안 가전 아무것도 사용하지 않은 상태에서 올려 봤는데 마찬가지 입니다 
+
+이런 경우는 주변에서도 들어본적이 없다고 하더라구요 전기기사님 오시면 돈이 많이 들어갈까봐 그것도 걱정입니다 
+누전 가능성 100% 일까요?ㅠ</span>
+                                </p>
+                            </div>
+                            <!-- 게시글 하단 극복 후기 -->
+                            <div class="overcome">극복 후기</div>
+                            <section class="overcome-review">
+                                <a href="" data-testid="pro-knowhow-profile-section" class="profile-container">
+                                    <div class="profile-info">
+                                        <section class="writer-info">
+                                            <p class="writer-name">극복 후기 제목</p>
+                                            <span class="writer-service">2025-07-28</span>
+                                        </section>
+                                    </div>
+                                    <div class="counselor-reply-contents">
+                                        <p class="profile-desc"><span>국회는 상호원조 또는 안전보장에 관한 조약, 중요한 국제조직에 관한 조약, 우호통상항해조약, 주권의 제약에 관한 조약, 강화조약, 국가나 국민에게 중대한 재정적 부담을 지우는 조약 또는 입법사항에 관한 조약의 체결·비준에 대한 동의권을 가진다.
+
+대통령의 국법상 행위는 문서로써 하며, 이 문서에는 국무총리와 관계 국무위원이 부서한다. 군사에 관한 것도 또한 같다. 공공필요에 의한 재산권의 수용·사용 또는 제한 및 그에 대한 보상은 법률로써 하되, 정당한 보상을 지급하여야 한다.
+
+이 헌법시행 당시의 법령과 조약은 이 헌법에 위배되지 아니하는 한 그 효력을 지속한다. 근로조건의 기준은 인간의 존엄성을 보장하도록 법률로 정한다.</span></p>
+                                    </div>
+                                </a>
+                            </section>
+                        </div>
+                        <!-- 라인 -->
+                        <hr class="hr-divider wide-divider">
+                        <!-- 상담사 답변 -->
+                        <h1 class="counselor-headline">상담사 답변</h1>
+                        <section class="counselor-reply">
+                            <a href="" data-testid="pro-knowhow-profile-section" class="profile-container">
+                                <div class="profile-info">
+                                    <div class="user-profile-picture profile-picture">
+                                        <div data-name="image" class="is-square" src="https://static.cdn.soomgo.com/upload/profile/93b2cee7-f161-479d-83d1-58ad6facdd81.jpg?webp=1&amp;h=320&amp;w=320" lazy="loaded" style="background-image: url(&quot;https://static.cdn.soomgo.com/upload/profile/93b2cee7-f161-479d-83d1-58ad6facdd81.jpg?webp=1&amp;h=320&amp;w=320&quot;);"></div>
+                                    </div>
+                                    <section class="writer-info">
+                                        <p class="writer-name">구글 스마트 노출전문 업체</p>
+                                        <span class="writer-service">검색/키워드 광고</span>
+                                    </section>
+                                    <button type="button" class="btn request-btn btn-primary">상담 요청</button>
+                                </div>
+                                <div class="counselor-reply-contents">
+                                    <p class="profile-desc"><span>국회는 상호원조 또는 안전보장에 관한 조약, 중요한 국제조직에 관한 조약, 우호통상항해조약, 주권의 제약에 관한 조약, 강화조약, 국가나 국민에게 중대한 재정적 부담을 지우는 조약 또는 입법사항에 관한 조약의 체결·비준에 대한 동의권을 가진다.
+
+대통령의 국법상 행위는 문서로써 하며, 이 문서에는 국무총리와 관계 국무위원이 부서한다. 군사에 관한 것도 또한 같다. 공공필요에 의한 재산권의 수용·사용 또는 제한 및 그에 대한 보상은 법률로써 하되, 정당한 보상을 지급하여야 한다.
+
+이 헌법시행 당시의 법령과 조약은 이 헌법에 위배되지 아니하는 한 그 효력을 지속한다. 근로조건의 기준은 인간의 존엄성을 보장하도록 법률로 정한다.</span></p>
+                                </div>
+                            </a>
+                        </section>
+                        <!-- 댓글 개수 -->
+                        <div class="post-react-state">
+                            <div class="post-react-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="prisma-icon secondary" category="communication">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.71529 19.2553C9.03754 19.0828 9.41171 19.0339 9.76748 19.1177C10.4796 19.2856 11.2273 19.3754 12 19.3754C17.0678 19.3754 21 15.5596 21 11.0627C21 6.56576 17.0678 2.75001 12 2.75001C6.93216 2.75001 3 6.56576 3 11.0627C3 12.9498 3.68004 14.6963 4.8439 16.1032C4.96208 16.246 5.08526 16.3854 5.21324 16.521C5.47597 16.7994 5.62232 17.1677 5.62232 17.5505V20.9111L8.71529 19.2553ZM3.68814 17.0593C2.31628 15.401 1.5 13.3209 1.5 11.0627C1.5 5.64329 6.20101 1.25 12 1.25C17.799 1.25 22.5 5.64329 22.5 11.0627C22.5 16.4821 17.799 20.8754 12 20.8754C11.1109 20.8754 10.2477 20.7721 9.42325 20.5777L5.5943 22.6276C4.92814 22.9842 4.12232 22.5016 4.12232 21.746V17.5505C3.97206 17.3913 3.82724 17.2275 3.68814 17.0593ZM7.00059 12.6C7.77378 12.6 8.40059 11.9732 8.40059 11.2C8.40059 10.4269 7.77378 9.80005 7.00059 9.80005C6.22739 9.80005 5.60059 10.4269 5.60059 11.2C5.60059 11.9732 6.22739 12.6 7.00059 12.6ZM13.4006 11.2C13.4006 11.9732 12.7738 12.6 12.0006 12.6C11.2274 12.6 10.6006 11.9732 10.6006 11.2C10.6006 10.4269 11.2274 9.80005 12.0006 9.80005C12.7738 9.80005 13.4006 10.4269 13.4006 11.2ZM17.0006 12.6C17.7738 12.6 18.4006 11.9732 18.4006 11.2C18.4006 10.4269 17.7738 9.80005 17.0006 9.80005C16.2274 9.80005 15.6006 10.4269 15.6006 11.2C15.6006 11.9732 16.2274 12.6 17.0006 12.6Z" fill="black"></path>
+                                </svg>
+                                <span> 댓글 
+                                    <span class="action-count">9</span>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- 라인 -->
+                        <hr class="hr-divider wide-divider under-prs">
+                        <div class="post-comments-container">
+                            <div class="comment-input-box">
+                                <div class="comment-body">
+                                    <!-- 댓글 다는 란 -->
+                                    <textarea name="comment-input" placeholder="댓글을 남겨보세요." rows="1" wrap="soft" class="sg-text-body2 sg-font-regular comment-input form-control" maxlength="400" id="__BVID__12603" style="resize: none; height: 22px;"></textarea>
+                                </div>
+                                <button class="write-button">
+                                    <span class="prisma-typography body14:regular primary write-comment-submit one-line"> 등록 </span>
+                                </button>
+                            </div>
+                            <ul class="post-comments-list">
+                                <li class="post-comments-list-item">
+                                    <div class="post-comment-wrapper">
+                                        <div class="profile-image provider">
+                                            <img alt="두진찬" class="image" src="https://static.cdn.soomgo.com/upload/profile/95ede868-c74e-4153-8cb0-0e47a354a227.jpg?h=110&amp;w=110&amp;webp=1" src="https://static.cdn.soomgo.com/upload/profile/95ede868-c74e-4153-8cb0-0e47a354a227.jpg?h=110&amp;w=110&amp;webp=1" lazy="loaded">
+                                        </div>
+                                        <div class="comment-information">
+                                            <div class="user-info provider">
+                                                <div class="user-info-wrapper pro-user">
+                                                    <div class="user">
+                                                        <span class="user-name prisma-typography body14:semibold primary">멘토 댓글</span>
+                                                    </div>
+                                                    <div class="pro-user-services"><span class="prisma-typography body12:regular tertiary service main-service">전기배선 설치 및 수리</span>
+                                                        <span class="prisma-typography body12:regular tertiary service">+ 1개 서비스</span><span class="prisma-typography body12:regular tertiary service">고수</span>
+                                                    </div>
+                                                </div>
+                                                <button class="send-request-button prisma-typography body12:medium primary">추천하기</button>
+                                            </div>
+                                            <div class="post-comment-contents"><p class="text comment-text prisma-typography body14:regular primary"><span>차단기 노후화 또는 불량
+인덕션배관쪽 누전
+이정도 예상해볼수있네요
+근데 고감도에 인덕션을 물려놓은거보니까
+화장실이랑 더블로 차단기에 물려놓은거같은 느낌이네요
+저 차단기내려가면 화장실쪽 전기(콘센트) 사용 가능한가요~?
+불가능하다면 화장실쪽 누전일가능성도 있어요.</span>
+                                                </p>
+                                            </div>
+                                            <div class="post-comment-actions">
+                                                <div class="comment-more-action prisma-typography body12:regular primary">
+                                                    <span class="comment-create-at">2025. 07. 23</span>
+                                                    <div class="dropdown b-dropdown btn-group" id="__BVID__12742">
+                                                        <!-- <button aria-haspopup="true" aria-expanded="false" type="button" class="btn dropdown-toggle btn-secondary" id="__BVID__12742__BV_toggle_"></button> -->
+                                                        <ul role="menu" tabindex="-1" class="dropdown-menu dropdown-menu-right" aria-labelledby="__BVID__12742__BV_toggle_">
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#" target="_self" class="dropdown-item">댓글 신고하기</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="post-comments-list-item">
+                                    <div class="post-comment-wrapper">
+                                        <div class="profile-image provider">
+                                            <img alt="장용운" class="image" src="https://static.cdn.soomgo.com/upload/profile/4ae328cc-f974-4358-8b99-3d8c9ac8438e.jpg?h=110&amp;w=110&amp;webp=1" src="https://static.cdn.soomgo.com/upload/profile/4ae328cc-f974-4358-8b99-3d8c9ac8438e.jpg?h=110&amp;w=110&amp;webp=1" lazy="loaded">
+                                        </div>
+                                        <div class="comment-information">
+                                            <div class="user-info provider">
+                                                <div class="user-info-wrapper pro-user">
+                                                    <div class="user">
+                                                        <span class="user-name prisma-typography body14:semibold primary">멘토 댓글</span>
+                                                    </div>
+                                                    <div class="pro-user-services">
+                                                        <span class="prisma-typography body12:regular tertiary service main-service">도배 시공</span>
+                                                        <span class="prisma-typography body12:regular tertiary service">+ 8개 서비스</span>
+                                                        <span class="prisma-typography body12:regular tertiary service">고수</span>
+                                                    </div>
+                                                </div>
+                                                <button class="send-request-button prisma-typography body12:medium primary">추천하기</button>
+                                            </div>
+                                            <div class="post-comment-contents">
+                                                <p class="text comment-text prisma-typography body14:regular primary"><span>확실하게 단독이면 문제는 90%확률로 그냥 차단기 문제같습니다. 차단기 교체해보시고, 같은문제 반복시 선문제라는건데 선문제시 비용은 방문해서 확인후에 산출 가능할것같습니다.
+거의 출장비+선값 만 나올것같긴합니다.</span>
+                                                </p>
+                                            </div>
+                                            <div class="post-comment-actions">
+                                                <div class="comment-more-action prisma-typography body12:regular primary">
+                                                    <span class="comment-create-at">2025. 07. 23</span>
+                                                    <div class="dropdown b-dropdown btn-group" id="__BVID__12745">
+                                                        <!-- <button aria-haspopup="true" aria-expanded="false" type="button" class="btn dropdown-toggle btn-secondary" id="__BVID__12745__BV_toggle_"></button> -->
+                                                        <ul role="menu" tabindex="-1" class="dropdown-menu dropdown-menu-right" aria-labelledby="__BVID__12745__BV_toggle_">
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#" target="_self" class="dropdown-item">댓글 신고하기</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="post-comments-list-item">
+                                    <div class="post-comment-wrapper">
+                                        <div class="profile-image provider">
+                                            <img alt="신명전력" class="image" src="https://static.cdn.soomgo.com/upload/profile/7fa88de6-ffc7-4943-b887-3a22ed350b9d.png?h=110&amp;w=110&amp;webp=1" src="https://static.cdn.soomgo.com/upload/profile/7fa88de6-ffc7-4943-b887-3a22ed350b9d.png?h=110&amp;w=110&amp;webp=1" lazy="loaded">
+                                        </div>
+                                        <div class="comment-information">
+                                            <div class="user-info provider">
+                                                <div class="user-info-wrapper pro-user">
+                                                    <div class="user">
+                                                        <span class="user-name prisma-typography body14:semibold primary">멘토 댓글</span>
+                                                    </div>
+                                                    <div class="pro-user-services">
+                                                        <span class="prisma-typography body12:regular tertiary service main-service">조명 인테리어</span>
+                                                        <span class="prisma-typography body12:regular tertiary service">+ 5개 서비스</span>
+                                                        <span class="prisma-typography body12:regular tertiary service">고수</span>
+                                                    </div>
+                                                </div>
+                                                <button class="send-request-button prisma-typography body12:medium primary">추천하기</button>
+                                            </div>
+                                            <div class="post-comment-contents">
+                                                <p class="text comment-text prisma-typography body14:regular primary"><span>어째던 기사가 한번은 나가야 해결되는데
+절연저항 -- 누전체크 해보시고 특별한 문제가 없을듯합니다
+고감도차단기를 일반누전차단기로 교체하시죠
+차단기 불량일수도 있습니다( 확율높음)</span>
+                                                </p>
+                                            </div>
+                                            <div class="post-comment-actions">
+                                                <div class="comment-more-action prisma-typography body12:regular primary">
+                                                    <span class="comment-create-at">2025. 07. 23</span>
+                                                    <div class="dropdown b-dropdown btn-group" id="__BVID__12748">
+                                                        <!-- <button aria-haspopup="true" aria-expanded="false" type="button" class="btn dropdown-toggle btn-secondary" id="__BVID__12748__BV_toggle_"></button> -->
+                                                        <ul role="menu" tabindex="-1" class="dropdown-menu dropdown-menu-right" aria-labelledby="__BVID__12748__BV_toggle_">
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#" target="_self" class="dropdown-item">댓글 신고하기</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="post-comments-list-item">
+                                    <div class="post-comment-wrapper">
+                                        <div class="profile-image provider">
+                                            <img alt="우리동네 전파상" class="image" src="https://static.cdn.soomgo.com/upload/profile-default/soomgo_66.jpg?h=110&amp;w=110&amp;webp=1" src="https://static.cdn.soomgo.com/upload/profile-default/soomgo_66.jpg?h=110&amp;w=110&amp;webp=1" lazy="loaded">
+                                        </div>
+                                        <div class="comment-information">
+                                            <div class="user-info provider">
+                                                <div class="user-info-wrapper pro-user">
+                                                    <div class="user">
+                                                        <span class="user-name prisma-typography body14:semibold primary">멘토 댓글</span>
+                                                    </div>
+                                                    <div class="pro-user-services">
+                                                        <span class="prisma-typography body12:regular tertiary service main-service">인터넷/랜 공사</span>
+                                                        <span class="prisma-typography body12:regular tertiary service">+ 2개 서비스</span>
+                                                        <span class="prisma-typography body12:regular tertiary service">고수</span>
+                                                    </div>
+                                                </div>
+                                                <button class="send-request-button prisma-typography body12:medium primary">추천하기</button>
+                                            </div>
+                                            <div class="post-comment-contents">
+                                                <p class="text comment-text prisma-typography body14:regular primary"><span>문제 없이 쓰시다가 누전이 생기신거 보면 어디선가 누수가생겨
+누전으로 이어진 듯 보입니다.
+단순히 배선만 다시 한다고 해결될수도 있지만 안될수도있으니 종합적으로 점검을...받으시는게</span>
+                                                </p>
+                                            </div>
+                                            <div class="post-comment-actions">
+                                                <div class="comment-more-action prisma-typography body12:regular primary">
+                                                    <span class="comment-create-at">2025. 07. 23</span>
+                                                    <div class="dropdown b-dropdown btn-group" id="__BVID__12751">
+                                                        <!-- <button aria-haspopup="true" aria-expanded="false" type="button" class="btn dropdown-toggle btn-secondary" id="__BVID__12751__BV_toggle_"></button> -->
+                                                        <ul role="menu" tabindex="-1" class="dropdown-menu dropdown-menu-right" aria-labelledby="__BVID__12751__BV_toggle_">
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#" target="_self" class="dropdown-item">댓글 신고하기</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="post-comments-list-item">
+                                    <div class="post-comment-wrapper">
+                                        <div class="profile-image provider">
+                                            <img alt="선 디자인" class="image" src="https://static.cdn.soomgo.com/upload/profile/54abd66b-37ec-4188-986b-7f59992a632e.jpg?h=110&amp;w=110&amp;webp=1" src="https://static.cdn.soomgo.com/upload/profile/54abd66b-37ec-4188-986b-7f59992a632e.jpg?h=110&amp;w=110&amp;webp=1" lazy="loaded">
+                                        </div>
+                                        <div class="comment-information">
+                                            <div class="user-info provider">
+                                                <div class="user-info-wrapper pro-user">
+                                                    <div class="user">
+                                                        <span class="user-name prisma-typography body14:semibold primary">멘토 댓글</span>
+                                                    </div>
+                                                    <div class="pro-user-services">
+                                                        <span class="prisma-typography body12:regular tertiary service main-service">수납가구 제작(신발장/붙박이장 등)</span>
+                                                        <span class="prisma-typography body12:regular tertiary service">+ 13개 서비스</span>
+                                                        <span class="prisma-typography body12:regular tertiary service">고수</span>
+                                                    </div>
+                                                </div>
+                                                <button class="send-request-button prisma-typography body12:medium primary">추천하기</button>
+                                            </div>
+                                            <div class="post-comment-contents">
+                                                <p class="text comment-text prisma-typography body14:regular primary"><span>인덕션 배선측 습기로 인한 누전
+있을 가능성이 있습니다 
+해당 위치 점검 받으셔야 할것 같아요</span>
+                                                </p>
+                                            </div>
+                                            <div class="post-comment-actions">
+                                                <div class="comment-more-action prisma-typography body12:regular primary">
+                                                    <span class="comment-create-at">2025. 07. 23</span>
+                                                    <div class="dropdown b-dropdown btn-group" id="__BVID__12754">
+                                                        <!-- <button aria-haspopup="true" aria-expanded="false" type="button" class="btn dropdown-toggle btn-secondary" id="__BVID__12754__BV_toggle_"></button> -->
+                                                        <ul role="menu" tabindex="-1" class="dropdown-menu dropdown-menu-right" aria-labelledby="__BVID__12754__BV_toggle_">
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#" target="_self" class="dropdown-item">댓글 신고하기</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="post-comments-list-item">
+                                    <div class="post-comment-wrapper">
+                                        <div class="profile-image provider">
+                                            <img alt="더존인테리어" class="image" src="https://static.cdn.soomgo.com/upload/profile/1bfb501d-1c0c-4940-9a49-4ec6842b6e34.jpg?h=110&amp;w=110&amp;webp=1" src="https://static.cdn.soomgo.com/upload/profile/1bfb501d-1c0c-4940-9a49-4ec6842b6e34.jpg?h=110&amp;w=110&amp;webp=1" lazy="loaded">
+                                        </div>
+                                        <div class="comment-information">
+                                            <div class="user-info provider">
+                                                <div class="user-info-wrapper pro-user">
+                                                    <div class="user">
+                                                        <span class="user-name prisma-typography body14:semibold primary">멘토 댓글</span>
+                                                    </div>
+                                                    <div class="pro-user-services">
+                                                        <span class="prisma-typography body12:regular tertiary service main-service">가벽/파티션 인테리어</span>
+                                                        <span class="prisma-typography body12:regular tertiary service">+ 6개 서비스</span>
+                                                        <span class="prisma-typography body12:regular tertiary service">고수</span>
+                                                    </div>
+                                                </div>
+                                                <button class="send-request-button prisma-typography body12:medium primary">추천하기</button>
+                                            </div>
+                                            <div class="post-comment-contents">
+                                                <p class="text comment-text prisma-typography body14:regular primary"><span>돈이 들어도 바로 고치세요. 누전인거 같은데 선만 다시 빼면 될듯 합니다.</span>
+                                                </p>
+                                            </div>
+                                            <div class="post-comment-actions">
+                                                <div class="comment-more-action prisma-typography body12:regular primary">
+                                                    <span class="comment-create-at">2025. 07. 23</span>
+                                                    <div class="dropdown b-dropdown btn-group" id="__BVID__12757">
+                                                        <!-- <button aria-haspopup="true" aria-expanded="false" type="button" class="btn dropdown-toggle btn-secondary" id="__BVID__12757__BV_toggle_"></button> -->
+                                                        <ul role="menu" tabindex="-1" class="dropdown-menu dropdown-menu-right" aria-labelledby="__BVID__12757__BV_toggle_">
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#" target="_self" class="dropdown-item">댓글 신고하기</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="post-comments-list-item">
+                                    <div class="post-comment-wrapper">
+                                        <div class="profile-image provider">
+                                            <img alt="bh부활시큐리티" class="image" src="https://static.cdn.soomgo.com/upload/profile/a8b1796d-1876-465b-844d-674628d94fbd.jpg?h=110&amp;w=110&amp;webp=1" src="https://static.cdn.soomgo.com/upload/profile/a8b1796d-1876-465b-844d-674628d94fbd.jpg?h=110&amp;w=110&amp;webp=1" lazy="loaded">
+                                        </div>
+                                        <div class="comment-information">
+                                            <div class="user-info provider">
+                                                <div class="user-info-wrapper pro-user">
+                                                    <div class="user">
+                                                        <span class="user-name prisma-typography body14:semibold primary">멘토 댓글</span>
+                                                    </div>
+                                                    <div class="pro-user-services">
+                                                        <span class="prisma-typography body12:regular tertiary service main-service">전기배선 설치 및 수리</span>
+                                                        <span class="prisma-typography body12:regular tertiary service">+ 10개 서비스</span>
+                                                        <span class="prisma-typography body12:regular tertiary service">고수</span>
+                                                    </div>
+                                                </div>
+                                                <button class="send-request-button prisma-typography body12:medium primary">추천하기</button>
+                                            </div>
+                                            <div class="post-comment-contents">
+                                                <p class="text comment-text prisma-typography body14:regular primary"><span>그 선이 단독배선인지 아니면 주방에 다른거랑 같이 사용중인지 확인이 필요해보입니다.</span>
+                                                </p>
+                                            </div>
+                                            <div class="post-comment-actions">
+                                                <div class="comment-more-action prisma-typography body12:regular primary">
+                                                    <span class="comment-create-at">2025. 07. 23</span>
+                                                    <div class="dropdown b-dropdown btn-group" id="__BVID__12760">
+                                                        <!-- <button aria-haspopup="true" aria-expanded="false" type="button" class="btn dropdown-toggle btn-secondary" id="__BVID__12760__BV_toggle_"></button> -->
+                                                        <ul role="menu" tabindex="-1" class="dropdown-menu dropdown-menu-right" aria-labelledby="__BVID__12760__BV_toggle_">
+                                                            <li role="presentation">
+                                                                <a role="menuitem" href="#" target="_self" class="dropdown-item">댓글 신고하기</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="infinite-loading-container">
+                                <div class="infinite-status-prompt" style="display: none;">
+                                    <figure class="text-center">
+                                        <div>
+                                            <div class="indicator-body center" style="width: 24px; height: 24px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                            <p style="display: none;"></p>
+                                        </div>
+                                    </figure>
+                                </div> 
+                                <div class="infinite-status-prompt" style="color: rgb(102, 102, 102); font-size: 14px; padding: 10px 0px; display: none;"></div> 
+                                <div class="infinite-status-prompt" style="color: rgb(102, 102, 102); font-size: 14px; padding: 10px 0px;"></div> 
+                                <div class="infinite-status-prompt" style="color: rgb(102, 102, 102); font-size: 14px; padding: 10px 0px; display: none;">
+        
+                                <br> 
+                                <button class="btn-try-infinite"></button>
+                            </div>
+                        </div>
+                        </div>
+                        <section class="related-posts">
+                            <h2 class="prisma-typography headline16 primary">
+                                <span class="title-badge">추천</span>이런 글도 확인해 보세요! 
+                            </h2>
+                            <ul>
+                                <li>
+                                    <a href="" class="post-link">
+                                        <span class="post-title">상담 게시판 게시글01</span>
+                                        <span class="sg-icon-v1 fill" style="width: 1rem; height: 1rem; --svg-color: #AAB4BF;">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3 11.9209C17.299 11.722 17.2191 11.5316 17.0777 11.3916L9.27772 3.66738C8.9834 3.37592 8.50854 3.37824 8.21708 3.67256C7.92562 3.96688 7.92793 4.44175 8.22225 4.73321L15.4893 11.9297L8.2171 19.2725C7.92563 19.5668 7.92792 20.0417 8.22223 20.3332C8.51654 20.6247 8.9914 20.6224 9.28288 20.3281L17.0829 12.4523C17.2228 12.3109 17.3009 12.1198 17.3 11.9209Z" fill="black"></path>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" class="post-link">
+                                        <span class="post-title">상담 게시판 게시글02</span>
+                                        <span class="sg-icon-v1 fill" style="width: 1rem; height: 1rem; --svg-color: #AAB4BF;">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3 11.9209C17.299 11.722 17.2191 11.5316 17.0777 11.3916L9.27772 3.66738C8.9834 3.37592 8.50854 3.37824 8.21708 3.67256C7.92562 3.96688 7.92793 4.44175 8.22225 4.73321L15.4893 11.9297L8.2171 19.2725C7.92563 19.5668 7.92792 20.0417 8.22223 20.3332C8.51654 20.6247 8.9914 20.6224 9.28288 20.3281L17.0829 12.4523C17.2228 12.3109 17.3009 12.1198 17.3 11.9209Z" fill="black"></path>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" class="post-link">
+                                        <span class="post-title">상담 게시판 게시글03</span>
+                                        <span class="sg-icon-v1 fill" style="width: 1rem; height: 1rem; --svg-color: #AAB4BF;">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3 11.9209C17.299 11.722 17.2191 11.5316 17.0777 11.3916L9.27772 3.66738C8.9834 3.37592 8.50854 3.37824 8.21708 3.67256C7.92562 3.96688 7.92793 4.44175 8.22225 4.73321L15.4893 11.9297L8.2171 19.2725C7.92563 19.5668 7.92792 20.0417 8.22223 20.3332C8.51654 20.6247 8.9914 20.6224 9.28288 20.3281L17.0829 12.4523C17.2228 12.3109 17.3009 12.1198 17.3 11.9209Z" fill="black"></path>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+                        <!-- 인기 상담사 추천 -->
+                        <section class="popular-provider">
+                            <div class="popular-provider-heading">
+                                <div>
+                                    <span component="h2" class="service-name prisma-typography headline16 primary">‘30분 테라피’</span>
+                                    <h2 class="prisma-typography headline16 primary">인기 상담사 추천</h2>
+                                </div>
+                                <a href="">전체보기</a>
+                            </div>
+                            <div dir="ltr" class="d-none d-md-block slick-slider slick-initialized">
+                                <!-- 인기 고수 추천 이전버튼 -->
+                                <button type="button" data-role="none" class="slick-arrow slick-prev slick-disabled" style="display: block;">Previous</button>
+                                <div class="slick-list-all">
+                                    <div class="slick-list">
+                                        <div class="slick-track" style="width: 2400px; opacity: 1; transform: translate3d(0px, 0px, 0px);">
+                                            <div tabindex="-1" data-index="0" aria-hidden="false" class="slick-slide slick-active slick-current" style="outline: none; width: 300px;">
+                                                <div>
+                                                    <section class="popular-provider-card" tabindex="-1" style="width: 100%; display: inline-block;">
+                                                        <a href="">
+                                                            <div class="profile-container">
+                                                                <div class="user-profile-picture profile-image">
+                                                                    <div data-name="image" src="https://static.cdn.soomgo.com/upload/profile/ca238bed-5487-4c9f-97da-0dc9a0efcab9.jpg?webp=1&amp;h=320&amp;w=320" lazy="loading" style="background-image: url(https://static.cdn.soomgo.com/upload/profile/ca238bed-5487-4c9f-97da-0dc9a0efcab9.jpg?webp=1&amp;h=320&amp;w=320);"></div>
+                                                                </div>
+                                                                <div class="profile-info">
+                                                                    <h3 class="profile-title">상담사 이름</h3>
+                                                                    <div class="profile-subtitle">
+                                                                        <span>질문위주</span> · <span>활동 4년</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="review-container">
+                                                                <div class="pro-rate">
+                                                                    <span class="sg-icon-v1 fill" style="width: 0.875rem; height: 0.875rem; --svg-color: #FFC300;">
+                                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M12.105 1.87122C11.7914 1.87122 11.4853 1.96773 11.2284 2.14766C10.975 2.32515 10.7815 2.57534 10.6734 2.86504L8.61423 8.05029L8.60808 8.06632C8.60618 8.07144 8.60283 8.0759 8.59843 8.07915C8.59404 8.0824 8.5888 8.08428 8.58334 8.0846L3.04706 8.44117C1.61138 8.5344 1.12102 10.3313 2.16552 11.2001L2.16648 11.2009L6.40277 14.7343L6.40523 14.7364C6.41476 14.7442 6.42187 14.7546 6.42574 14.7664C6.42952 14.7778 6.42985 14.791 6.4271 14.8027L5.16262 19.7857C4.79476 21.227 6.35038 22.529 7.69736 21.6729L7.69831 21.6723L12.095 18.8881C12.098 18.8862 12.1015 18.8852 12.105 18.8852C12.1086 18.8852 12.1125 18.8865 12.1155 18.8884L16.8405 21.8884L16.8424 21.8896C18.0703 22.6641 19.4818 21.4869 19.1506 20.1797L17.7827 14.8018C17.78 14.7901 17.7806 14.7778 17.7843 14.7664C17.7882 14.7546 17.7953 14.7442 17.8048 14.7364L22.0436 11.2009L22.0445 11.2001C23.089 10.3313 22.5983 8.53437 21.1626 8.44115L15.6314 8.08488L15.6267 8.08461C15.6213 8.0843 15.616 8.0824 15.6116 8.07915C15.6072 8.0759 15.6039 8.07144 15.602 8.06632L15.5958 8.05029L13.5367 2.86504C13.4286 2.57534 13.2351 2.32515 12.9816 2.14766C12.7247 1.96773 12.4187 1.87122 12.105 1.87122Z" fill="black"></path>
+                                                                        </svg>
+                                                                    </span> 5 
+                                                                </div>
+                                                                <p class="review-comment">“좋았으나 아쉬움이 있었던 작업이었습니다. 
+        너무 친절하고, 열심히 작업 해주셨으나 
+        분명 상담 시 앙카볼트가 있어서 잘라야 된다라고 말씀드렸는데, 해당 장비가 없으셨습니다. 결과적으로는 일부 앙카가 노출된 상태로 마무리 되었습니다.
+        이래저래 설치가 완료 되었으나 백프로 만족은 어려울 것 같습니다. 고생하셨습니다.”</p>
+                                                            </div>
+                                                        </a>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                            <div tabindex="-1" data-index="1" aria-hidden="false" class="slick-slide slick-active" style="outline: none; width: 300px;">
+                                                <div>
+                                                    <section class="popular-provider-card" tabindex="-1" style="width: 100%; display: inline-block;">
+                                                        <a href="">
+                                                            <div class="profile-container">
+                                                                <div class="user-profile-picture profile-image">
+                                                                    <div data-name="image" src="https://static.cdn.soomgo.com/upload/profile/1595021b-1548-44a4-ad93-4f99204f8e21.jpg?webp=1&amp;h=320&amp;w=320" lazy="loading" style="background-image: url(https://static.cdn.soomgo.com/upload/profile/1595021b-1548-44a4-ad93-4f99204f8e21.jpg?webp=1&amp;h=320&amp;w=320);"></div>
+                                                                </div>
+                                                                <div class="profile-info">
+                                                                    <h3 class="profile-title">상담사 이름</h3>
+                                                                    <div class="profile-subtitle">
+                                                                        <span>해결중심</span> · <span>활동 2년</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="review-container">
+                                                                <div class="pro-rate">
+                                                                    <span class="sg-icon-v1 fill" style="width: 0.875rem; height: 0.875rem; --svg-color: #FFC300;">
+                                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M12.105 1.87122C11.7914 1.87122 11.4853 1.96773 11.2284 2.14766C10.975 2.32515 10.7815 2.57534 10.6734 2.86504L8.61423 8.05029L8.60808 8.06632C8.60618 8.07144 8.60283 8.0759 8.59843 8.07915C8.59404 8.0824 8.5888 8.08428 8.58334 8.0846L3.04706 8.44117C1.61138 8.5344 1.12102 10.3313 2.16552 11.2001L2.16648 11.2009L6.40277 14.7343L6.40523 14.7364C6.41476 14.7442 6.42187 14.7546 6.42574 14.7664C6.42952 14.7778 6.42985 14.791 6.4271 14.8027L5.16262 19.7857C4.79476 21.227 6.35038 22.529 7.69736 21.6729L7.69831 21.6723L12.095 18.8881C12.098 18.8862 12.1015 18.8852 12.105 18.8852C12.1086 18.8852 12.1125 18.8865 12.1155 18.8884L16.8405 21.8884L16.8424 21.8896C18.0703 22.6641 19.4818 21.4869 19.1506 20.1797L17.7827 14.8018C17.78 14.7901 17.7806 14.7778 17.7843 14.7664C17.7882 14.7546 17.7953 14.7442 17.8048 14.7364L22.0436 11.2009L22.0445 11.2001C23.089 10.3313 22.5983 8.53437 21.1626 8.44115L15.6314 8.08488L15.6267 8.08461C15.6213 8.0843 15.616 8.0824 15.6116 8.07915C15.6072 8.0759 15.6039 8.07144 15.602 8.06632L15.5958 8.05029L13.5367 2.86504C13.4286 2.57534 13.2351 2.32515 12.9816 2.14766C12.7247 1.96773 12.4187 1.87122 12.105 1.87122Z" fill="black"></path>
+                                                                        </svg>
+                                                                    </span> 5 
+                                                                </div>
+                                                                <p class="review-comment">“누수로인한전등교체였고
+        급하게요청드렸는데 약속날보다 빠르게와주셨어요
+        정직하심이 느껴지셨습니다.
+        만족스럽게 작업해주셨고 빠르게처리해주셔서 감사드립니다
+    
+        번창하세요~~~”</p>
+                                                            </div>
+                                                        </a>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                            <div tabindex="-1" data-index="2" aria-hidden="true" class="slick-slide" style="outline: none; width: 300px;">
+                                                <div>
+                                                    <section class="popular-provider-card" tabindex="-1" style="width: 100%; display: inline-block;">
+                                                        <a href="">
+                                                            <div class="profile-container">
+                                                                <div class="user-profile-picture profile-image">
+                                                                    <div data-name="image" src="https://static.cdn.soomgo.com/upload/profile/960d8703-f507-4ed0-b127-e16f627cb377.jpg?webp=1&amp;h=320&amp;w=320" lazy="loading" style="background-image: url(https://static.cdn.soomgo.com/upload/profile/960d8703-f507-4ed0-b127-e16f627cb377.jpg?webp=1&amp;h=320&amp;w=320);"></div>
+                                                                </div>
+                                                                <div class="profile-info">
+                                                                    <h3 class="profile-title">상담사 이름</h3>
+                                                                    <div class="profile-subtitle">
+                                                                        <span>경청위주</span> · <span>활동 7개월</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="review-container">
+                                                                <div class="pro-rate">
+                                                                    <span class="sg-icon-v1 fill" style="width: 0.875rem; height: 0.875rem; --svg-color: #FFC300;">
+                                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M12.105 1.87122C11.7914 1.87122 11.4853 1.96773 11.2284 2.14766C10.975 2.32515 10.7815 2.57534 10.6734 2.86504L8.61423 8.05029L8.60808 8.06632C8.60618 8.07144 8.60283 8.0759 8.59843 8.07915C8.59404 8.0824 8.5888 8.08428 8.58334 8.0846L3.04706 8.44117C1.61138 8.5344 1.12102 10.3313 2.16552 11.2001L2.16648 11.2009L6.40277 14.7343L6.40523 14.7364C6.41476 14.7442 6.42187 14.7546 6.42574 14.7664C6.42952 14.7778 6.42985 14.791 6.4271 14.8027L5.16262 19.7857C4.79476 21.227 6.35038 22.529 7.69736 21.6729L7.69831 21.6723L12.095 18.8881C12.098 18.8862 12.1015 18.8852 12.105 18.8852C12.1086 18.8852 12.1125 18.8865 12.1155 18.8884L16.8405 21.8884L16.8424 21.8896C18.0703 22.6641 19.4818 21.4869 19.1506 20.1797L17.7827 14.8018C17.78 14.7901 17.7806 14.7778 17.7843 14.7664C17.7882 14.7546 17.7953 14.7442 17.8048 14.7364L22.0436 11.2009L22.0445 11.2001C23.089 10.3313 22.5983 8.53437 21.1626 8.44115L15.6314 8.08488L15.6267 8.08461C15.6213 8.0843 15.616 8.0824 15.6116 8.07915C15.6072 8.0759 15.6039 8.07144 15.602 8.06632L15.5958 8.05029L13.5367 2.86504C13.4286 2.57534 13.2351 2.32515 12.9816 2.14766C12.7247 1.96773 12.4187 1.87122 12.105 1.87122Z" fill="black"></path>
+                                                                        </svg>
+                                                                    </span> 5 
+                                                                </div>
+                                                                <p class="review-comment">“교체해주신지 좀 되었는데 신속하게 바로 해주셨어요 ㅜ 감사합니다 .!!!!!!!”</p>
+                                                            </div>
+                                                        </a>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                            <div tabindex="-1" data-index="0" aria-hidden="false" class="slick-slide slick-active slick-current" style="outline: none; width: 300px;">
+                                                <div>
+                                                    <section class="popular-provider-card" tabindex="-1" style="width: 100%; display: inline-block;">
+                                                        <a href="">
+                                                            <div class="profile-container">
+                                                                <div class="user-profile-picture profile-image">
+                                                                    <div data-name="image" src="https://static.cdn.soomgo.com/upload/profile/ca238bed-5487-4c9f-97da-0dc9a0efcab9.jpg?webp=1&amp;h=320&amp;w=320" lazy="loading" style="background-image: url(https://static.cdn.soomgo.com/upload/profile/ca238bed-5487-4c9f-97da-0dc9a0efcab9.jpg?webp=1&amp;h=320&amp;w=320);"></div>
+                                                                </div>
+                                                                <div class="profile-info">
+                                                                    <h3 class="profile-title">상담사 이름</h3>
+                                                                    <div class="profile-subtitle">
+                                                                        <span>질문위주</span> · <span>활동 4년</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="review-container">
+                                                                <div class="pro-rate">
+                                                                    <span class="sg-icon-v1 fill" style="width: 0.875rem; height: 0.875rem; --svg-color: #FFC300;">
+                                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M12.105 1.87122C11.7914 1.87122 11.4853 1.96773 11.2284 2.14766C10.975 2.32515 10.7815 2.57534 10.6734 2.86504L8.61423 8.05029L8.60808 8.06632C8.60618 8.07144 8.60283 8.0759 8.59843 8.07915C8.59404 8.0824 8.5888 8.08428 8.58334 8.0846L3.04706 8.44117C1.61138 8.5344 1.12102 10.3313 2.16552 11.2001L2.16648 11.2009L6.40277 14.7343L6.40523 14.7364C6.41476 14.7442 6.42187 14.7546 6.42574 14.7664C6.42952 14.7778 6.42985 14.791 6.4271 14.8027L5.16262 19.7857C4.79476 21.227 6.35038 22.529 7.69736 21.6729L7.69831 21.6723L12.095 18.8881C12.098 18.8862 12.1015 18.8852 12.105 18.8852C12.1086 18.8852 12.1125 18.8865 12.1155 18.8884L16.8405 21.8884L16.8424 21.8896C18.0703 22.6641 19.4818 21.4869 19.1506 20.1797L17.7827 14.8018C17.78 14.7901 17.7806 14.7778 17.7843 14.7664C17.7882 14.7546 17.7953 14.7442 17.8048 14.7364L22.0436 11.2009L22.0445 11.2001C23.089 10.3313 22.5983 8.53437 21.1626 8.44115L15.6314 8.08488L15.6267 8.08461C15.6213 8.0843 15.616 8.0824 15.6116 8.07915C15.6072 8.0759 15.6039 8.07144 15.602 8.06632L15.5958 8.05029L13.5367 2.86504C13.4286 2.57534 13.2351 2.32515 12.9816 2.14766C12.7247 1.96773 12.4187 1.87122 12.105 1.87122Z" fill="black"></path>
+                                                                        </svg>
+                                                                    </span> 5 
+                                                                </div>
+                                                                <p class="review-comment">“좋았으나 아쉬움이 있었던 작업이었습니다. 
+        너무 친절하고, 열심히 작업 해주셨으나 
+        분명 상담 시 앙카볼트가 있어서 잘라야 된다라고 말씀드렸는데, 해당 장비가 없으셨습니다. 결과적으로는 일부 앙카가 노출된 상태로 마무리 되었습니다.
+        이래저래 설치가 완료 되었으나 백프로 만족은 어려울 것 같습니다. 고생하셨습니다.”</p>
+                                                            </div>
+                                                        </a>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                            <div tabindex="-1" data-index="1" aria-hidden="false" class="slick-slide slick-active" style="outline: none; width: 300px;">
+                                                <div>
+                                                    <section class="popular-provider-card" tabindex="-1" style="width: 100%; display: inline-block;">
+                                                        <a href="">
+                                                            <div class="profile-container">
+                                                                <div class="user-profile-picture profile-image">
+                                                                    <div data-name="image" src="https://static.cdn.soomgo.com/upload/profile/1595021b-1548-44a4-ad93-4f99204f8e21.jpg?webp=1&amp;h=320&amp;w=320" lazy="loading" style="background-image: url(https://static.cdn.soomgo.com/upload/profile/1595021b-1548-44a4-ad93-4f99204f8e21.jpg?webp=1&amp;h=320&amp;w=320);"></div>
+                                                                </div>
+                                                                <div class="profile-info">
+                                                                    <h3 class="profile-title">상담사 이름</h3>
+                                                                    <div class="profile-subtitle">
+                                                                        <span>해결중심</span> · <span>활동 2년</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="review-container">
+                                                                <div class="pro-rate">
+                                                                    <span class="sg-icon-v1 fill" style="width: 0.875rem; height: 0.875rem; --svg-color: #FFC300;">
+                                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M12.105 1.87122C11.7914 1.87122 11.4853 1.96773 11.2284 2.14766C10.975 2.32515 10.7815 2.57534 10.6734 2.86504L8.61423 8.05029L8.60808 8.06632C8.60618 8.07144 8.60283 8.0759 8.59843 8.07915C8.59404 8.0824 8.5888 8.08428 8.58334 8.0846L3.04706 8.44117C1.61138 8.5344 1.12102 10.3313 2.16552 11.2001L2.16648 11.2009L6.40277 14.7343L6.40523 14.7364C6.41476 14.7442 6.42187 14.7546 6.42574 14.7664C6.42952 14.7778 6.42985 14.791 6.4271 14.8027L5.16262 19.7857C4.79476 21.227 6.35038 22.529 7.69736 21.6729L7.69831 21.6723L12.095 18.8881C12.098 18.8862 12.1015 18.8852 12.105 18.8852C12.1086 18.8852 12.1125 18.8865 12.1155 18.8884L16.8405 21.8884L16.8424 21.8896C18.0703 22.6641 19.4818 21.4869 19.1506 20.1797L17.7827 14.8018C17.78 14.7901 17.7806 14.7778 17.7843 14.7664C17.7882 14.7546 17.7953 14.7442 17.8048 14.7364L22.0436 11.2009L22.0445 11.2001C23.089 10.3313 22.5983 8.53437 21.1626 8.44115L15.6314 8.08488L15.6267 8.08461C15.6213 8.0843 15.616 8.0824 15.6116 8.07915C15.6072 8.0759 15.6039 8.07144 15.602 8.06632L15.5958 8.05029L13.5367 2.86504C13.4286 2.57534 13.2351 2.32515 12.9816 2.14766C12.7247 1.96773 12.4187 1.87122 12.105 1.87122Z" fill="black"></path>
+                                                                        </svg>
+                                                                    </span> 5 
+                                                                </div>
+                                                                <p class="review-comment">“누수로인한전등교체였고
+        급하게요청드렸는데 약속날보다 빠르게와주셨어요
+        정직하심이 느껴지셨습니다.
+        만족스럽게 작업해주셨고 빠르게처리해주셔서 감사드립니다
+    
+        번창하세요~~~”</p>
+                                                            </div>
+                                                        </a>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                            <div tabindex="-1" data-index="2" aria-hidden="true" class="slick-slide" style="outline: none; width: 300px;">
+                                                <div>
+                                                    <section class="popular-provider-card" tabindex="-1" style="width: 100%; display: inline-block;">
+                                                        <a href="">
+                                                            <div class="profile-container">
+                                                                <div class="user-profile-picture profile-image">
+                                                                    <div data-name="image" src="https://static.cdn.soomgo.com/upload/profile/960d8703-f507-4ed0-b127-e16f627cb377.jpg?webp=1&amp;h=320&amp;w=320" lazy="loading" style="background-image: url(https://static.cdn.soomgo.com/upload/profile/960d8703-f507-4ed0-b127-e16f627cb377.jpg?webp=1&amp;h=320&amp;w=320);"></div>
+                                                                </div>
+                                                                <div class="profile-info">
+                                                                    <h3 class="profile-title">상담사 이름</h3>
+                                                                    <div class="profile-subtitle">
+                                                                        <span>경청위주</span> · <span>활동 7개월</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="review-container">
+                                                                <div class="pro-rate">
+                                                                    <span class="sg-icon-v1 fill" style="width: 0.875rem; height: 0.875rem; --svg-color: #FFC300;">
+                                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M12.105 1.87122C11.7914 1.87122 11.4853 1.96773 11.2284 2.14766C10.975 2.32515 10.7815 2.57534 10.6734 2.86504L8.61423 8.05029L8.60808 8.06632C8.60618 8.07144 8.60283 8.0759 8.59843 8.07915C8.59404 8.0824 8.5888 8.08428 8.58334 8.0846L3.04706 8.44117C1.61138 8.5344 1.12102 10.3313 2.16552 11.2001L2.16648 11.2009L6.40277 14.7343L6.40523 14.7364C6.41476 14.7442 6.42187 14.7546 6.42574 14.7664C6.42952 14.7778 6.42985 14.791 6.4271 14.8027L5.16262 19.7857C4.79476 21.227 6.35038 22.529 7.69736 21.6729L7.69831 21.6723L12.095 18.8881C12.098 18.8862 12.1015 18.8852 12.105 18.8852C12.1086 18.8852 12.1125 18.8865 12.1155 18.8884L16.8405 21.8884L16.8424 21.8896C18.0703 22.6641 19.4818 21.4869 19.1506 20.1797L17.7827 14.8018C17.78 14.7901 17.7806 14.7778 17.7843 14.7664C17.7882 14.7546 17.7953 14.7442 17.8048 14.7364L22.0436 11.2009L22.0445 11.2001C23.089 10.3313 22.5983 8.53437 21.1626 8.44115L15.6314 8.08488L15.6267 8.08461C15.6213 8.0843 15.616 8.0824 15.6116 8.07915C15.6072 8.0759 15.6039 8.07144 15.602 8.06632L15.5958 8.05029L13.5367 2.86504C13.4286 2.57534 13.2351 2.32515 12.9816 2.14766C12.7247 1.96773 12.4187 1.87122 12.105 1.87122Z" fill="black"></path>
+                                                                        </svg>
+                                                                    </span> 5 
+                                                                </div>
+                                                                <p class="review-comment">“교체해주신지 좀 되었는데 신속하게 바로 해주셨어요 ㅜ 감사합니다 .!!!!!!!”</p>
+                                                            </div>
+                                                        </a>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                            <div tabindex="-1" data-index="0" aria-hidden="false" class="slick-slide slick-active slick-current" style="outline: none; width: 300px;">
+                                                <div>
+                                                    <section class="popular-provider-card" tabindex="-1" style="width: 100%; display: inline-block;">
+                                                        <a href="">
+                                                            <div class="profile-container">
+                                                                <div class="user-profile-picture profile-image">
+                                                                    <div data-name="image" src="https://static.cdn.soomgo.com/upload/profile/ca238bed-5487-4c9f-97da-0dc9a0efcab9.jpg?webp=1&amp;h=320&amp;w=320" lazy="loading" style="background-image: url(https://static.cdn.soomgo.com/upload/profile/ca238bed-5487-4c9f-97da-0dc9a0efcab9.jpg?webp=1&amp;h=320&amp;w=320);"></div>
+                                                                </div>
+                                                                <div class="profile-info">
+                                                                    <h3 class="profile-title">상담사 이름</h3>
+                                                                    <div class="profile-subtitle">
+                                                                        <span>질문위주</span> · <span>활동 4년</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="review-container">
+                                                                <div class="pro-rate">
+                                                                    <span class="sg-icon-v1 fill" style="width: 0.875rem; height: 0.875rem; --svg-color: #FFC300;">
+                                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M12.105 1.87122C11.7914 1.87122 11.4853 1.96773 11.2284 2.14766C10.975 2.32515 10.7815 2.57534 10.6734 2.86504L8.61423 8.05029L8.60808 8.06632C8.60618 8.07144 8.60283 8.0759 8.59843 8.07915C8.59404 8.0824 8.5888 8.08428 8.58334 8.0846L3.04706 8.44117C1.61138 8.5344 1.12102 10.3313 2.16552 11.2001L2.16648 11.2009L6.40277 14.7343L6.40523 14.7364C6.41476 14.7442 6.42187 14.7546 6.42574 14.7664C6.42952 14.7778 6.42985 14.791 6.4271 14.8027L5.16262 19.7857C4.79476 21.227 6.35038 22.529 7.69736 21.6729L7.69831 21.6723L12.095 18.8881C12.098 18.8862 12.1015 18.8852 12.105 18.8852C12.1086 18.8852 12.1125 18.8865 12.1155 18.8884L16.8405 21.8884L16.8424 21.8896C18.0703 22.6641 19.4818 21.4869 19.1506 20.1797L17.7827 14.8018C17.78 14.7901 17.7806 14.7778 17.7843 14.7664C17.7882 14.7546 17.7953 14.7442 17.8048 14.7364L22.0436 11.2009L22.0445 11.2001C23.089 10.3313 22.5983 8.53437 21.1626 8.44115L15.6314 8.08488L15.6267 8.08461C15.6213 8.0843 15.616 8.0824 15.6116 8.07915C15.6072 8.0759 15.6039 8.07144 15.602 8.06632L15.5958 8.05029L13.5367 2.86504C13.4286 2.57534 13.2351 2.32515 12.9816 2.14766C12.7247 1.96773 12.4187 1.87122 12.105 1.87122Z" fill="black"></path>
+                                                                        </svg>
+                                                                    </span> 5 
+                                                                </div>
+                                                                <p class="review-comment">“좋았으나 아쉬움이 있었던 작업이었습니다. 
+        너무 친절하고, 열심히 작업 해주셨으나 
+        분명 상담 시 앙카볼트가 있어서 잘라야 된다라고 말씀드렸는데, 해당 장비가 없으셨습니다. 결과적으로는 일부 앙카가 노출된 상태로 마무리 되었습니다.
+        이래저래 설치가 완료 되었으나 백프로 만족은 어려울 것 같습니다. 고생하셨습니다.”</p>
+                                                            </div>
+                                                        </a>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                            <div tabindex="-1" data-index="1" aria-hidden="false" class="slick-slide slick-active" style="outline: none; width: 300px;">
+                                                <div>
+                                                    <section class="popular-provider-card" tabindex="-1" style="width: 100%; display: inline-block;">
+                                                        <a href="">
+                                                            <div class="profile-container">
+                                                                <div class="user-profile-picture profile-image">
+                                                                    <div data-name="image" src="https://static.cdn.soomgo.com/upload/profile/1595021b-1548-44a4-ad93-4f99204f8e21.jpg?webp=1&amp;h=320&amp;w=320" lazy="loading" style="background-image: url(https://static.cdn.soomgo.com/upload/profile/1595021b-1548-44a4-ad93-4f99204f8e21.jpg?webp=1&amp;h=320&amp;w=320);"></div>
+                                                                </div>
+                                                                <div class="profile-info">
+                                                                    <h3 class="profile-title">상담사 이름</h3>
+                                                                    <div class="profile-subtitle">
+                                                                        <span>해결중심</span> · <span>활동 2년</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="review-container">
+                                                                <div class="pro-rate">
+                                                                    <span class="sg-icon-v1 fill" style="width: 0.875rem; height: 0.875rem; --svg-color: #FFC300;">
+                                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M12.105 1.87122C11.7914 1.87122 11.4853 1.96773 11.2284 2.14766C10.975 2.32515 10.7815 2.57534 10.6734 2.86504L8.61423 8.05029L8.60808 8.06632C8.60618 8.07144 8.60283 8.0759 8.59843 8.07915C8.59404 8.0824 8.5888 8.08428 8.58334 8.0846L3.04706 8.44117C1.61138 8.5344 1.12102 10.3313 2.16552 11.2001L2.16648 11.2009L6.40277 14.7343L6.40523 14.7364C6.41476 14.7442 6.42187 14.7546 6.42574 14.7664C6.42952 14.7778 6.42985 14.791 6.4271 14.8027L5.16262 19.7857C4.79476 21.227 6.35038 22.529 7.69736 21.6729L7.69831 21.6723L12.095 18.8881C12.098 18.8862 12.1015 18.8852 12.105 18.8852C12.1086 18.8852 12.1125 18.8865 12.1155 18.8884L16.8405 21.8884L16.8424 21.8896C18.0703 22.6641 19.4818 21.4869 19.1506 20.1797L17.7827 14.8018C17.78 14.7901 17.7806 14.7778 17.7843 14.7664C17.7882 14.7546 17.7953 14.7442 17.8048 14.7364L22.0436 11.2009L22.0445 11.2001C23.089 10.3313 22.5983 8.53437 21.1626 8.44115L15.6314 8.08488L15.6267 8.08461C15.6213 8.0843 15.616 8.0824 15.6116 8.07915C15.6072 8.0759 15.6039 8.07144 15.602 8.06632L15.5958 8.05029L13.5367 2.86504C13.4286 2.57534 13.2351 2.32515 12.9816 2.14766C12.7247 1.96773 12.4187 1.87122 12.105 1.87122Z" fill="black"></path>
+                                                                        </svg>
+                                                                    </span> 5 
+                                                                </div>
+                                                                <p class="review-comment">“누수로인한전등교체였고
+        급하게요청드렸는데 약속날보다 빠르게와주셨어요
+        정직하심이 느껴지셨습니다.
+        만족스럽게 작업해주셨고 빠르게처리해주셔서 감사드립니다
+    
+        번창하세요~~~”</p>
+                                                            </div>
+                                                        </a>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 인기 고수 추천 다음 버튼 -->
+                                <button type="button" data-role="none" class="slick-arrow slick-next" style="display: block;">Next</button>
+                            </div>
+                        </section>
+                        <!-- 지금 가장 뜨거운 커뮤니티 게시글 -->
+                        <section class="popular-post">
+                            <div class="popular-post-heading">
+                                <h2 class="popular-post-title prisma-typography headline16 primary"> 리바운드 공지 게시글 </h2>
+                            </div>
+                            <div class="popular-post-list-container">
+                                <ul data-testid="curation-list" class="curation-list">
+                                    <li data-testid="curation-item" class="curation-list-item">
+                                        <a href="" class="curation-list-wrapper">
+                                            <div class="curation-contents has-thumbnail">
+                                                <p class="topic-name">리바운드 이야기</p>
+                                                <p class="curation-title">공지 제목</p>
+                                                <p class="curation-content">- 서비스 과정을 담은 사진을 고수님이 미리 첨부해줘요. - 사진을 보고 기억을 떠올리며 리뷰를 더 쉽게 작성할 수 있어요. - 고수님이 거래 경험에 대한 감사 메시지를 보내드려요. - 고수님의 따뜻한 한마디에 답하는 마음으로 리뷰를 남겨보세요. - ...</p>
+                                                <div class="curation-reactions">
+                                                    <span class="view-count">2,968</span>
+                                                </div>
+                                            </div>
+                                            <div class="curation-topic-image">
+                                                <img alt="썸네일 1080 720- 고객향.png" class="topic-thumbnail-image" src="https://static.cdn.soomgo.com/upload/soomgoLifeAdmin/f7778202-4328-4d90-8b3b-ecdeb3ad15d0.png?h=128&amp;w=128&amp;webp=1" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading">
+                                            </div>
+                                        </a>
+                                        <a href="" class="curation-list-wrapper">
+                                            <div class="curation-contents has-thumbnail">
+                                                <p class="topic-name">리바운드 이야기</p>
+                                                <p class="curation-title">공지 제목</p>
+                                                <p class="curation-content">어느덧 한 해의 절반이 지나고, 하반기가 시작되었어요.  8월을 앞두고, 지금이야말로 비즈니스를 점검하고 앞으로의 전략을 세워야 할 타이밍인데요. 하반기는 추석부터 수능, 연말까지 소비가 집중되는 시기인 만큼, 놓치기 아까운 기회들이 가득한 시기죠.  혼자 하려...</p>
+                                                <div class="curation-reactions">
+                                                    <span class="view-count">412</span>
+                                                    <span class="comment-count"> 2 </span>
+                                                </div>
+                                            </div>
+                                            <div class="curation-topic-image">
+                                                <img alt="썸네일.png" class="topic-thumbnail-image" src="https://static.cdn.soomgo.com/upload/soomgoLifeAdmin/6d2247b4-d0a6-45a1-9171-9ddef6b79c28.png?h=128&amp;w=128&amp;webp=1" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading">
+                                            </div>
+                                        </a>
+                                        <a href="" class="curation-list-wrapper">
+                                            <div class="curation-contents has-thumbnail">
+                                                <p class="topic-name">리바운드 이야기</p>
+                                                <p class="curation-title">공지 제목</p>
+                                                <p class="curation-content">무더운 여름 이사, 준비는 잘 되고 계시나요?  여름은 휴가와 방학이 겹쳐 이사를 계획하시는 분들이 많은 계절이에요. 하지만 더운 날씨에 짐 옮기기는 만만치 않고, 장마철이라면 비 오는 날 이사를 피할 수 있을지도 고민이죠.  그래서 숨고가 준비했습니다. 똑...</p>
+                                                <div class="curation-reactions">
+                                                    <span class="view-count">1,445</span>
+                                                    <span class="comment-count"> 5 </span>
+                                                </div>
+                                            </div>
+                                            <div class="curation-topic-image">
+                                                <img alt="썸네일.png" class="topic-thumbnail-image" src="https://static.cdn.soomgo.com/upload/soomgoLifeAdmin/b355b8c1-87c7-4949-b939-99321462f5ec.png?h=128&amp;w=128&amp;webp=1" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading">
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </div>
+            <!---->
+            <div class="v-portal" style="display: none;"></div>
+            <!----><!---->
+        </div>
+    </div>
+</body>
+<script src="../../static/js/community-list/community-contents-writer.js"></script>
+</html>

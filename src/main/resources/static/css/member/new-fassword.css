@@ -1,0 +1,302 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+button {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    cursor: pointer;
+}
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+html, body, #__next {
+    font-family: font, "font Fallback";
+    line-height: 1.5;
+    color: rgb(41, 51, 65);
+}
+.wrap{
+    display: flex
+;
+    margin: 0;
+}
+.nav-item{
+    margin-left: 1rem;
+}
+
+input {
+    border: none;
+    padding: 0px;
+    outline: none;
+}
+main {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    width: 100%;
+}
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+* {
+    box-sizing: border-box;
+    word-break: break-word;
+}
+main {
+    display: block;
+    unicode-bidi: isolate;
+}
+.main{
+    position: relative;
+    max-width: calc(632px);
+    margin: 0px auto;
+    padding: 0px 16px;
+}
+.main-1{
+    padding-bottom: 80px;
+}
+.main-2{
+    margin: 48px 0px;
+    font-size: 34px;
+    font-weight: 500;
+}
+.main-4{
+    display: flex
+;
+    flex-direction: column;
+    gap: 24px;
+}
+.main-5{
+    display: flex
+;
+    gap: 12px;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    margin-top: 80px;
+}
+.main-6{
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+.main-7{
+    position: relative;
+    display: flex
+;
+}
+.main-8{
+    padding: 12px 70px 12px 12px;
+    border-radius: 4px;
+    border: 1px solid rgb(224, 229, 235);
+    color: rgb(41, 51, 65);
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+    height: 48px;
+    resize: none;
+}
+.main-8.active{
+    border: 1px solid rgb(105, 59, 242);
+}
+.main-8-1{
+    padding: 12px 70px 12px 12px;
+    border-radius: 4px;
+    border: 1px solid rgb(234, 22, 35);
+    color: rgb(41, 51, 65);
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+    height: 48px;
+    resize: none;
+}
+.main-8-2{
+    display: flex
+;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-top: 4px;
+}
+.main-8-3{
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(234, 22, 35);
+}
+.main-9{
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    transition-property: color, border-color, background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    color: rgb(105, 59, 242);
+    background-color: transparent;
+    padding: 11px 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    flex: 0 0 auto;
+    width: 142px;
+    border: 1px solid rgb(224, 229, 235);
+}
+.main-10{
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+    user-select: none;
+    transition-property: color, border-color, background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    color: rgb(255, 255, 255);
+    border-color: rgb(105, 59, 242);
+    background-color: rgb(105, 59, 242);
+    padding: 11px 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    width: 142px;
+    flex: 0 0 auto;
+}
+.log-1{
+    display: flex
+;
+}
+.log-2{
+    min-height: 1.375rem;
+    line-height: 1.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    color: rgb(28, 36, 47);
+    text-align: left;
+    display: flex
+;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.log-3{
+    display: flex
+;
+    position: relative;
+}
+.log-4{
+    margin: 0px 2px 0px 0px;
+}
+.log-5{
+    display: none;
+    position: relative;
+    width: 8px;
+    height: 8px;
+    background-color: rgb(255, 53, 65);
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 999px;
+}
+.log-6{
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    display: inline-flex
+;
+}
+.log-7{
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    transition-property: color, border-color, background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    color: rgb(41, 51, 65);
+    background-color: transparent;
+    padding: 0px;
+    font-size: 14px;
+    width: initial;
+    display: flex
+;
+    border: 0px;
+}
+.log-8{
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+.log-9{
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    transition-property: color, border-color, background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    color: rgb(41, 51, 65);
+    background-color: transparent;
+    padding: 0px;
+    font-size: 14px;
+    width: initial;
+    display: flex
+;
+    border: 0px;
+}
+.log-10{
+    position: relative;
+    display: block;
+}
+.log-11{
+    font-weight: 500;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+    transition-property: color, border-color, background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    color: rgb(41, 51, 65);
+    border-color: transparent;
+    background-color: transparent;
+    padding: 0px;
+    font-size: 14px;
+    width: initial;
+    display: flex
+;
+    gap: 8px;
+    -webkit-box-align: center;
+    align-items: center;
+    user-select: none;
+}
+.logo-12{
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid rgb(239, 241, 245);
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 32px;
+    max-height: 32px;
+}
+
+.logo-13 > ul {
+    display: flex
+;
+    gap: 16px;
+}

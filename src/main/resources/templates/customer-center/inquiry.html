@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의 등록 – 자주묻는질문 - 숨고 : 숨은고수</title>
+    <link rel="stylesheet" href="/css/customer-center/inquiry.css">
+    <link rel="icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="/font/didactgothic.woff2">
+    <link rel="stylesheet" href="/fonts/admin-login-fonts/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
+    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-cyrillic-700-normal-d010f1f324e111a22e53.woff2">
+    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-cyrillic-ext-700-normal-be4d02458ce53887dc37.woff2">
+    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-greek-700-normal-50e795c1345353b0e996.woff2">
+    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-greek-ext-700-normal-bd9854c751441ccc1a70.woff2">
+    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-latin-700-normal-227c93190fe7f82de3f8.woff2">
+    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-latin-ext-700-normal-ed67ad54b1a8f5d21150.woff2">
+    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="">
+                <img src="/images/logo.png" alt="로고">
+            </a>
+        </div>
+        <div class="nav-wrapper">
+            <span class="icon-menu"></span>
+            <nav class="user-nav" id="user-nav">
+                <a href="">공지사항</a>
+                <a class="submit-a-request" href="">문의 등록</a>
+                <a title="홈" href="">자주묻는질문</a>
+            </nav>
+        </div>
+    </header>
+    <main role="main">
+        <div class="container-divider"></div>
+        <div class="container">
+            <nav class="sub-nav">
+                <ol class="breadcrumbs">
+                    <li title="자주묻는질문 - 리바운드">
+                        <a href="">1대1 문의 - 리바운드</a>
+                    </li>
+                    <li title="문의 등록">> 문의 등록</li>
+                </ol>
+            </nav>
+            <h1>1대1 문의 등록</h1>
+            <div class="form">
+                <form class="request-form" id="new-request">
+                    <input name="utf8" type="hidden" value="✓" autocomplete="off">
+                    <input type="hidden" name="authenticity_token">
+                    <div class="form-field string required request_anonymous_requester_email">
+                        <label for="request_anonymous_requester_email">답변을 받을 이메일 주소</label>
+                        <input type="text" name="request[anonymous_requester_email]" id="request_anonymous_requester_email">
+                        <div id="request_anonymous_requester_email_error" class="notification notification-error notification-inline">요청자 이메일:  반드시 입력해야 합니다.</div>
+                    </div>
+                    <div class="form-field string required request_subject">
+                        <label for="request_subject" id="request_subject_label">제목</label>
+                        <input type="text" id="request_subject">
+                        <div id="request_subject_error" class="notification notification-error notification-inline">제목: 반드시 입력해야 합니다.</div>
+                    </div>
+                    <div class="suggestion-list"></div>
+                    <div class="form-field required request_description">
+                        <label for="request_description" id="request_description_label">설명</label>
+                        <textarea name="request[description]" id="request_description"></textarea>
+                        <input type="hidden" name="request[description_mimetype]" id="request_description_mimetype">
+                        <div id="request_description_error" class="notification notification-error notification-inline">
+                            설명: 반드시 입력해야 합니다.
+                        </div>
+                        <p id="request_description_hint">요청에 관한 세부 정보를 입력하세요.</p>
+                    </div>
+                    <div class="form-field required request_custom_fields_70987527">
+                        <label for="request_custom_fields_70987527" id="request_custom_fields_70987527_label">
+                            리바운드 가입 이메일
+                        </label>
+                        <input type="text" name="request[custom_fields][70987527]" id="request_custom_fields_70987527">
+                        <class id="request_custom_fields_70987527_error" class="notification notification-error notification-inline">리바운드 가입 이메일: 반드시 입력해야 합니다.</class>
+                        <p id="request_custom_fields_70987527_hint">리바운드 가입 이메일을 입력하세요.</p>
+                    </div>
+                    <div class="form-field required request_custom_fields_71442508">
+                        <label for="request_custom_fields_71442508" id="request_custom_fields_71442508_label">리바운드 가입 휴대폰 번호</label>
+                        <input type="text" name="request[custom_fields][71442508]" id="request_custom_fields_71442508">
+                        <div id="request_custom_fields_71442508_error" class="notification notification-error notification-inline">리바운드 가입 휴대폰 번호: 반드시 입력해야 합니다.</div>
+                        <p id="request_custom_fields_71442508_hint">리바운드 가입 휴대폰 번호를 입력하세요.</p>
+                    </div>
+                    <div class="form-field">
+                        <label for="request-attachments">첨부 파일</label>
+                        <div id="upload-dropzone" class="upload-dropzone">
+                            <input type="file" id="request-attachments">
+                            <span>
+                                <a>파일 추가</a>
+                                또는 파일을 여기로 드래그
+                            </span>
+                        </div>
+                        <div id="upload-error" class="notification notification-error notification-inline">
+                            <span></span>
+                        </div>
+                        <ul id="request-attachments-pool" class="upload-pool"></ul>
+                    </div>
+                    <footer>
+                        <input type="submit" name="commit" value="제출">
+                    </footer>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="/js/customer-center/inquiry.js"></script>
+</html>

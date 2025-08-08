@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link data-vue-meta="1" rel="shortcut icon" href="../../static/images/member/icon.png">
+    
+    <link rel="stylesheet" href="../../static/font/didactgothic.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/roboto-cyrillic-700-normal-d010f1f324e111a22e53.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/roboto-cyrillic-ext-700-normal-be4d02458ce53887dc37.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/roboto-greek-700-normal-50e795c1345353b0e996.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/roboto-greek-ext-700-normal-bd9854c751441ccc1a70.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/roboto-latin-700-normal-227c93190fe7f82de3f8.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/roboto-latin-ext-700-normal-ed67ad54b1a8f5d21150.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
+
+    <link rel="stylesheet" href="../../static/css/counselor-list/apply-consultation.css">
+    <title>상담 신청하기</title>
+</head>
+<body class="post-write hide-mobile-global-header modal-open">
+    <div id="app">
+        <div id="app-body">
+            <div class="community-container container">
+                <div class="soomgo-life-container">
+                    <section class="write-post-container">
+                        <div class="attach-file-wrapper">
+                            <div class="attach-file-area">
+                                <h2 class="image-count prisma-typography body12:regular primary">상담 신청서 작성</h2>
+                            </div>
+                        </div>
+                        <div class="editor-body-container is-bottom-margin">
+                            <div class="editor-body-wrapper">
+                                <div class="editor-title-wrapper">
+                                    <div class="editor-title-container">
+                                        <label for="post-title-input" class="editor-title-label">
+                                            <input id="post-title-input" type="text" placeholder="제목을 입력해주세요." class="post-title-input">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="divider-wrapper"><hr class="hr-divider"></div>
+                                <div class="service-region-wrapper">
+                                    <button class="category-select-box">
+                                        <span class="text">상담자 고민</span>
+                                    </button>
+                                    <button class="category-select-box">
+                                        <span class="text">상담 방식</span>
+                                    </button>
+                                </div>
+                                <div class="divider-wrapper">
+                                    <hr class="hr-divider">
+                                </div>
+                                <div class="editor-contents">
+                                    <span class="prisma-typography body14:regular primary">
+                                        <textarea name="post-content" class="editor-contents-textarea"></textarea>
+                                    </span>
+                                    <span class="editor-contents-textarea-placeholder prisma-typography body14:regular tertiary"> 상담하고 싶은 내용을 작성해주세요.
+    
+    예) 도어락 버튼이 작동을 안 하는데 왜 그런건가요?
+    예) 바닥 장판이 들떴는데 원인이 궁금해요.
+    
+    ※ 이용정책에 위배되는 내용은 제재의 대상이 됩니다.</span>
+                                    <div class="divider-wrapper">
+                                        <hr class="hr-divider">
+                                    </div>
+                                    <input class="date-input" type="text" placeholder="예약 날짜를 입력해주세요. 예)2025년 8월 7일 오후 2시">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="v-portal" style="display: none;"></div>
+            </div>
+            <div class="step-navigator footer">
+                <div class="wrapper">
+                    <div class="warning"></div>
+                    <span class="right btn-container">
+                        <button type="submit" class="btn btn-primary"> 결제하기 </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 모달 창 -->
+     <div data-testid="search-service-modal" id="search-service-modal___BV_modal_outer_" style="position: absolute; z-index: 1040;">
+        <div id="search-service-modal" role="dialog" aria-describedby="search-service-modal___BV_modal_body_" class="modal fade show search-pro-filter-modal" aria-modal="true" style="display: block;">
+            <div class="modal-dialog modal-md modal-dialog-centered mobile-full-modal">
+                <span tabindex="0"></span>
+                <div id="search-service-modal___BV_modal_content_" tabindex="-1" class="modal-content">
+                    <div id="search-service-modal___BV_modal_body_" class="modal-body">
+                        <div class="tabs" id="__BVID__1087">
+                            <div>
+                                <ul role="tablist" class="nav nav-tabs" id="__BVID__1087__BV_tab_controls_">
+                                    <li role="presentation" class="nav-item">
+                                        <a role="tab" aria-selected="true" aria-setsize="2" aria-posinset="1" href="#" target="_self" class="nav-link active" id="__BVID__1088___BV_tab_button__" aria-controls="__BVID__1088">서비스</a>
+                                    </li>
+                                    <li role="presentation" class="nav-item">
+                                        <a role="tab" tabindex="-1" aria-selected="false" aria-setsize="2" aria-posinset="2" href="#" target="_self" class="nav-link" id="__BVID__1103___BV_tab_button__" aria-controls="__BVID__1103">지역</a>
+                                    </li>
+                                    <button data-testid="search-pro-filter-modal-close" type="button" class="btn close-button btn-none">
+                                        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20width='18'%20height='18'%20viewBox='0%200%2018%2018'%3e%3cdefs%3e%3cpath%20id='a'%20d='M9%207.869L16.434.434l1.132%201.132L10.13%209l7.435%207.434-1.132%201.132L9%2010.13l-7.434%207.435-1.132-1.132L7.87%209%20.434%201.566%201.566.434%209%207.87z'/%3e%3c/defs%3e%3cuse%20fill='%23323232'%20fill-rule='nonzero'%20xlink:href='%23a'/%3e%3c/svg%3e" alt="모달 닫기">
+                                    </button>
+                                </ul>
+                            </div>
+                            <div class="tab-content" id="__BVID__1087__BV_tab_container_">
+                                <div role="tabpanel" aria-hidden="false" class="tab-pane active" id="__BVID__1088" aria-labelledby="__BVID__1088___BV_tab_button__">
+                                    <div class="search-service-autocomplete">
+                                        <!-- <input type="text" placeholder="어떤 분야의 고수를 찾으세요?" autocomplete="off" class="autocomplete-input form-control" id="__BVID__1091">
+                                        <button class="remove-button" style="display: none;"></button> -->
+                                        <div class="option-group-selectbox">
+                                            <ul>
+                                                <li data-testid="category-level1" class="parent level1"> 이사/청소 
+                                                    <div class="loading-indicator" style="display: none;">
+                                                        <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                                        <p style="display: none;"></p>
+                                                    </div>
+                                                    <div class="bottom-border"></div>
+                                                </li>
+                                                <li data-testid="category-level1" class="parent level1"> 설치/수리 
+                                                    <div class="loading-indicator" style="display: none;">
+                                                        <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                                        <p style="display: none;"></p>
+                                                    </div>
+                                                    <div class="bottom-border"></div>
+                                                </li>
+                                                <li data-testid="category-level1" class="parent level1"> 인테리어 
+                                                    <div class="loading-indicator" style="display: none;">
+                                                        <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                                        <p style="display: none;"></p>
+                                                    </div>
+                                                    <div class="bottom-border"></div>
+                                                </li>
+                                                <li data-testid="category-level1" class="parent level1"> 외주 
+                                                    <div class="loading-indicator" style="display: none;">
+                                                        <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                                        <p style="display: none;"></p>
+                                                    </div>
+                                                    <div class="bottom-border"></div>
+                                                </li>
+                                                <li data-testid="category-level1" class="parent level1"> 이벤트/뷰티 
+                                                    <div class="loading-indicator" style="display: none;">
+                                                        <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                                        <p style="display: none;"></p>
+                                                    </div>
+                                                    <div class="bottom-border"></div>
+                                                </li>
+                                                <li data-testid="category-level1" class="parent level1"> 취업/직무 
+                                                    <div class="loading-indicator" style="display: none;">
+                                                        <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                                        <p style="display: none;"></p>
+                                                    </div>
+                                                    <div class="bottom-border"></div>
+                                                </li>
+                                                <li data-testid="category-level1" class="parent level1"> 과외 
+                                                    <div class="loading-indicator" style="display: none;">
+                                                        <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                                        <p style="display: none;"></p>
+                                                    </div>
+                                                    <div class="bottom-border"></div>
+                                                </li>
+                                                <li data-testid="category-level1" class="parent level1"> 취미/자기계발 
+                                                    <div class="loading-indicator" style="display: none;">
+                                                        <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                                        <p style="display: none;"></p>
+                                                    </div>
+                                                    <div class="bottom-border"></div>
+                                                </li>
+                                                <li data-testid="category-level1" class="parent level1"> 자동차 
+                                                    <div class="loading-indicator" style="display: none;">
+                                                        <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                                        <p style="display: none;"></p>
+                                                    </div>
+                                                    <div class="bottom-border"></div>
+                                                </li>
+                                                <li data-testid="category-level1" class="parent level1"> 법률/금융 
+                                                    <div class="loading-indicator" style="display: none;">
+                                                        <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                                        <p style="display: none;"></p>
+                                                    </div>
+                                                    <div class="bottom-border"></div>
+                                                </li>
+                                                <li data-testid="category-level1" class="parent level1"> 기타 
+                                                    <div class="loading-indicator" style="display: none;">
+                                                        <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                                        <p style="display: none;"></p>
+                                                    </div>
+                                                    <div class="bottom-border"></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" aria-hidden="true" class="tab-pane" id="__BVID__1103" aria-labelledby="__BVID__1103___BV_tab_button__" style="display: none;">
+                                    <div class="option-group-selectbox">
+                                        <ul>
+                                            <li data-testid="area-level1" class="all selected level1">
+                                                <div class="option-wrapper">
+                                                    <span>전국</span>
+                                                    <div class="icon-wrapper">
+                                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="prisma-icon purple">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M20.5389 5.18503C20.9889 5.59311 21.0229 6.28876 20.6149 6.73881L10.0058 18.4388C9.80396 18.6614 9.51989 18.7917 9.21955 18.7995C8.91922 18.8074 8.62874 18.692 8.41561 18.4803L3.42469 13.5217C2.99372 13.0935 2.99146 12.397 3.41963 11.9661C3.84781 11.5351 4.54429 11.5328 4.97526 11.961L9.14941 16.1081L18.9851 5.26101C19.3932 4.81097 20.0888 4.77695 20.5389 5.18503Z" fill="black"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li data-testid="area-level1" class="parent level1">
+                                                <div class="option-wrapper">
+                                                    <span>서울</span>
+                                                </div>
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(50, 50, 50) rgba(50, 50, 50, 0.2) rgba(50, 50, 50, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                            </li>
+                                            <li data-testid="area-level1" class="parent level1">
+                                                <div class="option-wrapper">
+                                                    <span>세종</span>
+                                                </div>
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(50, 50, 50) rgba(50, 50, 50, 0.2) rgba(50, 50, 50, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                            </li>
+                                            <li data-testid="area-level1" class="parent level1">
+                                                <div class="option-wrapper">
+                                                    <span>강원</span>
+                                                </div>
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(50, 50, 50) rgba(50, 50, 50, 0.2) rgba(50, 50, 50, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                            </li>
+                                            <li data-testid="area-level1" class="parent level1">
+                                                <div class="option-wrapper">
+                                                    <span>인천</span>
+                                                </div>
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(50, 50, 50) rgba(50, 50, 50, 0.2) rgba(50, 50, 50, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                            </li>
+                                            <li data-testid="area-level1" class="parent level1">
+                                                <div class="option-wrapper">
+                                                    <span>경기</span>
+                                                </div>
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(50, 50, 50) rgba(50, 50, 50, 0.2) rgba(50, 50, 50, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                            </li>
+                                            <li data-testid="area-level1" class="parent level1">
+                                                <div class="option-wrapper">
+                                                    <span>충북</span>
+                                                </div>
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(50, 50, 50) rgba(50, 50, 50, 0.2) rgba(50, 50, 50, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                            </li>
+                                            <li data-testid="area-level1" class="parent level1">
+                                                <div class="option-wrapper">
+                                                    <span>충남</span>
+                                                </div>
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(50, 50, 50) rgba(50, 50, 50, 0.2) rgba(50, 50, 50, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                            </li>
+                                            <li data-testid="area-level1" class="parent level1">
+                                                <div class="option-wrapper">
+                                                    <span>경북</span>
+                                                </div>
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(50, 50, 50) rgba(50, 50, 50, 0.2) rgba(50, 50, 50, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                            </li>
+                                            <li data-testid="area-level1" class="parent level1">
+                                                <div class="option-wrapper">
+                                                    <span>대전</span>
+                                                </div>
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(50, 50, 50) rgba(50, 50, 50, 0.2) rgba(50, 50, 50, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                            </li>
+                                            <li data-testid="area-level1" class="parent level1">
+                                                <div class="option-wrapper">
+                                                    <span>대구</span>
+                                                </div>
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(50, 50, 50) rgba(50, 50, 50, 0.2) rgba(50, 50, 50, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                            </li>
+                                            <li data-testid="area-level1" class="parent level1">
+                                                <div class="option-wrapper">
+                                                    <span>전북</span>
+                                                </div>
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(50, 50, 50) rgba(50, 50, 50, 0.2) rgba(50, 50, 50, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                            </li>
+                                            <li data-testid="area-level1" class="parent level1">
+                                                <div class="option-wrapper">
+                                                    <span>경남</span>
+                                                </div>
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(50, 50, 50) rgba(50, 50, 50, 0.2) rgba(50, 50, 50, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                            </li>
+                                            <li data-testid="area-level1" class="parent level1">
+                                                <div class="option-wrapper">
+                                                    <span>울산</span>
+                                                </div>
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(50, 50, 50) rgba(50, 50, 50, 0.2) rgba(50, 50, 50, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                            </li>
+                                            <li data-testid="area-level1" class="parent level1">
+                                                <div class="option-wrapper">
+                                                    <span>광주</span>
+                                                </div>
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(50, 50, 50) rgba(50, 50, 50, 0.2) rgba(50, 50, 50, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                            </li>
+                                            <li data-testid="area-level1" class="parent level1">
+                                                <div class="option-wrapper">
+                                                    <span>부산</span>
+                                                </div>
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(50, 50, 50) rgba(50, 50, 50, 0.2) rgba(50, 50, 50, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                            </li>
+                                            <li data-testid="area-level1" class="parent level1">
+                                                <div class="option-wrapper">
+                                                    <span>전남</span>
+                                                </div>
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(50, 50, 50) rgba(50, 50, 50, 0.2) rgba(50, 50, 50, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                            </li>
+                                            <li data-testid="area-level1" class="parent level1">
+                                                <div class="option-wrapper">
+                                                    <span>제주</span>
+                                                </div>
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(50, 50, 50) rgba(50, 50, 50, 0.2) rgba(50, 50, 50, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span tabindex="0"></span>
+            </div>
+        </div>
+        <div id="search-service-modal___BV_modal_backdrop_" class="modal-backdrop"></div>
+    </div>
+</body>
+<script src="../../static/js/counselor-list/apply-consultation.js"></script>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link data-vue-meta="1" rel="shortcut icon" href="../../static/images/member/icon.png">
+    
+    <link rel="stylesheet" href="../../static/font/didactgothic.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/roboto-cyrillic-700-normal-d010f1f324e111a22e53.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/roboto-cyrillic-ext-700-normal-be4d02458ce53887dc37.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/roboto-greek-700-normal-50e795c1345353b0e996.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/roboto-greek-ext-700-normal-bd9854c751441ccc1a70.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/roboto-latin-700-normal-227c93190fe7f82de3f8.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/roboto-latin-ext-700-normal-ed67ad54b1a8f5d21150.woff2">
+    <link rel="stylesheet" href="../../static/fonts/admin-login-fonts/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
+
+    <link rel="stylesheet" href="../../static/css/counselor-list/counselor-contents.css">
+    <title>상담사 상세 정보</title>
+</head>
+<body class="profile">
+    <div id="app">
+        <div id="app-body">
+            <div class="provider-profile">
+                <!-- 프로필 헤더 -->
+                <div class="profile-header" data-src="https://static.cdn.soomgo.com/upload/profile/92ff4167-d2b7-4c29-bd0e-663a72f685c8.jpg?webp=1" lazy="loaded" style="background-image: url(&quot;https://static.cdn.soomgo.com/upload/profile/92ff4167-d2b7-4c29-bd0e-663a72f685c8.jpg?webp=1&quot;);">
+                    <div class="backdrop"></div>
+                </div>
+                <div class="container">
+                    <div class="row no-gutters">
+                        <!-- 좌측 프로필 상세 -->
+                        <div data-testid="profile-section" class="profile-section col-lg-auto col-12">
+                            <div class="profile-body">
+                                <div class="profile-overview">
+                                    <div class="thumb">
+                                        <div class="user-profile-picture">
+                                            <div data-name="image" class="" data-src="https://static.cdn.soomgo.com/upload/profile/92ff4167-d2b7-4c29-bd0e-663a72f685c8.jpg?h=320&amp;w=320&amp;webp=1" lazy="loaded" style="background-image: url(&quot;https://static.cdn.soomgo.com/upload/profile/92ff4167-d2b7-4c29-bd0e-663a72f685c8.jpg?h=320&amp;w=320&amp;webp=1&quot;);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="info">
+                                        <div class="info-section-header">
+                                            <!-- 상담사 이름 -->
+                                            <h1 data-testid="profile-nickname" class="nickname"> 리바운드 상담사 </h1>
+                                            <div class="icon-buttons">
+                                                <!-- 공유 아이콘 -->
+                                                <button type="button" class="btn share-button btn-none"></button>
+                                                <!-- 하트 아이콘 -->
+                                                <div role="button" class="heart">
+                                                    <span class="sg-icon-v1 fill" style="width: 1.5rem; height: 1.5rem; --svg-color: #293341;">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.52438 5.21522C8.7232 4.78429 7.79974 4.64735 6.91069 4.82696C6.02155 5.00658 5.21995 5.49212 4.6431 6.20287C4.06612 6.91378 3.75 7.80581 3.75 8.72728C3.75 11.4761 5.77662 14.1015 8.0045 16.1269C9.09642 17.1195 10.1917 17.9275 11.0155 18.4878C11.4233 18.7651 11.7627 18.9806 12 19.1265C12.2373 18.9806 12.5767 18.7651 12.9845 18.4878C13.8083 17.9275 14.9036 17.1195 15.9955 16.1269C18.2234 14.1015 20.25 11.4761 20.25 8.72728C20.25 7.80581 19.9339 6.91378 19.3569 6.20287C18.7801 5.49212 17.9784 5.00658 17.0893 4.82696C16.2003 4.64735 15.2768 4.78429 14.4756 5.21522C13.6743 5.64624 13.0438 6.34535 12.6933 7.1951C12.5775 7.47589 12.3037 7.6591 12 7.6591C11.6963 7.6591 11.4225 7.47589 11.3067 7.1951C10.9562 6.34535 10.3257 5.64624 9.52438 5.21522ZM12 20C11.6307 20.6528 11.6305 20.6527 11.6303 20.6526L11.6278 20.6511L11.6215 20.6476L11.5995 20.6349C11.5806 20.624 11.5534 20.6082 11.5185 20.5877C11.4487 20.5466 11.3479 20.4864 11.2205 20.4081C10.9659 20.2516 10.6045 20.0223 10.172 19.7281C9.30829 19.1407 8.15358 18.2896 6.9955 17.2368C4.72338 15.1712 2.25 12.1603 2.25 8.72728C2.25 7.46309 2.68357 6.23697 3.47842 5.25761C4.2734 4.2781 5.38101 3.60568 6.61366 3.35666C7.8464 3.10762 9.12621 3.29784 10.2349 3.89419C10.9297 4.2679 11.53 4.78639 12 5.40887C12.47 4.78639 13.0703 4.2679 13.7651 3.89419C14.8738 3.29784 16.1536 3.10762 17.3863 3.35666C18.619 3.60568 19.7266 4.2781 20.5216 5.25761C21.3164 6.23697 21.75 7.46309 21.75 8.72728C21.75 12.1603 19.2766 15.1712 17.0045 17.2368C15.8464 18.2896 14.6917 19.1407 13.828 19.7281C13.3955 20.0223 13.0341 20.2516 12.7795 20.4081C12.6521 20.4864 12.5513 20.5466 12.4815 20.5877C12.4466 20.6082 12.4194 20.624 12.4005 20.6349L12.3785 20.6476L12.3722 20.6511L12.3703 20.6522C12.3701 20.6523 12.3693 20.6528 12 20ZM12 20L12.3693 20.6528C12.1401 20.7824 11.8594 20.7822 11.6303 20.6526L12 20Z" fill="black"></path>
+                                                        </svg>
+                                                    </span>
+                                                    <div class="pro-bucket-nudge center">마음에 드는 상담사를 찜해보세요</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 소지한 자격증 -->
+                                        <div class="info-section-sub-header">
+                                            <div class="category">임상심리사</div>
+                                        </div>
+                                        <!-- 상담사 자기소개 -->
+                                        <div class="introduce">임상심리사 ㅇㅇㅇ입니다. 국가에서 발급하는 자격증에는 임상심리사, 직업상담사, 청소년 상담사가 있으며 민간에서 발급하는 자격증에는 상담심리사, 전문상담사가 있다.</div>
+                                        <div class="detail-info">
+                                            <div class="badges">
+                                                <span class="pro-badge">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="prisma-icon blue">
+                                                        <path d="M17.8309 19.025C18.0002 18.8557 18.0939 18.6253 18.0909 18.3859L18.0381 14.1821L19.421 12.7993C20.1879 12.0323 20.688 11.0016 20.7329 9.93423C20.7871 8.6344 20.4066 6.05284 20.1673 4.60837C20.1044 4.22904 19.8134 3.93073 19.4341 3.86768C17.9906 3.6277 15.481 3.32548 14.1937 3.39512C13.1278 3.45342 12.0956 3.94008 11.3287 4.707L9.9429 6.08685L5.5639 6.1844C5.3353 6.18949 5.11747 6.28258 4.95578 6.44426L3.06629 8.33376C2.70089 8.69916 2.70089 9.29159 3.06629 9.65699L6.68148 13.2722C6.13411 13.8195 5.25214 15.3176 5.5436 17.8477C5.58809 18.2339 5.89251 18.5387 6.27869 18.5835C8.80669 18.877 10.3085 17.9938 10.8558 17.4465L14.471 21.0617C14.8364 21.4271 15.4288 21.4271 15.7942 21.0617L17.8309 19.025ZM11.6696 12.4569C10.7112 11.4985 10.7135 9.943 11.6747 8.98175C12.636 8.02049 14.1914 8.01821 15.1499 8.97663C16.1083 9.93506 16.106 11.4905 15.1447 12.4518C14.1835 13.413 12.628 13.4153 11.6696 12.4569Z" fill="black"></path>
+                                                    </svg> 빠른응답 
+                                                </span>
+                                                <span class="badge-item">
+                                                    <img src="data:image/svg+xml,%3csvg%20width='16'%20height='16'%20viewBox='0%200%2016%2016'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M4%207.625%206.88%2011%2012%205'%20stroke='%232DC261'%20stroke-width='2'%20fill='none'%20fill-rule='evenodd'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="Self cert"> 본인인증 
+                                                </span>
+                                            </div>
+                                            <div class="statistics-info">
+                                                <div class="statistics-info-item">
+                                                    <div class="statistics-info-item-header">상담 횟수</div>
+                                                    <div class="statistics-info-item-contents">1,578회</div>
+                                                </div>
+                                                <div class="statistics-info-item review-info">
+                                                    <div class="statistics-info-item-header review-rate">리뷰</div>
+                                                    <div class="statistics-info-item-contents">
+                                                        <img src="data:image/svg+xml,%3csvg%20width='14'%20height='14'%20viewBox='0%200%2014%2014'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='m7.496%201.596%201.407%202.742%203.145.44c.91.127%201.275%201.204.615%201.822l-2.276%202.134.538%203.015c.155.872-.797%201.538-1.612%201.126L6.5%2011.452l-2.813%201.423c-.815.412-1.767-.254-1.612-1.126l.538-3.015L.337%206.6c-.66-.618-.296-1.695.615-1.822l3.145-.44%201.407-2.742C5.912.8%207.088.8%207.496%201.596'%20fill='%23FFCE21'%20fill-rule='evenodd'/%3e%3c/svg%3e">
+                                                        <span class="rate">4.8</span>
+                                                        <span class="count">(2,904)</span>
+                                                    </div>
+                                                </div>
+                                                <div class="statistics-info-item">
+                                                    <div class="statistics-info-item-header">활동 기간</div>
+                                                    <div class="statistics-info-item-contents">5년</div>
+                                                </div>
+                                            </div>
+                                            <!-- 리뷰 이벤트 -->
+                                            <div class="review-event-wrapper">
+                                                <div class="profile-review-event">
+                                                    <div class="review-event-header">
+                                                        <div class="review-event-title">
+                                                            <span class="icon-wrapper">
+                                                                <span class="sg-icon-v1" style="width: 1.125rem; height: 1.125rem; --svg-color: #293341;">
+                                                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <g id="outline">
+                                                                            <path id="outline_2" d="M6.92051 0.558943C5.62207 -0.537873 3.61219 0.0564632 3.09464 1.67087C2.5988 3.21754 3.62014 4.85532 5.23739 5.07277H12.7601C14.3774 4.85532 15.3987 3.21754 14.9029 1.67087C14.3853 0.0564636 12.3755 -0.537873 11.077 0.558943L8.99876 2.31448L6.92051 0.558943Z" fill="url(#paint0_linear_691_70800)"></path>
+                                                                            <g id="outline_3">
+                                                                                <path d="M1.2 5.14156C1.2 4.34627 1.84471 3.70156 2.64 3.70156H15.36C16.1553 3.70156 16.8 4.34627 16.8 5.14156V16.5616C16.8 17.3569 16.1553 18.0016 15.36 18.0016H2.64C1.84471 18.0016 1.2 17.3569 1.2 16.5616V5.14156Z" fill="url(#paint1_linear_691_70800)"></path>
+                                                                                <path d="M0 3.82156C0 3.42392 0.322355 3.10156 0.72 3.10156H17.28C17.6776 3.10156 18 3.42392 18 3.82156V7.58156C18 7.97921 17.6776 8.30156 17.28 8.30156H0.719999C0.322354 8.30156 0 7.97921 0 7.58156V3.82156Z" fill="#FF8FEB"></path>
+                                                                                <path d="M7.3 3.10156H10.7V18.0016H7.3V3.10156Z" fill="#BD2D99"></path>
+                                                                            </g>
+                                                                        </g>
+                                                                        <defs>
+                                                                            <linearGradient id="paint0_linear_691_70800" x1="8.99876" y1="0" x2="8.99876" y2="5.07277" gradientUnits="userSpaceOnUse">
+                                                                                <stop stop-color="#BD2D99"></stop>
+                                                                                <stop offset="1" stop-color="#AB1E88"></stop>
+                                                                            </linearGradient>
+                                                                            <linearGradient id="paint1_linear_691_70800" x1="9" y1="3.10156" x2="9" y2="18.0016" gradientUnits="userSpaceOnUse">
+                                                                                <stop stop-color="#EB55C5"></stop>
+                                                                                <stop offset="1" stop-color="#FF8FEB"></stop>
+                                                                            </linearGradient>
+                                                                        </defs>
+                                                                    </svg>
+                                                                </span>
+                                                            </span>
+                                                            <span class="prisma-typography headline4 primary">리뷰 이벤트</span>
+                                                            <div class="tooltip-container">
+                                                                <button type="button" class="btn btn-tooltip btn-none">
+                                                                    <span class="sg-icon-v1 fill" style="width: 1rem; height: 1rem; --svg-color: #8F9AAB;">
+                                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 20.5C16.6944 20.5 20.5 16.6944 20.5 12C20.5 7.30558 16.6944 3.5 12 3.5C7.30558 3.5 3.5 7.30558 3.5 12C3.5 16.6944 7.30558 20.5 12 20.5ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="black"></path>
+                                                                            <path d="M10.7 8.00005C10.7 7.28208 11.282 6.70005 12 6.70005C12.718 6.70005 13.3 7.28208 13.3 8.00005C13.3 8.71802 12.718 9.30005 12 9.30005C11.282 9.30005 10.7 8.71802 10.7 8.00005Z" fill="black"></path>
+                                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9999 17.4C11.5028 17.4 11.0999 16.9971 11.0999 16.5L11.0999 11.8C11.0999 11.303 11.5028 10.9 11.9999 10.9C12.497 10.9 12.8999 11.303 12.8999 11.8L12.8999 16.5C12.8999 16.9971 12.497 17.4 11.9999 17.4Z" fill="black"></path>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="tooltip-info"> 상담사가 자체적으로 운영하는 이벤트로 리바운드와는 무관합니다 </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="line-clamp collapsed clamped">
+                                                        <div class="line-clamp">
+                                                            <div class="line-clamp" style="line-height: 1.375;"><p class="prisma-typography body3:regular primary">✅예약확정 이벤트 (예약 주신 분에 한함)✅
+(리뷰이벤트)☕리뷰 작성해주시면 100% 커피쿠폰 드려요:)
+※별 5개리뷰에 한함
+(예: 너무 친절하게 잘 이용했습니다:)
+😝 채팅창에 작성내역 캡쳐해서 보여주세요:)</p>
+                                                            </div>
+                                                            <div id="goCounselorInfo"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="background-block"></div>
+                                <!-- 상담사 정보/리뷰/질문답변 리스트 -->
+                                <ul class="sticky-nav">
+                                    <li tab-id="about" class="about active" onclick="location.href='#goCounselorInfo'">
+                                        <span>상담사 정보</span>
+                                    </li>
+                                    <li tab-id="reviews" class="reviews" onclick="location.href='#goReviews'">
+                                        <span>리뷰 2,904</span>
+                                    </li>
+                                    <li tab-id="FAQ" class="FAQ" onclick="location.href='#goFAQ'">
+                                        <span>질문답변</span>
+                                    </li>
+                                </ul>
+                                <!-- 상담사 정보 -->
+                                <div class="observer-container">
+                                    <section data-observe="about" id="about">
+                                        <div class="profile-provider-info" style="margin-top: 40px;">
+                                            <div class="profile-provider-info-title">
+                                                <h2>상담사 정보</h2>
+                                            </div>
+                                            <ul>
+                                                <li class="active-time"> 연락 가능 시간 : 오전 9시 - 오후 6시 </li>
+                                                <li class="payment">숨고페이, 카드결제, 계좌이체, 현금결제 가능</li>
+                                            </ul>
+                                        </div>
+                                        <div class="profile-service-desc collapsed" style="margin-top: 60px;">
+                                            <h2 data-v-2fb7d1a9="">상담사 소개</h2>
+                                            <div class="description"> 상담사 리바운드입니다
+(리뷰,고용횟수는 거짓말을 하지 않습니다)
+
+저희 강트럭은 고객님의 만족을 최우선으로 
+안전 배송을 약속 지켜드리기 위해
+최선을 다하고 있습니다
+
+
+🚚오토바이.1톤 카고,윙바디,호로,2.5톤 3.5톤 5톤 11톤 25톤 전 차량 보유🚚
+                                                    <!-- 이동 위치(리뷰) -->
+                                                    <div id="goReviews"></div>
+
+                                                <div class="gradient"></div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <!-- 리뷰 -->
+                                    <section data-observe="reviews" id="reviews">
+                                        <div class="profile-review" id="profile-link" style="margin-top: 60px;">
+                                            <h2 class="review-title prisma-typography headline20 primary">리뷰</h2>
+                                            <div class="review-wrapper">
+                                                <div class="profile-review-summary">
+                                                    <div class="rating prisma-rating large">
+                                                        <div class="star-rate">
+                                                            <img src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='variants=full'%3e%3cpath%20id='vector'%20d='M11.4463%202.46771C10.8425%201.28854%209.15728%201.28855%208.5535%202.46771L6.6302%206.22383L2.39751%206.81664C1.0461%207.00591%200.515692%208.67586%201.51022%209.61024L4.53361%2012.4508L3.81285%2016.5011C3.57804%2017.8207%204.95167%2018.8412%206.14722%2018.2354L9.99991%2016.2831L13.8526%2018.2354C15.0481%2018.8412%2016.4218%2017.8207%2016.187%2016.5011L15.4662%2012.4507L18.4896%209.61024C19.4841%208.67587%2018.9537%207.00591%2017.6023%206.81664L13.3696%206.22383L11.4463%202.46771Z'%20fill='%23FFC300'/%3e%3c/g%3e%3c/svg%3e" alt="별점">
+                                                        </div>
+                                                        <span class="rating-text prisma-typography display28 primary">4.8</span>
+                                                        <span class="prisma-typography body18:regular primary">(2,904)</span>
+                                                    </div>
+                                                </div>
+                                                <div class="profile-review-list-wrapper">
+                                                    <div class="profile-review-list">
+                                                        <div class="review-filter review-filter"></div>
+                                                        <!-- 사용자 리뷰 -->
+                                                        <ul class="review-list">
+                                                            <li id="6889bd61502be181944d6154" class="review-item">
+                                                                <article class="profile-review-item">
+                                                                    <section class="review-header-wrapper">
+                                                                        <div class="review-header">
+                                                                            <div class="review-user">
+                                                                                <!-- 유저 프로필 이미지 -->
+                                                                                <div class="user-avatar">
+                                                                                    <div class="user-profile-picture">
+                                                                                        <div data-name="image" data-src="https://static.cdn.soomgo.com/upload/profile/7a3717b2-8470-4614-aa74-ac43309a2b55.jpg?h=320&amp;w=320&amp;webp=1" lazy="loaded" style="background-image: url(&quot;https://static.cdn.soomgo.com/upload/profile/7a3717b2-8470-4614-aa74-ac43309a2b55.jpg?h=320&amp;w=320&amp;webp=1&quot;);"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- 유저 닉네임/작성 시간 -->
+                                                                                <div class="user-info">
+                                                                                    <div class="user-name">
+                                                                                        <span class="prisma-typography body14:semibold primary">여**</span>
+                                                                                    </div>
+                                                                                    <time class="prisma-typography body12:regular secondary">1시간 전</time>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </section>
+                                                                    <section class="review-content">
+                                                                        <div class="review-content-item">
+                                                                            <div class="service-info-wrapper">
+                                                                                <div class="service-info">
+                                                                                    <!-- 받은 서비스 종류 -->
+                                                                                    <span class="prisma-typography body16:semibold primary">용달/화물 운송</span>
+                                                                                    <!-- 별점 -->
+                                                                                    <div class="prisma-rating small">
+                                                                                        <div class="star-rate">
+                                                                                            <img src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='variants=full'%3e%3cpath%20id='vector'%20d='M11.4463%202.46771C10.8425%201.28854%209.15728%201.28855%208.5535%202.46771L6.6302%206.22383L2.39751%206.81664C1.0461%207.00591%200.515692%208.67586%201.51022%209.61024L4.53361%2012.4508L3.81285%2016.5011C3.57804%2017.8207%204.95167%2018.8412%206.14722%2018.2354L9.99991%2016.2831L13.8526%2018.2354C15.0481%2018.8412%2016.4218%2017.8207%2016.187%2016.5011L15.4662%2012.4507L18.4896%209.61024C19.4841%208.67587%2018.9537%207.00591%2017.6023%206.81664L13.3696%206.22383L11.4463%202.46771Z'%20fill='%23FFC300'/%3e%3c/g%3e%3c/svg%3e" alt="별점">
+                                                                                        </div>
+                                                                                        <span class="prisma-typography body16:semibold primary">5.0</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- 리뷰 내용 -->
+                                                                            <div class="review-content-wrapper">
+                                                                                <span class="prisma-typography body14:regular primary review-content">배당되어 오신기사님이 너무친절하고 좋으셨어요  알아서척척 해주시고 담에또 이용할일있으면 여기로하겠습니다</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </section>
+                                                                    <!-- 리뷰 답변 -->
+                                                                    <section class="review-comment">
+                                                                        <div>
+                                                                            <article class="review-comment-item">
+                                                                                <div class="comment-header">
+                                                                                    <div class="user-name">
+                                                                                        <span class="prisma-typography body14:semibold primary">리바운드 상담사</span>
+                                                                                        <span class="prisma-typography body14:regular secondary">57분 전</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <span class="prisma-typography body14:regular primary">⭐강트럭입니다⭐ 이용해 주셔서 감사합니다 좀 더 노력하는 강트럭이 되겠습니다</span>
+                                                                            </article>
+                                                                        </div>
+                                                                    </section>
+                                                                </article>
+                                                            </li>
+                                                            <li id="68899c66ca55bca7c3925e7a" class="review-item">
+                                                                <article class="profile-review-item">
+                                                                    <section class="review-header-wrapper">
+                                                                        <div class="review-header">
+                                                                            <div class="review-user">
+                                                                                <!-- 유저 프로필 이미지 -->
+                                                                                <div class="user-avatar">
+                                                                                    <div class="user-profile-picture">
+                                                                                        <div data-name="image" class="" data-src="https://static.cdn.soomgo.com/upload/profile/d7d12c13-5659-4613-9ef6-030c053646f2.jpg?h=320&amp;w=320&amp;webp=1" lazy="loaded" style="background-image: url(&quot;https://static.cdn.soomgo.com/upload/profile/d7d12c13-5659-4613-9ef6-030c053646f2.jpg?h=320&amp;w=320&amp;webp=1&quot;);"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- 유저 닉네임/작성 시간 -->
+                                                                                <div class="user-info">
+                                                                                    <div class="user-name">
+                                                                                        <span class="prisma-typography body14:semibold primary">정**</span>
+                                                                                    </div>
+                                                                                    <time class="prisma-typography body12:regular secondary">3시간 전</time>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </section>
+                                                                    <section class="review-content">
+                                                                        <div class="review-content-item">
+                                                                            <div class="service-info-wrapper">
+                                                                                <div class="service-info">
+                                                                                    <!-- 받은 서비스 종류 -->
+                                                                                    <span class="prisma-typography body16:semibold primary">용달/화물 운송</span>
+                                                                                    <div class="prisma-rating small">
+                                                                                        <div class="star-rate">
+                                                                                            <img src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='variants=full'%3e%3cpath%20id='vector'%20d='M11.4463%202.46771C10.8425%201.28854%209.15728%201.28855%208.5535%202.46771L6.6302%206.22383L2.39751%206.81664C1.0461%207.00591%200.515692%208.67586%201.51022%209.61024L4.53361%2012.4508L3.81285%2016.5011C3.57804%2017.8207%204.95167%2018.8412%206.14722%2018.2354L9.99991%2016.2831L13.8526%2018.2354C15.0481%2018.8412%2016.4218%2017.8207%2016.187%2016.5011L15.4662%2012.4507L18.4896%209.61024C19.4841%208.67587%2018.9537%207.00591%2017.6023%206.81664L13.3696%206.22383L11.4463%202.46771Z'%20fill='%23FFC300'/%3e%3c/g%3e%3c/svg%3e" alt="별점">
+                                                                                        </div>
+                                                                                        <!-- 별점 -->
+                                                                                        <span class="prisma-typography body16:semibold primary">5.0</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- 리뷰 내용 -->
+                                                                            <div class="review-content-wrapper">
+                                                                                <span class="prisma-typography body14:regular primary review-content">너무 친절하게 작업해주세요!!!</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </section>
+                                                                    <!-- 리뷰 답변 -->
+                                                                    <section class="review-comment">
+                                                                        <div>
+                                                                            <article class="review-comment-item">
+                                                                                <div class="comment-header">
+                                                                                    <div class="user-name">
+                                                                                        <span class="prisma-typography body14:semibold primary">리바운드 상담사</span>
+                                                                                        <span class="prisma-typography body14:regular secondary">2시간 전</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <span class="prisma-typography body14:regular primary">⭐강트럭입니다⭐ 이용해 주셔서 감사합니다 좀 더 노력하는 강트럭이 되겠습니다</span>
+                                                                            </article>
+                                                                        </div>
+                                                                    </section>
+                                                                </article>
+                                                            </li>
+                                                            <li id="6888bcd6502be181944d5f1e" class="review-item">
+                                                                <article class="profile-review-item">
+                                                                    <section class="review-header-wrapper">
+                                                                        <div class="review-header">
+                                                                            <div class="review-user">
+                                                                                <!-- 유저 프로필 이미지 -->
+                                                                                <div class="user-avatar">
+                                                                                    <div class="user-profile-picture">
+                                                                                        <div data-name="image" class="" data-src="https://static.cdn.soomgo.com/upload/profile/19f7b85c-034c-411c-ba19-28a2deb68342.jpg?h=320&amp;w=320&amp;webp=1" lazy="loaded" style="background-image: url(&quot;https://static.cdn.soomgo.com/upload/profile/19f7b85c-034c-411c-ba19-28a2deb68342.jpg?h=320&amp;w=320&amp;webp=1&quot;);"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- 유저 닉네임/작성 시간 -->
+                                                                                <div class="user-info">
+                                                                                    <div class="user-name">
+                                                                                        <span class="prisma-typography body14:semibold primary">강**</span>
+                                                                                    </div>
+                                                                                    <time class="prisma-typography body12:regular secondary">1일 전</time>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </section>
+                                                                    <section class="review-content">
+                                                                        <div class="review-content-item">
+                                                                            <div class="service-info-wrapper">
+                                                                                <div class="service-info">
+                                                                                    <!-- 받은 서비스 종류 -->
+                                                                                    <span class="prisma-typography body16:semibold primary">용달/화물 운송</span>
+                                                                                    <div class="prisma-rating small">
+                                                                                        <div class="star-rate">
+                                                                                            <img src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='variants=full'%3e%3cpath%20id='vector'%20d='M11.4463%202.46771C10.8425%201.28854%209.15728%201.28855%208.5535%202.46771L6.6302%206.22383L2.39751%206.81664C1.0461%207.00591%200.515692%208.67586%201.51022%209.61024L4.53361%2012.4508L3.81285%2016.5011C3.57804%2017.8207%204.95167%2018.8412%206.14722%2018.2354L9.99991%2016.2831L13.8526%2018.2354C15.0481%2018.8412%2016.4218%2017.8207%2016.187%2016.5011L15.4662%2012.4507L18.4896%209.61024C19.4841%208.67587%2018.9537%207.00591%2017.6023%206.81664L13.3696%206.22383L11.4463%202.46771Z'%20fill='%23FFC300'/%3e%3c/g%3e%3c/svg%3e" alt="별점">
+                                                                                        </div>
+                                                                                        <!-- 별점 -->
+                                                                                        <span class="prisma-typography body16:semibold primary">5.0</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- 리뷰 내용 -->
+                                                                            <div class="review-content-wrapper">
+                                                                                <span class="prisma-typography body14:regular primary review-content">잘 해 주시고 추가 요구도 잘 들어주셨어요
+감사합니다</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </section>
+                                                                    <!-- 리뷰 답변 -->
+                                                                    <section class="review-comment">
+                                                                        <div>
+                                                                            <article class="review-comment-item">
+                                                                                <div class="comment-header">
+                                                                                    <div class="user-name">
+                                                                                        <span class="prisma-typography body14:semibold primary">리바운드 상담사</span>
+                                                                                        <span class="prisma-typography body14:regular secondary">2시간 전</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <span class="prisma-typography body14:regular primary">⭐강트럭입니다⭐ 이용해 주셔서 감사합니다 좀 더 노력하는 강트럭이 되겠습니다</span>
+                                                                                <!-- 이동 위치(질문답변) -->
+                                                                                <div id="goFAQ"></div>
+                                                                            </article>
+                                                                        </div>
+                                                                    </section>
+                                                                </article>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <!-- 질문답변 -->
+                                    <section data-observe="FAQ" id="FAQ" style="margin-top: 60px;">
+                                        <div class="profile-qna" style="margin-top: 60px;">
+                                            <h2>질문답변</h2>
+                                            <ul>
+                                                <li>
+                                                    <div class="question">Q. 서비스가 시작되기 전 어떤 절차로 진행하나요?</div>
+                                                    <div class="answer">
+                                                        <div class="collapsed-text-line collapsed">
+                                                            <div class="wrapper">
+                                                                <p>먼저 고객 님이 원하시는 서비스가 어떤 서비스 인지를 채팅을 통해 말씀해 주세요
+                                                                    <br>보내드린 견적이 만족스러우시면 추가 적으로 원하시는 서비스가 있는지 말씀 주세요
+                                                                    <br>고객님이 예약 주신 시간 날짜에 맞춰서 고수가 추천 드린 기사 님이  들어가실꺼에요
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="question">Q. 어떤 서비스를 전문적으로 제공하나요?</div>
+                                                    <div class="answer">
+                                                        <div class="collapsed-text-line">
+                                                            <div class="wrapper">
+                                                                <p>화물 용달,화물 운송을 전문적으로 하고 있습니다
+                                                                    <br>원룸 이사,전문적인 화물 건을 쉽고 빠르게 처리해 드리고 있습니다
+                                                                    <br>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="question">Q. 서비스의 견적은 어떤 방식으로 산정 되나요?</div>
+                                                    <div class="answer">
+                                                        <div class="collapsed-text-line collapsed">
+                                                            <div class="wrapper">
+                                                                <p>거리당 금액
+                                                                    <br>기사님의 수작업 유무
+                                                                    <br>엘베 유무
+                                                                    <br>이렇게 예상 견적을 유추해서 견적서를 보내드립니다
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="question">Q. A/S 또는 환불 규정은 어떻게 되나요?</div>
+                                                    <div class="answer">
+                                                        <div class="collapsed-text-line">
+                                                            <div class="wrapper">
+                                                                <p>기본적인 운송 중 파손 손상의 대해서는 화물 보험 현금 지원 A/S 비용 등
+                                                                    <br>고객 님이 만족하시는 사후 처리를 약속드립니다
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </section>
+                                    <section data-observe="activity" style="display: none;" id="activity"></section>
+                                    <section style="display: none;"></section>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 우측 컨트롤러 -->
+                        <div class="aside-section col">
+                            <aside class="user-profile-aside">
+                                <div class="target-request-banner">
+                                    <p>리바운드 상담사에게 원하는 상담을 신청해보세요</p>
+                                </div>
+                                <div class="btn-wrapper">
+                                    <button type="button" class="btn btn-primary reservation">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="button-icon prisma-icon primary">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 3.75C8.5 3.33579 8.16421 3 7.75 3C7.33579 3 7 3.33579 7 3.75V5H5C3.89543 5 3 5.89543 3 7V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V7C21 5.89543 20.1046 5 19 5H17.5V3.75C17.5 3.33579 17.1642 3 16.75 3C16.3358 3 16 3.33579 16 3.75V5H8.5V3.75ZM4.5 12H19.5V19C19.5 19.2761 19.2761 19.5 19 19.5H5C4.72386 19.5 4.5 19.2761 4.5 19V12Z" fill="black"></path>
+                                        </svg>
+                                        예약하기
+                                    </button>
+                                </div>
+                                <span class="average-response-time prisma-typography body14:regular primary"> 평균 <span class="time">15분 내</span> 응답하는 상담사입니다 </span>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../static/js/counselor-list/counselor-contents.js"></script>
+</html>

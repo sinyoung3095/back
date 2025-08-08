@@ -1,0 +1,297 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+ul, li {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+main {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    width: 100%;
+}
+body {
+    line-height: 1;
+}
+* {
+    box-sizing: border-box;
+    word-break: break-word;
+}
+main {
+    display: block;
+    unicode-bidi: isolate;
+}
+html, body, #__next {
+    font-family: font, "font Fallback";
+    line-height: 1.5;
+    color: rgb(41, 51, 65);
+}
+
+.log-1{
+    display: flex
+;
+}
+.log-2{
+    min-height: 1.375rem;
+    line-height: 1.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    color: rgb(28, 36, 47);
+    text-align: left;
+    display: flex
+;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.log-3{
+    display: flex
+;
+    position: relative;
+}
+.log-4{
+    margin: 0px 2px 0px 0px;
+}
+.log-5{
+    display: none;
+    position: relative;
+    width: 8px;
+    height: 8px;
+    background-color: rgb(255, 53, 65);
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 999px;
+}
+.log-6{
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    display: inline-flex
+;
+}
+.log-7{
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    transition-property: color, border-color, background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    color: rgb(41, 51, 65);
+    background-color: transparent;
+    padding: 0px;
+    font-size: 14px;
+    width: initial;
+    display: flex
+;
+    border: 0px;
+}
+.log-8{
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+.log-9{
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    transition-property: color, border-color, background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    color: rgb(41, 51, 65);
+    background-color: transparent;
+    padding: 0px;
+    font-size: 14px;
+    width: initial;
+    display: flex
+;
+    border: 0px;
+}
+.log-10{
+    position: relative;
+    display: block;
+}
+.log-11{
+    font-weight: 500;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+    transition-property: color, border-color, background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    color: rgb(41, 51, 65);
+    border-color: transparent;
+    background-color: transparent;
+    padding: 0px;
+    font-size: 14px;
+    width: initial;
+    display: flex
+;
+    gap: 8px;
+    -webkit-box-align: center;
+    align-items: center;
+    user-select: none;
+}
+.logo-12{
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid rgb(239, 241, 245);
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 32px;
+    max-height: 32px;
+}
+
+.logo-13 > ul {
+    display: flex
+;
+    gap: 16px;
+}
+
+.main{
+    position: relative;
+    max-width: calc(632px);
+    margin: 0px auto;
+    padding: 0px 16px;
+}
+.main-1{
+    padding-bottom: 100px;
+}
+.main-2{
+    min-height: 2.375rem;
+    line-height: 2.375rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+    border: 0px;
+    color: rgb(28, 36, 47);
+    text-align: left;
+    margin: 0px;
+    padding: 50px 0px;
+}
+.main-3{
+    display: flex
+;
+    flex-direction: column;
+    gap: 6px;
+}
+.main-4{
+    padding: 20px 0px 16px;
+    border-top: 1px solid rgb(239, 241, 245);
+}
+.main-5{
+    display: flex
+;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 16px 0px;
+}
+.main-6{
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid rgb(239, 241, 245);
+}
+.main-7{
+    flex: 1 1 0%;
+    overflow: hidden;
+    text-align: left;
+    padding-left: 12px;
+}
+.main-8{
+    display: flex
+;
+    flex: 1 1 0%;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(41, 51, 65);
+}
+.main-9{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 5px;
+}
+.main-10{
+    flex: 0 0 auto;
+    padding-right: 24px;
+}
+.main-11{
+    display: flex
+;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: rgb(170, 180, 191);
+}
+.main-12{
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: rgb(106, 118, 133);
+    font-weight: 500;
+    background-color: rgb(239, 241, 245);
+}
+.main-13{
+    display: flex
+;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 12px 0px;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+.main-14{
+    display: flex
+;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.main-15{
+    font-size: 18px;
+    font-weight: 700;
+}
+.main-16{
+    display: flex
+;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 16px 0px;
+    gap: 12px;
+    cursor: pointer;
+}
+.main-17{
+    flex: 1 1 auto;
+    display: flex
+;
+    flex-direction: column;
+}
+.main-18{
+    display: flex
+;
+    -webkit-box-align: center;
+    align-items: center;
+    font-weight: 500;
+}

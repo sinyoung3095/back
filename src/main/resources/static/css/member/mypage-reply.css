@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+    word-break: break-word;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+ul, li {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+button {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    cursor: pointer;
+}
+main {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    width: 100%;
+}
+main {
+    display: block;
+    unicode-bidi: isolate;
+}
+.main-1{
+    position: relative;
+    max-width: calc(1002px);
+    margin: 0px auto;
+    padding: 0px 16px;
+}
+.main-2{
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 60px;
+    margin: 50px 0px;
+}
+.main-3{
+    display: flex
+;
+    gap: 16px;
+    border-bottom: 1px solid rgb(239, 241, 245);
+    margin: 0px;
+    padding: 0px;
+}
+
+.main-4{
+    display: inline-block;
+    font-size: 14px;
+    padding: 11px 4px 13px;
+    cursor: pointer;
+    color: rgb(106, 118, 133);
+    line-height: 22px;
+}
+.main-5{
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    line-height: 22px;
+    padding: 10px 4px 12px;
+    font-weight: 500;
+    color: rgb(41, 51, 65);
+    border-bottom: 2px solid rgb(41, 51, 65);
+}
+.main-6{
+    padding: 20px 0px;
+    border-bottom: 1px solid rgb(239, 241, 245);
+    width: 100%;
+    text-align: left;
+}
+.main-7{
+    display: -webkit-box;
+    max-height: 3em;
+    line-height: 1.5;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: rgb(41, 51, 65);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    word-break: break-word;
+}
+.main-8{
+    color: rgb(143, 154, 171);
+    font-size: 14px;
+}
+.main-9{
+    padding: 20px 0px;
+}
+.main-10{
+    display: -webkit-box;
+    max-height: 1.5em;
+    line-height: 1.5;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: rgb(143, 154, 171);
+    font-size: 14px;
+    margin-bottom: 8px;
+    word-break: break-word;
+}
+.main-11{
+    text-align: center;
+    padding: 180px 0px;
+}
+.main-12{
+    display: inline-block;
+    padding: 0px 48px;
+    text-align: center;
+}
+.main-13{
+    display: flex
+;
+    flex-direction: column;
+    row-gap: 8px;
+    margin-top: 20px;
+    white-space: pre-line;
+}
+.main-14{
+    min-height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    color: rgb(106, 118, 133);
+    text-align: center;
+}
+.main-15{
+    min-height: 1.375rem;
+    line-height: 1.375rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    color: rgb(106, 118, 133);
+    text-align: center;
+}

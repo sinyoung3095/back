@@ -1,0 +1,474 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+.main{
+    display: flex;
+}
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: .0625rem solid rgba(0, 0, 0, .1);
+}
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+svg {
+    overflow: hidden;
+    vertical-align: middle;
+}
+body {
+    margin: 0;
+    font-family: Pretendard, Malgun Gothic, -apple-system, Segoe UI, Roboto, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #293341;
+    text-align: left;
+    background-color: #fff;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+    .main-1 {
+        width: 100%;
+        height: calc(100vh - 4.5rem);
+    }
+
+
+.main .main-1 {
+    width: 100%;
+    background: #eff1f5;
+    
+        flex-shrink: 0;
+        width: 24.75rem;
+        max-height: calc(100vh - 4.5rem);
+        overflow-y: auto;
+}
+
+.main .main-2{
+    width: 100%;
+    flex: 1;
+}
+.main-2.active{
+    display: none;
+}
+.main-2{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: .75rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+.main-3{
+    height: 100%;
+    padding: 0 0 3rem;
+    background: linear-gradient(180deg, #f6f7f9, #eff1f5);
+}
+
+.main-4{
+    padding: 1.5rem 1.25rem 0;
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+    line-height: 1.75rem !important;
+}
+
+
+.main-5{
+        margin: 0 0 1rem;
+        padding: 0 1.25rem;
+}
+
+
+.main-7{
+    display: flex;
+    -moz-column-gap: .75rem;
+    column-gap: .75rem;
+    padding: 1.5rem 0 1rem;
+    border-bottom: .0625rem solid #E0E5EB;
+}
+
+.main-8{
+    padding: 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: .0625rem solid transparent;
+}
+
+.main-9{
+    font-weight: 700 !important;
+    margin: 0;
+    letter-spacing: normal !important;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    letter-spacing: normal !important;
+    font-family: Pretendard, Malgun Gothic, -apple-system, Segoe UI, Roboto, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+    word-break: break-word;
+    text-decoration: none;
+}
+.main-10{
+    padding: 0 1.25rem;
+    margin-bottom: 10px;
+}
+.main-11{
+    outline: .0625rem solid #C7CED6 !important;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 20px;
+}
+.main-12{
+        display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    cursor: pointer;
+    background: #fff;
+    border-radius: 20px;
+}
+.main-13{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.25rem 0;
+}
+
+.main-14{
+    display: flex;
+    align-items: center;
+}
+.main-15{
+    position: relative;
+    margin-right: .5rem;
+    line-height: 1;
+}
+.main-16{
+    
+    background-color: #c7ced6;
+    background-clip: padding-box;
+        display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+}
+.main-17{
+    display: -webkit-box;
+    max-height: 1.5em;
+    line-height: 1.5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: normal;
+    color: #6a7685;
+    font-size: .875rem !important;
+    line-height: 1.375rem !important;
+    font-weight: 400 !important;
+    margin: 0;
+}
+
+.main-18{
+    display: flex;
+    gap: .75rem;
+    justify-content: space-between;
+    padding: 0 1.25rem;
+}
+.main-19{
+    display: flex;
+    flex-direction: column;
+}
+.main-20{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+.main-21{
+    font-size: .875rem !important;
+    line-height: 1.375rem !important;
+    font-weight: 500 !important;
+    margin: 0;
+    color: #6a7685;
+}
+.main-22{
+    margin-top: .25rem;
+}
+.main-23{
+    font-weight: 700 !important;
+    margin: 0;
+}
+.main-24{
+    font-weight: 700 !important;
+    margin: 0;
+}
+.main-25{
+    padding: .25rem 0 0;
+    display: flex;
+    align-items: center;
+}
+.main-26{
+    padding: .75rem 1rem 1rem;
+    flex: 1 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.main-26-1{
+    padding: .75rem 1rem 1rem;
+    flex: 1 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.divider{
+    
+    display: inline-block;
+    width: .0625rem;
+    height: 1.375rem;
+    background: #eff1f5;
+}
+.img-fluid{
+    max-width: 100%;
+    height: auto;
+}
+.main-27{
+    color: #6a7685;
+    font-weight: 600 !important;
+    
+}
+.box{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: .75rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.main-28.active{
+    display: block;
+}
+.main-28{
+    flex: 1;
+    width: 100%;
+    display: none;
+}
+.main-29{
+    height: calc(100vh - 4.5rem);
+    min-height: calc(100vh - 4.5rem);
+    display: flex;
+    flex-direction: column;
+}
+.main-30{
+    padding: 1rem 1.5rem;
+    border-bottom: .0625rem solid #EFF1F5;
+}
+.main-31{
+    color: #1c242f;
+    font-size: 1.125rem !important;
+    font-weight: 700 !important;
+    line-height: 1.625rem !important;
+    margin: 0;
+}
+.main-32{
+        height: 100%;
+        overflow-y: auto;
+}
+.main-33{
+    display: flex
+;
+    flex-direction: column;
+    gap: 1.25rem;
+        padding: 1.5rem 1.25rem;
+}
+.main-34{
+    display: flex
+;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+.main-35{
+    display: flex
+;
+    align-items: center;
+}
+.main-36{
+    position: relative;
+    margin-right: .5rem;
+    line-height: 1;
+    white-space:nowrap;
+}
+.main-37{
+    background-color: #c7ced6;
+    background-clip: padding-box;
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+}
+.main-38{
+    
+    display: -webkit-box;
+    max-height: 1.5em;
+    font-size: .875rem !important;
+    line-height: 1.375rem !important;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: normal;
+    color: #6a7685;
+    margin: 0;
+}
+.main-39{
+    color: #6a7685;
+    font-size: .875rem !important;
+    margin: 0;
+}
+.main-40{
+    display: flex
+;
+    flex-direction: column;
+}
+.main-41{
+    display: flex
+;
+    gap: .5rem;
+    align-items: center;
+}
+.main-42{
+    color: #6a7685;
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
+    font-weight: 500 !important;
+    padding: 0;
+    margin: 0;
+}
+.main-43{
+    margin-top: .25rem;
+}
+.first-line{
+    
+    display: flex
+;
+    -moz-column-gap: .125rem;
+    column-gap: .125rem;
+}
+.main-44{
+    color: #1c242f;
+    font-size: 1.125rem !important;
+    font-weight: 700 !important;
+    line-height: 1.625rem !important;
+    padding: 0;
+    margin: 0;
+}
+.main-45{
+    
+    color: #1c242f;
+    font-size: 1.125rem !important;
+    font-weight: 700 !important;
+    line-height: 1.625rem !important;
+    padding: 0;
+    margin: 0;
+}
+.main-46 {
+    position: relative;
+    margin-top: .375rem;
+}
+.main-47{
+    margin-top: .125rem;
+    
+    display: flex
+;
+    gap: .375rem;
+    align-items: center;
+    margin-bottom: 0;
+}
+.main-48{
+    color: #aab4bf;
+}
+.main-49{
+    flex: 1;
+    color: #1c242f;
+
+}
+.main-50{
+    margin: 0;
+    border-top: .5rem solid #EFF1F5;
+}
+.main-51{
+        padding: 1.5rem 0;
+        margin: 0 1.5rem;
+        border-top: .0625rem solid #EFF1F5;
+    }
+.main-52{
+    display: flex
+;
+    align-items: center;
+    justify-content: space-between;
+}
+.main-53{
+    color: #1c242f;
+    font-size: 1.125rem !important;
+    font-weight: 700 !important;
+    line-height: 1.625rem !important;
+    padding: 0;
+    margin: 0;
+}
+.main-54{
+    display: flex
+;
+    gap: 1rem;
+    align-items: center;
+    margin-top: .75rem;
+}
+.main-55{
+    position: relative;
+}
+.main-56{
+    background-color: #c7ced6;
+    background-clip: padding-box;
+    
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+.main-57{
+    color: #6a7685;
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
+    font-weight: 400 !important;
+    padding: 0;
+    margin: 0;
+}
+.main-58{
+    margin: 0;
+}
+.main-59{
+    color: #6a7685;
+    font-size: .875rem !important;
+    line-height: 1.375rem !important;
+    font-weight: 400 !important;
+    padding: 0;
+    margin: 0;
+}
+.main-60{
+    color: #6a7685;
+}

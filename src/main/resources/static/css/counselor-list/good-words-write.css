@@ -1,0 +1,889 @@
+html, body, #__next {
+    font-family: font, "font Fallback";
+    line-height: 1.5;
+    color: rgb(41, 51, 65);
+}
+
+html, body, #__next {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    line-height: 1;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, 
+abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, 
+strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, 
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+* {
+    box-sizing: border-box;
+    word-break: break-word;
+}
+
+#__next {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    cursor: pointer;
+}
+
+input {
+    border: none;
+    padding: 0px;
+    outline: none;
+}
+
+p {
+    margin: 0px;
+}
+
+ul, li {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+/* 상단 */
+.main-container {
+    position: relative;
+    max-width: calc(1002px);
+    margin: 0px auto;
+    padding: 0px 16px;
+}
+
+main {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.container-div {
+    margin-bottom: 80px;
+}
+
+.good-words-header {
+    margin: 48px 0px 24px;
+    font-size: 34px;
+    font-weight: 500;
+    color: rgb(41, 51, 65);
+    line-height: normal;
+}
+
+.good-words {
+    display: flex;
+    gap: 85px;
+}
+
+.good-words-top {
+    width: 600px;
+    margin: auto;
+}
+
+.top-h2 {
+    position: relative;
+    margin-bottom: 48px;
+    font-size: 20px;
+}
+
+.top-h2::after {
+    content: "*필수";
+    position: absolute;
+    top: calc(50% - 9px);
+    right: 0px;
+    color: rgb(234, 22, 35);
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.good-words-body {
+    padding-top: 48px;
+    border-top: 1px solid rgb(239, 241, 245);
+}
+
+/* 본문 머리글 */
+.body-header {
+    margin-bottom: 48px;
+}
+
+.body-content-text::placeholder {
+    color: #afb4be;
+}
+
+.body-header-legend::after {
+    content: "*";
+    margin-left: 2px;
+    color: rgb(234, 22, 35);
+}
+
+.body-header-legend {
+    margin-bottom: 8px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.body-header-input {
+    padding: 12px;
+    width: 100%;
+    border: 1px solid rgb(224, 229, 235);
+    border-radius: 4px;
+    color: rgb(41, 51, 65);
+    font-size: 16px;
+}
+
+.body-header-input::placeholder {
+    color: #afb4be; 
+}
+
+.input-text-number {
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    margin-top: 4px;
+    font-size: 12px;
+}
+
+.text-number01 {
+    color: rgb(170, 180, 191);
+    font-size: 12px;
+}
+
+.text-number02 {
+    color: rgb(170, 180, 191);
+}
+
+/* 본문 내용 */
+.body-content {
+    margin-bottom: 32px;
+}
+
+.body-content-text {
+    padding: 12px;
+    width: 100%;
+    border: 1px solid rgb(224, 229, 235);
+    border-radius: 4px;
+    color: rgb(41, 51, 65);
+    font-size: 16px;
+    resize: none;
+    outline: none;
+}
+
+.input-text-number {
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    margin-top: 4px;
+    font-size: 12px;
+}
+
+.input-text-number:has(:nth-of-type(2)) {
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.input-text-check {
+    color: rgb(234, 22, 35);
+}
+
+/* 확인 내용 */
+.check-box {
+    padding: 32px 20px;
+    background-color: rgb(246, 247, 249);
+    border-radius: 8px;
+}
+
+.check-box-name {
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.check-box-ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0px;
+    color: rgb(106, 118, 133);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.check-box-ul li {
+    position: relative;
+    padding-left: 12px;
+}
+
+.check-box-ul li::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    width: 3px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: rgb(106, 118, 133);
+}
+
+/* 작성 완료 버튼 */
+.complete-button {
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-top: 48px;
+    width: 100%;
+}
+
+.complete:disabled {
+    border: none;
+    background-color: rgb(170, 180, 191);
+}
+
+.complete:disabled, .complete[disabled] {
+    background-color: rgb(170, 180, 191);
+    border-color: rgb(170, 180, 191);
+    cursor: not-allowed;
+}
+
+.complete {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+    user-select: none;
+    transition-property: color, border-color, background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    color: rgb(255, 255, 255);
+    border-color: rgb(105, 59, 242);
+    background-color: rgb(105, 59, 242);
+    padding: 11px 12px;
+    font-size: 16px;
+    width: 120px;
+    height: 48px;
+    border-radius: 6px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

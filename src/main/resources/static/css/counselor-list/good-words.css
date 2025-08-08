@@ -1,0 +1,1552 @@
+#app {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    /* font-family: Pretendard, Malgun Gothic, -apple-system, Segoe UI, Roboto, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji"; */
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #293341;
+    text-align: left;
+    background-color: #fff;
+}
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+#app[data-is-loaded=true], 
+#app[data-is-loaded=true] #app-header, 
+#app[data-is-loaded=true] #app-sticky-nav, 
+#app[data-is-loaded=true] #app-body {
+    opacity: 1;
+}
+
+#app #app-body {
+    height: 100%;
+    position: relative;
+    flex-grow: 1;
+}
+
+#app #app-header, #app #app-body {
+    opacity: 0;
+    transition: opacity .3s ease-in;
+}
+
+* {
+    word-break: break-word;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+
+h1, .h1 {
+    font-size: 2.5rem;
+    line-height: 3.75rem;
+    font-weight: 400;
+    letter-spacing: -.04375rem;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button, input {
+    overflow: visible;
+}
+
+input, button, select, optgroup, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+button {
+    border-radius: 0;
+}
+
+ul {
+    padding: 0;
+}
+
+ol, ul, dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    color: #293341;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+figure {
+    margin: 0 0 1rem;
+}
+
+h3, .h3 {
+    font-size: 1.75rem;
+    line-height: 2.625rem;
+    font-weight: 400;
+    letter-spacing: -.03125rem;
+}
+
+
+/* body */
+.community-container {
+    max-width: 100%;
+}
+
+.container-lg, .container-md, .container-sm, .container {
+    max-width: 62.5rem;
+}
+
+.container {
+    width: 100%;
+    padding-right: .9375rem;
+    padding-left: .9375rem;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 62.5rem;
+}
+
+.pro-knowhow-container {
+    max-width: 100%;
+}
+
+section.pro-knowhow {
+    max-width: 60.625rem;
+    padding-bottom: 5rem;
+    margin: auto;
+}
+
+/* body 헤더 */
+.pro-knowhow-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 3.125rem;
+    margin-bottom: 2.5rem;
+}
+
+.pro-knowhow-title {
+    margin: 0;
+    font-size: 2.125rem;
+    font-weight: 500;
+    line-height: normal;
+    color: #293341;
+    letter-spacing: normal;
+}
+
+.btn-group, .btn-group-vertical {
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+.dropup, .dropright, .dropdown, .dropleft {
+    position: relative;
+}
+
+/* 글쓰기 버튼 */
+.write-button-desktop .b-dropdown button.btn.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 7.5rem;
+    height: 2.75rem;
+    background-color: #693bf2;
+    border: none;
+    border-radius: 6px;
+}
+
+.btn-group>.btn:hover, .btn-group-vertical>.btn:hover {
+    z-index: 1;
+}
+
+.btn-group>.btn, .btn-group-vertical>.btn {
+    position: relative;
+    flex: 1 1 auto;
+}
+
+button:not(:disabled), 
+[type=button]:not(:disabled), 
+[type=reset]:not(:disabled), 
+[type=submit]:not(:disabled) {
+    cursor: pointer;
+}
+
+section.pro-knowhow-header button.btn {
+    font-weight: 500;
+    transition: opacity .2s ease-in-out;
+}
+
+.dropdown-toggle {
+    white-space: nowrap;
+}
+
+section.pro-knowhow-header button.btn-primary {
+    color: #fff;
+    background-color: #693bf2;
+    border-color: #693bf2;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #293341;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: .0625rem solid transparent;
+    padding: .6875rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+button, [type=button], 
+[type=reset], 
+[type=submit] {
+    -webkit-appearance: button;
+}
+
+.write-button-desktop .b-dropdown button.btn.dropdown-toggle::after {
+    width: 1.125rem;
+    height: 1.125rem;
+    margin-left: .25rem;
+    border: 0;
+    background-image: url(https://assets.cdn.soomgo.com/icons/icon-board-create.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+}
+
+.write-button-desktop .b-dropdown .dropdown-menu {
+    width: 20rem;
+    padding: .5rem 0;
+    margin-top: .875rem;
+    text-align: center;
+    border: solid .0625rem #E0E5EB;
+}
+
+.dropdown-menu-right {
+    right: 0;
+    left: auto;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #293341;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: .0625rem solid rgba(0, 0, 0, .15);
+    border-radius: .25rem;
+}
+
+.write-button-desktop .b-dropdown .dropdown-menu .dropdown-item {
+    padding: 0;
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: .25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #293341;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.write-button-desktop .dropdown-menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .875rem 1.25rem;
+}
+
+.write-button-desktop .dropdown-menu-item-text {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    align-items: flex-start;
+}
+
+.prisma-typography.primary {
+    color: #1c242f;
+}
+
+.prisma-typography.body14\:medium {
+    font-size: .875rem !important;
+    line-height: 1.375rem !important;
+    font-weight: 500 !important;
+}
+
+.prisma-typography {
+    padding: 0;
+    margin: 0;
+    letter-spacing: normal !important;
+    font-family: Pretendard, Malgun Gothic, -apple-system, Segoe UI, Roboto, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+    word-break: break-word;
+    text-decoration: none;
+}
+
+.prisma-typography.tertiary {
+    color: #aab4bf;
+}
+
+.prisma-typography.body12\:regular {
+    font-size: .75rem !important;
+    line-height: 1.25rem !important;
+    font-weight: 400 !important;
+}
+
+.write-button-desktop .dropdown-menu-item-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    background: url("data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M8.834%203.666a.708.708%200%200%200-1.065.929l.063.073%205.333%205.331-5.333%205.333a.708.708%200%200%200-.063.93l.063.072a.708.708%200%200%200%20.93.064l.072-.064%205.834-5.833a.708.708%200%200%200%20.063-.93l-.063-.072-5.834-5.833z'%20fill='%23E2E2E2'%20fill-rule='evenodd'/%3e%3c/svg%3e") no-repeat;
+    background-size: cover;
+}
+
+.write-button-desktop .dropdown-menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .875rem 1.25rem;
+}
+
+.write-button-desktop .dropdown-menu-item-text {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    align-items: flex-start;
+}
+
+/* 헤더 밑줄 */
+ul.category {
+    display: flex;
+    gap: 1rem;
+    min-height: 3.125rem;
+    margin-bottom: 1.875rem;
+    border-bottom: .0625rem solid #EFF1F5;
+}
+
+/*  */
+@media (min-width: 576px) {
+    .d-sm-block {
+        display: block !important;
+    }
+}
+
+.d-none {
+    display: none !important;
+}
+
+.topic-list-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    width: 100%;
+    margin: 0;
+}
+
+.topic-list-menu ul li .topic-link-item {
+    display: flex;
+    align-items: center;
+    height: 3.5rem;
+    padding: 0 1.25rem;
+    font-size: .875rem;
+    color: #293341;
+}
+
+
+
+
+/* 좋은 말 리스트 */
+@media (min-width: 768px) {
+    .community-layout {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 768px) {
+    section.pro-knowhow .community-content-layout {
+        width: 37.5rem;
+        padding: 0;
+        margin-left: 5.3125rem;
+    }
+}
+
+section.pro-knowhow .community-content-layout {
+    padding-top: 1.5rem;
+}
+
+/* 최상단 텍스트 블록 */
+.topic-guide-banner-container.provider-square, 
+.topic-guide-banner-container.pro-knowhow {
+    background-color: #fef6f6;
+}
+
+@media (min-width: 768px) {
+    .topic-guide-banner-container {
+        padding: 1rem 1.5rem;
+    }
+}
+
+.topic-guide-banner-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 4.5rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
+
+.topic-guide-banner-container .guideline {
+    margin: 0;
+    font-size: .875rem;
+    line-height: 1.43;
+    color: #5d697a;
+    letter-spacing: -.01875rem;
+}
+
+.topic-guide-banner-container .guide-icon {
+    width: 4.5rem;
+    height: 2.5rem;
+    margin-left: .625rem;
+}
+
+section.pro-knowhow .community-content-layout .pro-knowhow-list {
+    padding-top: 0;
+    border: none;
+}
+
+.pro-knowhow-list {
+    padding-top: .625rem;
+}
+
+/* 오늘의 좋은 말 목록 */
+.pro-knowhow-list .feed-list.card-list {
+    /* display: grid; */
+    grid-template-columns: repeat(3, 1fr);
+    margin: -.25rem -.5rem -1rem;
+}
+
+.pro-knowhow-list .feed-list {
+    margin: 0;
+}
+
+/* 오늘의 좋은 말 */
+.pro-knowhow-list .pro-knowhow-list-item {
+    flex: 0 1 33.33%;
+}
+
+.pro-knowhow-list .item-wrapper {
+    padding: 1rem .5rem;
+}
+
+.pro-knowhow-list .image-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0;
+    overflow: hidden;
+    border: solid .0625rem rgba(0, 0, 0, .05);
+    border-radius: 8px;
+    padding-bottom: 300px;
+}
+
+.pro-knowhow-list .content-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    cursor: pointer;
+
+    display: block;
+}
+
+/* 오늘의 좋은 말 텍스트 */
+.pro-knowhow-list .image-wrapper .item-wrapper-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(32, 30, 30);
+    font-size: 18px;
+    text-align: center;
+    width: 340px;
+}
+
+.pro-knowhow-list .image-wrapper .item-wrapper-text .text01 {
+    font-weight: 600;
+    font-size: 22px;
+    padding-bottom: 8px;
+}
+
+.pro-knowhow-list .content-title {
+    display: -webkit-box;
+    max-height: 3em;
+    line-height: 1.5;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: .25rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #293341;
+    cursor: pointer;
+}
+
+.pro-knowhow-list .content-writer {
+    display: -webkit-box;
+    max-height: 1.5em;
+    line-height: 1.5;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
+    font-size: .875rem;
+    font-weight: 400;
+    color: #6a7685;
+    cursor: pointer;
+}
+
+/* 위로 가기 버튼 */
+.pro-knowhow .top-btn {
+    right: 1rem;
+    bottom: 6rem;
+}
+
+a:not([href]):hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+.top-btn {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 2rem;
+    z-index: 50;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 .125rem .375rem #0003;
+}
+
+.top-btn img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translate(-50%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
