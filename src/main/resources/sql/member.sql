@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 -- auto-generated definition
+=======
+>>>>>>> 4a5c44db83e2f81e38cc63783fa7ba53e4b9631e
 create table tbl_member
 (
     id                       bigint unsigned auto_increment
@@ -23,5 +26,3 @@ create table tbl_member
     constraint member_phone_number
         unique (member_phone_number)
 );
-
-
