@@ -21,7 +21,7 @@ public class CommunityController {
     }
     @GetMapping("community-list")
     public String goToCommunityList() {
-        return "/community-list/community-list";
+        return "post-list";
     }
     @GetMapping("failure-write")
     public String goToFailureWrite() {
