@@ -8,5 +8,5 @@ import org.springframework.stereotype.Component;
 public class CommonConverter implements Converter<String, Common> {
 
     @Override
-    public Common convert(String source) {return Common.getValueFromType(source);}
+    public Common convert(String source) {return Common.getValueFromCommon(source);}
 }
