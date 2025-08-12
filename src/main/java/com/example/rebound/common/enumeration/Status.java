@@ -7,7 +7,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public enum Status {
-    ACTIVE("active"), INACTIVE("active");
+    ACTIVE("active"), INACTIVE("inactive");
 
     private final String value;
     private static final Map<String, Status> STATUS_MAP =

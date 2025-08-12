@@ -9,12 +9,11 @@ import org.springframework.stereotype.Component;
 @ToString
 @NoArgsConstructor
 @EqualsAndHashCode(of="id")
-public class PostDTO {
+public class CommentDTO {
     private Long id;
-    private String postTitle;
-    private String postContent;
-    private int postViews;
+    private String commentContent;
     private Long memberId;
+    private Long postId;
     private String createdDate;
     private String updatedDate;
 }
