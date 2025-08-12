@@ -1,8 +1,7 @@
 
 create table tbl_member
 (
-    id                       bigint unsigned auto_increment
-        primary key,
+    id                       bigint unsigned auto_increment primary key,
     member_name              varchar(255)                                          not null,
     member_email             varchar(255)                                          null,
     member_kakao_email       varchar(255)                                          null,
@@ -23,3 +22,8 @@ create table tbl_member
     constraint member_phone_number
         unique (member_phone_number)
 );
+
+insert into tbl_member(member_name,member_email,member_phone_number,member_password, member_type)
+values ("관리자","rebound@gmail.com",01012345678,"1234","admin");
+
+select *from tbl_member;
