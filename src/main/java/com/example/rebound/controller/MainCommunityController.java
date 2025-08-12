@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/community-list/**")
-public class CommunityController {
+public class MainCommunityController {
 
     @GetMapping("list")
     public String goToCommunityList() {
