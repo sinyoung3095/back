@@ -8,10 +8,8 @@ import lombok.experimental.SuperBuilder;
 
 @Getter @ToString
 @SuperBuilder
-@EqualsAndHashCode(of = "id")
-public class FileVO extends Period {
+@EqualsAndHashCode(of ="id")
+public class CounselorQualificationsFileVO extends Period {
     private Long id;
-    private String filePath;
-    private String fileName;
-    private int fileSize;
+    private Long counselorId;
 }
