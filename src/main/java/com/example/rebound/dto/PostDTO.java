@@ -16,5 +16,6 @@ public class PostDTO {
     private int postViews;
     private Long memberId;
     private String createdDate;
+    private String relativeDate;
     private String updatedDate;
 }
