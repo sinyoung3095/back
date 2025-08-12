@@ -18,6 +18,7 @@
 </head>
 <body>
     <div id="app">
+        <header th:replace="~{/main-page/header.html}"></header>
         <!-- 여기에 헤더 넣으면 됨 (header) -->
         <div id="app-body">
             <div class="home">
@@ -169,7 +170,7 @@
                             <button type="button" class="slick-arrow slick-prev slick-disabled" style="display: block;">Previous</button>
                             <div class="slick-list">
                                 <div class="slick-track" style="width: 8730px; opacity: 1; transform: translate3d(-970px, 0px, 0px);">
-                                    <a href="">
+                                    <a href="/customer-center/gongji-details">
                                         <div class="slick-slide" tabindex="-1" data-index="0" area-hidden="true" style="width: 970px;">
                                             <div>
                                                 <div class="banner-item" style="width: 100%; display: inline-block;">
@@ -181,42 +182,50 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <div class="slick-slide" tabindex="-1" data-index="1" area-hidden="true" style="width: 970px;">
-                                        <div>
-                                            <div class="banner-item" style="width: 100%; display: inline-block;">
-                                                <div>
-                                                    <img src="https://static.cdn.soomgo.com/upload/banner/9f1a22f3-a51c-434e-a738-077b38cd50b9.png?w=970&webp=1" alt="" class="banner-image">
+                                    <a href="/customer-center/gongji-details">
+                                        <div class="slick-slide" tabindex="-1" data-index="1" area-hidden="true" style="width: 970px;">
+                                            <div>
+                                                <div class="banner-item" style="width: 100%; display: inline-block;">
+                                                    <div>
+                                                        <img src="https://static.cdn.soomgo.com/upload/banner/9f1a22f3-a51c-434e-a738-077b38cd50b9.png?w=970&webp=1" alt="" class="banner-image">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="slick-slide" tabindex="-1" data-index="2" area-hidden="true" style="width: 970px;">
-                                        <div>
-                                            <div class="banner-item" style="width: 100%; display: inline-block;">
-                                                <div>
-                                                    <img src="https://static.cdn.soomgo.com/upload/banner/5ecb71c6-30cb-48f6-953c-0bfb28b90974.png?w=970&webp=1" alt="" class="banner-image">
+                                    </a>
+                                    <a href="/customer-center/gongji-details">
+                                        <div class="slick-slide" tabindex="-1" data-index="2" area-hidden="true" style="width: 970px;">
+                                            <div>
+                                                <div class="banner-item" style="width: 100%; display: inline-block;">
+                                                    <div>
+                                                        <img src="https://static.cdn.soomgo.com/upload/banner/5ecb71c6-30cb-48f6-953c-0bfb28b90974.png?w=970&webp=1" alt="" class="banner-image">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="slick-slide" tabindex="-1" data-index="3" area-hidden="true" style="width: 970px;">
-                                        <div>
-                                            <div class="banner-item" style="width: 100%; display: inline-block;">
-                                                <div>
-                                                    <img src="https://static.cdn.soomgo.com/upload/banner/6ab82068-e4cb-4a16-8fc3-ac75ffdbe2e2.png?w=970&webp=1" alt="" class="banner-image">
+                                    </a>
+                                    <a href="/customer-center/gongji-details">
+                                        <div class="slick-slide" tabindex="-1" data-index="3" area-hidden="true" style="width: 970px;">
+                                            <div>
+                                                <div class="banner-item" style="width: 100%; display: inline-block;">
+                                                    <div>
+                                                        <img src="https://static.cdn.soomgo.com/upload/banner/6ab82068-e4cb-4a16-8fc3-ac75ffdbe2e2.png?w=970&webp=1" alt="" class="banner-image">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="slick-slide" tabindex="-1" data-index="4" area-hidden="true" style="width: 970px;">
-                                        <div>
-                                            <div class="banner-item" style="width: 100%; display: inline-block;">
-                                                <div>
-                                                    <img src="https://static.cdn.soomgo.com/upload/banner/a2ee0eb0-1724-49a0-94ca-fdc5835265da.png?w=970&webp=1" alt="" class="banner-image">
+                                    </a>
+                                    <a href="/customer-center/gongji-details">
+                                        <div class="slick-slide" tabindex="-1" data-index="4" area-hidden="true" style="width: 970px;">
+                                            <div>
+                                                <div class="banner-item" style="width: 100%; display: inline-block;">
+                                                    <div>
+                                                        <img src="https://static.cdn.soomgo.com/upload/banner/a2ee0eb0-1724-49a0-94ca-fdc5835265da.png?w=970&webp=1" alt="" class="banner-image">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -346,7 +355,8 @@
                         </div>
                     </div>
                 </div>
-                 <div class="main-community slide-knowhow-list container">
+                <!-- 커뮤니티 -->
+                <div class="main-community slide-knowhow-list container">
                     <section class="header short-bottom">
                         <h2 class="title">리바운드 커뮤니티에 물어보세요.</h2>
                         <a href="" class="go-list">
@@ -1224,5 +1234,6 @@
         <!-- 여기에 푸터 넣으면 됨(nav) -->
     </div>
 </body>
+<script th:inline="javascript">const posts = [[${posts}]];</script>
 <script src="/js/main-page/main-page.js"></script>
 </html>
