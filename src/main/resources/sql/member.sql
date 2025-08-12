@@ -31,4 +31,8 @@ select *from tbl_member;
 alter table tbl_member change member_kakao_email kakao_email varchar(255);
 alter table tbl_member change member_kakao_profile_url kakao_profile_url varchar(255);
 alter table tbl_member modify member_password varchar(255);
+<<<<<<< HEAD
 alter table tbl_member change member_type member_common enum('admin', 'none') default 'none';
+=======
+alter table tbl_member change member_type member_common enum('admin', 'none') default 'none';
+>>>>>>> 15598a2624f894d05164ad2e56660e559ad18a39
