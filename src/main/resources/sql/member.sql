@@ -1,3 +1,4 @@
+
 create table tbl_member
 (
     id                       bigint unsigned auto_increment primary key,
