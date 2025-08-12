@@ -32,4 +32,4 @@ alter table tbl_member change member_kakao_email kakao_email varchar(255);
 alter table tbl_member change member_kakao_profile_url kakao_profile_url varchar(255);
 alter table tbl_member modify member_password varchar(255);
 alter table tbl_member change member_type member_common enum('admin', 'none') default 'none';
-alter table tbl_counselor modify counselor_approval_status enum ('approval', 'await', 'refusal') default 'await';
+
