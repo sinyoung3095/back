@@ -8,7 +8,7 @@ import lombok.experimental.SuperBuilder;
 
 @Getter @ToString
 @SuperBuilder
-@EqualsAndHashCode(of = "id")
+@EqualsAndHashCode(of ="id")
 public class CounselorQualificationsFileVO extends Period {
     private Long id;
     private Long counselorId;
