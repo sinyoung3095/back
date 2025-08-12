@@ -27,12 +27,24 @@ public class AdminController {
     public String goToCounselingList(){
         return "/admin/counseling-list";
     }
-    @GetMapping("counseling-apply")
+    @GetMapping("counselor-apply")
     public String goToCounselingApply(){
-        return "/admin/counseling-apply";
+        return "/admin/counselor-apply";
     }
     @GetMapping("counselor-list")
     public String goToCounselorList(){
         return "/admin/counselor-list";
+    }
+    @GetMapping("general-memberlist")
+    public String goToGeneralMemberList(){
+        return "/admin/general-memberlist";
+    }
+    @GetMapping("mentor-memberlist")
+    public String goToMentorMemberList(){
+        return "/admin/mentor-memberlist";
+    }
+    @GetMapping("subscribe-memberlist")
+    public String goToSubscribeMemberList(){
+        return "/admin/subscribe-memberlist";
     }
 }

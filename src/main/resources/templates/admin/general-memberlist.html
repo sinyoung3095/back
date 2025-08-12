@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>리바운드 관리자</title>
-    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAACXBIWXMAAAsSAAALEgHS3X78AAAEEklEQVRYw72YP0wbdxTHP3ZGnxMPlWNLiRoQ9oRUrKqNcQc7hVIJWzKbUQagStrBiajZQDGq2yQKsGCXxmoTWpGhbTK0Acl0aapiD85N/FHoUIygliLZcZXwz0goHdyBs2XjA9/xJ0/ycPK79/v83vve/d47TaFQQKnZHZ4OoANoAt6RcVkA5oFJMRmbVBpXUwvC7vAYgID0O4Ny2wDCQFhMxtYPDWF3eAJASOXicjABMRmbUAUh7X4C8HJ89kCCWa8JIQHM7FPzo9oC4NoLopVxPCkApLhVgtXuyUJYDYBe0DEyHMTtblUD4pTWqS6H3eFxAX+qAYhGh9ALOkwmIx+1+djKb6uBuSQmYzN7MzGhJoLFWo+loQ5B0AFgNp9VW5pQRTmkl9DbSu+2WuoZGQqSWl7l4aMpUsurRO/ewWqpV1sWV3kmetQARO/eIZPN4ff3M/79T/j9/WSyucOA9ABoLja7DcCaUg1YGupILa/i9/dXaEAv6Pju2xGMxrdKgAo0siEmYwatdA7UtGh0iPzWbtDR8L2qBbby2/z482MEQUd+a5todEhJ2DN2h8elBVxKSmBpqMNmawTA3S7/SL7/3u5+bLZGzCaj0tI0aZVqILW8iv/6AOHIfdztLQwG+yr8BoN9fNzmYuybH/BfH1CjEcOpc+etIeCCnAaa7e8yMhws1Tidfs7iX3+Tyea4euUyZvNZEgmRwWAf7vYWbt4O88uv02QyOZ78nsDpbKbT5yWdfs6rl2u8fv2fHERcc7HZPQM41YgQwO1uZfBGoHR983aY6eknqI0DfKmVzorK1A72YTYZyee3icefyqo8tbQCwNzcIgCzs8+qfLak+7PZHHpBRyDwmWw9ZDVR3JEg6HA6m9FLb8Vy8/m8bG7msdka2dzMc/XKZVk9dfq8mExGBEFHIvFUbrl1rdSOVRYpIdLa5qOruxezyVg6I8pF6G5vITI2jt3hITI2XiXWoqABurp7aW3zEU+IchDzp86dt2aBfrl/X75aQxRn6fR5+fDSB2Rf/EtPt68kwmLGUqmVCrFqgJHhIAD+awMspVb2fTTEZOwTTaFQwO7wTB7URVkt9XwduYXBcBqAcOQ+Dx9NVfl1+rwEPv+0dN3V3XsgADAlJmMdRU0c2BkvpVbY2dlhbm5xV6zyaS0JOLW8SjabqwVQOrm1UkomgPRB3qPhewh6Hf5rA2QyL9hP0NO//YFe0PHVrdFaAOniWFDe1HQAj3lzVt3USFQP3hBApAgg954ISB3xSdpCeVdVBSG14q4TBFHW8peBxI8ZIC4HoGQMDAFfHHHxDWkeDR1lIL4g1bD7kKNfSEzG/jnSVL5nPOyRSuXaZ0jekE7lSenzwPqxfBqoAdYEGIB1MRmbP2yc/wEm+tU03FWIvQAAAABJRU5ErkJggg==" rel="icon" type="image/x-icon">
-    <link rel="stylesheet" href="/css/admin-memberlist/mentor-memberlist.css">
+    <link data-vue-meta="1" rel="shortcut icon" href="/images/member/icon.png">
+    <link rel="stylesheet" href="/css/admin-memberlist/general-memberlist.css">
 </head>
 <body>
     <div id="rebound">
@@ -51,13 +51,13 @@
                             <ul class="menu-sub-list collapse show" id="menu-6109064136799700f1ebced6">
                                 <li class="submenu menu-item">
                                     <!-- 클릭 한 부분 active -->
-                                    <a href="" class="rebound-link" data-param="0">
+                                    <a href="" class="rebound-link active" data-param="0">
                                         - 
                                         일반 회원
                                     </a>
                                 </li>
                                 <li class="submenu menu-item">
-                                    <a href="" class="rebound-link active" data-param="0">
+                                    <a href="" class="rebound-link" data-param="0">
                                         - 
                                         멘토 회원
                                     </a>
@@ -216,8 +216,8 @@
                                 <div class="col col-auto">
                                     <ul class="tab-name-list list-unstyled list-inline">
                                         <!-- 클릭 한 부분은 active -->
-                                        <li class="tab-name">일반 회원</li>
-                                        <li class="tab-name active">멘토 회원</li>
+                                        <li class="tab-name active">일반 회원</li>
+                                        <li class="tab-name">멘토 회원</li>
                                         <li class="tab-name">구독 회원</li>
                                     </ul>
                                 </div>
@@ -276,7 +276,7 @@
                                     <div class="col-auto">
                                         <div class="filter-wrapper filter-search ml-1">
                                             <div class="input-group">
-                                                <input class="form-control flex-grow-1" type="text" placeholder="ID" value="">
+                                                <input class="form-control flex-grow-1" type="text" placeholder="이름/ID" value="">
                                                 <div class="input-group-append">
                                                     <button class="btn btn-search">
                                                         <span class="comp-icon icon-magnify" id="icons/ico-search.svg">
@@ -310,7 +310,7 @@
                                         <tr>
                                             <td class="td-name">
                                                 <div class="member-name">Test01
-                                                    <span class="badge-label badge text-danger ml-2" data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class="" title="" data-original-title="">멘토회원</span>
+                                                    <span class="badge-label badge text-danger ml-2" data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class="" title="" data-original-title="">일반회원</span>
                                                 </div>
                                                 <div class="member-id">TestId01</div>
                                             </td>
@@ -333,7 +333,7 @@
                                         <tr>
                                             <td class="td-name">
                                                 <div class="member-name">Test01
-                                                    <span class="badge-label badge text-danger ml-2" data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class="" title="" data-original-title="">멘토회원</span>
+                                                    <span class="badge-label badge text-danger ml-2" data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class="" title="" data-original-title="">일반회원</span>
                                                 </div>
                                                 <div class="member-id">TestId01</div>
                                             </td>
@@ -355,7 +355,7 @@
                                         <tr>
                                             <td class="td-name">
                                                 <div class="member-name">Test01
-                                                    <span class="badge-label badge text-danger ml-2" data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class="" title="" data-original-title="">멘토회원</span>
+                                                    <span class="badge-label badge text-danger ml-2" data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class="" title="" data-original-title="">일반회원</span>
                                                 </div>
                                                 <div class="member-id">TestId01</div>
                                             </td>
@@ -377,7 +377,7 @@
                                         <tr>
                                             <td class="td-name">
                                                 <div class="member-name">Test01
-                                                    <span class="badge-label badge text-danger ml-2" data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class="" title="" data-original-title="">멘토회원</span>
+                                                    <span class="badge-label badge text-danger ml-2" data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class="" title="" data-original-title="">일반회원</span>
                                                 </div>
                                                 <div class="member-id">TestId01</div>
                                             </td>
@@ -399,7 +399,7 @@
                                         <tr>
                                             <td class="td-name">
                                                 <div class="member-name">Test01
-                                                    <span class="badge-label badge text-danger ml-2" data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class="" title="" data-original-title="">멘토회원</span>
+                                                    <span class="badge-label badge text-danger ml-2" data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class="" title="" data-original-title="">일반회원</span>
                                                 </div>
                                                 <div class="member-id">TestId01</div>
                                             </td>
@@ -421,7 +421,7 @@
                                         <tr>
                                             <td class="td-name">
                                                 <div class="member-name">Test01
-                                                    <span class="badge-label badge text-danger ml-2" data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class="" title="" data-original-title="">멘토회원</span>
+                                                    <span class="badge-label badge text-danger ml-2" data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class="" title="" data-original-title="">일반회원</span>
                                                 </div>
                                                 <div class="member-id">TestId01</div>
                                             </td>
@@ -443,7 +443,7 @@
                                         <tr>
                                             <td class="td-name">
                                                 <div class="member-name">Test01
-                                                    <span class="badge-label badge text-danger ml-2" data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class="" title="" data-original-title="">멘토회원</span>
+                                                    <span class="badge-label badge text-danger ml-2" data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class="" title="" data-original-title="">일반회원</span>
                                                 </div>
                                                 <div class="member-id">TestId01</div>
                                             </td>
@@ -465,7 +465,7 @@
                                         <tr>
                                             <td class="td-name">
                                                 <div class="member-name">Test01
-                                                    <span class="badge-label badge text-danger ml-2" data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class="" title="" data-original-title="">멘토회원</span>
+                                                    <span class="badge-label badge text-danger ml-2" data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class="" title="" data-original-title="">일반회원</span>
                                                 </div>
                                                 <div class="member-id">TestId01</div>
                                             </td>
@@ -487,7 +487,7 @@
                                         <tr>
                                             <td class="td-name">
                                                 <div class="member-name">Test01
-                                                    <span class="badge-label badge text-danger ml-2" data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class="" title="" data-original-title="">멘토회원</span>
+                                                    <span class="badge-label badge text-danger ml-2" data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class="" title="" data-original-title="">일반회원</span>
                                                 </div>
                                                 <div class="member-id">TestId01</div>
                                             </td>
@@ -509,7 +509,7 @@
                                         <tr>
                                             <td class="td-name">
                                                 <div class="member-name">Test01
-                                                    <span class="badge-label badge text-danger ml-2" data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class="" title="" data-original-title="">멘토회원</span>
+                                                    <span class="badge-label badge text-danger ml-2" data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class="" title="" data-original-title="">일반회원</span>
                                                 </div>
                                                 <div class="member-id">TestId01</div>
                                             </td>
@@ -565,7 +565,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- 멘토회원 상세 모달 창 -->
+                <!-- 일반회원 상세 모달 창 -->
                 <!-- 모달 창이 떠 있을 때 -->
                 <!-- <div class="modal fade member-modal show" style="display: block;" aria-modal="true" role="dialog"> -->
                 <!-- 모달 창이 뜨지 않을 때 -->
@@ -575,7 +575,7 @@
                             <div class="modal-header">
                                 <div class="modal-title">
                                     (TestId01) Test01
-                                    <span class="badge-label text-danger font-weight-bold ml-2">멘토회원</span>
+                                    <span class="badge-label text-danger font-weight-bold ml-2">일반회원</span>
                                 </div>
                                 <button class="close">
                                     <i class="mdi mdi-close"></i>
@@ -588,7 +588,7 @@
                                         <div class="tab-view-body">
                                             <div style="display: block;">
                                                 <div class="tab-inner tab-detail">
-                                                    <!-- 회원 상세정보 -->
+                                                    <!-- 일반회원 상세정보 -->
                                                     <div class="info-layout detail-info">
                                                         <div class="info-title justify-content-between">
                                                             <div class="flex-left d-flex">
@@ -613,10 +613,6 @@
                                                                             <th>가입일</th>
                                                                             <td>2025-06-12</td>
                                                                         </tr>
-                                                                        <tr>
-                                                                            <th>8월 채택 수</th>
-                                                                            <td>10</td>
-                                                                        </tr>
                                                                     </tbody>
                                                                 </table>
                                                             </div>
@@ -636,14 +632,10 @@
                                                                             <th>최근 접속일</th>
                                                                             <td>2025-07-29</td>
                                                                         </tr>
-                                                                        <tr>
-                                                                            <th>7월 채택 수</th>
-                                                                            <td>10</td>
-                                                                        </tr>
                                                                     </tbody>
                                                                 </table>
                                                             </div>
-                                                        </div>   
+                                                        </div>
                                                     </div>
                                                     <!-- 회원 상담 내역 -->
                                                     <div class="info-layout detail-info">
@@ -787,5 +779,5 @@
         </div>
     </div>
 </body>
-<script src="/js/admin-memberlist/mentor-memberlist.js"></script>
+<script src="/js/admin-memberlist/general-memberlist.js"></script>
 </html>
