@@ -50,3 +50,16 @@ writeContainers.forEach((writeContainer) => {
         }
     });
 });
+
+// 모달 창
+const categoryButton = document.querySelector(".category-select-box");
+const modal = document.querySelector(".categoty-modal");
+const modalClose = document.querySelector(".btn.close-button.btn-none");
+
+categoryButton.addEventListener("click", (e) => {
+    modal.classList.remove("active");
+});
+
+modalClose.addEventListener("click", (e) => {
+    modal.classList.add("active");
+});
