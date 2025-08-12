@@ -1,0 +1,10 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.rebound.mapper.CommunityPostMapper">
+    <!-- 게시글(실패 경험담) 추가 -->
+    <insert id="addFailureWrite">
+        insert into tbl_post (post_content, post_title)
+        values (#{postContent}, #{postTitle})
+    </insert>
+    <!-- 게시글 목록 -->
+
+</mapper>
