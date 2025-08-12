@@ -1,6 +1,5 @@
 package com.example.rebound.domain;
 
-
 import com.example.rebound.audit.Period;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
