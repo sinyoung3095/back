@@ -20,4 +20,3 @@ create table tbl_counselor
     constraint fk_counselor_file
         foreign key (file_id) references tbl_file (id)
 );
-

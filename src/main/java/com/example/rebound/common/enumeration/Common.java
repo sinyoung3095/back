@@ -10,7 +10,7 @@ public enum Common {
     ADMIN("admin"), NONE("none");
 
     private final String value;
-    private static final Map<String, Common> TYPE_MAP =
+    private static final Map<String, Common> COMMON_MAP =
             Arrays.stream(Common.values())
                             .collect(Collectors.toMap(Common::getValue, Function.identity()));
 
@@ -22,7 +22,7 @@ public enum Common {
         return value;
     }
 
-    public static Common getValueFromType(String value) {
-        return Optional.ofNullable(TYPE_MAP.get(value)).orElseThrow(IllegalArgumentException::new);
+    public static Common getValueFromCommon(String value) {
+        return Optional.ofNullable(COMMON_MAP.get(value)).orElseThrow(IllegalArgumentException::new);
     }
 }
