@@ -4,15 +4,15 @@ import lombok.*;
 import org.springframework.stereotype.Component;
 
 @Component
-@Getter @Setter
-@ToString @NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
 @EqualsAndHashCode(of="id")
-public class InquiryDTO {
+public class NoticeDTO {
     private Long id;
-    private String inquiryTitle;
-    private String inquiryContent;
-    private String inquiryEmail;
-    private Long memberId;
+    private String noticeTitle;
+    private String noticeContent;
     private String createdDate;
     private String updatedDate;
 }
