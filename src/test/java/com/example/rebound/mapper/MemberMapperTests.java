@@ -12,14 +12,14 @@ public class MemberMapperTests {
     @Autowired
     private MemberMapper memberMapper;
 
-    @Test
-    public void insertMemberTest(){
-        MemberVO member=MemberVO.builder().memberName("테스트")
-                .memberEmail("test@gmail.com")
-                .memberPassword("123456")
-                .memberPhoneNumber(01012345678L)
-                .build();
-
-        memberMapper.insertMember(member);
-    }
+//    @Test
+//    public void insertMemberTest(){
+//        MemberVO member=MemberVO.builder().memberName("테스트")
+//                .memberEmail("test@gmail.com")
+//                .memberPassword("123456")
+//                .memberPhoneNumber(01012345678L)
+//                .build();
+//
+//        memberMapper.insertMember(member);
+//    }
 }

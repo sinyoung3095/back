@@ -18,6 +18,7 @@
 </head>
 <body>
     <div id="app">
+        <header th:replace="~{/main-page/header.html}"></header>
         <!-- 여기에 헤더 넣으면 됨 (header) -->
         <div id="app-body">
             <div class="home">
@@ -354,7 +355,8 @@
                         </div>
                     </div>
                 </div>
-                 <div class="main-community slide-knowhow-list container">
+                <!-- 커뮤니티 -->
+                <div class="main-community slide-knowhow-list container">
                     <section class="header short-bottom">
                         <h2 class="title">리바운드 커뮤니티에 물어보세요.</h2>
                         <a href="" class="go-list">
@@ -1232,5 +1234,6 @@
         <!-- 여기에 푸터 넣으면 됨(nav) -->
     </div>
 </body>
+<script th:inline="javascript">const posts = [[${posts}]];</script>
 <script src="/js/main-page/main-page.js"></script>
 </html>
