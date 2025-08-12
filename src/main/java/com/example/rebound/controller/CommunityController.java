@@ -19,10 +19,12 @@ public class CommunityController {
     public String goToCommunityContentsWriter() {
         return "/community-list/community-contents-writer";
     }
-    @GetMapping("community-list")
+    @GetMapping("community-posts")
     public String goToCommunityList() {
-        return "post-list";
+        return "/community-list/community-posts";
     }
+
+//    게시글(실패 경험담) 작성 페이지 이동
     @GetMapping("failure-write")
     public String goToFailureWrite() {
         return "/community-list/failure-write";
