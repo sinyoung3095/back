@@ -15,3 +15,4 @@ create table tbl_payment
         foreign key (subscribe_id) references tbl_subscribe (id)
 );
 
+

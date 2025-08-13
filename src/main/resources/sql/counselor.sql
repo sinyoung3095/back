@@ -21,4 +21,6 @@ create table tbl_counselor
         foreign key (file_id) references tbl_file (id)
 );
 
+
 alter table tbl_counselor modify counselor_approval_status enum ('approval', 'await', 'refusal') default 'await';
+

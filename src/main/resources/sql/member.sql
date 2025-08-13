@@ -23,8 +23,9 @@ create table tbl_member
         unique (member_phone_number)
 );
 
-insert into tbl_member(member_name, member_email, member_phone_number, member_password)
-values ('테스트02', 'test02@gmail.com', 01012345679, 1234);
+insert into tbl_member(member_name,member_email,member_phone_number,member_password,member_common)
+values ('관리자','rebound@gmail.com',01012345678,'1234','admin');
+
 
 select * from tbl_member;
 
