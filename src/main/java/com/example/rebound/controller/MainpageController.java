@@ -22,6 +22,7 @@ public class MainpageController {
     @GetMapping("page")
     public String List(Model model) {
         model.addAttribute("posts", mainpageService.getLists());
+        model.addAttribute("counselors", mainpageService.getCounselors());
         return "/main-page/page";
     }
 }

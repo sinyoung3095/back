@@ -7,7 +7,7 @@ import java.util.List;
 
 
 @Mapper
-public interface MainpageMapper {
+public interface PostMapper {
 //    목록
     public List<PostDTO> selectTitleAndContents();
 

@@ -494,15 +494,3 @@ bannerButtons.forEach((bannerButton) => {
 });
 updateBannerIndicator();
 
-
-// 게시글 목록
-const communityContainer = document.querySelector(".curation-contents.has-thumbnail");
-let text = ``;
-posts.forEach((community) => {
-    text += `
-        <p class="topic-name">실패 경험담</p>
-        <p class="curation-title">${community.postTitle}</p>
-        <p class="curation-content">${community.postContent}</p>
-    `;
-})
-    communityContainer.innerHTML = text;

@@ -8,12 +8,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 @Slf4j
-public class MainpageMapperTests {
+public class PostMapperTests {
     @Autowired
-    private MainpageMapper mainpageMapper;
+    private PostMapper postMapper;
 
     @Test
     public void testSelectTitleAndContents(){
-        mainpageMapper.selectTitleAndContents().stream().map(PostDTO::toString).forEach(log::info);
+        postMapper.selectTitleAndContents().stream().map(PostDTO::toString).forEach(log::info);
     }
 }
