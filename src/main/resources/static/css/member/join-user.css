@@ -5,6 +5,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-size: 100%;
     vertical-align: baseline;
 }
+
+body .disableEvent{
+    display: none; !important;
+}
 * {
     box-sizing: border-box;
     word-break: break-word;
@@ -149,8 +153,8 @@ body {
     border-radius: 8px;
     padding: 12px 16px;
     color: rgb(28, 36, 47);
+    border: 1px solid rgb(224, 229, 235);
     width: 100%;
-    border: 1px solid rgb(255, 53, 65);
 }
 .main-13.active{
     border-color:rgb(105, 59, 242);
@@ -316,15 +320,15 @@ body {
     pointer-events: initial;
     height: 48px;
     background-color: rgb(105, 59, 242);
-    color: rgb(255, 255, 255);
+    color: rgb(105, 59, 242);
 }
-.main-30:disabled {
-    cursor: default;
-}
-.main-30:disabled {
-    background-color: rgb(224, 229, 235);
-    color: rgb(170, 180, 191);
-}
+/*.main-30:disabled {*/
+/*    cursor: default;*/
+/*}*/
+/*.main-30:disabled {*/
+/*    background-color: rgb(224, 229, 235);*/
+/*    color: rgb(170, 180, 191);*/
+/*}*/
 .main-31{
     transition: padding 0.3s ease-in-out;
     position: relative;
@@ -451,4 +455,11 @@ body {
     height: 48px;
     color: rgb(28, 36, 47);
     box-shadow: rgb(224, 229, 235) 0px 0px 0px 1px inset;
+}
+
+div.exist-error-message {
+    display: none;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    min-height: 1rem;
 }

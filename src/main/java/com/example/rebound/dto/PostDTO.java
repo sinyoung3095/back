@@ -1,5 +1,6 @@
 package com.example.rebound.dto;
 
+import com.example.rebound.common.enumeration.Status;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
@@ -15,6 +16,8 @@ public class PostDTO {
     private String postContent;
     private int postViews;
     private Long memberId;
+    private Status postStatus;
     private String createdDate;
+    private String relativeDate;
     private String updatedDate;
 }

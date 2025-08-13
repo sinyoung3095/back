@@ -14,4 +14,3 @@ create table tbl_post
 );
 
 select * from tbl_post;
-

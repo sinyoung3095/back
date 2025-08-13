@@ -4,14 +4,27 @@ const modal = document.querySelector(".rebound-modal");
 const modal_Inner = document.querySelector(".modal-inner");
 const modalButton = document.getElementById("rebound-modal-success-button");
 const loginButton = document.querySelector(".btn-login");
-const email = document.querySelector('input[name="rebound"]');
-const pw = document.querySelector('input[name="password"]');
+const email = document.querySelector('input[name="memberEmail"]');
+const pw = document.querySelector('input[name="memberPassword"]');
+const modalText = document.querySelector("div[class=body]");
 
 // 자동로그인 클릭 이벤트
 auto_login_checkbox.addEventListener("change", () => {
     auto_login_icon.style.display = auto_login_checkbox.checked
         ? "block"
         : "none";
+});
+email.addEventListener("blur",(e)=>{
+    if(e.target.value===""){
+        modal.classList.add("active");
+        modalText.innerText="이메일 형식에 맞게 입력해주세요."
+    }
+});
+pw.addEventListener("blur",(e)=>{
+    if(e.target.value===""){
+        modal.classList.add("active");
+        modalText.innerText="비밀번호를 입력해주세요."
+    }
 });
 
 // 가입된 회원정보가 없거나 비밀번호가 잘못 입력 되었을 상황의 모달
