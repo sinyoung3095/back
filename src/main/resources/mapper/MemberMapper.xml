@@ -7,6 +7,6 @@
     </insert>
     <select id="selectAdmin">
         select * from tbl_member
-        where #{memberCommon} = 'admin'
+        where member_common = 'admin'and member_status='active' and member_email=#{memberEmail} and member_password=#{memberPassword}
     </select>
 </mapper>
