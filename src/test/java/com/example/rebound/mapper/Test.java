@@ -1,7 +1,7 @@
 package com.example.rebound.mapper;
 
 import com.example.rebound.dto.MemberDTO;
-import com.example.rebound.repository.AdminDAO;
+import com.example.rebound.repository.MemberDAO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @Slf4j
 public class Test {
     @Autowired
-    private AdminDAO adminDAO;
+    private MemberDAO memberDAO;
     @Autowired
     private MemberDTO memberDTO;
 
@@ -19,6 +19,6 @@ public class Test {
         MemberDTO  memberDTO = new MemberDTO();
         memberDTO.setMemberCommon("admin");
         memberDTO.setMemberName("admin");
-        log.info(adminDAO.isExistMemberEmail(memberDTO).toString());
+        log.info(memberDAO.isExistAdmin(memberDTO).toString());
     }
 }
