@@ -34,11 +34,11 @@
                         <form action="/member/join" method="post" id="joinForm" th:object="${memberDTO}">
                             <div class="main-6">
                                 <div class="main-9">
-                                    <label class="main-10" for=":r2:">이름</label>
+                                    <label class="main-10" for="memberName">이름</label>
                                     <div class="main-11">
                                         <div class="main-12">
                                             <!-- 처음 포커스 전에 class이름은 main-16 이고  -->
-                                            <input id="memberName" type="text" name="name" placeholder="이름을 입력해 주세요." aria-describedby="이름을 입력해 주세요." maxlength="20" enterkeyhint="enter" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" class="main-13 text" value="">
+                                            <input id="memberName" type="text" name="name" placeholder="이름을 입력해 주세요." aria-describedby="이름을 입력해 주세요." maxlength="20" enterkeyhint="enter" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" class="main-13 text" value="" th:field="*{memberName}">
                                         </div>
                                     </div>
                                     <!-- 
@@ -53,11 +53,11 @@
                                     </p>
                                 </div>
                                 <div class="main-9">
-                                    <label class="main-10" for=":ra:">전화번호</label>
+                                    <label class="main-10" for="memberPhoneNumber">전화번호</label>
                                     <div class="main-11">
                                         <div class="main-12">
                                             <span class="main-15"></span>
-                                            <input id=":ra:" type="text" name="email" placeholder="010-1234-5678" inputmode="tel" maxlength="30" enterkeyhint="enter" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" class="main-16 text" value="" style="padding-right: 24px;">
+                                            <input id="memberPhoneNumber" type="text" name="email" placeholder="010-1234-5678" inputmode="tel" maxlength="30" enterkeyhint="enter" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" class="main-16 text" value="" style="padding-right: 24px;" th:field="*{memberPhoneNumber}">
                                         </div>
                                     </div>
                                     <!-- 
@@ -70,11 +70,11 @@
                                     -->
                                 </div>
                                 <div class="main-9">
-                                    <label class="main-10" for=":ra:">이메일</label>
+                                    <label class="main-10" for="memberEmail">이메일</label>
                                     <div class="main-11">
                                         <div class="main-12">
                                             <span class="main-15"></span>
-                                            <input id=":ra:" type="text" name="email" placeholder="example@gmail.com"  inputmode="email" maxlength="30" enterkeyhint="enter" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" class="main-16 text" value="" style="padding-right: 24px;">
+                                            <input id="memberEmail" type="email" name="email" placeholder="example@gmail.com"  inputmode="email" maxlength="30" enterkeyhint="enter" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" class="main-16 text" value="" style="padding-right: 24px;" th:field="*{memberEmail}">
                                         </div>
                                     </div>
                                     <!-- 
@@ -87,11 +87,11 @@
                                     -->
                                 </div>
                                 <div class="main-9">
-                                    <label class="main-10" for=":rl:">비밀번호</label>
+                                    <label class="main-10" for="memberPassword">비밀번호</label>
                                     <div class="main-11">
                                         <div class="main-12">
                                             <span class="main-15"></span>
-                                            <input id=":rl:" type="password" name="password" placeholder="비밀번호를 입력해 주세요." aria-describedby="비밀번호를 입력해 주세요." autocomplete="off" enterkeyhint="enter" class="main-16 text" value="" style="padding-right: 24px;">
+                                            <input id="memberPassword" type="password" name="password" placeholder="비밀번호를 입력해 주세요." aria-describedby="비밀번호를 입력해 주세요." autocomplete="off" enterkeyhint="enter" class="main-16 text" value="" style="padding-right: 24px;" th:field="*{memberPassword}">
                                         </div>
                                     </div>
                                     <!-- 

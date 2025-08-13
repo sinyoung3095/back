@@ -1,6 +1,7 @@
 package com.example.rebound.mapper;
 
 import com.example.rebound.domain.MemberVO;
+import com.example.rebound.dto.MemberDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +15,12 @@ public class MemberMapperTests {
 
     @Test
     public void insertMemberTest(){
-        MemberVO member=MemberVO.builder().memberName("테스트")
-                .memberEmail("test@gmail.com")
-                .memberPassword("123456")
-                .memberPhoneNumber("01012345678")
-                .build();
+        MemberDTO memberDTO = new MemberDTO();
+        memberDTO.setMemberName("정은유");
+        memberDTO.setMemberEmail("test@gmail.com");
+        memberDTO.setMemberPassword("123456");
+        memberDTO.setMemberPhoneNumber("01012345678");
 
-        memberMapper.insertMember(member);
+        memberMapper.insertMember(memberDTO);
     }
 }
