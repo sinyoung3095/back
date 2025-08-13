@@ -11,7 +11,6 @@
         join tbl_comment c on p.id = c.post_id
         and p.post_status = 'active'
         order by p.created_date desc
-        limit #{count} offset #{offset}
     </select>
 
     <select id="selectCountAll">
