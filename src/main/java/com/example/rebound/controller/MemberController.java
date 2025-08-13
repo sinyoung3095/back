@@ -2,12 +2,15 @@ package com.example.rebound.controller;
 
 import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.service.MemberService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/member/**")
@@ -29,6 +32,22 @@ public class MemberController {
         memberService.joinMember(memberDTO);
         return new RedirectView("/member/login");
     }
+
+    @PostMapping("check-email")
+    @ResponseBody
+    public ResponseEntity<?> checkEmail(@RequestBody Map<String, String> member){
+        String memberEmail = member.get("memberEmail");
+        boolean isExist = memberService.isExistMemberEmail(memberEmail);
+        Map<String, Object> result = new HashMap<>();
+        result.put("memberEmail", memberEmail);
+        result.put("isExist", isExist);
+
+        if(isExist){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(result);
+        }
+        return ResponseEntity.ok().body(result);
+    }
+
     @GetMapping("join-counselor")
     public String goToCounselorJoin(){
         return "member/join-counselor";

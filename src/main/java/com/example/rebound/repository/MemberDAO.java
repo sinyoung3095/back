@@ -15,6 +15,11 @@ public class MemberDAO {
         memberMapper.insertMember(memberDTO);
     }
 
+//    이메일 중복 검사
+    public boolean isExistMemberEmail(String memberEmail){
+        return memberMapper.existMemberEmail(memberEmail);
+    }
+
     //    조회
     public MemberDTO selectMemberById(int memberId) {
         return memberMapper.selectMemberById(memberId);

@@ -36,6 +36,13 @@ memberInputs.forEach((memberInput)=>{
     });
 });
 
+const arCheck = new Array(1).fill(false);
+
+emailInput.addEventListener("blur", async (e) => {
+    const memberEmail = emailInput.value;
+    arCheck[0] = !(await memberService.checkEmail({memberEmail: memberEmail}, memberLayout.checkEmail));
+});
+
 joinButton.addEventListener("click", (e)=>{
     let joinOK=true;
     if(!nameInput.value){

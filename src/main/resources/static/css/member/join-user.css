@@ -456,3 +456,10 @@ body {
     color: rgb(28, 36, 47);
     box-shadow: rgb(224, 229, 235) 0px 0px 0px 1px inset;
 }
+
+div.exist-error-message {
+    display: none;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    min-height: 1rem;
+}
