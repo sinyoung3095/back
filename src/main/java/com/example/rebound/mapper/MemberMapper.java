@@ -1,6 +1,5 @@
 package com.example.rebound.mapper;
 
-import com.example.rebound.domain.MemberVO;
 import com.example.rebound.dto.MemberDTO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -9,9 +8,9 @@ import java.lang.reflect.Member;
 @Mapper
 public interface MemberMapper {
     //    추가
-    public void insertMember(MemberVO memberVO);
+    public void insertMember(MemberDTO memberDTO);
     //    조회
-    public MemberVO selectMemberById(int memberId);
+    public MemberDTO selectMemberById(int memberId);
     //    수정
     public void updateMember(Member member);
     //    삭제

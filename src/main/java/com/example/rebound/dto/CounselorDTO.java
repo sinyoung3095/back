@@ -11,7 +11,7 @@ public class CounselorDTO {
     private Long id;
     private String counselorName;
     private String counselorEmail;
-    private Long counselorPhoneNumber;
+    private String counselorPhoneNumber;
     private String counselorPassword;
     private String counselorAddress;
     private String counselorStatus;
