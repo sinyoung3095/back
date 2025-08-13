@@ -26,7 +26,8 @@ create table tbl_member
 insert into tbl_member(member_name,member_email,member_phone_number,member_password,member_common)
 values ('관리자','rebound@gmail.com',01012345678,'1234','admin');
 
-select *from tbl_member;
+
+select * from tbl_member;
 
 alter table tbl_member change member_kakao_email kakao_email varchar(255);
 alter table tbl_member change member_kakao_profile_url kakao_profile_url varchar(255);

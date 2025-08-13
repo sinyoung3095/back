@@ -26,7 +26,6 @@ public class PostServiceImpl implements PostService{
 
         postCriteria.setHasMore(posts.size() > postCriteria.getRowCount());
 
-//        11개 가져왔으면, 마지막 1개 삭제
         if(postCriteria.isHasMore()){
             posts.remove(posts.size() - 1);
         }
