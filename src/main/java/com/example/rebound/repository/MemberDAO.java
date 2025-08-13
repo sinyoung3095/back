@@ -19,4 +19,8 @@ public class MemberDAO {
     public MemberDTO selectMemberById(int memberId) {
         return memberMapper.selectMemberById(memberId);
     }
+    //    관리자 조회
+    public MemberDTO isExistAdmin(MemberDTO memberDTO) {
+        return memberMapper.selectAdmin(memberDTO);
+    }
 }

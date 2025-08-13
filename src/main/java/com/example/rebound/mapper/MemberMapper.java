@@ -11,6 +11,8 @@ public interface MemberMapper {
     public void insertMember(MemberDTO memberDTO);
     //    조회
     public MemberDTO selectMemberById(int memberId);
+    //    관리자 조회
+    public MemberDTO selectAdmin(MemberDTO memberDTO );
     //    수정
     public void updateMember(Member member);
     //    삭제
