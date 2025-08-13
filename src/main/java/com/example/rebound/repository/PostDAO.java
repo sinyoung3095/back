@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 @RequiredArgsConstructor
 public class PostDAO {
-    private final PostMapper postMapper;
+    private PostMapper postMapper;
 
 //    게시글 목록
     public List<PostDTO> findAll(PostCriteria postCriteria) {
