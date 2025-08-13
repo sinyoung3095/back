@@ -12,7 +12,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class PostServiceImpl implements PostService{
+public class PostServiceImpl implements PostService {
     private final PostDAO postDAO;
 
     @Override
@@ -26,7 +26,7 @@ public class PostServiceImpl implements PostService{
 
         postCriteria.setHasMore(posts.size() > postCriteria.getRowCount());
 
-        if(postCriteria.isHasMore()){
+        if (postCriteria.isHasMore()) {
             posts.remove(posts.size() - 1);
         }
 

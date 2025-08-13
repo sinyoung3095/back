@@ -1,6 +1,7 @@
 package com.example.rebound.controller;
 
 import com.example.rebound.service.PostService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,12 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/community-list/**")
+@RequiredArgsConstructor
 public class CommunityController {
     private final PostService postService;
-
-    public CommunityController(PostService postService) {
-        this.postService = postService;
-    }
 
     @GetMapping("community-contents")
     public String goToCommunityContents() {
@@ -30,9 +28,8 @@ public class CommunityController {
     }
 
 //    게시글(실패 경험담) 커뮤니티 이동
-    @GetMapping("community-posts/{page}")
-    public String communityPosts(@PathVariable int page, Model model) {
-        model.addAttribute("postsCriteriaDTO", postService.getList(page));
+    @GetMapping("community-posts")
+    public String goToCommunityPosts() {
         return "/community-list/community-posts";
     }
 
