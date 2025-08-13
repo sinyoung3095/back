@@ -38,7 +38,7 @@
                                     <div class="main-11">
                                         <div class="main-12">
                                             <!-- 처음 포커스 전에 class이름은 main-16 이고  -->
-                                            <input id="memberName" type="text" name="name" placeholder="이름을 입력해 주세요." aria-describedby="이름을 입력해 주세요." maxlength="20" enterkeyhint="enter" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" class="main-13 text" value="" th:field="*{memberName}">
+                                            <input id="memberName" type="text" name="name" placeholder="이름을 입력해 주세요." aria-describedby="이름을 입력해 주세요." maxlength="20" enterkeyhint="enter" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" class="main-13 text member-input-box" value="" th:field="*{memberName}">
                                         </div>
                                     </div>
                                     <!-- 
@@ -48,7 +48,7 @@
                                     </p>
                                     폰트 컬러도 회색임
                                      -->
-                                    <p class="main-14" role="alert" aria-live="assertive">
+                                    <p class="main-14 name-error-message disableEvent" role="alert" aria-live="assertive">
                                         <span>실명을 입력해 주세요</span>
                                     </p>
                                 </div>
@@ -57,10 +57,13 @@
                                     <div class="main-11">
                                         <div class="main-12">
                                             <span class="main-15"></span>
-                                            <input id="memberPhoneNumber" type="text" name="email" placeholder="010-1234-5678" inputmode="tel" maxlength="30" enterkeyhint="enter" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" class="main-16 text" value="" style="padding-right: 24px;" th:field="*{memberPhoneNumber}">
+                                            <input id="memberPhoneNumber" type="text" name="email" placeholder="01012345678" inputmode="tel" maxlength="30" enterkeyhint="enter" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" class="main-16 text member-input-box" value="" style="padding-right: 24px;" th:field="*{memberPhoneNumber}">
                                         </div>
                                     </div>
-                                    <!-- 
+                                    <p class="main-14 phoneNumber-error-message disableEvent" role="alert" aria-live="assertive">
+                                        <span>전화번호를 입력해 주세요</span>
+                                    </p>
+                                    <!--
                                     미입력시
                                     <p class="main-14" role="alert" aria-live="assertive">
                                         <span>전화번호를 입력해 주세요</span>
@@ -74,9 +77,12 @@
                                     <div class="main-11">
                                         <div class="main-12">
                                             <span class="main-15"></span>
-                                            <input id="memberEmail" type="email" name="email" placeholder="example@gmail.com"  inputmode="email" maxlength="30" enterkeyhint="enter" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" class="main-16 text" value="" style="padding-right: 24px;" th:field="*{memberEmail}">
+                                            <input id="memberEmail" type="email" name="email" placeholder="example@gmail.com"  inputmode="email" maxlength="30" enterkeyhint="enter" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" class="main-16 text member-input-box" value="" style="padding-right: 24px;" th:field="*{memberEmail}">
                                         </div>
                                     </div>
+                                    <p class="main-14 email-error-message disableEvent" role="alert" aria-live="assertive">
+                                        <span>이메일을 입력해 주세요</span>
+                                    </p>
                                     <!-- 
                                     미입력시
                                     <p class="main-14" role="alert" aria-live="assertive">
@@ -91,9 +97,12 @@
                                     <div class="main-11">
                                         <div class="main-12">
                                             <span class="main-15"></span>
-                                            <input id="memberPassword" type="password" name="password" placeholder="비밀번호를 입력해 주세요." aria-describedby="비밀번호를 입력해 주세요." autocomplete="off" enterkeyhint="enter" class="main-16 text" value="" style="padding-right: 24px;" th:field="*{memberPassword}">
+                                            <input id="memberPassword" type="password" name="password" placeholder="비밀번호를 입력해 주세요." aria-describedby="비밀번호를 입력해 주세요." autocomplete="off" enterkeyhint="enter" class="main-16 text member-input-box" value="" style="padding-right: 24px;" th:field="*{memberPassword}">
                                         </div>
                                     </div>
+                                    <p class="main-14 password-error-message disableEvent" role="alert" aria-live="assertive">
+                                        <span>비밀번호를 입력해 주세요</span>
+                                    </p>
                                     <!-- 
                                     <p class="main-14" role="alert" aria-live="assertive">
                                         <span>영문, 숫자, 특수문자 중 2종류 이상 사용해 주세요</span>
@@ -101,13 +110,16 @@
                                     -->
                                 </div>
                                 <div class="main-9">
-                                    <label class="main-10" for=":rm:">비밀번호 확인</label>
+                                    <label class="main-10" for="passwordOK">비밀번호 확인</label>
                                     <div class="main-11">
                                         <div class="main-12">
                                             <span class="main-15"></span>
-                                            <input id=":rm:" type="password" name="passwordConfirm" placeholder="비밀번호를 한 번 더 입력해 주세요." aria-describedby="비밀번호를 한 번 더 입력해 주세요." autocomplete="off" enterkeyhint="enter" class="main-16 text" value="" style="padding-right: 24px;">
+                                            <input id="passwordOK" type="password" name="passwordConfirm" placeholder="비밀번호를 한 번 더 입력해 주세요." aria-describedby="비밀번호를 한 번 더 입력해 주세요." autocomplete="off" enterkeyhint="enter" class="main-16 text member-input-box" value="" style="padding-right: 24px;">
                                         </div>
                                     </div>
+                                    <p class="main-14 passwordOK-error-message disableEvent" role="alert" aria-live="assertive">
+                                        <span>비밀번호가 일치하지 않습니다</span>
+                                    </p>
                                     <!-- 
                                     비밀번호 불일치시
                                     <p class="main-14" role="alert" aria-live="assertive">
@@ -116,171 +128,20 @@
                                     -->
                                 </div>
                             </div>
-                            <!-- 
+                            <!--
                             데이터에 문제가 없을 경우 밑에 약관동의창이 보임
                             main-17의 display block으로 변경
                               -->
-                            <div>
-                                <div class="main-17">
-                                    <div></div>
-                                    <div>
-                                        <div>
-                                            <div class="main-18">
-                                                <label class="css-1sb8vdm ecuffuz0">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" color="#C7CED6">
-                                                        <path fill="currentColor" fill-rule="evenodd" d="M18 3.5H6A2.5 2.5 0 0 0 3.5 6v12A2.5 2.5 0 0 0 6 20.5h12a2.5 2.5 0 0 0 2.5-2.5V6A2.5 2.5 0 0 0 18 3.5M6 2a4 4 0 0 0-4 4v12a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4V6a4 4 0 0 0-4-4z" clip-rule="evenodd"></path>
-                                                    </svg>
-                                                    <input type="checkbox" class="main-21">
-                                                약관 전체 동의
-                                                </label>
-                                            </div>
-                                            <div class="main-19">
-                                                <div class="main-22">
-                                                    <div class="main-23">
-                                                        <input type="checkbox" id=":re:" class="main-24" value="">
-                                                        <label for=":re:" class="main-25">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" color="#693BF2" class="checked">
-                                                                <path fill="currentColor" fill-rule="evenodd" d="M6 2a4 4 0 0 0-4 4v12a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4V6a4 4 0 0 0-4-4zm11.53 7.138a.97.97 0 1 0-1.46-1.276l-5.428 6.208-2.147-2.212a.97.97 0 1 0-1.39 1.35l2.879 2.967a.97.97 0 0 0 1.425-.037z" clip-rule="evenodd"></path>
-                                                            </svg>
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" color="#AAB4BF" class="unchecked">
-                                                                <path fill="currentColor" fill-rule="evenodd" d="M18 3.5H6A2.5 2.5 0 0 0 3.5 6v12A2.5 2.5 0 0 0 6 20.5h12a2.5 2.5 0 0 0 2.5-2.5V6A2.5 2.5 0 0 0 18 3.5M6 2a4 4 0 0 0-4 4v12a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4V6a4 4 0 0 0-4-4z" clip-rule="evenodd"></path>
-                                                            </svg>
-                                                            <div class="main-26">
-                                                                <span class="main-27">
-                                                                    만 14세 이상입니다 (필수)
-                                                                </span>
-                                                            </div>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="main-22">
-                                                    <div class="main-23">
-                                                        <input type="checkbox" id=":rf:" class="main-24" value="">
-                                                        <label for=":rd:" class="main-25">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" color="#693BF2" class="checked">
-                                                                <path fill="currentColor" fill-rule="evenodd" d="M6 2a4 4 0 0 0-4 4v12a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4V6a4 4 0 0 0-4-4zm11.53 7.138a.97.97 0 1 0-1.46-1.276l-5.428 6.208-2.147-2.212a.97.97 0 1 0-1.39 1.35l2.879 2.967a.97.97 0 0 0 1.425-.037z" clip-rule="evenodd"></path>
-                                                            </svg>
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" color="#AAB4BF" class="unchecked">
-                                                                <path fill="currentColor" fill-rule="evenodd" d="M18 3.5H6A2.5 2.5 0 0 0 3.5 6v12A2.5 2.5 0 0 0 6 20.5h12a2.5 2.5 0 0 0 2.5-2.5V6A2.5 2.5 0 0 0 18 3.5M6 2a4 4 0 0 0-4 4v12a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4V6a4 4 0 0 0-4-4z" clip-rule="evenodd"></path>
-                                                            </svg>
-                                                            <div class="main-26">
-                                                                <span class="main-27">이용약관 동의 (필수)</span>
-                                                            </div>
-                                                        </label>
-                                                    </div>
-                                                    <a target="_blank" class="main-28" href="">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" color="#6A7685">
-                                                            <path fill="currentColor" fill-rule="evenodd" d="M17.3 11.92a.75.75 0 0 0-.222-.528l-7.8-7.725a.75.75 0 1 0-1.056 1.066l7.267 7.197-7.272 7.343a.75.75 0 0 0 1.066 1.055l7.8-7.876a.75.75 0 0 0 .217-.531" clip-rule="evenodd"></path>
-                                                        </svg>
-                                                    </a>
-                                                </div>
-                                                <div class="main-22">
-                                                    <div class="main-23">
-                                                        <input type="checkbox" id=":rg:" class="main-24" value="">
-                                                        <label for=":rg:" class="main-25">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" color="#693BF2" class="checked">
-                                                                <path fill="currentColor" fill-rule="evenodd" d="M6 2a4 4 0 0 0-4 4v12a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4V6a4 4 0 0 0-4-4zm11.53 7.138a.97.97 0 1 0-1.46-1.276l-5.428 6.208-2.147-2.212a.97.97 0 1 0-1.39 1.35l2.879 2.967a.97.97 0 0 0 1.425-.037z" clip-rule="evenodd"></path>
-                                                            </svg>
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" color="#AAB4BF" class="unchecked">
-                                                                <path fill="currentColor" fill-rule="evenodd" d="M18 3.5H6A2.5 2.5 0 0 0 3.5 6v12A2.5 2.5 0 0 0 6 20.5h12a2.5 2.5 0 0 0 2.5-2.5V6A2.5 2.5 0 0 0 18 3.5M6 2a4 4 0 0 0-4 4v12a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4V6a4 4 0 0 0-4-4z" clip-rule="evenodd"></path>
-                                                            </svg>
-                                                            <div class="main-26">
-                                                                <span class="main-27">개인정보 수집 및 이용 동의 (필수)</span>
-                                                            </div>
-                                                        </label>
-                                                    </div>
-                                                    <a target="_blank" class="main-28" href="">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" color="#6A7685">
-                                                            <path fill="currentColor" fill-rule="evenodd" d="M17.3 11.92a.75.75 0 0 0-.222-.528l-7.8-7.725a.75.75 0 1 0-1.056 1.066l7.267 7.197-7.272 7.343a.75.75 0 0 0 1.066 1.055l7.8-7.876a.75.75 0 0 0 .217-.531" clip-rule="evenodd"></path>
-                                                        </svg>
-                                                    </a>
-                                                </div>
-                                                <div class="main-22">
-                                                    <div class="main-23">
-                                                        <input type="checkbox" id=":rh:" class="main-24" value="">
-                                                        <label for=":rh:" class="main-25">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" color="#693BF2" class="checked">
-                                                                <path fill="currentColor" fill-rule="evenodd" d="M6 2a4 4 0 0 0-4 4v12a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4V6a4 4 0 0 0-4-4zm11.53 7.138a.97.97 0 1 0-1.46-1.276l-5.428 6.208-2.147-2.212a.97.97 0 1 0-1.39 1.35l2.879 2.967a.97.97 0 0 0 1.425-.037z" clip-rule="evenodd"></path>
-                                                            </svg>
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" color="#AAB4BF" class="unchecked">
-                                                                <path fill="currentColor" fill-rule="evenodd" d="M18 3.5H6A2.5 2.5 0 0 0 3.5 6v12A2.5 2.5 0 0 0 6 20.5h12a2.5 2.5 0 0 0 2.5-2.5V6A2.5 2.5 0 0 0 18 3.5M6 2a4 4 0 0 0-4 4v12a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4V6a4 4 0 0 0-4-4z" clip-rule="evenodd"></path>
-                                                            </svg>
-                                                            <div class="main-26">
-                                                                <span class="main-27">선택정보 수집 및 이용 동의 (선택)</span>
-                                                            </div>
-                                                        </label>
-                                                    </div>
-                                                    <a target="_blank" class="main-28" href="">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" color="#6A7685">
-                                                            <path fill="currentColor" fill-rule="evenodd" d="M17.3 11.92a.75.75 0 0 0-.222-.528l-7.8-7.725a.75.75 0 1 0-1.056 1.066l7.267 7.197-7.272 7.343a.75.75 0 0 0 1.066 1.055l7.8-7.876a.75.75 0 0 0 .217-.531" clip-rule="evenodd"></path>
-                                                        </svg>
-                                                    </a>
-                                                </div>
-                                                <div class="main-22">
-                                                    <div class="main-23">
-                                                        <input type="checkbox" id=":ri:" class="main-24" value="">
-                                                        <label for=":ri:" class="main-25">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" color="#693BF2" class="checked">
-                                                                <path fill="currentColor" fill-rule="evenodd" d="M6 2a4 4 0 0 0-4 4v12a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4V6a4 4 0 0 0-4-4zm11.53 7.138a.97.97 0 1 0-1.46-1.276l-5.428 6.208-2.147-2.212a.97.97 0 1 0-1.39 1.35l2.879 2.967a.97.97 0 0 0 1.425-.037z" clip-rule="evenodd"></path>
-                                                            </svg>
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" color="#AAB4BF" class="unchecked">
-                                                                <path fill="currentColor" fill-rule="evenodd" d="M18 3.5H6A2.5 2.5 0 0 0 3.5 6v12A2.5 2.5 0 0 0 6 20.5h12a2.5 2.5 0 0 0 2.5-2.5V6A2.5 2.5 0 0 0 18 3.5M6 2a4 4 0 0 0-4 4v12a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4V6a4 4 0 0 0-4-4z" clip-rule="evenodd"></path>
-                                                            </svg>
-                                                            <div class="main-26">
-                                                                <span class="main-27">개인정보 마케팅 활용 동의 (선택)</span>
-                                                            </div>
-                                                        </label>
-                                                    </div>
-                                                    <a target="_blank" class="main-28" href="">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" color="#6A7685">
-                                                            <path fill="currentColor" fill-rule="evenodd" d="M17.3 11.92a.75.75 0 0 0-.222-.528l-7.8-7.725a.75.75 0 1 0-1.056 1.066l7.267 7.197-7.272 7.343a.75.75 0 0 0 1.066 1.055l7.8-7.876a.75.75 0 0 0 .217-.531" clip-rule="evenodd"></path>
-                                                        </svg>
-                                                    </a>
-                                                </div>
-                                                <div class="main-22">
-                                                    <div class="main-23">
-                                                        <input type="checkbox" id=":rj:" class="main-24" value="">
-                                                        <label for=":rj:" class="main-25">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" color="#693BF2" class="checked">
-                                                                <path fill="currentColor" fill-rule="evenodd" d="M6 2a4 4 0 0 0-4 4v12a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4V6a4 4 0 0 0-4-4zm11.53 7.138a.97.97 0 1 0-1.46-1.276l-5.428 6.208-2.147-2.212a.97.97 0 1 0-1.39 1.35l2.879 2.967a.97.97 0 0 0 1.425-.037z" clip-rule="evenodd"></path>
-                                                            </svg>
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" color="#AAB4BF" class="unchecked">
-                                                                <path fill="currentColor" fill-rule="evenodd" d="M18 3.5H6A2.5 2.5 0 0 0 3.5 6v12A2.5 2.5 0 0 0 6 20.5h12a2.5 2.5 0 0 0 2.5-2.5V6A2.5 2.5 0 0 0 18 3.5M6 2a4 4 0 0 0-4 4v12a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4V6a4 4 0 0 0-4-4z" clip-rule="evenodd"></path>
-                                                            </svg>
-                                                            <div class="main-26">
-                                                                <span class="main-27">마케팅 알림 수신 동의 (선택)</span>
-                                                            </div>
-                                                        </label>
-                                                    </div>
-                                                    <a target="_blank" class="main-28" href="">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" color="#6A7685">
-                                                            <path fill="currentColor" fill-rule="evenodd" d="M17.3 11.92a.75.75 0 0 0-.222-.528l-7.8-7.725a.75.75 0 1 0-1.056 1.066l7.267 7.197-7.272 7.343a.75.75 0 0 0 1.066 1.055l7.8-7.876a.75.75 0 0 0 .217-.531" clip-rule="evenodd"></path>
-                                                        </svg>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="main-29">
-                                            <button type="submit" disabled="" class="main-30">
-                                                <span class="main-31">
-                                                    <span class="main-32">확인</span>
-                                                </span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="main-7">
                                 <div class="main-33">
                                     <div class="main-34">
                                         <div class="main-35">
-                                            <!-- 약관 동의창에 있는 버튼 -->
                                             <button type="button" class="main-36">
                                                 <span class="main-31">
                                                     <span class="main-32">이전</span>
                                                 </span>
                                             </button>
-                                            <button type="button" disabled="" class="main-37">
+                                            <button type="button" class="main-37 joinButton">
                                                 <span class="main-31">
                                                     <span class="main-32">다음</span>
                                                 </span>
@@ -289,20 +150,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="main-8">
-                                <div class="main-38">
-                                    <button type="button" class="main-39">
-                                        <span class="main-31">
-                                            <span class="main-32">이전</span>
-                                        </span>
-                                    </button>
-                                    <button type="button" disabled="" class="main-30">
-                                        <span class="main-31">
-                                            <span class="main-32">다음</span>
-                                        </span>
-                                    </button>
-                                </div>
-                            </div>
+
                         </form>
                     </div>
                 </div>
