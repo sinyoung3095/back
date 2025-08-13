@@ -12,9 +12,8 @@ public class PostMapperTests {
     @Autowired
     private PostMapper postMapper;
 
-//    @Test
-//    public void testSelectAll(){
-//        postMapper.selectAll().stream().map(PostDTO::toString).forEach(log::info);
-//    }
-
+    @Test
+    public void testSelectTitleAndContents(){
+        postMapper.selectTitleAndContents().stream().map(PostDTO::toString).forEach(log::info);
+    }
 }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.rebound.mapper.CounselorMapper">
+    <select id="getCounselors">
+        select id, counselor_name, counselor_email, counselor_phone_number, counselor_password, counselor_address, counselor_status, counselor_approval_status, created_date, updated_date, file_id
+        from tbl_counselor
+    </select>
+</mapper>

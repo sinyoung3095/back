@@ -1,10 +1,13 @@
 package com.example.rebound.service;
 
+import com.example.rebound.dto.CounselorDTO;
 import com.example.rebound.dto.PostDTO;
 
 import java.util.List;
 
 public interface MainpageService {
-//    목록
+//    게시글 목록
     public List<PostDTO> getLists();
+//    상담사 목록
+    public List<CounselorDTO> getCounselors();
 }

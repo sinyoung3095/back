@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.rebound.mapper.MainpageMapper">
-    <select id="selectTitleAndContents" resultType="com.example.rebound.dto.PostDTO">
-        select post_content, post_title
-        from tbl_post
-    </select>
-</mapper>
