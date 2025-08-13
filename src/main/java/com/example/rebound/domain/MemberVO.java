@@ -15,7 +15,7 @@ public class MemberVO extends Period {
     private String memberEmail;
     private String kakaoEmail;
     private String memberProvider;
-    private Long memberPhoneNumber;
+    private String memberPhoneNumber;
     private String memberPassword;
     private int memberSuggestionCount;
     private String kakaoProfileUrl;

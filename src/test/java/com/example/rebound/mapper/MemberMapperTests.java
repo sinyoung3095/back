@@ -17,7 +17,7 @@ public class MemberMapperTests {
         MemberVO member=MemberVO.builder().memberName("테스트")
                 .memberEmail("test@gmail.com")
                 .memberPassword("123456")
-                .memberPhoneNumber(01012345678L)
+                .memberPhoneNumber("01012345678")
                 .build();
 
         memberMapper.insertMember(member);
