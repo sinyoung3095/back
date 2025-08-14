@@ -57,12 +57,13 @@
                                     <div class="main-11">
                                         <div class="main-12">
                                             <span class="main-15"></span>
-                                            <input id="memberPhoneNumber" type="text" name="email" placeholder="01012345678" inputmode="tel" maxlength="30" enterkeyhint="enter" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" class="main-16 text member-input-box" value="" style="padding-right: 24px;" th:field="*{memberPhoneNumber}">
+                                            <input id="memberPhoneNumber" type="text" name="memberPhoneNumber" placeholder="01012345678" inputmode="tel" maxlength="30" enterkeyhint="enter" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" class="main-16 text member-input-box" value="" style="padding-right: 24px;" th:field="*{memberPhoneNumber}">
                                         </div>
                                     </div>
                                     <p class="main-14 phoneNumber-error-message disableEvent" role="alert" aria-live="assertive">
                                         <span>전화번호를 입력해 주세요</span>
                                     </p>
+                                    <div class="exist-phoneNumber-error-message" style="color: red;"></div>
                                     <!--
                                     미입력시
                                     <p class="main-14" role="alert" aria-live="assertive">
@@ -77,13 +78,13 @@
                                     <div class="main-11">
                                         <div class="main-12">
                                             <span class="main-15"></span>
-                                            <input id="memberEmail" type="email" name="email" placeholder="example@gmail.com"  inputmode="email" maxlength="30" enterkeyhint="enter" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" class="main-16 text member-input-box" value="" style="padding-right: 24px;" th:field="*{memberEmail}">
+                                            <input id="memberEmail" type="email" name="memberEmail" placeholder="example@gmail.com"  inputmode="email" maxlength="30" enterkeyhint="enter" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" class="main-16 text member-input-box" value="" style="padding-right: 24px;" th:field="*{memberEmail}">
                                         </div>
                                     </div>
                                     <p class="main-14 email-error-message disableEvent" role="alert" aria-live="assertive">
                                         <span>이메일을 입력해 주세요</span>
                                     </p>
-                                    <div class="exist-error-message"></div>
+                                    <div class="exist-email-error-message" style="color: red;"></div>
                                     <!-- 
                                     미입력시
                                     <p class="main-14" role="alert" aria-live="assertive">

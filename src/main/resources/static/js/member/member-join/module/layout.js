@@ -1,14 +1,38 @@
-const memberLayout = (() => {
-    const checkEmail = async (result) => {
-        const errorMessage = document.querySelector("div.exist-error-message")
-        if(result.isExist) {
-            errorMessage.style.display = "block";
-            errorMessage.innerText = "사용할 수 없는 이메일입니다.";
-            return;
-        }
-        errorMessage.style.display = "none";
-        errorMessage.innerText = "";
-    }
+const memberLayout1 = (() => {
+    const showEmailError = (message) => {
+        const errorMessage1 = document.querySelector(".exist-email-error-message");
+        errorMessage1.style.display = "block";
+        errorMessage1.innerText = message;
+    };
 
-    return {checkEmail: checkEmail}
+    const hideEmailError = () => {
+        const errorMessage1 = document.querySelector(".exist-email-error-message");
+        errorMessage1.style.display = "none";
+        errorMessage1.innerText = "";
+    };
+
+    return {
+        showEmailError,
+        hideEmailError
+    };
 })();
+
+const memberLayout2 = (() => {
+    const showPhoneNumberError = (message) => {
+        const errorMessage2 = document.querySelector(".exist-phoneNumber-error-message");
+        errorMessage2.style.display = "block";
+        errorMessage2.innerText = message;
+    };
+
+    const hidePhoneNumberError = () => {
+        const errorMessage2 = document.querySelector(".exist-phoneNumber-error-message");
+        errorMessage2.style.display = "none";
+        errorMessage2.innerText = "";
+    };
+
+    return {
+        showPhoneNumberError,
+        hidePhoneNumberError
+    };
+})();
+

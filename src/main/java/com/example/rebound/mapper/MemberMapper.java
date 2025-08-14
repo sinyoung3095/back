@@ -13,6 +13,9 @@ public interface MemberMapper {
 //    이메일 중복 검사
     @Select("select count(*) > 0 from tbl_member where member_email = #{memberEmail}")
     public boolean existMemberEmail(String memberEmail);
+//    전화번호 중복 검사
+    @Select("select count(*)>0 from app.tbl_member where member_phone_number=#{memberPhoneNumber}")
+    public boolean existMemberPhoneNumber(String memberPhoneNumber);
     //    조회
     public MemberDTO selectMemberById(int memberId);
     //    관리자 조회

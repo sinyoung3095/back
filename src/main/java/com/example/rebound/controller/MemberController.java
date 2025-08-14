@@ -37,12 +37,33 @@ public class MemberController {
     @ResponseBody
     public ResponseEntity<?> checkEmail(@RequestBody Map<String, String> member){
         String memberEmail = member.get("memberEmail");
+
         boolean isExist = memberService.isExistMemberEmail(memberEmail);
         Map<String, Object> result = new HashMap<>();
         result.put("memberEmail", memberEmail);
         result.put("isExist", isExist);
 
+//        System.out.println("이메일 체크 실행");
         if(isExist){
+//            System.out.println("이미 존재하는 이메일");
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(result);
+        }
+        return ResponseEntity.ok().body(result);
+    }
+
+    @PostMapping("check-phone-number")
+    @ResponseBody
+    public ResponseEntity<?> checkPhoneNumber(@RequestBody Map<String, String> member){
+        String memberPhoneNumber = member.get("memberPhoneNumber");
+
+        boolean isExist = memberService.isExistMemberPhoneNumber(memberPhoneNumber);
+        Map<String, Object> result = new HashMap<>();
+        result.put("memberPhoneNumber", memberPhoneNumber);
+        result.put("isExist", isExist);
+
+//        System.out.println("전화번호 체크 실행");
+        if(isExist){
+//            System.out.println("이미 존재하는 전화번호");
             return ResponseEntity.status(HttpStatus.CONFLICT).body(result);
         }
         return ResponseEntity.ok().body(result);
