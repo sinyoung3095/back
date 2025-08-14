@@ -37,10 +37,6 @@ cancel.addEventListener("click", (e) => {
     cancel.classList.remove("active");
 });
 
-// id.addEventListener("focus", (e) => {
-//     id.class = "main-11 active";
-// });
-
 show.addEventListener("click", (e) => {
     console.log("fdsg");
     if (pw.type === "password") {
