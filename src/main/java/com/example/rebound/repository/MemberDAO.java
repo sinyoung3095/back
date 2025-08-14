@@ -5,6 +5,8 @@ import com.example.rebound.mapper.MemberMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 @RequiredArgsConstructor
 public class MemberDAO {
@@ -22,6 +24,11 @@ public class MemberDAO {
 
 //    전화번호 중복 검사
     public boolean isExistMemberPhoneNumber(String memberPhoneNumber){return memberMapper.existMemberPhoneNumber(memberPhoneNumber);}
+
+//    로그인
+    public Optional<MemberDTO> findMemberByEmailAndPassword(MemberDTO memberDTO){
+        return memberMapper.selectMemberForLogin(memberDTO);
+    }
 
     //    조회
     public MemberDTO selectMemberById(int memberId) {
