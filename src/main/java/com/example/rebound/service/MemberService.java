@@ -7,4 +7,6 @@ public interface MemberService {
     public void joinMember(MemberDTO memberDTO);
 //    회원 이메일 중복 검사
     public boolean isExistMemberEmail(String memberEmail);
+//    회원 번호 중복 검사
+    public boolean isExistMemberPhoneNumber(String memberPhoneNumber);
 }

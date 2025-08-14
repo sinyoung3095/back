@@ -20,6 +20,9 @@ public class MemberDAO {
         return memberMapper.existMemberEmail(memberEmail);
     }
 
+//    전화번호 중복 검사
+    public boolean isExistMemberPhoneNumber(String memberPhoneNumber){return memberMapper.existMemberPhoneNumber(memberPhoneNumber);}
+
     //    조회
     public MemberDTO selectMemberById(int memberId) {
         return memberMapper.selectMemberById(memberId);

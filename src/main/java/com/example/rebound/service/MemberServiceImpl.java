@@ -20,4 +20,9 @@ public class MemberServiceImpl implements MemberService {
     public boolean isExistMemberEmail(String memberEmail) {
         return memberDAO.isExistMemberEmail(memberEmail);
     }
+
+    @Override
+    public boolean isExistMemberPhoneNumber(String memberPhoneNumber) {
+        return memberDAO.isExistMemberPhoneNumber(memberPhoneNumber);
+    }
 }
