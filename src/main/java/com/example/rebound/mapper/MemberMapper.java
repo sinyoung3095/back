@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import java.lang.reflect.Member;
+import java.util.Optional;
 
 @Mapper
 public interface MemberMapper {
@@ -16,6 +17,8 @@ public interface MemberMapper {
 //    전화번호 중복 검사
     @Select("select count(*)>0 from app.tbl_member where member_phone_number=#{memberPhoneNumber}")
     public boolean existMemberPhoneNumber(String memberPhoneNumber);
+//    로그인
+    public Optional<MemberDTO> selectMemberForLogin(MemberDTO memberDTO);
     //    조회
     public MemberDTO selectMemberById(int memberId);
     //    관리자 조회

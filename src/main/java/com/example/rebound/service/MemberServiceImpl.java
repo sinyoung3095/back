@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 @Primary
@@ -24,5 +26,10 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public boolean isExistMemberPhoneNumber(String memberPhoneNumber) {
         return memberDAO.isExistMemberPhoneNumber(memberPhoneNumber);
+    }
+
+    @Override
+    public Optional<MemberDTO> login(MemberDTO memberDTO) {
+        return memberDAO.findMemberByEmailAndPassword(memberDTO);
     }
 }
