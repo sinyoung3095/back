@@ -171,9 +171,7 @@ button.btn {
     align-items: center !important;
 }
 
-.justify-content-between {
-    justify-content: space-between !important;
-}
+
 
 .text-right {
     text-align: right !important;

@@ -5,6 +5,8 @@ import com.example.rebound.repository.MemberDAO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class AdminServiceImpl implements AdminService {
@@ -13,5 +15,10 @@ public class AdminServiceImpl implements AdminService {
     public MemberDTO checkAdmin(MemberDTO memberDTO) {
 
         return memberDAO.isExistAdmin(memberDTO);
+    }
+
+    @Override
+    public List<MemberDTO> findGeneralMembers() {
+        return memberDAO.findGeneralMemberAll();
     }
 }

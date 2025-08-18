@@ -5,6 +5,8 @@ import com.example.rebound.mapper.MemberMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 @RequiredArgsConstructor
 public class MemberDAO {
@@ -27,5 +29,8 @@ public class MemberDAO {
     //    관리자 조회
     public MemberDTO isExistAdmin(MemberDTO memberDTO) {
         return memberMapper.selectAdmin(memberDTO);
+    }
+    public List<MemberDTO> findGeneralMemberAll() {
+        return memberMapper.selectGeneralAll();
     }
 }
