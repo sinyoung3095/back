@@ -11,6 +11,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CounselorDAO {
     private final CounselorMapper counselorMapper;
+
+    //    상담사 추가
+    public void saveCounselor(CounselorDTO counselorDTO) {counselorMapper.insertCounselor(counselorDTO);}
     
     public List<CounselorDTO> getCounselorLists() { return counselorMapper.getCounselors(); }
 }

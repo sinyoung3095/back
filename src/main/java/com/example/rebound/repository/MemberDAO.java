@@ -1,5 +1,6 @@
 package com.example.rebound.repository;
 
+import com.example.rebound.dto.CounselorDTO;
 import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.mapper.MemberMapper;
 import lombok.RequiredArgsConstructor;
@@ -27,8 +28,10 @@ public class MemberDAO {
 
 //    로그인
     public Optional<MemberDTO> findMemberByEmailAndPassword(MemberDTO memberDTO){
-        return memberMapper.selectMemberForLogin(memberDTO);
+        return memberMapper.selectMember(memberDTO);
     }
+
+
 
     //    조회
     public MemberDTO selectMemberById(int memberId) {

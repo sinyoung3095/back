@@ -1,5 +1,8 @@
 package com.example.rebound.controller;
 
+import com.example.rebound.common.exception.LoginFailException;
+import com.example.rebound.dto.CounselorDTO;
+import com.example.rebound.dto.CounselorQualificationsFileDTO;
 import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.service.MemberService;
 import org.springframework.http.HttpStatus;
@@ -77,7 +80,9 @@ public class MemberController {
 
 //    상담사 회원가입 페이지로 이동
     @GetMapping("join-counselor")
-    public String goToCounselorJoin(){
+    public String goToCounselorJoin(CounselorDTO counselorDTO, CounselorQualificationsFileDTO counselorQualificationsFileDTO, Model model) {
+        model.addAttribute("counselorDTO", counselorDTO);
+        model.addAttribute("counselorQualificationsFileDTO", counselorQualificationsFileDTO);
         return "member/join-counselor";
     }
 
@@ -91,8 +96,8 @@ public class MemberController {
 //    로그인 완료
     @PostMapping("login")
     public RedirectView Login(MemberDTO memberDTO) {
-        MemberDTO member=memberService.login(memberDTO).orElseThrow();
-        return  new RedirectView("/member/login"); }
+        memberService.login(memberDTO).orElseThrow(LoginFailException::new);
+        return new RedirectView("/main-page/page"); }
 
     @GetMapping("find-email")
     public String goToFindEmail(){
