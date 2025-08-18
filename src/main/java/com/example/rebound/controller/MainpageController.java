@@ -1,6 +1,7 @@
 package com.example.rebound.controller;
 
 import com.example.rebound.service.MainpageService;
+import com.example.rebound.util.PostCriteria;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -14,14 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainpageController {
     private final MainpageService mainpageService;
 
-//    @GetMapping("page")
-//    public String goToMainpage() {
-//        return "/main-page/page";
-//    }
-
     @GetMapping("page")
-    public String List(Model model) {
-        model.addAttribute("posts", mainpageService.getLists());
+    public String List(Model model, PostCriteria postCriteria) {
+        model.addAttribute("posts", mainpageService.getPostList(postCriteria));
         model.addAttribute("counselors", mainpageService.getCounselors());
         return "/main-page/page";
     }
