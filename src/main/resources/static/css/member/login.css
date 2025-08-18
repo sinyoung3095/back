@@ -135,7 +135,7 @@ main {
 .main-11{
     padding: 12px;
     border-radius: 4px;
-    border: 1px solid rgb(234, 22, 35);
+    border: 1px solid rgb(224, 229, 235);
     color: rgb(41, 51, 65);
     font-size: 16px;
     width: 100%;
@@ -153,6 +153,9 @@ main {
     outline: none;
     height: 48px;
     resize: none;
+}
+.main-11-1.active{
+    border: 1px solid rgb(0, 115, 255);
 }
 
 .main-12{

@@ -1,21 +1,60 @@
-const memberService = (() => {
-    const checkEmail = async (member, callback) => {
-        try{
+const memberService1 = (() => {
+    const checkEmail = async (memberEmail) => {
+        try {
             const response = await fetch("/member/check-email", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(member)
-            })
-            const result = await response.json();
+                body: JSON.stringify({ memberEmail })
+            });
 
-            return result.isExist;
+            if (response.status === 409) {
+                return { isExist: true };
+            }
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(errorText || "Fetch error");
+            }
+
+            return await response.json();
         } catch (error) {
             console.error(error);
+            return { isExist: true };
         }
+    };
 
-
-    }
-    return {checkEmail: checkEmail}
+    return { checkEmail };
 })();
+
+const memberService2 = (() => {
+    const checkPhoneNumber = async (memberPhoneNumber) => {
+        try {
+            const response = await fetch("/member/check-phone-number", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ memberPhoneNumber })
+            });
+
+            if (response.status === 409) {
+                return { isExist: true };
+            }
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(errorText || "Fetch error");
+            }
+
+            return await response.json();
+        } catch (error) {
+            console.error(error);
+            return { isExist: true };
+        }
+    };
+
+    return { checkPhoneNumber };
+})();
+

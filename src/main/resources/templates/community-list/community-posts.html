@@ -17,8 +17,8 @@
     <title>커뮤니티 목록</title>
 </head>
 <body class="soomgo-life-topic">
-<!--    <header th:replace="~{/main-page/header2.html :: header}"></header>-->
     <div id="app" data-browser="Chrome" data-is-loaded="true">
+        <header th:replace="~{/main-page/header2.html :: header}"></header>
         <div id="top"></div>
         <!-- body -->
         <div id="app-body">
@@ -518,6 +518,10 @@
             </div>
         </div>
     </div>
+    <footer th:replace="~{/main-page/footer.html :: footer}"></footer>
 </body>
+<script src="/js/community-list/event.js"></script>
+<script src="/js/community-list/module/layout.js"></script>
+<script src="/js/community-list/module/service.js"></script>
 <script src="/js/community-list/community-posts.js"></script>
 </html>

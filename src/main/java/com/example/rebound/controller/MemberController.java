@@ -16,46 +16,84 @@ import java.util.Map;
 @RequestMapping("/member/**")
 public class MemberController {
     private final MemberService memberService;
+    private final MemberDTO memberDTO;
 
-    public MemberController(MemberService memberService) {
+    public MemberController(MemberService memberService, MemberDTO memberDTO) {
         this.memberService = memberService;
+        this.memberDTO = memberDTO;
     }
 
+//    회원가입 페이지로 이동
     @GetMapping("join")
     public String goToMemberJoin(MemberDTO memberDTO, Model model) {
         model.addAttribute("memberDTO", memberDTO);
         return "member/join-user";
     }
 
+//    회원가입 완료
     @PostMapping("join")
     public RedirectView MemberJoin(MemberDTO memberDTO) {
         memberService.joinMember(memberDTO);
         return new RedirectView("/member/login");
     }
 
+//    이메일 중복 검사
     @PostMapping("check-email")
     @ResponseBody
     public ResponseEntity<?> checkEmail(@RequestBody Map<String, String> member){
         String memberEmail = member.get("memberEmail");
+
         boolean isExist = memberService.isExistMemberEmail(memberEmail);
         Map<String, Object> result = new HashMap<>();
         result.put("memberEmail", memberEmail);
         result.put("isExist", isExist);
 
+//        System.out.println("이메일 체크 실행");
         if(isExist){
+//            System.out.println("이미 존재하는 이메일");
             return ResponseEntity.status(HttpStatus.CONFLICT).body(result);
         }
         return ResponseEntity.ok().body(result);
     }
 
+//    전화번호 중복 검사
+    @PostMapping("check-phone-number")
+    @ResponseBody
+    public ResponseEntity<?> checkPhoneNumber(@RequestBody Map<String, String> member){
+        String memberPhoneNumber = member.get("memberPhoneNumber");
+
+        boolean isExist = memberService.isExistMemberPhoneNumber(memberPhoneNumber);
+        Map<String, Object> result = new HashMap<>();
+        result.put("memberPhoneNumber", memberPhoneNumber);
+        result.put("isExist", isExist);
+
+//        System.out.println("전화번호 체크 실행");
+        if(isExist){
+//            System.out.println("이미 존재하는 전화번호");
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(result);
+        }
+        return ResponseEntity.ok().body(result);
+    }
+
+//    상담사 회원가입 페이지로 이동
     @GetMapping("join-counselor")
     public String goToCounselorJoin(){
         return "member/join-counselor";
     }
+
+//    로그인 페이지로 이동
     @GetMapping("login")
-    public String goToLogin(){
+    public String goToLogin(MemberDTO memberDTO, Model model) {
+        model.addAttribute("memberDTO", memberDTO);
         return "member/login";
     }
+
+//    로그인 완료
+    @PostMapping("login")
+    public RedirectView Login(MemberDTO memberDTO) {
+        MemberDTO member=memberService.login(memberDTO).orElseThrow();
+        return  new RedirectView("/member/login"); }
+
     @GetMapping("find-email")
     public String goToFindEmail(){
         return "member/find-email";
