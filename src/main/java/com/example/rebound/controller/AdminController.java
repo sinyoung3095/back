@@ -3,11 +3,18 @@ package com.example.rebound.controller;
 
 import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.service.AdminService;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
@@ -15,16 +22,47 @@ import org.springframework.web.servlet.view.RedirectView;
 @RequiredArgsConstructor
 public class AdminController {
     private final AdminService adminService;
+    private final HttpSession session;
 
 //    관리자 로그인페이지 이동
     @GetMapping("admin-login")
-    public String goToAdminLogin(){
+    public String goToAdminLogin(@CookieValue(name="remember", required = false) boolean remember,
+                                 @CookieValue(name="remember_member_email", required = false) String rememberedEmail,
+                                 HttpServletRequest request,
+                                 MemberDTO memberDTO,
+                                 Model model){
+        memberDTO.setRemember(remember);
+        memberDTO.setMemberEmail(rememberedEmail);
+        model.addAttribute("memberDTO", memberDTO);
         return "/admin/admin-login";
     }
 //    로그인 성공시 관리자 메인 페이지 이동
     @PostMapping("admin-login")
-    public RedirectView adminLogin(MemberDTO memberDTO){
+    public RedirectView adminLogin(MemberDTO memberDTO, HttpServletResponse response, RedirectAttributes redirectAttributes){
         if(!(adminService.checkAdmin(memberDTO)==null)){
+            MemberDTO member =adminService.checkAdmin(memberDTO);
+            session.setAttribute("member", member);
+            Cookie rememberMembmerEmailCookie = new Cookie("remember_member_email", memberDTO.getMemberEmail());
+            Cookie rememberCookie = new Cookie("remember", String.valueOf(memberDTO.isRemember()));
+
+            rememberMembmerEmailCookie.setPath("/");
+            rememberCookie.setPath("/");
+
+            if(memberDTO.isRemember()){
+                rememberMembmerEmailCookie.setMaxAge(60 * 60 * 24 * 30); // 30일 유지
+                response.addCookie(rememberMembmerEmailCookie);
+
+                rememberCookie.setMaxAge(60 * 60 * 24 * 30); // 30일 유지
+                response.addCookie(rememberCookie);
+
+            } else{
+                rememberMembmerEmailCookie.setMaxAge(0); // 30일 유지
+                response.addCookie(rememberMembmerEmailCookie);
+
+                rememberCookie.setMaxAge(0); // 30일 유지
+                response.addCookie(rememberCookie);
+            }
+
             return new RedirectView("/admin/admin-mainpage");
         };return new RedirectView("/admin/admin-login");
     }

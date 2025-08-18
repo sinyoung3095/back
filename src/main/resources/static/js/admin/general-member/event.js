@@ -5,6 +5,7 @@ const sideSubLinks = document.querySelectorAll(".rebound-link");
 const tabNames = document.querySelectorAll(".tab-name");
 const icons = document.querySelectorAll(".icon-wrapper i");
 
+layout.showList(service.getMember());
 // 홈 클릭 이벤트
 homeButton.addEventListener("click", (e) => {
     e.preventDefault();

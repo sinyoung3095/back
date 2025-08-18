@@ -22,4 +22,5 @@ public class MemberDTO {
     private String memberCommon;
     private String createdDatetime;
     private String updatedDatetime;
+    private boolean remember;
 }

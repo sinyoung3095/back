@@ -51,28 +51,20 @@
                                 </div>
                                 <div class="box-subtitle">리바운드 관리자에 로그인하세요</div>
                                 <div class="form-group">
-                                    <input class="form-control h65" placeholder="이메일 계정을 입력해주세요" name="memberEmail">
+                                    <input class="form-control h65" placeholder="이메일 계정을 입력해주세요" name="memberEmail" th:field="*{memberDTO.memberEmail}">
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control h65" placeholder="패스워드를 입력해주세요" name="memberPassword">
                                 </div>
                                 <div class="form-group form-rebound-check">
-                                    <!-- 자동 로그인 체크 -->
+                                    <!-- 이메일 저장 체크 -->
                                     <label>
                                         <input type="checkbox" id="auto-login-checkbox" hidden>
                                         <div class="rebound-check d-flex align-items-center undefined">                           
-                                            <div class="rebound-check-box" tabindex="0" style="width: 20px; height: 20px;">
-                                                <i class="mdi mdi-check" style="display: none;"></i>
-                                            </div>
-                                            <div class="rebound-check-content flex-grow-1">자동로그인</div>
-                                        </div>  
-                                    </label>
-                                    <!-- 자동 로그인 체크 (클론코딩 버전)
-                                    <div class="rebound-check d-flex align-items-center undefined checked">
-                                        <div class="rebound-check-box checked" tabindex="0" style="width: 20px; height: 20px;">
-                                            <i class="mdi mdi-check" style="display: inline-block;"></i>
+                                            <input type="checkbox" class="rebound-check-box" name="remember" th:value="true" th:checked="${memberDTO.remember}" tabindex="0" style="width: 20px; height: 20px;">
+                                            <div class="rebound-check-content flex-grow-1">이메일 저장</div>
                                         </div>
-                                    </div> -->
+                                    </label>
                                 </div>
                                 <div class="btn-wrapper">
                                     <button class="btn btn-primary btn-login h65 btn-block">로그인</button>
