@@ -16,12 +16,17 @@ public class MainpageImpl implements MainpageService {
     private final CounselorDAO counselorDAO;
 
 //    게시글 목록
+//    @Override
+//    public List<PostDTO> getLists() {
+//        return postDAO.findTitleAndContent();
+//    }
+
     @Override
     public List<PostDTO> getLists() {
-        return postDAO.findTitleAndContent();
+        return List.of();
     }
 
-//    상담사 목록
+    //    상담사 목록
     @Override
     public List<CounselorDTO> getCounselors() {
         return counselorDAO.getCounselorLists();
