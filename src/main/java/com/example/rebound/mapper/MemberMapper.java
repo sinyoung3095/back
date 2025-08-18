@@ -1,5 +1,6 @@
 package com.example.rebound.mapper;
 
+import com.example.rebound.dto.CounselorDTO;
 import com.example.rebound.dto.MemberDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -18,7 +19,7 @@ public interface MemberMapper {
     @Select("select count(*)>0 from app.tbl_member where member_phone_number=#{memberPhoneNumber}")
     public boolean existMemberPhoneNumber(String memberPhoneNumber);
 //    로그인
-    public Optional<MemberDTO> selectMemberForLogin(MemberDTO memberDTO);
+    public Optional<MemberDTO> selectMember(MemberDTO memberDTO);
     //    조회
     public MemberDTO selectMemberById(int memberId);
     //    관리자 조회

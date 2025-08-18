@@ -1,5 +1,6 @@
 package com.example.rebound.service;
 
+import com.example.rebound.dto.CounselorDTO;
 import com.example.rebound.dto.MemberDTO;
 
 import java.util.Optional;
