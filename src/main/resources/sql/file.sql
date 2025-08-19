@@ -10,3 +10,5 @@ create table tbl_file
     updated_date datetime default CURRENT_TIMESTAMP null
 );
 
+alter table tbl_file add file_original_name varchar(255) not null;
+alter table tbl_file add file_content_type varchar(255) not null;

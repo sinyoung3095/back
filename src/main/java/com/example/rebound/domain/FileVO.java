@@ -13,5 +13,7 @@ public class FileVO extends Period {
     private Long id;
     private String filePath;
     private String fileName;
-    private int fileSize;
+    private String fileSize;
+    private String fileContent;
+    private String fileOriginalName;
 }
