@@ -17,511 +17,379 @@
     <title>커뮤니티 목록</title>
 </head>
 <body class="soomgo-life-topic">
-    <div id="app" data-browser="Chrome" data-is-loaded="true">
-        <header th:replace="~{/main-page/header2.html :: header}"></header>
-        <div id="top"></div>
-        <!-- body -->
-        <div id="app-body">
-            <div class="community-container container">
-                <div class="soomgo-life-container">
-                    <section class="community">
-                        <div class="observer-container">
-                            <!-- 커뮤니티 헤더 -->
-                            <section class="community-header">
-                                <h1 class="community-title">커뮤니티</h1>
-                                <!-- 우측 글쓰기 버튼 -->
-                                <div class="write-button-desktop">
-                                    <div class="dropdown b-dropdown btn-group">
-                                        <button class="btn dropdown-toggle btn-primary">
-                                            글쓰기
-                                        </button>
+<div id="app" data-browser="Chrome" data-is-loaded="true">
+    <div id="top"></div>
+    <!-- body -->
+    <div id="app-body">
+        <div class="community-container container">
+            <div class="soomgo-life-container">
+                <section class="community">
+                    <div class="observer-container">
+                        <!-- 커뮤니티 헤더 -->
+                        <section class="community-header">
+                            <h1 class="community-title">커뮤니티</h1>
+                            <!-- 우측 글쓰기 버튼 -->
+                            <div class="write-button-desktop">
+                                <div class="dropdown b-dropdown btn-group">
+                                    <button class="btn dropdown-toggle btn-primary" onclick="window.location.href='/community-list/failure-write'">
+                                        글쓰기
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- 숨고생활/고수센터 -->
+                        <ul class="category">
+                            <li class="prisma-typography body14:semibold lg:headline16 primary selected">
+                                <a class="link-text router-link-active">
+                                    실패 경험담
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="community-layout">
+                        <div class="community-content-layout" style="margin-left: 185px; margin-right: 185px;">
+                            <!-- 공지 -->
+                            <div class="community-notice-slick slick-slider slick-initialized">
+                                <div class="slick-list">
+                                    <div class="slick-track slick-cloned">
+                                        <div class="slick-slide slick-cloned" style="outline: none; width: 632px;">
+                                            <div class="community-notice-wrapper" style="display: inline-block;">
+                                                <a>
+                                                    <span class="notice-title">공지</span>
+                                                    <span class="notice-text">숨고생활 가이드라인 🤝</span>
+                                                    <span class="sg-icon-v1" style="width: 1rem; height: 1rem; --svg-color: #293341;">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3 11.9209C17.299 11.722 17.2191 11.5316 17.0777 11.3916L9.27772 3.66738C8.9834 3.37592 8.50854 3.37824 8.21708 3.67256C7.92562 3.96688 7.92793 4.44175 8.22225 4.73321L15.4893 11.9297L8.2171 19.2725C7.92563 19.5668 7.92792 20.0417 8.22223 20.3332C8.51654 20.6247 8.9914 20.6224 9.28288 20.3281L17.0829 12.4523C17.2228 12.3109 17.3009 12.1198 17.3 11.9209Z" fill="black"></path>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="slick-slide slick-cloned" style="outline: none; width: 632px;">
+                                            <div class="community-notice-wrapper" style ="display: inline-block;">
+                                                <a>
+                                                    <span class="notice-title">공지</span>
+                                                    <span class="notice-text">사진과 감사 메시지를 더해, 리뷰 쓰기 더 쉬워졌어요!</span>
+                                                    <span class="sg-icon-v1" style="width: 1rem; height: 1rem; --svg-color: #293341;">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3 11.9209C17.299 11.722 17.2191 11.5316 17.0777 11.3916L9.27772 3.66738C8.9834 3.37592 8.50854 3.37824 8.21708 3.67256C7.92562 3.96688 7.92793 4.44175 8.22225 4.73321L15.4893 11.9297L8.2171 19.2725C7.92563 19.5668 7.92792 20.0417 8.22223 20.3332C8.51654 20.6247 8.9914 20.6224 9.28288 20.3281L17.0829 12.4523C17.2228 12.3109 17.3009 12.1198 17.3 11.9209Z" fill="black"></path>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="slick-slide slick-cloned" style="outline: none; width: 632px;">
+                                            <div class="community-notice-wrapper" style="display: inline-block;">
+                                                <a>
+                                                    <span class="notice-title">공지</span>
+                                                    <span class="notice-text">숨고생활 가이드라인 🤝</span>
+                                                    <span class="sg-icon-v1" style="width: 1rem; height: 1rem; --svg-color: #293341;">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3 11.9209C17.299 11.722 17.2191 11.5316 17.0777 11.3916L9.27772 3.66738C8.9834 3.37592 8.50854 3.37824 8.21708 3.67256C7.92562 3.96688 7.92793 4.44175 8.22225 4.73321L15.4893 11.9297L8.2171 19.2725C7.92563 19.5668 7.92792 20.0417 8.22223 20.3332C8.51654 20.6247 8.9914 20.6224 9.28288 20.3281L17.0829 12.4523C17.2228 12.3109 17.3009 12.1198 17.3 11.9209Z" fill="black"></path>
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
+                                </div>
+                            </div>
+                            <section class="curation">
+                                <div class="curation-header">
+                                    <h2 class="prisma-typography headline18 primary">
+                                        가장 많이 본 게시글
+                                    </h2>
+                                    <span class="curation-page">1/3</span>
+                                </div>
+                                <div class="slick-slider">
+                                    <!-- 가장 많이 본 게시글 이전 버튼 -->
+                                    <button type="button" data-role="none" class="slick-arrow slick-prev" style="display:block;">Previous</button>
+                                    <div class="slick-total">
+                                        <div class="slick-total02">
+                                            <div class="slick-list slick-pick">
+                                                <div class="slick-slide">
+                                                    <a>
+                                                        <div class="curation-item">
+                                                            <h3 class="prisma-typography headline16 primary">
+                                                                사진과 감사 메시지를 더해, 리뷰 쓰기 더 쉬워졌어요!
+                                                            </h3>
+                                                            <div class="react-items">
+                                                                <p class="view prisma-typography body12:regular primary">
+                                                                    2,731
+                                                                </p>
+                                                                <p class="comment prisma-typography body12:regular primary">
+                                                                    0
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="slick-slide">
+                                                    <a>
+                                                        <div class="curation-item">
+                                                            <h3 class="prisma-typography headline16 primary">
+                                                                성공하는 사장님을 위한 외주 활용법
+                                                            </h3>
+                                                            <div class="react-items">
+                                                                <p class="view prisma-typography body12:regular primary">
+                                                                    314
+                                                                </p>
+                                                                <p class="comment prisma-typography body12:regular primary">
+                                                                    2
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="slick-slide">
+                                                    <a>
+                                                        <div class="curation-item">
+                                                            <h3 class="prisma-typography headline16 primary">
+                                                                무더위 걱정 없는 여름 이사의 모든 것
+                                                            </h3>
+                                                            <div class="react-items">
+                                                                <p class="view prisma-typography body12:regular primary">
+                                                                    1,403
+                                                                </p>
+                                                                <p class="comment prisma-typography body12:regular primary">
+                                                                    5
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="slick-slide">
+                                                    <a>
+                                                        <div class="curation-item">
+                                                            <h3 class="prisma-typography headline16 primary">
+                                                                초보자를 위한 셀프 인테리어 가이드
+                                                            </h3>
+                                                            <div class="react-items">
+                                                                <p class="view prisma-typography body12:regular primary">
+                                                                    2,613
+                                                                </p>
+                                                                <p class="comment prisma-typography body12:regular primary">
+                                                                    10
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="slick-slide slick-active slick-current">
+                                                    <a>
+                                                        <div class="curation-item">
+                                                            <h3 class="prisma-typography headline16 primary">
+                                                                장마철 누수, 원인과 대처법 총정리
+                                                            </h3>
+                                                            <div class="react-items">
+                                                                <p class="view prisma-typography body12:regular primary">
+                                                                    3,689
+                                                                </p>
+                                                                <p class="comment prisma-typography body12:regular primary">
+                                                                    3
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="slick-slide slick-active">
+                                                    <a>
+                                                        <div class="curation-item">
+                                                            <h3 class="prisma-typography headline16 primary">
+                                                                쾌적한 여름을 위한 생활의 기술
+                                                            </h3>
+                                                            <div class="react-items">
+                                                                <p class="view prisma-typography body12:regular primary">
+                                                                    19,822
+                                                                </p>
+                                                                <p class="comment prisma-typography body12:regular primary">
+                                                                    0
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 가장 많이 본 게시글 다음 버튼 -->
+                                    <button type="button" data-role="none" class="slick-arrow slick-next" style="display:block;">Next</button>
                                 </div>
                             </section>
-                            <!-- 숨고생활/고수센터 -->
-                            <ul class="category">
-                                <li class="prisma-typography body14:semibold lg:headline16 primary selected">
-                                    <a class="link-text router-link-active">
-                                        실패 경험담
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="community-layout">
-                            <div class="community-content-layout" style="margin-left: 185px; margin-right: 185px;">
-                                <!-- 공지 -->
-                                <div class="community-notice-slick slick-slider slick-initialized">
-                                    <div class="slick-list">
-                                        <div class="slick-track slick-cloned">
-                                            <div class="slick-slide slick-cloned" style="outline: none; width: 632px;">
-                                                <div class="community-notice-wrapper" style="display: inline-block;">
-                                                    <a>
-                                                        <span class="notice-title">공지</span>
-                                                        <span class="notice-text">숨고생활 가이드라인 🤝</span>
-                                                        <span class="sg-icon-v1" style="width: 1rem; height: 1rem; --svg-color: #293341;">
-                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3 11.9209C17.299 11.722 17.2191 11.5316 17.0777 11.3916L9.27772 3.66738C8.9834 3.37592 8.50854 3.37824 8.21708 3.67256C7.92562 3.96688 7.92793 4.44175 8.22225 4.73321L15.4893 11.9297L8.2171 19.2725C7.92563 19.5668 7.92792 20.0417 8.22223 20.3332C8.51654 20.6247 8.9914 20.6224 9.28288 20.3281L17.0829 12.4523C17.2228 12.3109 17.3009 12.1198 17.3 11.9209Z" fill="black"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="slick-slide slick-cloned" style="outline: none; width: 632px;">
-                                                <div class="community-notice-wrapper" style ="display: inline-block;">
-                                                    <a>
-                                                        <span class="notice-title">공지</span>
-                                                        <span class="notice-text">사진과 감사 메시지를 더해, 리뷰 쓰기 더 쉬워졌어요!</span>
-                                                        <span class="sg-icon-v1" style="width: 1rem; height: 1rem; --svg-color: #293341;">
-                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3 11.9209C17.299 11.722 17.2191 11.5316 17.0777 11.3916L9.27772 3.66738C8.9834 3.37592 8.50854 3.37824 8.21708 3.67256C7.92562 3.96688 7.92793 4.44175 8.22225 4.73321L15.4893 11.9297L8.2171 19.2725C7.92563 19.5668 7.92792 20.0417 8.22223 20.3332C8.51654 20.6247 8.9914 20.6224 9.28288 20.3281L17.0829 12.4523C17.2228 12.3109 17.3009 12.1198 17.3 11.9209Z" fill="black"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="slick-slide slick-cloned" style="outline: none; width: 632px;">
-                                                <div class="community-notice-wrapper" style="display: inline-block;">
-                                                    <a>
-                                                        <span class="notice-title">공지</span>
-                                                        <span class="notice-text">숨고생활 가이드라인 🤝</span>
-                                                        <span class="sg-icon-v1" style="width: 1rem; height: 1rem; --svg-color: #293341;">
-                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.3 11.9209C17.299 11.722 17.2191 11.5316 17.0777 11.3916L9.27772 3.66738C8.9834 3.37592 8.50854 3.37824 8.21708 3.67256C7.92562 3.96688 7.92793 4.44175 8.22225 4.73321L15.4893 11.9297L8.2171 19.2725C7.92563 19.5668 7.92792 20.0417 8.22223 20.3332C8.51654 20.6247 8.9914 20.6224 9.28288 20.3281L17.0829 12.4523C17.2228 12.3109 17.3009 12.1198 17.3 11.9209Z" fill="black"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <section class="community-review-section">
+                                <div class="header">
+                                    <p>만족도 높은</p>
+                                    <h2>리바운드의 최신 상담 후기</h2>
                                 </div>
-                                <section class="curation">
-                                    <div class="curation-header">
-                                        <h2 class="prisma-typography headline18 primary">
-                                             가장 많이 본 게시글 
-                                        </h2>
-                                        <span class="curation-page">1/3</span>
-                                    </div>
-                                    <div class="slick-slider">
-                                        <!-- 가장 많이 본 게시글 이전 버튼 -->
-                                        <button type="button" data-role="none" class="slick-arrow slick-prev" style="display:block;">Previous</button>
-                                        <div class="slick-total">
-                                            <div class="slick-total02">
-                                                <div class="slick-list slick-pick">
+                                <div class="d-none d-md-block slick-slider slick-initialized">
+                                    <!-- 만족도 이전 버튼 -->
+                                    <button type="button" data-role="none" class="slick-arrow slick-prev" style="display:block;">
+                                        Previous
+                                    </button>
+                                    <div class="community-review-list-total">
+                                        <div class="community-review-list">
+                                            <div class="slick-list">
+                                                <div class="slick-track">
                                                     <div class="slick-slide">
-                                                        <a>
-                                                            <div class="curation-item">
-                                                                <h3 class="prisma-typography headline16 primary">
-                                                                    사진과 감사 메시지를 더해, 리뷰 쓰기 더 쉬워졌어요!
-                                                                </h3>
-                                                                <div class="react-items">
-                                                                    <p class="view prisma-typography body12:regular primary">
-                                                                        2,731
-                                                                    </p>
-                                                                    <p class="comment prisma-typography body12:regular primary">
-                                                                        0
-                                                                    </p>
+                                                        <article class="community-review-card">
+                                                            <a class="service-item">
+                                                                <div class="contents-container">
+                                                                    <h3>에어컨 설치 및 수리</h3>
+                                                                    <p> 엄청 꼼꼼하게 작업해주셨습니다. 자연배수  잘되게끔 설치해주셨구요 실리콘 마감도 깔끔하게 잘됐습니다. 이전 대기시간이 예상보다 길어지게 되었는데도 양해해주셔서 정말 감사합니다. 더운 날씨에 정말 고생하셨습니다! </p>
+                                                                    <div class="contents-footer">
+                                                                            <span class="review-star">
+                                                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="prisma-icon warning">
+                                                                                    <path d="M12.105 1.87122C11.7914 1.87122 11.4853 1.96773 11.2284 2.14766C10.975 2.32515 10.7815 2.57534 10.6734 2.86504L8.61423 8.05029L8.60808 8.06632C8.60618 8.07144 8.60283 8.0759 8.59843 8.07915C8.59404 8.0824 8.5888 8.08428 8.58334 8.0846L3.04706 8.44117C1.61138 8.5344 1.12102 10.3313 2.16552 11.2001L2.16648 11.2009L6.40277 14.7343L6.40523 14.7364C6.41476 14.7442 6.42187 14.7546 6.42574 14.7664C6.42952 14.7778 6.42985 14.791 6.4271 14.8027L5.16262 19.7857C4.79476 21.227 6.35038 22.529 7.69736 21.6729L7.69831 21.6723L12.095 18.8881C12.098 18.8862 12.1015 18.8852 12.105 18.8852C12.1086 18.8852 12.1125 18.8865 12.1155 18.8884L16.8405 21.8884L16.8424 21.8896C18.0703 22.6641 19.4818 21.4869 19.1506 20.1797L17.7827 14.8018C17.78 14.7901 17.7806 14.7778 17.7843 14.7664C17.7882 14.7546 17.7953 14.7442 17.8048 14.7364L22.0436 11.2009L22.0445 11.2001C23.089 10.3313 22.5983 8.53437 21.1626 8.44115L15.6314 8.08488L15.6267 8.08461C15.6213 8.0843 15.616 8.0824 15.6116 8.07915C15.6072 8.0759 15.6039 8.07144 15.602 8.06632L15.5958 8.05029L13.5367 2.86504C13.4286 2.57534 13.2351 2.32515 12.9816 2.14766C12.7247 1.96773 12.4187 1.87122 12.105 1.87122Z" fill="black"></path>
+                                                                                </svg>
+                                                                                <span class="prisma-typography body14:medium primary"> 5.0 </span>
+                                                                            </span>
+                                                                        <span class="create-at">1분 전</span>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </a>
+                                                            </a>
+                                                        </article>
                                                     </div>
                                                     <div class="slick-slide">
-                                                        <a>
-                                                            <div class="curation-item">
-                                                                <h3 class="prisma-typography headline16 primary">
-                                                                    성공하는 사장님을 위한 외주 활용법
-                                                                </h3>
-                                                                <div class="react-items">
-                                                                    <p class="view prisma-typography body12:regular primary">
-                                                                        314
-                                                                    </p>
-                                                                    <p class="comment prisma-typography body12:regular primary">
-                                                                        2
-                                                                    </p>
+                                                        <article class="community-review-card">
+                                                            <a class="service-item">
+                                                                <div class="contents-container">
+                                                                    <h3>단열필름 시공</h3>
+                                                                    <p>  오늘 상가 건물 썬팅 시공을 마쳤습니다. 처음엔 그냥 단순히 열차단만 되면 좋겠다고 생각했는데, 시공을 받고 나니 공간의 분위기 자체가 고급스럽게 바뀌는 걸 보고 정말 만족했습니다.  무엇보다 인상 깊었던 건 사장님의 꼼꼼함이었습니다. 창문 가장자리 하나하나 기포 없이...  </p>
+                                                                    <div class="contents-footer">
+                                                                            <span class="review-star">
+                                                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="prisma-icon warning">
+                                                                                    <path d="M12.105 1.87122C11.7914 1.87122 11.4853 1.96773 11.2284 2.14766C10.975 2.32515 10.7815 2.57534 10.6734 2.86504L8.61423 8.05029L8.60808 8.06632C8.60618 8.07144 8.60283 8.0759 8.59843 8.07915C8.59404 8.0824 8.5888 8.08428 8.58334 8.0846L3.04706 8.44117C1.61138 8.5344 1.12102 10.3313 2.16552 11.2001L2.16648 11.2009L6.40277 14.7343L6.40523 14.7364C6.41476 14.7442 6.42187 14.7546 6.42574 14.7664C6.42952 14.7778 6.42985 14.791 6.4271 14.8027L5.16262 19.7857C4.79476 21.227 6.35038 22.529 7.69736 21.6729L7.69831 21.6723L12.095 18.8881C12.098 18.8862 12.1015 18.8852 12.105 18.8852C12.1086 18.8852 12.1125 18.8865 12.1155 18.8884L16.8405 21.8884L16.8424 21.8896C18.0703 22.6641 19.4818 21.4869 19.1506 20.1797L17.7827 14.8018C17.78 14.7901 17.7806 14.7778 17.7843 14.7664C17.7882 14.7546 17.7953 14.7442 17.8048 14.7364L22.0436 11.2009L22.0445 11.2001C23.089 10.3313 22.5983 8.53437 21.1626 8.44115L15.6314 8.08488L15.6267 8.08461C15.6213 8.0843 15.616 8.0824 15.6116 8.07915C15.6072 8.0759 15.6039 8.07144 15.602 8.06632L15.5958 8.05029L13.5367 2.86504C13.4286 2.57534 13.2351 2.32515 12.9816 2.14766C12.7247 1.96773 12.4187 1.87122 12.105 1.87122Z" fill="black"></path>
+                                                                                </svg>
+                                                                                <span class="prisma-typography body14:medium primary"> 5.0 </span>
+                                                                            </span>
+                                                                        <span class="create-at">3분 전</span>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </a>
+                                                            </a>
+                                                        </article>
                                                     </div>
                                                     <div class="slick-slide">
-                                                        <a>
-                                                            <div class="curation-item">
-                                                                <h3 class="prisma-typography headline16 primary">
-                                                                    무더위 걱정 없는 여름 이사의 모든 것
-                                                                </h3>
-                                                                <div class="react-items">
-                                                                    <p class="view prisma-typography body12:regular primary">
-                                                                        1,403
-                                                                    </p>
-                                                                    <p class="comment prisma-typography body12:regular primary">
-                                                                        5
-                                                                    </p>
+                                                        <article class="community-review-card">
+                                                            <a class="service-item">
+                                                                <div class="contents-container">
+                                                                    <h3>집 인테리어</h3>
+                                                                    <p>  진행하기전 진행과정설명도 잘해주시고, 중간중간 수정사항 도 친절히 응해주셨습니다.  깔끔한 인테리어에 만족합니다!!  </p>
+                                                                    <div class="contents-footer">
+                                                                            <span class="review-star">
+                                                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="prisma-icon warning">
+                                                                                    <path d="M12.105 1.87122C11.7914 1.87122 11.4853 1.96773 11.2284 2.14766C10.975 2.32515 10.7815 2.57534 10.6734 2.86504L8.61423 8.05029L8.60808 8.06632C8.60618 8.07144 8.60283 8.0759 8.59843 8.07915C8.59404 8.0824 8.5888 8.08428 8.58334 8.0846L3.04706 8.44117C1.61138 8.5344 1.12102 10.3313 2.16552 11.2001L2.16648 11.2009L6.40277 14.7343L6.40523 14.7364C6.41476 14.7442 6.42187 14.7546 6.42574 14.7664C6.42952 14.7778 6.42985 14.791 6.4271 14.8027L5.16262 19.7857C4.79476 21.227 6.35038 22.529 7.69736 21.6729L7.69831 21.6723L12.095 18.8881C12.098 18.8862 12.1015 18.8852 12.105 18.8852C12.1086 18.8852 12.1125 18.8865 12.1155 18.8884L16.8405 21.8884L16.8424 21.8896C18.0703 22.6641 19.4818 21.4869 19.1506 20.1797L17.7827 14.8018C17.78 14.7901 17.7806 14.7778 17.7843 14.7664C17.7882 14.7546 17.7953 14.7442 17.8048 14.7364L22.0436 11.2009L22.0445 11.2001C23.089 10.3313 22.5983 8.53437 21.1626 8.44115L15.6314 8.08488L15.6267 8.08461C15.6213 8.0843 15.616 8.0824 15.6116 8.07915C15.6072 8.0759 15.6039 8.07144 15.602 8.06632L15.5958 8.05029L13.5367 2.86504C13.4286 2.57534 13.2351 2.32515 12.9816 2.14766C12.7247 1.96773 12.4187 1.87122 12.105 1.87122Z" fill="black"></path>
+                                                                                </svg>
+                                                                                <span class="prisma-typography body14:medium primary"> 5.0 </span>
+                                                                            </span>
+                                                                        <span class="create-at">4분 전</span>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </a>
+                                                            </a>
+                                                        </article>
                                                     </div>
                                                     <div class="slick-slide">
-                                                        <a>
-                                                            <div class="curation-item">
-                                                                <h3 class="prisma-typography headline16 primary">
-                                                                    초보자를 위한 셀프 인테리어 가이드
-                                                                </h3>
-                                                                <div class="react-items">
-                                                                    <p class="view prisma-typography body12:regular primary">
-                                                                        2,613
-                                                                    </p>
-                                                                    <p class="comment prisma-typography body12:regular primary">
-                                                                        10
-                                                                    </p>
+                                                        <article class="community-review-card">
+                                                            <a class="service-item">
+                                                                <div class="contents-container">
+                                                                    <h3>블라인드/커튼 시공</h3>
+                                                                    <p>  제가 작은것을 할때도 아주 꼼꼼히 알아보는 격이라 거실과 안방 커튼 시공을 위해 여러 업체를 알아보다가 다와블라인드&커튼을 선택했어요!!  결론부터 말하자면 정말 잘한 선택이었습니다😊💯 처음 상담할 때부터 응대가 친절하고 꼼꼼하게 설명해주셔서 신뢰가 갔고, 공간의 분위...  </p>
+                                                                    <div class="contents-footer">
+                                                                            <span class="review-star">
+                                                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="prisma-icon warning">
+                                                                                    <path d="M12.105 1.87122C11.7914 1.87122 11.4853 1.96773 11.2284 2.14766C10.975 2.32515 10.7815 2.57534 10.6734 2.86504L8.61423 8.05029L8.60808 8.06632C8.60618 8.07144 8.60283 8.0759 8.59843 8.07915C8.59404 8.0824 8.5888 8.08428 8.58334 8.0846L3.04706 8.44117C1.61138 8.5344 1.12102 10.3313 2.16552 11.2001L2.16648 11.2009L6.40277 14.7343L6.40523 14.7364C6.41476 14.7442 6.42187 14.7546 6.42574 14.7664C6.42952 14.7778 6.42985 14.791 6.4271 14.8027L5.16262 19.7857C4.79476 21.227 6.35038 22.529 7.69736 21.6729L7.69831 21.6723L12.095 18.8881C12.098 18.8862 12.1015 18.8852 12.105 18.8852C12.1086 18.8852 12.1125 18.8865 12.1155 18.8884L16.8405 21.8884L16.8424 21.8896C18.0703 22.6641 19.4818 21.4869 19.1506 20.1797L17.7827 14.8018C17.78 14.7901 17.7806 14.7778 17.7843 14.7664C17.7882 14.7546 17.7953 14.7442 17.8048 14.7364L22.0436 11.2009L22.0445 11.2001C23.089 10.3313 22.5983 8.53437 21.1626 8.44115L15.6314 8.08488L15.6267 8.08461C15.6213 8.0843 15.616 8.0824 15.6116 8.07915C15.6072 8.0759 15.6039 8.07144 15.602 8.06632L15.5958 8.05029L13.5367 2.86504C13.4286 2.57534 13.2351 2.32515 12.9816 2.14766C12.7247 1.96773 12.4187 1.87122 12.105 1.87122Z" fill="black"></path>
+                                                                                </svg>
+                                                                                <span class="prisma-typography body14:medium primary"> 5.0 </span>
+                                                                            </span>
+                                                                        <span class="create-at">1분 전</span>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </a>
+                                                            </a>
+                                                        </article>
                                                     </div>
-                                                    <div class="slick-slide slick-active slick-current">
-                                                        <a>
-                                                            <div class="curation-item">
-                                                                <h3 class="prisma-typography headline16 primary">
-                                                                    장마철 누수, 원인과 대처법 총정리
-                                                                </h3>
-                                                                <div class="react-items">
-                                                                    <p class="view prisma-typography body12:regular primary">
-                                                                        3,689
-                                                                    </p>
-                                                                    <p class="comment prisma-typography body12:regular primary">
-                                                                        3
-                                                                    </p>
+                                                    <div class="slick-slide">
+                                                        <article class="community-review-card">
+                                                            <a class="service-item">
+                                                                <div class="contents-container">
+                                                                    <h3>단열필름 시공</h3>
+                                                                    <p>  오늘 상가 건물 썬팅 시공을 마쳤습니다. 처음엔 그냥 단순히 열차단만 되면 좋겠다고 생각했는데, 시공을 받고 나니 공간의 분위기 자체가 고급스럽게 바뀌는 걸 보고 정말 만족했습니다.  무엇보다 인상 깊었던 건 사장님의 꼼꼼함이었습니다. 창문 가장자리 하나하나 기포 없이...  </p>
+                                                                    <div class="contents-footer">
+                                                                            <span class="review-star">
+                                                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="prisma-icon warning">
+                                                                                    <path d="M12.105 1.87122C11.7914 1.87122 11.4853 1.96773 11.2284 2.14766C10.975 2.32515 10.7815 2.57534 10.6734 2.86504L8.61423 8.05029L8.60808 8.06632C8.60618 8.07144 8.60283 8.0759 8.59843 8.07915C8.59404 8.0824 8.5888 8.08428 8.58334 8.0846L3.04706 8.44117C1.61138 8.5344 1.12102 10.3313 2.16552 11.2001L2.16648 11.2009L6.40277 14.7343L6.40523 14.7364C6.41476 14.7442 6.42187 14.7546 6.42574 14.7664C6.42952 14.7778 6.42985 14.791 6.4271 14.8027L5.16262 19.7857C4.79476 21.227 6.35038 22.529 7.69736 21.6729L7.69831 21.6723L12.095 18.8881C12.098 18.8862 12.1015 18.8852 12.105 18.8852C12.1086 18.8852 12.1125 18.8865 12.1155 18.8884L16.8405 21.8884L16.8424 21.8896C18.0703 22.6641 19.4818 21.4869 19.1506 20.1797L17.7827 14.8018C17.78 14.7901 17.7806 14.7778 17.7843 14.7664C17.7882 14.7546 17.7953 14.7442 17.8048 14.7364L22.0436 11.2009L22.0445 11.2001C23.089 10.3313 22.5983 8.53437 21.1626 8.44115L15.6314 8.08488L15.6267 8.08461C15.6213 8.0843 15.616 8.0824 15.6116 8.07915C15.6072 8.0759 15.6039 8.07144 15.602 8.06632L15.5958 8.05029L13.5367 2.86504C13.4286 2.57534 13.2351 2.32515 12.9816 2.14766C12.7247 1.96773 12.4187 1.87122 12.105 1.87122Z" fill="black"></path>
+                                                                                </svg>
+                                                                                <span class="prisma-typography body14:medium primary"> 5.0 </span>
+                                                                            </span>
+                                                                        <span class="create-at">3분 전</span>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </a>
+                                                            </a>
+                                                        </article>
                                                     </div>
-                                                    <div class="slick-slide slick-active">
-                                                        <a>
-                                                            <div class="curation-item">
-                                                                <h3 class="prisma-typography headline16 primary">
-                                                                    쾌적한 여름을 위한 생활의 기술
-                                                                </h3>
-                                                                <div class="react-items">
-                                                                    <p class="view prisma-typography body12:regular primary">
-                                                                        19,822
-                                                                    </p>
-                                                                    <p class="comment prisma-typography body12:regular primary">
-                                                                        0
-                                                                    </p>
+                                                    <div class="slick-slide">
+                                                        <article class="community-review-card">
+                                                            <a class="service-item">
+                                                                <div class="contents-container">
+                                                                    <h3>집 인테리어</h3>
+                                                                    <p>  진행하기전 진행과정설명도 잘해주시고, 중간중간 수정사항 도 친절히 응해주셨습니다.  깔끔한 인테리어에 만족합니다!!  </p>
+                                                                    <div class="contents-footer">
+                                                                            <span class="review-star">
+                                                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="prisma-icon warning">
+                                                                                    <path d="M12.105 1.87122C11.7914 1.87122 11.4853 1.96773 11.2284 2.14766C10.975 2.32515 10.7815 2.57534 10.6734 2.86504L8.61423 8.05029L8.60808 8.06632C8.60618 8.07144 8.60283 8.0759 8.59843 8.07915C8.59404 8.0824 8.5888 8.08428 8.58334 8.0846L3.04706 8.44117C1.61138 8.5344 1.12102 10.3313 2.16552 11.2001L2.16648 11.2009L6.40277 14.7343L6.40523 14.7364C6.41476 14.7442 6.42187 14.7546 6.42574 14.7664C6.42952 14.7778 6.42985 14.791 6.4271 14.8027L5.16262 19.7857C4.79476 21.227 6.35038 22.529 7.69736 21.6729L7.69831 21.6723L12.095 18.8881C12.098 18.8862 12.1015 18.8852 12.105 18.8852C12.1086 18.8852 12.1125 18.8865 12.1155 18.8884L16.8405 21.8884L16.8424 21.8896C18.0703 22.6641 19.4818 21.4869 19.1506 20.1797L17.7827 14.8018C17.78 14.7901 17.7806 14.7778 17.7843 14.7664C17.7882 14.7546 17.7953 14.7442 17.8048 14.7364L22.0436 11.2009L22.0445 11.2001C23.089 10.3313 22.5983 8.53437 21.1626 8.44115L15.6314 8.08488L15.6267 8.08461C15.6213 8.0843 15.616 8.0824 15.6116 8.07915C15.6072 8.0759 15.6039 8.07144 15.602 8.06632L15.5958 8.05029L13.5367 2.86504C13.4286 2.57534 13.2351 2.32515 12.9816 2.14766C12.7247 1.96773 12.4187 1.87122 12.105 1.87122Z" fill="black"></path>
+                                                                                </svg>
+                                                                                <span class="prisma-typography body14:medium primary"> 5.0 </span>
+                                                                            </span>
+                                                                        <span class="create-at">4분 전</span>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </a>
+                                                            </a>
+                                                        </article>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- 가장 많이 본 게시글 다음 버튼 -->
-                                         <button type="button" data-role="none" class="slick-arrow slick-next" style="display:block;">Next</button>
                                     </div>
-                                </section>
-                                <section class="community-review-section">
-                                    <div class="header">
-                                        <p>만족도 높은</p>
-                                        <h2>리바운드의 최신 상담 후기</h2>
-                                    </div>
-                                    <div class="d-none d-md-block slick-slider slick-initialized">
-                                        <!-- 만족도 이전 버튼 -->
-                                        <button type="button" data-role="none" class="slick-arrow slick-prev" style="display:block;">
-                                            Previous
-                                        </button>
-                                        <div class="community-review-list-total">
-                                            <div class="community-review-list">
-                                                <div class="slick-list">
-                                                    <div class="slick-track">
-                                                        <div class="slick-slide">
-                                                            <article class="community-review-card">
-                                                                <a class="service-item">
-                                                                    <div class="contents-container">
-                                                                        <h3>에어컨 설치 및 수리</h3>
-                                                                        <p> 엄청 꼼꼼하게 작업해주셨습니다. 자연배수  잘되게끔 설치해주셨구요 실리콘 마감도 깔끔하게 잘됐습니다. 이전 대기시간이 예상보다 길어지게 되었는데도 양해해주셔서 정말 감사합니다. 더운 날씨에 정말 고생하셨습니다! </p>
-                                                                        <div class="contents-footer">
-                                                                            <span class="review-star">
-                                                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="prisma-icon warning">
-                                                                                    <path d="M12.105 1.87122C11.7914 1.87122 11.4853 1.96773 11.2284 2.14766C10.975 2.32515 10.7815 2.57534 10.6734 2.86504L8.61423 8.05029L8.60808 8.06632C8.60618 8.07144 8.60283 8.0759 8.59843 8.07915C8.59404 8.0824 8.5888 8.08428 8.58334 8.0846L3.04706 8.44117C1.61138 8.5344 1.12102 10.3313 2.16552 11.2001L2.16648 11.2009L6.40277 14.7343L6.40523 14.7364C6.41476 14.7442 6.42187 14.7546 6.42574 14.7664C6.42952 14.7778 6.42985 14.791 6.4271 14.8027L5.16262 19.7857C4.79476 21.227 6.35038 22.529 7.69736 21.6729L7.69831 21.6723L12.095 18.8881C12.098 18.8862 12.1015 18.8852 12.105 18.8852C12.1086 18.8852 12.1125 18.8865 12.1155 18.8884L16.8405 21.8884L16.8424 21.8896C18.0703 22.6641 19.4818 21.4869 19.1506 20.1797L17.7827 14.8018C17.78 14.7901 17.7806 14.7778 17.7843 14.7664C17.7882 14.7546 17.7953 14.7442 17.8048 14.7364L22.0436 11.2009L22.0445 11.2001C23.089 10.3313 22.5983 8.53437 21.1626 8.44115L15.6314 8.08488L15.6267 8.08461C15.6213 8.0843 15.616 8.0824 15.6116 8.07915C15.6072 8.0759 15.6039 8.07144 15.602 8.06632L15.5958 8.05029L13.5367 2.86504C13.4286 2.57534 13.2351 2.32515 12.9816 2.14766C12.7247 1.96773 12.4187 1.87122 12.105 1.87122Z" fill="black"></path>
-                                                                                </svg>
-                                                                                <span class="prisma-typography body14:medium primary"> 5.0 </span>
-                                                                            </span>
-                                                                            <span class="create-at">1분 전</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                            </article>
-                                                        </div>
-                                                        <div class="slick-slide">
-                                                            <article class="community-review-card">
-                                                                <a class="service-item">
-                                                                    <div class="contents-container">
-                                                                        <h3>단열필름 시공</h3>
-                                                                        <p>  오늘 상가 건물 썬팅 시공을 마쳤습니다. 처음엔 그냥 단순히 열차단만 되면 좋겠다고 생각했는데, 시공을 받고 나니 공간의 분위기 자체가 고급스럽게 바뀌는 걸 보고 정말 만족했습니다.  무엇보다 인상 깊었던 건 사장님의 꼼꼼함이었습니다. 창문 가장자리 하나하나 기포 없이...  </p>
-                                                                        <div class="contents-footer">
-                                                                            <span class="review-star">
-                                                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="prisma-icon warning">
-                                                                                    <path d="M12.105 1.87122C11.7914 1.87122 11.4853 1.96773 11.2284 2.14766C10.975 2.32515 10.7815 2.57534 10.6734 2.86504L8.61423 8.05029L8.60808 8.06632C8.60618 8.07144 8.60283 8.0759 8.59843 8.07915C8.59404 8.0824 8.5888 8.08428 8.58334 8.0846L3.04706 8.44117C1.61138 8.5344 1.12102 10.3313 2.16552 11.2001L2.16648 11.2009L6.40277 14.7343L6.40523 14.7364C6.41476 14.7442 6.42187 14.7546 6.42574 14.7664C6.42952 14.7778 6.42985 14.791 6.4271 14.8027L5.16262 19.7857C4.79476 21.227 6.35038 22.529 7.69736 21.6729L7.69831 21.6723L12.095 18.8881C12.098 18.8862 12.1015 18.8852 12.105 18.8852C12.1086 18.8852 12.1125 18.8865 12.1155 18.8884L16.8405 21.8884L16.8424 21.8896C18.0703 22.6641 19.4818 21.4869 19.1506 20.1797L17.7827 14.8018C17.78 14.7901 17.7806 14.7778 17.7843 14.7664C17.7882 14.7546 17.7953 14.7442 17.8048 14.7364L22.0436 11.2009L22.0445 11.2001C23.089 10.3313 22.5983 8.53437 21.1626 8.44115L15.6314 8.08488L15.6267 8.08461C15.6213 8.0843 15.616 8.0824 15.6116 8.07915C15.6072 8.0759 15.6039 8.07144 15.602 8.06632L15.5958 8.05029L13.5367 2.86504C13.4286 2.57534 13.2351 2.32515 12.9816 2.14766C12.7247 1.96773 12.4187 1.87122 12.105 1.87122Z" fill="black"></path>
-                                                                                </svg>
-                                                                                <span class="prisma-typography body14:medium primary"> 5.0 </span>
-                                                                            </span>
-                                                                            <span class="create-at">3분 전</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                            </article>
-                                                        </div>
-                                                        <div class="slick-slide">
-                                                            <article class="community-review-card">
-                                                                <a class="service-item">
-                                                                    <div class="contents-container">
-                                                                        <h3>집 인테리어</h3>
-                                                                        <p>  진행하기전 진행과정설명도 잘해주시고, 중간중간 수정사항 도 친절히 응해주셨습니다.  깔끔한 인테리어에 만족합니다!!  </p>
-                                                                        <div class="contents-footer">
-                                                                            <span class="review-star">
-                                                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="prisma-icon warning">
-                                                                                    <path d="M12.105 1.87122C11.7914 1.87122 11.4853 1.96773 11.2284 2.14766C10.975 2.32515 10.7815 2.57534 10.6734 2.86504L8.61423 8.05029L8.60808 8.06632C8.60618 8.07144 8.60283 8.0759 8.59843 8.07915C8.59404 8.0824 8.5888 8.08428 8.58334 8.0846L3.04706 8.44117C1.61138 8.5344 1.12102 10.3313 2.16552 11.2001L2.16648 11.2009L6.40277 14.7343L6.40523 14.7364C6.41476 14.7442 6.42187 14.7546 6.42574 14.7664C6.42952 14.7778 6.42985 14.791 6.4271 14.8027L5.16262 19.7857C4.79476 21.227 6.35038 22.529 7.69736 21.6729L7.69831 21.6723L12.095 18.8881C12.098 18.8862 12.1015 18.8852 12.105 18.8852C12.1086 18.8852 12.1125 18.8865 12.1155 18.8884L16.8405 21.8884L16.8424 21.8896C18.0703 22.6641 19.4818 21.4869 19.1506 20.1797L17.7827 14.8018C17.78 14.7901 17.7806 14.7778 17.7843 14.7664C17.7882 14.7546 17.7953 14.7442 17.8048 14.7364L22.0436 11.2009L22.0445 11.2001C23.089 10.3313 22.5983 8.53437 21.1626 8.44115L15.6314 8.08488L15.6267 8.08461C15.6213 8.0843 15.616 8.0824 15.6116 8.07915C15.6072 8.0759 15.6039 8.07144 15.602 8.06632L15.5958 8.05029L13.5367 2.86504C13.4286 2.57534 13.2351 2.32515 12.9816 2.14766C12.7247 1.96773 12.4187 1.87122 12.105 1.87122Z" fill="black"></path>
-                                                                                </svg>
-                                                                                <span class="prisma-typography body14:medium primary"> 5.0 </span>
-                                                                            </span>
-                                                                            <span class="create-at">4분 전</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                            </article>
-                                                        </div>
-                                                        <div class="slick-slide">
-                                                            <article class="community-review-card">
-                                                                <a class="service-item">
-                                                                    <div class="contents-container">
-                                                                        <h3>블라인드/커튼 시공</h3>
-                                                                        <p>  제가 작은것을 할때도 아주 꼼꼼히 알아보는 격이라 거실과 안방 커튼 시공을 위해 여러 업체를 알아보다가 다와블라인드&커튼을 선택했어요!!  결론부터 말하자면 정말 잘한 선택이었습니다😊💯 처음 상담할 때부터 응대가 친절하고 꼼꼼하게 설명해주셔서 신뢰가 갔고, 공간의 분위...  </p>
-                                                                        <div class="contents-footer">
-                                                                            <span class="review-star">
-                                                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="prisma-icon warning">
-                                                                                    <path d="M12.105 1.87122C11.7914 1.87122 11.4853 1.96773 11.2284 2.14766C10.975 2.32515 10.7815 2.57534 10.6734 2.86504L8.61423 8.05029L8.60808 8.06632C8.60618 8.07144 8.60283 8.0759 8.59843 8.07915C8.59404 8.0824 8.5888 8.08428 8.58334 8.0846L3.04706 8.44117C1.61138 8.5344 1.12102 10.3313 2.16552 11.2001L2.16648 11.2009L6.40277 14.7343L6.40523 14.7364C6.41476 14.7442 6.42187 14.7546 6.42574 14.7664C6.42952 14.7778 6.42985 14.791 6.4271 14.8027L5.16262 19.7857C4.79476 21.227 6.35038 22.529 7.69736 21.6729L7.69831 21.6723L12.095 18.8881C12.098 18.8862 12.1015 18.8852 12.105 18.8852C12.1086 18.8852 12.1125 18.8865 12.1155 18.8884L16.8405 21.8884L16.8424 21.8896C18.0703 22.6641 19.4818 21.4869 19.1506 20.1797L17.7827 14.8018C17.78 14.7901 17.7806 14.7778 17.7843 14.7664C17.7882 14.7546 17.7953 14.7442 17.8048 14.7364L22.0436 11.2009L22.0445 11.2001C23.089 10.3313 22.5983 8.53437 21.1626 8.44115L15.6314 8.08488L15.6267 8.08461C15.6213 8.0843 15.616 8.0824 15.6116 8.07915C15.6072 8.0759 15.6039 8.07144 15.602 8.06632L15.5958 8.05029L13.5367 2.86504C13.4286 2.57534 13.2351 2.32515 12.9816 2.14766C12.7247 1.96773 12.4187 1.87122 12.105 1.87122Z" fill="black"></path>
-                                                                                </svg>
-                                                                                <span class="prisma-typography body14:medium primary"> 5.0 </span>
-                                                                            </span>
-                                                                            <span class="create-at">1분 전</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                            </article>
-                                                        </div>
-                                                        <div class="slick-slide">
-                                                            <article class="community-review-card">
-                                                                <a class="service-item">
-                                                                    <div class="contents-container">
-                                                                        <h3>단열필름 시공</h3>
-                                                                        <p>  오늘 상가 건물 썬팅 시공을 마쳤습니다. 처음엔 그냥 단순히 열차단만 되면 좋겠다고 생각했는데, 시공을 받고 나니 공간의 분위기 자체가 고급스럽게 바뀌는 걸 보고 정말 만족했습니다.  무엇보다 인상 깊었던 건 사장님의 꼼꼼함이었습니다. 창문 가장자리 하나하나 기포 없이...  </p>
-                                                                        <div class="contents-footer">
-                                                                            <span class="review-star">
-                                                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="prisma-icon warning">
-                                                                                    <path d="M12.105 1.87122C11.7914 1.87122 11.4853 1.96773 11.2284 2.14766C10.975 2.32515 10.7815 2.57534 10.6734 2.86504L8.61423 8.05029L8.60808 8.06632C8.60618 8.07144 8.60283 8.0759 8.59843 8.07915C8.59404 8.0824 8.5888 8.08428 8.58334 8.0846L3.04706 8.44117C1.61138 8.5344 1.12102 10.3313 2.16552 11.2001L2.16648 11.2009L6.40277 14.7343L6.40523 14.7364C6.41476 14.7442 6.42187 14.7546 6.42574 14.7664C6.42952 14.7778 6.42985 14.791 6.4271 14.8027L5.16262 19.7857C4.79476 21.227 6.35038 22.529 7.69736 21.6729L7.69831 21.6723L12.095 18.8881C12.098 18.8862 12.1015 18.8852 12.105 18.8852C12.1086 18.8852 12.1125 18.8865 12.1155 18.8884L16.8405 21.8884L16.8424 21.8896C18.0703 22.6641 19.4818 21.4869 19.1506 20.1797L17.7827 14.8018C17.78 14.7901 17.7806 14.7778 17.7843 14.7664C17.7882 14.7546 17.7953 14.7442 17.8048 14.7364L22.0436 11.2009L22.0445 11.2001C23.089 10.3313 22.5983 8.53437 21.1626 8.44115L15.6314 8.08488L15.6267 8.08461C15.6213 8.0843 15.616 8.0824 15.6116 8.07915C15.6072 8.0759 15.6039 8.07144 15.602 8.06632L15.5958 8.05029L13.5367 2.86504C13.4286 2.57534 13.2351 2.32515 12.9816 2.14766C12.7247 1.96773 12.4187 1.87122 12.105 1.87122Z" fill="black"></path>
-                                                                                </svg>
-                                                                                <span class="prisma-typography body14:medium primary"> 5.0 </span>
-                                                                            </span>
-                                                                            <span class="create-at">3분 전</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                            </article>
-                                                        </div>
-                                                        <div class="slick-slide">
-                                                            <article class="community-review-card">
-                                                                <a class="service-item">
-                                                                    <div class="contents-container">
-                                                                        <h3>집 인테리어</h3>
-                                                                        <p>  진행하기전 진행과정설명도 잘해주시고, 중간중간 수정사항 도 친절히 응해주셨습니다.  깔끔한 인테리어에 만족합니다!!  </p>
-                                                                        <div class="contents-footer">
-                                                                            <span class="review-star">
-                                                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="prisma-icon warning">
-                                                                                    <path d="M12.105 1.87122C11.7914 1.87122 11.4853 1.96773 11.2284 2.14766C10.975 2.32515 10.7815 2.57534 10.6734 2.86504L8.61423 8.05029L8.60808 8.06632C8.60618 8.07144 8.60283 8.0759 8.59843 8.07915C8.59404 8.0824 8.5888 8.08428 8.58334 8.0846L3.04706 8.44117C1.61138 8.5344 1.12102 10.3313 2.16552 11.2001L2.16648 11.2009L6.40277 14.7343L6.40523 14.7364C6.41476 14.7442 6.42187 14.7546 6.42574 14.7664C6.42952 14.7778 6.42985 14.791 6.4271 14.8027L5.16262 19.7857C4.79476 21.227 6.35038 22.529 7.69736 21.6729L7.69831 21.6723L12.095 18.8881C12.098 18.8862 12.1015 18.8852 12.105 18.8852C12.1086 18.8852 12.1125 18.8865 12.1155 18.8884L16.8405 21.8884L16.8424 21.8896C18.0703 22.6641 19.4818 21.4869 19.1506 20.1797L17.7827 14.8018C17.78 14.7901 17.7806 14.7778 17.7843 14.7664C17.7882 14.7546 17.7953 14.7442 17.8048 14.7364L22.0436 11.2009L22.0445 11.2001C23.089 10.3313 22.5983 8.53437 21.1626 8.44115L15.6314 8.08488L15.6267 8.08461C15.6213 8.0843 15.616 8.0824 15.6116 8.07915C15.6072 8.0759 15.6039 8.07144 15.602 8.06632L15.5958 8.05029L13.5367 2.86504C13.4286 2.57534 13.2351 2.32515 12.9816 2.14766C12.7247 1.96773 12.4187 1.87122 12.105 1.87122Z" fill="black"></path>
-                                                                                </svg>
-                                                                                <span class="prisma-typography body14:medium primary"> 5.0 </span>
-                                                                            </span>
-                                                                            <span class="create-at">4분 전</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                            </article>
-                                                        </div>
-                                                    </div>
+                                    <button class="slick-arrow slick-next slick-review" style="display:block;">Next</button>
+                                </div>
+                            </section>
+                            <article class="community-feed-list">
+                                <ul class="feed-list" id="post-container">
+                                    <li class="feed-item" th:each="post : ${posts}">
+                                        <a th:href="@{/community-list/{id}(id=${post.id})}">
+                                            <div class="feed-content">
+                                                <div>
+                                                    <section class="item-wrapper">
+                                                        <h3 class="prisma-typography body14:medium primary" th:text="${post.postTitle}">게시글 제목</h3>
+                                                        <p class="content prisma-typography body14:regular secondary" th:text="${post.postContent}">게시글 내용</p>
+                                                    </section>
+                                                    <p class="sub-information prisma-typography body12:regular tertiary" th:text="${post.categoryName}">카테고리</p>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <button class="slick-arrow slick-next slick-review" style="display:block;">Next</button>
-                                    </div>
-                                </section>
-                                <article class="community-feed-list">
-                                    <ul class="feed-list">
-                                        <li class="feed-item">
-                                            <a>
-                                                <div class="feed-content">
-                                                    <div>
-                                                        <section class="item-wrapper">
-                                                            <h3 class="prisma-typography body14:medium primary">방충망 망 교체</h3>
-                                                            <p class="content prisma-typography body14:regular secondary"> 방충망교체   창  2000900 1개   1500600 1개 1600700 1개 1500800 1개  잠실석촌호수 인근  철망,  스텐망  2가지로 견적내주세요 </p>
-                                                        </section>
-                                                        <p class="sub-information prisma-typography body12:regular tertiary"> 고민 카테고리 </p>
-                                                    </div>
+                                            <div class="feed-footer">
+                                                <div class="user-interaction">
+                                                    <span class="comment prisma-typography body12:regular quaternary">댓글 수</span>
                                                 </div>
-                                                <div class="feed-footer">
-                                                    <div class="user-interaction">
-                                                        <span class="comment prisma-typography body12:regular quaternary">0</span>
-                                                    </div>
-                                                    <span class="prisma-typography body12:regular quaternary">1분 전</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="feed-item">
-                                            <a>
-                                                <div class="feed-content">
-                                                    <div>
-                                                        <section class="item-wrapper">
-                                                            <h3 class="prisma-typography body14:medium primary">에어컨 벽걸이 가스충전 비용?</h3>
-                                                            <p class="content prisma-typography body14:regular secondary"> 한2년전에 청소랑 가스 충전 했었는데요.. 잘 안써도 가스가 사라지는건가요?  거의 안썻는데 거실 벽걸이 에어컨이  시원한 바람이 안나와서요  가스충전 점검 비용이 보통 얼마나할까요? </p>
-                                                        </section>
-                                                        <p class="sub-information prisma-typography body12:regular tertiary"> 고민 카테고리 </p>
-                                                    </div>
-                                                </div>
-                                                <div class="feed-footer">
-                                                    <div class="user-interaction">
-                                                        <span class="comment prisma-typography body12:regular quaternary">0</span>
-                                                    </div>
-                                                    <span class="prisma-typography body12:regular quaternary">1분 전</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="feed-item">
-                                            <a>
-                                                <div class="feed-content">
-                                                    <div>
-                                                        <section class="item-wrapper">
-                                                            <h3 class="prisma-typography body14:medium primary">방충망 망 교체</h3>
-                                                            <p class="content prisma-typography body14:regular secondary"> 방충망교체   창  2000900 1개   1500600 1개 1600700 1개 1500800 1개  잠실석촌호수 인근  철망,  스텐망  2가지로 견적내주세요 </p>
-                                                        </section>
-                                                        <p class="sub-information prisma-typography body12:regular tertiary"> 고민 카테고리 </p>
-                                                    </div>
-                                                </div>
-                                                <div class="feed-footer">
-                                                    <div class="user-interaction">
-                                                        <span class="comment prisma-typography body12:regular quaternary">0</span>
-                                                    </div>
-                                                    <span class="prisma-typography body12:regular quaternary">1분 전</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="feed-item">
-                                            <a>
-                                                <div class="feed-content">
-                                                    <div>
-                                                        <section class="item-wrapper">
-                                                            <h3 class="prisma-typography body14:medium primary">에어컨 벽걸이 가스충전 비용?</h3>
-                                                            <p class="content prisma-typography body14:regular secondary"> 한2년전에 청소랑 가스 충전 했었는데요.. 잘 안써도 가스가 사라지는건가요?  거의 안썻는데 거실 벽걸이 에어컨이  시원한 바람이 안나와서요  가스충전 점검 비용이 보통 얼마나할까요? </p>
-                                                        </section>
-                                                        <p class="sub-information prisma-typography body12:regular tertiary"> 고민 카테고리 </p>
-                                                    </div>
-                                                </div>
-                                                <div class="feed-footer">
-                                                    <div class="user-interaction">
-                                                        <span class="comment prisma-typography body12:regular quaternary">0</span>
-                                                    </div>
-                                                    <span class="prisma-typography body12:regular quaternary">1분 전</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="feed-item">
-                                            <a>
-                                                <div class="feed-content">
-                                                    <div>
-                                                        <section class="item-wrapper">
-                                                            <h3 class="prisma-typography body14:medium primary">방충망 망 교체</h3>
-                                                            <p class="content prisma-typography body14:regular secondary"> 방충망교체   창  2000900 1개   1500600 1개 1600700 1개 1500800 1개  잠실석촌호수 인근  철망,  스텐망  2가지로 견적내주세요 </p>
-                                                        </section>
-                                                        <p class="sub-information prisma-typography body12:regular tertiary"> 고민 카테고리 </p>
-                                                    </div>
-                                                </div>
-                                                <div class="feed-footer">
-                                                    <div class="user-interaction">
-                                                        <span class="comment prisma-typography body12:regular quaternary">0</span>
-                                                    </div>
-                                                    <span class="prisma-typography body12:regular quaternary">1분 전</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="feed-item">
-                                            <a>
-                                                <div class="feed-content">
-                                                    <div>
-                                                        <section class="item-wrapper">
-                                                            <h3 class="prisma-typography body14:medium primary">에어컨 벽걸이 가스충전 비용?</h3>
-                                                            <p class="content prisma-typography body14:regular secondary"> 한2년전에 청소랑 가스 충전 했었는데요.. 잘 안써도 가스가 사라지는건가요?  거의 안썻는데 거실 벽걸이 에어컨이  시원한 바람이 안나와서요  가스충전 점검 비용이 보통 얼마나할까요? </p>
-                                                        </section>
-                                                        <p class="sub-information prisma-typography body12:regular tertiary"> 고민 카테고리 </p>
-                                                    </div>
-                                                </div>
-                                                <div class="feed-footer">
-                                                    <div class="user-interaction">
-                                                        <span class="comment prisma-typography body12:regular quaternary">0</span>
-                                                    </div>
-                                                    <span class="prisma-typography body12:regular quaternary">1분 전</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="feed-item">
-                                            <a>
-                                                <div class="feed-content">
-                                                    <div>
-                                                        <section class="item-wrapper">
-                                                            <h3 class="prisma-typography body14:medium primary">방충망 망 교체</h3>
-                                                            <p class="content prisma-typography body14:regular secondary"> 방충망교체   창  2000900 1개   1500600 1개 1600700 1개 1500800 1개  잠실석촌호수 인근  철망,  스텐망  2가지로 견적내주세요 </p>
-                                                        </section>
-                                                        <p class="sub-information prisma-typography body12:regular tertiary"> 고민 카테고리 </p>
-                                                    </div>
-                                                </div>
-                                                <div class="feed-footer">
-                                                    <div class="user-interaction">
-                                                        <span class="comment prisma-typography body12:regular quaternary">0</span>
-                                                    </div>
-                                                    <span class="prisma-typography body12:regular quaternary">1분 전</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="feed-item">
-                                            <a>
-                                                <div class="feed-content">
-                                                    <div>
-                                                        <section class="item-wrapper">
-                                                            <h3 class="prisma-typography body14:medium primary">에어컨 벽걸이 가스충전 비용?</h3>
-                                                            <p class="content prisma-typography body14:regular secondary"> 한2년전에 청소랑 가스 충전 했었는데요.. 잘 안써도 가스가 사라지는건가요?  거의 안썻는데 거실 벽걸이 에어컨이  시원한 바람이 안나와서요  가스충전 점검 비용이 보통 얼마나할까요? </p>
-                                                        </section>
-                                                        <p class="sub-information prisma-typography body12:regular tertiary"> 고민 카테고리 </p>
-                                                    </div>
-                                                </div>
-                                                <div class="feed-footer">
-                                                    <div class="user-interaction">
-                                                        <span class="comment prisma-typography body12:regular quaternary">0</span>
-                                                    </div>
-                                                    <span class="prisma-typography body12:regular quaternary">1분 전</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </article>
-                            </div>
+                                                <span class="prisma-typography body12:regular quaternary" th:text="${post.relativeDate}">작성시간</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div id="loading" style="display:none; text-align:center; margin:20px;">
+                                    <span>Loading...</span>
+                                </div>
+                            </article>
                         </div>
-                        <a id="top-btn" class="top-btn" role="button" aria-label="위로 가기 버튼" href="#top" style="right: 722px; visibility: hidden;">
-                            <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%3e%3cg%20fill='none'%20fill-rule='evenodd'%3e%3cg%3e%3cg%3e%3cg%3e%3cpath%20d='M0%200H24V24H0z'%20transform='translate(-323.000000,%20-680.000000)%20translate(311.000000,%20668.000000)%20translate(12.000000,%2012.000000)'/%3e%3cg%20stroke='%23B5B5B5'%20stroke-linecap='round'%20stroke-width='1.5'%3e%3cpath%20d='M7%200L7%2015'%20transform='translate(-323.000000,%20-680.000000)%20translate(311.000000,%20668.000000)%20translate(12.000000,%2012.000000)%20translate(5.000000,%204.500000)'/%3e%3cpath%20stroke-linejoin='round'%20d='M0%207L7%200%2014%207'%20transform='translate(-323.000000,%20-680.000000)%20translate(311.000000,%20668.000000)%20translate(12.000000,%2012.000000)%20translate(5.000000,%204.500000)'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="위로 가기">
-                        </a>
-                    </section>
-                </div>
+                    </div>
+                    <a id="top-btn" class="top-btn" role="button" aria-label="위로 가기 버튼" href="" style="right: 722px; visibility: hidden;">
+                        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%3e%3cg%20fill='none'%20fill-rule='evenodd'%3e%3cg%3e%3cg%3e%3cg%3e%3cpath%20d='M0%200H24V24H0z'%20transform='translate(-323.000000,%20-680.000000)%20translate(311.000000,%20668.000000)%20translate(12.000000,%2012.000000)'/%3e%3cg%20stroke='%23B5B5B5'%20stroke-linecap='round'%20stroke-width='1.5'%3e%3cpath%20d='M7%200L7%2015'%20transform='translate(-323.000000,%20-680.000000)%20translate(311.000000,%20668.000000)%20translate(12.000000,%2012.000000)%20translate(5.000000,%204.500000)'/%3e%3cpath%20stroke-linejoin='round'%20d='M0%207L7%200%2014%207'%20transform='translate(-323.000000,%20-680.000000)%20translate(311.000000,%20668.000000)%20translate(12.000000,%2012.000000)%20translate(5.000000,%204.500000)'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="위로 가기">
+                    </a>
+                </section>
             </div>
         </div>
     </div>
-    <footer th:replace="~{/main-page/footer.html :: footer}"></footer>
+</div>
 </body>
-<script src="/js/community-list/event.js"></script>
-<script src="/js/community-list/module/layout.js"></script>
-<script src="/js/community-list/module/service.js"></script>
 <script src="/js/community-list/community-posts.js"></script>
+<script src="/js/community-list/event.js"></script>
+<script src="/js/community-list/module/service.js"></script>
+<script src="/js/community-list/module/layout.js"></script>
 </html>

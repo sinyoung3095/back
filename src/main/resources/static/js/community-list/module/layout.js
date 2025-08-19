@@ -1,34 +1,31 @@
 const postLayout = (() => {
     const showList = (postsCriteria) => {
-        const feedList = document.querySelector(".feed-list");
-        let text = '';
-
+        const postContainer = document.querySelector("#post-container");
+        let text = ``;
         postsCriteria.posts.forEach((post) => {
             text += `
                 <li class="feed-item">
-                    <a>
+                    <a href="/community-list/${post.id}">
                         <div class="feed-content">
                             <div>
                                 <section class="item-wrapper">
-                                    <h3 class="prisma-typography body14:medium primary">${post.title}</h3>
-                                    <p class="content prisma-typography body14:regular secondary">${post.content}</p>
+                                    <h3 class="prisma-typography body14:medium primary">${post.postTitle}</h3>
+                                    <p class="content prisma-typography body14:regular secondary">${post.postContent}</p>
                                 </section>
-                                <p class="sub-information prisma-typography body12:regular tertiary">${post}</p>
+                                <p class="sub-information prisma-typography body12:regular tertiary">${post.categoryName}</p>
                             </div>
                         </div>
                         <div class="feed-footer">
                             <div class="user-interaction">
-                                <span class="comment prisma-typography body12:regular quaternary">${post}</span>
+                                <span class="comment prisma-typography body12:regular quaternary">댓글 수</span>
                             </div>
-                            <span class="prisma-typography body12:regular quaternary">${post}</span>
+                            <span class="prisma-typography body12:regular quaternary">${post.relativeDate}</span>
                         </div>
                     </a>
                 </li>
             `;
         });
-
-        feedList.innerHTML = text;
-    };
-
+        postContainer.innerHTML += text;
+    }
     return { showList : showList };
 })();
