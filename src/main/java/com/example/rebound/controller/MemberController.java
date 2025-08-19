@@ -4,6 +4,7 @@ import com.example.rebound.common.exception.LoginFailException;
 import com.example.rebound.dto.CounselorDTO;
 import com.example.rebound.dto.CounselorQualificationsFileDTO;
 import com.example.rebound.dto.MemberDTO;
+import com.example.rebound.dto.PaymentDTO;
 import com.example.rebound.service.MemberService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -163,8 +165,12 @@ public class MemberController {
     public String goToMyPageConsultationReview(){
         return "member/mypage-consultation-review";
     }
+
     @GetMapping("payment")
-    public String goToPayment(){
+    public String insertPayment(PaymentDTO paymentDTO) {
+        memberService.insertPayment(paymentDTO);
         return "member/payment";
     }
+
+
 }

@@ -61,6 +61,11 @@
             </div>
         </div>
     </main>
+    <form id="paymentForm" action="/member/mypage" method="post">
+        <input type="hidden" name="id" id="id">
+        <input type="hidden" name="subscribeId" id="subscribeId">
+        <input type="hidden" name="memberId" id="memberId">
+    </form>
 </body>
 <script src="/js/member/payment.js"></script>
 <script src="https://js.bootpay.co.kr/bootpay-5.1.5.min.js"></script>
@@ -69,7 +74,7 @@
         try {
             const response = await Bootpay.requestPayment({
                 application_id: "687efaa4285ac508a5ee7ab9",
-                price: 1000,
+                price: 20000,
                 order_name: "테스트결제",
                 order_id: "TEST_ORDER_ID",
                 pg: "카카오페이",
@@ -86,7 +91,7 @@
                         id: "item_id",
                         name: "테스트아이템",
                         qty: 1,
-                        price: 1000,
+                        price: 20000,
                     },
                 ],
                 extra: {
@@ -101,6 +106,9 @@
                     break;
                 case "done":
                     console.log(response);
+                    if(response.event === "done") {
+                        document.getElementById("paymentForm").submit();
+                    }
                     // 결제 완료 처리
                     break;
                 case "confirm": //payload.extra.separately_confirmed = true; 일 경우 승인 전 해당 이벤트가 호출됨
