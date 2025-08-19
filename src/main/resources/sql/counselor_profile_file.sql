@@ -10,3 +10,4 @@ create table tbl_counselor_profile_file
         foreign key (id) references tbl_file (id)
 );
 
+select * from tbl_counselor_qualifications_file;

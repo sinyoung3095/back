@@ -1,8 +1,6 @@
 package com.example.rebound.controller;
 
 import com.example.rebound.common.exception.LoginFailException;
-import com.example.rebound.dto.CounselorDTO;
-import com.example.rebound.dto.CounselorQualificationsFileDTO;
 import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.service.MemberService;
 import org.springframework.http.HttpStatus;
@@ -82,7 +80,7 @@ public class MemberController {
     @GetMapping("login")
     public String goToLogin(MemberDTO memberDTO, Model model) {
         model.addAttribute("memberDTO", memberDTO);
-        return "member/login";
+        return "member/login-user";
     }
 
 //    로그인 완료

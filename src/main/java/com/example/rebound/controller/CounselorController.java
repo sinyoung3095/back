@@ -1,8 +1,10 @@
 package com.example.rebound.controller;
 
+import com.example.rebound.common.exception.LoginFailException;
 import com.example.rebound.dto.CounselorDTO;
 import com.example.rebound.dto.CounselorQualificationsFileDTO;
 import com.example.rebound.dto.FileDTO;
+import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.service.CounselorService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -74,6 +76,19 @@ public class CounselorController {
     @PostMapping("join")
     public RedirectView joinCounselor(CounselorDTO counselorDTO, @RequestParam("file") List<MultipartFile> counselorQualificationsFiles) {
         counselorService.joinCounselor(counselorDTO, counselorQualificationsFiles);
-        return new RedirectView("/member/login");
+        return new RedirectView("/counselor/login");
     }
+
+    //    로그인 페이지로 이동
+    @GetMapping("login")
+    public String goToLogin(CounselorDTO counselorDTO, Model model) {
+        model.addAttribute("counselorDTO", counselorDTO);
+        return "member/login-counselor";
+    }
+
+    //    로그인 완료
+    @PostMapping("login")
+    public RedirectView Login(CounselorDTO counselorDTO) {
+        counselorService.login(counselorDTO).orElseThrow(LoginFailException::new);
+        return new RedirectView("/main-page/page"); }
 }
