@@ -3,7 +3,7 @@ const showList = async (page = 1) => {
     const loading = document.getElementById("loading");
 
     loading.style.display = "block";
-    const postsCriteria = await postService.getPost(page, postLayout.showList);
+    const postsCriteria = await postService.getPost(postLayout.showList, page);
     setTimeout(() => {
         loading.style.display = "none";
     }, 1000)
