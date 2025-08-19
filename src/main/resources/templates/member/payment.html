@@ -56,17 +56,14 @@
                 </div>
                 <aside class="main-13">
                     <h2>구독서비스를 신청하고<br>혜택을 받아보세요!</h2>
-                    <a href="">
-                        <button type="button" class="main-14" onclick="pay()">구독하기</button>
-                    </a>
+                    <button type="button" class="main-14" onclick="pay()">구독하기</button>
                 </aside>
             </div>
-
         </div>
     </main>
 </body>
 <script src="/js/member/payment.js"></script>
-<script src="https://js.bootpay.co.kr/bootpay-5.1.5.min.js" type="application/javascript"></script>
+<script src="https://js.bootpay.co.kr/bootpay-5.1.5.min.js"></script>
 <script>
     const pay = async () => {
         try {
@@ -75,8 +72,7 @@
                 price: 1000,
                 order_name: "테스트결제",
                 order_id: "TEST_ORDER_ID",
-                // order_id: "String(Date.now())",
-                pg: "다날",
+                pg: "카카오페이",
                 // method: "계좌이체",
                 tax_free: 0,
                 user: {
@@ -95,7 +91,6 @@
                 ],
                 extra: {
                     open_type: "iframe",
-                    // open_type: "popup",
                     card_quota: "0,2,3",
                     escrow: false,
                 },
