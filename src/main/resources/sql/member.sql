@@ -24,7 +24,7 @@ create table tbl_member
 );
 
 insert into tbl_member(member_name,member_email,member_phone_number,member_password)
-values ('일반','rebound4@gmail.com',0101355614578,'1234');
+values ('일반','rebound12@gmail.com',0085438937249578,'1234');
 
 
 

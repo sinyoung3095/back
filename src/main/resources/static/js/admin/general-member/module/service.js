@@ -1,14 +1,13 @@
 const service = (() => {
     console.log("서비스 들어옴");
-    const getMember = async(callback) => {
-        const response = await fetch(`/api/general/find`);
-        const members = await response.json();
-        console.log(members)
+    const getMember = async(callback,page=1) => {
+        const response = await fetch(`/api/list/${page}`);
+        const memberCriteriaDTO = await response.json();
         if(callback){
-                callback(members);
+                callback(memberCriteriaDTO);
         }
 
-        return members;
+        return memberCriteriaDTO;
 
     }
     console.log(" 서비스 끝");
