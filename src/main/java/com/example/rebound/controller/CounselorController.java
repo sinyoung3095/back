@@ -1,10 +1,7 @@
 package com.example.rebound.controller;
 
-import com.example.rebound.common.exception.LoginFailException;
+import com.example.rebound.common.exception.LoginFailCounselorException;
 import com.example.rebound.dto.CounselorDTO;
-import com.example.rebound.dto.CounselorQualificationsFileDTO;
-import com.example.rebound.dto.FileDTO;
-import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.service.CounselorService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -89,6 +86,6 @@ public class CounselorController {
     //    로그인 완료
     @PostMapping("login")
     public RedirectView Login(CounselorDTO counselorDTO) {
-        counselorService.login(counselorDTO).orElseThrow(LoginFailException::new);
+        counselorService.login(counselorDTO).orElseThrow(LoginFailCounselorException::new);
         return new RedirectView("/main-page/page"); }
 }
