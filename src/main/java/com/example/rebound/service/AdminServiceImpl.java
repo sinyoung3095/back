@@ -1,7 +1,9 @@
 package com.example.rebound.service;
 
+import com.example.rebound.dto.MemberCriteriaDTO;
 import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.repository.MemberDAO;
+import com.example.rebound.util.MemberCriteria;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +20,23 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public List<MemberDTO> findGeneralMembers() {
-        return memberDAO.findGeneralMemberAll();
+    public MemberCriteriaDTO findGeneralMembers(int page) {
+        MemberCriteriaDTO memberCriteriaDTO = new MemberCriteriaDTO();
+        MemberCriteria memberCriteria = new MemberCriteria(page,memberDAO.countGeneralMemberAll());
+        memberCriteriaDTO.setMembers(memberDAO.findGeneralMemberAll(memberCriteria));
+        memberCriteriaDTO.setMemberCriteria(memberCriteria);
+
+        List<MemberDTO> members = memberDAO.findGeneralMemberAll(memberCriteria);
+
+
+
+        memberCriteria.setHasMore(members.size() > memberCriteria.getRowCount());
+        return memberCriteriaDTO;
     }
+
+    @Override
+    public int countGeneralMembers() {
+        return memberDAO.countGeneralMemberAll();
+    }
+
 }
