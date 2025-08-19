@@ -7,6 +7,7 @@ import com.example.rebound.repository.CounselorDAO;
 import com.example.rebound.repository.CounselorQualificationsFileDAO;
 import com.example.rebound.repository.FileDAO;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -14,11 +15,13 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
 @Primary
+@Slf4j
 public class CounselorServiceImpl implements CounselorService {
     final CounselorDAO counselorDAO;
     private final FileDAO fileDAO;
@@ -35,28 +38,27 @@ public class CounselorServiceImpl implements CounselorService {
             if(file.getOriginalFilename().equals("")){
                 return;
             }
-
+            log.info(rootPath);
             UUID uuid = UUID.randomUUID();
-
             FileDTO fileDTO=new FileDTO();
             CounselorQualificationsFileDTO counselorQualificationsFileDTO=new CounselorQualificationsFileDTO();
 
             fileDTO.setFileName(uuid.toString()+"_"+file.getOriginalFilename());
             fileDTO.setFileOriginalName(file.getOriginalFilename());
-            fileDTO.setFileContent(file.getContentType());
+            fileDTO.setFileContentType(file.getContentType());
             fileDTO.setFilePath(todayPath);
             fileDTO.setFileSize(String.valueOf(file.getSize()));
-
             fileDAO.uploadFile(fileDTO);
+
+//            System.out.println(fileDTO.getId()); => null로 나옴
 
             counselorQualificationsFileDTO.setCounselorId(counselorDTO.getId());
             counselorQualificationsFileDTO.setId(fileDTO.getId());
-
             counselorQualificationsFileDAO.saveCounselorQualificationsFile(counselorQualificationsFileDTO);
 
             File directory=new File(rootPath);
             if(!directory.exists()){
-                directory.mkdir();
+                directory.mkdirs();
             }
 
             try {
@@ -75,5 +77,10 @@ public class CounselorServiceImpl implements CounselorService {
     @Override
     public boolean isExistCounselorPhoneNumber(String counselorPhoneNumber) {
         return counselorDAO.isExistCounselorPhoneNumber(counselorPhoneNumber);
+    }
+
+    @Override
+    public Optional<CounselorDTO> login(CounselorDTO counselorDTO) {
+        return counselorDAO.findCounselorByEmailAndPassword(counselorDTO);
     }
 }

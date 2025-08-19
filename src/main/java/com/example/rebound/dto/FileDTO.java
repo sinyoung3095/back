@@ -12,7 +12,7 @@ public class FileDTO {
     private String filePath;
     private String fileName;
     private String fileSize;
-    private String fileContent;
+    private String fileContentType;
     private String fileOriginalName;
     private String createdDatetime;
     private String updatedDatetime;

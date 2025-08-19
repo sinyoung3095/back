@@ -220,6 +220,10 @@ main {
     visibility: visible;
 }
 
+body .wid{
+    width: 338px;
+}
+
 .main-14{
     display: inline-block;
     font-weight: 500;

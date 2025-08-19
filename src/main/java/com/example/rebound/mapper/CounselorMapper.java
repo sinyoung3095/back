@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
+import java.util.Optional;
 
 @Mapper
 public interface CounselorMapper {
@@ -19,4 +20,7 @@ public interface CounselorMapper {
     //    전화번호 중복 검사
     @Select("select count(*)>0 from app.tbl_counselor where counselor_phone_number=#{counselorPhoneNumber}")
     public boolean existCounselorPhoneNumber(String counselorPhoneNumber);
+
+//    로그인
+    public Optional<CounselorDTO> selectCounselor(CounselorDTO counselorDTO);
 }

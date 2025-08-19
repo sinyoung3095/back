@@ -12,3 +12,7 @@ create table tbl_file
 
 alter table tbl_file add file_original_name varchar(255) not null;
 alter table tbl_file add file_content_type varchar(255) not null;
+
+select * from tbl_file;
+
+delete from tbl_file where id<20;
