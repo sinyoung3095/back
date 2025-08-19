@@ -78,14 +78,6 @@ public class MemberController {
         return ResponseEntity.ok().body(result);
     }
 
-//    상담사 회원가입 페이지로 이동
-    @GetMapping("join-counselor")
-    public String goToCounselorJoin(CounselorDTO counselorDTO, CounselorQualificationsFileDTO counselorQualificationsFileDTO, Model model) {
-        model.addAttribute("counselorDTO", counselorDTO);
-        model.addAttribute("counselorQualificationsFileDTO", counselorQualificationsFileDTO);
-        return "member/join-counselor";
-    }
-
 //    로그인 페이지로 이동
     @GetMapping("login")
     public String goToLogin(MemberDTO memberDTO, Model model) {

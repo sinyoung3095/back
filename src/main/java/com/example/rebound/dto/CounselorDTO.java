@@ -3,6 +3,9 @@ package com.example.rebound.dto;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 @Getter @Setter @ToString
 @NoArgsConstructor
@@ -18,4 +21,5 @@ public class CounselorDTO {
     private String counselorApprovalStatus;
     private String createdDatetime;
     private String updatedDatetime;
+    private List<FileDTO> counselorQualificationsFiles;
 }
