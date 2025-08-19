@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.rebound.mapper.CounselorMapper">
     <!--    상담사 회원 추가-->
-    <insert id="insertCounselor">
-        insert into tbl_counselor (counselor_name, counselor_phone_number, counselor_email, counselor_password)
-        values (#{counselorName}, #{counselorPhoneNumber}, #{counselorEmail}, #{counselorPassword})
+    <insert id="insertCounselorQualificationsFile">
+        insert into tbl_counselor_qualifications_file (id, counselor_id)
+        values (#{id} #{counselorId})
     </insert>
 </mapper>

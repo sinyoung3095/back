@@ -1,6 +1,10 @@
 package com.example.rebound.mapper;
 
+<<<<<<< HEAD
 import com.example.rebound.dto.MemberCriteriaDTO;
+=======
+import com.example.rebound.dto.CounselorDTO;
+>>>>>>> c76ce4e481c561cd0c9b4005b9edf0ee9f64fac0
 import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.util.MemberCriteria;
 import org.apache.ibatis.annotations.Mapper;
@@ -12,6 +16,7 @@ import org.apache.ibatis.annotations.Param;
 
 import java.lang.reflect.Member;
 import java.util.List;
+import java.util.Optional;
 
 @Mapper
 public interface MemberMapper {
@@ -20,6 +25,11 @@ public interface MemberMapper {
 //    이메일 중복 검사
     @Select("select count(*) > 0 from tbl_member where member_email = #{memberEmail}")
     public boolean existMemberEmail(String memberEmail);
+//    전화번호 중복 검사
+    @Select("select count(*)>0 from app.tbl_member where member_phone_number=#{memberPhoneNumber}")
+    public boolean existMemberPhoneNumber(String memberPhoneNumber);
+//    로그인
+    public Optional<MemberDTO> selectMember(MemberDTO memberDTO);
     //    조회
     public MemberDTO selectMemberById(int memberId);
     //    관리자 조회

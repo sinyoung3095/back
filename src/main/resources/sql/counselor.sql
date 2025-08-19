@@ -26,3 +26,7 @@ alter table tbl_counselor modify counselor_approval_status enum ('approval', 'aw
 insert into tbl_counselor (counselor_name, counselor_email, counselor_phone_number, counselor_password, counselor_address)
 values ('상담사이름1', 'test@gmail.com', '010123456789',
         '1234', '서울특별시 강남구 역삼로7길');
+
+alter table tbl_counselor modify counselor_password varchar(255);
+alter table tbl_counselor modify counselor_address varchar(255);
+alter table tbl_counselor modify file_id bigint unsigned;
