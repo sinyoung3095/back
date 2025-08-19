@@ -20,6 +20,7 @@ public class MemberCriteria {
     private boolean hasPreviousPage;
     private boolean hasMore;
     private int count;
+    private int total;
 
     public MemberCriteria(int page, int total) {
         rowCount = 10;
@@ -34,6 +35,7 @@ public class MemberCriteria {
         offset = (page - 1) * rowCount;
         hasNextPage = endPage < realEnd;
         hasPreviousPage = startPage > 1;
+        this.total = total;
     }
 }
 

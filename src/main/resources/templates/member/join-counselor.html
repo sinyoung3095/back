@@ -30,26 +30,27 @@
             <div class="main-3">
                 <div class="main-4">
                     <h1 class="main-5">상담사 회원가입</h1>
-                    <form action="/member/join-counselor" method="post" id="joinForm" th:object="${counselorDTO}">
+                    <form action="/counselor/join" method="post" id="joinWrap" enctype="multipart/form-data" th:object="${counselorDTO}">
                         <div class="main-6">
                             <div class="main-9">
                                 <label class="main-10" for="counselorName">이름</label>
                                 <div class="main-11">
                                     <div class="main-12">
                                         <!-- 처음 포커스 전에 class이름은 main-16 이고  -->
-                                        <input id="counselorName" type="text" name="counselorName" placeholder="이름을 입력해 주세요." aria-describedby="이름을 입력해 주세요." maxlength="20" enterkeyhint="enter" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" class="main-13 text" value="" th:field="*{counselorName}">
+                                        <input id="counselorName" type="text" name="counselorName" placeholder="이름을 입력해 주세요." aria-describedby="이름을 입력해 주세요." maxlength="20" enterkeyhint="enter" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" class="main-16 text" value="" th:field="*{counselorName}">
                                     </div>
                                 </div>
-                                <!-- 
+                                <p class="main-14 counselor-name-error-message disableEvent" role="alert" aria-live="assertive">
+                                    <span>이름을 입력해 주세요.</span>
+                                </p>
+                                <!--
                                 처음 포커스 전에
                                 <p class="main-14" role="alert" aria-live="assertive">
                                     <span>본인 실명이 아닌 경우 가입이 불가합니다.</span>
                                 </p>
                                 폰트 컬러도 회색임
                                     -->
-                                <p class="main-14" role="alert" aria-live="assertive">
-                                    <span>실명을 입력해 주세요</span>
-                                </p>
+<!--                                -->
                             </div>
                             <div class="main-9">
                                 <label class="main-10" for="counselorPhoneNumber">전화번호</label>
@@ -59,11 +60,13 @@
                                         <input id="counselorPhoneNumber" type="text" name="counselorPhoneNumber" placeholder="01012345678" inputmode="tel" maxlength="30" enterkeyhint="enter" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" class="main-16 text" value="" style="padding-right: 24px;" th:field="*{counselorPhoneNumber}">
                                     </div>
                                 </div>
-                                <!-- 
-                                미입력시
-                                <p class="main-14" role="alert" aria-live="assertive">
+                                <p class="main-14 counselor-phoneNumber-error-message disableEvent" role="alert" aria-live="assertive">
                                     <span>전화번호를 입력해 주세요</span>
                                 </p>
+                                <div class="exist-phoneNumber-error-message" style="color: red;"></div>
+                                <!-- 
+                                미입력시
+
                                 잘못 입력시 밑에 메시지 출력
                                 올바른 전화번호를 입력해 주세요
                                 -->
@@ -76,11 +79,13 @@
                                         <input id="counselorEmail" type="text" name="counselorEmail" placeholder="example@gmail.com" aria-describedby="example@soomgo.com" inputmode="email" maxlength="30" enterkeyhint="enter" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" class="main-16 text" value="" style="padding-right: 24px;" th:field="*{counselorEmail}">
                                     </div>
                                 </div>
-                                <!-- 
-                                미입력시
-                                <p class="main-14" role="alert" aria-live="assertive">
+                                <p class="main-14 counselor-email-error disableEvent" role="alert" aria-live="assertive">
                                     <span>이메일을 입력해 주세요</span>
                                 </p>
+                                <div class="exist-email-error-message" style="color: red;"></div>
+                                <!-- 
+                                미입력시
+
                                 잘못 입력시 밑에 메시지 출력
                                 올바른 이메일을 입력해 주세요
                                 -->
@@ -93,25 +98,27 @@
                                         <input id="counselorPassword" type="password" name="counselorPassword" placeholder="비밀번호를 입력해 주세요." aria-describedby="비밀번호를 입력해 주세요." autocomplete="off" enterkeyhint="enter" class="main-16 text" value="" style="padding-right: 24px;" th:field="*{counselorPassword}">
                                     </div>
                                 </div>
-                                <!-- 
-                                <p class="main-14" role="alert" aria-live="assertive">
-                                    <span>영문, 숫자, 특수문자 중 2종류 이상 사용해 주세요</span>
+                                <p class="main-14 counselor-password-error disableEvent" role="alert" aria-live="assertive">
+                                    <span>비밀번호를 입력해 주세요</span>
                                 </p>
+                                <!-- 
+
                                 -->
                             </div>
                             <div class="main-9">
-                                <label class="main-10" for="passwordOK">비밀번호 확인</label>
+                                <label class="main-10" for="counselorPasswordOK">비밀번호 확인</label>
                                 <div class="main-11">
                                     <div class="main-12">
                                         <span class="main-15"></span>
-                                        <input id="passwordOK" type="password" name="passwordConfirm" placeholder="비밀번호를 한 번 더 입력해 주세요." aria-describedby="비밀번호를 한 번 더 입력해 주세요." autocomplete="off" enterkeyhint="enter" class="main-16 text" value="" style="padding-right: 24px;">
+                                        <input id="counselorPasswordOK" type="password" name="passwordConfirm" placeholder="비밀번호를 한 번 더 입력해 주세요." aria-describedby="비밀번호를 한 번 더 입력해 주세요." autocomplete="off" enterkeyhint="enter" class="main-16 text" value="" style="padding-right: 24px;">
                                     </div>
                                 </div>
+                                <p class="main-14 counselor-passwordOK-error disableEvent" role="alert" aria-live="assertive">
+                                    <span>비밀번호가 일치하지 않습니다</span>
+                                </p>
                                 <!-- 
                                 비밀번호 불일치시
-                                <p class="main-14" role="alert" aria-live="assertive">
-                                    <span>비밀번호가 일치하지 않습니다</span>
-                                </p> 
+
                                 -->
                             </div>
                             <div class="main-9">
@@ -128,7 +135,25 @@
                         main-17의 display block으로 변경
                             -->
 
-
+                        <div class="main-7">
+                            <div class="main-33">
+                                <div class="main-34">
+                                    <div class="main-35">
+                                        <!-- 약관 동의창에 있는 버튼 -->
+                                        <button type="button" class="main-36">
+                                            <span class="main-31">
+                                                <span class="main-32">이전</span>
+                                            </span>
+                                        </button>
+                                        <button type="button" class="main-37 joinSubmit">
+                                            <span class="main-31">
+                                                <span class="main-32">다음</span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </form>
                 </div>
@@ -136,5 +161,7 @@
         </div>
     </main>
 </body>
-<script src="/js/member/member-join-counselor/event.js"></script>
+<script src="/js/counselor/join/module/layout.js"></script>
+<script src="/js/counselor/join/module/service.js"></script>
+<script src="/js/counselor/join/event.js"></script>
 </html>

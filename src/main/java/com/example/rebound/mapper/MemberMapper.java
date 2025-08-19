@@ -1,9 +1,13 @@
 package com.example.rebound.mapper;
 
-import com.example.rebound.dto.CounselorDTO;
+
 import com.example.rebound.dto.MemberDTO;
+import com.example.rebound.util.MemberCriteria;
 import org.apache.ibatis.annotations.Mapper;
+
 import org.apache.ibatis.annotations.Select;
+
+import org.apache.ibatis.annotations.Param;
 
 import java.lang.reflect.Member;
 import java.util.List;
@@ -26,7 +30,9 @@ public interface MemberMapper {
     //    관리자 조회
     public MemberDTO selectAdmin(MemberDTO memberDTO );
     //    일반 회원 모두 조회
-    public List<MemberDTO> selectGeneralAll();
+    public List<MemberDTO> selectGeneralAll(@Param("memberCriteria") MemberCriteria memberCriteria);
+    //    일반 회원 전체 수 조회
+    public int selectGeneralAllCount();
     //    수정
     public void updateMember(Member member);
     //    삭제

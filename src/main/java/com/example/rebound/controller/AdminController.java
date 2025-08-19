@@ -97,7 +97,7 @@ public class AdminController {
         return "/admin/counselor-list";
     }
 //    일반 멤버 목록 이동
-    @GetMapping("general-memberlist")
+    @GetMapping("general-memberlist/{page}")
     public String goToGeneralMemberList(){
         return "/admin/general-memberlist";
     }

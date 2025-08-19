@@ -1,8 +1,9 @@
 package com.example.rebound.repository;
 
-import com.example.rebound.dto.CounselorDTO;
+
 import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.mapper.MemberMapper;
+import com.example.rebound.util.MemberCriteria;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -42,7 +43,12 @@ public class MemberDAO {
     public MemberDTO isExistAdmin(MemberDTO memberDTO) {
         return memberMapper.selectAdmin(memberDTO);
     }
-    public List<MemberDTO> findGeneralMemberAll() {
-        return memberMapper.selectGeneralAll();
+    //    일반 회원 전체 조회
+    public List<MemberDTO> findGeneralMemberAll(MemberCriteria memberCriteria) {
+        return memberMapper.selectGeneralAll(memberCriteria);
+    }
+    //    일반 회원 전체 수 조회
+    public int countGeneralMemberAll() {
+        return memberMapper.selectGeneralAllCount();
     }
 }

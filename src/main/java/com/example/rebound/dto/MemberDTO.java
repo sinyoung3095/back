@@ -20,7 +20,7 @@ public class MemberDTO {
     private String mentor;
     private String memberStatus;
     private String memberCommon;
-    private String createdDatetime;
-    private String updatedDatetime;
+    private String createdDate;
+    private String updatedDate;
     private boolean remember;
 }
