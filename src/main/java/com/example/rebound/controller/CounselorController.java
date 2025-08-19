@@ -79,6 +79,7 @@ public class CounselorController {
     //    로그인 페이지로 이동
     @GetMapping("login")
     public String goToLogin(CounselorDTO counselorDTO, Model model) {
+//        로그인 페이지 이동
         model.addAttribute("counselorDTO", counselorDTO);
         return "member/login-counselor";
     }
