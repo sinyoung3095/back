@@ -4,8 +4,8 @@ const sideSubLists = document.querySelectorAll(".menu-sub-list");
 const sideSubLinks = document.querySelectorAll(".rebound-link");
 const tabNames = document.querySelectorAll(".tab-name");
 const icons = document.querySelectorAll(".icon-wrapper i");
-
 service.getMember(layout.showList);
+
 
 // 홈 클릭 이벤트
 homeButton.addEventListener("click", (e) => {
@@ -165,6 +165,18 @@ document.addEventListener("click", (e) => {
     }
 });
 
+const memberContainer = document.querySelector("tbody[class=members]");
+memberContainer.addEventListener("click",(e)=>{
+    if(e.target.classList.contains("action-btn")){
+        modal.style.display = "block";
+        setTimeout(() => {
+            modal.classList.add("show");
+            modal.style.background = "rgba(0,0,0,0.5)";
+            document.body.classList.add("modal-open");
+        }, 100);
+    }
+})
+
 
 // 일반회원 상세 모달 창 열고 닫는 이벤트
 const modal = document.querySelector(".member-modal");
@@ -238,3 +250,15 @@ pageItemNums.forEach((pageItemNum) => {
         pageItemNum.parentElement.classList.add("active");
     });
 });
+
+const search = document.querySelector(".btn.btn-search");
+const content = document.querySelector("input[name=keyword]");
+
+search.addEventListener("click",(e)=>{
+    const page =1;
+    console.log(content)
+    const keyword=content.value;
+    console.log(keyword);
+    service.getMember(layout.showList, page, keyword);
+
+})

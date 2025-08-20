@@ -14,14 +14,11 @@ import java.util.List;
 public class AdminRestController {
     private final AdminService adminService;
 
-    @GetMapping("{page}")
-    public MemberCriteriaDTO GeneralFindAll(@PathVariable int page) {
-        return adminService.findGeneralMembers(page);
+    @GetMapping("general/{page}")
+    public MemberCriteriaDTO GeneralFindAll(@PathVariable int page,@RequestParam(required = false) String keyword) {
+        System.out.println(keyword);
+        return adminService.findGeneralMembers(page,keyword);
     }
-//    @GetMapping("{page}}")
-//    public List<MemberDTO> find(@PathVariable("page") int page){
-//        MemberCriteriaDTO memberCriteriaDTO = adminService.findGeneralMembers(page);
-//        return memberCriteriaDTO.getMembers();
-//    };
+//
 
 }

@@ -10,8 +10,6 @@ public interface AdminService {
     //    관리자 확인
     public MemberDTO checkAdmin(MemberDTO memberDTO);
 //    일반 회원 전체 조회
-    public MemberCriteriaDTO findGeneralMembers(int page);
-//    일반 회원 전체 수 조회
-    public int countGeneralMembers();
+    public MemberCriteriaDTO findGeneralMembers(int page,String keyword);
 
 }
