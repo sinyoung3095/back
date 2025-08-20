@@ -23,17 +23,15 @@ public class PaymentController {
     private final HttpSession session;
 
     //    payment 페이지 이동
-    @GetMapping("/")
+    @GetMapping("")
     public String goToPayment(Model model) {
         model.addAttribute("paymentDTO", paymentDTO);
         return "/member/payment";
     }
 
 //    첫 결제
-    @PostMapping(value = "/")
+    @PostMapping(value = "")
     public RedirectView insertPayment(SubscribeDTO subscribeDTO) {
-
-
         paymentService.insertPayment(subscribeDTO);
         return new RedirectView("/member/mypage");
     }

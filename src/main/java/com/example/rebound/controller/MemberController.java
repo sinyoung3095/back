@@ -165,12 +165,4 @@ public class MemberController {
     public String goToMyPageConsultationReview(){
         return "member/mypage-consultation-review";
     }
-
-    @GetMapping("payment")
-    public String insertPayment(PaymentDTO paymentDTO) {
-        memberService.insertPayment(paymentDTO);
-        return "member/payment";
-    }
-
-
 }

@@ -3,6 +3,6 @@
 <mapper namespace="com.example.rebound.mapper.SubscribeMapper">
     <insert id="insertSubscribe" useGeneratedKeys="true" keyProperty="id">
         insert into tbl_subscribe (subscribe_price)
-        values(#{subscribe_price})
+        values(#{subscribePrice})
     </insert>
 </mapper>

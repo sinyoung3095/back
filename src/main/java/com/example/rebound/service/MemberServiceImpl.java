@@ -39,21 +39,4 @@ public class MemberServiceImpl implements MemberService {
     public Optional<MemberDTO> login(MemberDTO memberDTO) {
         return memberDAO.findMemberByEmailAndPassword(memberDTO);
     }
-
-//    첫 결제
-    @Override
-    public void insertPayment(PaymentDTO paymentDTO) {
-        paymentDAO.insertPaymeent(paymentDTO);
-    }
-//    n번째 결제
-    @Override
-    public void updatePayment(PaymentDTO paymentDTO) {
-        paymentDAO.updatePaymeent(paymentDTO);
-    }
-//    결제 조회
-    @Override
-    public List<PaymentDTO> selectPayment(PaymentDTO paymentDTO) {
-        return paymentDAO.selectPaymeent(paymentDTO);
-    }
-
 }

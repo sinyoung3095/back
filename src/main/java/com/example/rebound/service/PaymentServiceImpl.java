@@ -24,10 +24,11 @@ public class PaymentServiceImpl implements PaymentService {
     @Transactional(rollbackFor = Exception.class)
     public void insertPayment(SubscribeDTO subscribeDTO) {
         PaymentDTO paymentDTO = new PaymentDTO();
-        MemberDTO memberDTO = (MemberDTO) session.getAttribute("member");
+//        MemberDTO memberDTO = (MemberDTO) session.getAttribute("member");
         subscribeDAO.insertSubscribe(subscribeDTO);
         paymentDTO.setSubscribeId(subscribeDTO.getId());
 //        paymentDTO.setMemberId(memberDTO.getId());
+        paymentDTO.setMemberId(4L);
         paymentDAO.insertPayment(paymentDTO);
     }
 
