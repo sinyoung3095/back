@@ -28,11 +28,20 @@ public class MemberDAO {
 //    전화번호 중복 검사
     public boolean isExistMemberPhoneNumber(String memberPhoneNumber){return memberMapper.existMemberPhoneNumber(memberPhoneNumber);}
 
+
 //    로그인
     public Optional<MemberDTO> findMemberByEmailAndPassword(MemberDTO memberDTO){
         return memberMapper.selectMember(memberDTO);
     }
 
+//    카카오 계정 기존 이메일과 중복인지 검사
+    public Optional<MemberDTO> findMemberByKakaoEmail(String kakaoEmail){
+        return memberMapper.selectMemberByKakaoEmail(kakaoEmail);
+    }
+    //    카카오 회원가입
+    public void saveKakaoMember(MemberDTO memberDTO){
+        memberMapper.insertKakaoMember(memberDTO);
+    }
 
 
     //    조회
