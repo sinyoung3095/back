@@ -220,6 +220,10 @@ main {
     visibility: visible;
 }
 
+body .wid{
+    width: 338px;
+}
+
 .main-14{
     display: inline-block;
     font-weight: 500;
@@ -269,6 +273,11 @@ main {
     border: none;
     cursor: pointer;
     gap: 4px;
+}
+
+.kakaologin{
+    width: 100%;
+    overflow: hidden;
 }
 
 .main-18{

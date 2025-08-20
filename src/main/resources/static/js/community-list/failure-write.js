@@ -22,44 +22,66 @@ postContent.addEventListener("keydown", (e) => {
     }
 });
 
+// 모달 창
+const categoryButton = document.querySelector(".category-select-box");
+const modal = document.getElementById("search-service-modal___BV_modal_outer_");
+const modalClose = modal.querySelector(".btn.close-button");
+const categoryButtonText = document.getElementById("categoryButtonText");
+const categoryIdInput = document.getElementById("categoryId");
+const categoryItems = modal.querySelectorAll("li.category-item");
+
+// 모달 열기
+categoryButton.addEventListener("click", () => {
+    modal.style.display = "block";
+});
+
+// 모달 닫기
+modalClose.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+// 카테고리 선택
+categoryItems.forEach((categoryItem, index) => {
+    categoryItem.addEventListener("click", (e) => {
+        const categoryName = categoryItem.textContent.trim();
+        const categoryId = index + 1;
+
+        categoryButtonText.textContent = categoryName;
+        categoryIdInput.value = categoryId;
+
+        modal.style.display = "none";
+
+        checkSubmit();
+    });
+});
+
 // 등록 버튼 활성화
 const submit = document.querySelector(
     "div.subject-header-wrapper button.write-post-submit"
 );
-const writeContainers = document.querySelectorAll(
-    "section.write-post-container"
-);
 
-writeContainers.forEach((writeContainer) => {
-    postContent.addEventListener("keydown", (e) => {
-        if (!postTitle.value || !postContent.value) {
-            submit.classList.remove("active");
-            submit.style.cursor = "default";
-        } else {
-            submit.classList.add("active");
-            submit.style.cursor = "pointer";
-        }
-    });
-    postTitle.addEventListener("keydown", (e) => {
-        if (!postTitle.value || !postContent.value) {
-            submit.classList.remove("active");
-            submit.style.cursor = "default";
-        } else {
-            submit.classList.add("active");
-            submit.style.cursor = "pointer";
-        }
-    });
-});
+function checkSubmit() {
+    const title = postTitle.value.trim();
+    const content = postContent.value.trim();
+    const categoryId = categoryIdInput.value;
 
-// 모달 창
-const categoryButton = document.querySelector(".category-select-box");
-const modal = document.querySelector(".categoty-modal");
-const modalClose = document.querySelector(".btn.close-button.btn-none");
+    if (title && content && categoryId) {
+        submit.classList.add("active");
+        submit.style.cursor = "pointer";
+        submit.disabled = false;
+    } else {
+        submit.classList.remove("active");
+        submit.style.cursor = "default";
+        submit.disabled = true;
+    }
+}
 
-categoryButton.addEventListener("click", (e) => {
-    modal.classList.remove("active");
-});
+postTitle.addEventListener("input", checkSubmit);
+postContent.addEventListener("input", checkSubmit);
+categoryIdInput.addEventListener("input", checkSubmit);
 
-modalClose.addEventListener("click", (e) => {
-    modal.classList.add("active");
-});
+checkSubmit();
+
+
+
+

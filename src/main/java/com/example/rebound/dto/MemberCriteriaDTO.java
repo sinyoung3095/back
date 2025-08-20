@@ -14,7 +14,7 @@ import java.util.List;
 public class MemberCriteriaDTO {
 
     private List<MemberDTO> members;
-    private MemberCriteria postCriteria;
+    private MemberCriteria memberCriteria;
 
 
 }

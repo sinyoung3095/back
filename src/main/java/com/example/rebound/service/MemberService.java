@@ -17,4 +17,10 @@ public interface MemberService {
 //    회원 로그인
     public Optional<MemberDTO> login(MemberDTO memberDTO);
 
+//    첫 결제
+    public void insertPayment(PaymentDTO paymentDTO);
+//    n번째 결제
+    public void updatePayment(PaymentDTO paymentDTO);
+//    결제 조회
+    public List<PaymentDTO> selectPayment(PaymentDTO paymentDTO);
 }

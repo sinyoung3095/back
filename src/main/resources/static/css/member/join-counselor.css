@@ -419,6 +419,10 @@ body {
     background-color: rgb(105, 59, 242);
     color: rgb(255, 255, 255);
 }
+
+body .disableEvent{
+    display: none; !important;
+}
 .main-37:disabled {
     cursor: default;
 }

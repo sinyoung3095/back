@@ -1,8 +1,9 @@
 package com.example.rebound.repository;
 
-import com.example.rebound.dto.CounselorDTO;
+
 import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.mapper.MemberMapper;
+import com.example.rebound.util.MemberCriteria;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -27,11 +28,20 @@ public class MemberDAO {
 //    전화번호 중복 검사
     public boolean isExistMemberPhoneNumber(String memberPhoneNumber){return memberMapper.existMemberPhoneNumber(memberPhoneNumber);}
 
+
 //    로그인
     public Optional<MemberDTO> findMemberByEmailAndPassword(MemberDTO memberDTO){
         return memberMapper.selectMember(memberDTO);
     }
 
+//    카카오 계정 기존 이메일과 중복인지 검사
+    public Optional<MemberDTO> findMemberByKakaoEmail(String kakaoEmail){
+        return memberMapper.selectMemberByKakaoEmail(kakaoEmail);
+    }
+    //    카카오 회원가입
+    public void saveKakaoMember(MemberDTO memberDTO){
+        memberMapper.insertKakaoMember(memberDTO);
+    }
 
 
     //    조회
@@ -42,7 +52,12 @@ public class MemberDAO {
     public MemberDTO isExistAdmin(MemberDTO memberDTO) {
         return memberMapper.selectAdmin(memberDTO);
     }
-    public List<MemberDTO> findGeneralMemberAll() {
-        return memberMapper.selectGeneralAll();
+    //    일반 회원 전체 조회
+    public List<MemberDTO> findGeneralMemberAll(MemberCriteria memberCriteria) {
+        return memberMapper.selectGeneralAll(memberCriteria);
+    }
+    //    일반 회원 전체 수 조회
+    public int countGeneralMemberAll() {
+        return memberMapper.selectGeneralAllCount();
     }
 }

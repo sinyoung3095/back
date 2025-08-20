@@ -230,7 +230,7 @@
                                 <div class="row">
                                     <div class="col-auto">
                                         <span class="member-count">총
-                                            <span class="count-amount">n</span>명
+                                            <span class="count-amount"></span>명
                                         </span>
                                     </div>
                                     <!-- PG 선택, 결제방식선택, 결제상태선택 버튼 -->
@@ -311,24 +311,8 @@
                             </div>
                             <!-- 페이지 번호 -->
                             <nav class="rebound-pagination-wrapper mt-5 mb-4">
-                                <ul class="pagination rebound-pagination">
-                                    <!-- 현재 페이지는 active 클래스 추가된다. -->
-                                    <li class="page-item page-num active">
-                                        <!-- class명 앞에 rebound-link를 사이드바 이벤트로 인해 배제했습니다. -->
-                                        <a href="" class="page-item-link page-item-num">1</a>
-                                    </li>
-                                    <li class="page-item page-num">
-                                        <a href="" class="page-item-link page-item-num">2</a>
-                                    </li>
-                                    <li class="page-item page-num">
-                                        <a href="" class="page-item-link page-item-num">3</a>
-                                    </li>
-                                    <li class="page-item page-num">
-                                        <a href="" class="page-item-link page-item-num">4</a>
-                                    </li>
-                                    <li class="page-item page-num">
-                                        <a href="" class="page-item-link page-item-num">5</a>
-                                    </li>
+                                <ul id="pageWrap" class="pagination rebound-pagination">
+
                                 </ul>
                                 <div class="pagination-desc">
                                     <!-- 회원이 1페이지(10명 미만)일 때 -->

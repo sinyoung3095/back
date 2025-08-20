@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link data-vue-meta="1" rel="shortcut icon" href="/images/member/icon.png">
+    <link rel="stylesheet" href="/css/member/login.css">
+    <link rel="stylesheet" href="/font/didactgothic.woff2">
+    <link rel="stylesheet" href="/font/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
+    <link rel="stylesheet" href="/font/roboto-cyrillic-700-normal-d010f1f324e111a22e53.woff2">
+    <link rel="stylesheet" href="/font/roboto-cyrillic-ext-700-normal-be4d02458ce53887dc37.woff2">
+    <link rel="stylesheet" href="/font/roboto-greek-700-normal-50e795c1345353b0e996.woff2">
+    <link rel="stylesheet" href="/font/roboto-greek-ext-700-normal-bd9854c751441ccc1a70.woff2">
+    <link rel="stylesheet" href="/font/roboto-latin-700-normal-227c93190fe7f82de3f8.woff2">
+    <link rel="stylesheet" href="/font/roboto-latin-ext-700-normal-ed67ad54b1a8f5d21150.woff2">
+    <link rel="stylesheet" href="/font/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
+
+</head>
+<body>
+    <div id="__next">
+        <main class="main">
+            <div class="main-1">
+                <div class="main-2">
+                    <h1 class="main-3">상담사 로그인</h1>
+                    <form class="main-4" action="/counselor/login" method="post" th:object="${counselorDTO}">
+                        <div class="main-5">
+                           <div class="css-0">
+                            <label for="counselorEmail" class="main-8">이메일</label>
+                            <div class="main-9">
+                                <!--정상 입력시 class에 main-11-1  -->
+                                <input id="counselorEmail" class="main-11-1" placeholder="example@soomgo.com" name="counselorEmail" type="email" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" value="" th:field="*{counselorEmail}">
+                            </div>
+                            <!-- 정상 입력시 출력x -->
+                            <div class="main-10">
+                                <p data-testid="email-error" class="main-12" style="display: none;">이메일 주소를 입력해 주세요.</p>
+                            </div>
+                           </div> 
+                           <div>
+                                <div id="box" class="css-0">
+                                    <label for="counselorPassword" class="main-8">비밀번호</label>
+                                    <div id="pwText" class="main-9">
+                                        <!-- 에러 상황일시 class에 main-13으로 변경 -->
+                                        <input id="counselorPassword" class="main-13-1" placeholder="비밀번호를 입력해 주세요." name="counselorPassword" type="password" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" value="" th:field="*{counselorPassword}">
+                                        <button id ="cancel" type="button" class="main-13-2"><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="none" viewBox="0 0 24 25" color="#E0E5EB"><path fill="currentColor" fill-rule="evenodd" d="M12 22.5c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10m-3.53-6.47a.75.75 0 0 1 0-1.06l2.47-2.47-2.47-2.47a.75.75 0 1 1 1.06-1.06L12 11.44l2.47-2.47a.75.75 0 1 1 1.06 1.06l-2.47 2.47 2.47 2.47a.75.75 0 1 1-1.06 1.06L12 13.56l-2.47 2.47a.75.75 0 0 1-1.06 0" clip-rule="evenodd"></path></svg></button>
+                                        <button type="button" class="main-13-3">표시</button>           
+                                    </div>
+                                    <div class="main-10">
+                                        <p data-testid="password-error" class="main-12" style="display: none;">비밀번호를 입력해 주세요.</p>
+                                    </div>
+                                    <!-- 에러 상황일시 출력 -->
+                                    <!-- <div class="main-10">
+                                        <p data-testid="password-error" class="main-12">비밀번호를 입력해 주세요.</p>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <button type="submit" class="main-14">이메일 로그인</button>
+                        </div>
+                        <div class="main-6">
+                            <a class="main-15" href="">이메일 찾기</a>
+                            <div class="main-16"></div>
+                            <a class="main-15" href="">비밀번호 찾기</a>
+                        </div>
+
+                    </form>
+                    <form action="/member/login" method="get">
+                        <button type="submit" class="main-14 wid">일반 회원으로 로그인하기</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+<script src="/js/counselor/login/module/service.js"></script>
+<script src="/js/counselor/login/module/layout.js"></script>
+<script src="/js/counselor/login/event.js"></script>
+</html>

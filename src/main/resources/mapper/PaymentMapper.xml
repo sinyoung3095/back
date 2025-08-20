@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.rebound.mapper.PaymentMapper">
-    <insert id="insertPayment">
+    <insert id="insertPaymeent">
         insert into tbl_payment (payment_start_date, payment_update_date, subscribe_id, member_id)
-        values (NOW(), DATE_ADD(NOW(), INTERVAL 1 MONTH), #{subscribeId}, #{memberId})
+        values (NOW(), NOW(), #{subscribeId}, #{memberId})
     </insert>
 
     <update id="updatePayment">
@@ -15,6 +15,6 @@
     <select id="selectPayment">
         select id, created_date, updated_date, payment_start_date, payment_update_date, subscribe_id, member_id
         from tbl_payment
-        where member_id = #{memberId}
+        where member_id = #{memberId} and subscribe_id = #{subscribeId}
     </select>
 </mapper>
