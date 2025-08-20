@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 public class SubscribeDTO {
     private Long id;
     private int subscribePrice;
-    private String subscribeBoon;
     private String createdDate;
     private String updatedDate;
 }

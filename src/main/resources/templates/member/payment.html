@@ -28,7 +28,7 @@
                         <div class="main-4">
                             <section>
                                 <h2 class="main-5">구독 가격</h2>
-                                <div class="main-6">
+                                <div class="main-6" data-subscribeprice="20000">
                                     <div>
                                         <div class="main-7">
                                             <span class="main-15">평균</span>
@@ -56,27 +56,27 @@
                 </div>
                 <aside class="main-13">
                     <h2>구독서비스를 신청하고<br>혜택을 받아보세요!</h2>
-                    <a href="">
-                        <button type="button" class="main-14" onclick="pay()">구독하기</button>
-                    </a>
+                    <button type="button" class="main-14" onclick="pay()">구독하기</button>
                 </aside>
             </div>
-
         </div>
     </main>
+    <form id="paymentForm" action="/pay" method="post">
+        <input type="hidden" name="subscribePrice" id="subscribePrice">
+    </form>
 </body>
 <script src="/js/member/payment.js"></script>
-<script src="https://js.bootpay.co.kr/bootpay-5.1.5.min.js" type="application/javascript"></script>
+<script src="https://js.bootpay.co.kr/bootpay-5.1.5.min.js"></script>
 <script>
     const pay = async () => {
+        const price = document.querySelector("div.main-6").dataset.subscribeprice;
         try {
             const response = await Bootpay.requestPayment({
                 application_id: "687efaa4285ac508a5ee7ab9",
-                price: 1000,
+                price: price,
                 order_name: "테스트결제",
                 order_id: "TEST_ORDER_ID",
-                // order_id: "String(Date.now())",
-                pg: "다날",
+                pg: "카카오페이",
                 // method: "계좌이체",
                 tax_free: 0,
                 user: {
@@ -90,12 +90,11 @@
                         id: "item_id",
                         name: "테스트아이템",
                         qty: 1,
-                        price: 1000,
+                        price: 20000,
                     },
                 ],
                 extra: {
                     open_type: "iframe",
-                    // open_type: "popup",
                     card_quota: "0,2,3",
                     escrow: false,
                 },
@@ -105,7 +104,8 @@
                     // 가상계좌 입금 완료 처리
                     break;
                 case "done":
-                    console.log(response);
+                    document.querySelector("input[name=subscribePrice]").value = price;
+                    document.getElementById("paymentForm").submit();
                     // 결제 완료 처리
                     break;
                 case "confirm": //payload.extra.separately_confirmed = true; 일 경우 승인 전 해당 이벤트가 호출됨
