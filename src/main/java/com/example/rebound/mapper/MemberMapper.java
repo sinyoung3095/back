@@ -1,23 +1,13 @@
 package com.example.rebound.mapper;
 
-
 import com.example.rebound.dto.MemberCriteriaDTO;
 import com.example.rebound.dto.CounselorDTO;
-import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.util.MemberCriteria;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
-
-
 import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.util.MemberCriteria;
-import org.apache.ibatis.annotations.Mapper;
-
-import org.apache.ibatis.annotations.Select;
-
-
 import org.apache.ibatis.annotations.Param;
-
 import java.lang.reflect.Member;
 import java.util.List;
 import java.util.Optional;

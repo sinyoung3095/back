@@ -108,103 +108,18 @@
                                     <div class="slick-total">
                                         <div class="slick-total02">
                                             <div class="slick-list slick-pick">
-                                                <div class="slick-slide">
-                                                    <a>
+                                                <div class="slick-slide" th:each="post : ${postsByViews}">
+                                                    <a th:href="@{/community-list/{id}(id=${post.id})}">
                                                         <div class="curation-item">
-                                                            <h3 class="prisma-typography headline16 primary">
-                                                                사진과 감사 메시지를 더해, 리뷰 쓰기 더 쉬워졌어요!
+                                                            <h3 class="prisma-typography headline16 primary" th:text="${post.postTitle}">
+                                                                제목
                                                             </h3>
                                                             <div class="react-items">
-                                                                <p class="view prisma-typography body12:regular primary">
-                                                                    2,731
+                                                                <p class="view prisma-typography body12:regular primary" th:text="${post.postViews}">
+                                                                    조회 수
                                                                 </p>
-                                                                <p class="comment prisma-typography body12:regular primary">
-                                                                    0
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="slick-slide">
-                                                    <a>
-                                                        <div class="curation-item">
-                                                            <h3 class="prisma-typography headline16 primary">
-                                                                성공하는 사장님을 위한 외주 활용법
-                                                            </h3>
-                                                            <div class="react-items">
-                                                                <p class="view prisma-typography body12:regular primary">
-                                                                    314
-                                                                </p>
-                                                                <p class="comment prisma-typography body12:regular primary">
-                                                                    2
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="slick-slide">
-                                                    <a>
-                                                        <div class="curation-item">
-                                                            <h3 class="prisma-typography headline16 primary">
-                                                                무더위 걱정 없는 여름 이사의 모든 것
-                                                            </h3>
-                                                            <div class="react-items">
-                                                                <p class="view prisma-typography body12:regular primary">
-                                                                    1,403
-                                                                </p>
-                                                                <p class="comment prisma-typography body12:regular primary">
-                                                                    5
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="slick-slide">
-                                                    <a>
-                                                        <div class="curation-item">
-                                                            <h3 class="prisma-typography headline16 primary">
-                                                                초보자를 위한 셀프 인테리어 가이드
-                                                            </h3>
-                                                            <div class="react-items">
-                                                                <p class="view prisma-typography body12:regular primary">
-                                                                    2,613
-                                                                </p>
-                                                                <p class="comment prisma-typography body12:regular primary">
-                                                                    10
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="slick-slide slick-active slick-current">
-                                                    <a>
-                                                        <div class="curation-item">
-                                                            <h3 class="prisma-typography headline16 primary">
-                                                                장마철 누수, 원인과 대처법 총정리
-                                                            </h3>
-                                                            <div class="react-items">
-                                                                <p class="view prisma-typography body12:regular primary">
-                                                                    3,689
-                                                                </p>
-                                                                <p class="comment prisma-typography body12:regular primary">
-                                                                    3
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="slick-slide slick-active">
-                                                    <a>
-                                                        <div class="curation-item">
-                                                            <h3 class="prisma-typography headline16 primary">
-                                                                쾌적한 여름을 위한 생활의 기술
-                                                            </h3>
-                                                            <div class="react-items">
-                                                                <p class="view prisma-typography body12:regular primary">
-                                                                    19,822
-                                                                </p>
-                                                                <p class="comment prisma-typography body12:regular primary">
-                                                                    0
+                                                                <p class="comment prisma-typography body12:regular primary" th:text="${post.commentCount}">
+                                                                    댓글 수
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -367,7 +282,7 @@
                                             </div>
                                             <div class="feed-footer">
                                                 <div class="user-interaction">
-                                                    <span class="comment prisma-typography body12:regular quaternary">댓글 수</span>
+                                                    <span class="comment prisma-typography body12:regular quaternary" th:text="${post.commentCount}">댓글 수</span>
                                                 </div>
                                                 <span class="prisma-typography body12:regular quaternary" th:text="${post.relativeDate}">작성시간</span>
                                             </div>
@@ -380,7 +295,7 @@
                             </article>
                         </div>
                     </div>
-                    <a id="top-btn" class="top-btn" role="button" aria-label="위로 가기 버튼" href="" style="right: 722px; visibility: hidden;">
+                    <a id="top-btn" class="top-btn" role="button" aria-label="위로 가기 버튼" href="#top" style="right: 722px; visibility: hidden;">
                         <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%3e%3cg%20fill='none'%20fill-rule='evenodd'%3e%3cg%3e%3cg%3e%3cg%3e%3cpath%20d='M0%200H24V24H0z'%20transform='translate(-323.000000,%20-680.000000)%20translate(311.000000,%20668.000000)%20translate(12.000000,%2012.000000)'/%3e%3cg%20stroke='%23B5B5B5'%20stroke-linecap='round'%20stroke-width='1.5'%3e%3cpath%20d='M7%200L7%2015'%20transform='translate(-323.000000,%20-680.000000)%20translate(311.000000,%20668.000000)%20translate(12.000000,%2012.000000)%20translate(5.000000,%204.500000)'/%3e%3cpath%20stroke-linejoin='round'%20d='M0%207L7%200%2014%207'%20transform='translate(-323.000000,%20-680.000000)%20translate(311.000000,%20668.000000)%20translate(12.000000,%2012.000000)%20translate(5.000000,%204.500000)'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="위로 가기">
                     </a>
                 </section>
@@ -389,8 +304,7 @@
     </div>
 </div>
 </body>
-<script src="/js/community-list/community-posts.js"></script>
-<script src="/js/community-list/event.js"></script>
-<script src="/js/community-list/module/service.js"></script>
-<script src="/js/community-list/module/layout.js"></script>
+<script src="/js/community-list/community-posts/event.js"></script>
+<script src="/js/community-list/community-posts/module/layout.js"></script>
+<script src="/js/community-list/community-posts/module/service.js"></script>
 </html>

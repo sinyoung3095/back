@@ -19,4 +19,5 @@ public class PostVO extends Period {
     private Status postStatus;
     private Long categoryId;
     private String categoryName;
+    private int commentCount;
 }
