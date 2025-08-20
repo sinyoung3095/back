@@ -2,9 +2,7 @@ package com.example.rebound.service;
 
 import com.example.rebound.dto.CounselorDTO;
 import com.example.rebound.dto.MemberDTO;
-import com.example.rebound.dto.PaymentDTO;
 
-import java.util.List;
 import java.util.Optional;
 
 public interface MemberService {
@@ -16,4 +14,8 @@ public interface MemberService {
     public boolean isExistMemberPhoneNumber(String memberPhoneNumber);
 //    회원 로그인
     public Optional<MemberDTO> login(MemberDTO memberDTO);
+//    카카오 기존 회원 정보 조회
+    public Optional<MemberDTO> findMemberByKakaoEmail(String kakaoEmail);
+//    카카오 회원가입
+    public void joinKakaoMember(MemberDTO memberDTO);
 }
