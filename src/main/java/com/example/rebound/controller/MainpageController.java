@@ -17,8 +17,8 @@ public class MainpageController {
 
     @GetMapping("page")
     public String List(Model model, PostCriteria postCriteria) {
-        model.addAttribute("posts", mainpageService.getPostList(postCriteria));
-        model.addAttribute("counselors", mainpageService.getCounselors());
+//        model.addAttribute("posts", mainpageService.getPostList(postCriteria));
+//        model.addAttribute("counselors", mainpageService.getCounselors());
         return "/main-page/page";
     }
 }

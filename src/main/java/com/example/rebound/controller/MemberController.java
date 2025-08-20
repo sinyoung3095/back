@@ -1,10 +1,11 @@
 package com.example.rebound.controller;
 
 import com.example.rebound.common.exception.LoginFailException;
+import com.example.rebound.dto.CounselorDTO;
+import com.example.rebound.dto.CounselorQualificationsFileDTO;
 import com.example.rebound.dto.MemberDTO;
+import com.example.rebound.dto.PaymentDTO;
 import com.example.rebound.service.MemberService;
-import jakarta.servlet.http.HttpSession;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -13,16 +14,19 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
 @RequestMapping("/member/**")
-@RequiredArgsConstructor
 public class MemberController {
     private final MemberService memberService;
     private final MemberDTO memberDTO;
-    private final HttpSession session;
 
+    public MemberController(MemberService memberService, MemberDTO memberDTO) {
+        this.memberService = memberService;
+        this.memberDTO = memberDTO;
+    }
 
 //    회원가입 페이지로 이동
     @GetMapping("join")
@@ -76,18 +80,25 @@ public class MemberController {
         return ResponseEntity.ok().body(result);
     }
 
+//    상담사 회원가입 페이지로 이동
+    @GetMapping("join-counselor")
+    public String goToCounselorJoin(CounselorDTO counselorDTO, CounselorQualificationsFileDTO counselorQualificationsFileDTO, Model model) {
+        model.addAttribute("counselorDTO", counselorDTO);
+        model.addAttribute("counselorQualificationsFileDTO", counselorQualificationsFileDTO);
+        return "member/join-counselor";
+    }
+
 //    로그인 페이지로 이동
     @GetMapping("login")
     public String goToLogin(MemberDTO memberDTO, Model model) {
         model.addAttribute("memberDTO", memberDTO);
-        return "member/login-user";
+        return "member/login";
     }
 
 //    로그인 완료
     @PostMapping("login")
     public RedirectView Login(MemberDTO memberDTO) {
-        MemberDTO member=memberService.login(memberDTO).orElseThrow(LoginFailException::new);
-        session.setAttribute("member", member);
+        memberService.login(memberDTO).orElseThrow(LoginFailException::new);
         return new RedirectView("/main-page/page"); }
 
     @GetMapping("find-email")
@@ -153,9 +164,5 @@ public class MemberController {
     @GetMapping("mypage-consultation/review")
     public String goToMyPageConsultationReview(){
         return "member/mypage-consultation-review";
-    }
-    @GetMapping("payment")
-    public String goToPayment(){
-        return "member/payment";
     }
 }

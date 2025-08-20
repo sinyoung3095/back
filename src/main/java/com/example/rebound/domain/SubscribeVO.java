@@ -11,8 +11,6 @@ import lombok.experimental.SuperBuilder;
 @EqualsAndHashCode(of="id")
 @SuperBuilder
 public class SubscribeVO extends Period {
-
     private Long id;
     private int subscribePrice;
-    private String subscribeBoon;
 }
