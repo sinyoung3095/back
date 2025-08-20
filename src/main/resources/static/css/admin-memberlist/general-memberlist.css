@@ -1236,7 +1236,6 @@ button.btn .comp-icon {
 }
 
 .modal {
-    display: none;
     height: 100%;
     left: 0;
     outline: 0;
@@ -1246,6 +1245,8 @@ button.btn .comp-icon {
     top: 0;
     width: 100%;
     z-index: 1050;
+    transform: none;
+    overflow-y: auto;
 }
 
 

@@ -1,12 +1,13 @@
 package com.example.rebound.repository;
 
+import com.example.rebound.dto.MemberCriteriaDTO;
+import com.example.rebound.dto.CounselorDTO;
 import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.mapper.MemberMapper;
 import com.example.rebound.util.MemberCriteria;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 import java.util.Optional;
 

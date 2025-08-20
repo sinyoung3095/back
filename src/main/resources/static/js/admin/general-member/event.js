@@ -164,92 +164,55 @@ document.addEventListener("click", (e) => {
         userMenuContent.classList.remove("show");
     }
 });
-
+// 모달창 이벤트
+const modalWrap = document.querySelector("div[id=modalWrap]")
 const memberContainer = document.querySelector("tbody[class=members]");
 memberContainer.addEventListener("click",(e)=>{
-    if(e.target.classList.contains("action-btn")){
-        modal.style.display = "block";
-        setTimeout(() => {
-            modal.classList.add("show");
-            modal.style.background = "rgba(0,0,0,0.5)";
-            document.body.classList.add("modal-open");
-        }, 100);
+    console.log("모달 들어옴");
+    if(e.target.closest(".action-btn")){
+        const page =1;
+        const keyword= e.target.dataset.email;
+        console.log(keyword);
+        service.getMember(layout.showModal, page, keyword);
+
+    }
+})
+modalWrap.addEventListener("click",(e)=>{
+    if(e.target.closest(".close")|| e.target.closest(".close")){
+        const modal = document.querySelector(".member-modal");
+        modal.style.display = "none";
     }
 })
 
 
-// 일반회원 상세 모달 창 열고 닫는 이벤트
-const modal = document.querySelector(".member-modal");
-const actionButtons = document.querySelectorAll(".action-btn");
-const closeButtons = document.querySelectorAll(".close");
-const closeFooterButton = document.querySelector(".btn-close");
-
-actionButtons.forEach((actionButton) => {
-    actionButton.addEventListener("click", (e) => {
-        modal.style.display = "block";
-
-        setTimeout(() => {
-            modal.classList.add("show");
-            modal.style.background = "rgba(0,0,0,0.5)";
-            document.body.classList.add("modal-open");
-        }, 100);
-    });
-});
-
-closeButtons.forEach((closeButton) => {
-    closeButton.addEventListener("click", (e) => {
-        modal.classList.remove("show");
-        document.body.classList.remove("modal-open");
-
-        setTimeout(() => {
-            modal.style.display = "none";
-        }, 100);
-    });
-});
-
-modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-        modal.classList.remove("show");
-        document.body.classList.remove("modal-open");
-
-        setTimeout(() => {
-            modal.style.display = "none";
-        }, 100);
-    }
-});
-
-closeFooterButton.addEventListener("click", (e) => {
-    modal.classList.remove("show");
-    document.body.classList.remove("modal-open");
-
-    setTimeout(() => {
-        modal.style.display = "none";
-    }, 100);
-});
-
 const listPageWrap = document.getElementById("pageWrap");
 listPageWrap.addEventListener("click", (e) => {
-    if(e.target.classList.contains("paging")){
+    if(e.target.classList.closest(".paging")){
+        // const pages = document.getElementsByClassName("paging")
+        // pages.for
+        const keyword=content.value;
         e.preventDefault();
-        service.getMember( layout.showList, e.target.dataset.page);
+        service.getMember( layout.showList, e.target.dataset.page,keyword);
     }
+
 });
 
 // 페이지 번호 클릭 이벤트
 const pageNums = document.querySelectorAll(".page-num");
 const pageItemNums = document.querySelectorAll(".page-item-num");
 
-pageItemNums.forEach((pageItemNum) => {
-    pageItemNum.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        pageNums.forEach((pageNum) => {
-            pageNum.classList.remove("active");
-        });
-
-        pageItemNum.parentElement.classList.add("active");
-    });
-});
+//
+// pageItemNums.forEach((pageItemNum) => {
+//     pageItemNum.addEventListener("click", (e) => {
+//         e.preventDefault();
+//
+//         pageNums.forEach((pageNum) => {
+//             pageNum.classList.remove("active");
+//         });
+//
+//         pageItemNum.parentElement.classList.add("active");
+//     });
+// });
 
 const search = document.querySelector(".btn.btn-search");
 const content = document.querySelector("input[name=keyword]");
@@ -260,5 +223,9 @@ search.addEventListener("click",(e)=>{
     const keyword=content.value;
     console.log(keyword);
     service.getMember(layout.showList, page, keyword);
-
 })
+const pageWrap = document.getElementById("pageWrap");
+// pageWrap.addEventListener("click",(e)=>{
+//     e.target.closest(".page-num").classList.add("active");
+//
+// })
