@@ -23,7 +23,7 @@ public class MemberController {
     private final MemberService memberService;
     private final MemberDTO memberDTO;
 
-    public MemberController(MemberService memberService, MemberDTO memberDTO) {
+    public MemberController(MemberService memberService, MemberDTO memberDTO, PaymentDTO paymentDTO) {
         this.memberService = memberService;
         this.memberDTO = memberDTO;
     }
@@ -166,11 +166,6 @@ public class MemberController {
         return "member/mypage-consultation-review";
     }
 
-    @GetMapping("payment")
-    public String insertPayment(PaymentDTO paymentDTO) {
-        memberService.insertPayment(paymentDTO);
-        return "member/payment";
-    }
 
 
 }

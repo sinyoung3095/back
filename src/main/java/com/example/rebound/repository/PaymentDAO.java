@@ -13,8 +13,8 @@ public class PaymentDAO {
     private final PaymentMapper paymentMapper;
 
 //    첫 결제
-    public void insertPaymeent(PaymentDTO paymentDTO) {
-        paymentMapper.insertPaymeent(paymentDTO);
+    public void insertPayment(PaymentDTO paymentDTO) {
+        paymentMapper.insertPayment(paymentDTO);
     }
 
 //    n번째 결재
@@ -23,7 +23,7 @@ public class PaymentDAO {
     }
 
 //    결제 조회
-    public List<PaymentDTO> selectPaymeent(PaymentDTO paymentDTO) {
-        return paymentMapper.selectPayment(paymentDTO);
+    public List<PaymentDTO> selectPaymeent(int memberId) {
+        return paymentMapper.selectPayment(memberId);
     }
 }

@@ -9,11 +9,11 @@ import java.util.List;
 @Mapper
 public interface PaymentMapper {
 //    첫 결제
-    public void insertPaymeent(PaymentDTO paymentDTO);
+    public void insertPayment(PaymentDTO paymentDTO);
 
 //    n번째 결제
     public void updatePayment(PaymentDTO paymentDTO);
 
 //    결제 찾기
-    public List<PaymentDTO> selectPayment(PaymentDTO paymentDTO);
+    public List<PaymentDTO> selectPayment(int memberId);
 }
