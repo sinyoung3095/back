@@ -108,14 +108,14 @@
                                     <div class="slick-total">
                                         <div class="slick-total02">
                                             <div class="slick-list slick-pick">
-                                                <div class="slick-slide" th:each="post : ${orderByReadCountPosts}">
+                                                <div class="slick-slide" th:each="post : ${postsByViews}">
                                                     <a th:href="@{/community-list/{id}(id=${post.id})}">
                                                         <div class="curation-item">
                                                             <h3 class="prisma-typography headline16 primary" th:text="${post.postTitle}">
                                                                 제목
                                                             </h3>
                                                             <div class="react-items">
-                                                                <p class="view prisma-typography body12:regular primary" th:text="${post.postReadCount}">
+                                                                <p class="view prisma-typography body12:regular primary" th:text="${post.postViews}">
                                                                     조회 수
                                                                 </p>
                                                                 <p class="comment prisma-typography body12:regular primary" th:text="${post.commentCount}">
@@ -305,6 +305,6 @@
 </div>
 </body>
 <script src="/js/community-list/community-posts/event.js"></script>
-<script src="/js/community-list/community-posts/module/service.js"></script>
 <script src="/js/community-list/community-posts/module/layout.js"></script>
+<script src="/js/community-list/community-posts/module/service.js"></script>
 </html>
