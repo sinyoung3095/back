@@ -41,14 +41,14 @@ const layout = (()=>{
         let criteria = memberCriteriaDTO.memberCriteria;
 
         if(criteria.hasPreviousPage){
-            text = `<a data-page="${criteria.startPage - 1}" class="paging">이전</a>`
+            text = `<a data-page="${criteria.startPage - 1}" class="paging" style="cursor: pointer; color: black; font-size:15px; padding:7px 10px; ">이전</a>`
         }
 
         for(let i = criteria.startPage; i <= criteria.endPage; i++){
             if(i === criteria.startPage){
             text += `
             <li class="page-item page-num active">
-                <a data-page="${i}" class="page-item-link page-item-num paging">${i}</a>
+                <a id="previous" data-page="${i}" class="page-item-link page-item-num paging">${i}</a>
             </li>`
             } else {
             text += `
@@ -59,7 +59,7 @@ const layout = (()=>{
         }
 
         if(criteria.hasNextPage){
-            text += `<a data-page="${criteria.endPage + 1}" class="paging">다음</a>`
+            text += `<a id="next" data-page="${criteria.endPage + 1}" class="paging" style="cursor: pointer; color: black; font-size:15px; padding:7px 10px;">다음</a>`
         }
 
         pageWrap.innerHTML = text;

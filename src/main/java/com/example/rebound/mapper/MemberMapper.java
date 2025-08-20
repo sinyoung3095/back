@@ -1,5 +1,13 @@
 package com.example.rebound.mapper;
 
+<<<<<<< HEAD
+import com.example.rebound.dto.MemberCriteriaDTO;
+import com.example.rebound.dto.CounselorDTO;
+import com.example.rebound.dto.MemberDTO;
+import com.example.rebound.util.MemberCriteria;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+=======
 
 import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.util.MemberCriteria;
@@ -7,6 +15,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import org.apache.ibatis.annotations.Select;
 
+>>>>>>> master
 import org.apache.ibatis.annotations.Param;
 
 import java.lang.reflect.Member;
@@ -34,9 +43,9 @@ public interface MemberMapper {
     //    관리자 조회
     public MemberDTO selectAdmin(MemberDTO memberDTO );
     //    일반 회원 모두 조회
-    public List<MemberDTO> selectGeneralAll(@Param("memberCriteria") MemberCriteria memberCriteria);
+    public List<MemberDTO> selectGeneralAll(@Param("memberCriteria") MemberCriteria memberCriteria,@Param("keyword") String keyword);
     //    일반 회원 전체 수 조회
-    public int selectGeneralAllCount();
+    public int selectGeneralAllCount(String keyword);
     //    수정
     public void updateMember(Member member);
     //    삭제

@@ -1,7 +1,7 @@
 const service = (() => {
     console.log("서비스 들어옴");
-    const getMember = async(callback,page=1) => {
-        const response = await fetch(`/api/list/${page}`);
+    const getMember = async(callback, page=1,keyword='') => {
+        const response = await fetch(`/api/list/general/${page}?keyword=${keyword}`);
         const memberCriteriaDTO = await response.json();
         if(callback){
                 callback(memberCriteriaDTO);

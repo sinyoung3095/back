@@ -20,13 +20,13 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public MemberCriteriaDTO findGeneralMembers(int page) {
+    public MemberCriteriaDTO findGeneralMembers(int page,String keyword) {
         MemberCriteriaDTO memberCriteriaDTO = new MemberCriteriaDTO();
-        MemberCriteria memberCriteria = new MemberCriteria(page,memberDAO.countGeneralMemberAll());
-        memberCriteriaDTO.setMembers(memberDAO.findGeneralMemberAll(memberCriteria));
+        MemberCriteria memberCriteria = new MemberCriteria(page,memberDAO.countGeneralMemberAll(keyword));
+        memberCriteriaDTO.setMembers(memberDAO.findGeneralMemberAll(memberCriteria,keyword));
         memberCriteriaDTO.setMemberCriteria(memberCriteria);
 
-        List<MemberDTO> members = memberDAO.findGeneralMemberAll(memberCriteria);
+        List<MemberDTO> members = memberDAO.findGeneralMemberAll(memberCriteria,keyword);
 
 
 
@@ -34,9 +34,5 @@ public class AdminServiceImpl implements AdminService {
         return memberCriteriaDTO;
     }
 
-    @Override
-    public int countGeneralMembers() {
-        return memberDAO.countGeneralMemberAll();
-    }
 
 }

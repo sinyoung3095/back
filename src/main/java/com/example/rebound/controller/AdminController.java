@@ -10,10 +10,7 @@ import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -63,13 +60,13 @@ public class AdminController {
                 response.addCookie(rememberCookie);
             }
 
-            return new RedirectView("/admin/admin-mainpage");
+            return new RedirectView("/admin/admin-mainPage");
         };return new RedirectView("/admin/admin-login");
     }
 //    관리자 메인페이지 이동
-    @GetMapping("admin-mainpage")
+    @GetMapping("admin-mainPage")
     public String goToAdminMainPage(){
-        return "/admin/admin-mainpage";
+        return "/admin/admin-mainPage";
     }
 //    관리자 공지사항 목록 이동
     @GetMapping("notice-list")
@@ -99,6 +96,7 @@ public class AdminController {
 //    일반 멤버 목록 이동
     @GetMapping("general-memberlist/{page}")
     public String goToGeneralMemberList(){
+
         return "/admin/general-memberlist";
     }
 //    멘토 목록 이동
