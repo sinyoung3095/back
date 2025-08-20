@@ -16,11 +16,8 @@ public interface MemberService {
     public boolean isExistMemberPhoneNumber(String memberPhoneNumber);
 //    회원 로그인
     public Optional<MemberDTO> login(MemberDTO memberDTO);
-
-//    첫 결제
-    public void insertPayment(PaymentDTO paymentDTO);
-//    n번째 결제
-    public void updatePayment(PaymentDTO paymentDTO);
-//    결제 조회
-    public List<PaymentDTO> selectPayment(PaymentDTO paymentDTO);
+//    카카오 기존 회원 정보 조회
+    public Optional<MemberDTO> findMemberByKakaoEmail(String kakaoEmail);
+//    카카오 회원가입
+    public void joinKakaoMember(MemberDTO memberDTO);
 }

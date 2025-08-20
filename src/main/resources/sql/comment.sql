@@ -13,3 +13,5 @@ create table tbl_comment
         foreign key (post_id) references tbl_post (id)
 );
 
+select * from tbl_comment;
+alter table tbl_comment add column(comment_status enum('active', 'inactive') default 'active');

@@ -589,9 +589,9 @@ button.slick-arrow::before {
     content: "←";
 }
 
-.slick-prev:hover, 
-.slick-prev:focus, 
-.slick-next:hover, 
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
 .slick-next:focus {
     color: transparent;
     outline: none;

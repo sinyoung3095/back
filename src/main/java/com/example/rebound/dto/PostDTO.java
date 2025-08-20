@@ -16,6 +16,9 @@ public class PostDTO {
     private String postContent;
     private int postViews;
     private Long memberId;
+    private String memberName;
+    private Long categoryId;
+    private String categoryName;
     private Status postStatus;
     private String createdDate;
     private String relativeDate;

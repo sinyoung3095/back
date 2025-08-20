@@ -5,7 +5,8 @@ const sideSubLinks = document.querySelectorAll(".rebound-link");
 const tabNames = document.querySelectorAll(".tab-name");
 const icons = document.querySelectorAll(".icon-wrapper i");
 
-layout.showList(service.getMember());
+service.getMember(layout.showList);
+
 // 홈 클릭 이벤트
 homeButton.addEventListener("click", (e) => {
     e.preventDefault();
@@ -164,21 +165,6 @@ document.addEventListener("click", (e) => {
     }
 });
 
-// 페이지 번호 클릭 이벤트
-const pageNums = document.querySelectorAll(".page-num");
-const pageItemNums = document.querySelectorAll(".page-item-num");
-
-pageItemNums.forEach((pageItemNum) => {
-    pageItemNum.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        pageNums.forEach((pageNum) => {
-            pageNum.classList.remove("active");
-        });
-
-        pageItemNum.parentElement.classList.add("active");
-    });
-});
 
 // 일반회원 상세 모달 창 열고 닫는 이벤트
 const modal = document.querySelector(".member-modal");
@@ -227,4 +213,28 @@ closeFooterButton.addEventListener("click", (e) => {
     setTimeout(() => {
         modal.style.display = "none";
     }, 100);
+});
+
+const listPageWrap = document.getElementById("pageWrap");
+listPageWrap.addEventListener("click", (e) => {
+    if(e.target.classList.contains("paging")){
+        e.preventDefault();
+        service.getMember( layout.showList, e.target.dataset.page);
+    }
+});
+
+// 페이지 번호 클릭 이벤트
+const pageNums = document.querySelectorAll(".page-num");
+const pageItemNums = document.querySelectorAll(".page-item-num");
+
+pageItemNums.forEach((pageItemNum) => {
+    pageItemNum.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        pageNums.forEach((pageNum) => {
+            pageNum.classList.remove("active");
+        });
+
+        pageItemNum.parentElement.classList.add("active");
+    });
 });
