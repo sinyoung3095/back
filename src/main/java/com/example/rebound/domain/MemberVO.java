@@ -10,7 +10,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @EqualsAndHashCode(of = "id")
 public class MemberVO extends Period {
-    private String id;
+    private Long id;
     private String memberName;
     private String memberEmail;
     private String kakaoEmail;
