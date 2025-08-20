@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/font/admin/roboto-latin-700-normal-227c93190fe7f82de3f8.woff2">
     <link rel="stylesheet" href="/font/admin/roboto-latin-ext-700-normal-ed67ad54b1a8f5d21150.woff2">
     <link rel="stylesheet" href="/font/admin/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
+
     <link rel="stylesheet" href="/css/community-list/community-contents-writer.css">
     <title>게시글 제목</title>
 </head>
@@ -31,7 +32,7 @@
                     <button aria-haspopup="true" aria-expanded="false" type="button" class="btn dropdown-toggle btn-secondary" id="__BVID__745__BV_toggle_"></button>
                     <ul role="menu" tabindex="-1" class="dropdown-menu dropdown-menu-right" aria-labelledby="__BVID__745__BV_toggle_" style="position: absolute; transform: translate3d(-116px, 24px, 0px); top: 0px; left: 0px; will-change: transform;">
                         <li role="presentation">
-                            <a role="menuitem" href="" target="_self" class="dropdown-item">게시글 수정하기</a>
+                            <a th:href="@{/community-list/failure-update/{id}(id=${post.id})}" class="dropdown-item">게시글 수정하기</a>
                         </li>
                     </ul>
                 </div>
@@ -52,7 +53,6 @@
                                     <a href="/community-list/community-posts" class="breadcrumb-item" data-testid="soomgo-life-home-breadcrumb">
                                         <span class="prisma-typography body14:regular quaternary">커뮤니티</span>
                                     </a>
-                                    <!--                                        <button onclick="window.location.href = '/post/list/1'">목록으로</button>-->
                                 </li>
                                 <p class="breadcrumb-divider"></p>
                                 <li class="category-breadcrumb-item">
@@ -67,8 +67,6 @@
                             <!-- 고민 카테고리 -->
                             <p class="post-service-name" th:text="${post.categoryName}"></p>
                             <h1 class="post-header-title prisma-typography headline24 primary" th:text="${post.postTitle}"></h1>
-                            <!-- 증상 -->
-                            <p class="post-address-info">우울, 스트레스</p>
                         </div>
                         <div class="user-profile-bar-container">
                             <div class="ambassador-badge" style="display: none;">
@@ -85,7 +83,7 @@
                                         <img alt="직장인" class="profile-image" src="https://static.cdn.soomgo.com/upload/profile/1e2809f2-c3f7-4a59-b156-e4a9161d7d49.jpg?webp=1" lazy="loaded">
                                         <div class="profile-post-info">
                                             <span class="user-name prisma-typography body14:medium primary" th:text="${post.memberName}"></span>
-                                            <span class="post-created-at prisma-typography body12:regular primary" th:text="${post.createdDate + ' · 조회 ' + post.postViews}"></span>
+                                            <span class="post-created-at prisma-typography body12:regular primary" th:text="${post.createdDatetime + ' · 조회 ' + post.postReadCount}"></span>
                                         </div>
                                     </div>
                                     <div class="post-actions">
@@ -94,7 +92,7 @@
                                             <button aria-haspopup="true" aria-expanded="false" type="button" class="btn dropdown-toggle btn-secondary" id="__BVID__12597__BV_toggle_"></button>
                                             <ul role="menu" tabindex="-1" class="dropdown-menu dropdown-menu-right" aria-labelledby="__BVID__12597__BV_toggle_" style="position: absolute; transform: translate3d(-116px, 24px, 0px); top: 0px; left: 0px; will-change: transform;">
                                                 <li role="presentation">
-                                                    <a role="menuitem" href="#" target="_self" class="dropdown-item">게시글 수정하기</a>
+                                                    <a th:href="@{/community-list/failure-update/{id}(id=${post.id})}" class="dropdown-item">게시글 수정하기</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -163,7 +161,7 @@
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M8.71529 19.2553C9.03754 19.0828 9.41171 19.0339 9.76748 19.1177C10.4796 19.2856 11.2273 19.3754 12 19.3754C17.0678 19.3754 21 15.5596 21 11.0627C21 6.56576 17.0678 2.75001 12 2.75001C6.93216 2.75001 3 6.56576 3 11.0627C3 12.9498 3.68004 14.6963 4.8439 16.1032C4.96208 16.246 5.08526 16.3854 5.21324 16.521C5.47597 16.7994 5.62232 17.1677 5.62232 17.5505V20.9111L8.71529 19.2553ZM3.68814 17.0593C2.31628 15.401 1.5 13.3209 1.5 11.0627C1.5 5.64329 6.20101 1.25 12 1.25C17.799 1.25 22.5 5.64329 22.5 11.0627C22.5 16.4821 17.799 20.8754 12 20.8754C11.1109 20.8754 10.2477 20.7721 9.42325 20.5777L5.5943 22.6276C4.92814 22.9842 4.12232 22.5016 4.12232 21.746V17.5505C3.97206 17.3913 3.82724 17.2275 3.68814 17.0593ZM7.00059 12.6C7.77378 12.6 8.40059 11.9732 8.40059 11.2C8.40059 10.4269 7.77378 9.80005 7.00059 9.80005C6.22739 9.80005 5.60059 10.4269 5.60059 11.2C5.60059 11.9732 6.22739 12.6 7.00059 12.6ZM13.4006 11.2C13.4006 11.9732 12.7738 12.6 12.0006 12.6C11.2274 12.6 10.6006 11.9732 10.6006 11.2C10.6006 10.4269 11.2274 9.80005 12.0006 9.80005C12.7738 9.80005 13.4006 10.4269 13.4006 11.2ZM17.0006 12.6C17.7738 12.6 18.4006 11.9732 18.4006 11.2C18.4006 10.4269 17.7738 9.80005 17.0006 9.80005C16.2274 9.80005 15.6006 10.4269 15.6006 11.2C15.6006 11.9732 16.2274 12.6 17.0006 12.6Z" fill="black"></path>
                             </svg>
                             <span> 댓글
-                                    <span class="action-count">9</span>
+                                    <span class="action-count" th:text="${post.commentCount}">댓글 수</span>
                                 </span>
                         </div>
                     </div>
@@ -858,5 +856,5 @@
     </div>
     </div>
 </body>
-<script src="/js/community-list/community-contents-writer.js"></script>
+<script src="/js/community-list/community-contents-writer/event.js"></script>
 </html>
