@@ -3,6 +3,8 @@ package com.example.rebound.controller;
 import com.example.rebound.common.exception.LoginFailCounselorException;
 import com.example.rebound.dto.CounselorDTO;
 import com.example.rebound.service.CounselorService;
+import jakarta.servlet.http.HttpSession;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -16,13 +18,11 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
+@RequiredArgsConstructor
 @RequestMapping("/counselor/**")
 public class CounselorController {
     private final CounselorService counselorService;
-
-    public CounselorController(CounselorService counselorService) {
-        this.counselorService = counselorService;
-    }
+    private final HttpSession session;
 
     //    상담사 회원가입 페이지로 이동
     @GetMapping("join")
@@ -87,6 +87,7 @@ public class CounselorController {
     //    로그인 완료
     @PostMapping("login")
     public RedirectView Login(CounselorDTO counselorDTO) {
-        counselorService.login(counselorDTO).orElseThrow(LoginFailCounselorException::new);
+        CounselorDTO counselor=counselorService.login(counselorDTO).orElseThrow(LoginFailCounselorException::new);
+        session.setAttribute("counselor", counselor);
         return new RedirectView("/main-page/page"); }
 }
