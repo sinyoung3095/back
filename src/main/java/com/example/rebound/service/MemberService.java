@@ -18,4 +18,6 @@ public interface MemberService {
     public Optional<MemberDTO> findMemberByKakaoEmail(String kakaoEmail);
 //    카카오 회원가입
     public void joinKakaoMember(MemberDTO memberDTO);
+//    마스터 브랜치와 머지 확인
+    
 }
