@@ -34,5 +34,8 @@ public class KakaoController {
         session.setAttribute("member", foundKakaoMember.get());
 
         return new RedirectView("/main-page/page");
+        
+//        이슈 확인
+//        완료
     }
 }
