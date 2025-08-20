@@ -26,15 +26,12 @@ public class KakaoController {
         String path=null;
 
 //        최초 로그인인지 검사
-//        Optional<MemberDTO> foundKakaoMember=memberService.findMemberByKakaoEmail(memberDTO.getKakaoEmail());
-//        if(foundKakaoMember.isEmpty()){
-//            memberService.joinKakaoMember(memberDTO);
-//            foundKakaoMember=memberService.findMemberByKakaoEmail(memberDTO.getKakaoEmail());
-//        }
-//        session.setAttribute();
-
-
-
+        Optional<MemberDTO> foundKakaoMember=memberService.findMemberByKakaoEmail(memberDTO.getKakaoEmail());
+        if(foundKakaoMember.isEmpty()){
+            memberService.joinKakaoMember(memberDTO);
+            foundKakaoMember=memberService.findMemberByKakaoEmail(memberDTO.getKakaoEmail());
+        }
+        session.setAttribute("member", foundKakaoMember.get());
 
         return new RedirectView("/main-page/page");
     }
