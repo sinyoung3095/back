@@ -1,11 +1,5 @@
 package com.example.rebound.repository;
 
-
-<<<<<<< HEAD
-import com.example.rebound.dto.MemberCriteriaDTO;
-import com.example.rebound.dto.CounselorDTO;
-=======
->>>>>>> master
 import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.mapper.MemberMapper;
 import com.example.rebound.util.MemberCriteria;
