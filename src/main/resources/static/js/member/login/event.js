@@ -1,3 +1,5 @@
+const kakaoButton=document.getElementById("kakaoLogin");
+
 const id = document.getElementById("memberEmail");
 const pw = document.getElementById("memberPassword");
 const pwText = document.getElementById("pwText");
@@ -48,4 +50,11 @@ show.addEventListener("click", (e) => {
         pw.type = "password";
         e.target.innerText = "표시";
     }
+});
+
+const KAKAO_CLIENT_ID = '3eb5afdbd2f6bda660c49ef1b4ea5cd4';
+const REDIRECT_URI = 'http://localhost:10000/kakao/login';
+
+kakaoButton.addEventListener("click", () => {
+    window.location.href = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code`;
 });

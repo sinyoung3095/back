@@ -42,11 +42,11 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public Optional<MemberDTO> findMemberByKakaoEmail(String kakaoEmail) {
-        return Optional.empty();
+        return memberDAO.findMemberByKakaoEmail(kakaoEmail);
     }
 
     @Override
     public void joinKakaoMember(MemberDTO memberDTO) {
-
+        memberDAO.saveKakaoMember(memberDTO);
     }
 }
