@@ -3,6 +3,8 @@ package com.example.rebound.controller;
 import com.example.rebound.common.exception.LoginFailException;
 import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.service.MemberService;
+import jakarta.servlet.http.HttpSession;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -15,14 +17,12 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/member/**")
+@RequiredArgsConstructor
 public class MemberController {
     private final MemberService memberService;
     private final MemberDTO memberDTO;
+    private final HttpSession session;
 
-    public MemberController(MemberService memberService, MemberDTO memberDTO) {
-        this.memberService = memberService;
-        this.memberDTO = memberDTO;
-    }
 
 //    회원가입 페이지로 이동
     @GetMapping("join")
@@ -87,7 +87,7 @@ public class MemberController {
     @PostMapping("login")
     public RedirectView Login(MemberDTO memberDTO) {
         MemberDTO member=memberService.login(memberDTO).orElseThrow(LoginFailException::new);
-//        session.
+        session.setAttribute("member", member);
         return new RedirectView("/main-page/page"); }
 
     @GetMapping("find-email")
