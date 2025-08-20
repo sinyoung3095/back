@@ -3,7 +3,7 @@
 <mapper namespace="com.example.rebound.mapper.PaymentMapper">
     <insert id="insertPaymeent">
         insert into tbl_payment (payment_start_date, payment_update_date, subscribe_id, member_id)
-        values (NOW(), NOW(), #{subscribeId}, #{memberId})
+        values (NOW(), date_add(NOW(), interval 1 month), #{subscribeId}, #{memberId})
     </insert>
 
     <update id="updatePayment">
