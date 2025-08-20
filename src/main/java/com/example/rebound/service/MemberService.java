@@ -19,5 +19,5 @@ public interface MemberService {
 //    카카오 회원가입
     public void joinKakaoMember(MemberDTO memberDTO);
 //    마스터 브랜치와 머지 확인
-    
+//    충돌 수정 완료
 }
