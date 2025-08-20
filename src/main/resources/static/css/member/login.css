@@ -275,6 +275,11 @@ body .wid{
     gap: 4px;
 }
 
+.kakaologin{
+    width: 100%;
+    overflow: hidden;
+}
+
 .main-18{
     flex-shrink: 0;
 }

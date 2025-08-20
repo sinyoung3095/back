@@ -1,5 +1,6 @@
 package com.example.rebound.dto;
 
+import com.example.rebound.common.enumeration.Provider;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
@@ -8,11 +9,11 @@ import org.springframework.stereotype.Component;
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class MemberDTO {
-    private String id;
+    private Long id;
     private String memberName;
     private String memberEmail;
     private String kakaoEmail;
-    private String memberProvider;
+    private Provider memberProvider;
     private String memberPhoneNumber;
     private String memberPassword;
     private int memberSuggestionCount;

@@ -86,7 +86,8 @@ public class MemberController {
 //    로그인 완료
     @PostMapping("login")
     public RedirectView Login(MemberDTO memberDTO) {
-        memberService.login(memberDTO).orElseThrow(LoginFailException::new);
+        MemberDTO member=memberService.login(memberDTO).orElseThrow(LoginFailException::new);
+//        session.
         return new RedirectView("/main-page/page"); }
 
     @GetMapping("find-email")

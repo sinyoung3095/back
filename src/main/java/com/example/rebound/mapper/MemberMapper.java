@@ -25,6 +25,10 @@ public interface MemberMapper {
     public boolean existMemberPhoneNumber(String memberPhoneNumber);
 //    로그인
     public Optional<MemberDTO> selectMember(MemberDTO memberDTO);
+//    카카오 이메일 중복 검사
+    public Optional<MemberDTO> selectMemberByKakaoEmail(String kakaoEmail);
+//    카카오 추가
+    public void insertKakaoMember(MemberDTO memberDTO);
     //    조회
     public MemberDTO selectMemberById(int memberId);
     //    관리자 조회
