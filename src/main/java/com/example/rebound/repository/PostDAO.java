@@ -1,25 +1,42 @@
 package com.example.rebound.repository;
 
 import com.example.rebound.dto.PostDTO;
-import com.example.rebound.mapper.PostMapper;
+import com.example.rebound.mapper.CommunityListMapper;
 import com.example.rebound.util.PostCriteria;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
 public class PostDAO {
-    private PostMapper postMapper;
+    private final CommunityListMapper communityListMapper;
 
-//    게시글 목록
-    public List<PostDTO> findAll(PostCriteria postCriteria) {
-        return postMapper.selectAll(postCriteria);
+    //    추가
+    public Long save(PostDTO postDTO) {
+        communityListMapper.insertCommunityPost(postDTO);
+        return postDTO.getId();
     }
 
-//    게시글 전체 갯수 조회
+    //    조회
+    public Optional<PostDTO> findPostWriterById(Long id) {
+        return communityListMapper.selectCommunityPostWriter(id);
+    }
+
+    //    조회수 증가
+    public void updatePostReadCount(Long id) {
+        communityListMapper.updatePostReadCount(id);
+    }
+
+    //    목록
+    public List<PostDTO> findAll(PostCriteria postCriteria){
+        return communityListMapper.selectAll(postCriteria);
+    }
+
+    //    전체 개수 조회
     public int findCountAll(){
-        return postMapper.selectCountAll();
+        return communityListMapper.selectCountAll();
     }
 }

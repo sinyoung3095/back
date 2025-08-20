@@ -1,6 +1,6 @@
 const postService = (() => {
-    const getPost = async (page=1, callback) => {
-        const response = await fetch(`/api/posts/${page}`);
+    const getPost = async (callback, page=1) => {
+        const response = await fetch(`/api/community-posts/${page}`);
         const postsCriteria = await response.json();
         if(callback){
             setTimeout(() => {

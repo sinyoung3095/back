@@ -1,7 +1,7 @@
 /* 스크롤 내리면 보이는 라인 */
-#app[data-is-loaded=true], 
-#app[data-is-loaded=true] #app-header, 
-#app[data-is-loaded=true] #app-sticky-nav, 
+#app[data-is-loaded=true],
+#app[data-is-loaded=true] #app-header,
+#app[data-is-loaded=true] #app-sticky-nav,
 #app[data-is-loaded=true] #app-body {
     opacity: 1;
 }
@@ -108,9 +108,9 @@
     display: block;
 }
 
-.dropdown-menu[x-placement^=top], 
-.dropdown-menu[x-placement^=right], 
-.dropdown-menu[x-placement^=bottom], 
+.dropdown-menu[x-placement^=top],
+.dropdown-menu[x-placement^=right],
+.dropdown-menu[x-placement^=bottom],
 .dropdown-menu[x-placement^=left] {
     right: auto;
     bottom: auto;
@@ -300,9 +300,9 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     box-sizing: border-box;
 }
 
-#app[data-is-loaded=true], 
-#app[data-is-loaded=true] #app-header, 
-#app[data-is-loaded=true] #app-sticky-nav, 
+#app[data-is-loaded=true],
+#app[data-is-loaded=true] #app-header,
+#app[data-is-loaded=true] #app-sticky-nav,
 #app[data-is-loaded=true] #app-body {
     opacity: 1;
 }
@@ -413,7 +413,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 }
 
 /* 카테고리/게시글 제목/지역 */
-.post-header-title-wrapper.has-service, 
+.post-header-title-wrapper.has-service,
 .post-header-title-wrapper.has-service .post-address-info {
     margin-top: 1rem;
 }
@@ -422,7 +422,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     margin-bottom: 2rem;
 }
 
-.post-header-title-wrapper .post-service-name, 
+.post-header-title-wrapper .post-service-name,
 .post-header-title-wrapper .post-address-info {
     font-size: .875rem;
     line-height: 1.57;
@@ -575,9 +575,9 @@ img {
     flex: 1 1 auto;
 }
 
-button:not(:disabled), 
-[type=button]:not(:disabled), 
-[type=reset]:not(:disabled), 
+button:not(:disabled),
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
 [type=submit]:not(:disabled) {
     cursor: pointer;
 }
@@ -716,12 +716,12 @@ button {
     margin: 0;
 }
 
-.body-image-container .grid-image-list:first-child:nth-last-child(2n):first-child:nth-last-child(2), 
+.body-image-container .grid-image-list:first-child:nth-last-child(2n):first-child:nth-last-child(2),
 .body-image-container .grid-image-list:first-child:nth-last-child(2n)~.grid-image-list:first-child:nth-last-child(2) {
     margin-bottom: 0;
 }
 
-.body-image-container .grid-image-list:first-child:nth-last-child(2n), 
+.body-image-container .grid-image-list:first-child:nth-last-child(2n),
 .body-image-container .grid-image-list:first-child:nth-last-child(2n)~.grid-image-list {
     grid-column: span 2;
     grid-row: 1 / span 1;
@@ -748,14 +748,14 @@ button {
     cursor: pointer;
 }
 
-.body-image-container .grid-image-list:first-child:nth-last-child(2n):last-child, 
+.body-image-container .grid-image-list:first-child:nth-last-child(2n):last-child,
 .body-image-container .grid-image-list:first-child:nth-last-child(2n)~.grid-image-list:last-child {
     margin-left: .1875rem;
     margin-right: 0;
     margin-bottom: 0;
 }
 
-.body-image-container .grid-image-list:first-child:nth-last-child(2n), 
+.body-image-container .grid-image-list:first-child:nth-last-child(2n),
 .body-image-container .grid-image-list:first-child:nth-last-child(2n)~.grid-image-list {
     grid-column: span 2;
     grid-row: 1 / span 1;
@@ -830,7 +830,7 @@ section.overcome-review .profile-container .profile-info {
     gap: .75rem;
     align-items: center;
     margin-bottom: 1rem;
-    
+
     background-color: #f8f3ff;
     padding: 2rem 1rem 1.5rem 2rem;
     border-radius: 16px 16px 0 0;
@@ -929,7 +929,7 @@ section.counselor-reply .profile-container .profile-info {
     gap: .75rem;
     align-items: center;
     margin-bottom: 1rem;
-    
+
     background-color: #f8f3ff;
     padding: 2rem 1rem 1.5rem 1rem;
     border-radius: 16px 16px 0 0;
@@ -1123,8 +1123,8 @@ label {
     border: 0;
 }
 
-select.form-control[size], 
-select.form-control[multiple], 
+select.form-control[size],
+select.form-control[multiple],
 textarea.form-control {
     height: auto;
 }

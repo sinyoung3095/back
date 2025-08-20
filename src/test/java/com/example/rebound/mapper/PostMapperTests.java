@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @Slf4j
 public class PostMapperTests {
     @Autowired
-    private PostMapper postMapper;
+    private CommunityListMapper postMapper;
 
 //    @Test
 //    public void testSelectTitleAndContents(){

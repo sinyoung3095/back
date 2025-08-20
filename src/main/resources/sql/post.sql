@@ -1,4 +1,3 @@
-
 create table tbl_post
 (
     id           bigint unsigned auto_increment
@@ -15,6 +14,9 @@ create table tbl_post
 
 select * from tbl_post;
 
+delete from tbl_post where post_status = 'active';
+
+alter table tbl_post add column(post_status enum('active', 'inactive') default 'active');
 alter table tbl_post add column(category_id bigint unsigned);
 alter table tbl_post add constraint fk_post_category foreign key(category_id) references tbl_category(id);
 

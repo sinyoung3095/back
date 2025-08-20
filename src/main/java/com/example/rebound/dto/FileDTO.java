@@ -11,7 +11,9 @@ public class FileDTO {
     private Long id;
     private String filePath;
     private String fileName;
-    private int fileSize;
+    private String fileSize;
+    private String fileContentType;
+    private String fileOriginalName;
     private String createdDatetime;
     private String updatedDatetime;
 }

@@ -2,7 +2,9 @@ package com.example.rebound.service;
 
 import com.example.rebound.dto.CounselorDTO;
 import com.example.rebound.dto.MemberDTO;
+import com.example.rebound.dto.PaymentDTO;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface MemberService {
