@@ -5,7 +5,7 @@ const postService = (() => {
         if(callback){
             setTimeout(() => {
                 callback(postsCriteria);
-            }, 1000)
+            }, 500)
         }
 
         if(response.ok) {

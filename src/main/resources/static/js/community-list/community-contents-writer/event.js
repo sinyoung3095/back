@@ -1,54 +1,14 @@
-// 상단 게시글 정보 라인 나타나기/숨기기
-const topLine = document.querySelector("div.vue-portal-target");
-
-topLine.style.transition = "opacity 0.3s ease, transform 0.3s ease";
-topLine.style.transform = "translateY(-60px)";
-topLine.style.opacity = 0;
-
-window.addEventListener("scroll", () => {
-    if (window.scrollY === 0) {
-        topLine.style.transform = "translateY(-60px)";
-        setTimeout(() => {
-            topLine.style.opacity = 0;
-            topLine.style.visibility = "hidden";
-        }, 300);
-    } else {
-        topLine.style.opacity = 1;
-        topLine.style.visibility = "visible";
-        topLine.style.transform = "translateY(0)";
-    }
-});
-
 // 게시글 수정하기 타나탐/사라짐
-const button01 = document.querySelector(
-    "div#app-sticky-nav button[type=button]"
-);
-const dropdownMenu01 = document.querySelector(
-    "div#app-sticky-nav ul.dropdown-menu"
-);
-const button02 = document.querySelector("div.post-actions button[type=button]");
-const dropdownMenu02 = document.querySelector(
+const button = document.querySelector("div.post-actions button[type=button]");
+const dropdownMenu = document.querySelector(
     "div.post-actions ul.dropdown-menu"
 );
 
-console.log(button01);
-console.log(dropdownMenu01);
-console.log(button02);
-console.log(dropdownMenu02);
-
-button01.addEventListener("click", (e) => {
-    if (dropdownMenu01.classList.contains("show")) {
-        dropdownMenu01.classList.remove("show");
+button.addEventListener("click", (e) => {
+    if (dropdownMenu.classList.contains("show")) {
+        dropdownMenu.classList.remove("show");
     } else {
-        dropdownMenu01.classList.add("show");
-    }
-});
-
-button02.addEventListener("click", (e) => {
-    if (dropdownMenu02.classList.contains("show")) {
-        dropdownMenu02.classList.remove("show");
-    } else {
-        dropdownMenu02.classList.add("show");
+        dropdownMenu.classList.add("show");
     }
 });
 

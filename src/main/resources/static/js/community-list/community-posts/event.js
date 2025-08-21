@@ -32,7 +32,7 @@ window.addEventListener("scroll", async (e) => {
             if(postsCriteria !== null && postsCriteria.criteria.hasMore){
                 checkScroll = true
             }
-        }, 1100);
+        }, 1200);
     }
 })
 
@@ -132,76 +132,68 @@ hoverArea.addEventListener("mouseleave", (e) => {
 });
 
 // 최신 사진 리뷰
-const communityReview = document.querySelector(
-    "section.community-review-section div.slick-slider div.slick-list"
-);
-const reviewPrevButton = document.querySelector(
-    "div.d-none.slick-initialized button.slick-arrow.slick-prev"
-);
-const reviewNextButton = document.querySelector(
-    "div.d-none.slick-initialized button.slick-arrow.slick-next"
-);
-let reviewCount = 0;
-
-reviewPrevButton.style.visibility = "hidden";
-reviewNextButton.style.visibility = "visible";
-
-reviewPrevButton.addEventListener("click", (e) => {
-    if (reviewCount > 0) {
-        reviewCount--;
-        communityReview.style.transform = `translate(-${600 * reviewCount}px)`;
-        communityReview.style.transition = `transform 0.5s`;
-    }
-
-    if (reviewCount > 0) {
-        reviewPrevButton.style.visibility = "visible";
-    } else {
-        reviewPrevButton.style.visibility = "hidden";
-    }
-    if (reviewCount < 2) {
-        reviewNextButton.style.visibility = "visible";
-    } else {
-        reviewNextButton.style.visibility = "hidden";
-    }
-});
-
-reviewNextButton.addEventListener("click", (e) => {
-    if (reviewCount < 2) {
-        reviewCount++;
-        communityReview.style.transform = `translate(-${600 * reviewCount}px)`;
-        communityReview.style.transition = `transform 0.5s`;
-    }
-
-    if (reviewCount > 0) {
-        reviewPrevButton.style.visibility = "visible";
-    } else {
-        reviewPrevButton.style.visibility = "hidden";
-    }
-    if (reviewCount < 2) {
-        reviewNextButton.style.visibility = "visible";
-    } else {
-        reviewNextButton.style.visibility = "hidden";
-    }
-});
+// const communityReview = document.querySelector(
+//     "section.community-review-section div.slick-slider div.slick-list"
+// );
+// const reviewPrevButton = document.querySelector(
+//     "div.d-none.slick-initialized button.slick-arrow.slick-prev"
+// );
+// const reviewNextButton = document.querySelector(
+//     "div.d-none.slick-initialized button.slick-arrow.slick-next"
+// );
+// let reviewCount = 0;
+//
+// reviewPrevButton.style.visibility = "hidden";
+// reviewNextButton.style.visibility = "visible";
+//
+// reviewPrevButton.addEventListener("click", (e) => {
+//     if (reviewCount > 0) {
+//         reviewCount--;
+//         communityReview.style.transform = `translate(-${600 * reviewCount}px)`;
+//         communityReview.style.transition = `transform 0.5s`;
+//     }
+//
+//     if (reviewCount > 0) {
+//         reviewPrevButton.style.visibility = "visible";
+//     } else {
+//         reviewPrevButton.style.visibility = "hidden";
+//     }
+//     if (reviewCount < 2) {
+//         reviewNextButton.style.visibility = "visible";
+//     } else {
+//         reviewNextButton.style.visibility = "hidden";
+//     }
+// });
+//
+// reviewNextButton.addEventListener("click", (e) => {
+//     if (reviewCount < 2) {
+//         reviewCount++;
+//         communityReview.style.transform = `translate(-${600 * reviewCount}px)`;
+//         communityReview.style.transition = `transform 0.5s`;
+//     }
+//
+//     if (reviewCount > 0) {
+//         reviewPrevButton.style.visibility = "visible";
+//     } else {
+//         reviewPrevButton.style.visibility = "hidden";
+//     }
+//     if (reviewCount < 2) {
+//         reviewNextButton.style.visibility = "visible";
+//     } else {
+//         reviewNextButton.style.visibility = "hidden";
+//     }
+// });
 
 // 위로 가기 버튼 나타나기/숨기기
-const topButton = document.querySelector("#top-btn.top-btn");
+const topButton = document.getElementById("top-btn");
 
-topButton.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-topButton.style.opacity = 0;
-topButton.style.transform = "translateY(20px)";
+console.log(document.getElementById("top-btn"));
 
 window.addEventListener("scroll", () => {
-    if (window.scrollY === 0) {
-        topButton.style.opacity = 0;
-        topButton.style.transform = "translateY(30px)";
-        setTimeout(() => {
-            topButton.style.visibility = "hidden";
-        }, 300);
+    if (window.scrollY > 100) {
+        topButton.classList.add("show");
     } else {
-        topButton.style.visibility = "visible";
-        topButton.style.opacity = 1;
-        topButton.style.transform = "translateY(-20px)";
+        topButton.classList.remove("show");
     }
 });
 
@@ -211,3 +203,5 @@ topButton.addEventListener("click", () => {
         behavior: "smooth"
     });
 });
+
+
