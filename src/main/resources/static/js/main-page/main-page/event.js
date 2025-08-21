@@ -1,3 +1,22 @@
+// 검색창
+const searchInput = document.querySelector("#input-group input[type=text]");
+const inputDeleteButton = document.querySelector("#input-delete img");
+inputDeleteButton.style.display = "none";
+
+searchInput.addEventListener("keyup", (e) => {
+    if (!searchInput.value) {
+        inputDeleteButton.style.display = "none";
+    } else {
+        inputDeleteButton.style.display = "block";
+    }
+});
+
+inputDeleteButton.addEventListener("click", (e) => {
+    searchInput.value = "";
+    inputDeleteButton.style.display = "none";
+});
+
+
 const banner = document.querySelector("div.slick-track");
 const firstBanner = document.createElement("div");
 const lastBanner = document.createElement("div");
@@ -121,62 +140,62 @@ portfolioButtons.forEach((portfolioButton) => {
 
 updatePortfolioButtonVisibility();
 
-let counselorButtonCheck = true;
-let counselorcount = 0;
-const counselorslick = document.querySelector("div.counselor-track");
-const counselorButtons = document.querySelectorAll(".counselor-list-button");
-const counselorPrevButton = counselorButtons[0];
-const counselorNextButton = counselorButtons[1];
-
-const updateCounselorButtonVisibility = () => {
-    if (counselorcount === 0) {
-        counselorPrevButton.classList.add("slick-disabled");
-        counselorNextButton.classList.remove("slick-disabled");
-    } else if (counselorcount < 4) {
-        counselorPrevButton.classList.remove("slick-disabled");
-        counselorNextButton.classList.remove("slick-disabled");
-    } else if (counselorcount === 4) {
-        counselorPrevButton.classList.remove("slick-disabled");
-        counselorNextButton.classList.add("slick-disabled");
-    }
-};
-
-counselorButtons.forEach((counselorButton) => {
-    counselorButton.addEventListener("click", (e) => {
-        if (
-            counselorButtonCheck === false ||
-            e.currentTarget.classList.contains("slick-disabled")
-        ) {
-            return;
-        }
-
-        counselorButtonCheck = false;
-
-        const portfolioButtonType = e.currentTarget.classList[1];
-        if (portfolioButtonType === "slick-prev") {
-            // console.log("이전 버튼 눌림");
-            counselorcount--;
-            updateCounselorButtonVisibility();
-            counselorslick.style.transform = `translate(-${
-                396 * counselorcount
-            }px)`;
-            counselorslick.style.transition = `transform 0.5s`;
-        } else {
-            // console.log("다음 버튼 눌림");
-            counselorcount++;
-            updateCounselorButtonVisibility();
-            counselorslick.style.transform = `translate(-${
-                396 * counselorcount
-            }px)`;
-            counselorslick.style.transition = `transform 0.5s`;
-        }
-        setTimeout(() => {
-            counselorButtonCheck = true;
-        }, 500);
-    });
-});
-
-updateCounselorButtonVisibility();
+// let counselorButtonCheck = true;
+// let counselorcount = 0;
+// const counselorslick = document.querySelector("div.counselor-track");
+// const counselorButtons = document.querySelectorAll(".counselor-list-button");
+// const counselorPrevButton = counselorButtons[0];
+// const counselorNextButton = counselorButtons[1];
+//
+// const updateCounselorButtonVisibility = () => {
+//     if (counselorcount === 0) {
+//         counselorPrevButton.classList.add("slick-disabled");
+//         counselorNextButton.classList.remove("slick-disabled");
+//     } else if (counselorcount < 4) {
+//         counselorPrevButton.classList.remove("slick-disabled");
+//         counselorNextButton.classList.remove("slick-disabled");
+//     } else if (counselorcount === 4) {
+//         counselorPrevButton.classList.remove("slick-disabled");
+//         counselorNextButton.classList.add("slick-disabled");
+//     }
+// };
+//
+// counselorButtons.forEach((counselorButton) => {
+//     counselorButton.addEventListener("click", (e) => {
+//         if (
+//             counselorButtonCheck === false ||
+//             e.currentTarget.classList.contains("slick-disabled")
+//         ) {
+//             return;
+//         }
+//
+//         counselorButtonCheck = false;
+//
+//         const portfolioButtonType = e.currentTarget.classList[1];
+//         if (portfolioButtonType === "slick-prev") {
+//             // console.log("이전 버튼 눌림");
+//             counselorcount--;
+//             updateCounselorButtonVisibility();
+//             counselorslick.style.transform = `translate(-${
+//                 396 * counselorcount
+//             }px)`;
+//             counselorslick.style.transition = `transform 0.5s`;
+//         } else {
+//             // console.log("다음 버튼 눌림");
+//             counselorcount++;
+//             updateCounselorButtonVisibility();
+//             counselorslick.style.transform = `translate(-${
+//                 396 * counselorcount
+//             }px)`;
+//             counselorslick.style.transition = `transform 0.5s`;
+//         }
+//         setTimeout(() => {
+//             counselorButtonCheck = true;
+//         }, 500);
+//     });
+// });
+//
+// updateCounselorButtonVisibility();
 
 let good1ButtonCheck = true;
 let good1count = 0;
@@ -401,7 +420,7 @@ firstBanner.innerHTML = `<div class="slick-slide slick-cloned" tabindex="-1" dat
                                 <div class="banner-item" style="width: 100%; display: inline-block;">
                                     <div>
                                         <!-- 970px X 105px -->
-                                        <img src="../../static/images/main/banner1.png" alt="" class="banner-image">
+                                        <img src="/images/main/banner1.png" alt="" class="banner-image">
                                     </div>
                                 </div>
                             </div>
@@ -410,7 +429,7 @@ lastBanner.innerHTML = `<div class="slick-slide slick-cloned" tabindex="-1" data
                             <div>
                                 <div class="banner-item" style="width: 100%; display: inline-block;">
                                     <div>
-                                        <img src="../../static/images/main/banner5.png" alt="" class="banner-image">
+                                        <img src="/images/main/banner5.png" alt="" class="banner-image">
                                     </div>
                                 </div>
                             </div>
@@ -493,4 +512,129 @@ bannerButtons.forEach((bannerButton) => {
     });
 });
 updateBannerIndicator();
+
+// 실패 게시글 목록
+const firstCurationItem = document.getElementById("curation-item1");
+const lastCurationItem = document.getElementById("curation-item2");
+let text = ``
+const firstAreaPosts = posts.slice(0, 3);
+const lastAreaPosts = posts.slice(3, 6);
+
+firstAreaPosts.forEach((post) => {
+    text += `
+        <a href="" class="curation-list-wrapper">
+            <div class="curation-contents has-thumbnail">
+                <p class="topic-name">실패 경험담</p>
+                    <span class="community-preview">
+                        <p class="curation-title">${post.postTitle}</p>
+                        <p class="curation-content"${post.postContent}</p>
+                    </span>
+                <div class="curation-reactions">
+                    <span class="view-count"></span>
+                </div>
+            </div>
+        </a>
+    `
+});
+firstCurationItem.innerHTML = text;
+text = ``;
+lastAreaPosts.forEach((post) => {
+    text += `
+        <a href="" class="curation-list-wrapper">
+            <div class="curation-contents has-thumbnail">
+                <p class="topic-name">실패 경험담</p>
+                    <span class="community-preview">
+                        <p class="curation-title">${post.postTitle}</p>
+                        <p class="curation-content"${post.postContent}</p>
+                    </span>
+                <div class="curation-reactions">
+                    <span class="view-count"></span>
+                </div>
+            </div>
+        </a>
+    `
+});
+lastCurationItem.innerHTML = text;
+
+
+// 상담사 소개
+const counselorContainer = document.querySelector("div.slick-track.portfolio-track")
+text = ``;
+
+counselors.forEach((counselor) => {
+   text += `
+        <div tabindex="-1" data-index="0" class="slick-slide slick-active slick-current" style="outline: none; width: 247px;">
+            <div>
+                <div class="item-wrap" tabindex="-1" style="width: 100%; display: inline-block;">
+                    <a href="" class="item">
+                        <div class="item-img">
+                            <!-- 229px X 229px -->
+                            <img src="https://static.cdn.soomgo.com/upload/portfolio/2a07dc3d-d87b-49e3-9b3f-d8ca2d3a7be5.jpg?w=250&h=250&webp=1" alt="">
+                        </div>
+                        <div class="item-text-wrap">
+                            <h3>대면상담</h3>
+                            <p>${counselor.counselorAddress}</p>
+                        </div>
+                    </a>
+                    <a href="" class="pro-info">
+                        <div class="user-profile-picture pro-info-img">
+                            <div style="background-image: url('/images/main/무료이미지-상담사프사.png')"></div>
+                        </div>
+                        <span class="couselor-name">${counselor.counselorName}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+   `;
+});
+counselorContainer.innerHTML = text;
+
+
+// 오늘의 좋은 말
+const goodTrack01 = document.getElementById("good01-track")
+const goodTrack02 = document.getElementById("good02-track")
+text = ``;
+const firstAreaGood = todayMessages.slice(0, 6);
+const lastAreaGood = todayMessages.slice(6, 12);
+
+firstAreaGood.forEach((todayMessage, i) => {
+    let todayMessageSrc = `/images/goodWords/memo0${i % 4}.jpg`;
+
+    text += `
+        <div tabindex="-1" data-index="0" class="slick-slide slick-active slick-current" style="outline: none; width: 247px;">
+            <div>
+                <a href="" style="width: 100%; display: inline-block; position: relative">
+                    <img class="service-image" src="${todayMessageSrc}" alt="">
+                    <span class="service-text">${todayMessage.todayMessageContent}</span>
+                </a>
+            </div>
+        </div>
+    `;
+});
+goodTrack01.innerHTML = text;
+
+text = ``;
+lastAreaGood.forEach((todayMessage, i) => {
+    let todayMessageSrc = `/images/goodWords/memo0${i % 4}.jpg`;
+
+    text += `
+        <div tabindex="-1" data-index="0" class="slick-slide slick-active slick-current" style="outline: none; width: 247px;">
+            <div>
+                <a href="" style="width: 100%; display: inline-block; position: relative">
+                    <img class="service-image" src="${todayMessageSrc}" alt="">
+                    <span class="service-text">${todayMessage.todayMessageContent}</span>
+                </a>
+            </div>
+        </div>
+    `;
+});
+goodTrack02.innerHTML = text;
+
+
+
+
+
+
+
+
 

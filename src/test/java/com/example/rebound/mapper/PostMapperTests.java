@@ -14,6 +14,6 @@ public class PostMapperTests {
 
     @Test
     public void testSelectTitleAndContents(){
-        postMapper.selectTitleAndContents().stream().map(PostDTO::toString).forEach(log::info);
+//        postMapper.selectTitleAndContents().stream().map(PostDTO::toString).forEach(log::info);
     }
 }

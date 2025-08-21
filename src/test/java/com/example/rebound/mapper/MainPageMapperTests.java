@@ -1,0 +1,32 @@
+package com.example.rebound.mapper;
+
+import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+@Slf4j
+public class MainPageMapperTests {
+    @Autowired
+    private MainPageMapper mainpageMapper;
+
+//    게시글 목록 미리보기
+    @Test
+    public void testPostPreview(){
+        log.info(mainpageMapper.postPreview().toString());
+    }
+
+//    상담사 소개
+    @Test
+    public void testCounselorIntroduction(){
+        log.info(mainpageMapper.counselorIntroduction().toString());
+    }
+
+//    오늘의 좋은 말 미리보기
+    @Test
+    public void testTodayMessagePreview(){
+        log.info(mainpageMapper.todayMessagePreview().toString());
+    }
+
+}
