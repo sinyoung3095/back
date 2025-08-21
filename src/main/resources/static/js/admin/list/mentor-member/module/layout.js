@@ -16,7 +16,7 @@ const layout = (()=>{
                             <div class="member-name">${member.memberName}
                                 <span class="badge-label badge text-danger ml-2"
                                       data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class=""
-                                      title="" data-original-title="">일반회원</span>
+                                      title="" data-original-title="">멘토회원</span>
                             </div>
                             <div class="member-id">${member.memberEmail}</div>
                         </td>
@@ -42,18 +42,21 @@ const layout = (()=>{
         let criteria = memberCriteriaDTO.memberCriteria;
 
         if(criteria.hasPreviousPage){
-            text = `<a data-page="${criteria.startPage - 1}" class="paging" style="cursor: pointer; color: black; font-size:15px; padding:7px 10px; ">이전</a>`
+            text = `<a data-page="${criteria.startPage - 1}" class="paging" style="cursor: pointer; color: black; font-size:15px; padding-top:4px; ">이전</a>`
         }
 
         for(let i = criteria.startPage; i <= criteria.endPage; i++){
             text += `
-            <li class="page-item page-num">
-                <a data-page="${i}" class="page-item-link page-item-num paging">${i}</a>
-            </li>`
+            <li class="page-item page-num`
+            i === criteria.page && (text += ` active`);
+            text += `
+                ">
+                    <a data-page="${i}" class="page-item-link page-item-num paging">${i}</a>
+                </li>`
         }
 
         if(criteria.hasNextPage){
-            text += `<a id="next" data-page="${criteria.endPage + 1}" class="paging" style="cursor: pointer; color: black; font-size:15px; padding:7px 10px;">다음</a>`
+            text += `<a id="next" data-page="${criteria.endPage + 1}" class="paging" style="cursor: pointer; color: black; font-size:15px; padding-top:4px;">다음</a>`
         }
 
         pageWrap.innerHTML = text;
@@ -69,7 +72,7 @@ const layout = (()=>{
                     <div class="modal-header">
                         <div class="modal-title">
                             (${memberCriteriaDTO.members[0].memberEmail}) ${memberCriteriaDTO.members[0].memberName}
-                            <span class="badge-label text-danger font-weight-bold ml-2">일반회원</span>
+                            <span class="badge-label text-danger font-weight-bold ml-2">멘토회원</span>
                         </div>
                         <button class="close">
                             <i class="mdi mdi-close"></i>
@@ -107,6 +110,10 @@ const layout = (()=>{
                                                                     <th>가입일</th>
                                                                     <td>${memberCriteriaDTO.members[0].createdDate}</td>
                                                                 </tr>
+                                                                <tr>
+                                                                    <th>8월 채택 수</th>
+                                                                    <td>10</td>
+                                                                </tr>
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -125,6 +132,10 @@ const layout = (()=>{
                                                                 <tr>
                                                                     <th>최근 접속일</th>
                                                                     <td>2025-07-29</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>7월 채택 수</th>
+                                                                    <td>10</td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>

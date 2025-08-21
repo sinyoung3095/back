@@ -63,4 +63,12 @@ public class MemberDAO {
         System.out.println(keyword);
         return memberMapper.selectGeneralAllCount(keyword);
     }
+    //    멘토 회원 전체 조회
+    public List<MemberDTO> findMentorMemberAll(MemberCriteria memberCriteria, String keyword) {
+        return memberMapper.selectMentorAll(memberCriteria,keyword);
+    }
+    //    멘토 회원 전체 수 조회
+    public int countMentorMemberAll(String keyword) {
+        return memberMapper.selectMentorAllCount(keyword);
+    }
 }

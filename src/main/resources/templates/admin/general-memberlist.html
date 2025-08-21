@@ -57,13 +57,13 @@
                                     </a>
                                 </li>
                                 <li class="submenu menu-item">
-                                    <a onclick="window.location.href='/admin/mentor-memberlist'" class="rebound-link" data-param="0">
+                                    <a onclick="window.location.href='/admin/mentor-memberlist/1'" class="rebound-link" data-param="0">
                                         -
                                         멘토 회원
                                     </a>
                                 </li>
                                 <li class="submenu menu-item">
-                                    <a onclick="window.location.href='/admin/subscribe-memberlist'" class="rebound-link" data-param="0">
+                                    <a onclick="window.location.href='/admin/subscribe-memberlist/1'" class="rebound-link" data-param="0">
                                         -
                                         구독 회원
                                     </a>
@@ -80,19 +80,19 @@
                             </a>
                             <ul class="menu-sub-list collapse" id="menu-60934381367997007c4c3d2d">
                                 <li class="submenu menu-item">
-                                    <a onclick="window.location.href='/admin/counselor-list'" class="rebound-link" data-param="1">
+                                    <a onclick="window.location.href='/admin/counselor-list/1'" class="rebound-link" data-param="1">
                                         -
                                         상담사 회원
                                     </a>
                                 </li>
                                 <li class="submenu menu-item">
-                                    <a onclick="window.location.href='/admin/counselor-apply'" class="rebound-link" data-param="1">
+                                    <a onclick="window.location.href='/admin/counselor-apply/1'" class="rebound-link" data-param="1">
                                         -
                                         상담사 신청/승인
                                     </a>
                                 </li>
                                 <li class="submenu menu-item">
-                                    <a onclick="window.location.href='/admin/counseling-list'" class="rebound-link" data-param="1">
+                                    <a onclick="window.location.href='/admin/counseling-list/1'" class="rebound-link" data-param="1">
                                         -
                                         오늘의 좋은 말
                                     </a>
@@ -138,7 +138,7 @@
                             </a>
                             <ul class="menu-sub-list collapse" id="menu-6284cdfecf9f6d001b046f3a">
                                 <li class="submenu menu-item">
-                                    <a onclick="window.location.href='/admin/notice-list'" class="rebound-link" data-param="3">
+                                    <a onclick="window.location.href='/admin/notice-list/1'" class="rebound-link" data-param="3">
                                         -
                                         공지 사항
                                     </a>
@@ -163,13 +163,13 @@
                     <div>
                         <div class="header-menu-group d-flex">
                             <!-- 상단 -->
-                            <a href="" class="rebound-link mr-3">
+                            <a onclick="window.location.href=''" class="rebound-link mr-3">
                                 <div class="header-menu-btn" data-for="" data-toggle="" data-custom-class="" title="" data-original-title="">
                                     <i class="mdi mdi-text-box-outline"></i>
                                 </div>
                             </a>
                             <!-- 상단 공지사항 -->
-                            <a href="" class="rebound-link mr-3">
+                            <a onclick="window.location.href='/admin/notice-list/1'" class="rebound-link mr-3">
                                 <div class="header-menu-btn " data-for="" data-toggle="" data-custom-class="" title="" data-original-title="공지사항">
                                     <!-- hover시 aria-describedby="tooltip"이 뒤에 표기 -->
                                     <i class="mdi mdi-bullhorn-variant-outline"></i>
@@ -192,7 +192,7 @@
                                             </a>
                                         </li>          
                                         <li>
-                                            <a href="" class="d-block text-dark">
+                                            <a onclick="window.location.href='/admin/admin-login'" class="d-block text-dark">
                                                 <i class="mdi mdi-logout-variant mr-2 mdi-18px"></i>
                                                 로그아웃
                                             </a>
@@ -216,9 +216,9 @@
                                 <div class="col col-auto">
                                     <ul class="tab-name-list list-unstyled list-inline">
                                         <!-- 클릭 한 부분은 active -->
-                                        <li class="tab-name active"><a onclick="window.location.href='/admin/general-memberlist'">일반 회원</a></li>
-                                        <li class="tab-name"><a onclick="window.location.href='/admin/mentor-memberlist'">멘토 회원</a></li>
-                                        <li class="tab-name"><a onclick="window.location.href='/admin/subscribe-memberlist'">구독 회원</a></li>
+                                        <li class="tab-name active"><a onclick="window.location.href='/admin/general-memberlist/1'">일반 회원</a></li>
+                                        <li class="tab-name"><a onclick="window.location.href='/admin/mentor-memberlist/1'">멘토 회원</a></li>
+                                        <li class="tab-name"><a onclick="window.location.href='/admin/subscribe-memberlist/1'">구독 회원</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -312,35 +312,20 @@
                             <!-- 페이지 번호 -->
                             <nav class="rebound-pagination-wrapper mt-5 mb-4">
                                 <ul id="pageWrap" class="pagination rebound-pagination">
-
                                 </ul>
                                 <div class="pagination-desc">
-                                    <!-- 회원이 1페이지(10명 미만)일 때 -->
-                                    <!-- <div class="des text-ignore">
-                                        <span>
-                                            <span class="highlight">last</span>
-                                            of
-                                            1
-                                        </span>
-                                        results
-                                    </div> -->
                                 </div>
                             </nav>
                         </div>
                     </div>
                 </div>
-                <!-- 일반회원 상세 모달 창 -->
-                <!-- 모달 창이 떠 있을 때 -->
-                <!-- <div class="modal fade member-modal show" style="display: block;" aria-modal="true" role="dialog"> -->
-                <!-- 모달 창이 뜨지 않을 때 -->
                 <div id="modalWrap">
-
                 </div>
             </div>
         </div>
     </div>
 </body>
-<script src="/js/admin/general-member/module/service.js"></script>
-<script src="/js/admin/general-member/module/layout.js"></script>
-<script src="/js/admin/general-member/event.js"></script>
+<script src="/js/admin/list/general-member/module/service.js"></script>
+<script src="/js/admin/list/general-member/module/layout.js"></script>
+<script src="/js/admin/list/general-member/event.js"></script>
 </html>

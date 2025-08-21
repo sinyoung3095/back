@@ -34,5 +34,18 @@ public class AdminServiceImpl implements AdminService {
         return memberCriteriaDTO;
     }
 
+    @Override
+    public MemberCriteriaDTO findMentorMembers(int page, String keyword) {
+        MemberCriteriaDTO memberCriteriaDTO = new MemberCriteriaDTO();
+        MemberCriteria memberCriteria = new MemberCriteria(page,memberDAO.countMentorMemberAll(keyword));
+        memberCriteriaDTO.setMembers(memberDAO.findMentorMemberAll(memberCriteria,keyword));
+        memberCriteriaDTO.setMemberCriteria(memberCriteria);
+
+        List<MemberDTO> members = memberDAO.findMentorMemberAll(memberCriteria,keyword);
+
+        memberCriteria.setHasMore(members.size() > memberCriteria.getRowCount());
+        return memberCriteriaDTO;
+    }
+
 
 }

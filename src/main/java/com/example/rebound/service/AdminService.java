@@ -11,5 +11,7 @@ public interface AdminService {
     public MemberDTO checkAdmin(MemberDTO memberDTO);
 //    일반 회원 전체 조회
     public MemberCriteriaDTO findGeneralMembers(int page,String keyword);
+//    멘토 회원 전체 조회
+    public MemberCriteriaDTO findMentorMembers(int page,String keyword);
 
 }

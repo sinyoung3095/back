@@ -1,6 +1,7 @@
 package com.example.rebound.mapper;
 
 
+import com.example.rebound.common.enumeration.Mentor;
 import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.repository.MemberDAO;
 import lombok.extern.slf4j.Slf4j;
@@ -28,12 +29,13 @@ public class AdminTest {
 
     @Test
     public void insertMemberTest(){
-        for (int i=11;i<100;i++) {
+        for (int i=0;i<100;i++) {
             MemberDTO memberDTO = new MemberDTO();
-            memberDTO.setMemberName("단위테스트");
-            memberDTO.setMemberEmail("test1@gmail.com"+i);
+            memberDTO.setMemberName("멘토회원테스트");
+            memberDTO.setMemberEmail(i+"test1@gmail.com");
             memberDTO.setMemberPassword("123456");
-            memberDTO.setMemberPhoneNumber("01012345678"+i);
+            memberDTO.setMentor("mentor");
+            memberDTO.setMemberPhoneNumber("0101234"+i);
 
             memberMapper.insertMember(memberDTO);
         }
