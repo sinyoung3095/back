@@ -43,6 +43,11 @@ joinButton.addEventListener("click", async (e) => {
     if (!phoneNumberInput.value) { phoneNumberErrorMessage.classList.remove("disableEvent"); joinOK = false; }
     else { phoneNumberErrorMessage.classList.add("disableEvent"); }
 
+    console.log("nameInput: "+nameInput);
+    console.log("phoneNumberInput"+phoneNumberInput);
+
+    console.log("joinOK상태: "+joinOK);
+
     if (joinOK) {
         joinForm.submit();
     }
