@@ -51,7 +51,7 @@ const autoSlide = () => {
         setTimeout(() => {
             slickSlide.style.transform = `translate(0px)`;
             slickSlide.style.transition = `transform 0s`;
-        }, 1000);
+        }, 500);
         count = 0;
     }
 };
