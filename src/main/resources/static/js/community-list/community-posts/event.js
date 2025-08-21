@@ -185,11 +185,11 @@ reviewNextButton.addEventListener("click", (e) => {
 });
 
 // 위로 가기 버튼 나타나기/숨기기
-const topButton = document.querySelector("a#top-btn.top-btn");
+const topButton = document.querySelector("#top-btn.top-btn");
 
 topButton.style.transition = "opacity 0.5s ease, transform 0.5s ease";
 topButton.style.opacity = 0;
-topButton.style.transform = "trnaslateY(20px)";
+topButton.style.transform = "translateY(20px)";
 
 window.addEventListener("scroll", () => {
     if (window.scrollY === 0) {
@@ -203,4 +203,11 @@ window.addEventListener("scroll", () => {
         topButton.style.opacity = 1;
         topButton.style.transform = "translateY(-20px)";
     }
+});
+
+topButton.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 });
