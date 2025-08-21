@@ -10,7 +10,7 @@
 </head>
 <body>
 <div id="app" data-is-loaded="true">
-    <header th:replace="~{/main-page/header2.html}"></header>
+    <header th:replace="~{/main-page/header2}"></header>
     <div class="__cov-progress" style="background-color: rgb(105, 59, 242); position: fixed; top: 0px; left: 0px; width: 0%; height: 2px;"></div>
     <ul class="prisma-toast-container"></ul>
     <!-- body -->
@@ -147,13 +147,14 @@
                             <div class="comment-input-box">
                                 <div class="comment-body">
                                     <!-- 댓글 다는 란 -->
-                                    <textarea name="comment-input" placeholder="댓글을 남겨보세요." rows="1" wrap="soft" class="sg-text-body2 sg-font-regular comment-input form-control" maxlength="400" id="__BVID__12603" style="resize: none; height: 22px;"></textarea>
+                                    <textarea id="commentContent" name="comment-input" placeholder="댓글을 남겨보세요." rows="1" wrap="soft" class="sg-text-body2 sg-font-regular comment-input form-control" maxlength="400" style="resize: none; height: 22px;"></textarea>
                                 </div>
-                                <button class="write-button">
+                                <button class="write-button" id="commentWriteButton">
                                     <span class="prisma-typography body14:regular primary write-comment-submit one-line"> 등록 </span>
                                 </button>
                             </div>
-                            <ul class="post-comments-list">
+                            <ul class="post-comments-list" id="commentWrap">
+                                <!-- 댓글 리스트 부분 -->
                             </ul>
                             <div class="infinite-loading-container">
                                 <div class="infinite-status-prompt" style="display: none;">
@@ -167,7 +168,6 @@
                                 <div class="infinite-status-prompt" style="color: rgb(102, 102, 102); font-size: 14px; padding: 10px 0px; display: none;"></div>
                                 <div class="infinite-status-prompt" style="color: rgb(102, 102, 102); font-size: 14px; padding: 10px 0px;"></div>
                                 <div class="infinite-status-prompt" style="color: rgb(102, 102, 102); font-size: 14px; padding: 10px 0px; display: none;">
-
                                     <br>
                                     <button class="btn-try-infinite"></button>
                                 </div>
@@ -230,10 +230,15 @@
                 </section>
             </div>
         </div>
+        <footer th:replace="~{/main-page/footer}"></footer>
         <div class="v-portal" style="display: none;"></div>
-        </div>
+    </div>
     </div>
 </body>
+<script th:inline="javascript">
+    const postId = [[${post.id}]];
+    const memberId = 1;
+</script>
 <script src="/js/community-list/community-contents-writer/module/layout.js"></script>
 <script src="/js/community-list/community-contents-writer/module/service.js"></script>
 <script src="/js/community-list/community-contents-writer/event.js"></script>
