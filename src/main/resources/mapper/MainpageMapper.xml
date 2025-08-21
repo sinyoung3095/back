@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.rebound.mapper.MainPageMapper">
+    <select id="postPreview">
+        select id, post_content, post_title, post_views, created_date, updated_date, member_id
+        from tbl_post
+        order by id desc
+        limit 6 offset 0
+    </select>
+
+    <select id="counselorIntroduction">
+        select id, counselor_name, counselor_address, file_id
+        from tbl_counselor
+        order by id desc
+        limit 8 offset 0
+    </select>
+
+    <select id="todayMessagePreview">
+        select id, today_message_content, counselor_id
+        from tbl_today_message
+        order by id desc
+        limit 12 offset 0
+    </select>
+</mapper>
