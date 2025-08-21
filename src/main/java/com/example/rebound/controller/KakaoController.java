@@ -6,7 +6,6 @@ import com.example.rebound.service.KakaoService;
 import com.example.rebound.service.MemberService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,22 +37,22 @@ public class KakaoController {
             memberDTO.setKakaoProfileUrl(memberDTO.getKakaoProfileUrl());
 
             model.addAttribute("memberDTO", memberDTO);
-            return "member/login-kakao";
+            return "/member/login-kakao";
         }
 
         session.setAttribute("member", foundKakaoMember.get());
-        return "redirect:/main-page/page";
+        return "/member/mypage";
     }
 
     @PostMapping("/member/join-kakao")
-    public String joinKakao(@ModelAttribute MemberDTO memberDTO) {
+    public RedirectView joinKakao(@ModelAttribute MemberDTO memberDTO) {
 //        System.out.println(memberDTO.getMemberEmail());
 //        System.out.println(memberDTO.getKakaoProfileUrl());
 //        System.out.println(memberDTO.getMemberProvider());
         memberService.joinKakaoMember(memberDTO);
         memberService.saveKakaoProfile(memberDTO);
         session.setAttribute("member", memberDTO);
-        return "redirect:/main-page/page";
+        return new RedirectView("/member/mypage");
     }
 
 }

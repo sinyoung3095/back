@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainpageController {
     private final MainpageService mainpageService;
 
-    @GetMapping("page")
-    public String List(Model model, PostCriteria postCriteria) {
+//    @GetMapping("page")
+//    public String List(Model model, PostCriteria postCriteria) {
 //        model.addAttribute("posts", mainpageService.getPostList(postCriteria));
 //        model.addAttribute("counselors", mainpageService.getCounselors());
-        return "/main-page/page";
-    }
+//        return "/main-page/page";
+//    }
 }
 
