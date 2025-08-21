@@ -25,6 +25,11 @@ public class AdminRestController {
         System.out.println(keyword);
         return adminService.findMentorMembers(page,keyword);
     }
+    @GetMapping("subscribe/{page}")
+    public MemberCriteriaDTO subscribeFindAll(@PathVariable int page,@RequestParam(required = false) String keyword) {
+        System.out.println(keyword);
+        return adminService.findSubscribeMembers(page,keyword);
+    }
 //
 
 }

@@ -71,4 +71,12 @@ public class MemberDAO {
     public int countMentorMemberAll(String keyword) {
         return memberMapper.selectMentorAllCount(keyword);
     }
+    //    구독 회원 전체 조회
+    public List<MemberDTO> findSubscribeMemberAll(MemberCriteria memberCriteria, String keyword) {
+        return memberMapper.selectSubscribeAll(memberCriteria,keyword);
+    }
+    //    구독 회원 전체 수 조회
+    public int countSubscribeMemberAll(String keyword) {
+        return memberMapper.selectSubscribeAllCount(keyword);
+    }
 }

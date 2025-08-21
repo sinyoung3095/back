@@ -29,13 +29,13 @@ public class AdminTest {
 
     @Test
     public void insertMemberTest(){
-        for (int i=0;i<100;i++) {
+        for (int i=15;i<100;i++) {
             MemberDTO memberDTO = new MemberDTO();
             memberDTO.setMemberName("멘토회원테스트");
-            memberDTO.setMemberEmail(i+"test1@gmail.com");
+            memberDTO.setMemberEmail("test1"+i+"@gmail.com");
             memberDTO.setMemberPassword("123456");
-            memberDTO.setMentor("mentor");
-            memberDTO.setMemberPhoneNumber("0101234"+i);
+            memberDTO.setMentor("subscribe");
+            memberDTO.setMemberPhoneNumber("0101"+i+"234"+i);
 
             memberMapper.insertMember(memberDTO);
         }
