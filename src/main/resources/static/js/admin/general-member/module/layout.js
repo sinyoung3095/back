@@ -46,17 +46,10 @@ const layout = (()=>{
         }
 
         for(let i = criteria.startPage; i <= criteria.endPage; i++){
-            if(i === criteria.startPage){
-            text += `
-            <li class="page-item page-num active">
-                <a id="previous" data-page="${i}" class="page-item-link page-item-num paging">${i}</a>
-            </li>`
-            } else {
             text += `
             <li class="page-item page-num">
                 <a data-page="${i}" class="page-item-link page-item-num paging">${i}</a>
             </li>`
-            }
         }
 
         if(criteria.hasNextPage){
@@ -137,48 +130,6 @@ const layout = (()=>{
                                                         </table>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <!-- 회원 상담 내역 -->
-                                            <div class="info-layout detail-info">
-                                                <div class="info-title justify-content-between">
-                                                    <div class="flex-left d-flex">
-                                                        <!-- 상담내역 클릭 시 상담사 관리 내 상담 내역으로 이동 -->
-                                                        <a href="" class="info-detail">
-                                                            <div class="title">상담 내역
-                                                                <i class="mdi mdi-menu-left ml-2"></i>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="flex-right"></div>
-                                                </div>
-                                                <div class="d-table w-100">
-                                                    <table class="info-table">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>상담사</th>
-                                                                <th>상담 일자</th>
-                                                                <th>상담 내용</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>test01</td>
-                                                                <td>2025-08-01</td>
-                                                                <td>고민</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>test01</td>
-                                                                <td>2025-08-01</td>
-                                                                <td>고민</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>test01</td>
-                                                                <td>2025-08-01</td>
-                                                                <td>고민</td>
-                                                            </tr>                                                                  
-                                                        </tbody>
-                                                    </table>
-                                                </div>                             
                                             </div>
                                             <!-- 회원 작성 게시글 -->
                                             <div class="info-layout detail-info">
