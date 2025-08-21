@@ -31,7 +31,10 @@
                 <div class="main-3">
                     <div class="main-4">
                         <h1 class="main-5">회원가입을 위한 추가 정보를 입력해 주세요</h1>
-                        <form action="/member/join" method="post" id="joinForm" th:object="${memberDTO}">
+                        <form action="/member/join-kakao" method="post" id="joinForm" th:object="${memberDTO}">
+                            <input type="hidden" th:field="*{kakaoEmail}" />
+                            <input type="hidden" th:field="*{kakaoProfileUrl}" />
+                            <input type="hidden" th:field="*{memberProvider}" />
                             <div class="main-6">
                                 <div class="main-9">
                                     <label class="main-10" for="memberName">이름</label>
@@ -100,7 +103,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </form>
                     </div>
                 </div>
@@ -108,7 +110,7 @@
         </main>
     </div>
 </body>
-<script src="/js/member/member-join/module/service.js"></script>
-<script src="/js/member/member-join/module/layout.js"></script>
-<script src="/js/member/member-join/event.js"></script>
+<script src="/js/member/login-kakao/module/service.js"></script>
+<script src="/js/member/login-kakao/module/layout.js"></script>
+<script src="/js/member/login-kakao/event.js"></script>
 </html>

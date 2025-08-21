@@ -39,14 +39,14 @@
         where member_common='none' and member_status='active' and member_email=#{memberEmail} and member_password=#{memberPassword}
     </select>
 <!--    카카오 중복조회-->
-    <select id="selectMemberByKaKaoEmail">
+    <select id="selectMemberByKakaoEmail">
         select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_mentor, member_status, member_common, created_date, updated_date
         from tbl_member
         where kakao_email=#{kakaoEmail}
     </select>
 <!--    카카오 로그인-->
     <insert id="insertKakaoMember">
-        insert into tbl_member (kakao_email, kakao_profile_url, member_phone_number, member_provider)
-        values (#{kakaoEmail}, #{kakaoProfileUrl}, #{memberPhoneNumber}, 'kakao')
+        insert into tbl_member (kakao_email, kakao_profile_url, member_phone_number, member_name, member_provider)
+        values (#{kakaoEmail}, #{kakaoProfileUrl}, #{memberPhoneNumber}, #{memberName}, #{memberProvider})
     </insert>
 </mapper>
