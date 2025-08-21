@@ -17,7 +17,7 @@ const postLayout = (() => {
                         </div>
                         <div class="feed-footer">
                             <div class="user-interaction">
-                                <span class="comment prisma-typography body12:regular quaternary">댓글 수</span>
+                                <span class="comment prisma-typography body12:regular quaternary">${post.commentCount}</span>
                             </div>
                             <span class="prisma-typography body12:regular quaternary">${post.relativeDate}</span>
                         </div>

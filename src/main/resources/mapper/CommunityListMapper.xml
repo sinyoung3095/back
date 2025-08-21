@@ -6,9 +6,8 @@
         values (#{postTitle}, #{postContent}, #{memberId}, #{categoryId})
     </insert>
 
-    <!-- 조회 -->
     <select id="selectCommunityPostWriter">
-        select m.member_name, c.category_name, p.id, p.post_title, p.post_content, p.post_views,
+        select m.member_name, c.category_name, p.category_id, p.id, p.post_title, p.post_content, p.post_views,
                p.post_status, p.member_id, p.created_date, p.updated_date
         from tbl_member m
                  join tbl_post p on m.id = p.member_id
@@ -16,7 +15,6 @@
         where p.id = #{id} and p.post_status = 'active'
     </select>
 
-    <!-- 조회수 -->
     <update id="updatePostReadCount">
         update tbl_post
         set post_views = post_views + 1
@@ -24,7 +22,7 @@
     </update>
 
     <select id="selectAll">
-        select m.member_name, c.category_name, p.id, p.post_title, p.post_content, p.post_views,
+        select m.member_name, c.category_name, p.category_id, p.id, p.post_title, p.post_content, p.post_views,
                p.post_status, p.member_id, p.created_date, p.updated_date
         from tbl_member m
                  join tbl_post p on m.id = p.member_id
@@ -36,5 +34,22 @@
 
     <select id="selectCountAll">
         SELECT COUNT(*) FROM tbl_post WHERE post_status = 'active'
+    </select>
+
+    <update id="updateCommunityPost">
+        update tbl_post
+        set
+            post_title = #{postTitle},
+            post_content = #{postContent},
+            category_id = #{categoryId},
+            updated_date = NOW()
+        where id = #{id}
+    </update>
+
+    <select id="selectAllByViews">
+        select id, post_title, post_content, post_views, post_status, member_id, category_id, created_date, updated_date
+        from tbl_post
+        order by post_views desc
+        limit 6
     </select>
 </mapper>

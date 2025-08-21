@@ -50,4 +50,15 @@ public class CommunityListServiceImpl implements CommunityListService {
         postCriteriaDTO.setPostCriteria(postCriteria);
         return postCriteriaDTO;
     }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void updatePost(PostDTO postDTO) {
+        postDAO.updatePost(postDTO);
+    }
+
+    @Override
+    public List<PostDTO> getPostsByViews() {
+        return postDAO.findByViews();
+    }
 }

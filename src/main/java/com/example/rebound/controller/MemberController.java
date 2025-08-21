@@ -92,7 +92,7 @@ public class MemberController {
     @GetMapping("login")
     public String goToLogin(MemberDTO memberDTO, Model model) {
         model.addAttribute("memberDTO", memberDTO);
-        return "member/login";
+        return "member/login-user";
     }
 
 //    로그인 완료
