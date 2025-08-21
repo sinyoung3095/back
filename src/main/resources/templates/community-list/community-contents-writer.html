@@ -5,14 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/images/favicon.png">
     <link rel="stylesheet" href="/font/didactgothic.woff2">
-    <link rel="stylesheet" href="/font/admin/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-cyrillic-700-normal-d010f1f324e111a22e53.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-cyrillic-ext-700-normal-be4d02458ce53887dc37.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-greek-700-normal-50e795c1345353b0e996.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-greek-ext-700-normal-bd9854c751441ccc1a70.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-latin-700-normal-227c93190fe7f82de3f8.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-latin-ext-700-normal-ed67ad54b1a8f5d21150.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
     <link rel="stylesheet" href="/css/community-list/community-contents-writer.css">
     <title>게시글 제목</title>
 </head>
@@ -21,22 +13,22 @@
     <header th:replace="~{/main-page/header2.html}"></header>
     <div class="__cov-progress" style="background-color: rgb(105, 59, 242); position: fixed; top: 0px; left: 0px; width: 0%; height: 2px;"></div>
     <!-- 스크롤 내리면 보이는 라인 -->
-    <div id="app-sticky-nav" class="vue-portal-target">
-        <section class="fixed show">
-            <section class="fixed-wrapper">
-                <h2 class="fixed-title prisma-typography body16:medium primary" th:text="${post.postTitle}"></h2>
-                <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M20.77%2015.174c.37%200%20.675.276.723.634l.007.099v5.86c0%20.371-.275.678-.632.726l-.099.007H3.231a.732.732%200%200%201-.724-.633l-.007-.1v-5.86a.732.732%200%200%201%201.455-.1l.007.1v5.128h16.076v-5.128c0-.37.275-.677.632-.726l.1-.007zM12.412%201.628l.09.072%206.377%206.05a.734.734%200%200%201%20.028%201.036.73.73%200%200%201-.949.098l-.084-.069-5.145-4.881v11.973a.732.732%200%200%201-1.454.1l-.007-.1V3.933L6.125%208.815a.73.73%200%200%201-.953.045l-.08-.074a.734.734%200%200%201-.045-.955l.073-.08%206.378-6.05.046-.039a.734.734%200%200%201%20.014-.01l-.06.048a.73.73%200%200%201%20.213-.14c.005%200%20.009-.002.013-.004a.724.724%200%200%201%20.69.072z'%20fill='%232D2D2D'%20fill-rule='evenodd'/%3e%3c/svg%3e" alt="공유하기" class="icon">
-                <div class="dropdown b-dropdown btn-group" id="__BVID__745">
-                    <button aria-haspopup="true" aria-expanded="false" type="button" class="btn dropdown-toggle btn-secondary" id="__BVID__745__BV_toggle_"></button>
-                    <ul role="menu" tabindex="-1" class="dropdown-menu dropdown-menu-right" aria-labelledby="__BVID__745__BV_toggle_" style="position: absolute; transform: translate3d(-116px, 24px, 0px); top: 0px; left: 0px; will-change: transform;">
-                        <li role="presentation">
-                            <a th:href="@{/community-list/failure-update/{id}(id=${post.id})}" class="dropdown-item">게시글 수정하기</a>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-        </section>
-    </div>
+<!--    <div id="app-sticky-nav" class="vue-portal-target">-->
+<!--        <section class="fixed show">-->
+<!--            <section class="fixed-wrapper">-->
+<!--                <h2 class="fixed-title prisma-typography body16:medium primary" th:text="${post.postTitle}"></h2>-->
+<!--                <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M20.77%2015.174c.37%200%20.675.276.723.634l.007.099v5.86c0%20.371-.275.678-.632.726l-.099.007H3.231a.732.732%200%200%201-.724-.633l-.007-.1v-5.86a.732.732%200%200%201%201.455-.1l.007.1v5.128h16.076v-5.128c0-.37.275-.677.632-.726l.1-.007zM12.412%201.628l.09.072%206.377%206.05a.734.734%200%200%201%20.028%201.036.73.73%200%200%201-.949.098l-.084-.069-5.145-4.881v11.973a.732.732%200%200%201-1.454.1l-.007-.1V3.933L6.125%208.815a.73.73%200%200%201-.953.045l-.08-.074a.734.734%200%200%201-.045-.955l.073-.08%206.378-6.05.046-.039a.734.734%200%200%201%20.014-.01l-.06.048a.73.73%200%200%201%20.213-.14c.005%200%20.009-.002.013-.004a.724.724%200%200%201%20.69.072z'%20fill='%232D2D2D'%20fill-rule='evenodd'/%3e%3c/svg%3e" alt="공유하기" class="icon">-->
+<!--                <div class="dropdown b-dropdown btn-group" id="__BVID__745">-->
+<!--                    <button aria-haspopup="true" aria-expanded="false" type="button" class="btn dropdown-toggle btn-secondary" id="__BVID__745__BV_toggle_"></button>-->
+<!--                    <ul role="menu" tabindex="-1" class="dropdown-menu dropdown-menu-right" aria-labelledby="__BVID__745__BV_toggle_" style="position: absolute; transform: translate3d(-116px, 24px, 0px); top: 0px; left: 0px; will-change: transform;">-->
+<!--                        <li role="presentation">-->
+<!--                            <a th:href="@{/community-list/failure-update/{id}(id=${post.id})}" class="dropdown-item">게시글 수정하기</a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </section>-->
+<!--        </section>-->
+<!--    </div>-->
     <ul class="prisma-toast-container"></ul>
     <!-- body -->
     <div id="app-body">

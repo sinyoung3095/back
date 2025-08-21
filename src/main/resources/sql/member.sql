@@ -29,6 +29,7 @@ values ('일반','rebound12@gmail.com',0085438937249578,'1234');
 
 
 select * from tbl_member;
+delete from tbl_member where id>5;
 
 
 

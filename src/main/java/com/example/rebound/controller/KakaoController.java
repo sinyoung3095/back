@@ -1,13 +1,17 @@
 package com.example.rebound.controller;
 
+import com.example.rebound.common.enumeration.Provider;
 import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.service.KakaoService;
 import com.example.rebound.service.MemberService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.Optional;
@@ -20,31 +24,35 @@ public class KakaoController {
     private final HttpSession session;
 
     @GetMapping("/kakao/login")
-    public RedirectView kakaoLogin(String code){
-        String token=kakaoService.getKakaoAccessToken(code);
-        Optional<MemberDTO> foundMember=kakaoService.getKakaoInfo(token);
-        MemberDTO memberDTO=foundMember.orElseThrow(RuntimeException::new);
-        String path=null;
+    public String kakaoLogin(@RequestParam("code") String code, Model model) {
+        String token = kakaoService.getKakaoAccessToken(code);
+        Optional<MemberDTO> foundMember = kakaoService.getKakaoInfo(token);
+        MemberDTO memberDTO = foundMember.orElseThrow(RuntimeException::new);
 
-//        최초 로그인인지 검사
-        Optional<MemberDTO> foundKakaoMember=memberService.findMemberByKakaoEmail(memberDTO.getKakaoEmail());
-        if(foundKakaoMember.isEmpty()){
-            memberService.joinKakaoMember(memberDTO);
+        Optional<MemberDTO> foundKakaoMember = memberService.findMemberByKakaoEmail(memberDTO.getKakaoEmail());
 
-            return new RedirectView("/member/login-kakao");
-//            foundKakaoMember=memberService.findMemberByKakaoEmail(memberDTO.getKakaoEmail());
+        if (foundKakaoMember.isEmpty()) {
+            memberDTO.setMemberProvider(Provider.KAKAO);
+            memberDTO.setMemberEmail(memberDTO.getKakaoEmail());
+            memberDTO.setKakaoProfileUrl(memberDTO.getKakaoProfileUrl());
+
+            model.addAttribute("memberDTO", memberDTO);
+            return "/member/login-kakao";
         }
-        session.setAttribute("member", foundKakaoMember.get());
 
-        return new RedirectView("/main-page/page");
-        
-//        이슈 확인
-//        완료
-    }
-    @PostMapping("kakao/login")
-    public RedirectView kakaoLogin(Optional<MemberDTO> foundKakaoMember, MemberDTO memberDTO){
-        foundKakaoMember=memberService.findMemberByKakaoEmail(memberDTO.getKakaoEmail());
         session.setAttribute("member", foundKakaoMember.get());
-        return new RedirectView("/main-page/page");
+        return "/member/mypage";
     }
+
+    @PostMapping("/member/join-kakao")
+    public RedirectView joinKakao(@ModelAttribute MemberDTO memberDTO) {
+//        System.out.println(memberDTO.getMemberEmail());
+//        System.out.println(memberDTO.getKakaoProfileUrl());
+//        System.out.println(memberDTO.getMemberProvider());
+        memberService.joinKakaoMember(memberDTO);
+        memberService.saveKakaoProfile(memberDTO);
+        session.setAttribute("member", memberDTO);
+        return new RedirectView("/member/mypage");
+    }
+
 }
