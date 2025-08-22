@@ -3,6 +3,7 @@ package com.example.rebound.repository;
 import com.example.rebound.domain.CommentVO;
 import com.example.rebound.dto.CommentDTO;
 import com.example.rebound.mapper.CommentMapper;
+import com.example.rebound.util.PostCriteria;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -19,12 +20,12 @@ public class CommentDAO {
     }
 
 //    전제 조회
-    public List<CommentDTO> findAll(Long postId) {
-        return commentMapper.selectRepliesByPostId(postId);
+    public List<CommentDTO> findAll(Long postId, PostCriteria postCriteria) {
+        return commentMapper.selectCommentsByPostId(postId, postCriteria);
     }
 
 //    댓글 수
-    public int getCommentCountByPostId(Long postId) {
-        return commentMapper.selectCommentsByPostId(postId);
+    public int getCommentsCountByPostId(Long postId) {
+        return commentMapper.selectCommentsCountByPostId(postId);
     }
 }
