@@ -1,8 +1,8 @@
 const commentLayout = (() => {
-    const showList = (comments) => {
+    const showList = (CommentsCriteria) => {
         const commentWrap = document.getElementById("commentWrap");
         let text = "";
-        comments.forEach((comment) => {
+        CommentsCriteria.comments.forEach((comment) => {
             text += `
             <li class="post-comments-list-item">
                 <div class="post-comment-wrapper">

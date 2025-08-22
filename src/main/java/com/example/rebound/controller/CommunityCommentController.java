@@ -1,5 +1,6 @@
 package com.example.rebound.controller;
 
+import com.example.rebound.dto.CommentCriteriaDTO;
 import com.example.rebound.dto.CommentDTO;
 import com.example.rebound.service.CommentService;
 import lombok.RequiredArgsConstructor;
@@ -24,12 +25,12 @@ public class CommunityCommentController {
     }
 
 //    전체 조회
-    @GetMapping("/list")
-    public ResponseEntity<?> list(Long postId) {
-        List<CommentDTO> comments = commentService.getComments(postId);
-        if(comments.size() == 0) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(comments);
+    @GetMapping("/{page}")
+    public ResponseEntity<?> list(@PathVariable int page, Long postId){
+        CommentCriteriaDTO commentCriteriaDTO = commentService.getComments(postId, page);
+        if(commentCriteriaDTO.getComments().size() == 0){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(commentCriteriaDTO);
         }
-        return ResponseEntity.ok().body(comments);
+        return ResponseEntity.ok().body(commentCriteriaDTO);
     }
 }
