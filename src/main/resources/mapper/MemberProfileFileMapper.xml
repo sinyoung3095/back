@@ -6,4 +6,11 @@
         INSERT INTO tbl_member_profile_file (id, member_id)
         VALUES (#{id}, #{memberId})
     </insert>
+<!--    파일 조회-->
+    <select id="selectMemberProfileFileByMemberId">
+        select f.id, mp.member_id, f.file_path, f.file_name, f.file_size, f.created_date, f.updated_date, f.file_original_name, f.file_content_type
+        from tbl_member_profile_file mp
+        join tbl_file f
+        where f.id=mp.id and mp.member_id=#{id}
+    </select>
 </mapper>
