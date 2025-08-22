@@ -1,6 +1,5 @@
 package com.example.rebound.service;
 
-import com.example.rebound.dto.CounselorDTO;
 import com.example.rebound.dto.MemberDTO;
 
 import java.time.LocalDate;
@@ -22,6 +21,8 @@ public interface MemberService {
     public void joinKakaoMember(MemberDTO memberDTO);
 //    카카오 프로필 저장
     void saveKakaoProfile(MemberDTO memberDTO);
+//    프로필 사진 조회
+    public Optional<MemberDTO> showFileById(Long id);
 
     default String getPath() {
         return LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
