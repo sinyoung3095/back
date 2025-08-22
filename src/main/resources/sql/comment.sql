@@ -22,3 +22,5 @@ create view view_comment_member as
 select m.member_name, c.id, c.comment_content, c.post_id, c.created_date, c.updated_date
 from tbl_member m join tbl_comment c on m.id = c.member_id
     );
+
+select * from view_comment_member;

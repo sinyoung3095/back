@@ -12,8 +12,8 @@ public class PostMapperTests {
     @Autowired
     private CommunityListMapper postMapper;
 
-//    @Test
-//    public void testSelectTitleAndContents(){
+    @Test
+    public void testSelectTitleAndContents(){
 //        postMapper.selectTitleAndContents().stream().map(PostDTO::toString).forEach(log::info);
-//    }
+    }
 }
