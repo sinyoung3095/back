@@ -7,7 +7,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public enum Mentor {
-    MENTOR("mentor"), NONE("none");
+    MENTOR("mentor"), NONE("none"), SUBSCRIBE("subscribe") ;
 
     private final String value;
     private static final Map<String, Mentor> MENTOR_MAP =

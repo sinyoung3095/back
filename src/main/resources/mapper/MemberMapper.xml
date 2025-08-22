@@ -33,6 +33,50 @@
             )
         </if>
     </select>
+    <select id="selectMentorAll">
+        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_mentor, member_status, member_common, created_date, updated_date from tbl_member
+        where member_status = 'active' and member_mentor = 'mentor' and member_common='none'
+        <if test="keyword != null">
+            and (
+            member_name like concat('%', #{keyword}, '%') or
+            member_email like concat('%', #{keyword}, '%')
+            )
+        </if>
+        order by id desc
+        limit #{memberCriteria.rowCount} offset #{memberCriteria.offset}
+    </select>
+    <select id="selectMentorAllCount">
+        select count(*) from tbl_member
+        where member_status = 'active' and member_mentor = 'mentor' and member_common='none'
+        <if test="keyword != null">
+            and (
+            member_name like concat('%', #{keyword}, '%') or
+            member_email like concat('%', #{keyword}, '%')
+            )
+        </if>
+    </select>
+    <select id="selectSubscribeAll">
+        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_mentor, member_status, member_common, created_date, updated_date from tbl_member
+        where member_status = 'active' and member_mentor = 'subscribe' and member_common='none'
+        <if test="keyword != null">
+            and (
+            member_name like concat('%', #{keyword}, '%') or
+            member_email like concat('%', #{keyword}, '%')
+            )
+        </if>
+        order by id desc
+        limit #{memberCriteria.rowCount} offset #{memberCriteria.offset}
+    </select>
+    <select id="selectSubscribeAllCount">
+        select count(*) from tbl_member
+        where member_status = 'active' and member_mentor = 'subscribe' and member_common='none'
+        <if test="keyword != null">
+            and (
+            member_name like concat('%', #{keyword}, '%') or
+            member_email like concat('%', #{keyword}, '%')
+            )
+        </if>
+    </select>
 <!--    일반 회원 조회-->
     <select id="selectMember">
         select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_mentor, member_status, member_common, created_date, updated_date from tbl_member

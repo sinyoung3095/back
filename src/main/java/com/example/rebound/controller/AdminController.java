@@ -69,7 +69,7 @@ public class AdminController {
         return "/admin/admin-mainPage";
     }
 //    관리자 공지사항 목록 이동
-    @GetMapping("notice-list")
+    @GetMapping("notice-list/{page}")
     public String goToNoticeList(){
         return "/admin/notice-list";
     }
@@ -79,17 +79,17 @@ public class AdminController {
         return "/admin/notice-detail";
     }
 //    상담하기 목록 이동
-    @GetMapping("counseling-list")
+    @GetMapping("counseling-list/{page}")
     public String goToCounselingList(){
         return "/admin/counseling-list";
     }
 //    상담사 댓글 이동
-    @GetMapping("counselor-apply")
+    @GetMapping("counselor-apply/{page}")
     public String goToCounselingApply(){
         return "/admin/counselor-apply";
     }
 //    상담사 목록 이동
-    @GetMapping("counselor-list")
+    @GetMapping("counselor-list/{page}")
     public String goToCounselorList(){
         return "/admin/counselor-list";
     }
@@ -100,12 +100,12 @@ public class AdminController {
         return "/admin/general-memberlist";
     }
 //    멘토 목록 이동
-    @GetMapping("mentor-memberlist")
+    @GetMapping("mentor-memberlist/{page}")
     public String goToMentorMemberList(){
         return "/admin/mentor-memberlist";
     }
 //    구독자 목록 이동
-    @GetMapping("subscribe-memberlist")
+    @GetMapping("subscribe-memberlist/{page}")
     public String goToSubscribeMemberList(){
         return "/admin/subscribe-memberlist";
     }

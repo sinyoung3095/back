@@ -10,7 +10,7 @@ create table tbl_member
     member_password          varchar(255)                                          null,
     member_suggestion_count  int unsigned                default '0'               null,
     member_kakao_profile_url varchar(255)                                          null,
-    member_mentor            enum ('mentor', 'none')     default 'none'            null,
+    member_mentor            enum ('mentor','subscribe', 'none')     default 'none'   null,
     member_status            enum ('active', 'inactive') default 'active'          null,
     member_type              enum ('admin', 'none')    default 'none'          null,
     created_date             datetime                    default CURRENT_TIMESTAMP null,
@@ -36,5 +36,5 @@ delete from tbl_member where id>5;
 alter table tbl_member change member_kakao_email kakao_email varchar(255);
 alter table tbl_member change member_kakao_profile_url kakao_profile_url varchar(255);
 alter table tbl_member modify member_password varchar(255);
-alter table tbl_member change member_type member_common enum('admin', 'none') default 'none';
-
+alter table tbl_member change member_mentor member_mentor enum ('mentor','subscribe', 'none')     default 'none';
+alter table tbl_member add lately_date datetime;
