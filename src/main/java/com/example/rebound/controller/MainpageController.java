@@ -1,8 +1,7 @@
 package com.example.rebound.controller;
 
-import com.example.rebound.service.MainpageService;
-import com.example.rebound.util.PostCriteria;
-import lombok.Getter;
+import com.example.rebound.common.exception.PostNotFoundException;
+import com.example.rebound.service.MainPageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,16 +9,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/main-page/**")
 @RequiredArgsConstructor
-public class MainpageController {
-    private final MainpageService mainpageService;
+public class MainPageController {
+    private final MainPageService mainpageService;
 
-//    @GetMapping("page")
-//    public String List(Model model, PostCriteria postCriteria) {
-//        model.addAttribute("posts", mainpageService.getPostList(postCriteria));
-//        model.addAttribute("counselors", mainpageService.getCounselors());
-//        return "/main-page/page";
-//    }
+    @GetMapping("/")
+    public String goToMainpage(Model model) {
+        model.addAttribute("posts", mainpageService.postPreview());
+        model.addAttribute("todayMessages", mainpageService.todayMessagePreview());
+        model.addAttribute("notices", mainpageService.noticePreview());
+        return "/main-page/page";
+    }
+
+    @GetMapping("today-message")
+    public String goToTodayMessage() {
+        return "/counselor-list/good-words";
+    }
 }
-
