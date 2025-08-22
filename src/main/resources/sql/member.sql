@@ -36,5 +36,6 @@ delete from tbl_member where id>5;
 alter table tbl_member change member_kakao_email kakao_email varchar(255);
 alter table tbl_member change member_kakao_profile_url kakao_profile_url varchar(255);
 alter table tbl_member modify member_password varchar(255);
-alter table tbl_member change member_mentor member_mentor enum ('mentor','subscribe', 'none')     default 'none';
+alter table tbl_member change member_mentor member_mentor enum ('mentor','subscribe', 'none')   default 'none';
+alter table tbl_member add lately_date    datetime;
 

@@ -59,7 +59,7 @@ const layout = (()=>{
 
         pageWrap.innerHTML = text;
     }
-    const showModal=(memberCriteriaDTO)=>{
+    const showModal=(memberCriteriaDTO,postCriteriaDTO)=>{
         const modalWrap = document.querySelector("#modalWrap")
         console.log(memberCriteriaDTO);
         let text = '';
@@ -125,7 +125,7 @@ const layout = (()=>{
                                                                 </tr>
                                                                 <tr>
                                                                     <th>최근 접속일</th>
-                                                                    <td>2025-07-29</td>
+                                                                    <td>${memberCriteriaDTO.members[0].latelyDate} </td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -154,21 +154,21 @@ const layout = (()=>{
                                                                 <th>게시글 작성 일자</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
+                                                        <tbody class="postWrap">
                                                             <tr>
-                                                                <td>test-title</td>
-                                                                <td>test-context</td>
-                                                                <td>2025-08-01</td>
+                                                                <td>${postCriteriaDTO.posts[0].postTitle}</td>
+                                                                <td>${postCriteriaDTO.posts[0].postContent}</td>
+                                                                <td>${postCriteriaDTO.posts[0].createdDate}</td>
                                                             </tr>
                                                             <tr>
-                                                                <td>test-title</td>
-                                                                <td>test-context</td>
-                                                                <td>2025-08-01</td>
+                                                                <td>${postCriteriaDTO.posts[1].postTitle}</td>
+                                                                <td>${postCriteriaDTO.posts[1].postContent}</td>
+                                                                <td>${postCriteriaDTO.posts[1].createdDate}</td>
                                                             </tr>
                                                             <tr>
-                                                                <td>test-title</td>
-                                                                <td>test-context</td>
-                                                                <td>2025-08-01</td>
+                                                                <td>${postCriteriaDTO.posts[2].postTitle}</td>
+                                                                <td>${postCriteriaDTO.posts[2].postContent}</td>
+                                                                <td>${postCriteriaDTO.posts[2].createdDate}</td>
                                                             </tr>                                                                                                                               
                                                         </tbody>
                                                     </table>

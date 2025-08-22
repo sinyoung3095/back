@@ -8,5 +8,13 @@ const service = (() => {
         return memberCriteriaDTO;
 
     }
-    return {getMember: getMember};
+    const getPost = async (callback, page=1,keyword='')=>{
+        const response = await fetch(`/api/list/post/${page}?keyword=${keyword}`);
+        const postsCriteriaDTO = await response.json();
+        if(callback){
+            callback(postsCriteriaDTO);
+        }
+        return postsCriteriaDTO;
+    }
+    return {getMember: getMember,getPost:getPost};
 })();

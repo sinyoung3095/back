@@ -52,4 +52,27 @@
         order by post_views desc
         limit 6
     </select>
+
+    <select id="selectAllByKeyword">
+        select m.member_name,  p.id, p.post_title, p.post_content, p.post_views,
+               p.post_status, p.member_id, p.created_date, p.updated_date
+        from tbl_member m
+                 join tbl_post p on m.id = p.member_id
+        where p.post_status = 'active'
+        <if test="${keyword != null}">
+           and (m.member_email = ${keyword} or m.member_Name = ${keyword})
+        </if>
+        order by p.created_date desc
+        limit #{count} offset #{offset}
+    </select>
+
+    <select id="selectCountAllByKeyword">
+        select count(*)
+        from tbl_member m
+        join tbl_post p on m.id = p.member_id
+        where p.post_status = 'active'
+        <if test="${keyword != null}">
+            and (m.member_email = ${keyword} or m.member_Name = ${keyword})
+        </if>
+    </select>
 </mapper>

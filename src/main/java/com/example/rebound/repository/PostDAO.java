@@ -1,5 +1,6 @@
 package com.example.rebound.repository;
 
+import com.example.rebound.dto.PostCriteriaDTO;
 import com.example.rebound.dto.PostDTO;
 import com.example.rebound.mapper.CommunityListMapper;
 import com.example.rebound.util.PostCriteria;
@@ -48,5 +49,13 @@ public class PostDAO {
 //    조회 수 정렬
     public List<PostDTO> findByViews() {
         return communityListMapper.selectAllByViews();
+    }
+//    keyword로 조회
+    public List<PostDTO> findAllByKeyword(PostCriteria postCriteria, String keyword) {
+        return communityListMapper.selectAllByKeyword(postCriteria, keyword);
+    }
+//    keyword로 조회
+    public int findCountByKeyword(String keyword) {
+        return communityListMapper.selectCountAllByKeyword(keyword);
     }
 }

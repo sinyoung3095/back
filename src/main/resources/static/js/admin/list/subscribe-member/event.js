@@ -181,6 +181,7 @@ memberContainer.addEventListener("click",(e)=>{
         console.log(keyword);
         service.getMember(layout.showModal, page, keyword);
 
+
     }
 })
 

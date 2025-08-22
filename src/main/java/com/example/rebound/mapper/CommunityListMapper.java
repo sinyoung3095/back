@@ -1,5 +1,6 @@
 package com.example.rebound.mapper;
 
+import com.example.rebound.dto.PostCriteriaDTO;
 import com.example.rebound.dto.PostDTO;
 import com.example.rebound.util.PostCriteria;
 import org.apache.ibatis.annotations.Mapper;
@@ -30,5 +31,8 @@ public interface CommunityListMapper {
 
 //    게시글 조회 수 정렬
     public List<PostDTO> selectAllByViews();
-
+//    keyword로 조회
+    public List<PostDTO> selectAllByKeyword(PostCriteria postCriteria, String keyword);
+//    keyword로 수 조회
+    public int selectCountAllByKeyword(String keyword);
 }

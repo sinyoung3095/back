@@ -2,6 +2,7 @@ package com.example.rebound.service;
 
 import com.example.rebound.dto.MemberCriteriaDTO;
 import com.example.rebound.dto.MemberDTO;
+import com.example.rebound.dto.PostCriteriaDTO;
 import com.example.rebound.repository.MemberDAO;
 import com.example.rebound.repository.PostDAO;
 import com.example.rebound.util.MemberCriteria;
@@ -56,11 +57,13 @@ public class AdminServiceImpl implements AdminService {
         MemberCriteria memberCriteria = new MemberCriteria(page,memberDAO.countSubscribeMemberAll(keyword));
         memberCriteriaDTO.setMembers(memberDAO.findSubscribeMemberAll(memberCriteria,keyword));
         memberCriteriaDTO.setMemberCriteria(memberCriteria);
+        memberCriteriaDTO.setPosts();
 
         List<MemberDTO> members = memberDAO.findSubscribeMemberAll(memberCriteria,keyword);
 
         memberCriteria.setHasMore(members.size() > memberCriteria.getRowCount());
         return memberCriteriaDTO;
+    }
     }
 
 

@@ -2,6 +2,7 @@ package com.example.rebound.controller;
 
 import com.example.rebound.dto.MemberCriteriaDTO;
 import com.example.rebound.dto.MemberDTO;
+import com.example.rebound.dto.PostCriteriaDTO;
 import com.example.rebound.service.AdminService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -30,6 +31,6 @@ public class AdminRestController {
         System.out.println(keyword);
         return adminService.findSubscribeMembers(page,keyword);
     }
-//
+
 
 }
