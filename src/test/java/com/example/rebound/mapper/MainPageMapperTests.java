@@ -17,16 +17,16 @@ public class MainPageMapperTests {
         log.info(mainpageMapper.postPreview().toString());
     }
 
-//    상담사 소개
-    @Test
-    public void testCounselorIntroduction(){
-        log.info(mainpageMapper.counselorIntroduction().toString());
-    }
-
 //    오늘의 좋은 말 미리보기
     @Test
     public void testTodayMessagePreview(){
         log.info(mainpageMapper.todayMessagePreview().toString());
+    }
+
+//    공지사항 미리보기
+    @Test
+    public void testNoticePreview(){
+        log.info(mainpageMapper.noticePreview().toString());
     }
 
 }

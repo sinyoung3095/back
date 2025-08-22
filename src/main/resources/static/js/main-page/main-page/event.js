@@ -16,7 +16,7 @@ inputDeleteButton.addEventListener("click", (e) => {
     inputDeleteButton.style.display = "none";
 });
 
-
+// 공지사항
 const banner = document.querySelector("div.slick-track");
 const firstBanner = document.createElement("div");
 const lastBanner = document.createElement("div");
@@ -80,65 +80,63 @@ serviceButtons.forEach((serviceButton) => {
         }, 500);
     });
 });
-
 updateServiceButtonVisibility();
 
-let portfolioButtonCheck = true;
-let portfoliocount = 0;
-const portfolioslick = document.querySelector("div.portfolio-track");
-const portfolioButtons = document.querySelectorAll(".portfolio-slide-button");
-const portfolioPrevButton = portfolioButtons[0];
-const portfolioNextButton = portfolioButtons[1];
-
-const updatePortfolioButtonVisibility = () => {
-    if (portfoliocount === 0) {
-        portfolioPrevButton.classList.add("slick-disabled");
-        portfolioNextButton.classList.remove("slick-disabled");
-    } else if (portfoliocount === 1) {
-        portfolioPrevButton.classList.remove("slick-disabled");
-        portfolioNextButton.classList.remove("slick-disabled");
-    } else if (portfoliocount === 2) {
-        portfolioPrevButton.classList.remove("slick-disabled");
-        portfolioNextButton.classList.add("slick-disabled");
-    }
-};
-
-portfolioButtons.forEach((portfolioButton) => {
-    portfolioButton.addEventListener("click", (e) => {
-        if (
-            portfolioButtonCheck === false ||
-            e.currentTarget.classList.contains("slick-disabled")
-        ) {
-            return;
-        }
-
-        portfolioButtonCheck = false;
-
-        const portfolioButtonType = e.currentTarget.classList[1];
-        if (portfolioButtonType === "slick-prev") {
-            // console.log("이전 버튼 눌림");
-            portfoliocount--;
-            updatePortfolioButtonVisibility();
-            portfolioslick.style.transform = `translate(-${
-                494 * portfoliocount
-            }px)`;
-            portfolioslick.style.transition = `transform 0.5s`;
-        } else {
-            // console.log("다음 버튼 눌림");
-            portfoliocount++;
-            updatePortfolioButtonVisibility();
-            portfolioslick.style.transform = `translate(-${
-                494 * portfoliocount
-            }px)`;
-            portfolioslick.style.transition = `transform 0.5s`;
-        }
-        setTimeout(() => {
-            portfolioButtonCheck = true;
-        }, 500);
-    });
-});
-
-updatePortfolioButtonVisibility();
+// let portfolioButtonCheck = true;
+// let portfoliocount = 0;
+// const portfolioslick = document.querySelector("div.portfolio-track");
+// const portfolioButtons = document.querySelectorAll(".portfolio-slide-button");
+// const portfolioPrevButton = portfolioButtons[0];
+// const portfolioNextButton = portfolioButtons[1];
+//
+// const updatePortfolioButtonVisibility = () => {
+//     if (portfoliocount === 0) {
+//         portfolioPrevButton.classList.add("slick-disabled");
+//         portfolioNextButton.classList.remove("slick-disabled");
+//     } else if (portfoliocount === 1) {
+//         portfolioPrevButton.classList.remove("slick-disabled");
+//         portfolioNextButton.classList.remove("slick-disabled");
+//     } else if (portfoliocount === 2) {
+//         portfolioPrevButton.classList.remove("slick-disabled");
+//         portfolioNextButton.classList.add("slick-disabled");
+//     }
+// };
+//
+// portfolioButtons.forEach((portfolioButton) => {
+//     portfolioButton.addEventListener("click", (e) => {
+//         if (
+//             portfolioButtonCheck === false ||
+//             e.currentTarget.classList.contains("slick-disabled")
+//         ) {
+//             return;
+//         }
+//
+//         portfolioButtonCheck = false;
+//
+//         const portfolioButtonType = e.currentTarget.classList[1];
+//         if (portfolioButtonType === "slick-prev") {
+//             // console.log("이전 버튼 눌림");
+//             portfoliocount--;
+//             updatePortfolioButtonVisibility();
+//             portfolioslick.style.transform = `translate(-${
+//                 494 * portfoliocount
+//             }px)`;
+//             portfolioslick.style.transition = `transform 0.5s`;
+//         } else {
+//             // console.log("다음 버튼 눌림");
+//             portfoliocount++;
+//             updatePortfolioButtonVisibility();
+//             portfolioslick.style.transform = `translate(-${
+//                 494 * portfoliocount
+//             }px)`;
+//             portfolioslick.style.transition = `transform 0.5s`;
+//         }
+//         setTimeout(() => {
+//             portfolioButtonCheck = true;
+//         }, 500);
+//     });
+// });
+// updatePortfolioButtonVisibility();
 
 // let counselorButtonCheck = true;
 // let counselorcount = 0;
@@ -197,6 +195,8 @@ updatePortfolioButtonVisibility();
 //
 // updateCounselorButtonVisibility();
 
+
+// 오늘의 좋은 말
 let good1ButtonCheck = true;
 let good1count = 0;
 const good1slick = document.querySelector("div.good1-track");
@@ -244,9 +244,9 @@ good1Buttons.forEach((good1Button) => {
         }, 500);
     });
 });
-
 updateGood1ButtonVisibility();
 
+// 오늘의 좋은 말 2
 let good2ButtonCheck = true;
 let good2count = 0;
 const good2slick = document.querySelector("div.good2-track");
@@ -294,9 +294,9 @@ good2Buttons.forEach((good2Button) => {
         }, 500);
     });
 });
-
 updateGood2ButtonVisibility();
 
+// 리바운드 이야기
 let storyButtonCheck = true;
 let storycount = 0;
 const storyslick = document.querySelector("div.story-track");
@@ -350,7 +350,6 @@ storyButtons.forEach((storyButton) => {
         }, 500);
     });
 });
-
 updateStoryButtonVisibility();
 
 let joinButtonCheck = true;
@@ -513,6 +512,7 @@ bannerButtons.forEach((bannerButton) => {
 });
 updateBannerIndicator();
 
+
 // 실패 게시글 목록
 const firstCurationItem = document.getElementById("curation-item1");
 const lastCurationItem = document.getElementById("curation-item2");
@@ -557,39 +557,6 @@ lastAreaPosts.forEach((post) => {
 lastCurationItem.innerHTML = text;
 
 
-// 상담사 소개
-const counselorContainer = document.querySelector("div.slick-track.portfolio-track")
-text = ``;
-
-counselors.forEach((counselor) => {
-   text += `
-        <div tabindex="-1" data-index="0" class="slick-slide slick-active slick-current" style="outline: none; width: 247px;">
-            <div>
-                <div class="item-wrap" tabindex="-1" style="width: 100%; display: inline-block;">
-                    <a href="" class="item">
-                        <div class="item-img">
-                            <!-- 229px X 229px -->
-                            <img src="https://static.cdn.soomgo.com/upload/portfolio/2a07dc3d-d87b-49e3-9b3f-d8ca2d3a7be5.jpg?w=250&h=250&webp=1" alt="">
-                        </div>
-                        <div class="item-text-wrap">
-                            <h3>대면상담</h3>
-                            <p>${counselor.counselorAddress}</p>
-                        </div>
-                    </a>
-                    <a href="" class="pro-info">
-                        <div class="user-profile-picture pro-info-img">
-                            <div style="background-image: url('/images/main/무료이미지-상담사프사.png')"></div>
-                        </div>
-                        <span class="couselor-name">${counselor.counselorName}</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-   `;
-});
-counselorContainer.innerHTML = text;
-
-
 // 오늘의 좋은 말
 const goodTrack01 = document.getElementById("good01-track")
 const goodTrack02 = document.getElementById("good02-track")
@@ -631,9 +598,19 @@ lastAreaGood.forEach((todayMessage, i) => {
 goodTrack02.innerHTML = text;
 
 
+// 리바운드 이야기
+const reboundStory = document.querySelector("div.soomgo-story-slide")
 
-
-
+// <div tabIndex="-1" data-index="0" className="slick-slide slick-active slick-current"
+//      style="outline: none; width: 329px;">
+//     <div>
+//         <a href="" style="width: 100%; display: inline-block; position: relative">
+//             <div className="soomgo-story-image" style="background-image: url(/images/main/공지임시이미지.jpg);"></div>
+//             <div className="notice-text">공지 내용이 들어올 공간입니다. 이미지 위에 배치될 예정입니다.</div>
+//             <p className="soomgo-story-name">공지 제목</p>
+//         </a>
+//     </div>
+// </div>
 
 
 

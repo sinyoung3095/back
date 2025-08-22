@@ -8,17 +8,17 @@
         limit 6 offset 0
     </select>
 
-    <select id="counselorIntroduction">
-        select id, counselor_name, counselor_address, file_id
-        from tbl_counselor
-        order by id desc
-        limit 8 offset 0
-    </select>
-
     <select id="todayMessagePreview">
         select id, today_message_content, counselor_id
         from tbl_today_message
         order by id desc
         limit 12 offset 0
+    </select>
+
+    <select id="noticePreview">
+        select id, notice_title, notice_content
+        from tbl_notice
+        order by id desc
+        limit 8 offset 0
     </select>
 </mapper>

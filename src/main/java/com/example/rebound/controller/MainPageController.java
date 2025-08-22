@@ -16,8 +16,8 @@ public class MainPageController {
     @GetMapping("/")
     public String goToMainpage(Model model) {
         model.addAttribute("posts", mainpageService.postPreview());
-        model.addAttribute("counselors", mainpageService.counselorIntroduction());
         model.addAttribute("todayMessages", mainpageService.todayMessagePreview());
+        model.addAttribute("notices", mainpageService.noticePreview());
         return "/main-page/page";
     }
 
