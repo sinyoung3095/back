@@ -15,6 +15,8 @@ public class MemberCriteriaDTO {
 
     private List<MemberDTO> members;
     private MemberCriteria memberCriteria;
+    private List<PostDTO> posts;
+
 
 
 }

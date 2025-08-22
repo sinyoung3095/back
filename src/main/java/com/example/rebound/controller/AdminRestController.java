@@ -15,9 +15,20 @@ public class AdminRestController {
     private final AdminService adminService;
 
     @GetMapping("general/{page}")
-    public MemberCriteriaDTO GeneralFindAll(@PathVariable int page,@RequestParam(required = false) String keyword) {
+    public MemberCriteriaDTO generalFindAll(@PathVariable int page,@RequestParam(required = false) String keyword) {
         System.out.println(keyword);
         return adminService.findGeneralMembers(page,keyword);
+    }
+
+    @GetMapping("mentor/{page}")
+    public MemberCriteriaDTO mentorFindAll(@PathVariable int page,@RequestParam(required = false) String keyword) {
+        System.out.println(keyword);
+        return adminService.findMentorMembers(page,keyword);
+    }
+    @GetMapping("subscribe/{page}")
+    public MemberCriteriaDTO subscribeFindAll(@PathVariable int page,@RequestParam(required = false) String keyword) {
+        System.out.println(keyword);
+        return adminService.findSubscribeMembers(page,keyword);
     }
 //
 

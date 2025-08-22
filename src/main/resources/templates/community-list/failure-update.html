@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="/font/didactgothic.woff2">
+    <link rel="stylesheet" href="/css/community-list/failure-write.css">
+    <title>실패 경험담 수정</title>
+</head>
+<body class="post-write hide-mobile-global-header">
+<div id="app">
+    <header th:replace="~{/main-page/header2.html}"></header>
+    <div id="app-body">
+        <div class="community-container container">
+            <div class="soomgo-life-container">
+                <!-- update form -->
+                <form th:action="@{/community-list/failure-update}" method="post" th:object="${post}">
+                    <input type="hidden" name="id" th:value="*{id}">
+                    <section class="write-post-container">
+                        <div class="select-subject-header">
+                            <div class="subject-header-wrapper">
+                                <img src="..." alt="뒤로 가기" class="back-button">
+                                <div class="post-subject-select-box custom-select">
+                                    <span class="prisma-typography body16:medium primary"> 실패 경험담 수정 </span>
+                                </div>
+                                <button type="submit" class="btn btn-secondary write-post-submit">수정</button>
+                            </div>
+                        </div>
+                        <div class="editor-body-container is-bottom-margin">
+                            <div class="editor-body-wrapper">
+                                <!-- 제목 -->
+                                <div class="editor-title-wrapper">
+                                    <div class="editor-title-container">
+                                        <label for="post-title-input" class="editor-title-label">
+                                            <input id="post-title-input" type="text" placeholder="제목을 입력해주세요." th:field="*{postTitle}" class="post-title-input">
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="divider-wrapper"><hr class="hr-divider"></div>
+
+                                <!-- 카테고리 -->
+                                <div class="service-region-wrapper">
+                                    <input type="hidden" id="categoryId" name="categoryId" th:field="*{categoryId}">
+                                    <button type="button" id="categoryButton" class="category-select-box">
+                                        <span class="text" id="categoryButtonText" th:text="*{categoryName} ?: '고민 카테고리'"></span>
+                                    </button>
+                                </div>
+
+                                <div class="divider-wrapper"><hr class="hr-divider"></div>
+
+                                <!-- 내용 -->
+                                <div class="editor-contents">
+                                    <span class="prisma-typography body14:regular primary">
+                                        <textarea class="editor-contents-textarea" placeholder="내용을 입력해주세요." th:field="*{postContent}"></textarea>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer th:replace="~{/main-page/footer}"></footer>
+</div>
+<div data-testid="search-service-modal" id="search-service-modal___BV_modal_outer_" style="position: absolute; z-index: 1040;" class="categoty-modal active">
+    <div id="search-service-modal" role="dialog" aria-describedby="search-service-modal___BV_modal_body_" class="modal fade show search-pro-filter-modal" aria-modal="true" style="display: block;">
+        <div class="modal-dialog modal-md modal-dialog-centered mobile-full-modal">
+            <span tabindex="0"></span>
+            <div id="search-service-modal___BV_modal_content_" tabindex="-1" class="modal-content">
+                <div id="search-service-modal___BV_modal_body_" class="modal-body">
+                    <div class="tabs" id="__BVID__1087">
+                        <div>
+                            <ul role="tablist" class="nav nav-tabs" id="__BVID__1087__BV_tab_controls_">
+                                <li role="presentation" class="nav-item">
+                                    <a role="tab" aria-selected="true" aria-setsize="2" aria-posinset="1" href="#" target="_self" class="nav-link active" id="__BVID__1088___BV_tab_button__" aria-controls="__BVID__1088">고민</a>
+                                </li>
+                                <button data-testid="search-pro-filter-modal-close" type="button" class="btn close-button btn-none">
+                                    <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20width='18'%20height='18'%20viewBox='0%200%2018%2018'%3e%3cdefs%3e%3cpath%20id='a'%20d='M9%207.869L16.434.434l1.132%201.132L10.13%209l7.435%207.434-1.132%201.132L9%2010.13l-7.434%207.435-1.132-1.132L7.87%209%20.434%201.566%201.566.434%209%207.87z'/%3e%3c/defs%3e%3cuse%20fill='%23323232'%20fill-rule='nonzero'%20xlink:href='%23a'/%3e%3c/svg%3e" alt="모달 닫기">
+                                </button>
+                            </ul>
+                        </div>
+                        <div class="tab-content" id="__BVID__1087__BV_tab_container_">
+                            <div role="tabpanel" aria-hidden="false" class="tab-pane active" id="__BVID__1088" aria-labelledby="__BVID__1088___BV_tab_button__">
+                                <div class="search-service-autocomplete">
+                                    <div class="option-group-selectbox">
+                                        <ul>
+                                            <li data-testid="category-level1" class="category-item"> 대인관계
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                                <div class="bottom-border"></div>
+                                            </li>
+                                            <li data-testid="category-level1" class="category-item"> 가족
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                                <div class="bottom-border"></div>
+                                            </li>
+                                            <li data-testid="category-level1" class="category-item"> 연애
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                                <div class="bottom-border"></div>
+                                            </li>
+                                            <li data-testid="category-level1" class="category-item"> 육아/출산
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                                <div class="bottom-border"></div>
+                                            </li>
+                                            <li data-testid="category-level1" class="category-item"> 신체건강
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                                <div class="bottom-border"></div>
+                                            </li>
+                                            <li data-testid="category-level1" class="category-item"> 정신건강
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                                <div class="bottom-border"></div>
+                                            </li>
+                                            <li data-testid="category-level1" class="category-item"> 금전/사업
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                                <div class="bottom-border"></div>
+                                            </li>
+                                            <li data-testid="category-level1" class="category-item"> 자아/성격
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                                <div class="bottom-border"></div>
+                                            </li>
+                                            <li data-testid="category-level1" class="category-item"> 취업/진로
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                                <div class="bottom-border"></div>
+                                            </li>
+                                            <li data-testid="category-level1" class="category-item"> 펫로스
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                                <div class="bottom-border"></div>
+                                            </li>
+                                            <li data-testid="category-level1" class="category-item"> 학업/고시
+                                                <div class="loading-indicator" style="display: none;">
+                                                    <div class="indicator-body center" style="width: 14px; height: 14px; border-width: 0.25rem; border-style: solid; border-color: rgb(105, 59, 242) rgba(105, 59, 242, 0.2) rgba(105, 59, 242, 0.2); border-image: initial;"></div>
+                                                    <p style="display: none;"></p>
+                                                </div>
+                                                <div class="bottom-border"></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span tabindex="0"></span>
+        </div>
+    </div>
+    <div id="search-service-modal___BV_modal_backdrop_" class="modal-backdrop"></div>
+</div>
+</body>
+<script src="/js/community-list/failure-update/event.js"></script>
+</html>

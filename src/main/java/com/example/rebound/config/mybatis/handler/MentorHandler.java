@@ -24,6 +24,7 @@ public class MentorHandler implements TypeHandler<Mentor> {
         return switch (rs.getString(columnIndex)){
             case "mentor"-> Mentor.MENTOR;
             case "none"-> Mentor.NONE;
+            case "subscribe"-> Mentor.SUBSCRIBE;
             default -> null;
         };
     }
@@ -33,6 +34,7 @@ public class MentorHandler implements TypeHandler<Mentor> {
         return switch (rs.getString(columnName)){
             case "mentor"-> Mentor.MENTOR;
             case "none"-> Mentor.NONE;
+            case "subscribe"-> Mentor.SUBSCRIBE;
             default -> null;
         };
     }
@@ -42,6 +44,7 @@ public class MentorHandler implements TypeHandler<Mentor> {
         return switch (cs.getString(columnIndex)){
             case "mentor"-> Mentor.MENTOR;
             case "none"-> Mentor.NONE;
+            case "subscribe"-> Mentor.SUBSCRIBE;
             default -> null;
         };
     }

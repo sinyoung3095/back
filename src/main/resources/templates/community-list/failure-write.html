@@ -5,14 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/images/favicon.png">
     <link rel="stylesheet" href="/font/didactgothic.woff2">
-    <link rel="stylesheet" href="/font/admin/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-cyrillic-700-normal-d010f1f324e111a22e53.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-cyrillic-ext-700-normal-be4d02458ce53887dc37.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-greek-700-normal-50e795c1345353b0e996.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-greek-ext-700-normal-bd9854c751441ccc1a70.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-latin-700-normal-227c93190fe7f82de3f8.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-latin-ext-700-normal-ed67ad54b1a8f5d21150.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
     <link rel="stylesheet" href="/css/community-list/failure-write.css">
     <title>실패 경험담 작성</title>
 </head>
@@ -56,6 +48,13 @@
                                     <span class="prisma-typography body14:regular primary">
                                         <textarea class="editor-contents-textarea" placeholder="내용을 입력해주세요." th:field="*{postContent}"></textarea>
                                     </span>
+                                    <!--                                    <span class="editor-contents-textarea-placeholder prisma-typography body14:regular tertiary">-->
+                                    <!--                                        과외 친구, 공동구매 그룹, 취미활동까지 함께 할 사람을 찾아보세요.-->
+                                    <!--                                        예) 게임을 좋아하는 분 누구나! 게임 취미활동 멤버 구해요.-->
+                                    <!--                                        예) 미용 봉사를 함께 진행할 분들을 찾습니다.-->
+                                    <!--                                        ※ 주제에 맞지 않는 글이나 커뮤니티 이용정책에 위배되는 글은 신고의 대상이 됩니다.-->
+                                    <!--                                        ※ 일정 수 이상의 신고를 받으면 작성한 글이 숨김 및 삭제될 수 있습니다.-->
+                                    <!--                                    </span>-->
                                 </div>
                             </div>
                         </div>
@@ -64,6 +63,7 @@
             </div>
         </div>
     </div>
+    <footer th:replace="~{/main-page/footer}"></footer>
 </div>
 <!-- 모달 창 -->
 <div data-testid="search-service-modal" id="search-service-modal___BV_modal_outer_" style="position: absolute; z-index: 1040;" class="categoty-modal active">
@@ -179,5 +179,5 @@
     <div id="search-service-modal___BV_modal_backdrop_" class="modal-backdrop"></div>
 </div>
 </body>
-<script src="/js/community-list/failure-write.js"></script>
+<script src="/js/community-list/failure-write/event.js"></script>
 </html>

@@ -1,17 +1,17 @@
 package com.example.rebound.service;
 
-import com.example.rebound.dto.CounselorDTO;
-import com.example.rebound.dto.MemberDTO;
-import com.example.rebound.dto.PaymentDTO;
-import com.example.rebound.repository.CounselorDAO;
-import com.example.rebound.repository.MemberDAO;
-import com.example.rebound.repository.PaymentDAO;
+import com.example.rebound.dto.*;
+import com.example.rebound.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.io.File;
+import java.io.InputStream;
+import java.net.URL;
+import java.nio.file.Files;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -19,6 +19,8 @@ import java.util.Optional;
 public class MemberServiceImpl implements MemberService {
     private final MemberDAO memberDAO;
     private final PaymentDAO paymentDAO;
+    private final FileDAO fileDAO;
+    private final MemberProfileFileDAO memberProfileFileDAO;
 
     @Override
     public void joinMember(MemberDTO memberDTO) {
@@ -42,11 +44,57 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public Optional<MemberDTO> findMemberByKakaoEmail(String kakaoEmail) {
-        return Optional.empty();
+        return memberDAO.findMemberByKakaoEmail(kakaoEmail);
     }
 
     @Override
     public void joinKakaoMember(MemberDTO memberDTO) {
-
+        memberDAO.saveKakaoMember(memberDTO); // insert
+        Long memberId = memberDAO.findMemberByKakaoEmail(memberDTO.getKakaoEmail()).get().getId();
+        memberDTO.setId(memberId);
     }
+
+    @Override
+    public void saveKakaoProfile(MemberDTO memberDTO) {
+        String todayPath = getPath();
+        String rootPath = "C:/reboundFile/" + todayPath;
+
+        try {
+            File directory = new File(rootPath);
+            if (!directory.exists()) {
+                directory.mkdirs();
+            }
+
+            String imageUrl = memberDTO.getKakaoProfileUrl();
+            String fileName = UUID.randomUUID().toString() + ".jpg";
+
+            File fileToSave = new File(rootPath, fileName);
+
+            try (InputStream in = new URL(imageUrl).openStream()) {
+                Files.copy(in, fileToSave.toPath());
+            }
+
+            String fileSize = String.valueOf(fileToSave.length());
+
+            FileDTO fileDTO = new FileDTO();
+            fileDTO.setFileName(fileName);
+            fileDTO.setFileOriginalName("kakao_profile.jpg");
+            fileDTO.setFileContentType("image/jpeg");
+            fileDTO.setFilePath(todayPath);
+            fileDTO.setFileSize(fileSize);
+
+            fileDAO.uploadFile(fileDTO);
+            System.out.println("파일 저장 후 ID: " + fileDTO.getId());
+
+            MemberProfileFileDTO mpf = new MemberProfileFileDTO();
+            mpf.setMemberId(memberDTO.getId());
+            mpf.setId(fileDTO.getId());
+
+            memberProfileFileDAO.saveMemberProfileFile(mpf);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

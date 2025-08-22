@@ -6,6 +6,8 @@ import com.example.rebound.dto.CounselorQualificationsFileDTO;
 import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.dto.PaymentDTO;
 import com.example.rebound.service.MemberService;
+import jakarta.servlet.http.HttpSession;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -19,14 +21,11 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/member/**")
+@RequiredArgsConstructor
 public class MemberController {
     private final MemberService memberService;
     private final MemberDTO memberDTO;
-
-    public MemberController(MemberService memberService, MemberDTO memberDTO) {
-        this.memberService = memberService;
-        this.memberDTO = memberDTO;
-    }
+    private final HttpSession session;
 
 //    회원가입 페이지로 이동
     @GetMapping("join")
@@ -92,14 +91,15 @@ public class MemberController {
     @GetMapping("login")
     public String goToLogin(MemberDTO memberDTO, Model model) {
         model.addAttribute("memberDTO", memberDTO);
-        return "member/login";
+        return "member/login-user";
     }
 
 //    로그인 완료
     @PostMapping("login")
     public RedirectView Login(MemberDTO memberDTO) {
         memberService.login(memberDTO).orElseThrow(LoginFailException::new);
-        return new RedirectView("/main-page/page"); }
+        session.setAttribute("member", memberDTO);
+        return new RedirectView("/member/mypage"); }
 
     @GetMapping("find-email")
     public String goToFindEmail(){
@@ -113,6 +113,9 @@ public class MemberController {
     public String goToNewPassword(){
         return "member/new-fassword";
     }
+
+
+
     @GetMapping("mypage")
     public String goToMyPage(){
         return "member/mypage";

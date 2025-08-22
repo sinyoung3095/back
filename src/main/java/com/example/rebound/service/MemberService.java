@@ -3,6 +3,8 @@ package com.example.rebound.service;
 import com.example.rebound.dto.CounselorDTO;
 import com.example.rebound.dto.MemberDTO;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 public interface MemberService {
@@ -18,6 +20,12 @@ public interface MemberService {
     public Optional<MemberDTO> findMemberByKakaoEmail(String kakaoEmail);
 //    카카오 회원가입
     public void joinKakaoMember(MemberDTO memberDTO);
+//    카카오 프로필 저장
+    void saveKakaoProfile(MemberDTO memberDTO);
+
+    default String getPath() {
+        return LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
+    }
 //    마스터 브랜치와 머지 확인
     
 }

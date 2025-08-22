@@ -20,6 +20,7 @@ public class PostDTO {
     private Long categoryId;
     private String categoryName;
     private Status postStatus;
+    private int commentCount;
     private String createdDate;
     private String relativeDate;
     private String updatedDate;

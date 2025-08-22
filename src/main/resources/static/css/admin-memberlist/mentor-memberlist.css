@@ -1194,6 +1194,7 @@ button.btn .comp-icon {
     min-width: 32px;
     padding: 7px 10px;
     text-align: center;
+    cursor: pointer;
 }
 
 .rebound-pagination-wrapper ul.rebound-pagination>li.page-item.active>a {

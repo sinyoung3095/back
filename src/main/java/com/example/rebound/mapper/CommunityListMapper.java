@@ -10,19 +10,25 @@ import java.util.Optional;
 @Mapper
 public interface CommunityListMapper {
 
-    //    추가
+//    추가
     public void insertCommunityPost(PostDTO postDTO);
 
-    //    조회
+//    조회
     public Optional<PostDTO> selectCommunityPostWriter(Long id);
 
-    //    조회수 증가
+//    조회수 증가
     public void updatePostReadCount(Long id);
 
-    //    목록
+//    목록
     public List<PostDTO> selectAll(PostCriteria postCriteria);
 
-    //    전체 개수
+//    전체 개수
     public int selectCountAll();
+
+//    수정
+    public void updateCommunityPost(PostDTO postDTO);
+
+//    게시글 조회 수 정렬
+    public List<PostDTO> selectAllByViews();
 
 }

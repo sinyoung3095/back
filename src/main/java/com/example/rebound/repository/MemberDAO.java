@@ -1,12 +1,13 @@
 package com.example.rebound.repository;
 
+import com.example.rebound.dto.MemberCriteriaDTO;
+import com.example.rebound.dto.CounselorDTO;
 import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.mapper.MemberMapper;
 import com.example.rebound.util.MemberCriteria;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -61,5 +62,21 @@ public class MemberDAO {
     public int countGeneralMemberAll(String keyword) {
         System.out.println(keyword);
         return memberMapper.selectGeneralAllCount(keyword);
+    }
+    //    멘토 회원 전체 조회
+    public List<MemberDTO> findMentorMemberAll(MemberCriteria memberCriteria, String keyword) {
+        return memberMapper.selectMentorAll(memberCriteria,keyword);
+    }
+    //    멘토 회원 전체 수 조회
+    public int countMentorMemberAll(String keyword) {
+        return memberMapper.selectMentorAllCount(keyword);
+    }
+    //    구독 회원 전체 조회
+    public List<MemberDTO> findSubscribeMemberAll(MemberCriteria memberCriteria, String keyword) {
+        return memberMapper.selectSubscribeAll(memberCriteria,keyword);
+    }
+    //    구독 회원 전체 수 조회
+    public int countSubscribeMemberAll(String keyword) {
+        return memberMapper.selectSubscribeAllCount(keyword);
     }
 }
