@@ -28,7 +28,7 @@ public class PaymentServiceImpl implements PaymentService {
         subscribeDAO.insertSubscribe(subscribeDTO);
         paymentDTO.setSubscribeId(subscribeDTO.getId());
 //        paymentDTO.setMemberId(memberDTO.getId());
-        paymentDTO.setMemberId(4L);
+        paymentDTO.setMemberId(4L);     // 로그인 대신 임시로 아이디 주입 -> 로그인 할 경우: 위의 주석 해제
         paymentDAO.insertPayment(paymentDTO);
     }
 
