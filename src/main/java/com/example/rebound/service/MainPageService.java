@@ -9,6 +9,7 @@ import com.example.rebound.dto.TodayMessageDTO;
 import java.util.List;
 import java.util.Optional;
 
+// 메인 페이지 서비스
 public interface MainPageService {
 
 //    게시글 목록 미리보기
