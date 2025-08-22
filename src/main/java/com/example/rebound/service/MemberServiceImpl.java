@@ -97,4 +97,13 @@ public class MemberServiceImpl implements MemberService {
         }
     }
 
+    @Override
+    public Optional<MemberDTO> showFileById(Long id) {
+        Optional<MemberDTO> fileMember=memberDAO.selectMemberById(id);
+        fileMember.ifPresent((member)->{
+            member.setFile(memberProfileFileDAO.findMemberProfileFileById(member.getId()));
+        });
+        return fileMember;
+    }
+
 }
