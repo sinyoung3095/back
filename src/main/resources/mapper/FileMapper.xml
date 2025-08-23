@@ -6,4 +6,10 @@
         insert into tbl_file (file_path, file_name, file_original_name, file_size, file_content_type)
         values (#{filePath}, #{fileName}, #{fileOriginalName}, #{fileSize}, #{fileContentType})
     </insert>
+<!--    파일 조회-->
+    <select id="selectFileById">
+        select id, file_path, file_name, file_size, created_date, updated_date, file_original_name, file_content_type
+        from tbl_file
+        where id=#{id}
+    </select>
 </mapper>

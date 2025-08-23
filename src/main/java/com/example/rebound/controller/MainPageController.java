@@ -36,4 +36,5 @@ public class MainPageController {
     public String goToServiceIntro() {
         return "/service/service-intro";
     }
+
 }

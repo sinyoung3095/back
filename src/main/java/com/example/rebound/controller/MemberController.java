@@ -101,6 +101,7 @@ public class MemberController {
         session.setAttribute("member", memberDTO);
         return new RedirectView("/member/mypage"); }
 
+
     @GetMapping("find-email")
     public String goToFindEmail(){
         return "member/find-email";
@@ -117,7 +118,8 @@ public class MemberController {
 
 
     @GetMapping("mypage")
-    public String goToMyPage(){
+    public String goToMyPage(Long id, Model model) {
+        model.addAttribute("member", memberService.showFileById(id));
         return "member/mypage";
     }
     @GetMapping("mypage/info")
