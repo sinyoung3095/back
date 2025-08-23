@@ -1,9 +1,6 @@
 package com.example.rebound.repository;
 
-import com.example.rebound.dto.CounselorDTO;
-import com.example.rebound.dto.NoticeDTO;
-import com.example.rebound.dto.PostDTO;
-import com.example.rebound.dto.TodayMessageDTO;
+import com.example.rebound.dto.*;
 import com.example.rebound.mapper.MainPageMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -30,4 +27,5 @@ public class MainPageDAO {
     public List<NoticeDTO> noticePreview () {
         return mainpageMapper.noticePreview();
     }
+
 }

@@ -1,19 +1,22 @@
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
-    font-size: 100%;
-    vertical-align: baseline;
-}
+/*html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {*/
+/*    margin: 0px;*/
+/*    padding: 0px;*/
+/*    border: 0px;*/
+/*    font-size: 100%;*/
+/*    vertical-align: baseline;*/
+/*}*/
+
 a {
     color: inherit;
     text-decoration: none;
 }
+
 ul, li {
     margin: 0px;
     padding: 0px;
     list-style: none;
 }
+
 button {
     background-color: transparent;
     border: none;
@@ -24,32 +27,49 @@ button {
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block;
 }
+
 main {
     -webkit-box-flex: 1;
     flex-grow: 1;
     width: 100%;
 }
+
 body {
     line-height: 1;
 }
+
 * {
     box-sizing: border-box;
     word-break: break-word;
 }
+
 main {
     display: block;
     unicode-bidi: isolate;
 }
+
 html, body, #__next {
-    font-family: font, "font Fallback";
+    /*font-family: font, "font Fallback";*/
     line-height: 1.5;
     color: rgb(41, 51, 65);
 }
 
-.log-1{
-    display: flex
-;
+body {
+    padding-top: 3.625rem;
 }
+
+@media (min-width: 992px) {
+    body .global-navigation-bar {
+        height: 4.5rem;
+        padding: 0;
+        /*border-bottom: none;*/
+    }
+}
+
+.log-1{
+    display: flex;
+}
+
 .log-2{
     min-height: 1.375rem;
     line-height: 1.375rem;
@@ -60,19 +80,20 @@ html, body, #__next {
     border: 0px;
     color: rgb(28, 36, 47);
     text-align: left;
-    display: flex
-;
+    display: flex;
     -webkit-box-align: center;
     align-items: center;
 }
+
 .log-3{
-    display: flex
-;
+    display: flex;
     position: relative;
 }
+
 .log-4{
     margin: 0px 2px 0px 0px;
 }
+
 .log-5{
     display: none;
     position: relative;
@@ -82,13 +103,14 @@ html, body, #__next {
     border: 1px solid rgb(255, 255, 255);
     border-radius: 999px;
 }
+
 .log-6{
     width: fit-content;
     height: fit-content;
     position: relative;
-    display: inline-flex
-;
+    display: inline-flex;
 }
+
 .log-7{
     font-weight: 500;
     text-align: center;
@@ -102,15 +124,16 @@ html, body, #__next {
     padding: 0px;
     font-size: 14px;
     width: initial;
-    display: flex
-;
+    display: flex;
     border: 0px;
 }
+
 .log-8{
     position: relative;
     width: 24px;
     height: 24px;
 }
+
 .log-9{
     font-weight: 500;
     text-align: center;
@@ -124,19 +147,21 @@ html, body, #__next {
     padding: 0px;
     font-size: 14px;
     width: initial;
-    display: flex
-;
+    display: flex;
     border: 0px;
 }
+
 .log-10{
     position: relative;
     display: none;
 }
+
 @media (min-width: 768px) {
     .log-10 {
         display: block;
     }
 }
+
 .log-11{
     font-weight: 500;
     text-align: center;
@@ -152,13 +177,13 @@ html, body, #__next {
     padding: 0px;
     font-size: 14px;
     width: initial;
-    display: flex
-;
+    display: flex;
     gap: 8px;
     -webkit-box-align: center;
     align-items: center;
     user-select: none;
 }
+
 .logo-12{
     position: relative;
     border-radius: 50%;
@@ -171,16 +196,17 @@ html, body, #__next {
     max-width: 32px;
     max-height: 32px;
 }
+
 @media (min-width: 768px) {
     .logo-13 > ul {
-        display: flex
-;
+        display: flex;
         /* -webkit-box-align: center; */
         /* align-items: center; */
         gap: 16px;
         margin: 0;
     }
 }
+
 .desktop-header .right-section {
     justify-content: flex-end;
 }
@@ -190,10 +216,22 @@ body #app-header, #app #app-body {
     transition: opacity .3s ease-in;
 }
 
+#app-header {
+    /*position: sticky;*/
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 3.625rem;
+    background-color: #fff;
+}
+
+body {
+    padding-top: 3.625rem;
+}
+
 .desktop-header .nav-item {
     position: relative;
-    display: flex
-;
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -253,8 +291,7 @@ header .displaynone{
 }
 
 .css-1kv8jz5 li {
-    display: flex
-;
+    display: flex;
 }
 
 .css-1kv8jz5 a {
@@ -273,8 +310,7 @@ header .displaynone{
     border: 0px;
     color: rgb(28, 36, 47);
     text-align: left;
-    display: flex
-;
+    display: flex;
     -webkit-box-align: center;
     align-items: center;
 }
@@ -284,8 +320,7 @@ header .displaynone{
     padding: 11px 0px;
     line-height: 20px;
     font-size: 14px;
-    display: flex
-;
+    display: flex;
     gap: 4px;
     margin-bottom: 20px;
 }
@@ -337,8 +372,7 @@ header .displaynone{
 }
 
 .notifications-overlay .overlay-content {
-    display: flex
-;
+    display: flex;
     flex-direction: column;
     height: 100%;
     padding: 1.5rem 0 0;
@@ -346,8 +380,7 @@ header .displaynone{
 }
 
 .notifications-overlay .overlay-content .overlay-header {
-    display: flex
-;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     height: 3.25rem;
@@ -357,8 +390,7 @@ header .displaynone{
 }
 
 .notifications-overlay .overlay-content .overlay-header .tab {
-    display: flex
-;
+    display: flex;
     -moz-column-gap: .75rem;
     column-gap: .75rem;
     align-items: center;
@@ -373,14 +405,12 @@ header .displaynone{
 
 .notifications-overlay .overlay-content .overlay-header .tab .tab-item {
     position: relative;
-    display: flex
-;
+    display: flex;
     height: 100%;
 }
 
 .notifications-overlay .overlay-content .overlay-header .tab .tab-item button {
-    display: flex
-;
+    display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
@@ -402,7 +432,7 @@ header .displaynone{
     padding: 0;
     margin: 0;
     letter-spacing: normal !important;
-    font-family: Pretendard, Malgun Gothic, -apple-system, Segoe UI, Roboto, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+    /*font-family: Pretendard, Malgun Gothic, -apple-system, Segoe UI, Roboto, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";*/
     word-break: break-word;
     text-decoration: none;
 }
@@ -420,14 +450,12 @@ header .displaynone{
 
 .notifications-overlay .overlay-content .overlay-header .tab .tab-item {
     position: relative;
-    display: flex
-;
+    display: flex;
     height: 100%;
 }
 
 .notifications-overlay .overlay-content .overlay-header .tab .tab-item button {
-    display: flex
-;
+    display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
@@ -460,11 +488,11 @@ header .displaynone{
 }
 
 .notifications-overlay .overlay-content .overlay-header .tab .tab-item .icon-wrapper>* {
-    display: flex !important
-;
-}.notifications-overlay .overlay-content .overlay-header .buttons {
-    display: flex
-;
+    display: flex !important;
+}
+
+.notifications-overlay .overlay-content .overlay-header .buttons {
+    display: flex;
     -moz-column-gap: 1.25rem;
     column-gap: 1.25rem;
     align-items: center;
@@ -487,8 +515,7 @@ header .displaynone{
 }
 
 .notifications-overlay .category-list {
-    display: flex
-;
+    display: flex;
     flex-wrap: nowrap;
     row-gap: .75rem;
     -moz-column-gap: .5rem;
@@ -510,8 +537,7 @@ button.chip.selected.filter, button.chip.selected.action {
 }
 
 button.chip  {
-    display: flex
-;
+    display: flex;
     align-items: center;
     gap: .25rem;
     flex: 0 0 auto;
@@ -546,16 +572,14 @@ button.chip  {
 
 .dot-container {
     position: relative;
-    display: flex
-;
+    display: flex;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
 }
 
 .notification-dot {
-    display: flex
-;
+    display: flex;
     width: .375rem;
     height: .375rem;
     border: .0625rem solid white;
@@ -568,8 +592,7 @@ button.chip  {
     position: absolute;
     top: 0;
     right: 0;
-    display: flex
-;
+    display: flex;
 }
 
 .notifications-overlay .category .expand-wrapper .expand-button {
@@ -578,8 +601,7 @@ button.chip  {
 }
 
 .notifications-overlay .category .expand-wrapper .expand-button>button {
-    display: flex
-;
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 2rem;
@@ -622,8 +644,7 @@ button.chip  {
 }
 
 .user-notifications ul li>.card-container {
-    display: flex
-;
+    display: flex;
     -moz-column-gap: .5rem;
     column-gap: .5rem;
     padding: 1rem 1.5rem;
@@ -631,8 +652,7 @@ button.chip  {
 }
 
 .user-notifications ul li>.card-container .category-icon>.icon-wrapper {
-    display: inline-flex
-;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 2rem;
@@ -647,8 +667,7 @@ button.chip  {
 }
 
 .user-notifications ul li>.card-container .info {
-    display: flex
-;
+    display: flex;
     flex-direction: column;
     row-gap: .25rem;
     justify-content: center;
@@ -666,8 +685,7 @@ body .no-gutters {
 }
 
 .row {
-    display: flex
-;
+    display: flex;
     flex-wrap: wrap;
     margin-right: -.9375rem;
     margin-left: -.9375rem;
@@ -733,8 +751,7 @@ body .no-gutters {
 }
 
 .usermenu-button {
-    display: flex
-;
+    display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
