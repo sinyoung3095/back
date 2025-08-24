@@ -56,11 +56,12 @@ public class MemberDAO {
     }
     //    일반 회원 전체 조회
     public List<MemberDTO> findGeneralMemberAll(MemberCriteria memberCriteria, String keyword) {
+        System.out.println("DAO일반 회원 전체:"+keyword);
         return memberMapper.selectGeneralAll(memberCriteria,keyword);
     }
     //    일반 회원 전체 수 조회
     public int countGeneralMemberAll(String keyword) {
-        System.out.println(keyword);
+        System.out.println("DAO일반 회원 전체 수:"+keyword);
         return memberMapper.selectGeneralAllCount(keyword);
     }
     //    멘토 회원 전체 조회

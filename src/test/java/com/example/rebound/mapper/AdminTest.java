@@ -2,8 +2,10 @@ package com.example.rebound.mapper;
 
 
 import com.example.rebound.common.enumeration.Mentor;
+import com.example.rebound.dto.MemberCriteriaDTO;
 import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.repository.MemberDAO;
+import com.example.rebound.service.AdminServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,8 @@ public class AdminTest {
     private MemberDAO memberDAO;
     @Autowired
     private MemberDTO memberDTO;
+    @Autowired
+    private AdminServiceImpl  adminService;
 
     @org.junit.jupiter.api.Test
     public void testDAO() {
@@ -40,4 +44,9 @@ public class AdminTest {
             memberMapper.insertMember(memberDTO);
         }
     }
-}
+    @Test
+    public void test(){
+        MemberCriteriaDTO member = adminService.findGeneralMembers(1,null);
+        System.out.println(member);
+
+    }}

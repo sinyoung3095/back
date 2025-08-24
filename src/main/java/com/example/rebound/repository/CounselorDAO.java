@@ -2,6 +2,7 @@ package com.example.rebound.repository;
 
 import com.example.rebound.dto.CounselorDTO;
 import com.example.rebound.mapper.CounselorMapper;
+import com.example.rebound.util.MemberCriteria;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -30,4 +31,12 @@ public class CounselorDAO {
     public Optional<CounselorDTO> findCounselorByEmailAndPassword(CounselorDTO counselorDTO){
         return counselorMapper.selectCounselor(counselorDTO);
     }
+//     상담사 통합검색
+    public List<CounselorDTO> findCounselorAll(MemberCriteria memberCriteria,String keyword){
+        return counselorMapper.selectCounselorAll(memberCriteria,keyword);
+    }
+//    상담사 수 통합검색
+    public int findCounselorAllCount(String keyword){
+        return counselorMapper.selectCounselorAllCount(keyword);
+}
 }

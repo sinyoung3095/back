@@ -25,11 +25,10 @@ const layout = (()=>{
                         <td class="td-email">${member.memberEmail}</td>
                         <td class="td-phone">${member.memberPhoneNumber}</td>
                         <td class="td-start">${member.createdDate}</td>
-                        <td class="td-recent">2025-07-29</td>
-                        <td class="td-action text-center">
-                            <div class="action-btn" data-email="${member.memberEmail}">
-                                <input id="detail" value="${member.memberEmail}" style="display: none">
-                                <i class="mdi mdi-chevron-right"></i>
+                        <td class="td-recent">${member.latelyDate}</td>
+                        <td class="td-action text-center"  >
+                            <div class="action-btn">
+                                <i class="mdi mdi-chevron-right" data-email="${member.memberEmail}"></i>
                             </div>
                         </td>
                     </tr>
@@ -61,7 +60,6 @@ const layout = (()=>{
     }
     const showModal=(memberCriteriaDTO,postCriteriaDTO)=>{
         const modalWrap = document.querySelector("#modalWrap")
-        console.log(memberCriteriaDTO);
         let text = '';
         text=`
         <div class="modal fade member-modal show" style="display: block; background-color:rgba(0,0,0,0.5);" aria-modal="true" role="dialog">
@@ -154,22 +152,8 @@ const layout = (()=>{
                                                                 <th>게시글 작성 일자</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody class="postWrap">
-                                                            <tr>
-                                                                <td>${postCriteriaDTO.posts[0].postTitle}</td>
-                                                                <td>${postCriteriaDTO.posts[0].postContent}</td>
-                                                                <td>${postCriteriaDTO.posts[0].createdDate}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>${postCriteriaDTO.posts[1].postTitle}</td>
-                                                                <td>${postCriteriaDTO.posts[1].postContent}</td>
-                                                                <td>${postCriteriaDTO.posts[1].createdDate}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>${postCriteriaDTO.posts[2].postTitle}</td>
-                                                                <td>${postCriteriaDTO.posts[2].postContent}</td>
-                                                                <td>${postCriteriaDTO.posts[2].createdDate}</td>
-                                                            </tr>                                                                                                                               
+                                                        <tbody id ="postWrap">
+                                                                                                                                                                                         
                                                         </tbody>
                                                     </table>
                                                 </div>                             
@@ -196,22 +180,8 @@ const layout = (()=>{
                                                                 <th>댓글 작성 일자</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>test-title</td>
-                                                                <td>test-context</td>
-                                                                <td>2025-08-01</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>test-title</td>
-                                                                <td>test-context</td>
-                                                                <td>2025-08-01</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>test-title</td>
-                                                                <td>test-context</td>
-                                                                <td>2025-08-01</td>
-                                                            </tr>                                                                                                                               
+                                                        <tbody id ="commentWrap">
+                                                                                                                                                                                           
                                                         </tbody>
                                                     </table>
                                                 </div>                             
@@ -230,7 +200,42 @@ const layout = (()=>{
         </div>`
         modalWrap.innerHTML=text;
     }
+    const showPost=(posts)=> {
+        const postWrap = document.querySelector("#postWrap")
+        let text = '';
+        console.log(posts)
+
+            for(let i =0;i<3;i++)
+            {
+                text += `
+                <tr>
+                    <td>${posts[i].postTitle}</td>
+                    <td>${posts[i].postContent}</td>
+                    <td>${posts[i].createdDate}</td>
+                </tr>`
+        }
+
+        postWrap.innerHTML = text;
+    }
+    const showComment=(comments)=> {
+        const commentWrap = document.querySelector("#commentWrap")
+        let text = '';
+        console.log(comments)
+
+        for(let i =0;i<3;i++)
+        {
+            text += `
+                <tr>
+                    <td>${comments[i].postTitle}</td>
+                    <td>${comments[i].commentContent}</td>
+                    <td>${comments[i].createdDate}</td>
+                </tr>
+                `
+        }
+
+        commentWrap.innerHTML = text;
+    }
 
 
-    return {showList:showList,showModal:showModal};
+    return {showList:showList,showModal:showModal,showPost:showPost,showComment:showComment};
 })();

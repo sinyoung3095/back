@@ -7,17 +7,11 @@ import lombok.ToString;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+
 @Component
-@Getter
-@Setter
+@Getter @Setter
 @ToString
-public class MemberCriteriaDTO {
-
-    private List<MemberDTO> members;
-    private MemberCriteria memberCriteria;
-    private List<PostDTO> posts;
-    private List<CommentDTO> comments;
-
-
-
+public class CounselorCriteriaDTO {
+    MemberCriteria memberCriteria;
+    List<CounselorDTO> counselors;
 }

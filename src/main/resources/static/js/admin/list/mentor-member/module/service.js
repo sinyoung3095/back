@@ -10,6 +10,23 @@ const service = (() => {
         return memberCriteriaDTO;
 
     }
+
+    const getPost = async (callback,keyword='')=>{
+        const response = await fetch(`/api/list/posts?keyword=${keyword}`);
+        const posts = await response.json();
+        if(callback){
+            callback(posts);
+        }
+        return posts;
+    }
+    const getComment = async (callback,keyword='')=>{
+        const response = await fetch(`/api/list/comments?keyword=${keyword}`);
+        const comments = await response.json();
+        if(callback){
+            callback(comments);
+        }
+        return comments;
+    }
     console.log(" 서비스 끝");
-    return {getMember: getMember};
+    return {getMember: getMember,getPost:getPost,getComment:getComment};
 })();

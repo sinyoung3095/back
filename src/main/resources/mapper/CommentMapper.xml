@@ -17,4 +17,23 @@
         from view_comment_member
         where post_id = #{postId}
     </select>
+    <select id="selectAllByKeyword">
+        select p.post_title, c.comment_content, c.created_date
+        from tbl_member m join tbl_comment c
+                               on m.id = c.member_id
+        join tbl_post p on m.id = p.member_id
+        where p.post_status = 'active'
+          and (m.member_email like concat('%', #{keyword}, '%') or m.member_Name like concat('%', #{keyword}, '%'))
+        order by p.created_date desc
+    </select>
+
+    <select id="selectCountAllByKeyword">
+        select count(*)
+        from tbl_member m join tbl_comment c
+                               on m.id = c.member_id
+                          join tbl_post p on m.id = p.member_id
+        where p.post_status = 'active'
+          and (m.member_email like concat('%', #{keyword}, '%') or m.member_Name like concat('%', #{keyword}, '%'))
+
+    </select>
 </mapper>

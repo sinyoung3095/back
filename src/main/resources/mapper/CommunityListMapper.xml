@@ -54,25 +54,20 @@
     </select>
 
     <select id="selectAllByKeyword">
-        select m.member_name,  p.id, p.post_title, p.post_content, p.post_views,
-               p.post_status, p.member_id, p.created_date, p.updated_date
-        from tbl_member m
-                 join tbl_post p on m.id = p.member_id
+        select p.post_title, p.post_content, p.created_date
+        from tbl_member m join tbl_post p
+        on m.id = p.member_id
         where p.post_status = 'active'
-        <if test="${keyword != null}">
-           and (m.member_email = ${keyword} or m.member_Name = ${keyword})
-        </if>
+           and (m.member_email like concat('%', #{keyword}, '%') or m.member_Name like concat('%', #{keyword}, '%'))
         order by p.created_date desc
-        limit #{count} offset #{offset}
     </select>
 
     <select id="selectCountAllByKeyword">
         select count(*)
-        from tbl_member m
-        join tbl_post p on m.id = p.member_id
+        from tbl_member m join tbl_post p
+        on m.id = p.member_id
         where p.post_status = 'active'
-        <if test="${keyword != null}">
-            and (m.member_email = ${keyword} or m.member_Name = ${keyword})
-        </if>
+            and (m.member_email like concat('%', #{keyword}, '%') or m.member_Name like concat('%', #{keyword}, '%'))
+
     </select>
 </mapper>

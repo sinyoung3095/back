@@ -51,8 +51,8 @@ public class PostDAO {
         return communityListMapper.selectAllByViews();
     }
 //    keyword로 조회
-    public List<PostDTO> findAllByKeyword(PostCriteria postCriteria, String keyword) {
-        return communityListMapper.selectAllByKeyword(postCriteria, keyword);
+    public List<PostDTO> findAllByKeyword(String keyword) {
+        return communityListMapper.selectAllByKeyword(keyword);
     }
 //    keyword로 조회
     public int findCountByKeyword(String keyword) {

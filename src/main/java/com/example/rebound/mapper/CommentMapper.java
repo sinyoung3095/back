@@ -2,6 +2,7 @@ package com.example.rebound.mapper;
 
 import com.example.rebound.domain.CommentVO;
 import com.example.rebound.dto.CommentDTO;
+import com.example.rebound.dto.PostDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -16,4 +17,9 @@ public interface CommentMapper {
 
 //    댓글 수
     public int selectCommentsByPostId(Long postId);
+//    keyword로 조회
+    public List<CommentDTO> selectAllByKeyword(String keyword);
+//    keyword로 수 조회
+    public int selectCountAllByKeyword(String keyword);
+
 }
