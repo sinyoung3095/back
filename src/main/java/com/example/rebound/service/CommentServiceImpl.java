@@ -29,8 +29,8 @@ public class CommentServiceImpl implements CommentService {
 
         List<CommentDTO> comments = commentDAO.findAll(postId, criteria);
 
-        comments.forEach((reply) -> {
-            reply.setRelativeDate(PostDateUtils.toRelativeTime(reply.getCreatedDate()));
+        comments.forEach((comment) -> {
+            comment.setRelativeDate(PostDateUtils.toRelativeTime(comment.getCreatedDate()));
         });
 
         criteria.setHasMore(comments.size() > criteria.getRowCount());
@@ -42,6 +42,16 @@ public class CommentServiceImpl implements CommentService {
         commentCriteriaDTO.setComments(comments);
         commentCriteriaDTO.setCriteria(criteria);
         return commentCriteriaDTO;
+    }
+
+    @Override
+    public void update(CommentDTO commentDTO) {
+        commentDAO.update(toCommentVO(commentDTO));
+    }
+
+    @Override
+    public void delete(Long id) {
+        commentDAO.delete(id);
     }
 }
 

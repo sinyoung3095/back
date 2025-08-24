@@ -1,10 +1,36 @@
+const postActionLayout = (() => {
+    const showPostActions = (post, memberId) => {
+        const actionWrap = document.getElementById("postActionWrap");
+        let text = '';
+
+        if(post.memberId === memberId) {
+            text += `
+            <div class="post-actions">
+                <div class="dropdown b-dropdown btn-group">
+                    <button type="button" class="btn dropdown-toggle btn-secondary"></button>
+                    <ul class="dropdown-menu dropdown-menu-right" style="position: absolute; transform: translate3d(-116px, 24px, 0px); top: 0px; left: 0px; will-change: transform;">
+                        <li>
+                            <a href="/community-list/failure-update/${post.id}" class="dropdown-item">게시글 수정</a>
+                            <a href="/community-list/delete/${post.id}" class="dropdown-item">게시글 삭제</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>`;
+        }
+
+        actionWrap.innerHTML = text;
+    };
+
+    return { showPostActions:showPostActions };
+})();
+
 const commentLayout = (() => {
     const showList = (CommentsCriteria) => {
         const commentWrap = document.getElementById("commentWrap");
         let text = "";
         CommentsCriteria.comments.forEach((comment) => {
             text += `
-            <li class="post-comments-list-item">
+            <li class="post-comments-list-item id${comment.id}">   
                 <div class="post-comment-wrapper">
                     <div class="profile-image provider">
                         <img alt="${comment.memberName}" class="image" src="https://static.cdn.soomgo.com/upload/profile/95ede868-c74e-4153-8cb0-0e47a354a227.jpg?h=110&amp;w=110&amp;webp=1">
@@ -25,19 +51,28 @@ const commentLayout = (() => {
                         </div>
                         <div class="post-comment-contents">
                             <p class="text comment-text prisma-typography body14:regular primary">
-                                <span>${comment.commentContent}</span>
+                                <span class="id${comment.id} comment-span">${comment.commentContent}</span>                 
+                                <textarea class="id${comment.id} comment-span" style="display: none;">${comment.commentContent}</textarea>
                             </p>
                         </div>
                         <div class="post-comment-actions">
                             <div class="comment-more-action prisma-typography body12:regular primary">
-                                <span class="comment-create-at">${comment.relativeDate}</span>
-                                <div class="dropdown b-dropdown btn-group">
-                                    <ul role="menu" class="dropdown-menu dropdown-menu-right">
+                                <span class="comment-create-at">${comment.relativeDate}</span>`;
+                                if(comment.memberId === memberId) {
+                                    text +=`
+                                    <div class="dropdown b-dropdown btn-group" data-v-5c7e5eaa="" id="__BVID__777">
+                                    <button aria-haspopup="true" aria-expanded="false" type="button" class="btn dropdown-toggle btn-secondary" id="__BVID__777__BV_toggle_"></button>
+                                    <ul role="menu" tabindex="-1" class="dropdown-menu dropdown-menu-right" aria-labelledby="__BVID__777__BV_toggle_" style="position: absolute; transform: translate3d(-116px, 24px, 0px); top: 0px; left: 0px; will-change: transform;">
                                         <li role="presentation">
-                                            <a role="menuitem" href="#" class="dropdown-item">댓글 신고하기</a>
+                                            <button class="id${comment.id} dropdown-item update-button">댓글 수정</button>
+                                            <button class="id${comment.id} dropdown-item update-ok-button" style="display: none">수정 완료</button>
+                                            <button class="id${comment.id} dropdown-item cancel-button" style="display: none">수정 취소</button>               
+                                            <button class="id${comment.id} dropdown-item delete-button">댓글 삭제</button>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> `;
+                                }
+                                text += `
                             </div>
                         </div>
                     </div>
@@ -45,9 +80,12 @@ const commentLayout = (() => {
             </li>`;
         });
         commentWrap.innerHTML = text;
+
     };
 
     return {showList:showList};
 })();
+
+
 
 

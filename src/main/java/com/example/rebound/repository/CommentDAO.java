@@ -28,4 +28,14 @@ public class CommentDAO {
     public int getCommentsCountByPostId(Long postId) {
         return commentMapper.selectCommentsCountByPostId(postId);
     }
+
+//    수정
+    public void update(CommentVO commentVO) {
+        commentMapper.updateComment(commentVO);
+    }
+
+//    삭제
+    public void delete(Long id) {
+        commentMapper.delete(id);
+    }
 }
