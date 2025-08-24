@@ -1,35 +1,32 @@
 const layout = (()=>{
-    console.log("레이아웃들어옴");
-    const showList = (memberCriteriaDTO)=>{
+    const showList = (counselorCriteriaDTO)=>{
         const memberContainer = document.querySelector("tbody[class=members]");
         const pageWrap = document.getElementById("pageWrap");
         const total = document.querySelector("span[class=count-amount]");
-        total.innerHTML=memberCriteriaDTO.memberCriteria.total;
-
+        total.innerHTML=counselorCriteriaDTO.memberCriteria.total;
+console.log("리스트 들어옴")
         let text = '';
 
 
-        memberCriteriaDTO.members.forEach((member)=>{
+        counselorCriteriaDTO.counselors.forEach((member)=>{
             text += `
                     <tr>
                         <td class="td-name">
-                            <div class="member-name">${member.memberName}
-                                <span class="badge-label badge text-danger ml-2"
-                                      data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class=""
-                                      title="" data-original-title="">멘토회원</span>
+                            <div class="member-name">${member.counselorName}
+                                <span class="badge-label badge text-danger ml-2" data-for="" data-toggle="" data-custom-class="" title="" data-original-title="">상담사</span>
                             </div>
-                            <div class="member-id">${member.memberEmail}</div>
+                            <div class="member-id">${member.counselorEmail}</div>
                         </td>
-                        <td class="td-amount text-right pr-4 font-weight-bold">${member.memberName}
+                        <td class="td-amount text-right pr-4 font-weight-bold">${member.counselorName}
                             <span class="amount-unit"> 님</span>
                         </td>
-                        <td class="td-email">${member.memberEmail}</td>
-                        <td class="td-phone">${member.memberPhoneNumber}</td>
+                        <td class="td-email">${member.counselorEmail}</td>
+                        <td class="td-phone">${member.counselorPhoneNumber}</td>
                         <td class="td-start">${member.createdDate}</td>
-                        <td class="td-recent">${member.latelyDate}</td>
+                        <td class="td-career">n년</td>
                         <td class="td-action text-center">
                             <div class="action-btn">
-                                <i class="mdi mdi-chevron-right" data-email="${member.memberEmail}"></i>
+                                <i class="mdi mdi-chevron-right"></i>
                             </div>
                         </td>
                     </tr>
@@ -38,12 +35,11 @@ const layout = (()=>{
         memberContainer.innerHTML=text;
 
         text = ``;
-        let criteria = memberCriteriaDTO.memberCriteria;
+        let criteria = counselorCriteriaDTO.memberCriteria;
 
         if(criteria.hasPreviousPage){
-            text = `<a data-page="${criteria.startPage - 1}" class="paging" style="cursor: pointer; color: black; font-size:15px; padding-top:4px; ">이전</a>`
+            text = `<a data-page="${criteria.startPage - 1}" class="paging" style="cursor: pointer; color: black; font-size:15px; padding-top:4px;">이전</a>`
         }
-
         for(let i = criteria.startPage; i <= criteria.endPage; i++){
             text += `
             <li class="page-item page-num`
@@ -60,18 +56,17 @@ const layout = (()=>{
 
         pageWrap.innerHTML = text;
     }
-    const showModal=(memberCriteriaDTO)=>{
+    const showModal=(counselorCriteriaDTO,postCriteriaDTO)=>{
         const modalWrap = document.querySelector("#modalWrap")
-        console.log(memberCriteriaDTO);
         let text = '';
         text=`
-        <div class="modal fade member-modal show" style="display: block; background-color:rgba(0,0,0,0.5);" aria-modal="true" role="dialog">
+        <div class="modal fade member-modal show" style="display: block;" aria-modal="true" role="dialog">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
                         <div class="modal-title">
-                            (${memberCriteriaDTO.members[0].memberEmail}) ${memberCriteriaDTO.members[0].memberName}
-                            <span class="badge-label text-danger font-weight-bold ml-2">멘토회원</span>
+                            (${counselorCriteriaDTO.counselor[0].counselorEmail}) ${counselorCriteriaDTO.counselor[0].counselorName}
+                            <span class="badge-label text-danger font-weight-bold ml-2">상담사</span>
                         </div>
                         <button class="close">
                             <i class="mdi mdi-close"></i>
@@ -84,11 +79,11 @@ const layout = (()=>{
                                 <div class="tab-view-body">
                                     <div style="display: block;">
                                         <div class="tab-inner tab-detail">
-                                            <!-- 일반회원 상세정보 -->
+                                            <!-- 상담사 상세정보 -->
                                             <div class="info-layout detail-info">
                                                 <div class="info-title justify-content-between">
                                                     <div class="flex-left d-flex">
-                                                        <div class="title">회원 상세정보</div>
+                                                        <div class="title">상담사 상세정보</div>
                                                     </div>
                                                     <div class="flex-right"></div>
                                                 </div>
@@ -99,20 +94,28 @@ const layout = (()=>{
                                                             <tbody>
                                                                 <tr>
                                                                     <th>이름</th>
-                                                                    <td>${memberCriteriaDTO.members[0].memberName}</td>
+                                                                    <td>${counselorCriteriaDTO.counselor[0].counselorName}</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <th>핸드폰 번호</th>
-                                                                    <td>${memberCriteriaDTO.members[0].memberPhoneNumber}</td>
+                                                                    <td>${counselorCriteriaDTO.counselor[0].counselorPhoneNumber}</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <th>가입일</th>
-                                                                    <td>${memberCriteriaDTO.members[0].createdDate}</td>
+                                                                    <td>${counselorCriteriaDTO.counselor[0].counselorCreatedDate}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <th>8월 채택 수</th>
-                                                                    <td>10</td>
-                                                                </tr>
+                                                                    <th>나이</th>
+                                                                    <td>20</td>
+                                                                </tr>                                                                       
+                                                                <tr>
+                                                                    <th>리바운드 경력</th>
+                                                                    <td>n개월</td>
+                                                                </tr>      
+                                                                <tr>
+                                                                    <th>총 경력</th>
+                                                                    <td>n년</td>
+                                                                </tr>                                                        
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -121,33 +124,41 @@ const layout = (()=>{
                                                         <table class="info-table">
                                                             <tbody>
                                                                 <tr>
-                                                                    <th>회원ID</th>
-                                                                    <td>${memberCriteriaDTO.members[0].memberName}</td>
+                                                                    <th>상담사ID</th>
+                                                                    <td>${counselorCriteriaDTO.counselor[0].counselorEmail}</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <th>이메일</th>
-                                                                    <td>${memberCriteriaDTO.members[0].memberEmail}</td>
+                                                                    <td>${counselorCriteriaDTO.counselor[0].counselorEmail}</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <th>최근 접속일</th>
-                                                                    <td>${memberCriteriaDTO.members[0].latelyDate}</td>
+                                                                    <td>2025-07-29</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <th>7월 채택 수</th>
-                                                                    <td>10</td>
+                                                                    <th>성별</th>
+                                                                    <td>남</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>상담 횟수</th>
+                                                                    <td>n회</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>근무지</th>
+                                                                    <td>${counselorCriteriaDTO.counselor[0].counselorAddress}</td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- 회원 작성 게시글 -->
+                                            <!-- 상담사 상담 내역 -->
                                             <div class="info-layout detail-info">
                                                 <div class="info-title justify-content-between">
                                                     <div class="flex-left d-flex">
-                                                        <!-- 작성 게시글 클릭 시 콘텐츠 관리 내 게시글 페이지로 이동 -->
+                                                        <!-- 상담내역 클릭 시 상담사 관리 내 상담 내역 페이지로 이동 -->
                                                         <a href="" class="info-detail">
-                                                            <div class="title">작성 게시글
+                                                            <div class="title">상담 내역
                                                                 <i class="mdi mdi-menu-left ml-2"></i>
                                                             </div>
                                                         </a>
@@ -158,23 +169,48 @@ const layout = (()=>{
                                                     <table class="info-table">
                                                         <thead>
                                                             <tr>
-                                                                <th>게시글 제목</th>
-                                                                <th>게시글 내용</th>
-                                                                <th>게시글 작성 일자</th>
+                                                                <th>상담 회원</th>
+                                                                <th>상담 일자</th>
+                                                                <th>상담 내용</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody id ="postWrap">                                                                                                                                     
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>test01</td>
+                                                                <td>2025-08-01</td>
+                                                                <td>고민</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>test01</td>
+                                                                <td>2025-08-01</td>
+                                                                <td>고민</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>test01</td>
+                                                                <td>2025-08-01</td>
+                                                                <td>고민</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>test01</td>
+                                                                <td>2025-08-01</td>
+                                                                <td>고민</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>test01</td>
+                                                                <td>2025-08-01</td>
+                                                                <td>고민</td>
+                                                            </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>                             
                                             </div>
-                                            <!-- 회원 작성 댓글 -->
+                                            <!-- 오늘의 좋은 말 작성 내역 -->
                                             <div class="info-layout detail-info">
                                                 <div class="info-title justify-content-between">
                                                     <div class="flex-left d-flex">
-                                                        <!-- 작성 댓글 클릭 시 콘텐츠 관리 내 댓글 페이지로 이동 -->
+                                                        <!-- 오늘의 좋은 말 클릭 시 콘텐츠 관리 내 오늘의 좋은 말 페이지로 이동 -->
                                                         <a href="" class="info-detail">
-                                                            <div class="title">작성 댓글
+                                                            <div class="title">오늘의 좋은 말
                                                                 <i class="mdi mdi-menu-left ml-2"></i>
                                                             </div>
                                                         </a>
@@ -185,12 +221,37 @@ const layout = (()=>{
                                                     <table class="info-table">
                                                         <thead>
                                                             <tr>
-                                                                <th>게시글 제목</th>
-                                                                <th>댓글 내용</th>
-                                                                <th>댓글 작성 일자</th>
+                                                                <th>작성 내용</th>
+                                                                <th>작성 일자</th>
+                                                                <th>좋아요 수</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody id ="commentWrap">                                                                                                                   
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>test-context</td>
+                                                                <td>2025-08-01</td>
+                                                                <td>10</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>test-context</td>
+                                                                <td>2025-08-01</td>
+                                                                <td>10</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>test-context</td>
+                                                                <td>2025-08-01</td>
+                                                                <td>10</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>test-context</td>
+                                                                <td>2025-08-01</td>
+                                                                <td>10</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>test-context</td>
+                                                                <td>2025-08-01</td>
+                                                                <td>10</td>
+                                                            </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>                             
@@ -214,9 +275,9 @@ const layout = (()=>{
         let text = '';
         console.log(posts)
 
-        for(let i =0;i<3;i++)
-        {
-            text += `
+            for(let i =0;i<3;i++)
+            {
+                text += `
                 <tr>
                     <td>${posts[i].postTitle}</td>
                     <td>${posts[i].postContent}</td>

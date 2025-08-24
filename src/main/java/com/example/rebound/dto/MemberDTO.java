@@ -25,6 +25,7 @@ public class MemberDTO {
     private String memberCommon;
     private String createdDate;
     private String updatedDate;
+    private String latelyDate;
     private boolean remember;
     private Optional<FileDTO> file;
 }

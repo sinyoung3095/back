@@ -1,11 +1,13 @@
 const service = (() => {
-    const getMember = async(callback, page=1,keyword='') => {
-        const response = await fetch(`/api/list/general/${page}?keyword=${keyword}`);
-        const memberCriteriaDTO = await response.json();
+    console.log("서비스 들어옴")
+    const getCounselor = async(callback, page=1,keyword='') => {
+        const response = await fetch(`/api/list/counselor/${page}?keyword=${keyword}`);
+        const counselorCriteriaDTO = await response.json();
+        console.log("rest들어옴")
         if(callback){
-            callback(memberCriteriaDTO);
+            callback(counselorCriteriaDTO);
         }
-        return memberCriteriaDTO;
+        return counselorCriteriaDTO;
 
     }
     const getPost = async (callback,keyword='')=>{
@@ -24,5 +26,5 @@ const service = (() => {
         }
         return comments;
     }
-    return {getMember: getMember,getPost:getPost,getComment:getComment};
+    return {getCounselor: getCounselor,getPost:getPost,getComment:getComment};
 })();

@@ -25,7 +25,12 @@ from tbl_member m join tbl_comment c on m.id = c.member_id
 
 select * from view_comment_member;
 
+
+insert into tbl_comment(comment_content,post_id,member_id)
+values ("댓글 2",30,122);
+
 drop view view_comment_member;
 
 select * from tbl_comment
 where post_id = 219;
+

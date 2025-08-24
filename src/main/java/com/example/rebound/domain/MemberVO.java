@@ -22,4 +22,5 @@ public class MemberVO extends Period {
     private String mentor;
     private String memberStatus;
     private String memberCommon;
+    private String latelyDate;
 }

@@ -20,3 +20,10 @@ alter table tbl_post add column(post_status enum('active', 'inactive') default '
 alter table tbl_post add column(category_id bigint unsigned);
 alter table tbl_post add constraint fk_post_category foreign key(category_id) references tbl_category(id);
 
+
+insert into tbl_post(post_content,post_title,member_id)
+values ("테스트내용2","테스트제목2",123);
+
+
+
+

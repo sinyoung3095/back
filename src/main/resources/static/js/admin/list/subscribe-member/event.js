@@ -173,13 +173,16 @@ document.addEventListener("click", (e) => {
 
 // 모달창 이벤트
 
-memberContainer.addEventListener("click",(e)=>{
+memberContainer.addEventListener("click",async (e)=>{
     console.log("모달 들어옴");
     if(e.target.closest(".action-btn")){
         const page =1;
         const keyword= e.target.dataset.email;
         console.log(keyword);
-        service.getMember(layout.showModal, page, keyword);
+        await service.getMember(layout.showModal, page, keyword);
+        await service.getPost(layout.showPost,keyword);
+        await service.getComment(layout.showComment,keyword)
+
 
     }
 })
