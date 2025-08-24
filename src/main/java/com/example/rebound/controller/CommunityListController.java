@@ -17,7 +17,7 @@ import java.util.List;
 public class CommunityListController {
     private final CommunityListService communityPostService;
 
-    //    게시글 목록
+//    게시글 목록
     @GetMapping("community-posts")
     public String showPosts(Model model) {
         model.addAttribute("posts", communityPostService.findPostsCriteria(1).getPosts());
@@ -25,7 +25,7 @@ public class CommunityListController {
         return "/community-list/community-posts";
     }
 
-    //    게시글 작성
+//    게시글 작성
     @GetMapping("failure-write")
     public String goToFailureWrite(PostDTO postDTO, Model model) {
         model.addAttribute(postDTO);
@@ -34,19 +34,19 @@ public class CommunityListController {
 
     @PostMapping("failure-write")
     public RedirectView write(PostDTO postDTO){
-        postDTO.setMemberId(1L); // 임시 회원
+        postDTO.setMemberId(5L); // 임시 회원
         communityPostService.write(postDTO);
         return new RedirectView("/community-list/" + postDTO.getId());
     }
 
-    //    게시글 작성자 기준 조회
+//    게시글 작성자 기준 조회
     @GetMapping(value = "{id}")
     public String readPostWriter(@PathVariable Long id, Model model) {
         model.addAttribute("post", communityPostService.getPost(id).orElseThrow(PostNotFoundException::new));
         return "/community-list/community-contents-writer";
     }
 
-    //    게시글 수정
+//    게시글 수정
     @GetMapping(value = "failure-update/{id}")
     public String goToUpdatePost(@PathVariable Long id, Model model) {
         model.addAttribute("post", communityPostService.getPost(id).orElseThrow(PostNotFoundException::new));
@@ -55,8 +55,14 @@ public class CommunityListController {
 
     @PostMapping("failure-update")
     public RedirectView updatePost(PostDTO postDTO) {
-        postDTO.setMemberId(1L); // 임시 회원
         communityPostService.updatePost(postDTO);
         return new RedirectView("/community-list/" + postDTO.getId());
+    }
+
+//    게시글 삭제
+    @GetMapping("/delete/{id}")
+    public RedirectView delete(@PathVariable Long id){
+        communityPostService.delete(id);
+        return new RedirectView("/community-list/community-posts");
     }
 }

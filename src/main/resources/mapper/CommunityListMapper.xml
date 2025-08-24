@@ -46,6 +46,12 @@
         where id = #{id}
     </update>
 
+    <update id="deleteCommunityPost">
+        update tbl_post
+        set post_status = 'inactive'
+        where id = #{id}
+    </update>
+
     <select id="selectAllByViews">
         select id, post_title, post_content, post_views, post_status, member_id, category_id, created_date, updated_date
         from tbl_post

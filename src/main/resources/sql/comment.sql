@@ -19,7 +19,7 @@ alter table tbl_comment add column(comment_status enum('active', 'inactive') def
 
 create view view_comment_member as
 (
-select m.member_name, c.id, c.comment_content, c.post_id, c.created_date, c.updated_date, c.comment_status
+select m.member_name, c.id, c.comment_content, c.post_id, c.member_id, c.created_date, c.updated_date, c.comment_status
 from tbl_member m join tbl_comment c on m.id = c.member_id
     );
 
