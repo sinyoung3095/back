@@ -46,10 +46,34 @@
         where id = #{id}
     </update>
 
+    <update id="deleteCommunityPost">
+        update tbl_post
+        set post_status = 'inactive'
+        where id = #{id}
+    </update>
+
     <select id="selectAllByViews">
         select id, post_title, post_content, post_views, post_status, member_id, category_id, created_date, updated_date
         from tbl_post
         order by post_views desc
         limit 6
+    </select>
+
+    <select id="selectAllByKeyword">
+        select p.post_title, p.post_content, p.created_date
+        from tbl_member m join tbl_post p
+        on m.id = p.member_id
+        where p.post_status = 'active'
+           and (m.member_email like concat('%', #{keyword}, '%') or m.member_Name like concat('%', #{keyword}, '%'))
+        order by p.created_date desc
+    </select>
+
+    <select id="selectCountAllByKeyword">
+        select count(*)
+        from tbl_member m join tbl_post p
+        on m.id = p.member_id
+        where p.post_status = 'active'
+            and (m.member_email like concat('%', #{keyword}, '%') or m.member_Name like concat('%', #{keyword}, '%'))
+
     </select>
 </mapper>

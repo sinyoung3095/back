@@ -18,3 +18,4 @@ create table tbl_overcome
         foreign key (post_id) references tbl_post (id)
 );
 
+select * from tbl_overcome;

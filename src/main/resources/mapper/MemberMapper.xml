@@ -39,7 +39,8 @@
         <if test="keyword != null">
             and (
             member_name like concat('%', #{keyword}, '%') or
-            member_email like concat('%', #{keyword}, '%')
+            member_email like concat('%', #{keyword}, '%')or
+            kakao_email like concat('%', #{keyword}, '%')
             )
         </if>
         order by id desc
@@ -51,7 +52,8 @@
         <if test="keyword != null">
             and (
             member_name like concat('%', #{keyword}, '%') or
-            member_email like concat('%', #{keyword}, '%')
+            member_email like concat('%', #{keyword}, '%')or
+            kakao_email like concat('%', #{keyword}, '%')
             )
         </if>
     </select>
@@ -61,7 +63,8 @@
         <if test="keyword != null">
             and (
             member_name like concat('%', #{keyword}, '%') or
-            member_email like concat('%', #{keyword}, '%')
+            member_email like concat('%', #{keyword}, '%')or
+            kakao_email like concat('%', #{keyword}, '%')
             )
         </if>
         order by id desc
@@ -73,7 +76,8 @@
         <if test="keyword != null">
             and (
             member_name like concat('%', #{keyword}, '%') or
-            member_email like concat('%', #{keyword}, '%')
+            member_email like concat('%', #{keyword}, '%')or
+            kakao_email like concat('%', #{keyword}, '%')
             )
         </if>
     </select>

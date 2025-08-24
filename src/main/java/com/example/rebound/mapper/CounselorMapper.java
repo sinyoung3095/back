@@ -1,7 +1,9 @@
 package com.example.rebound.mapper;
 
 import com.example.rebound.dto.CounselorDTO;
+import com.example.rebound.util.MemberCriteria;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -23,4 +25,9 @@ public interface CounselorMapper {
 
 //    로그인
     public Optional<CounselorDTO> selectCounselor(CounselorDTO counselorDTO);
+
+//    상담사 통합검색
+    public List<CounselorDTO> selectCounselorAll(@Param("memberCriteria") MemberCriteria memberCriteria, @Param("keyword") String keyword);
+//    상담사 수 통합검색
+    public int selectCounselorAllCount(String keyword);
 }
