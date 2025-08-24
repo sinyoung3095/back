@@ -79,7 +79,7 @@ input, button, select, optgroup, textarea {
 } */
 
 #app-header.hide-border-bottom {
-    border-bottom: none;
+    /*border-bottom: none;*/
 }
 
 @media (min-width: 992px) {
@@ -98,20 +98,24 @@ input, button, select, optgroup, textarea {
     background-color: #fff;
 }
 
+body {
+    padding-top: 3.625rem;
+}
+
 .global-header {
     z-index: 1020;
     display: block;
 }
 
 .profile .global-navigation-bar, .hide-border-bottom .global-navigation-bar, :not(:has(.home)) .has-lnb .global-navigation-bar {
-    border-bottom: none;
+    /*border-bottom: none;*/
 }
 
 @media (min-width: 992px) {
     body .global-navigation-bar {
         height: 4.5rem;
         padding: 0;
-        border-bottom: none;
+        /*border-bottom: none;*/
     }
 }
 
