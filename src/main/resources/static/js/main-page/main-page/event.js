@@ -412,7 +412,9 @@ firstAreaGood.forEach((todayMessage, i) => {
 });
 goodTrack01.innerHTML = text;
 
+// 오늘의 좋은 말2
 text = ``;
+
 lastAreaGood.forEach((todayMessage, i) => {
     let todayMessageSrc = `/images/goodWords/memo0${i % 4}.jpg`;
 
@@ -428,6 +430,23 @@ lastAreaGood.forEach((todayMessage, i) => {
     `;
 });
 goodTrack02.innerHTML = text;
+
+// text = ``;
+// lastAreaGood.forEach((todayMessage, i) => {
+//     let todayMessageSrc = `/images/goodWords/memo0${i % 4}.jpg`;
+//
+//     text += `
+//         <div tabindex="-1" data-index="0" class="slick-slide slick-active slick-current" style="outline: none; width: 247px;">
+//             <div>
+//                 <a href="/counselor-list/good-words-member" style="width: 100%; display: inline-block; position: relative">
+//                     <img class="service-image" src="${todayMessageSrc}" alt="">
+//                     <span class="service-text">${todayMessage.todayMessageContent}</span>
+//                 </a>
+//             </div>
+//         </div>
+//     `;
+// });
+// goodTrack02.innerHTML = text;
 
 
 // 리바운드 이야기

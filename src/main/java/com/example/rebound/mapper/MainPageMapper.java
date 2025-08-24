@@ -18,4 +18,7 @@ public interface MainPageMapper {
 //    공지사항 미리보기
     public List<NoticeDTO> noticePreview ();
 
+//    검색
+    public List<PostDTO> selectPostFromMainPage ();
+
 }
