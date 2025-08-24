@@ -40,7 +40,7 @@ public class CommunityListController {
     }
 
     //    게시글 작성자 기준 조회
-    @GetMapping("{id}")
+    @GetMapping(value = "{id}")
     public String readPostWriter(@PathVariable Long id, Model model) {
         model.addAttribute("post", communityPostService.getPost(id).orElseThrow(PostNotFoundException::new));
         return "/community-list/community-contents-writer";
@@ -50,7 +50,7 @@ public class CommunityListController {
     @GetMapping(value = "failure-update/{id}")
     public String goToUpdatePost(@PathVariable Long id, Model model) {
         model.addAttribute("post", communityPostService.getPost(id).orElseThrow(PostNotFoundException::new));
-        return "community-list/failure-update";
+        return "/community-list/failure-update";
     }
 
     @PostMapping("failure-update")
