@@ -55,6 +55,7 @@
     <select id="selectAllByViews">
         select id, post_title, post_content, post_views, post_status, member_id, category_id, created_date, updated_date
         from tbl_post
+        where post_status = 'active'
         order by post_views desc
         limit 6
     </select>
