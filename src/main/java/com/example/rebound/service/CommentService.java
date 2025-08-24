@@ -14,6 +14,12 @@ public interface CommentService {
 //    전체 조회
     public CommentCriteriaDTO getComments(Long postId, int page);
 
+//    수정
+    public void update(CommentDTO commentDTO);
+
+//    삭제
+    public void delete(Long id);
+
     default CommentVO toCommentVO(CommentDTO commentDTO) {
         return CommentVO.builder()
                 .id(commentDTO.getId())

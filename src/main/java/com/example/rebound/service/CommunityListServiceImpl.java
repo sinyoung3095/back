@@ -67,7 +67,13 @@ public class CommunityListServiceImpl implements CommunityListService {
         postDAO.updatePost(postDTO);
     }
 
-//    조회 수 기준 정렬
+//    삭제
+    @Override
+    public void delete(Long id) {
+        postDAO.deletePost(id);
+    }
+
+    //    조회 수 기준 정렬
     @Override
     public List<PostDTO> getPostsByViews() {
         List<PostDTO> posts = postDAO.findByViews();

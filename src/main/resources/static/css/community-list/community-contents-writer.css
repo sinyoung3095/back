@@ -535,15 +535,15 @@ img {
     font-weight: 400 !important;
 }
 
-.user-profile-bar-container .user-profile-wrapper .post-actions {
+#postActionWrap .post-actions {
     display: flex;
 }
 
-.user-profile-bar-container .user-profile-wrapper .post-actions .icon:first-child {
+#postActionWrap .post-actions .icon:first-child {
     margin-left: 1rem;
 }
 
-.user-profile-bar-container .user-profile-wrapper .post-actions .icon {
+#postActionWrap .post-actions .icon {
     margin-left: 1.25rem;
     cursor: pointer;
 }
@@ -1121,6 +1121,19 @@ label {
     color: #293341;
     resize: none;
     border: 0;
+    overflow: hidden;
+}
+
+.edit-comment-textarea {
+    width: 100%;
+    min-height: 1.375rem;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    color: #293341;
+    resize: none;
+    border: 1px solid #EFF1F5;
+    border-radius: 8px;
+    box-sizing: border-box;
 }
 
 select.form-control[size],
@@ -1186,17 +1199,18 @@ textarea {
     text-decoration: none;
 }
 
+.comment-input-box .comment-body .comment-input:focus-visible {
+    outline: unset;
+}
+
 /* .comment-input-box .write-comment-submit.active */
 .comment-input-box .write-comment-submit {
     display: block;
     margin-top: auto;
     margin-left: .875rem;
     cursor: pointer;
-}
-
-.comment-input-box .write-comment-submit {
     font-weight: 500;
-    color: #693bf2;
+    color: #693bf2 !important;
     white-space: nowrap;
 }
 
@@ -1367,6 +1381,11 @@ textarea {
     border: none;
 }
 
+.b-dropdown .dropdown-menu .dropdown-item:hover {
+    color: #fff;
+    background-color: #693bf2;
+}
+
 .btn.btn-secondary, .btn.btn-outline-secondary {
     color: #6a7685;
 }
@@ -1381,7 +1400,7 @@ textarea {
 }
 
 .post-comment-actions .comment-more-action .b-dropdown .dropdown-menu {
-    padding: 1.125rem 0;
+    padding: 0.725rem 0;
     margin-top: .25rem;
     text-align: center;
     border: solid .0625rem #E0E5EB;

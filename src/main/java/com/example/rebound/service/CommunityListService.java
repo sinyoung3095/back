@@ -15,6 +15,8 @@ public interface CommunityListService {
     public PostCriteriaDTO findPostsCriteria(int page);
 //    수정
     public void updatePost(PostDTO postDTO);
+//    삭제
+    public void delete(Long id);
 //    조회 수 정렬
     public List<PostDTO> getPostsByViews();
 

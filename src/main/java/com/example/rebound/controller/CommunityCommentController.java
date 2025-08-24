@@ -33,4 +33,18 @@ public class CommunityCommentController {
         }
         return ResponseEntity.ok().body(commentCriteriaDTO);
     }
+
+//    수정
+    @PutMapping("/{id}")
+    public ResponseEntity<?> update(@RequestBody CommentDTO commentDTO) {
+        commentService.update(commentDTO);
+        return ResponseEntity.ok(commentDTO);
+    }
+
+//    삭제
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id) {
+        commentService.delete(id);
+        return ResponseEntity.ok(id + "번 댓글 삭제");
+    }
 }
