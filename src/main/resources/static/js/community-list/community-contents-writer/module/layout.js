@@ -11,7 +11,7 @@ const postActionLayout = (() => {
                     <ul class="dropdown-menu dropdown-menu-right" style="position: absolute; transform: translate3d(-116px, 24px, 0px); top: 0px; left: 0px; will-change: transform;">
                         <li>
                             <a href="/community-list/failure-update/${post.id}" class="dropdown-item">게시글 수정</a>
-                            <a href="/community-list/delete/${post.id}" class="dropdown-item">게시글 삭제</a>
+                            <a href="/community-list/delete/${post.id}" class="dropdown-item" onclick="return confirm('게시글을 삭제하시겠습니까?')">게시글 삭제</a>
                         </li>
                     </ul>
                 </div>
@@ -41,10 +41,8 @@ const commentLayout = (() => {
                                 <div class="user">
                                     <span class="user-name prisma-typography body14:semibold primary">${comment.memberName}</span>
                                 </div>
-                                <div class="pro-user-services">
-                                    <span class="prisma-typography body12:regular tertiary service main-service">전기배선 설치 및 수리</span>
-                                    <span class="prisma-typography body12:regular tertiary service">+ 1개 서비스</span>
-                                    <span class="prisma-typography body12:regular tertiary service">고수</span>
+                                <div class="pro-user-services">                            
+                                    <span class="prisma-typography body12:regular tertiary service">${comment.memberMentor === 'mentor' ? '멘토 회원' : '일반 회원'}</span>
                                 </div>
                             </div>
                             <button class="send-request-button prisma-typography body12:medium primary">추천하기</button>
