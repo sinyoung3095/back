@@ -23,4 +23,18 @@ public class MainPageController {
     public String goToTodayMessage() {
         return "/counselor-list/good-words";
     }
+
+    @GetMapping("/community-list/community-contents-member")
+    public String goToCommunityContentsMember() {
+        return "/community-list/community-contents-member";
+    }
+    @GetMapping("/counselor-list/good-words-member")
+    public String goToGoodWordsMember() {
+        return "/counselor-list/good-words-member";
+    }
+    @GetMapping("service/service-intro")
+    public String goToServiceIntro() {
+        return "/service/service-intro";
+    }
+
 }

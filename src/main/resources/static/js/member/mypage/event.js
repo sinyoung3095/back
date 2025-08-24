@@ -21,4 +21,5 @@ img.addEventListener("click", (e) => {
 const imgWrap=document.getElementById("imgContainer");
 let profileFileText=null;
 
-profileFileText
+profileFileText+=`<img src="" class="main-16">`;
+imgWrap.innerHTML=profileFileText;

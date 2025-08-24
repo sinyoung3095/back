@@ -46,6 +46,11 @@ public class PostDAO {
         communityListMapper.updateCommunityPost(postDTO);
     }
 
+//    삭제
+    public void deletePost(Long id) {
+        communityListMapper.deleteCommunityPost(id);
+    }
+
 //    조회 수 정렬
     public List<PostDTO> findByViews() {
         return communityListMapper.selectAllByViews();

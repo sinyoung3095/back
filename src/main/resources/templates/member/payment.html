@@ -6,6 +6,9 @@
     <title>구독 서비스</title>
     <link data-vue-meta="1" rel="shortcut icon" href="/images/member/icon.png">
     <link rel="stylesheet" href="/css/member/payment.css">
+    <link rel="stylesheet" href="/css/main-page/header.css">
+    <link rel="stylesheet" href="/css/main-page/header2.css">
+    <link rel="stylesheet" href="/css/main-page/footer.css">
     
     <link rel="stylesheet" href="/font/didactgothic.woff2">
     <link rel="stylesheet" href="/font/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
@@ -19,7 +22,9 @@
 
 </head>
 <body>
-    <main class="main">
+    <!-- header -->
+    <header th:replace="~{/main-page/header2.html :: #app-header}"></header>
+    <main class="main" style="padding-top: 3.625rem">
         <div class="main-1">
             <h1 class="main-2">구독 서비스<br>결제 비용을 알려드려요</h1>
             <div class="main-3">
@@ -61,6 +66,9 @@
             </div>
         </div>
     </main>
+    <!-- footer -->
+    <footer th:replace="~{/main-page/footer.html :: #app-footer}"></footer>
+
     <form id="paymentForm" action="/pay" method="post">
         <input type="hidden" name="subscribePrice" id="subscribePrice">
     </form>

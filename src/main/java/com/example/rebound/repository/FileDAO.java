@@ -5,10 +5,14 @@ import com.example.rebound.mapper.FileMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 @RequiredArgsConstructor
 public class FileDAO {
     private final FileMapper fileMapper;
 //    추가
     public void uploadFile(FileDTO fileDTO) {fileMapper.insertFile(fileDTO);}
+//    조회
+    public Optional<FileDTO> findFileById(Long id) {return fileMapper.selectFileById(id);}
 }

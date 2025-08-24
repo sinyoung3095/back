@@ -1,9 +1,6 @@
 package com.example.rebound.mapper;
 
-import com.example.rebound.dto.CounselorDTO;
-import com.example.rebound.dto.NoticeDTO;
-import com.example.rebound.dto.PostDTO;
-import com.example.rebound.dto.TodayMessageDTO;
+import com.example.rebound.dto.*;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -20,4 +17,8 @@ public interface MainPageMapper {
 
 //    공지사항 미리보기
     public List<NoticeDTO> noticePreview ();
+
+//    검색
+    public List<PostDTO> selectPostFromMainPage ();
+
 }

@@ -19,6 +19,15 @@
         select id, notice_title, notice_content
         from tbl_notice
         order by id desc
-        limit 8 offset 0
+        limit 7 offset 0
+    </select>
+
+    <select id="selectPostFromMainPage">
+        select id, post_content, post_title, post_views, created_date, updated_date, member_id, post_status, category_id
+        from tbl_post
+        where post_status = 'active'
+        and post_title like concat('%', #{keyword}, '%') or
+            post_content like concat('%', #{keyword}, '%')
+        order by id desc
     </select>
 </mapper>

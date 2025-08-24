@@ -4,6 +4,8 @@ import com.example.rebound.common.enumeration.Provider;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
 @Getter @Setter @ToString
 @NoArgsConstructor
@@ -25,4 +27,5 @@ public class MemberDTO {
     private String updatedDate;
     private String latelyDate;
     private boolean remember;
+    private Optional<FileDTO> file;
 }
