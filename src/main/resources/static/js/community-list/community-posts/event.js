@@ -22,7 +22,7 @@ window.addEventListener("scroll", async (e) => {
     const windowHeight = window.innerHeight;
     // 문서 전체 높이
     const documentHeight = document.documentElement.scrollHeight
-    if(scrollTop + windowHeight >= documentHeight - 2) {
+    if(scrollTop + windowHeight >= documentHeight - 100) {
         //     바닥에 닿았을 때
         if(checkScroll){
             postsCriteria = await showList(++page);
