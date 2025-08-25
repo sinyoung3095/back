@@ -3,6 +3,7 @@ package com.example.rebound.service;
 import com.example.rebound.dto.CommentCriteriaDTO;
 import com.example.rebound.dto.CommentDTO;
 import com.example.rebound.repository.CommentDAO;
+import com.example.rebound.repository.LikeDAO;
 import com.example.rebound.util.PostCriteria;
 import com.example.rebound.util.PostDateUtils;
 import lombok.RequiredArgsConstructor;
@@ -14,6 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CommentServiceImpl implements CommentService {
     private final CommentDAO commentDAO;
+    private final LikeDAO likeDAO;
 
 //    댓글 작성
     @Override
@@ -27,10 +29,13 @@ public class CommentServiceImpl implements CommentService {
         CommentCriteriaDTO commentCriteriaDTO = new CommentCriteriaDTO();
         PostCriteria criteria = new PostCriteria(page, commentDAO.getCommentsCountByPostId(postId));
 
+        System.out.println("postId = " + postId);
         List<CommentDTO> comments = commentDAO.findAll(postId, criteria);
+        System.out.println("comments = " + comments);
 
         comments.forEach((comment) -> {
             comment.setRelativeDate(PostDateUtils.toRelativeTime(comment.getCreatedDate()));
+            comment.setLikesCount(likeDAO.getLikeCount(comment.getId()));
         });
 
         criteria.setHasMore(comments.size() > criteria.getRowCount());

@@ -17,7 +17,6 @@ public interface CommentMapper {
 //    전체 조회
     public List<CommentDTO> selectCommentsByPostId(@Param("postId") Long postId, @Param("criteria") PostCriteria criteria);
 
-
 //    댓글 수
     public int selectCommentsByPostId(Long postId);
 //    keyword로 조회
@@ -33,4 +32,10 @@ public interface CommentMapper {
 
 //    삭제
     public void delete(Long id);
+
+//    추천 수 증가
+    public int increaseLikesCount(Long id);
+
+//    추천 수 감소
+    public int decreaseLikesCount(Long id);
 }

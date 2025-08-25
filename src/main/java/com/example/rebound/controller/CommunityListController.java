@@ -34,7 +34,7 @@ public class CommunityListController {
 
     @PostMapping("failure-write")
     public RedirectView write(PostDTO postDTO){
-        postDTO.setMemberId(5L); // 임시 회원
+        postDTO.setMemberId(2L); // 임시 회원
         communityPostService.write(postDTO);
         return new RedirectView("/community-list/" + postDTO.getId());
     }

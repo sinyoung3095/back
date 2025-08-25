@@ -26,7 +26,7 @@ public class CommunityCommentController {
 
 //    전체 조회
     @GetMapping("/{page}")
-    public ResponseEntity<?> list(@PathVariable int page, Long postId){
+    public ResponseEntity<?> list(@PathVariable int page, @RequestParam Long postId){
         CommentCriteriaDTO commentCriteriaDTO = commentService.getComments(postId, page);
         if(commentCriteriaDTO.getComments().size() == 0){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(commentCriteriaDTO);

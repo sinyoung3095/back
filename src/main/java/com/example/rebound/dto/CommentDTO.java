@@ -13,11 +13,12 @@ import org.springframework.stereotype.Component;
 public class CommentDTO {
     private Long id;
     private String commentContent;
+    private int likesCount;
+    private Status commentStatus;
     private Long memberId;
     private String memberName;
-    private String memberMentor;
+    private String memberGrade;
     private Long postId;
-    private Status commentStatus;
     private String createdDate;
     private String updatedDate;
     private String relativeDate;
