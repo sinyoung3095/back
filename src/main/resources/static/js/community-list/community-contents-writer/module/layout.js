@@ -42,8 +42,8 @@ const commentLayout = (() => {
                                     <span class="user-name prisma-typography body14:semibold primary">${comment.memberName}</span>
                                 </div>
                                 <div class="pro-user-services">                            
-                                    <span class="prisma-typography body12:regular tertiary service">${comment.memberMentor === 'mentor' ? '멘토 회원' : '일반 회원'}</span>
-                                    <span class="prisma-typography body12:regular tertiary service">추천 수</span>
+                                    <span class="prisma-typography body12:regular tertiary service">${comment.memberGrade}</span>
+                                    <span class="prisma-typography body12:regular tertiary service">+ ${comment.likesCount}개의 추천 수</span>
                                 </div>
                             </div>
                             <button class="send-request-button prisma-typography body12:medium primary">추천하기</button>

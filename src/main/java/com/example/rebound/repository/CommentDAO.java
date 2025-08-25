@@ -47,4 +47,14 @@ public class CommentDAO {
     public int findCountByKeyword(String keyword) {
         return commentMapper.selectCountAllByKeyword(keyword);
     }
+
+//    추천 수 증가
+    public void increaseLikesCount(Long id) {
+        commentMapper.increaseLikesCount(id);
+    }
+
+//    추천 수 감소
+    public void decreaseLikesCount(Long id) {
+        commentMapper.decreaseLikesCount(id);
+    }
 }

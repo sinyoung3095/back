@@ -24,3 +24,6 @@ create table tbl_member
 );
 
 select * from tbl_member;
+
+insert into tbl_member(member_name, member_phone_number,member_password, member_grade)
+values ('테스트', 01012345678, 1234, 'none');
