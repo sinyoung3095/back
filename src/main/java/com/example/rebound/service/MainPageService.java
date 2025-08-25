@@ -1,10 +1,8 @@
 package com.example.rebound.service;
 
 
-import com.example.rebound.dto.CounselorDTO;
-import com.example.rebound.dto.NoticeDTO;
-import com.example.rebound.dto.PostDTO;
-import com.example.rebound.dto.TodayMessageDTO;
+import com.example.rebound.dto.*;
+import com.example.rebound.util.PostCriteria;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,4 +18,7 @@ public interface MainPageService {
 
 //    공지사항 미리보기
     public List<NoticeDTO> noticePreview ();
+
+//    검색(메인페이지 → 커뮤니티 목록)
+    public List<PostDTO> selectPostFromMainPage (PostCriteriaDTO postCriteriaDTO);
 }
