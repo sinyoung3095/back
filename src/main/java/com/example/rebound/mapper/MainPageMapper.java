@@ -25,6 +25,6 @@ public interface MainPageMapper {
     public int selectCountAllSearchMainPage (String keyword);
 
 //    검색
-    public List<PostDTO> selectPostFromMainPage (@Param("postCriteriaDTO") PostCriteriaDTO postCriteriaDTO, String keyword);
+    public List<PostDTO> selectPostFromMainPage (@Param("postCriteriaDTO") PostCriteriaDTO postCriteriaDTO, @Param("keyword") String keyword);
 
 }
