@@ -30,7 +30,7 @@ const commentLayout = (() => {
         let text = "";
         CommentsCriteria.comments.forEach((comment) => {
             text += `
-            <li class="post-comments-list-item id${comment.id}">   
+            <li class="id${comment.id} post-comments-list-item">   
                 <div class="post-comment-wrapper">
                     <div class="profile-image provider">
                         <img alt="${comment.memberName}" class="image" src="https://static.cdn.soomgo.com/upload/profile/95ede868-c74e-4153-8cb0-0e47a354a227.jpg?h=110&amp;w=110&amp;webp=1">
@@ -43,6 +43,7 @@ const commentLayout = (() => {
                                 </div>
                                 <div class="pro-user-services">                            
                                     <span class="prisma-typography body12:regular tertiary service">${comment.memberMentor === 'mentor' ? '멘토 회원' : '일반 회원'}</span>
+                                    <span class="prisma-typography body12:regular tertiary service">추천 수</span>
                                 </div>
                             </div>
                             <button class="send-request-button prisma-typography body12:medium primary">추천하기</button>
