@@ -1,7 +1,6 @@
 package com.example.rebound.mapper;
 
 
-import com.example.rebound.common.enumeration.Mentor;
 import com.example.rebound.dto.MemberCriteriaDTO;
 import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.repository.MemberDAO;
