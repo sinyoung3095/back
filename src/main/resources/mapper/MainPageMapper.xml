@@ -26,8 +26,12 @@
         select id, post_content, post_title, post_views, created_date, updated_date, member_id, post_status, category_id
         from tbl_post
         where post_status = 'active'
-        and post_title like concat('%', #{keyword}, '%') or
+        <if test="keyword != null">
+            and (
+            post_title like concat('%', #{keyword}, '%') or
             post_content like concat('%', #{keyword}, '%')
+            )
+        </if>
         order by id desc
     </select>
 </mapper>

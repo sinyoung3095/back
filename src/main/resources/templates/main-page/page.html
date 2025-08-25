@@ -41,8 +41,8 @@
                                     <div class="input-group-prepend">
                                         <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20fill='none'%20fill-rule='evenodd'%3e%3cpath%20d='M0%200h24v24H0z'/%3e%3cg%20transform='translate(4%204)'%20stroke='%23B5B5B5'%20stroke-width='1.6'%3e%3ccircle%20stroke-linejoin='round'%20cx='6.5'%20cy='6.5'%20r='6.5'/%3e%3cpath%20stroke-linecap='round'%20d='m11.5%2011.5%205%205'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="검색 아이콘">
                                     </div>
-                                    <form action="/community-posts/" id="search">
-                                        <input type="text" name="keyword" placeholder="검색" class="form-control" id="__BVID__792">
+                                    <form action="/community-posts" id="keyword">
+                                        <input type="text" th:value="${keyword}" name="keyword" placeholder="검색" class="form-control" id="__BVID__792">
                                         <div id="input-delete" class="input-group-append">
                                             <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20fill='none'%20fill-rule='evenodd'%3e%3cpath%20d='M0%200h24v24H0z'/%3e%3cg%20transform='translate(3%203)'%3e%3ccircle%20fill='%23C5C5C5'%20cx='9'%20cy='9'%20r='9'/%3e%3cpath%20stroke='%23FFF'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='m6%206%206.005%206.006M12.005%206%206%2012.006'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="검색어 삭제 아이콘">
                                         </div>
@@ -279,6 +279,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- 오늘의 좋은 말 -->
                 <div class="main-exhibition container no-mobile-padding">
                     <div class="exhibition-item">
                         <h2 class="title">오늘의 좋은 말</h2>
@@ -296,7 +297,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="exhibition-item">
+                    <div class="exhibition-item" id="exhibition-item">
                         <h2 class="title">오늘의 좋은 말2</h2>
                         <div class="main-desktop-slide">
                             <div class="slick-slider slick-initialized">
@@ -406,6 +407,7 @@
     const posts = [[${posts}]]
     const todayMessages = [[${todayMessages}]]
     const notices = [[${notices}]]
+    const member = [[${session.member}]]
 </script>
 <script src="/js/main-page/header2.js"></script>
 <script src="/js/main-page/main-page/event.js"></script>

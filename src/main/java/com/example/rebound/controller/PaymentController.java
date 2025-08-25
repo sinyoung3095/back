@@ -29,7 +29,7 @@ public class PaymentController {
         return "/member/payment";
     }
 
-//    첫 결제
+//    결제 후
     @PostMapping(value = "")
     public RedirectView insertPayment(SubscribeDTO subscribeDTO) {
         paymentService.insertPayment(subscribeDTO);

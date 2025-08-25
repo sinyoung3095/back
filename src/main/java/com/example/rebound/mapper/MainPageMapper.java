@@ -1,6 +1,7 @@
 package com.example.rebound.mapper;
 
 import com.example.rebound.dto.*;
+import com.example.rebound.util.PostCriteria;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -19,6 +20,6 @@ public interface MainPageMapper {
     public List<NoticeDTO> noticePreview ();
 
 //    검색
-    public List<PostDTO> selectPostFromMainPage ();
+    public List<PostDTO> selectPostFromMainPage (PostCriteriaDTO postCriteriaDTO);
 
 }

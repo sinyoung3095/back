@@ -19,6 +19,11 @@ public class MainPageController {
         return "/main-page/page";
     }
 
+//    @GetMapping("community-list/community-posts")
+//    public String selectPostFromMainPage(Model model, String keyword) {
+//        model.addAttribute("postCriteriaDTO", mainpageService.selectPostFromMainPage(keyword));
+//    }
+
     @GetMapping("today-message")
     public String goToTodayMessage() {
         return "/counselor-list/good-words";
