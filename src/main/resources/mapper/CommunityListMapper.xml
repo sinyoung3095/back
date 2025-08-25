@@ -7,7 +7,7 @@
     </insert>
 
     <select id="selectCommunityPostWriter">
-        select m.member_name, c.category_name, p.category_id, p.id, p.post_title, p.post_content, p.post_views,
+        select m.member_name, c.category_name, p.category_id, p.id, p.post_title, p.post_content, p.post_read_count,
                p.post_status, p.member_id, p.created_date, p.updated_date
         from tbl_member m
                  join tbl_post p on m.id = p.member_id
@@ -17,12 +17,12 @@
 
     <update id="updatePostReadCount">
         update tbl_post
-        set post_views = post_views + 1
+        set post_read_count = post_read_count + 1
         where id = #{id}
     </update>
 
     <select id="selectAll">
-        select m.member_name, c.category_name, p.category_id, p.id, p.post_title, p.post_content, p.post_views,
+        select m.member_name, c.category_name, p.category_id, p.id, p.post_title, p.post_content, p.post_read_count,
                p.post_status, p.member_id, p.created_date, p.updated_date
         from tbl_member m
                  join tbl_post p on m.id = p.member_id
@@ -53,10 +53,10 @@
     </update>
 
     <select id="selectAllByViews">
-        select id, post_title, post_content, post_views, post_status, member_id, category_id, created_date, updated_date
+        select id, post_title, post_content, post_read_count, post_status, member_id, category_id, created_date, updated_date
         from tbl_post
         where post_status = 'active'
-        order by post_views desc
+        order by post_read_count desc
         limit 6
     </select>
 

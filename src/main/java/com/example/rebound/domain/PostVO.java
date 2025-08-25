@@ -14,7 +14,7 @@ public class PostVO extends Period {
     private Long id;
     private String postContent;
     private String postTitle;
-    private int postViews;
+    private int postReadCount;
     private Long memberId;
     private Status postStatus;
     private Long categoryId;
