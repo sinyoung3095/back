@@ -10,4 +10,5 @@ public interface FileService {
     public void uploadFile(FileDTO fileDTO);
 //    파일 조회
     public Optional<FileDTO> findFileById(Long id);
+    public Optional<FileDTO> findFileByMemberId(Long memberId);
 }

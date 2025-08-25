@@ -21,6 +21,7 @@ public class MemberServiceImpl implements MemberService {
     private final PaymentDAO paymentDAO;
     private final FileDAO fileDAO;
     private final MemberProfileFileDAO memberProfileFileDAO;
+    private final FileService fileService;
 
     @Override
     public void joinMember(MemberDTO memberDTO) {
@@ -97,13 +98,17 @@ public class MemberServiceImpl implements MemberService {
         }
     }
 
-    @Override
     public Optional<MemberDTO> showFileById(Long id) {
-        Optional<MemberDTO> fileMember=memberDAO.selectMemberById(id);
-        fileMember.ifPresent((member)->{
-            member.setFile(memberProfileFileDAO.findMemberProfileFileById(member.getId()));
-        });
-        return fileMember;
+        Optional<MemberDTO> memberOpt = memberDAO.selectMemberById(id);
+        if (memberOpt.isEmpty()) return Optional.empty();
+
+        MemberDTO member = memberOpt.get();
+
+        Optional<FileDTO> fileOpt = fileService.findFileByMemberId(id);
+        member.setFile(fileOpt);
+
+        return Optional.of(member);
     }
+
 
 }

@@ -12,4 +12,5 @@ public interface FileMapper {
     public void insertFile(FileDTO fileDTO);
 //    조회
     public Optional<FileDTO> selectFileById(Long id);
+    Optional<FileDTO> selectFileByMemberId(Long memberId);
 }

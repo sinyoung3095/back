@@ -1,25 +1,19 @@
-const button = document.querySelectorAll("div[role=button]");
-const setting = document.querySelector("span[class=main-12]");
-const img = document.querySelector("img[class=main-6]");
-
-button.forEach((data) => {
-    data.addEventListener("click", (e) => {
-        // 클릭시 이동 이벤트 임시 색 변경으로 함
-        e.target.style.color = "red";
+document.addEventListener("DOMContentLoaded", () => {
+    // 버튼 클릭 이벤트
+    const buttons = document.querySelectorAll("div[role=button]");
+    buttons.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            e.target.style.color = "red"; // 임시 표시
+        });
     });
-});
-setting.addEventListener("click", (e) => {
-    // 클릭시 이동 이벤트 임시 색 변경으로 함
-    e.target.style.color = "red";
-});
-img.addEventListener("click", (e) => {
-    // 클릭시 이동 이벤트 임시 색 변경으로 함
-    e.target.style.color = "red";
-});
 
-// const profile=memberId
-const imgWrap=document.getElementById("imgContainer");
-let profileFileText=null;
+    // 계정설정 클릭 이벤트
+    const setting = document.querySelector("span.main-12");
+    if (setting) {
+        setting.addEventListener("click", (e) => {
+            e.target.style.color = "red";
+        });
+    }
 
-profileFileText+=`<img src="" class="main-16">`;
-imgWrap.innerHTML=profileFileText;
+
+});

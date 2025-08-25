@@ -26,8 +26,8 @@ public interface CommentService {
                 .commentContent(commentDTO.getCommentContent())
                 .memberId(commentDTO.getMemberId())
                 .postId(commentDTO.getPostId())
-                .createdDatetime(commentDTO.getCreatedDate())
-                .updatedDatetime(commentDTO.getUpdatedDate())
+                .createdDate(commentDTO.getCreatedDate())
+                .updatedDate(commentDTO.getUpdatedDate())
                 .build();
     }
 
