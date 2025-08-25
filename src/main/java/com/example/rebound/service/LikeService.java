@@ -12,8 +12,8 @@ public interface LikeService {
                 .id(likeDTO.getId())
                 .commentId(likeDTO.getCommentId())
                 .memberId(likeDTO.getMemberId())
-                .createdDatetime(likeDTO.getCreatedDate())
-                .updatedDatetime(likeDTO.getUpdatedDate())
+                .createdDate(likeDTO.getCreatedDate())
+                .updatedDate(likeDTO.getUpdatedDate())
                 .build();
     }
 }

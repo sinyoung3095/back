@@ -101,4 +101,9 @@
         insert into tbl_member (kakao_email, kakao_profile_url, member_phone_number, member_name, member_provider)
         values (#{kakaoEmail}, #{kakaoProfileUrl}, #{memberPhoneNumber}, #{memberName}, #{memberProvider})
     </insert>
+<!--    회원 이름 변경-->
+    <update id="updateMemberName">
+        update tbl_member set member_name=#{memberName}
+        where id=#{id}
+    </update>
 </mapper>

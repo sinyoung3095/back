@@ -101,10 +101,11 @@ public class MemberController {
     @PostMapping("login")
     public RedirectView Login(MemberDTO memberDTO) {
         MemberDTO member = memberService.login(memberDTO).orElseThrow(LoginFailException::new);
-        session.setAttribute("member", member);  // 여기서 DB에서 조회한 member 저장
-        System.out.println(member.getMemberName());  // 제대로 나올 것
+        session.setAttribute("member", member);
+        System.out.println(member.getMemberName());
         return new RedirectView("/member/mypage");
     }
+
 
 
 
@@ -136,16 +137,28 @@ public class MemberController {
             model.addAttribute("member", member);
             return "member/mypage";
         }
-
-        MemberDTO fullMember = fullMemberOpt.get();
-        model.addAttribute("file", fullMember.getFile().orElse(null));
-        model.addAttribute("member", fullMember);
-
-        System.out.println(fileDAO.findFileByMemberId(fullMember.getId()));
-        System.out.println(fileService.findFileByMemberId(fullMember.getId()));
-        System.out.println("파일 정보: " + fullMember.getFile());
+        if (fullMemberOpt.isPresent()) {
+            MemberDTO fullMember = fullMemberOpt.get();
+            model.addAttribute("member", fullMember);
+            fullMember.getFile().ifPresent(file -> {
+                model.addAttribute("file", file);
+//                System.out.println("filePath: " + file.getFilePath());
+//                System.out.println("fileName: " + file.getFileName());
+            });
+        }
 
         return "member/mypage";
+    }
+
+    @PostMapping("update/name")
+    public RedirectView updateMemberName(MemberDTO memberDTO, HttpSession session) {
+//        System.out.println(memberDTO.getMemberName());
+        MemberDTO member=(MemberDTO) session.getAttribute("member");
+        memberDTO.setId(member.getId());
+        memberService.memberRename(memberDTO);
+        member.setMemberName(memberDTO.getMemberName());
+        session.setAttribute("member", member);
+        return new RedirectView("/member/mypage/set");
     }
 
 
@@ -168,30 +181,6 @@ public class MemberController {
     @GetMapping("mypage/set")
     public String goToMyPageSet(){
         return "member/mypage-set";
-    }
-    @GetMapping("mypage-counselor")
-    public String goToMyPageCounselor(){
-        return "member/counselor-mypage";
-    }
-    @GetMapping("mypage-couselor/info")
-    public String goToMyPageCouselorInfo(){
-        return "member/mypage-counselor-info";
-    }
-    @GetMapping("mypage-counselor/post")
-    public String goToMyPageCounselorPost(){
-        return "member/mypage-counselor-post";
-    }
-    @GetMapping("mypage-counselor/reply")
-    public String goToMyPageCounselorReply(){
-        return "member/mypage-counselor-reply";
-    }
-    @GetMapping("mypage-counselor/set")
-    public String goToMyPageCounselorSet(){
-        return "member/mypage-counselor-set";
-    }
-    @GetMapping("mypage-counselor/consultation/history")
-    public String goToMyPageCounselorConsultationHistory(){
-        return "member/mypage-counselor-consultation-history";
     }
     @GetMapping("mypage/consultation/history")
     public String goToAyPageConsultationHistory(){
