@@ -41,5 +41,31 @@ const commentService = (() => {
         });
     }
 
-    return {write: write, getList : getList, update: update, remove: remove}
+    const like = async (commentId, memberId) => {
+        const likeDTO = {
+            memberId: memberId,
+            commentId: commentId
+        };
+
+        console.log("memberId:", memberId);
+        console.log("commentId:", commentId);
+        console.log("likeDTO:", likeDTO);
+
+        const response = await fetch("/api/likes", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(likeDTO)
+        });
+
+        if(response.ok) {
+            console.log("추천 성공");
+        } else{
+            const errorMessage = await response.text();
+            console.log(errorMessage)
+        }
+    };
+
+    return {write: write, getList : getList, update: update, remove: remove, like: like}
 })();

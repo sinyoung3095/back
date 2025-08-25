@@ -1,6 +1,5 @@
 package com.example.rebound.dto;
 
-import com.example.rebound.common.enumeration.Status;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
@@ -10,15 +9,10 @@ import org.springframework.stereotype.Component;
 @ToString
 @NoArgsConstructor
 @EqualsAndHashCode(of="id")
-public class CommentDTO {
+public class LikeDTO {
     private Long id;
-    private String commentContent;
     private Long memberId;
-    private String memberName;
-    private String memberMentor;
-    private Long postId;
-    private Status commentStatus;
+    private Long commentId;
     private String createdDate;
     private String updatedDate;
-    private String relativeDate;
 }

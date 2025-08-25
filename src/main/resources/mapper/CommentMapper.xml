@@ -7,7 +7,7 @@
     </insert>
 
     <select id="selectCommentsByPostId">
-        select member_id, member_name, id, comment_content, post_id, created_date, updated_date
+        select member_id, member_name, member_mentor, id, comment_content, post_id, created_date, updated_date
         from view_comment_member
         where post_id = #{postId} and comment_status = 'active'
         order by created_date desc

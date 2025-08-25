@@ -14,12 +14,13 @@ create table tbl_comment
 );
 
 select * from tbl_comment;
-alter table tbl_comment add column(comment_status enum('active', 'inactive') default 'active');
+select * from tbl_comment where likes_count = 1;
+alter table tbl_comment add column(likes_count int default 0);
 
 
 create view view_comment_member as
 (
-select m.member_name, c.id, c.comment_content, c.post_id, c.member_id, c.created_date, c.updated_date, c.comment_status
+select m.member_name, m.member_mentor, c.id, c.comment_content, c.post_id, c.member_id, c.created_date, c.updated_date, c.comment_status
 from tbl_member m join tbl_comment c on m.id = c.member_id
     );
 

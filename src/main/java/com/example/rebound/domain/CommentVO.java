@@ -16,6 +16,8 @@ public class CommentVO extends Period {
     private String commentContent;
     private Status commentStatus;
     private Long memberId;
+    private String memberName;
+    private String memberMentor;
     private Long postId;
     private String relativeDate;
 }

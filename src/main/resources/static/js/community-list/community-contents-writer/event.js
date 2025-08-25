@@ -66,9 +66,7 @@ commentWrap.addEventListener("click", async (e) => {
         e.target.nextElementSibling.style.display = "inline-block";
         document.querySelector(`button.cancel-button.id${commentId}`).style.display = "inline-block";
         document.querySelector(`button.delete-button.id${commentId}`).style.display = "none";
-    }
-
-    else if(e.target.classList.contains("cancel-button")){
+    } else if(e.target.classList.contains("cancel-button")){
         commentId = e.target.classList[0].replaceAll("id", "");
         span = document.querySelector(`span.id${commentId}`)
         textArea = document.querySelector(`textarea.id${commentId}`);
@@ -80,7 +78,7 @@ commentWrap.addEventListener("click", async (e) => {
         document.querySelector(`button.update-button.id${commentId}`).style.display = "inline-block";
         document.querySelector(`button.delete-button.id${commentId}`).style.display = "inline-block";
 
-    }else if(e.target.classList.contains("update-ok-button")){
+    } else if(e.target.classList.contains("update-ok-button")){
         commentId = e.target.classList[0].replaceAll("id", "");
         textArea = document.querySelector(`textarea.id${commentId}`);
         const comment = {
@@ -90,11 +88,19 @@ commentWrap.addEventListener("click", async (e) => {
         await commentService.update(comment);
         await commentService.getList(post.id, commentLayout.showList);
 
-    }else if(e.target.classList.contains("delete-button")) {
+    } else if(e.target.classList.contains("delete-button")) {
         commentId = e.target.classList[0].replaceAll("id", "");
         if(confirm("댓글을 삭제하시겠습니까?")) {
             await commentService.remove(commentId);
             await commentService.getList(post.id, commentLayout.showList);
+        }
+
+    } else if(e.target.classList.contains("send-request-button")){
+        commentId = e.target.closest("li").classList[0].replaceAll("id", "");
+        const success = await commentService.like(commentId, memberId);
+        if(success){
+            e.target.disabled = true;
+            e.target.textContent = "추천됨";
         }
     }
 });
