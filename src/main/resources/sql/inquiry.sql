@@ -1,4 +1,3 @@
-
 create table tbl_inquiry
 (
     id              bigint unsigned auto_increment
@@ -12,4 +11,6 @@ create table tbl_inquiry
     constraint fk_inquiry_member
         foreign key (member_id) references tbl_member (id)
 );
+
+select * from tbl_inquiry;
 

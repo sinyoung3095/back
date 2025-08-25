@@ -1,4 +1,3 @@
-
 create table tbl_counselor_profile_file
 (
     id           bigint unsigned not null

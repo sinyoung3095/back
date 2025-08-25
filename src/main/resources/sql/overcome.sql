@@ -1,4 +1,3 @@
-
 create table tbl_overcome
 (
     id               bigint unsigned auto_increment

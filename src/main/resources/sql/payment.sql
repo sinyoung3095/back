@@ -1,4 +1,3 @@
-
 create table tbl_payment
 (
     id                  bigint unsigned auto_increment

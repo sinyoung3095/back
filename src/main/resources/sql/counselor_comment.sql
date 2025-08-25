@@ -1,9 +1,8 @@
-
 create table tbl_counselor_comment
 (
     id                        bigint unsigned auto_increment
         primary key,
-    counselor_comment_comment varchar(255)                       not null,
+    counselor_comment_context varchar(255)                       not null,
     created_date              datetime default CURRENT_TIMESTAMP null,
     updated_date              datetime default CURRENT_TIMESTAMP null,
     counselor_id              bigint unsigned                    null,
@@ -14,3 +13,4 @@ create table tbl_counselor_comment
         foreign key (post_id) references tbl_post (id)
 );
 
+select * from tbl_counselor_comment;
