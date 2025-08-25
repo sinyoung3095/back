@@ -47,7 +47,7 @@ public class MemberDAO {
 
 
     //    조회
-    public MemberDTO selectMemberById(int memberId) {
+    public Optional<MemberDTO> selectMemberById(Long memberId) {
         return memberMapper.selectMemberById(memberId);
     }
     //    관리자 조회

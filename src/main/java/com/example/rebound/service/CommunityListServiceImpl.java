@@ -2,6 +2,7 @@ package com.example.rebound.service;
 
 import com.example.rebound.dto.PostCriteriaDTO;
 import com.example.rebound.dto.PostDTO;
+import com.example.rebound.repository.CommentDAO;
 import com.example.rebound.repository.PostDAO;
 import com.example.rebound.util.PostCriteria;
 import com.example.rebound.util.PostDateUtils;
@@ -16,6 +17,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class CommunityListServiceImpl implements CommunityListService {
     private final PostDAO postDAO;
+    private final CommentDAO commentDAO;
 
     //    추가
     @Override
@@ -23,12 +25,18 @@ public class CommunityListServiceImpl implements CommunityListService {
         return postDAO.save(postDTO);
     }
 
-    //    조회, 조회수 증가
+    //    조회수, 댓글 수 증가
     @Override
     @Transactional(rollbackFor = Exception.class)
     public Optional<PostDTO> getPost(Long id) {
         postDAO.updatePostReadCount(id);
-        return postDAO.findPostWriterById(id);
+        Optional<PostDTO> foundPost = postDAO.findPostWriterById(id);
+
+        foundPost.ifPresent(post -> {
+            post.setCommentCount(commentDAO.getCommentsCountByPostId(post.getId()));
+        });
+
+        return foundPost;
     }
 
     @Override
@@ -38,6 +46,7 @@ public class CommunityListServiceImpl implements CommunityListService {
         List<PostDTO> posts = postDAO.findAll(postCriteria);
         posts.forEach((post) -> {
             post.setRelativeDate(PostDateUtils.toRelativeTime(post.getCreatedDate()));
+            post.setCommentCount(commentDAO.getCommentsCountByPostId(post.getId()));
         });
 
         postCriteria.setHasMore(posts.size() > postCriteria.getRowCount());
@@ -51,14 +60,27 @@ public class CommunityListServiceImpl implements CommunityListService {
         return postCriteriaDTO;
     }
 
+//    수정
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void updatePost(PostDTO postDTO) {
         postDAO.updatePost(postDTO);
     }
 
+//    삭제
+    @Override
+    public void delete(Long id) {
+        postDAO.deletePost(id);
+    }
+
+    //    조회 수 기준 정렬
     @Override
     public List<PostDTO> getPostsByViews() {
-        return postDAO.findByViews();
+        List<PostDTO> posts = postDAO.findByViews();
+        posts.forEach(post -> {
+            post.setRelativeDate(PostDateUtils.toRelativeTime(post.getCreatedDate()));
+            post.setCommentCount(commentDAO.getCommentsCountByPostId(post.getId()));
+        });
+        return posts;
     }
 }

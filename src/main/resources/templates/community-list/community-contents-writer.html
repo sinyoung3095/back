@@ -60,16 +60,7 @@
                                                 <span class="post-created-at prisma-typography body12:regular primary" th:text="${post.createdDate + ' · 조회 ' + post.postViews}"></span>
                                             </div>
                                         </div>
-                                        <div class="post-actions">
-                                            <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M20.77%2015.174c.37%200%20.675.276.723.634l.007.099v5.86c0%20.371-.275.678-.632.726l-.099.007H3.231a.732.732%200%200%201-.724-.633l-.007-.1v-5.86a.732.732%200%200%201%201.455-.1l.007.1v5.128h16.076v-5.128c0-.37.275-.677.632-.726l.1-.007zM12.412%201.628l.09.072%206.377%206.05a.734.734%200%200%201%20.028%201.036.73.73%200%200%201-.949.098l-.084-.069-5.145-4.881v11.973a.732.732%200%200%201-1.454.1l-.007-.1V3.933L6.125%208.815a.73.73%200%200%201-.953.045l-.08-.074a.734.734%200%200%201-.045-.955l.073-.08%206.378-6.05.046-.039a.734.734%200%200%201%20.014-.01l-.06.048a.73.73%200%200%201%20.213-.14c.005%200%20.009-.002.013-.004a.724.724%200%200%201%20.69.072z'%20fill='%232D2D2D'%20fill-rule='evenodd'/%3e%3c/svg%3e" alt="공유하기" class="icon">
-                                            <div class="dropdown b-dropdown btn-group" id="__BVID__12597">
-                                                <button aria-haspopup="true" aria-expanded="false" type="button" class="btn dropdown-toggle btn-secondary" id="__BVID__12597__BV_toggle_"></button>
-                                                <ul role="menu" tabindex="-1" class="dropdown-menu dropdown-menu-right" aria-labelledby="__BVID__12597__BV_toggle_" style="position: absolute; transform: translate3d(-116px, 24px, 0px); top: 0px; left: 0px; will-change: transform;">
-                                                    <li role="presentation">
-                                                        <a th:href="@{/community-list/failure-update/{id}(id=${post.id})}" class="dropdown-item">게시글 수정하기</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                        <div id="postActionWrap">
                                         </div>
                                     </div>
                                 </div>
@@ -83,53 +74,32 @@
                                     <span></span>
                                 </p>
                             </div>
-                            <!-- 게시글 하단 극복 후기 -->
-                            <div class="overcome">극복 후기</div>
-                            <section class="overcome-review">
-                                <a href="" data-testid="pro-knowhow-profile-section" class="profile-container">
-                                    <div class="profile-info">
-                                        <section class="writer-info">
-                                            <p class="writer-name">극복 후기 제목</p>
-                                            <span class="writer-service">2025-07-28</span>
-                                        </section>
-                                    </div>
-                                    <div class="counselor-reply-contents">
-                                        <p class="profile-desc">
-                                            <span>
-                                                국회는 상호원조 또는 안전보장에 관한 조약, 중요한 국제조직에 관한 조약, 우호통상항해조약, 주권의 제약에 관한 조약, 강화조약, 국가나 국민에게 중대한 재정적 부담을 지우는 조약 또는 입법사항에 관한 조약의 체결·비준에 대한 동의권을 가진다.
-                                                대통령의 국법상 행위는 문서로써 하며, 이 문서에는 국무총리와 관계 국무위원이 부서한다. 군사에 관한 것도 또한 같다. 공공필요에 의한 재산권의 수용·사용 또는 제한 및 그에 대한 보상은 법률로써 하되, 정당한 보상을 지급하여야 한다.
-                                                이 헌법시행 당시의 법령과 조약은 이 헌법에 위배되지 아니하는 한 그 효력을 지속한다. 근로조건의 기준은 인간의 존엄성을 보장하도록 법률로 정한다.
-                                            </span>
-                                        </p>
-                                    </div>
-                                </a>
-                            </section>
                         </div>
                         <!-- 라인 -->
                         <hr class="hr-divider wide-divider">
                         <!-- 상담사 답변 -->
-                        <h1 class="counselor-headline">상담사 답변</h1>
-                        <section class="counselor-reply">
-                            <a href="" data-testid="pro-knowhow-profile-section" class="profile-container">
-                                <div class="profile-info">
-                                    <div class="user-profile-picture profile-picture">
-                                        <div data-name="image" class="is-square" src="https://static.cdn.soomgo.com/upload/profile/93b2cee7-f161-479d-83d1-58ad6facdd81.jpg?webp=1&amp;h=320&amp;w=320" lazy="loaded" style="background-image: url(&quot;https://static.cdn.soomgo.com/upload/profile/93b2cee7-f161-479d-83d1-58ad6facdd81.jpg?webp=1&amp;h=320&amp;w=320&quot;);"></div>
-                                    </div>
-                                    <section class="writer-info">
-                                        <p class="writer-name">구글 스마트 노출전문 업체</p>
-                                        <span class="writer-service">검색/키워드 광고</span>
-                                    </section>
-                                    <button type="button" class="btn request-btn btn-primary">상담 요청</button>
-                                </div>
-                                <div class="counselor-reply-contents">
-                                    <p class="profile-desc"><span>국회는 상호원조 또는 안전보장에 관한 조약, 중요한 국제조직에 관한 조약, 우호통상항해조약, 주권의 제약에 관한 조약, 강화조약, 국가나 국민에게 중대한 재정적 부담을 지우는 조약 또는 입법사항에 관한 조약의 체결·비준에 대한 동의권을 가진다.
+<!--                        <h1 class="counselor-headline">상담사 답변</h1>-->
+<!--                        <section class="counselor-reply">-->
+<!--                            <a href="" data-testid="pro-knowhow-profile-section" class="profile-container">-->
+<!--                                <div class="profile-info">-->
+<!--                                    <div class="user-profile-picture profile-picture">-->
+<!--                                        <div data-name="image" class="is-square" src="https://static.cdn.soomgo.com/upload/profile/93b2cee7-f161-479d-83d1-58ad6facdd81.jpg?webp=1&amp;h=320&amp;w=320" lazy="loaded" style="background-image: url(&quot;https://static.cdn.soomgo.com/upload/profile/93b2cee7-f161-479d-83d1-58ad6facdd81.jpg?webp=1&amp;h=320&amp;w=320&quot;);"></div>-->
+<!--                                    </div>-->
+<!--                                    <section class="writer-info">-->
+<!--                                        <p class="writer-name">구글 스마트 노출전문 업체</p>-->
+<!--                                        <span class="writer-service">검색/키워드 광고</span>-->
+<!--                                    </section>-->
+<!--                                    <button type="button" class="btn request-btn btn-primary">상담 요청</button>-->
+<!--                                </div>-->
+<!--                                <div class="counselor-reply-contents">-->
+<!--                                    <p class="profile-desc"><span>국회는 상호원조 또는 안전보장에 관한 조약, 중요한 국제조직에 관한 조약, 우호통상항해조약, 주권의 제약에 관한 조약, 강화조약, 국가나 국민에게 중대한 재정적 부담을 지우는 조약 또는 입법사항에 관한 조약의 체결·비준에 대한 동의권을 가진다.-->
 
-    대통령의 국법상 행위는 문서로써 하며, 이 문서에는 국무총리와 관계 국무위원이 부서한다. 군사에 관한 것도 또한 같다. 공공필요에 의한 재산권의 수용·사용 또는 제한 및 그에 대한 보상은 법률로써 하되, 정당한 보상을 지급하여야 한다.
+<!--    대통령의 국법상 행위는 문서로써 하며, 이 문서에는 국무총리와 관계 국무위원이 부서한다. 군사에 관한 것도 또한 같다. 공공필요에 의한 재산권의 수용·사용 또는 제한 및 그에 대한 보상은 법률로써 하되, 정당한 보상을 지급하여야 한다.-->
 
-    이 헌법시행 당시의 법령과 조약은 이 헌법에 위배되지 아니하는 한 그 효력을 지속한다. 근로조건의 기준은 인간의 존엄성을 보장하도록 법률로 정한다.</span></p>
-                                </div>
-                            </a>
-                        </section>
+<!--    이 헌법시행 당시의 법령과 조약은 이 헌법에 위배되지 아니하는 한 그 효력을 지속한다. 근로조건의 기준은 인간의 존엄성을 보장하도록 법률로 정한다.</span></p>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                        </section>-->
                         <!-- 댓글 개수 -->
                         <div class="post-react-state">
                             <div class="post-react-item">
@@ -181,42 +151,31 @@
                             <div class="popular-post-list-container">
                                 <ul data-testid="curation-list" class="curation-list">
                                     <li data-testid="curation-item" class="curation-list-item">
-                                        <a href="" class="curation-list-wrapper">
+                                        <a th:href="@{/customer-center/gongji-details}" class="curation-list-wrapper">
                                             <div class="curation-contents has-thumbnail">
                                                 <p class="topic-name">리바운드 이야기</p>
                                                 <p class="curation-title">공지 제목</p>
                                                 <p class="curation-content">- 서비스 과정을 담은 사진을 고수님이 미리 첨부해줘요. - 사진을 보고 기억을 떠올리며 리뷰를 더 쉽게 작성할 수 있어요. - 고수님이 거래 경험에 대한 감사 메시지를 보내드려요. - 고수님의 따뜻한 한마디에 답하는 마음으로 리뷰를 남겨보세요. - ...</p>
-                                                <div class="curation-reactions">
-                                                    <span class="view-count">2,968</span>
-                                                </div>
                                             </div>
                                             <div class="curation-topic-image">
                                                 <img alt="썸네일 1080 720- 고객향.png" class="topic-thumbnail-image" src="https://static.cdn.soomgo.com/upload/soomgoLifeAdmin/f7778202-4328-4d90-8b3b-ecdeb3ad15d0.png?h=128&amp;w=128&amp;webp=1" lazy="loading">
                                             </div>
                                         </a>
-                                        <a href="" class="curation-list-wrapper">
+                                        <a th:href="@{/customer-center/gongji-details}" class="curation-list-wrapper">
                                             <div class="curation-contents has-thumbnail">
                                                 <p class="topic-name">리바운드 이야기</p>
                                                 <p class="curation-title">공지 제목</p>
                                                 <p class="curation-content">어느덧 한 해의 절반이 지나고, 하반기가 시작되었어요.  8월을 앞두고, 지금이야말로 비즈니스를 점검하고 앞으로의 전략을 세워야 할 타이밍인데요. 하반기는 추석부터 수능, 연말까지 소비가 집중되는 시기인 만큼, 놓치기 아까운 기회들이 가득한 시기죠.  혼자 하려...</p>
-                                                <div class="curation-reactions">
-                                                    <span class="view-count">412</span>
-                                                    <span class="comment-count"> 2 </span>
-                                                </div>
                                             </div>
                                             <div class="curation-topic-image">
                                                 <img alt="썸네일.png" class="topic-thumbnail-image" src="https://static.cdn.soomgo.com/upload/soomgoLifeAdmin/6d2247b4-d0a6-45a1-9171-9ddef6b79c28.png?h=128&amp;w=128&amp;webp=1" lazy="loading">
                                             </div>
                                         </a>
-                                        <a href="" class="curation-list-wrapper">
+                                        <a th:href="@{/customer-center/gongji-details}" class="curation-list-wrapper">
                                             <div class="curation-contents has-thumbnail">
                                                 <p class="topic-name">리바운드 이야기</p>
                                                 <p class="curation-title">공지 제목</p>
                                                 <p class="curation-content">무더운 여름 이사, 준비는 잘 되고 계시나요?  여름은 휴가와 방학이 겹쳐 이사를 계획하시는 분들이 많은 계절이에요. 하지만 더운 날씨에 짐 옮기기는 만만치 않고, 장마철이라면 비 오는 날 이사를 피할 수 있을지도 고민이죠.  그래서 숨고가 준비했습니다. 똑...</p>
-                                                <div class="curation-reactions">
-                                                    <span class="view-count">1,445</span>
-                                                    <span class="comment-count"> 5 </span>
-                                                </div>
                                             </div>
                                             <div class="curation-topic-image">
                                                 <img alt="썸네일.png" class="topic-thumbnail-image" src="https://static.cdn.soomgo.com/upload/soomgoLifeAdmin/b355b8c1-87c7-4949-b939-99321462f5ec.png?h=128&amp;w=128&amp;webp=1" lazy="loading">
@@ -236,8 +195,11 @@
     </div>
 </body>
 <script th:inline="javascript">
-    const postId = [[${post.id}]];
-    const memberId = 1;
+    const memberId = 5;
+    const post = {
+        id: [[${post.id}]],
+        memberId: [[${post.memberId}]]
+    };
 </script>
 <script src="/js/community-list/community-contents-writer/module/layout.js"></script>
 <script src="/js/community-list/community-contents-writer/module/service.js"></script>

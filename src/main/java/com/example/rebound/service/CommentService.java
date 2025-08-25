@@ -3,6 +3,7 @@ package com.example.rebound.service;
 import com.example.rebound.domain.CommentVO;
 import com.example.rebound.dto.CommentCriteriaDTO;
 import com.example.rebound.dto.CommentDTO;
+import com.example.rebound.dto.PostCriteriaDTO;
 
 import java.util.List;
 
@@ -11,9 +12,13 @@ public interface CommentService {
     public void write(CommentDTO commentDTO);
 
 //    전체 조회
-    public List<CommentDTO> getComments(Long postId);
+    public CommentCriteriaDTO getComments(Long postId, int page);
 
-//    public CommentCriteriaDTO findCommentsCriteria(int page);
+//    수정
+    public void update(CommentDTO commentDTO);
+
+//    삭제
+    public void delete(Long id);
 
     default CommentVO toCommentVO(CommentDTO commentDTO) {
         return CommentVO.builder()

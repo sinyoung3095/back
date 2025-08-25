@@ -29,7 +29,7 @@ public interface MemberMapper {
 //    카카오 추가
     public void insertKakaoMember(MemberDTO memberDTO);
     //    조회
-    public MemberDTO selectMemberById(int memberId);
+    public Optional<MemberDTO> selectMemberById(Long memberId);
     //    관리자 조회
     public MemberDTO selectAdmin(MemberDTO memberDTO );
     //    일반 회원 모두 조회

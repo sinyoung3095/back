@@ -15,7 +15,7 @@ public class CustomerCenterController {
 //    공지사항 상세
     @GetMapping("notice-detail")
     public String goToNoticeDetails() {
-        return "notice-detail";
+        return "/customer-center/notice-detail";
     }
 //    문의
     @GetMapping("inquiry")

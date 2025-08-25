@@ -17,9 +17,9 @@ img {
     border-style: none;
 }
 
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
-    display: block;
-}
+/*article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {*/
+/*    display: block;*/
+/*}*/
 
 ul {
     padding: 0;
@@ -55,7 +55,7 @@ input, button, select, optgroup, textarea {
     text-size-adjust: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     min-height: 100%;
 }
 
@@ -65,7 +65,7 @@ input, button, select, optgroup, textarea {
 }
 
 #app-header.hide-border-bottom {
-    border-bottom: none;
+    /*border-bottom: none;*/
 }
 
 body #app-header {
@@ -93,14 +93,14 @@ body #app-header {
 }
 
 .profile .global-navigation-bar, .hide-border-bottom .global-navigation-bar, :not(:has(.home)) .has-lnb .global-navigation-bar {
-    border-bottom: none;
+    /*border-bottom: none;*/
 }
 
 @media (min-width: 992px) {
     body .global-navigation-bar {
         height: 4.5rem;
         padding: 0;
-        border-bottom: none;
+        /*border-bottom: none;*/
     }
 }
 
@@ -827,8 +827,10 @@ body .main-banner .indicator {
 
 body .main-service .title {
     padding: 0;
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
+    /*footer문제로 수정*/
+    margin-top: 2px;
+    margin-bottom: .5rem;
+    font-size: 1rem;
 }
 
 .main-service .title {
@@ -1555,7 +1557,7 @@ body .main-exhibition .service-image {
     left: 50%;
     width: 170px;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     text-overflow: ellipsis;
     overflow: hidden;
     -webkit-line-clamp: 3;
@@ -1967,20 +1969,6 @@ body .main-service-card .request-count .request-icon {
 .main-service-card .request-count .request-icon {
     margin-right: .25rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

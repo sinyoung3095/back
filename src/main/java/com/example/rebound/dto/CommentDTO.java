@@ -15,6 +15,7 @@ public class CommentDTO {
     private String commentContent;
     private Long memberId;
     private String memberName;
+    private String memberMentor;
     private Long postId;
     private Status commentStatus;
     private String createdDate;

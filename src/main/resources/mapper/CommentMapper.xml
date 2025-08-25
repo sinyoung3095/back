@@ -6,16 +6,17 @@
         values (#{commentContent}, #{memberId}, #{postId})
     </insert>
 
-    <select id="selectRepliesByPostId">
-        select member_name, id, comment_content, post_id, created_date, updated_date
+    <select id="selectCommentsByPostId">
+        select member_id, member_name, member_mentor, id, comment_content, post_id, created_date, updated_date
         from view_comment_member
-        where post_id = #{postId}
+        where post_id = #{postId} and comment_status = 'active'
+        order by created_date desc
     </select>
     
-    <select id="selectCommentCountByPostId">
+    <select id="selectCommentsCountByPostId">
         select count(*)
-        from view_comment_member
-        where post_id = #{postId}
+        from tbl_comment
+        where post_id = #{postId} and comment_status = 'active'
     </select>
     <select id="selectAllByKeyword">
         select p.post_title, c.comment_content, c.created_date
@@ -36,4 +37,16 @@
           and (m.member_email like concat('%', #{keyword}, '%') or m.member_Name like concat('%', #{keyword}, '%'))
 
     </select>
+
+    <update id="updateComment">
+        update tbl_comment
+        set comment_content = #{commentContent}, updated_date = current_timestamp
+        where id = #{id}
+    </update>
+
+    <update id="delete">
+        update tbl_comment
+        set comment_status = 'inactive'
+        where id = #{id}
+    </update>
 </mapper>

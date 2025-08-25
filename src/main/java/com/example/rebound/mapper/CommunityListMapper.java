@@ -30,6 +30,9 @@ public interface CommunityListMapper {
 //    수정
     public void updateCommunityPost(PostDTO postDTO);
 
+//    삭제
+    public void deleteCommunityPost(Long id);
+
 //    게시글 조회 수 정렬
     public List<PostDTO> selectAllByViews();
 //    keyword로 조회
