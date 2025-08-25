@@ -345,7 +345,7 @@ bannerButtons.forEach((bannerButton) => {
 updateBannerIndicator();
 
 
-// 실패 게시글 목록
+// 실패 게시글(커뮤니티) 목록
 const firstCurationItem = document.getElementById("curation-item1");
 const lastCurationItem = document.getElementById("curation-item2");
 let text = ``
@@ -388,48 +388,77 @@ lastAreaPosts.forEach((post) => {
 });
 lastCurationItem.innerHTML = text;
 
-
 // 오늘의 좋은 말
-const goodTrack01 = document.getElementById("good01-track")
-const goodTrack02 = document.getElementById("good02-track")
+const goodTrack01 = document.getElementById("good01-track");
+const goodTrack02 = document.getElementById("good02-track");
+const goodTrack02Container = document.getElementById("exhibition-item");
 text = ``;
+const oneAreaGood = todayMessages.slice(0, 3);
 const firstAreaGood = todayMessages.slice(0, 6);
 const lastAreaGood = todayMessages.slice(6, 12);
 
-firstAreaGood.forEach((todayMessage, i) => {
-    let todayMessageSrc = `/images/goodWords/memo0${i % 4}.jpg`;
+console.log(member);
 
-    text += `
-        <div tabindex="-1" data-index="0" class="slick-slide slick-active slick-current" style="outline: none; width: 247px;">
-            <div>
-                <a href="/counselor-list/good-words-member" style="width: 100%; display: inline-block; position: relative">
-                    <img class="service-image" src="${todayMessageSrc}" alt="">
-                    <span class="service-text">${todayMessage.todayMessageContent}</span>
-                </a>
+// 오늘의 좋은 말(1)
+if (member.mentor == null || member.mentor === "none") {
+    good1Buttons.style.display = "none";
+    goodTrack02Container.style.display = "none";
+
+    oneAreaGood.forEach((todayMessage, i) => {
+        let todayMessageSrc = `/images/goodWords/memo0${i % 4}.jpg`;
+
+        text += `
+            <div tabindex="-1" data-index="0" class="slick-slide slick-active slick-current" style="outline: none; width: 247px;">
+                <div>
+                    <a href="/counselor-list/good-words" style="width: 100%; display: inline-block; position: relative">
+                        <img class="service-image" src="${todayMessageSrc}" alt="">
+                        <span class="service-text">${todayMessage.todayMessageContent}</span>
+                    </a>
+                </div>
             </div>
-        </div>
-    `;
-});
-goodTrack01.innerHTML = text;
+        `;
+    });
+    goodTrack01.innerHTML = text;
+}
 
-// 오늘의 좋은 말2
-text = ``;
+// 오늘의 좋은 말(2)
+if (member.mentor === "mentor" || member.mentor === "subscribe") {
+    // 오늘의 좋은 말1
+    firstAreaGood.forEach((todayMessage, i) => {
+        let todayMessageSrc = `/images/goodWords/memo0${i % 4}.jpg`;
 
-lastAreaGood.forEach((todayMessage, i) => {
-    let todayMessageSrc = `/images/goodWords/memo0${i % 4}.jpg`;
-
-    text += `
-        <div tabindex="-1" data-index="0" class="slick-slide slick-active slick-current" style="outline: none; width: 247px;">
-            <div>
-                <a href="/counselor-list/good-words-member" style="width: 100%; display: inline-block; position: relative">
-                    <img class="service-image" src="${todayMessageSrc}" alt="">
-                    <span class="service-text">${todayMessage.todayMessageContent}</span>
-                </a>
+        text += `
+            <div tabindex="-1" data-index="0" class="slick-slide slick-active slick-current" style="outline: none; width: 247px;">
+                <div>
+                    <a href="/counselor-list/good-words-member" style="width: 100%; display: inline-block; position: relative">
+                        <img class="service-image" src="${todayMessageSrc}" alt="">
+                        <span class="service-text">${todayMessage.todayMessageContent}</span>
+                    </a>
+                </div>
             </div>
-        </div>
-    `;
-});
-goodTrack02.innerHTML = text;
+        `;
+    });
+    goodTrack01.innerHTML = text;
+
+    // 오늘의 좋은 말2
+    text = ``;
+
+    lastAreaGood.forEach((todayMessage, i) => {
+        let todayMessageSrc = `/images/goodWords/memo0${i % 4}.jpg`;
+
+        text += `
+            <div tabindex="-1" data-index="0" class="slick-slide slick-active slick-current" style="outline: none; width: 247px;">
+                <div>
+                    <a href="/counselor-list/good-words-member" style="width: 100%; display: inline-block; position: relative">
+                        <img class="service-image" src="${todayMessageSrc}" alt="">
+                        <span class="service-text">${todayMessage.todayMessageContent}</span>
+                    </a>
+                </div>
+            </div>
+        `;
+    });
+    goodTrack02.innerHTML = text;
+}
 
 // text = ``;
 // lastAreaGood.forEach((todayMessage, i) => {

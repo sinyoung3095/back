@@ -1,10 +1,8 @@
 package com.example.rebound.service;
 
-import com.example.rebound.dto.CounselorDTO;
-import com.example.rebound.dto.NoticeDTO;
-import com.example.rebound.dto.PostDTO;
-import com.example.rebound.dto.TodayMessageDTO;
+import com.example.rebound.dto.*;
 import com.example.rebound.repository.MainPageDAO;
+import com.example.rebound.util.PostCriteria;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +30,12 @@ public class MainPageServiceImpl implements MainPageService {
     @Override
     public List<NoticeDTO> noticePreview () {
         return mainpageDAO.noticePreview();
+    }
+
+//    검색
+    @Override
+    public List<PostDTO> selectPostFromMainPage (PostCriteriaDTO postCriteriaDTO) {
+        return mainpageDAO.selectPostFromMainPage(postCriteriaDTO);
     }
 
 }

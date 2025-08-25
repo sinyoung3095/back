@@ -2,6 +2,7 @@ package com.example.rebound.repository;
 
 import com.example.rebound.dto.*;
 import com.example.rebound.mapper.MainPageMapper;
+import com.example.rebound.util.PostCriteria;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -26,6 +27,11 @@ public class MainPageDAO {
 //    공지사항 미리보기
     public List<NoticeDTO> noticePreview () {
         return mainpageMapper.noticePreview();
+    }
+
+//    검색
+    public List<PostDTO> selectPostFromMainPage (PostCriteriaDTO postCriteriaDTO) {
+        return mainpageMapper.selectPostFromMainPage(postCriteriaDTO);
     }
 
 }
