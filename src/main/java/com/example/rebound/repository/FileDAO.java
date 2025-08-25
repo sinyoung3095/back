@@ -15,4 +15,5 @@ public class FileDAO {
     public void uploadFile(FileDTO fileDTO) {fileMapper.insertFile(fileDTO);}
 //    조회
     public Optional<FileDTO> findFileById(Long id) {return fileMapper.selectFileById(id);}
+    public Optional<FileDTO> findFileByMemberId(Long memberId) {return fileMapper.selectFileByMemberId(memberId);}
 }

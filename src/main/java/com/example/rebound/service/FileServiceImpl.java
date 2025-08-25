@@ -23,4 +23,9 @@ public class FileServiceImpl implements FileService {
     public Optional<FileDTO> findFileById(Long id) {
         return fileDAO.findFileById(id);
     }
+
+    @Override
+    public Optional<FileDTO> findFileByMemberId(Long memberId) {
+        return fileDAO.findFileByMemberId(memberId);
+    }
 }
