@@ -90,4 +90,29 @@ public class CounselorController {
         CounselorDTO counselor=counselorService.login(counselorDTO).orElseThrow(LoginFailCounselorException::new);
         session.setAttribute("counselor", counselor);
         return new RedirectView("/main-page/page"); }
+
+    @GetMapping("mypage")
+    public String goToMyPageCounselor(){
+        return "member/counselor-mypage";
+    }
+    @GetMapping("mypage/info")
+    public String goToMyPageCouselorInfo(){
+        return "member/mypage-counselor-info";
+    }
+    @GetMapping("mypage/post")
+    public String goToMyPageCounselorPost(){
+        return "member/mypage-counselor-post";
+    }
+    @GetMapping("mypage/reply")
+    public String goToMyPageCounselorReply(){
+        return "member/mypage-counselor-reply";
+    }
+    @GetMapping("mypage/set")
+    public String goToMyPageCounselorSet(){
+        return "member/mypage-counselor-set";
+    }
+    @GetMapping("mypage/consultation/history")
+    public String goToMyPageCounselorConsultationHistory(){
+        return "member/mypage-counselor-consultation-history";
+    }
 }

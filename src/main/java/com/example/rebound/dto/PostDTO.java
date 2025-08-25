@@ -14,7 +14,7 @@ public class PostDTO {
     private Long id;
     private String postTitle;
     private String postContent;
-    private int postViews;
+    private int postReadCount;
     private Long memberId;
     private String memberName;
     private Long categoryId;

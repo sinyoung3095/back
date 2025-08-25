@@ -94,16 +94,9 @@ commentWrap.addEventListener("click", async (e) => {
             await commentService.remove(commentId);
             await commentService.getList(post.id, commentLayout.showList);
         }
-
-    } else if(e.target.classList.contains("send-request-button")){
-        commentId = e.target.closest("li").classList[0].replaceAll("id", "");
-        const success = await commentService.like(commentId, memberId);
-        if(success){
-            e.target.disabled = true;
-            e.target.textContent = "추천됨";
-        }
-    }
+    } 
 });
 
 // 게시글 삭제, 수정
 postActionLayout.showPostActions(post, memberId);
+

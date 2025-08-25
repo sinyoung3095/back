@@ -23,4 +23,6 @@ select m.member_name, m.member_grade, c.id, c.comment_content, c.post_id, c.memb
 from tbl_member m join tbl_comment c on m.id = c.member_id
     );
 
+drop view view_comment_member;
+
 select * from view_comment_member;

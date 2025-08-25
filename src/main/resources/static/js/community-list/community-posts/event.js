@@ -187,8 +187,6 @@ hoverArea.addEventListener("mouseleave", (e) => {
 // 위로 가기 버튼 나타나기/숨기기
 const topButton = document.getElementById("top-btn");
 
-console.log(document.getElementById("top-btn"));
-
 window.addEventListener("scroll", () => {
     if (window.scrollY > 100) {
         topButton.classList.add("show");

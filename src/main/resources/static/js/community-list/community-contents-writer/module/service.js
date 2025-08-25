@@ -47,10 +47,6 @@ const commentService = (() => {
             commentId: commentId
         };
 
-        console.log("memberId:", memberId);
-        console.log("commentId:", commentId);
-        console.log("likeDTO:", likeDTO);
-
         const response = await fetch("/api/likes", {
             method: "POST",
             headers: {
