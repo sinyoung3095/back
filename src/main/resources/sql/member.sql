@@ -22,20 +22,3 @@ create table tbl_member
     constraint member_phone_number
         unique (member_phone_number)
 );
-
-insert into tbl_member(member_name,member_email,member_phone_number,member_password)
-values ('일반','rebound12@gmail.com',0085438937249578,'1234');
-
-
-
-select * from tbl_member;
-delete from tbl_member where id>5;
-
-
-
-alter table tbl_member change member_kakao_email kakao_email varchar(255);
-alter table tbl_member change member_kakao_profile_url kakao_profile_url varchar(255);
-alter table tbl_member modify member_password varchar(255);
-
-alter table tbl_member change member_mentor member_mentor enum ('mentor','subscribe', 'none')     default 'none';
-alter table tbl_member add lately_date datetime;
