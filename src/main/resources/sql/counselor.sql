@@ -1,4 +1,3 @@
-
 create table tbl_counselor
 (
     id                        bigint unsigned auto_increment primary key,
@@ -14,6 +13,7 @@ create table tbl_counselor
     updated_date              datetime default CURRENT_TIMESTAMP
 );
 
+<<<<<<< HEAD
 alter table tbl_counselor modify counselor_approval_status enum ('approval', 'await', 'refusal') default 'await';
 
 insert into tbl_counselor (counselor_name, counselor_email, counselor_phone_number, counselor_password, counselor_address)
@@ -25,3 +25,6 @@ select * from tbl_counselor;
 alter table tbl_counselor modify counselor_password varchar(255);
 alter table tbl_counselor modify counselor_address varchar(255);
 
+=======
+select * from tbl_counselor;
+>>>>>>> master

@@ -1,4 +1,3 @@
--- auto-generated definition
 create table tbl_inquiry_file
 (
     id         bigint unsigned not null
@@ -9,4 +8,6 @@ create table tbl_inquiry_file
     constraint fk_inquiry_file_inquiry
         foreign key (inquiry_id) references tbl_inquiry (id)
 );
+
+select * from tbl_inquiry_file;
 

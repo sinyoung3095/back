@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.rebound.mapper.CategoryMapper">
     <select id="selectAllCategories">
-        select id, category_name, created_datetime, updated_datetime
+        select id, category_name, created_date, updated_date
         from tbl_category
         order by id
     </select>
