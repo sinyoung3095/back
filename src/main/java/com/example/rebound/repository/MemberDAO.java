@@ -50,6 +50,11 @@ public class MemberDAO {
     public Optional<MemberDTO> selectMemberById(Long memberId) {
         return memberMapper.selectMemberById(memberId);
     }
+
+//    이름 수정
+    public void memberRename(MemberDTO memberDTO){
+        memberMapper.updateMemberName(memberDTO);
+    }
     //    관리자 조회
     public MemberDTO isExistAdmin(MemberDTO memberDTO) {
         return memberMapper.selectAdmin(memberDTO);

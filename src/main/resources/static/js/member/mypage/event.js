@@ -1,19 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // 버튼 클릭 이벤트
-    const buttons = document.querySelectorAll("div[role=button]");
-    buttons.forEach(btn => {
-        btn.addEventListener("click", (e) => {
-            e.target.style.color = "red"; // 임시 표시
-        });
-    });
+const imgContainer = document.getElementById("imgContainer");
 
-    // 계정설정 클릭 이벤트
-    const setting = document.querySelector("span.main-12");
-    if (setting) {
-        setting.addEventListener("click", (e) => {
-            e.target.style.color = "red";
-        });
-    }
+const hasProfile = false;
 
-
-});
+if (!hasProfile) {
+    imgContainer.innerHTML = '<img src="/images/member/no-profile.png" class="profile-img">';
+} else {
+    imgContainer.innerHTML = '<img src="/api/display?filePath=...&fileName=..." class="profile-img">';
+}
