@@ -30,4 +30,8 @@ public interface CounselorMapper {
     public List<CounselorDTO> selectCounselorAll(@Param("memberCriteria") MemberCriteria memberCriteria, @Param("keyword") String keyword);
 //    상담사 수 통합검색
     public int selectCounselorAllCount(String keyword);
+//    상담사 통합검색
+public List<CounselorDTO> selectCounselorQualificationAll(@Param("memberCriteria") MemberCriteria memberCriteria, @Param("keyword") String keyword);
+//    상담사 수 통합검색
+public int selectCounselorQualificationAllCount(String keyword);
 }

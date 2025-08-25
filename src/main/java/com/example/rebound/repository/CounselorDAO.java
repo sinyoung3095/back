@@ -39,4 +39,12 @@ public class CounselorDAO {
     public int findCounselorAllCount(String keyword){
         return counselorMapper.selectCounselorAllCount(keyword);
 }
+//  상담사 자격 승인 여부
+    public List<CounselorDTO> findCounselorQualificationAll(MemberCriteria memberCriteria,String keyword){
+        return counselorMapper.selectCounselorQualificationAll(memberCriteria,keyword);
+    }
+//  상담사 자격 승인 여부
+public int findCounselorQualificationAllCount(String keyword){
+    return counselorMapper.selectCounselorQualificationAllCount(keyword);
+}
 }

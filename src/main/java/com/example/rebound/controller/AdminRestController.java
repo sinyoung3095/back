@@ -41,6 +41,10 @@ public class AdminRestController {
     public CounselorCriteriaDTO counselorsFindAll(@PathVariable int page,@RequestParam(required = false) String keyword) {
         return adminService.findCounselorMembers(page,keyword);
     }
+    @GetMapping("counselor-qualification/{page}")
+    public CounselorCriteriaDTO counselorsQualificationAll(@PathVariable int page,@RequestParam(required = false) String keyword) {
+        return adminService.findCounselorQualifications(page,keyword);
+    }
 
 
 }

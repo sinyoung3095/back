@@ -99,5 +99,20 @@ public class AdminServiceImpl implements AdminService {
         return counselorCriteriaDTO;
     }
 
+    @Override
+    public CounselorCriteriaDTO findCounselorQualifications(int page, String keyword) {
+        CounselorCriteriaDTO counselorCriteriaDTO = new CounselorCriteriaDTO();
+        MemberCriteria memberCriteria = new MemberCriteria(page,counselorDAO.findCounselorQualificationAllCount(keyword));
+        counselorCriteriaDTO.setCounselors(counselorDAO.findCounselorQualificationAll(memberCriteria,keyword));
+        counselorCriteriaDTO.setMemberCriteria(memberCriteria);
+
+        List<CounselorDTO> counselors = counselorDAO.findCounselorQualificationAll(memberCriteria,keyword);
+
+
+
+        memberCriteria.setHasMore(counselors.size() > memberCriteria.getRowCount());
+        return counselorCriteriaDTO;
+    }
+
 
 }
