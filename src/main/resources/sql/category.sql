@@ -1,8 +1,8 @@
 create table tbl_category(
     id bigint unsigned auto_increment primary key,
     category_name varchar(255),
-    created_datetime datetime default current_timestamp(),
-    updated_datetime datetime default current_timestamp()
+    created_date datetime default current_timestamp(),
+    updated_date datetime default current_timestamp()
 );
 
 select * from tbl_category;

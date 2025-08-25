@@ -1,4 +1,3 @@
--- auto-generated definition
 create table tbl_member_profile_file
 (
     id        bigint unsigned not null

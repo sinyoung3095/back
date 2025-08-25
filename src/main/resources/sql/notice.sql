@@ -1,4 +1,3 @@
-
 create table tbl_notice
 (
     id             bigint unsigned auto_increment
@@ -8,4 +7,6 @@ create table tbl_notice
     created_date   datetime default CURRENT_TIMESTAMP null,
     updated_date   datetime default CURRENT_TIMESTAMP null
 );
+
+select * from tbl_notice;
 

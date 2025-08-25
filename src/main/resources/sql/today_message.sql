@@ -1,4 +1,3 @@
-
 create table tbl_today_message
 (
     id                    bigint unsigned auto_increment
@@ -10,4 +9,6 @@ create table tbl_today_message
     constraint fk_today_message_counselor
         foreign key (counselor_id) references tbl_counselor (id)
 );
+
+select * from tbl_today_message;
 

@@ -1,4 +1,3 @@
-
 create table tbl_counselor_qualifications_file
 (
     id           bigint unsigned not null
@@ -10,4 +9,4 @@ create table tbl_counselor_qualifications_file
         foreign key (id) references tbl_file (id)
 );
 
-delete from tbl_counselor_qualifications_file where id<20;
+select * from tbl_counselor_qualifications_file;
