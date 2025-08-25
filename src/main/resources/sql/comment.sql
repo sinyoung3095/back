@@ -14,7 +14,8 @@ create table tbl_comment
 );
 
 select * from tbl_comment;
-alter table tbl_comment add column(comment_status enum('active', 'inactive') default 'active');
+select * from tbl_comment where likes_count = 1;
+alter table tbl_comment add column(likes_count int default 0);
 
 
 create view view_comment_member as
