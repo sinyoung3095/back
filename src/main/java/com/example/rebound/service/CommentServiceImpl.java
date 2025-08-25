@@ -29,9 +29,7 @@ public class CommentServiceImpl implements CommentService {
         CommentCriteriaDTO commentCriteriaDTO = new CommentCriteriaDTO();
         PostCriteria criteria = new PostCriteria(page, commentDAO.getCommentsCountByPostId(postId));
 
-        System.out.println("postId = " + postId);
         List<CommentDTO> comments = commentDAO.findAll(postId, criteria);
-        System.out.println("comments = " + comments);
 
         comments.forEach((comment) -> {
             comment.setRelativeDate(PostDateUtils.toRelativeTime(comment.getCreatedDate()));

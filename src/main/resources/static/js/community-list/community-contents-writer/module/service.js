@@ -63,5 +63,12 @@ const commentService = (() => {
         }
     };
 
-    return {write: write, getList : getList, update: update, remove: remove, like: like}
+    const removeLike = async (commentId, memberId) => {
+        const response = await fetch(`/api/likes/${commentId}?memberId=${memberId}`, {
+            method: "DELETE"
+        });
+        return response.ok;
+    };
+
+    return {write: write, getList : getList, update: update, remove: remove, like: like, removeLike: removeLike}
 })();
