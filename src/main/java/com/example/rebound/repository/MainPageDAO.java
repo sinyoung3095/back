@@ -29,9 +29,14 @@ public class MainPageDAO {
         return mainpageMapper.noticePreview();
     }
 
+//    전체 개수 조회(검색)
+    public int selectCountAll (String keyword) {
+        return mainpageMapper.selectCountAllSearchMainPage(keyword);
+    }
+
 //    검색
-    public List<PostDTO> selectPostFromMainPage (PostCriteriaDTO postCriteriaDTO) {
-        return mainpageMapper.selectPostFromMainPage(postCriteriaDTO);
+    public List<PostDTO> selectPostFromMainPage (PostCriteriaDTO postCriteriaDTO, String keyword) {
+        return mainpageMapper.selectPostFromMainPage(postCriteriaDTO, keyword);
     }
 
 }

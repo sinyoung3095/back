@@ -1,15 +1,19 @@
 package com.example.rebound.controller;
 
+import com.example.rebound.dto.PostCriteriaDTO;
 import com.example.rebound.service.MainPageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequiredArgsConstructor
 public class MainPageController {
     private final MainPageService mainpageService;
+    private final PostCriteriaDTO postCriteriaDTO;
 
     @GetMapping("/")
     public String goToMainpage(Model model) {
@@ -19,10 +23,12 @@ public class MainPageController {
         return "/main-page/page";
     }
 
-//    @GetMapping("community-list/community-posts")
-//    public String selectPostFromMainPage(Model model, String keyword) {
-//        model.addAttribute("postCriteriaDTO", mainpageService.selectPostFromMainPage(keyword));
-//    }
+    @GetMapping("community-list/community-posts/{page}")
+    public String selectPostFromMainPage(@PathVariable int page, Model model, @RequestParam(required = false) String keyword) {
+        model.addAttribute("postCriteriaDTO", mainpageService.selectPostFromMainPage(page, keyword));
+        model.addAttribute("keyword", keyword);
+        return "/community-list/community-posts";
+    }
 
     @GetMapping("today-message")
     public String goToTodayMessage() {

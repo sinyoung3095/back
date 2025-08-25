@@ -20,5 +20,5 @@ public interface MainPageService {
     public List<NoticeDTO> noticePreview ();
 
 //    검색(메인페이지 → 커뮤니티 목록)
-    public List<PostDTO> selectPostFromMainPage (PostCriteriaDTO postCriteriaDTO);
+    public PostCriteriaDTO selectPostFromMainPage (int page, String keyword);
 }

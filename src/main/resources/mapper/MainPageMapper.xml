@@ -22,6 +22,17 @@
         limit 7 offset 0
     </select>
 
+    <select id="selectCountAllSearchMainPage">
+        select count(*) from tbl_post
+        where post_status = 'active'
+        <if test="keyword != null">
+            and (
+            post_title like concat('%', #{keyword}, '%') or
+            post_content like concat('%', #{keyword}, '%')
+            )
+        </if>
+    </select>
+
     <select id="selectPostFromMainPage">
         select id, post_content, post_title, post_views, created_date, updated_date, member_id, post_status, category_id
         from tbl_post
