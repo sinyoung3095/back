@@ -13,7 +13,7 @@
     </select>
 <!--    상담사 조회(통합검색)-->
     <select id="selectCounselorAll">
-        select id, counselor_name, counselor_email, counselor_phone_number, counselor_password, counselor_address, counselor_status, counselor_approval_status, created_date, updated_date from tbl_counselor
+        select id, counselor_name, counselor_email, counselor_phone_number, counselor_password, counselor_address, counselor_status, counselor_approval_status,counselor_license_name, created_date, updated_date from tbl_counselor
         where counselor_status = 'active' and counselor_approval_status = 'approval'
         <if test="keyword != null">
             and (
@@ -25,6 +25,29 @@
         limit #{memberCriteria.rowCount} offset #{memberCriteria.offset}
     </select>
     <select id="selectCounselorAllCount">
+        select count(*) from tbl_counselor
+        where counselor_status = 'active' and counselor_approval_status = 'approval'
+        <if test="keyword != null">
+            and (
+            counselor_name like concat('%', #{keyword}, '%') or
+            counselor_email like concat('%', #{keyword}, '%')
+            )
+        </if>
+    </select>
+    <!--    상담사 자격증 승인 여부-->
+    <select id="selectCounselorQualificationAll">
+        select id, counselor_name, counselor_email, counselor_phone_number, counselor_password, counselor_address, counselor_status, counselor_approval_status,counselor_license_name, created_date, updated_date from tbl_counselor
+        where counselor_status = 'active'
+        <if test="keyword != null">
+            and (
+            counselor_name like concat('%', #{keyword}, '%') or
+            counselor_email like concat('%', #{keyword}, '%')
+            )
+        </if>
+        order by id desc
+        limit #{memberCriteria.rowCount} offset #{memberCriteria.offset}
+    </select>
+    <select id="selectCounselorQualificationAllCount">
         select count(*) from tbl_counselor
         where counselor_status = 'active' and counselor_approval_status = 'approval'
         <if test="keyword != null">

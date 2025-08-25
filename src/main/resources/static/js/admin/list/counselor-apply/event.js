@@ -4,7 +4,9 @@ const sideSubLists = document.querySelectorAll(".menu-sub-list");
 const sideSubLinks = document.querySelectorAll(".rebound-link");
 const tabNames = document.querySelectorAll(".tab-name");
 const icons = document.querySelectorAll(".icon-wrapper i");
+const listPageWrap = document.getElementById("pageWrap");
 
+service.getCounselor(layout.showList)
 // 홈 클릭 이벤트
 homeButton.addEventListener("click", (e) => {
     e.preventDefault();
@@ -176,18 +178,11 @@ checkApplies.forEach((checkApply) => {
     }
 });
 
-// 페이지 번호 클릭 이벤트
-const pageNums = document.querySelectorAll(".page-num");
-const pageItemNums = document.querySelectorAll(".page-item-num");
-
-pageItemNums.forEach((pageItemNum) => {
-    pageItemNum.addEventListener("click", (e) => {
+// 페이징
+listPageWrap.addEventListener("click", async (e) => {
+    if(e.target.classList.contains("paging")){
         e.preventDefault();
-
-        pageNums.forEach((pageNum) => {
-            pageNum.classList.remove("active");
-        });
-
-        pageItemNum.parentElement.classList.add("active");
-    });
+        const keyword=content.value;
+        await service.getMember(layout.showList, e.target.dataset.page, keyword);
+    }
 });

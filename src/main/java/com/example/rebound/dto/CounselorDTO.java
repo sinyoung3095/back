@@ -19,7 +19,8 @@ public class CounselorDTO {
     private String counselorAddress;
     private String counselorStatus;
     private String counselorApprovalStatus;
-    private String createdDatetime;
-    private String updatedDatetime;
+    private String createdDate;
+    private String updatedDate;
     private List<FileDTO> counselorQualificationsFiles;
+    private String counselorLicenseName;
 }

@@ -21,5 +21,7 @@ public interface AdminService {
     public List<CommentDTO> commentsAllByKeyword(String keyword);
 //    상담사 회원 조회
     public CounselorCriteriaDTO findCounselorMembers(int page,String keyword);
+//    상담사 자격 승인 여부
+    public CounselorCriteriaDTO findCounselorQualifications(int page,String keyword);
 
 }
