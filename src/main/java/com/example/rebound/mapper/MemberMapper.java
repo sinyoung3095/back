@@ -45,7 +45,7 @@ public interface MemberMapper {
     //    구독 회원 전체 수 조회
     public int selectSubscribeAllCount(String keyword);
     //    수정
-    public void updateMember(Member member);
+    public void updateMemberName(MemberDTO memberDTO);
     //    삭제
     public void deleteMemberById(int memberId);
 }
