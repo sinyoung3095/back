@@ -3,6 +3,7 @@ package com.example.rebound.repository;
 import com.example.rebound.dto.*;
 import com.example.rebound.mapper.MainPageMapper;
 import com.example.rebound.util.PostCriteria;
+import com.example.rebound.util.Search;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

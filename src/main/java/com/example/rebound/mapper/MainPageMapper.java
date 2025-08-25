@@ -2,6 +2,7 @@ package com.example.rebound.mapper;
 
 import com.example.rebound.dto.*;
 import com.example.rebound.util.PostCriteria;
+import com.example.rebound.util.Search;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -24,6 +25,6 @@ public interface MainPageMapper {
     public int selectCountAllSearchMainPage (String keyword);
 
 //    검색
-    public List<PostDTO> selectPostFromMainPage (@Param("postCriteriaDTO") PostCriteriaDTO postCriteriaDTO, @Param("keyword") String keyword);
+    public List<PostDTO> selectPostFromMainPage (@Param("postCriteriaDTO") PostCriteriaDTO postCriteriaDTO, String keyword);
 
 }

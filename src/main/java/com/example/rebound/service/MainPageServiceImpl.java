@@ -5,6 +5,7 @@ import com.example.rebound.repository.MainPageDAO;
 import com.example.rebound.repository.PostDAO;
 import com.example.rebound.util.PostCriteria;
 import com.example.rebound.util.PostDateUtils;
+import com.example.rebound.util.Search;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,6 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class MainPageServiceImpl implements MainPageService {
     public final MainPageDAO mainpageDAO;
-    private final PostDAO postDAO;
 
     //    게시글 목록 미리보기
     @Override
@@ -48,7 +48,6 @@ public class MainPageServiceImpl implements MainPageService {
 
         postCriteria.setHasMore(posts.size() > postCriteria.getRowCount());
 
-//        11개 가져왔으면, 마지막 1개 삭제
         if(postCriteria.isHasMore()){
             posts.remove(posts.size() - 1);
         }

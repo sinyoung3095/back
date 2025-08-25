@@ -2,6 +2,7 @@ package com.example.rebound.mapper;
 
 import com.example.rebound.dto.PostCriteriaDTO;
 import com.example.rebound.util.PostCriteria;
+import com.example.rebound.util.Search;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -3,6 +3,7 @@ package com.example.rebound.service;
 
 import com.example.rebound.dto.*;
 import com.example.rebound.util.PostCriteria;
+import com.example.rebound.util.Search;
 
 import java.util.List;
 import java.util.Optional;

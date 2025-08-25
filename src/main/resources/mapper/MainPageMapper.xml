@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.rebound.mapper.MainPageMapper">
     <select id="postPreview">
-        select id, post_content, post_title, post_views, created_date, updated_date, member_id
+        select id, post_content, post_title, created_date, updated_date, member_id
         from tbl_post
         order by id desc
         limit 6 offset 0
@@ -23,26 +23,32 @@
     </select>
 
     <select id="selectCountAllSearchMainPage">
-        select count(*) from tbl_post
-        where post_status = 'active'
+        select count(*)
+        from tbl_member m join tbl_post p
+        on m.id = p.member_id and post_status = 'active'
         <if test="keyword != null">
             and (
-            post_title like concat('%', #{keyword}, '%') or
-            post_content like concat('%', #{keyword}, '%')
+                p.post_title like concat('%', #{keyword}, '%') or
+                p.post_content like concat('%', #{keyword}, '%') or
+                m.member_name like concat('%', #{keyword}, '%')
             )
         </if>
     </select>
 
     <select id="selectPostFromMainPage">
-        select id, post_content, post_title, post_views, created_date, updated_date, member_id, post_status, category_id
-        from tbl_post
-        where post_status = 'active'
+        select m.member_name, p.id, p.post_content, p.post_title, p.created_date, p.updated_date, p.member_id, p.post_status, p.category_id
+        from tbl_member m
+            join tbl_post p on m.id = p.member_id
+            join tbl_category c on p.category_id = c.id
+        where p.post_status = 'active'
         <if test="keyword != null">
             and (
-            post_title like concat('%', #{keyword}, '%') or
-            post_content like concat('%', #{keyword}, '%')
+                p.post_title like concat('%', #{keyword}, '%') or
+                p.post_content like concat('%', #{keyword}, '%') or
+                m.member_name like concat('%', #{keyword}, '%')
             )
         </if>
-        order by id desc
+        order by p.id desc
+        limit #{criteria.count} offset #{criteria.offset}
     </select>
 </mapper>
