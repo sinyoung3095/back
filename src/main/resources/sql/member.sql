@@ -22,3 +22,14 @@ create table tbl_member
     constraint member_phone_number
         unique (member_phone_number)
 );
+
+select * from tbl_member;
+
+insert into tbl_member (member_name, member_email, member_phone_number, member_password, member_mentor)
+values ('멘토회원1', 'rebound04@gmail.com', '01044449999',
+        '1234', 'mentor');
+
+
+update tbl_member
+set member_common='none'
+where id='3';

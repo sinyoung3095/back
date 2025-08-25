@@ -20,7 +20,7 @@ public class MemberDTO {
     private String memberPassword;
     private int memberSuggestionCount;
     private String kakaoProfileUrl;
-    private String mentor;
+    private String memberMentor;
     private String memberStatus;
     private String memberCommon;
     private String createdDate;
