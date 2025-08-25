@@ -1,4 +1,3 @@
-
 create table tbl_comment_alarm
 (
     id           bigint unsigned auto_increment
@@ -13,3 +12,4 @@ create table tbl_comment_alarm
         foreign key (member_id) references tbl_member (id)
 );
 
+select * from tbl_comment_alarm;
