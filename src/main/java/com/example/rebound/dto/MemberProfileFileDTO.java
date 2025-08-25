@@ -10,6 +10,6 @@ import org.springframework.stereotype.Component;
 public class MemberProfileFileDTO {
     private Long id;
     private Long memberId;
-    private String createdDatetime;
-    private String updatedDatetime;
+    private String createdDate;
+    private String updatedDate;
 }
