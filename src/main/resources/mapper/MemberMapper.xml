@@ -86,6 +86,10 @@
         select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_mentor, member_status, member_common, created_date, updated_date from tbl_member
         where member_common='none' and member_status='active' and member_email=#{memberEmail} and member_password=#{memberPassword}
     </select>
+    <select id="selectMemberById">
+        SELECT * FROM tbl_member
+        WHERE id = #{id}
+    </select>
 <!--    카카오 중복조회-->
     <select id="selectMemberByKakaoEmail">
         select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_mentor, member_status, member_common, created_date, updated_date

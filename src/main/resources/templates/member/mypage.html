@@ -16,7 +16,9 @@
             <div class="main-3">
                 <a class="main-5" href="">
                     <div id="imgContainer">
-                        <img th:src="@{/api/display(filePath=${file.filePath}, fileName=${file.fileName})}">
+                        <img th:if="${file != null}"
+                             th:src="@{/api/display(filePath=${file.filePath}, fileName=${file.fileName})}"
+                             class="main-16">
                     </div>
 
                     <div class="main-7">
@@ -108,5 +110,9 @@
 <script th:inline="javascript">
     const memberid = [[${session.member.id}]];
 </script>
+<script th:inline="javascript">
+    const file = /*[[${file}]]*/ null;
+</script>
+
 <script src="/js/member/mypage/event.js"></script>
 </html>

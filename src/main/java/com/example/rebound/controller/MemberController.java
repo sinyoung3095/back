@@ -1,10 +1,9 @@
 package com.example.rebound.controller;
 
 import com.example.rebound.common.exception.LoginFailException;
-import com.example.rebound.dto.CounselorDTO;
-import com.example.rebound.dto.CounselorQualificationsFileDTO;
-import com.example.rebound.dto.MemberDTO;
-import com.example.rebound.dto.PaymentDTO;
+import com.example.rebound.dto.*;
+import com.example.rebound.repository.FileDAO;
+import com.example.rebound.service.FileService;
 import com.example.rebound.service.MemberService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -18,6 +17,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/member/**")
@@ -26,6 +26,9 @@ public class MemberController {
     private final MemberService memberService;
     private final MemberDTO memberDTO;
     private final HttpSession session;
+    private final FileDTO fileDTO;
+    private final FileDAO fileDAO;
+    private final FileService fileService;
 
 //    회원가입 페이지로 이동
     @GetMapping("join")
@@ -97,9 +100,12 @@ public class MemberController {
 //    로그인 완료
     @PostMapping("login")
     public RedirectView Login(MemberDTO memberDTO) {
-        memberService.login(memberDTO).orElseThrow(LoginFailException::new);
-        session.setAttribute("member", memberDTO);
-        return new RedirectView("/member/mypage"); }
+        MemberDTO member = memberService.login(memberDTO).orElseThrow(LoginFailException::new);
+        session.setAttribute("member", member);  // 여기서 DB에서 조회한 member 저장
+        System.out.println(member.getMemberName());  // 제대로 나올 것
+        return new RedirectView("/member/mypage");
+    }
+
 
 
     @GetMapping("find-email")
@@ -118,10 +124,35 @@ public class MemberController {
 
 
     @GetMapping("mypage")
-    public String goToMyPage(Long id, Model model) {
-        model.addAttribute("member", memberService.showFileById(id));
+    public String goToMyPage(HttpSession session, Model model) {
+        MemberDTO member = (MemberDTO) session.getAttribute("member");
+        if (member == null) {
+            return "redirect:/member/login";
+        }
+
+        Optional<MemberDTO> fullMemberOpt = memberService.showFileById(member.getId());
+
+        if (fullMemberOpt.isEmpty()) {
+            model.addAttribute("member", member);
+            return "member/mypage";
+        }
+
+        MemberDTO fullMember = fullMemberOpt.get();
+        model.addAttribute("file", fullMember.getFile().orElse(null));
+        model.addAttribute("member", fullMember);
+
+        System.out.println(fileDAO.findFileByMemberId(fullMember.getId()));
+        System.out.println(fileService.findFileByMemberId(fullMember.getId()));
+        System.out.println("파일 정보: " + fullMember.getFile());
+
         return "member/mypage";
     }
+
+
+
+
+
+
     @GetMapping("mypage/info")
     public String goToMyPageInfo(){
         return "member/mypage-info";
