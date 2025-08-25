@@ -14,6 +14,6 @@ import org.springframework.stereotype.Component;
 public class CategoryDTO {
     private Long id;
     private String categoryName;
-    private String createdDatetime;
-    private String updatedDatetime;
+    private String createdDate;
+    private String updatedDate;
 }
