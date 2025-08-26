@@ -19,8 +19,16 @@
             <div class="main-3">
                 <a class="main-5" href="/member/mypage/set">
                     <div id="imgContainer">
-                        <img th:src="@{/api/display(filePath=${file.filePath}, fileName=${file.fileName})}" class="profile-img">
+                        <img th:if="${file != null}"
+                             th:src="@{/api/display(filePath=${file.filePath}, fileName=${file.fileName})}"
+                             class="profile-img">
+
+                        <img th:if="${file == null}"
+                             th:src="@{/images/member/no-profile.png}"
+                             class="profile-img">
                     </div>
+
+
 
                     <div class="main-7">
                         <div class="main-8">

@@ -13,4 +13,9 @@
         join tbl_file f
         where f.id=mp.id and mp.member_id=#{id}
     </select>
+<!--    파일 삭제-->
+    <delete id="deleteProfileById">
+        delete from tbl_member_profile_file
+        where id=#{id}
+    </delete>
 </mapper>

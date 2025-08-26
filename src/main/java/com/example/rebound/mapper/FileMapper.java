@@ -13,4 +13,6 @@ public interface FileMapper {
 //    조회
     public Optional<FileDTO> selectFileById(Long id);
     Optional<FileDTO> selectFileByMemberId(Long memberId);
+//    삭제
+    public void deleteFileById(Long id);
 }

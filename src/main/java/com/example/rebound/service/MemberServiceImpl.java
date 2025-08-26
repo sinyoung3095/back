@@ -117,5 +117,17 @@ public class MemberServiceImpl implements MemberService {
         memberDAO.memberRename(memberDTO);
     }
 
+    @Override
+    public void deleteProfile(Long id){
+        memberProfileFileDAO.deleteMemberProfileById(id);
+        fileDAO.deleteFile(id);
+        Optional<FileDTO> deleteFile=memberProfileFileDAO.findMemberProfileFileById(id);
+        String deleteFilePath=deleteFile.get().getFilePath();
+        String deleteFileName=deleteFile.get().getFileName();
+        File file = new File("C:/file/" + deleteFilePath, deleteFileName);
+        if (file.exists()) {
+            file.delete();
+        }
+    }
 
 }
