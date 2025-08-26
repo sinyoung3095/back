@@ -36,24 +36,24 @@ public class MainPageServiceImpl implements MainPageService {
         return mainpageDAO.noticePreview();
     }
 
-//    검색
-    @Override
-    public PostCriteriaDTO selectPostFromMainPage (int page, String keyword) {
-        PostCriteriaDTO postCriteriaDTO = new PostCriteriaDTO();
-        PostCriteria postCriteria = new PostCriteria(page, mainpageDAO.selectCountAll(keyword));
-        List<PostDTO> posts = mainpageDAO.selectPostFromMainPage(postCriteria, keyword);
-        posts.forEach((post) -> {
-            post.setRelativeDate(PostDateUtils.toRelativeTime(post.getCreatedDate()));
-        });
-
-        postCriteria.setHasMore(posts.size() > postCriteria.getRowCount());
-
-        if(postCriteria.isHasMore()){
-            posts.remove(posts.size() - 1);
-        }
-
-        postCriteriaDTO.setPosts(posts);
-        postCriteriaDTO.setPostCriteria(postCriteria);
-        return postCriteriaDTO;
-    }
+////    검색
+//    @Override
+//    public PostCriteriaDTO selectPostFromMainPage (int page, String keyword) {
+//        PostCriteriaDTO postCriteriaDTO = new PostCriteriaDTO();
+//        PostCriteria postCriteria = new PostCriteria(page, mainpageDAO.selectCountAll(keyword));
+//        List<PostDTO> posts = mainpageDAO.selectPostFromMainPage(postCriteria, keyword);
+//        posts.forEach((post) -> {
+//            post.setRelativeDate(PostDateUtils.toRelativeTime(post.getCreatedDate()));
+//        });
+//
+//        postCriteria.setHasMore(posts.size() > postCriteria.getRowCount());
+//
+//        if(postCriteria.isHasMore()){
+//            posts.remove(posts.size() - 1);
+//        }
+//
+//        postCriteriaDTO.setPosts(posts);
+//        postCriteriaDTO.setPostCriteria(postCriteria);
+//        return postCriteriaDTO;
+//    }
 }

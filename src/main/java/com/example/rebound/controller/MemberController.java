@@ -7,6 +7,7 @@ import com.example.rebound.service.FileService;
 import com.example.rebound.service.MemberService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,7 @@ import java.util.Optional;
 @Controller
 @RequestMapping("/member/**")
 @RequiredArgsConstructor
+@Slf4j
 public class MemberController {
     private final MemberService memberService;
     private final MemberDTO memberDTO;

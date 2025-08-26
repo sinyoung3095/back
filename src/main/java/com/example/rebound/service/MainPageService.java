@@ -20,6 +20,6 @@ public interface MainPageService {
 //    공지사항 미리보기
     public List<NoticeDTO> noticePreview ();
 
-//    검색(메인페이지 → 커뮤니티 목록)
-    public PostCriteriaDTO selectPostFromMainPage (int page, String keyword);
+////    검색(메인페이지 → 커뮤니티 목록)
+//    public PostCriteriaDTO selectPostFromMainPage (int page, String keyword);
 }
