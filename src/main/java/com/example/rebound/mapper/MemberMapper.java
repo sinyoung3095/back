@@ -48,4 +48,6 @@ public interface MemberMapper {
     public void updateMemberName(MemberDTO memberDTO);
     //    삭제
     public void deleteMemberById(int memberId);
+    //    회원 비밀번호 변경
+    public void updateMemberPassword(@Param("memberPassword") String memberPassword, @Param("memberEmail") String memberEmail);
 }
