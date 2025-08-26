@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Slf4j
-@RequestMapping("/api/likes")
+@RequestMapping("/api/likes/**")
 @RequiredArgsConstructor
 public class LikeController {
     private final LikeService likeService;
@@ -22,10 +22,10 @@ public class LikeController {
     }
 
 //    추천 취소
-    @DeleteMapping
-    public ResponseEntity<?> removeLike(@RequestBody LikeDTO likeDTO) {
-        likeService.removeLike(likeDTO.getCommentId(), likeDTO.getMemberId());
-        return ResponseEntity.ok(likeDTO);
+    @DeleteMapping("/{commentId}")
+    public ResponseEntity<?> removeLike(@PathVariable Long commentId, @RequestParam Long memberId) {
+        likeService.removeLike(commentId, memberId);
+        return ResponseEntity.ok().build();
     }
 
     // 추천 갯수 조회
@@ -37,7 +37,6 @@ public class LikeController {
     // 추천 여부 확인
     @GetMapping("/{commentId}/check/{memberId}")
     public ResponseEntity<?> checkLike(@PathVariable Long commentId, @PathVariable Long memberId) {
-        boolean liked = likeService.checkedLike(commentId, memberId);
-        return ResponseEntity.ok(liked);
+        return ResponseEntity.ok(likeService.checkedLike(commentId, memberId));
     }
 }

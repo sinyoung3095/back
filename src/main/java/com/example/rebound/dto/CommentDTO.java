@@ -14,6 +14,7 @@ public class CommentDTO {
     private Long id;
     private String commentContent;
     private int likesCount;
+    private boolean checkedLike;
     private Status commentStatus;
     private Long memberId;
     private String memberName;
