@@ -1314,30 +1314,30 @@ textarea {
 }
 
 .post-comment-wrapper .comment-information .user-info .send-request-button {
+    width: 4rem;
     padding: .3125rem .5rem;
     margin-left: 2.25rem;
-    color: #a69fb9;
-    background-color: #ffffff;
-    border: 0.5px solid #e7e6eb;
+    color: #693bf2;
+    background-color: #e3deff;
+    border: 0;
     border-radius: 6px;
 }
 
-.send-request-button:hover {
+.post-comment-wrapper .comment-information .user-info .send-request-button:hover {
     background-color: #693bf2;
     color: #ffffff;
     cursor: pointer;
 }
 
-.send-request-button.liked {
-    background-color: initial;
-    color: initial;
-    cursor: default;
-}
-
-.send-request-button.liked:hover {
+.post-comment-wrapper .comment-information .user-info .send-request-button.liked {
     background-color: #693bf2;
     color: #ffffff;
     cursor: pointer;
+}
+
+.post-comment-wrapper .comment-information .user-info .send-request-button.liked:hover {
+    background-color: #693bf2;
+    color: #ffffff;
 }
 
 
