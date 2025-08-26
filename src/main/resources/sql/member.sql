@@ -24,5 +24,3 @@ create table tbl_member
 );
 
 select * from tbl_member;
-
-drop table tbl_member;

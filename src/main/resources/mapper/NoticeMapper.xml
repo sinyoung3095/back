@@ -10,7 +10,7 @@
         select count(*) from tbl_notice
     </select>
     <select id="selectNoticeById">
-        select * from notice_view
+        select * from tbl_notice
         where id = #{id}
     </select>
 </mapper>

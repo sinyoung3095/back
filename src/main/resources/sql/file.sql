@@ -11,5 +11,7 @@ create table tbl_file
     updated_date datetime default CURRENT_TIMESTAMP null
 );
 
+alter table tbl_file  file_path file_path null;
+
 select * from tbl_file;
 

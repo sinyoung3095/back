@@ -743,6 +743,7 @@ table.table tr td, table.table tr>th {
 .notice-index table.table-notice td.td-title {
     font-size: 15px;
     width: 600px;
+    cursor: pointer;
 }
 .paging{
     cursor: pointer;
