@@ -33,6 +33,6 @@ public class LikeServiceImpl implements LikeService {
 
     @Override
     public boolean checkedLike(Long commentId, Long memberId) {
-        return likeDAO.exists(commentId, memberId);
+        return likeDAO.isexist(commentId, memberId);
     }
 }
