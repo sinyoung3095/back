@@ -8,14 +8,7 @@
     <link rel="stylesheet" href="/css/main-page/header.css">
     <link rel="icon" href="/images/favicon.png">
     <link rel="stylesheet" href="/font/didactgothic.woff2">
-    <link rel="stylesheet" href="/font/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
-    <link rel="stylesheet" href="/font/roboto-cyrillic-700-normal-d010f1f324e111a22e53.woff2">
-    <link rel="stylesheet" href="/font/roboto-cyrillic-ext-700-normal-be4d02458ce53887dc37.woff2">
-    <link rel="stylesheet" href="/font/roboto-greek-700-normal-50e795c1345353b0e996.woff2">
-    <link rel="stylesheet" href="/font/roboto-greek-ext-700-normal-bd9854c751441ccc1a70.woff2">
-    <link rel="stylesheet" href="/font/roboto-latin-700-normal-227c93190fe7f82de3f8.woff2">
-    <link rel="stylesheet" href="/font/roboto-latin-ext-700-normal-ed67ad54b1a8f5d21150.woff2">
-    <link rel="stylesheet" href="/font/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
+
 </head>
 <body>
         <header id="app-header" class="global-header hide-border-bottom">
@@ -290,7 +283,8 @@
                 </div>
                 <div class="usermenu-dropdown mydiv">
                         <div data-name="user-info">
-                            <h4 data-name="name">홍길동 고객님</h4><!---->
+                            <span th:text="${session.member.memberName}"></span>
+                            <span data-name="name"> 고객님</span>
                         </div>
                         <ul data-name="usermenu-control">
                             <li class="row" style="display: none;">
@@ -300,14 +294,16 @@
 <!--                                <div class="col">받은 견적</div>-->
 <!--                            </li>-->
                             <li class="row">
-                                <div class="col">마이페이지</div>
+                                <a href="/member/mypage">
+                                    <div class="col">마이페이지</div>
+                                </a>
                             </li>
                         </ul>
-                        <div data-name="user-type-control">
-                            <button type="button" class="btn btn-secondary btn-sm">
-                                <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='13'%20height='11'%3e%3cg%20fill='none'%20fill-rule='evenodd'%20stroke='%23323232'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-width='1.2'%3e%3cpath%20d='M12%201.5v3H9m-8%205v-3h3'/%3e%3cpath%20d='M2.255%204A4.5%204.5%200%200%201%209.68%202.32L12%204.5m-11%202l2.32%202.18A4.5%204.5%200%200%200%2010.745%207'/%3e%3c/g%3e%3c/svg%3e">고수전환
-                            </button>
-                        </div>
+<!--                        <div data-name="user-type-control">-->
+<!--                            <button type="button" class="btn btn-secondary btn-sm">-->
+<!--                                <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='13'%20height='11'%3e%3cg%20fill='none'%20fill-rule='evenodd'%20stroke='%23323232'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-width='1.2'%3e%3cpath%20d='M12%201.5v3H9m-8%205v-3h3'/%3e%3cpath%20d='M2.255%204A4.5%204.5%200%200%201%209.68%202.32L12%204.5m-11%202l2.32%202.18A4.5%204.5%200%200%200%2010.745%207'/%3e%3c/g%3e%3c/svg%3e">고수전환-->
+<!--                            </button>-->
+<!--                        </div>-->
                         <div class="logout">
                             <button type="button" class="btn btn-secondary btn-sm">로그아웃</button>
                         </div>

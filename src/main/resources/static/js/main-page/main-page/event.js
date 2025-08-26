@@ -1,20 +1,20 @@
 // 검색창
-const searchInput = document.querySelector("#input-group input[type=text]");
-const inputDeleteButton = document.querySelector("#input-delete img");
-inputDeleteButton.style.display = "none";
-
-searchInput.addEventListener("keyup", (e) => {
-    if (!searchInput.value) {
-        inputDeleteButton.style.display = "none";
-    } else {
-        inputDeleteButton.style.display = "block";
-    }
-});
-
-inputDeleteButton.addEventListener("click", (e) => {
-    searchInput.value = "";
-    inputDeleteButton.style.display = "none";
-});
+// const searchInput = document.querySelector("#input-group input[type=text]");
+// const inputDeleteButton = document.querySelector("#input-delete img");
+// inputDeleteButton.style.display = "none";
+//
+// searchInput.addEventListener("keyup", (e) => {
+//     if (!searchInput.value) {
+//         inputDeleteButton.style.display = "none";
+//     } else {
+//         inputDeleteButton.style.display = "block";
+//     }
+// });
+//
+// inputDeleteButton.addEventListener("click", (e) => {
+//     searchInput.value = "";
+//     inputDeleteButton.style.display = "none";
+// });
 
 // 공지사항
 const banner = document.querySelector("div.slick-track");
@@ -182,6 +182,7 @@ storyButtons.forEach((storyButton) => {
 });
 updateStoryButtonVisibility();
 
+// 상담사 가입 소개란
 let joinButtonCheck = true;
 let joincount = 0;
 const joinslick = document.querySelector("div.join-counselor-track");
@@ -238,8 +239,8 @@ joinButtons.forEach((joinButton) => {
 
 updateJoinButtonVisibility();
 
+// 공지 오토 슬라이드
 // 슬라이드 개수 가져오기
-// 상담사 가입
 const slideCount = joinslick.querySelectorAll(".slick-slide").length;
 
 // slick-track의 width를 슬라이드 수 × 641px로 설정

@@ -26,11 +26,6 @@ public class MainPageController {
         return "/main-page/page";
     }
 
-//    @GetMapping("community-list/community-posts/{page}")
-//    public PostCriteriaDTO selectPostFromMainPage(@PathVariable("page") int page, @RequestParam(required = false) String keyword) {
-//        log.info(keyword);
-//        return mainpageService.selectPostFromMainPage(page, keyword);
-//    }
 
     @GetMapping("today-message")
     public String goToTodayMessage() {
