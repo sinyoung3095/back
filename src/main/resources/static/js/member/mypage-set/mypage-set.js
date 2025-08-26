@@ -42,6 +42,9 @@ const editButton = document.getElementById("button");
 const cancelButton = document.getElementById("cancle1");
 const input = document.getElementById("insert1");
 const saveButton = subForm.querySelector("button[type='submit']");
+const noProfileButton=document.querySelector(".photo-9");
+const updateButton=document.querySelector(".photo-9");
+const deleteButton=document.querySelector(".photo-10");
 
 subForm.style.display = "none";
 
@@ -63,3 +66,7 @@ input.addEventListener("input", function () {
             saveButton.disabled = true;
     }
 });
+
+noProfileButton.addEventListener("click", async ()=>{
+    await myPageSetService.profileDelete(fileId);
+})

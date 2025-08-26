@@ -25,4 +25,8 @@ public class MemberProfileFileDAO {
     public Optional<FileDTO> findMemberProfileFileById(Long id) {
         return memberProfileFileMapper.findMemberProfileFileById(id);
     }
+//    삭제
+    public void deleteMemberProfileById(Long id) {
+        memberProfileFileMapper.deleteMemberProfileById(id);
+    }
 }
