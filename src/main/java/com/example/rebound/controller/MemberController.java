@@ -23,7 +23,6 @@ import java.util.Optional;
 @Controller
 @RequestMapping("/member/**")
 @RequiredArgsConstructor
-@Slf4j
 public class MemberController {
     private final MemberService memberService;
     private final MemberDTO memberDTO;
