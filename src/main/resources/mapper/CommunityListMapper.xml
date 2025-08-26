@@ -10,8 +10,8 @@
         select m.member_name, c.category_name, p.category_id, p.id, p.post_title, p.post_content, p.post_read_count,
                p.post_status, p.member_id, p.created_date, p.updated_date
         from tbl_member m
-                 join tbl_post p on m.id = p.member_id
-                 join tbl_category c on p.category_id = c.id
+                join tbl_post p on m.id = p.member_id
+                join tbl_category c on p.category_id = c.id
         where p.id = #{id} and p.post_status = 'active'
     </select>
 

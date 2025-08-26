@@ -26,7 +26,7 @@ public class LikeDAO {
     }
 
     // 추천 여부 확인
-    public boolean exists(Long commentId, Long memberId) {
+    public boolean isexist(Long commentId, Long memberId) {
         return likeMapper.checkLiked(commentId, memberId);
     }
 
