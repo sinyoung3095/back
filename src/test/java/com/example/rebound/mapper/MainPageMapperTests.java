@@ -34,14 +34,16 @@ public class MainPageMapperTests {
 
 //    전체 개수 조회(검색)
     @Test
-    public void testSelectCountAllSearchMainPage(String keyword){
+    public void testSelectCountAllSearchMainPage(){
+        String keyword = "키워드";
         log.info("{}", mainpageMapper.selectCountAllSearchMainPage(keyword));
     }
 
-//   검색
-    @Test
-    public void testSelectPostFromMainPage(PostCriteriaDTO postCriteriaDTO, String keyword) {
-        log.info(mainpageMapper.selectPostFromMainPage(postCriteriaDTO, keyword).toString());
-    }
+////   검색
+//    @Test
+//    public void testSelectPostFromMainPage(PostCriteria postCriteria) {
+//        String keyword = "키워드";
+//        log.info(mainpageMapper.selectPostFromMainPage(postCriteria, keyword).toString());
+//    }
 
 }

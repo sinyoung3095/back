@@ -98,11 +98,11 @@ public class MemberController {
 
 //    로그인 완료
     @PostMapping("login")
-    public String Login(MemberDTO memberDTO, Model model) {
+    public RedirectView Login(MemberDTO memberDTO) {
         MemberDTO member = memberService.login(memberDTO).orElseThrow(LoginFailException::new);
         session.setAttribute("member", member);
         System.out.println(member.getMemberName());
-        return "redirect:/member/mypage";
+        return new RedirectView("/member/mypage");
     }
 
 
@@ -147,19 +147,16 @@ public class MemberController {
 
         if (fullMemberOpt.isEmpty()) {
             model.addAttribute("member", member);
-            model.addAttribute("file", null);
             return "member/mypage";
         }
-        MemberDTO fullMember = fullMemberOpt.get();
         if (fullMemberOpt.isPresent()) {
+            MemberDTO fullMember = fullMemberOpt.get();
             model.addAttribute("member", fullMember);
             fullMember.getFile().ifPresent(file -> {
                 model.addAttribute("file", file);
 //                System.out.println("filePath: " + file.getFilePath());
 //                System.out.println("fileName: " + file.getFileName());
             });
-        } else {
-            model.addAttribute("file", null);
         }
 
         return "member/mypage";
