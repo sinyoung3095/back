@@ -417,6 +417,17 @@ if (!member || member.memberMentor == null || member.memberMentor === "none") {
             </div>
         `;
     });
+
+    text += `
+        <div tabindex="-1" data-index="0" class="slick-slide slick-active slick-current" style="outline: none; width: 247px;">
+                <div>
+                    <a style="width: 100%; display: inline-block; position: relative">
+                        <img class="service-image" src="/images/goodWords/memo04.jpg" style="border: none;">
+                        <span class="service-text" style="font-size: 16px; font-weight: 500; text-align: left">리바운드를 구독하고 <br> 더 많은 서비스를 <br> 이용해 보세요!</span>
+                    </a>
+                </div>
+            </div>
+    `;
     goodTrack01.innerHTML = text;
 }
 
