@@ -195,7 +195,7 @@
     </div>
 </body>
 <script th:inline="javascript">
-    const memberId = 1;
+    const memberId = [[${session.member.id}]];
     const post = {
         id: [[${post.id}]],
         memberId: [[${post.memberId}]]
