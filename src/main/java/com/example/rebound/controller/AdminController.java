@@ -2,6 +2,7 @@ package com.example.rebound.controller;
 
 
 import com.example.rebound.dto.MemberDTO;
+import com.example.rebound.repository.NoticeDAO;
 import com.example.rebound.service.AdminService;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
@@ -28,6 +29,7 @@ public class AdminController {
                                  HttpServletRequest request,
                                  MemberDTO memberDTO,
                                  Model model){
+        session.removeAttribute("member");
         memberDTO.setRemember(remember);
         memberDTO.setMemberEmail(rememberedEmail);
         model.addAttribute("memberDTO", memberDTO);
@@ -75,7 +77,10 @@ public class AdminController {
     }
 //    관리자 공지사항 상세 이동
     @GetMapping("notice-detail")
-    public String goToNoticeDetail(){
+    public String goToNoticeDetail(int id, Model model){
+        System.out.println(adminService.noticeDetail(id));
+        model.addAttribute("notice",adminService.noticeDetail(id));
+        System.out.println(model);
         return "/admin/notice-detail";
     }
 //    상담하기 목록 이동

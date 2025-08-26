@@ -742,8 +742,11 @@ table.table tr td, table.table tr>th {
 
 .notice-index table.table-notice td.td-title {
     font-size: 15px;
+    width: 600px;
 }
-
+.paging{
+    cursor: pointer;
+}
 /* 공지사항 페이지 번호 */
 .rebound-pagination-wrapper {
     align-items: center;

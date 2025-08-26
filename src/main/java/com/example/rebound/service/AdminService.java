@@ -23,5 +23,9 @@ public interface AdminService {
     public CounselorCriteriaDTO findCounselorMembers(int page,String keyword);
 //    상담사 자격 승인 여부
     public CounselorCriteriaDTO findCounselorQualifications(int page,String keyword);
+//    공지사항 리스트
+    public NoticeCriteriaDTO findNoticeAll(int page);
+//    공지사항 상세 조회
+    public NoticeDTO noticeDetail(int id);
 
 }
