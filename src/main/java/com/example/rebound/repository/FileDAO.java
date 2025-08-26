@@ -16,4 +16,8 @@ public class FileDAO {
 //    조회
     public Optional<FileDTO> findFileById(Long id) {return fileMapper.selectFileById(id);}
     public Optional<FileDTO> findFileByMemberId(Long memberId) {return fileMapper.selectFileByMemberId(memberId);}
+//    삭제
+    public void deleteFile(Long id){
+        fileMapper.deleteFileById(id);
+    }
 }

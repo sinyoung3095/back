@@ -29,5 +29,6 @@ public interface MemberService {
     }
 //    회원 이름 수정
     public void memberRename(MemberDTO memberDTO);
-    
+//    회원 프로필 사진 삭제
+    public void deleteProfile(Long id);
 }

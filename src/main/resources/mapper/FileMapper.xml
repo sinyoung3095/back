@@ -18,5 +18,9 @@
         join tbl_file f
         WHERE member_id = #{memberId} and f.id=mpf.id
     </select>
-
+<!--    파일 삭제-->
+    <delete id="deleteFileById">
+        delete from tbl_file
+        where id=#{id}
+    </delete>
 </mapper>

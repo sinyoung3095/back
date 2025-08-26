@@ -8,7 +8,10 @@ import java.util.Optional;
 
 @Mapper
 public interface MemberProfileFileMapper {
+//    추가
     public void insertMemberProfileFile(MemberProfileFileDTO memberProfileFileDTO);
 //    조회
     public Optional<FileDTO> findMemberProfileFileById(Long id);
+//    삭제
+    public void deleteMemberProfileById(Long id);
 }
