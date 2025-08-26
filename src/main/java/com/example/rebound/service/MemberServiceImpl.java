@@ -130,4 +130,9 @@ public class MemberServiceImpl implements MemberService {
         }
     }
 
+    @Override
+    public void updateMemberPassword(String memberPassword, String memberEmail) {
+        memberDAO.updateMemberPassword(memberPassword, memberEmail);
+    }
+
 }

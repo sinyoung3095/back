@@ -31,4 +31,6 @@ public interface MemberService {
     public void memberRename(MemberDTO memberDTO);
 //    회원 프로필 사진 삭제
     public void deleteProfile(Long id);
+//    회원 비밀번호 변경
+    public void updateMemberPassword(String memberPassword, String memberEmail);
 }
