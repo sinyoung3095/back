@@ -51,14 +51,20 @@
     </update>
     
     <update id="increaseLikesCount">
-        update tbl_comment
-        set likes_count = likes_count + 1
-        where id = #{id}
+        update tbl_comment c
+        join tbl_member m on c.member_id = m.id
+        set c.likes_count = c.likes_count + 1,
+            m.member_suggestion_count = m.member_suggestion_count + 1
+        where c.id = #{id}
     </update>
 
     <update id="decreaseLikesCount">
-        update tbl_comment
-        set likes_count = likes_count - 1
-        where id = #{id} and likes_count > 0
+        update tbl_comment c
+        join tbl_member m on c.member_id = m.id
+        set c.likes_count = c.likes_count - 1,
+            m.member_suggestion_count = m.member_suggestion_count - 1
+        where c.id = #{id}
+        and c.likes_count > 0
+        and m.member_suggestion_count > 0
     </update>
 </mapper>
