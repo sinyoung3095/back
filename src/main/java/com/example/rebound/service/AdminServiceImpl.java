@@ -1,10 +1,7 @@
 package com.example.rebound.service;
 
 import com.example.rebound.dto.*;
-import com.example.rebound.repository.CommentDAO;
-import com.example.rebound.repository.CounselorDAO;
-import com.example.rebound.repository.MemberDAO;
-import com.example.rebound.repository.PostDAO;
+import com.example.rebound.repository.*;
 import com.example.rebound.util.MemberCriteria;
 import com.example.rebound.util.PostCriteria;
 import lombok.RequiredArgsConstructor;
@@ -22,6 +19,7 @@ public class AdminServiceImpl implements AdminService {
     private final PostDTO postDTO;
     private final CommentDAO commentDAO;
     private final CounselorDAO  counselorDAO;
+    private final NoticeDAO noticeDAO;
 
     @Override
     public MemberDTO checkAdmin(MemberDTO memberDTO) {
@@ -39,6 +37,9 @@ public class AdminServiceImpl implements AdminService {
         List<MemberDTO> members = memberDAO.findGeneralMemberAll(memberCriteria,keyword);
 
         memberCriteria.setHasMore(members.size() > memberCriteria.getRowCount());
+        memberCriteriaDTO.getMembers().forEach((member)->{
+            String[] word = member.getCreatedDate().split(" ");
+            member.setCreatedDate(word[0]);});
 
 
         return memberCriteriaDTO;
@@ -54,6 +55,9 @@ public class AdminServiceImpl implements AdminService {
         List<MemberDTO> members = memberDAO.findMentorMemberAll(memberCriteria,keyword);
 
         memberCriteria.setHasMore(members.size() > memberCriteria.getRowCount());
+        memberCriteriaDTO.getMembers().forEach((member)->{
+            String[] word = member.getCreatedDate().split(" ");
+            member.setCreatedDate(word[0]);});
         return memberCriteriaDTO;
     }
 
@@ -63,25 +67,34 @@ public class AdminServiceImpl implements AdminService {
         MemberCriteria memberCriteria = new MemberCriteria(page,memberDAO.countSubscribeMemberAll(keyword));
         memberCriteriaDTO.setMembers(memberDAO.findSubscribeMemberAll(memberCriteria,keyword));
         memberCriteriaDTO.setMemberCriteria(memberCriteria);
-
         List<MemberDTO> members = memberDAO.findSubscribeMemberAll(memberCriteria,keyword);
-
-
-
         memberCriteria.setHasMore(members.size() > memberCriteria.getRowCount());
+
+        memberCriteriaDTO.getMembers().forEach((member)->{
+            String[] word = member.getCreatedDate().split(" ");
+            member.setCreatedDate(word[0]);});
         return memberCriteriaDTO;
     }
 
     @Override
     public List<PostDTO> postsAllByKeyword(String keyword) {
-
-        return postDAO.findAllByKeyword(keyword);
+        List<PostDTO> posts = postDAO.findAllByKeyword(keyword);
+        posts.forEach((post)->{
+            String[] word = post.getCreatedDate().split(" ");
+            post.setCreatedDate(word[0]);
+        });
+        return posts;
     }
 
     @Override
     public List<CommentDTO> commentsAllByKeyword(String keyword) {
-        System.out.println("서비스:"+keyword);
-        return commentDAO.findAllByKeyword(keyword);
+        List<CommentDTO>  comments = commentDAO.findAllByKeyword(keyword);
+        comments.forEach((comment)->{
+            String[] word = comment.getCreatedDate().split(" ");
+            comment.setCreatedDate(word[0]);
+        });
+
+        return comments;
     }
 
     @Override
@@ -90,12 +103,12 @@ public class AdminServiceImpl implements AdminService {
         MemberCriteria memberCriteria = new MemberCriteria(page,counselorDAO.findCounselorAllCount(keyword));
         counselorCriteriaDTO.setCounselors(counselorDAO.findCounselorAll(memberCriteria,keyword));
         counselorCriteriaDTO.setMemberCriteria(memberCriteria);
-
         List<CounselorDTO> counselors = counselorDAO.findCounselorAll(memberCriteria,keyword);
-
-
-
         memberCriteria.setHasMore(counselors.size() > memberCriteria.getRowCount());
+        counselorCriteriaDTO.getCounselors().forEach((counselor)->{
+            String[] word = counselor.getCreatedDate().split(" ");
+            counselor.setCreatedDate(word[0]);
+        });
         return counselorCriteriaDTO;
     }
 
@@ -112,6 +125,28 @@ public class AdminServiceImpl implements AdminService {
 
         memberCriteria.setHasMore(counselors.size() > memberCriteria.getRowCount());
         return counselorCriteriaDTO;
+    }
+
+    @Override
+    public NoticeCriteriaDTO findNoticeAll(int page) {
+        NoticeCriteriaDTO noticeCriteriaDTO = new NoticeCriteriaDTO();
+        MemberCriteria memberCriteria = new MemberCriteria(page,noticeDAO.findNoticeCount());
+        noticeCriteriaDTO.setNotices(noticeDAO.findNoticeAll(memberCriteria));
+        noticeCriteriaDTO.setMemberCriteria(memberCriteria);
+        List<NoticeDTO> notices = noticeDAO.findNoticeAll(memberCriteria);
+        memberCriteria.setHasMore(notices.size() > memberCriteria.getRowCount());
+        noticeCriteriaDTO.getNotices().forEach((notice)->{
+            String[] word = notice.getCreatedDate().split(" ");
+            notice.setCreatedDate(word[0]);
+        });
+
+        return noticeCriteriaDTO;
+    }
+
+    @Override
+    public NoticeDTO noticeDetail(int id) {
+
+        return noticeDAO.findNoticeById(id);
     }
 
 

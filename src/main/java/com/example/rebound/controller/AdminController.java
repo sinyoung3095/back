@@ -2,18 +2,20 @@ package com.example.rebound.controller;
 
 
 import com.example.rebound.dto.MemberDTO;
+import com.example.rebound.repository.NoticeDAO;
 import com.example.rebound.service.AdminService;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
-
+@Slf4j
 @Controller
 @RequestMapping("/admin/**")
 @RequiredArgsConstructor
@@ -28,6 +30,7 @@ public class AdminController {
                                  HttpServletRequest request,
                                  MemberDTO memberDTO,
                                  Model model){
+        session.removeAttribute("member");
         memberDTO.setRemember(remember);
         memberDTO.setMemberEmail(rememberedEmail);
         model.addAttribute("memberDTO", memberDTO);
@@ -75,7 +78,10 @@ public class AdminController {
     }
 //    관리자 공지사항 상세 이동
     @GetMapping("notice-detail")
-    public String goToNoticeDetail(){
+    public String goToNoticeDetail(int id, Model model){
+        System.out.println(adminService.noticeDetail(id));
+        model.addAttribute("notice",adminService.noticeDetail(id));
+        System.out.println(model);
         return "/admin/notice-detail";
     }
 //    상담하기 목록 이동
