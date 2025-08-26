@@ -21,10 +21,10 @@ public interface MainPageMapper {
 //    공지사항 미리보기
     public List<NoticeDTO> noticePreview ();
 
-//    전체 개수 조회(검색)
-    public int selectCountAllSearchMainPage (String keyword);
-
-//    검색
-    public List<PostDTO> selectPostFromMainPage (@Param("postCriteriaDTO") PostCriteriaDTO postCriteriaDTO, @Param("keyword") String keyword);
+////    전체 개수 조회(검색)
+//    public int selectCountAllSearchMainPage (String keyword);
+//
+////    검색
+//    public List<PostDTO> selectPostFromMainPage (@Param("postCriteria") PostCriteria postCriteria, @Param("keyword") String keyword);
 
 }

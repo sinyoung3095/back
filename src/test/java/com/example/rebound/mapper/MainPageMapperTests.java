@@ -32,16 +32,16 @@ public class MainPageMapperTests {
         log.info(mainpageMapper.noticePreview().toString());
     }
 
-//    전체 개수 조회(검색)
-    @Test
-    public void testSelectCountAllSearchMainPage(String keyword){
-        log.info("{}", mainpageMapper.selectCountAllSearchMainPage(keyword));
-    }
+////    전체 개수 조회(검색)
+//    @Test
+//    public void testSelectCountAllSearchMainPage(String keyword){
+//        log.info("{}", mainpageMapper.selectCountAllSearchMainPage(keyword));
+//    }
 
 //   검색
-    @Test
-    public void testSelectPostFromMainPage(PostCriteriaDTO postCriteriaDTO, String keyword) {
-        log.info(mainpageMapper.selectPostFromMainPage(postCriteriaDTO, keyword).toString());
-    }
+//    @Test
+//    public void testSelectPostFromMainPage(PostCriteria postCriteria, String keyword) {
+//        log.info(mainpageMapper.selectPostFromMainPage(postCriteria, keyword).toString());
+//    }
 
 }
