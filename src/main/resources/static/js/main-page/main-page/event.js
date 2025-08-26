@@ -398,7 +398,7 @@ const firstAreaGood = todayMessages.slice(0, 6);
 const lastAreaGood = todayMessages.slice(6, 12);
 
 // 오늘의 좋은 말(1)
-if (!member || member.memberMentor == null || member.memberMentor === "none") {
+if (!member || member.memberGrade == null || member.memberGrade === "none") {
     good1PrevButton.style.display = "none";
     good1NextButton.style.display = "none";
     goodTrack02Container.style.display = "none";
@@ -432,7 +432,7 @@ if (!member || member.memberMentor == null || member.memberMentor === "none") {
 }
 
 // 오늘의 좋은 말(2)
-else if (member.memberMentor === "mentor" || member.memberMentor === "subscribe") {
+else if (member.memberGrade === "mentor" || member.memberGrade === "subscribe") {
     // 오늘의 좋은 말1
     firstAreaGood.forEach((todayMessage, i) => {
         let todayMessageSrc = `/images/goodWords/memo0${i % 4}.jpg`;

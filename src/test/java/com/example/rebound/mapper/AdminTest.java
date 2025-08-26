@@ -37,7 +37,7 @@ public class AdminTest {
             memberDTO.setMemberName("멘토회원테스트");
             memberDTO.setMemberEmail("test1"+i+"@gmail.com");
             memberDTO.setMemberPassword("123456");
-            memberDTO.setMentor("subscribe");
+            memberDTO.setMemberGrade("subscribe");
             memberDTO.setMemberPhoneNumber("0101"+i+"234"+i);
 
             memberMapper.insertMember(memberDTO);

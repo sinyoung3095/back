@@ -36,8 +36,8 @@ public class MainPageDAO {
     }
 
 //    검색
-    public List<PostDTO> selectPostFromMainPage (PostCriteriaDTO postCriteriaDTO, String keyword) {
-        return mainpageMapper.selectPostFromMainPage(postCriteriaDTO, keyword);
+    public List<PostDTO> selectPostFromMainPage (PostCriteria postCriteria, String keyword) {
+        return mainpageMapper.selectPostFromMainPage(postCriteria, keyword);
     }
 
 }

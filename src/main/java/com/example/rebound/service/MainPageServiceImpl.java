@@ -41,7 +41,7 @@ public class MainPageServiceImpl implements MainPageService {
     public PostCriteriaDTO selectPostFromMainPage (int page, String keyword) {
         PostCriteriaDTO postCriteriaDTO = new PostCriteriaDTO();
         PostCriteria postCriteria = new PostCriteria(page, mainpageDAO.selectCountAll(keyword));
-        List<PostDTO> posts = mainpageDAO.selectPostFromMainPage(postCriteriaDTO, keyword);
+        List<PostDTO> posts = mainpageDAO.selectPostFromMainPage(postCriteria, keyword);
         posts.forEach((post) -> {
             post.setRelativeDate(PostDateUtils.toRelativeTime(post.getCreatedDate()));
         });

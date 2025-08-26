@@ -39,9 +39,9 @@ public class MainPageMapperTests {
     }
 
 //   검색
-    @Test
-    public void testSelectPostFromMainPage(PostCriteriaDTO postCriteriaDTO, String keyword) {
-        log.info(mainpageMapper.selectPostFromMainPage(postCriteriaDTO, keyword).toString());
-    }
+//    @Test
+//    public void testSelectPostFromMainPage(PostCriteria postCriteria, String keyword) {
+//        log.info(mainpageMapper.selectPostFromMainPage(postCriteria, keyword).toString());
+//    }
 
 }

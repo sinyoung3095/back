@@ -49,6 +49,6 @@
             )
         </if>
         order by p.id desc
-        limit #{criteria.count} offset #{criteria.offset}
+        limit #{postCriteriaDTO.postCriteria.count} offset #{postCriteriaDTO.postCriteria.offset}
     </select>
 </mapper>
