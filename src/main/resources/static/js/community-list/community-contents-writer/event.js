@@ -94,16 +94,24 @@ commentWrap.addEventListener("click", async (e) => {
             await commentService.remove(commentId);
             await commentService.getList(post.id, commentLayout.showList);
         }
-
-    } else if(e.target.classList.contains("send-request-button")){
+    } else if(e.target.classList.contains("send-request-button")) {
         commentId = e.target.closest("li").classList[0].replaceAll("id", "");
-        const success = await commentService.like(commentId, memberId);
-        if(success){
-            e.target.disabled = true;
+
+        if(!e.target.classList.contains("liked")) {
+            await commentService.like(commentId, memberId);
+            e.target.classList.add("liked");
             e.target.textContent = "추천됨";
+        } else {
+            await commentService.removeLike(commentId, memberId);
+            e.target.classList.remove("liked");
+            e.target.textContent = "추천하기";
         }
+
+        const countResponse = await fetch(`/api/likes/${commentId}/count`);
+        const count = await countResponse.json();
+        e.target.closest("li").querySelector(".pro-user-services span:last-child").textContent = `+ ${count}개의 추천 수`;
     }
 });
 
-// 게시글 삭제, 수정
 postActionLayout.showPostActions(post, memberId);
+

@@ -47,10 +47,6 @@ const commentService = (() => {
             commentId: commentId
         };
 
-        console.log("memberId:", memberId);
-        console.log("commentId:", commentId);
-        console.log("likeDTO:", likeDTO);
-
         const response = await fetch("/api/likes", {
             method: "POST",
             headers: {
@@ -64,8 +60,16 @@ const commentService = (() => {
         } else{
             const errorMessage = await response.text();
             console.log(errorMessage)
+            confirm("이미 추천한 댓글입니다.")
         }
     };
 
-    return {write: write, getList : getList, update: update, remove: remove, like: like}
+    const removeLike = async (commentId, memberId) => {
+        const response = await fetch(`/api/likes/${commentId}?memberId=${memberId}`, {
+            method: "DELETE"
+        });
+        return response.ok;
+    };
+
+    return {write: write, getList : getList, update: update, remove: remove, like: like, removeLike: removeLike}
 })();

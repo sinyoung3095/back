@@ -98,17 +98,36 @@ public class MemberServiceImpl implements MemberService {
         }
     }
 
-    public Optional<MemberDTO> showFileById(Long id) {
-        Optional<MemberDTO> memberOpt = memberDAO.selectMemberById(id);
-        if (memberOpt.isEmpty()) return Optional.empty();
+    @Override
+    public Optional<MemberDTO> showFileById(Long memberId) {
+        Optional<MemberDTO> memberOpt = memberDAO.selectMemberById(memberId);
+        Optional<FileDTO> fileOpt = fileDAO.findFileByMemberId(memberId);
 
-        MemberDTO member = memberOpt.get();
+        if (memberOpt.isPresent()) {
+            MemberDTO member = memberOpt.get();
+            member.setFile(fileOpt);
+            return Optional.of(member);
+        }
 
-        Optional<FileDTO> fileOpt = fileService.findFileByMemberId(id);
-        member.setFile(fileOpt);
-
-        return Optional.of(member);
+        return Optional.empty();
     }
 
+    @Override
+    public void memberRename(MemberDTO memberDTO) {
+        memberDAO.memberRename(memberDTO);
+    }
+
+    @Override
+    public void deleteProfile(Long id){
+        memberProfileFileDAO.deleteMemberProfileById(id);
+        fileDAO.deleteFile(id);
+        Optional<FileDTO> deleteFile=memberProfileFileDAO.findMemberProfileFileById(id);
+        String deleteFilePath=deleteFile.get().getFilePath();
+        String deleteFileName=deleteFile.get().getFileName();
+        File file = new File("C:/file/" + deleteFilePath, deleteFileName);
+        if (file.exists()) {
+            file.delete();
+        }
+    }
 
 }

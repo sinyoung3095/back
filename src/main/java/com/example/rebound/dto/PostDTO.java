@@ -14,13 +14,14 @@ public class PostDTO {
     private Long id;
     private String postTitle;
     private String postContent;
-    private int postViews;
+    private int postReadCount;
     private Long memberId;
     private String memberName;
     private Long categoryId;
     private String categoryName;
     private Status postStatus;
     private int commentCount;
+    private String filePath;
     private String createdDate;
     private String relativeDate;
     private String updatedDate;

@@ -2,19 +2,23 @@ package com.example.rebound.service;
 
 import com.example.rebound.dto.*;
 import com.example.rebound.repository.MainPageDAO;
+import com.example.rebound.repository.PostDAO;
 import com.example.rebound.util.PostCriteria;
+import com.example.rebound.util.PostDateUtils;
+import com.example.rebound.util.Search;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class MainPageServiceImpl implements MainPageService {
     public final MainPageDAO mainpageDAO;
 
-//    게시글 목록 미리보기
+    //    게시글 목록 미리보기
     @Override
     public List<PostDTO> postPreview () {
         return mainpageDAO.postPreview();
@@ -34,8 +38,22 @@ public class MainPageServiceImpl implements MainPageService {
 
 //    검색
     @Override
-    public List<PostDTO> selectPostFromMainPage (PostCriteriaDTO postCriteriaDTO) {
-        return mainpageDAO.selectPostFromMainPage(postCriteriaDTO);
-    }
+    public PostCriteriaDTO selectPostFromMainPage (int page, String keyword) {
+        PostCriteriaDTO postCriteriaDTO = new PostCriteriaDTO();
+        PostCriteria postCriteria = new PostCriteria(page, mainpageDAO.selectCountAll(keyword));
+        List<PostDTO> posts = mainpageDAO.selectPostFromMainPage(postCriteriaDTO, keyword);
+        posts.forEach((post) -> {
+            post.setRelativeDate(PostDateUtils.toRelativeTime(post.getCreatedDate()));
+        });
 
+        postCriteria.setHasMore(posts.size() > postCriteria.getRowCount());
+
+        if(postCriteria.isHasMore()){
+            posts.remove(posts.size() - 1);
+        }
+
+        postCriteriaDTO.setPosts(posts);
+        postCriteriaDTO.setPostCriteria(postCriteria);
+        return postCriteriaDTO;
+    }
 }

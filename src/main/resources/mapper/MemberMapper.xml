@@ -8,12 +8,12 @@
     </insert>
 <!--    관리자 회원 조회-->
     <select id="selectAdmin">
-        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_mentor, member_status, member_common, created_date, updated_date from tbl_member
+        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_grade, member_status, member_common, created_date, updated_date from tbl_member
         where member_common = 'admin'and member_status='active' and member_email=#{memberEmail} and member_password=#{memberPassword}
     </select>
     <select id="selectGeneralAll">
-        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_mentor, member_status, member_common, created_date, updated_date from tbl_member
-        where member_status = 'active' and member_mentor = 'none' and member_common='none'
+        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_grade, member_status, member_common, created_date, updated_date from tbl_member
+        where member_status = 'active' and member_grade = 'none' and member_common='none'
         <if test="keyword != null">
             and (
             member_name like concat('%', #{keyword}, '%') or
@@ -25,7 +25,7 @@
     </select>
     <select id="selectGeneralAllCount">
         select count(*) from tbl_member
-        where member_status = 'active' and member_mentor = 'none' and member_common='none'
+        where member_status = 'active' and member_grade = 'none' and member_common='none'
         <if test="keyword != null">
             and (
             member_name like concat('%', #{keyword}, '%') or
@@ -34,8 +34,8 @@
         </if>
     </select>
     <select id="selectMentorAll">
-        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_mentor, member_status, member_common, created_date, updated_date from tbl_member
-        where member_status = 'active' and member_mentor = 'mentor' and member_common='none'
+        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_grade, member_status, member_common, created_date, updated_date from tbl_member
+        where member_status = 'active' and member_grade = 'mentor' and member_common='none'
         <if test="keyword != null">
             and (
             member_name like concat('%', #{keyword}, '%') or
@@ -48,7 +48,7 @@
     </select>
     <select id="selectMentorAllCount">
         select count(*) from tbl_member
-        where member_status = 'active' and member_mentor = 'mentor' and member_common='none'
+        where member_status = 'active' and member_grade = 'mentor' and member_common='none'
         <if test="keyword != null">
             and (
             member_name like concat('%', #{keyword}, '%') or
@@ -58,8 +58,8 @@
         </if>
     </select>
     <select id="selectSubscribeAll">
-        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_mentor, member_status, member_common, created_date, updated_date from tbl_member
-        where member_status = 'active' and member_mentor = 'subscribe' and member_common='none'
+        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_grade, member_status, member_common, created_date, updated_date from tbl_member
+        where member_status = 'active' and member_grade = 'subscribe' and member_common='none'
         <if test="keyword != null">
             and (
             member_name like concat('%', #{keyword}, '%') or
@@ -72,7 +72,7 @@
     </select>
     <select id="selectSubscribeAllCount">
         select count(*) from tbl_member
-        where member_status = 'active' and member_mentor = 'subscribe' and member_common='none'
+        where member_status = 'active' and member_grade = 'subscribe' and member_common='none'
         <if test="keyword != null">
             and (
             member_name like concat('%', #{keyword}, '%') or
@@ -83,7 +83,7 @@
     </select>
 <!--    일반 회원 조회-->
     <select id="selectMember">
-        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_mentor, member_status, member_common, created_date, updated_date from tbl_member
+        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_grade, member_status, member_common, created_date, updated_date from tbl_member
         where member_common='none' and member_status='active' and member_email=#{memberEmail} and member_password=#{memberPassword}
     </select>
     <select id="selectMemberById">
@@ -92,7 +92,7 @@
     </select>
 <!--    카카오 중복조회-->
     <select id="selectMemberByKakaoEmail">
-        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_mentor, member_status, member_common, created_date, updated_date
+        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_grade, member_status, member_common, created_date, updated_date
         from tbl_member
         where kakao_email=#{kakaoEmail}
     </select>
@@ -101,4 +101,9 @@
         insert into tbl_member (kakao_email, kakao_profile_url, member_phone_number, member_name, member_provider)
         values (#{kakaoEmail}, #{kakaoProfileUrl}, #{memberPhoneNumber}, #{memberName}, #{memberProvider})
     </insert>
+<!--    회원 이름 변경-->
+    <update id="updateMemberName">
+        update tbl_member set member_name=#{memberName}
+        where id=#{id}
+    </update>
 </mapper>

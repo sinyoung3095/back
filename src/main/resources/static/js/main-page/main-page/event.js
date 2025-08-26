@@ -397,11 +397,10 @@ const oneAreaGood = todayMessages.slice(0, 3);
 const firstAreaGood = todayMessages.slice(0, 6);
 const lastAreaGood = todayMessages.slice(6, 12);
 
-console.log(member);
-
 // 오늘의 좋은 말(1)
-if (member.mentor == null || member.mentor === "none") {
-    good1Buttons.style.display = "none";
+if (!member || member.memberMentor == null || member.memberMentor === "none") {
+    good1PrevButton.style.display = "none";
+    good1NextButton.style.display = "none";
     goodTrack02Container.style.display = "none";
 
     oneAreaGood.forEach((todayMessage, i) => {
@@ -418,11 +417,22 @@ if (member.mentor == null || member.mentor === "none") {
             </div>
         `;
     });
+
+    text += `
+        <div tabindex="-1" data-index="0" class="slick-slide slick-active slick-current" style="outline: none; width: 247px;">
+                <div>
+                    <a style="width: 100%; display: inline-block; position: relative">
+                        <img class="service-image" src="/images/goodWords/memo04.jpg" style="border: none;">
+                        <span class="service-text" style="font-size: 16px; font-weight: 500; text-align: left">리바운드를 구독하고 <br> 더 많은 서비스를 <br> 이용해 보세요!</span>
+                    </a>
+                </div>
+            </div>
+    `;
     goodTrack01.innerHTML = text;
 }
 
 // 오늘의 좋은 말(2)
-if (member.mentor === "mentor" || member.mentor === "subscribe") {
+else if (member.memberMentor === "mentor" || member.memberMentor === "subscribe") {
     // 오늘의 좋은 말1
     firstAreaGood.forEach((todayMessage, i) => {
         let todayMessageSrc = `/images/goodWords/memo0${i % 4}.jpg`;
@@ -481,7 +491,6 @@ if (member.mentor === "mentor" || member.mentor === "subscribe") {
 // 리바운드 이야기
 const reboundStory = document.querySelector("div.soomgo-story-slide .story-track")
 text =``;
-
 notices.forEach((notice) => {
     text += `
         <div tabindex="-1" data-index="0" class="slick-slide slick-active slick-current" style="outline: none; width: 329px;">

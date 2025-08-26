@@ -3,6 +3,7 @@ package com.example.rebound.repository;
 import com.example.rebound.dto.*;
 import com.example.rebound.mapper.MainPageMapper;
 import com.example.rebound.util.PostCriteria;
+import com.example.rebound.util.Search;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -29,9 +30,14 @@ public class MainPageDAO {
         return mainpageMapper.noticePreview();
     }
 
+//    전체 개수 조회(검색)
+    public int selectCountAll (String keyword) {
+        return mainpageMapper.selectCountAllSearchMainPage(keyword);
+    }
+
 //    검색
-    public List<PostDTO> selectPostFromMainPage (PostCriteriaDTO postCriteriaDTO) {
-        return mainpageMapper.selectPostFromMainPage(postCriteriaDTO);
+    public List<PostDTO> selectPostFromMainPage (PostCriteriaDTO postCriteriaDTO, String keyword) {
+        return mainpageMapper.selectPostFromMainPage(postCriteriaDTO, keyword);
     }
 
 }

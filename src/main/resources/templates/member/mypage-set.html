@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="/css/member/mypage-set.css">
     
     <link rel="stylesheet" href="/font/didactgothic.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-cyrillic-700-normal-d010f1f324e111a22e53.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-cyrillic-ext-700-normal-be4d02458ce53887dc37.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-greek-700-normal-50e795c1345353b0e996.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-greek-ext-700-normal-bd9854c751441ccc1a70.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-latin-700-normal-227c93190fe7f82de3f8.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-latin-ext-700-normal-ed67ad54b1a8f5d21150.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
+    <link rel="stylesheet" href="/font/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
+    <link rel="stylesheet" href="/font/roboto-cyrillic-700-normal-d010f1f324e111a22e53.woff2">
+    <link rel="stylesheet" href="/font/roboto-cyrillic-ext-700-normal-be4d02458ce53887dc37.woff2">
+    <link rel="stylesheet" href="/font/roboto-greek-700-normal-50e795c1345353b0e996.woff2">
+    <link rel="stylesheet" href="/font/roboto-greek-ext-700-normal-bd9854c751441ccc1a70.woff2">
+    <link rel="stylesheet" href="/font/roboto-latin-700-normal-227c93190fe7f82de3f8.woff2">
+    <link rel="stylesheet" href="/font/roboto-latin-ext-700-normal-ed67ad54b1a8f5d21150.woff2">
+    <link rel="stylesheet" href="/font/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
 
 </head>
 <body>
@@ -26,7 +26,13 @@
                 <div class="main-5">
                     <div class="main-6">
                         <div class="main-7">
-                            <img alt="홍길동" loading="lazy" width="100" height="100" decoding="async" data-nimg="1" srcset="" src="" style="color: transparent;">
+                            <img th:if="${file != null}"
+                                 th:src="@{/api/display(filePath=${file.filePath}, fileName=${file.fileName})}"
+                                 class="profile-img">
+
+                            <img th:if="${file == null}"
+                                 th:src="@{/images/member/no-profile.png}"
+                                 class="profile-img">
                         </div>
                         <button type="button" class="main-8">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" color="#6A7685">
@@ -56,13 +62,13 @@
                         <button id="button" type="button" class="main-10">수정</button>
                     </div>
                     <div class="main-11">
-                        <p class="main-12">홍길동</p>
+                        <p class="main-12" th:text="${session.member.memberName}"></p>
                     </div>
                 </form>
-                <form id="sub">
+                <form id="sub" action="/member/update/name" method="post">
                     <div class="main-9">이름</div>
                     <div class="main-11">
-                        <input id="insert1" type="text" class="main-12" value="홍길동">
+                        <input id="insert1" type="text" name="memberName" class="main-12" th:value="${session.member.memberName}">
                     </div>
                     <div class="select-1">
                         <button id="cancle1" type="button" class="select-2">취소</button>
@@ -107,5 +113,17 @@
         </div>
     </main>
 </body>
-<script src="/js/member/mypage-set.js"></script>
+<script th:inline="javascript">
+    const memberid = [[${session.member.id}]];
+</script>
+<script th:inline="javascript">
+    const file = [[${file}]];
+</script>
+<script>
+    kakaoProfileUrl= [[${member.kakaoProfileUrl}]],
+</script>
+<script>
+    fileId= [[${member.fileId}]]
+</script>
+<script src="/js/member/mypage-set/mypage-set.js"></script>
 </html>

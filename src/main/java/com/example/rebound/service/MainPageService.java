@@ -3,6 +3,7 @@ package com.example.rebound.service;
 
 import com.example.rebound.dto.*;
 import com.example.rebound.util.PostCriteria;
+import com.example.rebound.util.Search;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,5 +21,5 @@ public interface MainPageService {
     public List<NoticeDTO> noticePreview ();
 
 //    검색(메인페이지 → 커뮤니티 목록)
-    public List<PostDTO> selectPostFromMainPage (PostCriteriaDTO postCriteriaDTO);
+    public PostCriteriaDTO selectPostFromMainPage (int page, String keyword);
 }

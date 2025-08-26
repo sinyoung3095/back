@@ -27,7 +27,6 @@ public class KakaoController {
         Optional<MemberDTO> foundMemberOpt = kakaoService.getKakaoInfo(token);
 
         if (foundMemberOpt.isEmpty()) {
-            // Kakao 정보 못 가져오면 로그인 페이지로 이동
             return "redirect:/member/login?error=kakao";
         }
 
@@ -35,7 +34,6 @@ public class KakaoController {
         Optional<MemberDTO> foundKakaoMember = memberService.findMemberByKakaoEmail(kakaoMember.getKakaoEmail());
 
         if (foundKakaoMember.isEmpty()) {
-            // 신규 카카오 회원
             kakaoMember.setMemberProvider(Provider.KAKAO);
             kakaoMember.setMemberEmail(kakaoMember.getKakaoEmail());
 
@@ -43,7 +41,6 @@ public class KakaoController {
             return "member/login-kakao";
         }
 
-        // 기존 회원
         session.setAttribute("member", foundKakaoMember.get());
         return "redirect:/member/mypage";
     }

@@ -57,7 +57,7 @@
                                             <img alt="직장인" class="profile-image" src="https://static.cdn.soomgo.com/upload/profile/1e2809f2-c3f7-4a59-b156-e4a9161d7d49.jpg?webp=1" lazy="loaded">
                                             <div class="profile-post-info">
                                                 <span class="user-name prisma-typography body14:medium primary" th:text="${post.memberName}"></span>
-                                                <span class="post-created-at prisma-typography body12:regular primary" th:text="${post.createdDate + ' · 조회 ' + post.postViews}"></span>
+                                                <span class="post-created-at prisma-typography body12:regular primary" th:text="${post.createdDate + ' · 조회 ' + post.postReadCount}"></span>
                                             </div>
                                         </div>
                                         <div id="postActionWrap">
@@ -195,7 +195,7 @@
     </div>
 </body>
 <script th:inline="javascript">
-    const memberId = 5;
+    const memberId = 1;
     const post = {
         id: [[${post.id}]],
         memberId: [[${post.memberId}]]

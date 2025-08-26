@@ -20,13 +20,15 @@ public interface MemberService {
 //    카카오 회원가입
     public void joinKakaoMember(MemberDTO memberDTO);
 //    카카오 프로필 저장
-    void saveKakaoProfile(MemberDTO memberDTO);
+    public void saveKakaoProfile(MemberDTO memberDTO);
 //    프로필 사진 조회
     public Optional<MemberDTO> showFileById(Long id);
 
     default String getPath() {
         return LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
     }
-//    마스터 브랜치와 머지 확인
-    
+//    회원 이름 수정
+    public void memberRename(MemberDTO memberDTO);
+//    회원 프로필 사진 삭제
+    public void deleteProfile(Long id);
 }
