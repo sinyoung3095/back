@@ -106,4 +106,11 @@
         update tbl_member set member_name=#{memberName}
         where id=#{id}
     </update>
+
+    <!-- 회원 비밀번호 변경 -->
+    <update id="updateMemberPassword">
+        update tbl_member
+        set member_password = #{memberPassword}
+        where member_email = #{memberEmail}
+    </update>
 </mapper>

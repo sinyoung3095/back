@@ -85,4 +85,8 @@ public class MemberDAO {
     public int countSubscribeMemberAll(String keyword) {
         return memberMapper.selectSubscribeAllCount(keyword);
     }
+    //    회원 비밀번호 변경
+    public void updateMemberPassword(String memberPassword, String memberEmail) {
+        memberMapper.updateMemberPassword(memberPassword, memberEmail);
+    }
 }

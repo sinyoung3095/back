@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/images/favicon.png">
-    <link rel="stylesheet" href="/font/didactgothic.woff2">
     <link rel="stylesheet" href="/css/community-list/failure-write.css">
+    <link rel="stylesheet" href="/font/didactgothic.woff2">
     <title>실패 경험담 작성</title>
 </head>
 <body class="post-write hide-mobile-global-header">
@@ -30,6 +30,7 @@
                                 <div class="editor-title-wrapper">
                                     <div class="editor-title-container">
                                         <label for="post-title-input" class="editor-title-label">
+                                            <input type="hidden" name="memberId" th:value="${session.member.id}">
                                             <input id="post-title-input" type="text" placeholder="제목을 입력해주세요." th:field="*{postTitle}" class="post-title-input">
                                         </label>
                                     </div>

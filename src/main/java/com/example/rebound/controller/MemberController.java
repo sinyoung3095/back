@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -117,9 +116,22 @@ public class MemberController {
     public String goToFindEmailOk(){
         return "member/find-email-ok";
     }
+
+//    비밀번호 찾기
+    @GetMapping("find-password")
+    public String goToFindPassword() {
+        return "member/find-password";
+    }
+
+//    이메일 확인 안내
+    @GetMapping("find-confirm")
+    public String goToConfirm() {
+        return "member/find-confirm";
+    }
+
     @GetMapping("new-password")
     public String goToNewPassword(){
-        return "member/new-fassword";
+        return "new-password";
     }
 
 
