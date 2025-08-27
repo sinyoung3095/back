@@ -113,4 +113,11 @@
         set member_password = #{memberPassword}
         where member_email = #{memberEmail}
     </update>
+
+    <!-- 회원 이메일 찾기 -->
+    <select id="selectMemberEmail">
+        select member_name, member_email, kakao_email, member_phone_number, member_password, member_status, created_date
+        from tbl_member
+        where member_phone_number = #{memberPhoneNumber}
+    </select>
 </mapper>
