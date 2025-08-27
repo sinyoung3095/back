@@ -18,6 +18,12 @@
         join tbl_file f
         WHERE member_id = #{memberId} and f.id=mpf.id
     </select>
+    <select id="selectFileByCounselorId" parameterType="long" resultType="com.example.rebound.dto.FileDTO">
+        select f.id, cp.counselor_id, f.file_path, f.file_name, f.file_size, f.created_date, f.updated_date, f.file_original_name, f.file_content_type
+        from tbl_counselor_profile_file cp
+        join tbl_file f
+        where counselor_id=#{counselorId} and f.id=cp.id
+    </select>
 <!--    파일 삭제-->
     <delete id="deleteFileById">
         delete from tbl_file
