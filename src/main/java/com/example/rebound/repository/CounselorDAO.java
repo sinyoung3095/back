@@ -31,6 +31,9 @@ public class CounselorDAO {
     public Optional<CounselorDTO> findCounselorByEmailAndPassword(CounselorDTO counselorDTO){
         return counselorMapper.selectCounselor(counselorDTO);
     }
+    public Optional<CounselorDTO> selectCounselorById(Long id){
+        return counselorMapper.selectCounselorById(id);
+    }
 //     상담사 통합검색
     public List<CounselorDTO> findCounselorAll(MemberCriteria memberCriteria,String keyword){
         return counselorMapper.selectCounselorAll(memberCriteria,keyword);
