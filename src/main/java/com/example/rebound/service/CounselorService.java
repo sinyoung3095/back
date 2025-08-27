@@ -25,4 +25,6 @@ public interface CounselorService {
     }
 //    상담사 프로필 사진 조회
     public Optional<CounselorDTO> showFileById(Long counselorId);
+//    상담사 이름 변경
+    public void counselorRename(CounselorDTO counselorDTO);
 }

@@ -28,6 +28,9 @@ public interface CounselorMapper {
 //    로그인
     public Optional<CounselorDTO> selectCounselor(CounselorDTO counselorDTO);
 
+//    상담사 이름 변경
+    public void updateCounselorName(CounselorDTO counselorDTO);
+
 //    상담사 통합검색
     public List<CounselorDTO> selectCounselorAll(@Param("memberCriteria") MemberCriteria memberCriteria, @Param("keyword") String keyword);
 //    상담사 수 통합검색

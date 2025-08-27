@@ -62,4 +62,9 @@
             )
         </if>
     </select>
+<!--    상담사 이름 변경-->
+    <update id="updateCounselorName">
+        update tbl_counselor set counselor_name=#{counselorName}
+        where id=#{id}
+    </update>
 </mapper>
