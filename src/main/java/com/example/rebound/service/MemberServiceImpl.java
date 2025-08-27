@@ -137,4 +137,9 @@ public class MemberServiceImpl implements MemberService {
         memberDAO.updateMemberPassword(memberPassword, memberEmail);
     }
 
+//    @Override
+//    public void updateMemberProfileFile(Long memberId, FileDTO fileDTO) {
+//
+//    }
+
 }
