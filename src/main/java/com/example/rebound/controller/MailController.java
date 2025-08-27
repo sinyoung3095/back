@@ -22,6 +22,9 @@ public class MailController {
 //    메일 전송
     @PostMapping("send")
     public RedirectView send(String email, HttpServletRequest request, HttpServletResponse response) throws MessagingException {
+        if(!memberService.isExistMemberEmail(email)) {
+            return new RedirectView("/mail/notfound-email");
+        }
         mailService.sendMail(email, request, response);
         return new RedirectView("/member/find-confirm");
     }
@@ -57,13 +60,16 @@ public class MailController {
     @PostMapping("update-password")
     public RedirectView updatePassword(String newPassword, String memberEmail) {
         memberService.updateMemberPassword(newPassword, memberEmail);
-        System.out.println("이메일 = " + memberEmail);
-        System.out.println("새 비밀번호 = " + newPassword);
         return new RedirectView("/member/login");
     }
 
     @GetMapping("/find-fail")
     public String goToMemberLogin() {
         return "member/find-fail";
+    }
+
+    @GetMapping("/notfound-email")
+    public String goToNotFoundEmail() {
+        return "member/notfound-email";
     }
 }

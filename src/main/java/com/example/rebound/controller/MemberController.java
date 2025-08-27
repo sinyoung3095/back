@@ -112,7 +112,7 @@ public class MemberController {
     public String goToFindEmail(){
         return "member/find-email";
     }
-    @GetMapping("find-email/ok")
+    @GetMapping("find-email-ok")
     public String goToFindEmailOk(){
         return "member/find-email-ok";
     }
@@ -129,9 +129,10 @@ public class MemberController {
         return "member/find-confirm";
     }
 
+//    새 비밀번호 변경
     @GetMapping("new-password")
     public String goToNewPassword(){
-        return "new-password";
+        return "member/new-password";
     }
 
 

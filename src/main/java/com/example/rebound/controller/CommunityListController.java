@@ -27,14 +27,14 @@ public class CommunityListController {
     public String showPosts(Model model) {
         model.addAttribute("posts", communityPostService.findPostsCriteria(1).getPosts());
         model.addAttribute("postsByViews", communityPostService.getPostsByViews());
-        return "/community-list/community-posts";
+        return "community-list/community-posts";
     }
 
 //    게시글 작성
     @GetMapping("failure-write")
     public String goToFailureWrite(PostDTO postDTO, Model model) {
         model.addAttribute(postDTO);
-        return "/community-list/failure-write";
+        return "community-list/failure-write";
     }
 
     @PostMapping("failure-write")
@@ -48,14 +48,14 @@ public class CommunityListController {
     public String readPostWriter(@PathVariable Long id, Model model, HttpSession session) {
         log.info(((MemberDTO)session.getAttribute("member")).toString());
         model.addAttribute("post", communityPostService.getPost(id).orElseThrow(PostNotFoundException::new));
-        return "/community-list/community-contents-writer";
+        return "community-list/community-contents-writer";
     }
 
 //    게시글 수정
     @GetMapping(value = "failure-update/{id}")
     public String goToUpdatePost(@PathVariable Long id, Model model) {
         model.addAttribute("post", communityPostService.getPost(id).orElseThrow(PostNotFoundException::new));
-        return "/community-list/failure-update";
+        return "community-list/failure-update";
     }
 
     @PostMapping("failure-update")
