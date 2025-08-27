@@ -4,5 +4,5 @@ const myPageSetService=(()=>{
             method: "DELETE"
         })
     }
-    return {profileDelete: profileDelete(fileId)}
+    return {profileDelete: profileDelete}
 })();

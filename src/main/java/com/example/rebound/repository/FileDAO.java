@@ -1,5 +1,6 @@
 package com.example.rebound.repository;
 
+import com.example.rebound.dto.CounselorDTO;
 import com.example.rebound.dto.FileDTO;
 import com.example.rebound.mapper.FileMapper;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +17,7 @@ public class FileDAO {
 //    조회
     public Optional<FileDTO> findFileById(Long id) {return fileMapper.selectFileById(id);}
     public Optional<FileDTO> findFileByMemberId(Long memberId) {return fileMapper.selectFileByMemberId(memberId);}
+    public Optional<FileDTO> findFileByCounselorId(Long counselorId){return fileMapper.selectFileByCounselorId(counselorId);}
 //    삭제
     public void deleteFile(Long id){
         fileMapper.deleteFileById(id);
