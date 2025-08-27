@@ -174,7 +174,6 @@ public class MemberController {
         return new RedirectView("/member/mypage/set");
     }
 
-//  충돌 확인
 
 
 
