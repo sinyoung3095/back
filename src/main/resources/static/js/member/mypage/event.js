@@ -1,9 +1,3 @@
-const imgContainer = document.getElementById("imgContainer");
+const profileImage = document.getElementById("profile-image");
 
-const hasProfile = false;
-
-if (!hasProfile) {
-    imgContainer.innerHTML = '<img src="/images/member/no-profile.png" class="profile-img">';
-} else {
-    imgContainer.innerHTML = '<img src="/api/display?filePath=...&fileName=..." class="profile-img">';
-}
+profileImage.setAttribute("src",   `/api/display?filePath=${filePath}&fileName=${fileName}`);

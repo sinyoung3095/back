@@ -7,16 +7,6 @@
     <link data-vue-meta="1" rel="shortcut icon" href="/images/member/icon.png">
     <link rel="stylesheet" href="/css/member/find-email.css">
     <link rel="stylesheet" href="/font/didactgothic.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-cyrillic-700-normal-d010f1f324e111a22e53.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-cyrillic-ext-700-normal-be4d02458ce53887dc37.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-greek-700-normal-50e795c1345353b0e996.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-greek-ext-700-normal-bd9854c751441ccc1a70.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-latin-700-normal-227c93190fe7f82de3f8.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-latin-ext-700-normal-ed67ad54b1a8f5d21150.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
-
-
 </head>
 <body>
     <main class="main">
@@ -33,19 +23,16 @@
                                         <input id="phone" class="main-11" placeholder="예) 010-1234-1234" name="phone" autocomplete="off" value="">
                                     </div>
                                 </div>
-                                <button type="button" disabled="" class="main-9">전송</button>
+                                <button type="button" class="main-9">전송</button>
                             </div>
                                 <!-- 번호 입력시 위 버튼이 재전송으로 변경되고
                                 아래 주석된 부분 표시
                                 -->
-                                
-                            <!-- <div class="main-12">
+                            <div id="sendMessage" class="main-12" style="display:none;">
                                 <p class="main-13">인증번호를 전송하였습니다. </p>
-                            </div> 
-                            -->
-                            
+                            </div>
                         </div>
-                        <!-- <div class="main-5">
+                        <div id="verifySection" class="main-5" style="display:none;">
                             <label for="verify" class="main-7">인증 번호</label>
                             <div class="main-8">
                                 <div class="css-0">
@@ -55,13 +42,14 @@
                                 </div>
                                 <button type="button" disabled="" class="main-9">인증하기</button>
                             </div>
-                        </div> -->
-                        <button type="submit" disabled="" class="main-6">확인</button>
+                        </div>
+                        <button type="submit" class="main-6">확인</button>
                     </form>
                 </div>
             </div>
         </div>
     </main>   
 </body>
-<script src="/js/member/find-email.js"></script>
+<script src="/js/email/module/service.js"></script>
+<script src="/js/email/event.js"></script>
 </html>

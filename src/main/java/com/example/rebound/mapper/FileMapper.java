@@ -1,5 +1,6 @@
 package com.example.rebound.mapper;
 
+import com.example.rebound.dto.CounselorDTO;
 import com.example.rebound.dto.FileDTO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -13,6 +14,7 @@ public interface FileMapper {
 //    조회
     public Optional<FileDTO> selectFileById(Long id);
     Optional<FileDTO> selectFileByMemberId(Long memberId);
+    public Optional<FileDTO> selectFileByCounselorId(Long counselorId);
 //    삭제
     public void deleteFileById(Long id);
 }

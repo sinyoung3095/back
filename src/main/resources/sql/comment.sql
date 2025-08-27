@@ -15,6 +15,11 @@ create table tbl_comment
         foreign key (post_id) references tbl_post (id)
 );
 
+insert into tbl_comment (comment_content, member_id, post_id)
+values ('댓글 내용2', 1, 18);
+
+select * from tbl_post;
+
 select * from tbl_comment;
 
 create view view_comment_member as

@@ -60,7 +60,7 @@ const commentService = (() => {
         } else{
             const errorMessage = await response.text();
             console.log(errorMessage)
-            confirm("이미 추천한 댓글입니다.")
+            alert("이미 추천한 댓글입니다.");
         }
     };
 
