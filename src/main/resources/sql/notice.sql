@@ -8,10 +8,10 @@ create table tbl_notice
     updated_date   datetime default CURRENT_TIMESTAMP null
 );
 
-select * from tbl_notice;
+select * from tbl_notice ;
 
 insert into tbl_notice(notice_title,notice_content)
-values ("제목10","내용10");
+values ("공지사항 테스트 하는 중","내용은 랜덤으로 적어주세요");
 
 create  view notice_view as (
 select n.id, notice_title, notice_content, n.created_date, n.updated_date, notice_id, file_path, file_name, file_size

@@ -128,12 +128,12 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public NoticeCriteriaDTO findNoticeAll(int page) {
+    public NoticeCriteriaDTO findNoticeAll(int page,String keyword) {
         NoticeCriteriaDTO noticeCriteriaDTO = new NoticeCriteriaDTO();
-        MemberCriteria memberCriteria = new MemberCriteria(page,noticeDAO.findNoticeCount());
-        noticeCriteriaDTO.setNotices(noticeDAO.findNoticeAll(memberCriteria));
+        MemberCriteria memberCriteria = new MemberCriteria(page,noticeDAO.findNoticeCount(keyword));
+        noticeCriteriaDTO.setNotices(noticeDAO.findNoticeAll(memberCriteria,keyword));
         noticeCriteriaDTO.setMemberCriteria(memberCriteria);
-        List<NoticeDTO> notices = noticeDAO.findNoticeAll(memberCriteria);
+        List<NoticeDTO> notices = noticeDAO.findNoticeAll(memberCriteria,keyword);
         memberCriteria.setHasMore(notices.size() > memberCriteria.getRowCount());
         noticeCriteriaDTO.getNotices().forEach((notice)->{
             String[] word = notice.getCreatedDate().split(" ");

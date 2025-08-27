@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>리바운드 서비스 점검 안내 (06/11 02:00-04:00)</title>
+    <title th:text="${notice.noticeTitle}"></title>
     <link rel="stylesheet" href="/font/didactgothic.woff2">
     <link rel="stylesheet" href="/font/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
     <link rel="stylesheet" href="/font/roboto-cyrillic-700-normal-d010f1f324e111a22e53.woff2">
@@ -36,98 +36,34 @@
                 <div class="article-container" id="article-container">
                     <section class="article-sidebar">
                         <section class="section-articles collapsible-sidebar">
-                            <h3 class="collapsible-sidebar-title sidenav-title">이 페이지의 문서</h3>
-                            <ul>
-                                <li><a href="" class="sidenav-item">[공지] 자격증/기타 서류 필수 서비스 품질 강화를 위한 집중 모니터링 안내</a></li>
-                                <li><a href="" class="sidenav-item">받은견적 ‘최상단 고정 광고' 시범 운영</a></li>
-                                <li><a href="" class="sidenav-item">긴급 서비스 출시, 빠른 해결로 더 많은 고객을 만나보세요! (7/14 반영)</a></li>
-                                <li><a href="" class="sidenav-item">상조 가전결합 상품 런칭 안내 (7/14 반영)</a></li>
-                                <li><a href="" class="sidenav-item">[23.09.11] 리뷰/고용수 조작 행위 집중 모니터링</a></li>
-                                <li><a href="" class="sidenav-item current-article">리바운드 서비스 점검 안내 (06/11 02:00-04:00)</a></li>
-                                <li><a href="" class="sidenav-item">6월 고객센터 휴무안내</a></li>
-                                <li><a href="" class="sidenav-item">5월 고객센터 휴무안내</a></li>
-                                <li><a href="" class="sidenav-item">[마켓] 법률/금융 카테고리 서비스 종료 안내</a></li>
-                                <li><a href="" class="sidenav-item">리바운드의 새로운 변화, 이렇게 시작합니다.</a></li>
-                                <a href="" class="article-sidebar-item">더보기</a>
+                            <h3 class="collapsible-sidebar-title sidenav-title">최근 공지사항</h3>
+                            <ul id="notices">
                             </ul>
                         </section>
                     </section>
                     <article class="article">
                         <header class="article-header">
-                            <h1 class="article-title">리바운드 서비스 점검 안내 (06/11 02:00-04:00)</h1>
+                            <h1 class="article-title" th:text="${notice.noticeTitle}"></h1>
                         </header>
                         <section class="article-info">
                             <div class="article-content">
                                 <div class="article-body">
                                     <p>
-                                        <span style="color: #363a3c; background-color: #ffffff;">안녕하세요. 리바운드입니다.</span>
-                                        <span style="color: #363a3c; background-color: #ffffff;">
-                                            <br>
-                                        </span>
-                                        <span style="color: #363a3c; background-color: #ffffff;">리바운드를 이용해 주시는 회원님들께 깊이 감사 드립니다.</span>
-                                        <span style="color: #363a3c; background-color: #ffffff;">
-                                            <br>
-                                        </span>
-                                        <span style="color: #363a3c; background-color: #ffffff;">
-                                            <br>
-                                        </span>
-                                        <span style="color: #363a3c; background-color: #ffffff;">보다 안정적인 서비스 제공을 위해 06월 11일(수) 02:00 부터 04:00 까지 사이트 및 서버 점검이 진행될 예정입니다.</span>
-                                        <span style="color: #363a3c; background-color: #ffffff;">
-                                            <br>
-                                        </span>
-                                        <span style="color: #363a3c; background-color: #ffffff;">
-                                            <br>
-                                        </span>
-                                        <span style="color: #ff0000; background-color: #ffffff;">점검 시간 동안 리바운드 사이트의 서비스 이용이 불가능하오니 양해 부탁 드립니다.</span>
-                                        <span style="color: #ff0000; background-color: #ffffff;">
-                                            <br>
-                                        </span>
-                                        <span style="color: #ff0000; background-color: #ffffff;">
-                                            <br>
-                                        </span>
-                                        <strong>
-                                            <span style="color: #363a3c; background-color: #ffffff;">점검일시 :  2025.06.11(수) 02:00 ~ 04:00</span>
-                                        </strong>
-                                        <strong>
-                                            <span style="color: #363a3c; background-color: #ffffff;">
-                                                <br>
-                                            </span>
-                                        </strong>
-                                        <strong>
-                                            <span style="color: #222222; background-color: #ffffff;">(*작업 진행에 따라 점검 시간이 단축되거나 연장될 수 있는 점 참고 부탁드립니다.)</span>
-                                        </strong>
-                                        <strong>
-                                            <span style="color: #222222; background-color: #ffffff;">
-                                                <br>
-                                            </span>
-                                        </strong>
-                                        <strong>
-                                            <span style="color: #222222; background-color: #ffffff;">
-                                                <br>
-                                            </span>
-                                        </strong>
-                                        <span style="color: #363a3c; background-color: #ffffff;">감사합니다.</span>
-                                        <span style="color: #363a3c; background-color: #ffffff;">
-                                            <br>
-                                        </span>
-                                        <span style="color: #363a3c; background-color: #ffffff;">(25년 5월 27일 작성)</span>
+                                        <span style="color: #363a3c; background-color: #ffffff;" th:text="${notice.noticeContent}"></span>
                                     </p>
                                 </div>
                             </div>
                         </section>
                         <footer>
                             <div class="article-votes">
-                                <span class="article-votes-question">도움이 되었습니까?</span>
                                 <div class="article-votes-controls">
-                                    <a class="button article-vote article-vote-up" role="radio" href="">예</a>
-                                    <a class="button article-vote article-vote-down" role="radio" href="">아니오</a>
+                                    <a id="pre" class="button article-vote article-vote-up" role="radio">이전</a>
+                                    <a id="next" class="button article-vote article-vote-down" role="radio">다음</a>
                                 </div>
-                                <small class="article-votes-count">
-                                    <span class="article-vote-label">0명 중 0명이 도움이 되었다고 했습니다.</span>
-                                </small>
                             </div>
                             <div class="article-more-questions">또 다른 질문이 있으십니까?
-                                <a href="">문의 등록</a>
+                                <a onclick="window.location.href='/customer-center/inquiry'">문의 등록</a>
+                                <textarea id="test"></textarea>
                             </div>
                             <div class="article-return-to-top">
                                 <a href="">
@@ -143,5 +79,7 @@
         <footer th:replace="~{/main-page/footer.html}"></footer>
     </body>
 </body>
-<script src="/js/customer-center/gongji-details.js"></script>
+<script src="/js/customer-center/notice-detail/module/service.js"></script>
+<script src="/js/customer-center/notice-detail/module/layout.js"></script>
+<script src="/js/customer-center/notice-detail/event.js"></script>
 </html>

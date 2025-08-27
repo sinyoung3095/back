@@ -386,7 +386,6 @@ footer a {
 }
 
 .article-vote-up::before {
-    content: "\2713";
 }
 
 .article-vote::before {
@@ -395,7 +394,6 @@ footer a {
 }
 
 .article-vote::after {
-    content: attr(title);
 }
 
 .button::after, [role="button"]::after {
@@ -413,7 +411,6 @@ footer a {
 }
 
 .article-vote-down::before {
-    content: "\2715";
 }
 
 .article-vote::before {
@@ -422,7 +419,6 @@ footer a {
 }
 
 .article-vote::after {
-    content: attr(title);
 }
 
 .button::after, [role="button"]::after {

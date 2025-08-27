@@ -44,7 +44,10 @@ public class AdminTest {
     }
     @Test
     public void test(){
-        MemberCriteriaDTO member = adminService.findGeneralMembers(1,null);
-        System.out.println(member);
+        boolean check = memberDAO.isExistMemberPhoneNumber("10123415645110");
+        System.out.println(check);
+    }
 
-    }}
+}
+
+

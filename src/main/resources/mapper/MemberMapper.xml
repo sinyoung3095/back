@@ -8,15 +8,11 @@
     </insert>
 <!--    관리자 회원 조회-->
     <select id="selectAdmin">
-<<<<<<< HEAD
-        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_grade, member_status, member_common, created_date, updated_date from tbl_member
-=======
         select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_status, member_common, created_date, updated_date from tbl_member
->>>>>>> admin
         where member_common = 'admin'and member_status='active' and member_email=#{memberEmail} and member_password=#{memberPassword}
     </select>
     <select id="selectGeneralAll">
-        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_grade, member_status, member_common, created_date, updated_date from tbl_member
+        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_status, member_common, created_date, updated_date from tbl_member
         where member_status = 'active' and member_grade = 'none' and member_common='none'
         <if test="keyword != null">
             and (
@@ -38,7 +34,7 @@
         </if>
     </select>
     <select id="selectMentorAll">
-        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_grade, member_status, member_common, created_date, updated_date from tbl_member
+        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_status, member_common, created_date, updated_date from tbl_member
         where member_status = 'active' and member_grade = 'mentor' and member_common='none'
         <if test="keyword != null">
             and (
@@ -62,7 +58,7 @@
         </if>
     </select>
     <select id="selectSubscribeAll">
-        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_grade, member_status, member_common, created_date, updated_date from tbl_member
+        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_status, member_common, created_date, updated_date from tbl_member
         where member_status = 'active' and member_grade = 'subscribe' and member_common='none'
         <if test="keyword != null">
             and (
@@ -87,11 +83,7 @@
     </select>
 <!--    일반 회원 조회-->
     <select id="selectMember">
-<<<<<<< HEAD
-        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_grade, member_status, member_common, created_date, updated_date from tbl_member
-=======
         select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_status, member_common, created_date, updated_date from tbl_member
->>>>>>> admin
         where member_common='none' and member_status='active' and member_email=#{memberEmail} and member_password=#{memberPassword}
     </select>
     <select id="selectMemberById">
@@ -100,11 +92,7 @@
     </select>
 <!--    카카오 중복조회-->
     <select id="selectMemberByKakaoEmail">
-<<<<<<< HEAD
-        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_grade, member_status, member_common, created_date, updated_date
-=======
         select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_status, member_common, created_date, updated_date
->>>>>>> admin
         from tbl_member
         where kakao_email=#{kakaoEmail}
     </select>
@@ -118,4 +106,8 @@
         update tbl_member set member_name=#{memberName}
         where id=#{id}
     </update>
+    <select id="selectByMemberEmail">
+        select * from tbl_member
+        where member_email = #{memberEmail} or kakao_email = #{memberEmail}
+    </select>
 </mapper>

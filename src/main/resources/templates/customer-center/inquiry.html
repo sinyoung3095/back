@@ -19,7 +19,7 @@
 <body>
     <header class="header">
         <div class="logo">
-            <a href="">
+            <a onclick="window.location.href='/'">
                 <img src="/images/logo.png" alt="로고">
             </a>
         </div>
@@ -32,7 +32,7 @@
             </nav>
         </div>
     </header>
-    <main role="main">
+    <main role="main" style="height: 1000px">
         <div class="container-divider"></div>
         <div class="container">
             <nav class="sub-nav">
@@ -45,23 +45,23 @@
             </nav>
             <h1>1대1 문의 등록</h1>
             <div class="form">
-                <form class="request-form" id="new-request">
+                <form action="/customer-center/inquiry" method="post" class="request-form" id="new-request" enctype="multipart/form-data">
                     <input name="utf8" type="hidden" value="✓" autocomplete="off">
                     <input type="hidden" name="authenticity_token">
                     <div class="form-field string required request_anonymous_requester_email">
                         <label for="request_anonymous_requester_email">답변을 받을 이메일 주소</label>
-                        <input type="text" name="request[anonymous_requester_email]" id="request_anonymous_requester_email">
+                        <input type="text" name="inquiryEmail" id="request_anonymous_requester_email">
                         <div id="request_anonymous_requester_email_error" class="notification notification-error notification-inline">요청자 이메일:  반드시 입력해야 합니다.</div>
                     </div>
                     <div class="form-field string required request_subject">
                         <label for="request_subject" id="request_subject_label">제목</label>
-                        <input type="text" id="request_subject">
+                        <input type="text" name="inquiryTitle" id="request_subject">
                         <div id="request_subject_error" class="notification notification-error notification-inline">제목: 반드시 입력해야 합니다.</div>
                     </div>
                     <div class="suggestion-list"></div>
                     <div class="form-field required request_description">
                         <label for="request_description" id="request_description_label">설명</label>
-                        <textarea name="request[description]" id="request_description"></textarea>
+                        <textarea name="inquiryContent" id="request_description"></textarea>
                         <input type="hidden" name="request[description_mimetype]" id="request_description_mimetype">
                         <div id="request_description_error" class="notification notification-error notification-inline">
                             설명: 반드시 입력해야 합니다.
@@ -72,20 +72,20 @@
                         <label for="request_custom_fields_70987527" id="request_custom_fields_70987527_label">
                             리바운드 가입 이메일
                         </label>
-                        <input type="text" name="request[custom_fields][70987527]" id="request_custom_fields_70987527">
+                        <input type="text" name="memberEmail" id="request_custom_fields_70987527">
                         <class id="request_custom_fields_70987527_error" class="notification notification-error notification-inline">리바운드 가입 이메일: 반드시 입력해야 합니다.</class>
                         <p id="request_custom_fields_70987527_hint">리바운드 가입 이메일을 입력하세요.</p>
                     </div>
                     <div class="form-field required request_custom_fields_71442508">
                         <label for="request_custom_fields_71442508" id="request_custom_fields_71442508_label">리바운드 가입 휴대폰 번호</label>
-                        <input type="text" name="request[custom_fields][71442508]" id="request_custom_fields_71442508">
+                        <input type="text" name="memberPhoneNumber" id="request_custom_fields_71442508">
                         <div id="request_custom_fields_71442508_error" class="notification notification-error notification-inline">리바운드 가입 휴대폰 번호: 반드시 입력해야 합니다.</div>
                         <p id="request_custom_fields_71442508_hint">리바운드 가입 휴대폰 번호를 입력하세요.</p>
                     </div>
                     <div class="form-field">
                         <label for="request-attachments">첨부 파일</label>
                         <div id="upload-dropzone" class="upload-dropzone">
-                            <input type="file" id="request-attachments">
+                            <input type="file" name="files"  id="request-attachments" multiple>
                             <span>
                                 <a>파일 추가</a>
                                 또는 파일을 여기로 드래그
@@ -97,12 +97,13 @@
                         <ul id="request-attachments-pool" class="upload-pool"></ul>
                     </div>
                     <footer>
-                        <input type="submit" name="commit" value="제출">
+                        <button name="commit">제출</button>
                     </footer>
                 </form>
             </div>
         </div>
     </main>
+    <footer th:replace="~{/main-page/footer.html}"></footer>
 </body>
 <script src="/js/customer-center/inquiry.js"></script>
 </html>

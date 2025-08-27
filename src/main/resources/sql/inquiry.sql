@@ -13,4 +13,6 @@ create table tbl_inquiry
 );
 
 select * from tbl_inquiry;
+delete FROM tbl_inquiry WHERE id=2;
+
 
