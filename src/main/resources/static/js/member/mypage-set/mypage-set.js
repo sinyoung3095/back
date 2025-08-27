@@ -32,7 +32,7 @@ input.addEventListener("input", function () {
 });
 
 profileWrapArea.addEventListener("click", () => {
-    console.log("버튼 클릭됨")
+    // console.log("버튼 클릭됨")
     profileUpdateList.classList.add("active");
 });
 

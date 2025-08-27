@@ -129,7 +129,18 @@ public class CounselorController {
         return "member/mypage-counselor-reply";
     }
     @GetMapping("mypage/set")
-    public String goToMyPageCounselorSet(){
+    public String goToMyPageCounselorSet(HttpSession session, Model model) {
+        CounselorDTO counselor = (CounselorDTO) session.getAttribute("counselor");
+        Optional<CounselorDTO> fullCounselorOpt = counselorService.showFileById(counselor.getId());
+
+        if (fullCounselorOpt.isEmpty()) {
+            model.addAttribute("counselor", counselor);
+            model.addAttribute("file", null);
+            return "member/mypage-counselor-set";
+        }
+        CounselorDTO fullCounselor = fullCounselorOpt.get();
+        model.addAttribute("counselor", fullCounselor);
+        model.addAttribute("file", fullCounselor.getFile());
         return "member/mypage-counselor-set";
     }
     @GetMapping("mypage/consultation/history")
