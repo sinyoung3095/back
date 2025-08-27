@@ -237,7 +237,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 .form footer {
-    margin-top: 40px;
+    margin-top: 20px;
     padding-top: 30px;
 }
 
@@ -342,7 +342,7 @@ body .notification.active {
     font-family: "entypo";
 }
 
-.button-large, input[type="submit"] {
+.button-large, button[name="commit"] {
     background-color: rgba(99, 2, 251, 1);
     border: 0;
     border-radius: 4px;
@@ -355,11 +355,12 @@ body .notification.active {
     width: 100%;
 }
 
-button, html input[type=button], input[type=reset], input[type=submit] {
+button, html button[name="commit"], input[type=reset] {
     width: auto;
     cursor: pointer;
 }
 
 .logo img {
     max-height: 50px;
+    cursor: pointer;
 }

@@ -13,11 +13,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class NoticeDAO {
     private final NoticeMapper noticeMapper;
-    public List<NoticeDTO> findNoticeAll(MemberCriteria memberCriteria) {
-        return noticeMapper.selectNoticeAll(memberCriteria);
+    public List<NoticeDTO> findNoticeAll(MemberCriteria memberCriteria,String keyword) {
+        return noticeMapper.selectNoticeAll(memberCriteria,keyword);
     }
-    public int findNoticeCount() {
-        return noticeMapper.selectNoticeAllCount();
+    public int findNoticeCount(String keyword) {
+        return noticeMapper.selectNoticeAllCount(keyword);
     }
     public NoticeDTO findNoticeById(int id) {
         return noticeMapper.selectNoticeById(id);

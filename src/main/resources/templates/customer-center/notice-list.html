@@ -27,60 +27,23 @@
                         <a href="">공지사항 - 리바운드</a>
                     </li>
                 </ol>
-                <form action="" role="search" class="search">
-                    <input type="hidden" name="utf8">
+                <div  role="search" class="search">
+                    <input type="hidden">
                     <div id="search-status" class="sr-only"></div>
                     <zd-autocomplete-announcement id="28b16f3c-a43b-4a72-93cd-e85153b1a6e7" aria-live="polite" role="listbox"></zd-autocomplete-announcement>
-                    <input type="search" name="query" id="query" placeholder="검색" aria-label="Search" aria-autocomplete="both" aria-expanded="false" role="combobox" aria-owns="28b16f3c-a43b-4a72-93cd-e85153b1a6e7">
-                </form>
+                    <input type="text" name="keyword" id="query" placeholder="검색" aria-label="Search" aria-autocomplete="both" aria-expanded="false" role="combobox" aria-owns="28b16f3c-a43b-4a72-93cd-e85153b1a6e7">
+                </div>
             </nav>
             <div class="section-container">
                 <section class="section-content">
                     <header class="page-header">
                         <h1>공지사항</h1>
                     </header>
-                    <ul class="article-list">
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
-                        <li class="article-list-item"><a href="" class="article-list-link">리바운드 공지사항</a></li>
+                    <ul id="notices" class="article-list">
+
                     </ul>
                     <nav class="pagination">
-                        <ul>
-                            <li class="page pagination-current"><a href="" class="nofollow">1</a></li>
-                            <li><a href="page" class="nofollow">2</a></li>
-                            <li><a href="page" class="nofollow">3</a></li>
-                            <li><a href="page" class="nofollow">4</a></li>
-                            <li><a href="page" class="nofollow">5</a></li>
-                            <li><a href="page" class="nofollow">6</a></li>
-                            <li><a href="page" class="nofollow">›</a></li>
-                            <li><a href="page" class="nofollow">»</a></li>
+                        <ul id="pageWrap">
                         </ul>
                     </nav>
                 </section>
@@ -89,5 +52,7 @@
     </main>
     <footer th:replace="~{/main-page/footer.html}"></footer>
 </body>
-<script src="/js/customer-center/gongji-list.js"></script>
+<script src="/js/customer-center/notice/module/service.js"></script>
+<script src="/js/customer-center/notice/module/layout.js"></script>
+<script src="/js/customer-center/notice/event.js"></script>
 </html>

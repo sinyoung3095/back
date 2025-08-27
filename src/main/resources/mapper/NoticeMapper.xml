@@ -3,11 +3,20 @@
 <mapper namespace="com.example.rebound.mapper.NoticeMapper">
     <select id="selectNoticeAll">
         select * from tbl_notice
+        <if test="keyword != null">
+            where notice_title like concat('%', #{keyword}, '%') or
+            notice_content like concat('%', #{keyword}, '%')
+        </if>
         order by id desc
-        limit #{rowCount} offset #{offset}
+        limit #{memberCriteria.rowCount} offset #{memberCriteria.offset}
+
     </select>
     <select id="selectNoticeAllCount">
         select count(*) from tbl_notice
+        <if test="keyword != null">
+            where notice_title like concat('%', #{keyword}, '%') or
+            notice_content like concat('%', #{keyword}, '%')
+        </if>
     </select>
     <select id="selectNoticeById">
         select * from tbl_notice

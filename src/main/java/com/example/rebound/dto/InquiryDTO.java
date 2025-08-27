@@ -15,4 +15,6 @@ public class InquiryDTO {
     private Long memberId;
     private String createdDate;
     private String updatedDate;
+    private String memberPhoneNumber;
+    private String memberEmail;
 }
