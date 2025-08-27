@@ -97,4 +97,10 @@ public class CounselorServiceImpl implements CounselorService {
 
         return Optional.empty();
     }
+
+    @Override
+    public void counselorRename(CounselorDTO counselorDTO) {
+        counselorDAO.counselorRename(counselorDTO);
+    }
+//    커밋 테스트
 }

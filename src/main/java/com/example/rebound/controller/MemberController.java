@@ -178,7 +178,6 @@ public class MemberController {
 
 
 
-
     @GetMapping("mypage/info")
     public String goToMyPageInfo(){
         return "member/mypage-info";

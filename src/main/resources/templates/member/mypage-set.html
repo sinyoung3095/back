@@ -19,6 +19,7 @@
 
 </head>
 <body>
+<header th:replace="~{/main-page/header2.html :: #app-header}"></header>
     <main class="main">
         <div class="main-1">
             <h1 class="main-2">계정 설정</h1>
@@ -46,7 +47,7 @@
                                         <h4 class="phtop-5">프로필 사진 등록</h4>
                                         <div class="photo-6">
                                             <label height="44" class="photo-7 change-profile">사진 등록하기
-                                                <input type="file" class="photo-8">
+                                                <input type="file" name="file" class="photo-8">
                                             </label>
                                             <button type="button" class="photo-9 change-profile">기본 이미지로 변경</button>
                                             <button type="button" class="photo-10">취소</button>
@@ -112,6 +113,7 @@
             <hr class="main-4">    
         </div>
     </main>
+<footer th:replace="~{/main-page/footer.html :: #app-footer}"></footer>
 </body>
 <script th:inline="javascript">
     const memberId = [[${member.id}]];
