@@ -14,6 +14,8 @@ public interface CounselorMapper {
     public List<CounselorDTO> getCounselors();
     //    상담사 추가
     public void insertCounselor(CounselorDTO counselorDTO);
+//    상담사 조회
+    public Optional<CounselorDTO> selectCounselorById(Long id);
 
 
     //    이메일 중복 검사
