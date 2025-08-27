@@ -23,19 +23,16 @@
                                         <input id="phone" class="main-11" placeholder="예) 010-1234-1234" name="phone" autocomplete="off" value="">
                                     </div>
                                 </div>
-                                <button type="button" disabled="" class="main-9">전송</button>
+                                <button type="button" class="main-9">전송</button>
                             </div>
                                 <!-- 번호 입력시 위 버튼이 재전송으로 변경되고
                                 아래 주석된 부분 표시
                                 -->
-                                
-                            <!-- <div class="main-12">
+                            <div id="sendMessage" class="main-12" style="display:none;">
                                 <p class="main-13">인증번호를 전송하였습니다. </p>
-                            </div> 
-                            -->
-                            
+                            </div>
                         </div>
-                        <!-- <div class="main-5">
+                        <div id="verifySection" class="main-5" style="display:none;">
                             <label for="verify" class="main-7">인증 번호</label>
                             <div class="main-8">
                                 <div class="css-0">
@@ -45,13 +42,14 @@
                                 </div>
                                 <button type="button" disabled="" class="main-9">인증하기</button>
                             </div>
-                        </div> -->
-                        <button type="submit" disabled="" class="main-6">확인</button>
+                        </div>
+                        <button type="submit" class="main-6">확인</button>
                     </form>
                 </div>
             </div>
         </div>
     </main>   
 </body>
-<script src="/js/member/find-email.js"></script>
+<script src="/js/email/module/service.js"></script>
+<script src="/js/email/event.js"></script>
 </html>
