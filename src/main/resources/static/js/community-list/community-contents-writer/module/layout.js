@@ -30,6 +30,12 @@ const commentLayout = (() => {
         let text = "";
         CommentsCriteria.comments.forEach((comment) => {
             const likedClass = comment.checkedLike ? "liked" : "";
+
+            let displayGrade;
+            if(comment.memberGrade === 'mentor') displayGrade = '멘토회원';
+            else if(comment.memberGrade === 'subscribe') displayGrade = '구독회원';
+            else displayGrade = '일반회원';
+
             text += `
             <li class="id${comment.id} post-comments-list-item">   
                 <div class="post-comment-wrapper">
@@ -43,7 +49,7 @@ const commentLayout = (() => {
                                     <span class="user-name prisma-typography body14:semibold primary">${comment.memberName}</span>
                                 </div>
                                 <div class="pro-user-services">                            
-                                    <span class="prisma-typography body12:regular tertiary service">${comment.memberGrade}</span>
+                                    <span class="prisma-typography body12:regular tertiary service">${displayGrade}</span>
                                     <span class="prisma-typography body12:regular tertiary service">+ ${comment.likesCount}개의 추천 수</span>
                                 </div>
                             </div>

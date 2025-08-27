@@ -13,6 +13,19 @@ spring:
       file-size-threshold: 5MB
       max-file-size: 5MB
       max-request-size: 15MB
+  mail:
+    host: smtp.gmail.com
+    port: 587
+#    username, password 각자 이메일과 앱 비밀번호로 입력하시면 됩니다.
+    username:
+    password:
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
