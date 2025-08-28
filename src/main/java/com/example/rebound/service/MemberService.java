@@ -40,5 +40,5 @@ public interface  MemberService {
     //    회원 비밀번호 변경
     public void updateMemberPassword(String memberPassword, String memberEmail);
 //    회원 이메일 찾기
-    public String findEmailByPhone(String memberPhoneNumber);
+    public MemberDTO findEmailByPhone(String memberPhoneNumber);
 }
