@@ -32,15 +32,21 @@ const commentLayout = (() => {
             const likedClass = comment.checkedLike ? "liked" : "";
 
             let displayGrade;
-            if(comment.memberGrade === 'mentor') displayGrade = '멘토회원';
-            else if(comment.memberGrade === 'subscribe') displayGrade = '구독회원';
-            else displayGrade = '일반회원';
+            if(comment.memberGrade === 'mentor') {
+                displayGrade = '멘토회원';
+            } else if(comment.memberGrade === 'subscribe') {
+                displayGrade = '구독회원';
+            } else {
+                displayGrade = '일반회원';
+            }
+
+            let fileUrl = comment.filePath && comment.fileName ? `/api/display?filePath=${comment.filePath}&fileName=${comment.fileName}` : '/images/member/no-profile.png';
 
             text += `
             <li class="id${comment.id} post-comments-list-item">   
                 <div class="post-comment-wrapper">
                     <div class="profile-image provider">
-                        <img alt="${comment.memberName}" class="image" src="https://static.cdn.soomgo.com/upload/profile/95ede868-c74e-4153-8cb0-0e47a354a227.jpg?h=110&amp;w=110&amp;webp=1">
+                     <img alt="${comment.memberName}" class="image" src="${fileUrl}">
                     </div>
                     <div class="comment-information">
                         <div class="user-info provider">
