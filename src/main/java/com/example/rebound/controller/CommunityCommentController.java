@@ -1,5 +1,6 @@
 package com.example.rebound.controller;
 
+import com.example.rebound.dto.CommentAlarmDTO;
 import com.example.rebound.dto.CommentCriteriaDTO;
 import com.example.rebound.dto.CommentDTO;
 import com.example.rebound.service.CommentService;
