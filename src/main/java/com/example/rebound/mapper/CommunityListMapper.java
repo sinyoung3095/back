@@ -39,4 +39,8 @@ public interface CommunityListMapper {
     public List<PostDTO> selectAllByKeyword(String keyword);
 //    keyword로 수 조회
     public int selectCountAllByKeyword(String keyword);
+
+    public int selectCountPostByYear(String year);
+
+    public int selectCountPostByMonth(String month);
 }

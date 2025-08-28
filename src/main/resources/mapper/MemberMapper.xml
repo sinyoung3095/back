@@ -125,4 +125,20 @@
         from tbl_member
         where member_phone_number = #{memberPhoneNumber}
     </select>
+    <select id="selectCountGradeByYear">
+        select count(*) from tbl_member
+        where created_date like concat('%',#{year},'%') and member_status = 'active' and (member_grade= 'none' or member_grade='mentor')
+    </select>
+    <select id="selectCountGradeByMonth">
+        select count(*) from tbl_member
+        where created_date like concat('%-',#{month},'-%') and member_status = 'active' and (member_grade= 'none' or member_grade='mentor')
+    </select>
+    <select id="selectCountSubscribeByYear">
+        select count(*) from tbl_member
+        where created_date like concat('%',#{year},'%') and member_status = 'active' and member_grade= 'subscribe'
+    </select>
+    <select id="selectCountSubscribeByMonth">
+        select count(*) from tbl_member
+        where created_date like concat('%-',#{month},'-%') and member_status = 'active' and member_grade= 'subscribe'
+    </select>
 </mapper>

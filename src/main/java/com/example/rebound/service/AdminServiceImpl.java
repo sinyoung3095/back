@@ -7,7 +7,9 @@ import com.example.rebound.util.PostCriteria;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -147,6 +149,26 @@ public class AdminServiceImpl implements AdminService {
     public NoticeDTO noticeDetail(int id) {
 
         return noticeDAO.findNoticeById(id);
+    }
+
+    @Override
+    public List<ChartDTO> findChartGeneralAll() {
+        List<ChartDTO> chartDTOS = new ArrayList<>();
+        LocalDateTime localDateTime = LocalDateTime.now();
+        for(int i =0;i<4;i++) {
+            ChartDTO chartDTO = new ChartDTO();
+            chartDTO.setYear(localDateTime.getYear() - i + "");
+            chartDTO.setMonth(localDateTime.getMonthValue() - i + "");
+            chartDTO.setYearCount( memberDAO.findCountByYear(localDateTime.getYear() - i +""));
+            chartDTO.setMonthCount(memberDAO.findCountByMonth(String.format("%02d",localDateTime.getMonthValue() - i )));
+            chartDTO.setSubscribeYearCount(memberDAO.findSubscribeCountByYear(localDateTime.getYear() - i +""));
+            chartDTO.setSubscribeMonthCount(memberDAO.findSubscribeCountByMonth(String.format("%02d",localDateTime.getMonthValue() - i )));
+            chartDTO.setPostByYearCount(postDAO.findPostCountByYear(localDateTime.getYear() - i +""));
+            chartDTO.setPostByMonthCount(postDAO.findPostCountByMonth(String.format("%02d",localDateTime.getMonthValue() - i)));
+            chartDTOS.add(chartDTO);
+        }
+
+        return chartDTOS;
     }
 
 
