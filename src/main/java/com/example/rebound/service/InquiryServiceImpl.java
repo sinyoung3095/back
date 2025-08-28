@@ -37,6 +37,8 @@ public class InquiryServiceImpl implements InquiryService {
         inquiryDTO.setMemberId(memberDAO.findMemberByEmail(inquiryDTO.getMemberEmail()).getId());
         if (emailCheck && phoneCheck) {
             inquiryDAO.saveInquiry(inquiryDTO);
+            System.out.println(inquiryDTO.getId());
+
             files.forEach(file -> {
                 if(file.getOriginalFilename().equals("")){
                     return ;
@@ -52,7 +54,7 @@ public class InquiryServiceImpl implements InquiryService {
                 fileDTO.setFileContentType(file.getContentType());
 
                 fileDAO.uploadFile(fileDTO);
-
+                System.out.println(fileDTO.getId());
                 inquiryFileDTO.setInquiryId(inquiryDTO.getId());
                 inquiryFileDTO.setId(fileDTO.getId());
 

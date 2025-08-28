@@ -10,6 +10,7 @@
 </head>
 <body>
     <main class="main">
+        <header th:replace="~{/main-page/header}"></header>
         <div class="main-1">
             <div class="main-2">
                 <h1 class="main-3">이메일 찾기</h1>
@@ -20,16 +21,13 @@
                             <div class="main-8">
                                 <div class="css-0">
                                     <div class="main-10">
-                                        <input id="phone" class="main-11" placeholder="예) 010-1234-1234" name="phone" autocomplete="off" value="">
+                                        <input id="phone" class="main-11" placeholder="예) 01012341234" name="phone" autocomplete="off" value="">
                                     </div>
                                 </div>
                                 <button id="sendButton" type="button" class="main-9">전송</button>
                             </div>
-                                <!-- 번호 입력시 위 버튼이 재전송으로 변경되고
-                                아래 주석된 부분 표시
-                                -->
                             <div id="sendMessage" class="main-12" style="display:none;">
-                                <p class="main-13">인증번호를 전송하였습니다. </p>
+                                <p class="main-13 sendMessage"></p>
                             </div>
                         </div>
                         <div id="verifySection" class="main-5" style="display:none;">
@@ -40,14 +38,18 @@
                                         <input id="verify" class="main-11" placeholder="SMS 인증번호를 입력해주세요." name="verify" autocomplete="off" value="">
                                     </div>
                                 </div>
-                                <button id="verifyButton" type="button" disabled="" class="main-9">인증하기</button>
+                                <button id="verifyButton" type="button" class="main-9">인증하기</button>
+                            </div>
+                            <div id="verifyCheck" class="main-12" style="display:none;">
+                                <p class="main-13 verifyCheckText"></p>
                             </div>
                         </div>
-                        <button type="submit" class="main-6">확인</button>
+                        <button type="submit" id="correctCode" class="main-6">확인</button>
                     </form>
                 </div>
             </div>
         </div>
+        <footer th:replace="~{/main-page/footer}"></footer>
     </main>   
 </body>
 <script src="/js/email/module/service.js"></script>
