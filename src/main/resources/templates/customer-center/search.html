@@ -6,6 +6,8 @@
     <title>검색 결과 - 리바운드</title>
     <link rel="stylesheet" href="/css/customer-center/search.css">
     <link rel="stylesheet" href="/font/didactgothic.woff2">
+    <link rel="stylesheet" href="/css/main-page/header.css">
+    <link rel="stylesheet" href="/css/main-page/header2.css">
     <link rel="stylesheet" href="/font/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
     <link rel="stylesheet" href="/font/roboto-cyrillic-700-normal-d010f1f324e111a22e53.woff2">
     <link rel="stylesheet" href="/font/roboto-cyrillic-ext-700-normal-be4d02458ce53887dc37.woff2">
@@ -17,7 +19,12 @@
     <link rel="icon" href="/images/favicon.png">
 </head>
 <body>
-    <header th:replace="~{/main-page/header2.html}"></header>
+    <th:block th:if="${session.member != null}">
+        <header th:replace="~{/main-page/header2.html :: #app-header}"></header>
+    </th:block>
+    <th:block th:unless="${session.member !=null}">
+        <header th:replace="~{/main-page/header.html :: #app-header}"></header>
+    </th:block>
     <main role="main">
         <div class="container-divider"></div>
         <div class="container">

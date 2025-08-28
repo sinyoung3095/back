@@ -6,6 +6,8 @@
     <title>리바운드 관리자</title>
     <link data-vue-meta="1" rel="shortcut icon" href="/images/member/icon.png">
     <link rel="stylesheet" href="/css/admin-mainpage/admin-mainpage.css">
+    <link rel="stylesheet" href="/css/admin-counselor/counselor-apply/counselor-apply.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
     <div id="rebound">
@@ -180,12 +182,6 @@
                                 <div class="user-menu-content dropdown-menu dropdown-menu-right">
                                     <ul class="menu-body list-unstyled">
                                         <li>
-                                            <a href="" class="rebound-link d-block text-dark">
-                                                <i class="mdi mdi-bell-outline mr-2 mdi-18px"></i>
-                                                알림
-                                            </a>
-                                        </li>          
-                                        <li>
                                             <a href="" class="d-block text-dark">
                                                 <i class="mdi mdi-logout-variant mr-2 mdi-18px"></i>
                                                 로그아웃
@@ -208,47 +204,8 @@
                         <div class="tab-row white-panel">
                             <div class="row">
                                 <div class="col-12 col-lg filter-col">
-                                    <div class="rebound-chart-date">
-                                        <div class="btn-group mr-1">
-                                            <button class="btn btn-light">1주</button>
-                                            <button class="btn btn-light active">2주</button>
-                                            <button class="btn btn-light">1개월</button>
-                                        </div>
-                                        <!-- 새로고침 시 아이디 뒤 쪽 숫자 변경됨 -->
-                                        <div class="rebound-date-range-input-container" id="rebound-date-input-c8a90d76-36a6-4c39-ae2d-edec7bb8df01">
-                                            <div class="form-group date ml-2 undefined">
-                                                <div class="row p-0 m-0 h-100 align-items-center">
-                                                    <div class="input-col">
-                                                        <input class="date-input" size="10" placeholder="yyyy-mm-dd">
-                                                    </div>
-                                                    <div class="icon-col p-0 m-0">
-                                                        <span class="comp-icon icon" id="icons/ico-calendar.svg">
-                                                            <svg class="icon-img" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path class="icon-color fill" d="M10.625 1.875h2.5a.625.625 0 0 1 .625.625v10a.624.624 0 0 1-.625.625H1.875a.625.625 0 0 1-.625-.625v-10a.625.625 0 0 1 .625-.625h2.5V.625h1.25v1.25h3.75V.625h1.25v1.25zm-1.25 1.25h-3.75v1.25h-1.25v-1.25H2.5v2.5h10v-2.5h-1.875v1.25h-1.25v-1.25zm3.125 3.75h-10v5h10v-5z" fill="#AFB7BA"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group date ml-2 undefined">
-                                                <div class="row p-0 m-0 h-100 align-items-center">
-                                                    <div class="input-col">
-                                                        <input class="date-input" size="10" placeholder="yyyy-mm-dd">
-                                                    </div>
-                                                    <div class="icon-col p-0 m-0">
-                                                        <span class="comp-icon icon" id="icons/ico-calendar.svg">
-                                                            <svg class="icon-img" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path class="icon-color fill" d="M10.625 1.875h2.5a.625.625 0 0 1 .625.625v10a.624.624 0 0 1-.625.625H1.875a.625.625 0 0 1-.625-.625v-10a.625.625 0 0 1 .625-.625h2.5V.625h1.25v1.25h3.75V.625h1.25v1.25zm-1.25 1.25h-3.75v1.25h-1.25v-1.25H2.5v2.5h10v-2.5h-1.875v1.25h-1.25v-1.25zm3.125 3.75h-10v5h10v-5z" fill="#AFB7BA"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>                  
-                                        </div>
-                                        <button class="btn btn-primary btn-search-sm">
-                                            <i class="mdi mdi-magnify mr-1"></i>
-                                            검색
-                                        </button>
+                                    <div class="rebound-chart-date" style="height: 44px;padding-top: 0px;">
+                                        <img src="/images/logo.png" style="width: 50px">
                                     </div>
                                 </div>
                             </div>
@@ -263,22 +220,7 @@
                                             <div class="col-12 col-lg-6">
                                                 <div class="chart-box">
                                                     <div class="chart-wrapper">
-                                                        <div class="echarts-for-react rebound-chart height-300" _echarts_instance_="ec_1753593982604" size-sensor-id="1" style="height:300px; user-select:none; -webkit-tap-highlight-color:rgba(0, 0, 0, 0); position:relative;">
-                                                            <div style="position: relative; width: 446px; height: 300px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;">
-                                                                <canvas data-zr-dom-id="zr_0" width="669" height="450" style="position:absolute; left:0px; top:0px; width:446px; height:300px; user-select:none; -webkit-tap-highlight-color:rgba(0, 0, 0, 0); padding:0px; margin:0px; border-width:0px;"></canvas>
-                                                            </div>
-                                                            <div class="" style="position:absolute; display:block; border-style:solid; white-space:nowrap; z-index:9999999; box-shadow:rgba(0, 0, 0, 0.2) 1px 2px 10px; transition:opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1), visibility 0.2s cubic-bezier(0.23, 1, 0.32, 1), transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); background-color:rgb(255, 255, 255); border-width:1px; border-radius:4px; color:rgb(102, 102, 102); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 10px; top: 0px; left: 0px; transform: translate3d(286px, 97px, 0px); border-color: rgb(255, 255, 255); pointer-events: none; visibility: hidden; opacity: 0;">
-                                                                <div style="font-size: 11px">2025-07-22 
-                                                                    <span style="color: #839099">화</span>
-                                                                </div>
-                                                                <span style="display:inline-block; margin-right:4px; border-radius:10px; width:10px; height:10px; background-color:#6387f9;"></span>
-                                                                방문: 
-                                                                <span style="font-weight: bold">0명</span>
-                                                                <br>
-                                                                <span style="display:inline-block; margin-right:4px; border-radius:10px; width:10px; height:10px; background-color:#ff9933;"></span> 
-                                                                판매건수: 
-                                                                <span style="font-weight: bold">0건</span>
-                                                            </div>
+                                                        <div id="first-chart" class="echarts-for-react rebound-chart height-300" _echarts_instance_="ec_1753593982604" size-sensor-id="1" style="height:300px; user-select:none; -webkit-tap-highlight-color:rgba(0, 0, 0, 0); position:relative;">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -287,22 +229,7 @@
                                             <div class="col-12 col-lg-6">
                                                 <div class="chart-box">
                                                     <div class="chart-wrapper">
-                                                        <div class="echarts-for-react rebound-chart height-300" _echarts_instance_="ec_1753593982605" size-sensor-id="2" style="height:300px; user-select:none; -webkit-tap-highlight-color:rgba(0, 0, 0, 0); position:relative;">
-                                                            <div style="position:relative; width:446px; height:300px; padding:0px; margin:0px; border-width:0px; cursor:default;">
-                                                                <canvas data-zr-dom-id="zr_0" width="669" height="450" style="position:absolute; left:0px; top:0px; width:446px; height:300px; user-select:none; -webkit-tap-highlight-color:rgba(0, 0, 0, 0); padding:0px; margin:0px; border-width:0px;"></canvas>
-                                                            </div>
-                                                            <div class="" style="position:absolute; display:block; border-style:solid; white-space:nowrap; z-index:9999999; box-shadow:rgba(0, 0, 0, 0.2) 1px 2px 10px; transition:opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1), visibility 0.2s cubic-bezier(0.23, 1, 0.32, 1), transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); background-color:rgb(255, 255, 255); border-width:1px; border-radius:4px; color:rgb(102, 102, 102); font:14px / 21px &quot;Microsoft YaHei&quot;; padding:10px; top:0px; left:0px; transform:translate3d(229px, 115px, 0px); border-color:rgb(255, 255, 255); pointer-events:none; visibility:hidden; opacity:0;">
-                                                                <div style="font-size:11px">2025-07-27 
-                                                                    <span style="color:#f2460d">일</span>
-                                                                </div>
-                                                                <span style="display:inline-block; margin-right:4px; border-radius:10px; width:10px; height:10px; background-color:#6387f9;"></span>
-                                                                방문: 
-                                                                <span style="font-weight: bold">0명</span>
-                                                                <br>
-                                                                <span style="display:inline-block; margin-right:4px; border-radius:10px; width:10px; height:10px; background-color:#ff9933;"></span>
-                                                                판매건수: 
-                                                                <span style="font-weight:bold">0건</span>
-                                                            </div>
+                                                        <div id="second-chart" class="echarts-for-react rebound-chart height-300" _echarts_instance_="ec_1753593982605" size-sensor-id="2" style="height:300px; user-select:none; -webkit-tap-highlight-color:rgba(0, 0, 0, 0); position:relative;">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -312,33 +239,33 @@
                                             <div class="row">
                                                 <div class="col-12 col-md-6 col-lg-3">
                                                     <div class="access-data data-member-time">
-                                                        <div class="title">[회원] 평균 체류시간</div>
+                                                        <div class="title">[회원]이번 연도 회원가입 수</div>
                                                         <div class="value">
-                                                            <span class="icon"><i class="mdi mdi-timer-outline"></i></span>-<span class="unit">초</span>
+                                                            <span class="icon"><i class="mdi mdi-timer-outline"></i></span><span id="year-join"></span><span class="unit">명</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-6 col-lg-3">
                                                     <div class="access-data data-member-page">
-                                                        <div class="title">[회원] 평균 페이지 전환 수</div>
+                                                        <div class="title">[회원] 이번 달 회원가입 수</div>
                                                         <div class="value">
-                                                            <span class="icon"><i class="mdi mdi-file-send-outline"></i></span>-<span class="unit">회</span>                                                          
+                                                            <span class="icon"><i class="mdi mdi-timer-outline"></i></span><span id="month-join"></span><span class="unit">명</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-6 col-lg-3">
                                                     <div class="access-data data-non-member-time">
-                                                        <div class="title">[비회원] 평균 체류시간</div>
+                                                        <div class="title">이번 연도 게시글 수</div>
                                                         <div class="value">
-                                                            <span class="icon"><i class="mdi mdi-timer-outline"></i></span>0.00<span class="unit">초</span>
+                                                            <span class="icon"><i class="mdi mdi-file-send-outline"></i></span><span id="year-post"></span><span class="unit">회</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-6 col-lg-3">
                                                     <div class="access-data data-non-member-page">
-                                                        <div class="title">[비회원] 평균 페이지 전환 수</div>
+                                                        <div class="title">이번 달 게시글 수</div>
                                                         <div class="value">
-                                                            <span class="icon"><i class="mdi mdi-file-send-outline"></i></span>1.00<span class="unit">회</span>
+                                                            <span class="icon"><i class="mdi mdi-file-send-outline"></i></span><span id="month-post"></span><span class="unit">회</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -346,64 +273,22 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-12 col-xl-4">
-                                        <div class="chart-box user-price-box">
+                                        <div class="chart-box user-price-box" style="padding: 0 20px">
                                             <div class="box-header">
-                                                <div class="box-title">고객단가</div>
+                                                <div class="box-title">상담사 자격 신청 현황</div>
                                             </div>
-                                            <div class="box-body">
-                                                <table class="user-price-table justify-table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th></th>
-                                                            <th>ARPU</th>
-                                                            <th></th>
-                                                            <th>ARPU</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="td-class" rowspan="3">회원</td>
-                                                            <td class="td-value value-new">0</td>
-                                                            <td class="td-field">신규</td>
-                                                            <td class="td-value value-new">0</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="td-value value-revisit">0</td>
-                                                            <td class="td-field">재방문</td>
-                                                            <td class="td-value value-revisit">0</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="td-value value-total">0</td>
-                                                            <td class="td-field">전체</td>
-                                                            <td class="td-value value-total">0</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="td-divider" colspan="4"></td>
-                                                        </tr>
-                                                    </tbody>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="td-class" rowspan="3">비회원</td>
-                                                            <td class="td-value value-new">0</td>
-                                                            <td class="td-field">신규</td>
-                                                            <td class="td-value value-new">0</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="td-value value-revisit">0</td>
-                                                            <td class="td-field">재방문</td>
-                                                            <td class="td-value value-revisit">0</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="td-value value-total">0</td>
-                                                            <td class="td-field">전체</td>
-                                                            <td class="td-value value-total">0</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="td-divider" colspan="4"></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                                            <table  class="table grey-header-table w-100 counselor-table" style="height:380px; text-align: center ;padding: 0 20px;">
+                                                <thead>
+                                                <tr>
+                                                    <th class="td-name">이름</th>
+                                                    <th class="td-email">이메일</th>
+                                                    <th class="td-apply">승인여부</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="counselorWrap" class="members">
+
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>
@@ -411,26 +296,8 @@
                                     <div class="col-12 col-lg-6">
                                         <div class="chart-box">
                                             <div class="chart-wrapper">
-                                                <div class="echarts-for-react rebound-chart" _echarts_instance_="ec_1753593982606" size-sensor-id="3" style="height:300px; user-select:none; -webkit-tap-highlight-color:rgba(0, 0, 0, 0); position:relative;">
-                                                    <div style="position:relative; width:684px; height:300px; padding:0px; margin:0px; border-width:0px; cursor:default;">
-                                                        <canvas data-zr-dom-id="zr_0" width="1026" height="450" style="position:absolute; left:0px; top:0px; width:684px; height:300px; user-select:none; -webkit-tap-highlight-color:rgba(0, 0, 0, 0); padding:0px; margin:0px; border-width:0px;"></canvas>
-                                                    </div>
-                                                    <div class="" style="position:absolute; display:block; border-style:solid; white-space:nowrap; z-index:9999999; box-shadow:rgba(0, 0, 0, 0.2) 1px 2px 10px; transition:opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1), visibility 0.2s cubic-bezier(0.23, 1, 0.32, 1), transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); background-color:rgb(255, 255, 255); border-width:1px; border-radius:4px; color:rgb(102, 102, 102); font:14px / 21px &quot;Microsoft YaHei&quot;; padding:10px; top:0px; left:0px; transform:translate3d(503px, 111px, 0px); border-color:rgb(255, 255, 255); pointer-events:none; visibility:hidden; opacity:0;">
-                                                        <div style="font-size:11px">2025-07-24
-                                                            <span style="color:#839099">목</span>
-                                                        </div>
-                                                        <span style="display:inline-block; margin-right:4px; border-radius:10px; width:10px; height:10px; background-color:#6387f9;"></span>
-                                                        방문자: 
-                                                        <span style="font-weight:bold">0명</span>
-                                                        <br>
-                                                        <span style="display:inline-block; margin-right:4px; border-radius:10px; width:10px; height:10px; background-color:#ff9933;"></span>
-                                                        구매자: 
-                                                        <span style="font-weight:bold">0명</span>
-                                                        <br>
-                                                        <span style="display:inline-block; margin-right:4px; border-radius:10px; width:10px; height:10px; background-color:#5cb85c;"></span>
-                                                        구매전환율(%): 
-                                                        <span style="font-weight:bold">0%</span>
-                                                    </div>
+                                                <div id="third-chart" class="echarts-for-react rebound-chart" _echarts_instance_="ec_1753593982608" size-sensor-id="5" style="height:300px; user-select:none; -webkit-tap-highlight-color:rgba(0, 0, 0, 0); position:relative;">
+
                                                 </div>
                                             </div>
                                         </div>
@@ -438,71 +305,8 @@
                                     <div class="col-12 col-lg-6">
                                         <div class="chart-box">
                                             <div class="chart-wrapper">
-                                                <div class="echarts-for-react rebound-chart" _echarts_instance_="ec_1753593982607" size-sensor-id="4" style="height:300px; user-select:none; -webkit-tap-highlight-color:rgba(0, 0, 0, 0); position:relative;">
-                                                    <div style="position:relative; width:684px; height:300px; padding:0px; margin:0px; border-width:0px; cursor:default;">
-                                                        <canvas data-zr-dom-id="zr_0" width="1026" height="450" style="position:absolute; left:0px; top:0px; width:684px; height:300px; user-select: none; -webkit-tap-highlight-color:rgba(0, 0, 0, 0); padding:0px; margin:0px; border-width:0px;"></canvas>
-                                                    </div>
-                                                    <div class="" style="position:absolute; display:block; border-style:solid; white-space:nowrap; z-index:9999999; box-shadow:rgba(0, 0, 0, 0.2) 1px 2px 10px; transition:opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1), visibility 0.2s cubic-bezier(0.23, 1, 0.32, 1), transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); background-color:rgb(255, 255, 255); border-width:1px; border-radius:4px; color:rgb(102, 102, 102); font:14px / 21px &quot;Microsoft YaHei&quot;; padding:10px; top:0px; left:0px; transform:translate3d(189px, 150px, 0px); border-color:rgb(255, 255, 255); pointer-events:none; visibility:hidden; opacity:0;">
-                                                        <div style="font-size:11px">2025-07-15 
-                                                            <span style="color:#839099">화</span>
-                                                        </div>
-                                                        <span style="display:inline-block; margin-right:4px; border-radius:10px; width:10px; height:10px; background-color:#6387f9;"></span>
-                                                        방문자: 
-                                                        <span style="font-weight:bold">0명</span>
-                                                        <br>
-                                                        <span style="display:inline-block; margin-right:4px; border-radius:10px; width:10px; height:10px; background-color:#ff9933;"></span>
-                                                        구매자: 
-                                                        <span style="font-weight:bold">0명</span>
-                                                        <br>
-                                                        <span style="display:inline-block; margin-right:4px; border-radius:10px; width:10px; height:10px; background-color:#5cb85c;"></span>
-                                                        구매전환율(%): 
-                                                        <span style="font-weight:bold">0명</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="chart-row row">
-                                    <div class="col-12 col-lg-6">
-                                        <div class="chart-box">
-                                            <div class="chart-wrapper">
-                                                <div class="echarts-for-react rebound-chart" _echarts_instance_="ec_1753593982608" size-sensor-id="5" style="height:300px; user-select:none; -webkit-tap-highlight-color:rgba(0, 0, 0, 0); position:relative;">
-                                                    <div style="position:relative; width:684px; height:300px; padding:0px; margin:0px; border-width:0px; cursor:default;">
-                                                        <canvas data-zr-dom-id="zr_0" width="1026" height="450" style="position:absolute; left:0px; top:0px; width:684px; height:300px; user-select:none; -webkit-tap-highlight-color:rgba(0, 0, 0, 0); padding:0px; margin:0px; border-width:0px;"></canvas>
-                                                    </div>
-                                                    <div class="" style="position:absolute; display:block; border-style:solid; white-space:nowrap; z-index:9999999; box-shadow:rgba(0, 0, 0, 0.2) 1px 2px 10px; transition:opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1), visibility 0.2s cubic-bezier(0.23, 1, 0.32, 1), transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); background-color:rgb(255, 255, 255); border-width:1px; border-radius:4px; color:rgb(102, 102, 102); font:14px / 21px &quot;Microsoft YaHei&quot;; padding:10px; top:0px; left:0px; transform:translate3d(297px, 95px, 0px); border-color:rgb(255, 255, 255); pointer-events:none; visibility:hidden; opacity:0;">
-                                                        <div style="font-size:11px">2025-07-18 
-                                                            <span style="color:#839099">금</span>
-                                                        </div>
-                                                        <span style="display:inline-block; margin-right:4px; border-radius:10px; width:10px; height:10px; background-color:#6387f9;"></span> 
-                                                        PC: 
-                                                        <span style="font-weight:bold">0회</span>
-                                                        <br>
-                                                        <span style="display:inline-block; margin-right:4px; border-radius:10px; width:10px; height:10px; background-color:#ff9933;"></span> 
-                                                        Mobile Web: 
-                                                        <span style="font-weight:bold">0회</span>
-                                                        <br>
-                                                        <span style="display:inline-block; margin-right:4px; border-radius:10px; width:10px; height:10px; background-color:#5cb85c;"></span> 
-                                                        Android: 
-                                                        <span style="font-weight:bold">0회</span>
-                                                        <br>
-                                                        <span style="display:inline-block; margin-right:4px; border-radius:10px; width:10px; height:10px; background-color:#f2460d;"></span> 
-                                                        iOS: 
-                                                        <span style="font-weight:bold">0회</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-lg-6">
-                                        <div class="chart-box">
-                                            <div class="chart-wrapper">
-                                                <div class="echarts-for-react rebound-chart" _echarts_instance_="ec_1753593982609" size-sensor-id="6" style="height:300px; user-select:none; -webkit-tap-highlight-color:rgba(0, 0, 0, 0); position:relative;">
-                                                    <div style="position:relative; width:684px; height:300px; padding:0px; margin:0px; border-width:0px; cursor:default;">
-                                                        <canvas data-zr-dom-id="zr_0" width="1026" height="450" style="position:absolute; left:0px; top:0px; width:684px; height:300px; user-select:none; -webkit-tap-highlight-color:rgba(0, 0, 0, 0); padding:0px; margin:0px; border-width:0px;"></canvas>
-                                                    </div>
-                                                    <div class=""></div>
+                                                <div id="fourth-chart" class="echarts-for-react rebound-chart" _echarts_instance_="ec_1753593982609" size-sensor-id="6" style="height:300px; user-select:none; -webkit-tap-highlight-color:rgba(0, 0, 0, 0); position:relative;">
+
                                                 </div>
                                             </div>
                                         </div>
@@ -517,5 +321,7 @@
         </div>
     </div>
 </body>
-<script src="/js/admin/admin-mainpage.js"></script>
+<script src="/js/admin/mainpage/module/service.js"></script>
+<script src="/js/admin/mainpage/module/layout.js"></script>
+<script src="/js/admin/mainpage/event.js"></script>
 </html>

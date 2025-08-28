@@ -77,4 +77,12 @@
             and (m.member_email like concat('%', #{keyword}, '%') or m.member_Name like concat('%', #{keyword}, '%'))
 
     </select>
+    <select id="selectCountPostByYear">
+        select count(*) from tbl_post
+        where created_date like concat('%',#{year},'%') and post_status = 'active'
+    </select>
+    <select id="selectCountPostByMonth">
+        select count(*) from tbl_post
+        where created_date like concat('%-',#{month},'-%') and post_status = 'active'
+    </select>
 </mapper>

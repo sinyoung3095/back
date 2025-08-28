@@ -19,12 +19,12 @@
     <link rel="icon" href="/images/favicon.png">
 </head>
 <body>
-<th:block th:if="${session.member != null}">
-    <header th:replace="~{/main-page/header2.html :: #app-header}"></header>
-</th:block>
-<th:block th:unless="${session.member !=null}">
-    <header th:replace="~{/main-page/header.html :: #app-header}"></header>
-</th:block>
+    <th:block th:if="${session.member != null}">
+        <header th:replace="~{/main-page/header2.html :: #app-header}"></header>
+    </th:block>
+    <th:block th:unless="${session.member !=null}">
+        <header th:replace="~{/main-page/header.html :: #app-header}"></header>
+    </th:block>
     <main role="main">
         <div class="container-divider"></div>
         <div class="container">

@@ -22,7 +22,4 @@ create table tbl_member
     constraint member_phone_number
         unique (member_phone_number)
 );
-
 select * from tbl_member;
-insert into tbl_member(member_name,member_email,member_phone_number,member_password,member_common)
-values ("관리자","rebound@gmail.com",01012345678,"1234",'admin');
