@@ -121,7 +121,7 @@
 
     <!-- 회원 이메일 찾기 -->
     <select id="selectEmailByPhonerNumber">
-        select member_email, kakao_email
+        select member_email
         from tbl_member
         where member_phone_number = #{memberPhoneNumber}
     </select>

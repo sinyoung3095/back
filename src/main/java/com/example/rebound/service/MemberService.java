@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
-public interface MemberService {
+public interface  MemberService {
 //    회원 회원가입
     public void joinMember(MemberDTO memberDTO);
 //    회원 이메일 중복 검사
@@ -33,4 +33,6 @@ public interface MemberService {
     public void deleteProfile(Long id);
 //    회원 비밀번호 변경
     public void updateMemberPassword(String memberPassword, String memberEmail);
+//    회원 이메일 찾기
+    public String findEmailByPhone(String memberPhoneNumber);
 }
