@@ -10,7 +10,8 @@
 
 </head>
 <body>
-<div id="main">
+<main id="main" class="main">
+    <header th:replace="~{/main-page/header}"></header>
     <div class="container">
         <div class="container-1">
             <h2>비밀번호 찾기</h2>
@@ -21,35 +22,14 @@
                             <fieldset class="form-group" id="">
                                 <legend tabindex="-1" class="bv-no-focus-ring col-form-label pt-0" style="text-align: center;">회원가입이 되지 않은 이메일입니다.</legend>
                                 <legend tabindex="-1" class="bv-no-focus-ring col-form-label pt-0" style="text-align: center;">다시 시도해주세요.</legend>
-<!--                                <div>-->
-<!--                                    <input data-v-43fb0b96="" name="email" type="text" placeholder="example@gmail.com" class="form-control" data-vv-name="email" aria-invalid="false" id="__BVID__81">-->
-<!--                                </div>-->
                             </fieldset>
                         </div>
-<!--                        <div class="col">-->
-<!--                            <small data-v-43fb0b96="" class="notice form-text text-muted"> 가입하신 이메일 주소를 입력해주시면<br>-->
-<!--                                새로운 비밀번호를 설정 가능한 링크를 보내드립니다.-->
-<!--                            </small>-->
-<!--                        </div>-->
-<!--                        <div class="col">-->
-<!--                            <button  type="submit" class="btn btn-primary btn-block">-->
-<!--                                <span >이메일 전송하기</span>-->
-<!--                                <span style="display: none;">-->
-<!--                                    <div>-->
-<!--                                        <div  class="indicator-body center" style="width: 24px; height: 24px; border-width: 0.25rem; border-style: solid; border-color: rgb(255, 255, 255) rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.2); border-image: initial;"></div>-->
-<!--                                        <p  style="display: none;">-->
-
-<!--                                        </p>-->
-<!--                                    </div>-->
-<!--                                </span>-->
-<!--                            </button>-->
-<!--                        </div>-->
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
-</div>
+    <footer th:replace="~{/main-page/footer}"></footer>
+</main>
 </body>
 </html>
