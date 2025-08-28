@@ -21,7 +21,7 @@
 
 </head>
 <body>
-<header th:replace="~{/main-page/header2.html :: #app-header}"></header>
+<!--<header th:replace="~{/main-page/header2.html :: #app-header}"></header>-->
     <main class="main">
         <div class="main-1">
             <p class="main-2">마이페이지 (상담사)</p>
@@ -134,5 +134,11 @@
     </main>
 <footer th:replace="~{/main-page/footer.html :: #app-footer}"></footer>
 </body>
+<script th:inline="javascript">
+    const counselorId = [[${session.counselor.id}]];
+    const fileId = [[${file?.id}]];
+    const filePath = [[${file?.filePath}]];
+    const fileName = [[${file?.fileName}]];
+</script>
 <script src="/js/member/counselor-mypage.js"></script>
 </html>

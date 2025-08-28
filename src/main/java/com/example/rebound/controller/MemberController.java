@@ -102,7 +102,8 @@ public class MemberController {
     public String Login(MemberDTO memberDTO, Model model) {
         MemberDTO member = memberService.login(memberDTO).orElseThrow(LoginFailException::new);
         session.setAttribute("member", member);
-//        System.out.println(member.getMemberName());
+        model.addAttribute("member", member);
+        model.addAttribute("file", fileService.findFileByMemberId(member.getId()));
         return "redirect:/member/mypage";
     }
 

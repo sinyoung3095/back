@@ -6,7 +6,7 @@
     <title>계정 설정</title>
     <link data-vue-meta="1" rel="shortcut icon" href="/images/member/icon.png">
     <link rel="stylesheet" href="/css/member/mypage-set.css">
-    
+
     <link rel="stylesheet" href="/font/didactgothic.woff2">
     <link rel="stylesheet" href="/font/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
     <link rel="stylesheet" href="/font/roboto-cyrillic-700-normal-d010f1f324e111a22e53.woff2">
@@ -115,7 +115,7 @@
                     </button>
                 </li>
             </ul>
-            <hr class="main-4">    
+            <hr class="main-4">
         </div>
     </main>
 <footer th:replace="~{/main-page/footer.html :: #app-footer}"></footer>
@@ -124,10 +124,11 @@
     const memberId = [[${member.id}]];
 </script>
 <script th:inline="javascript">
-    const fileId = [[${file.id}]];
-    const filePath = [[${file.filePath}]];
-    const fileName = [[${file.fileName}]];
+    const fileId = [[${file?.id}]];
+    const filePath = [[${file?.filePath}]];
+    const fileName = [[${file?.fileName}]];
 </script>
+
 <script th:inline="javascript">
     const kakaoProfileUrl = [[${member.kakaoProfileUrl}]];
 </script>

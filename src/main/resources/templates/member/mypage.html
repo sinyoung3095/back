@@ -128,9 +128,9 @@
 </body>
 <script th:inline="javascript">
     const memberid = [[${session.member.id}]];
-    const fileId = [[${file.id}]];
-    const filePath = [[${file.filePath}]];
-    const fileName = [[${file.fileName}]];
+    const fileId = [[${file?.id}]];
+    const filePath = [[${file?.filePath}]];
+    const fileName = [[${file?.fileName}]];
     const kakaoProfileUrl = [[${member.kakaoProfileUrl}]];
 </script>
 <script src="/js/member/mypage/event.js"></script>

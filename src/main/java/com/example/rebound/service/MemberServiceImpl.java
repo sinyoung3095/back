@@ -6,8 +6,10 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.nio.file.Files;
@@ -120,16 +122,53 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public void deleteProfile(Long id){
+    public void deleteProfile(Long id) {
+        Optional<FileDTO> deleteFileOpt = memberProfileFileDAO.findMemberProfileFileById(id);
+
         memberProfileFileDAO.deleteMemberProfileById(id);
         fileDAO.deleteFile(id);
-        Optional<FileDTO> deleteFile=memberProfileFileDAO.findMemberProfileFileById(id);
-        String deleteFilePath=deleteFile.get().getFilePath();
-        String deleteFileName=deleteFile.get().getFileName();
-        File file = new File("C:/file/" + deleteFilePath, deleteFileName);
-        if (file.exists()) {
-            file.delete();
+
+        if (deleteFileOpt.isPresent()) {
+            FileDTO deleteFile = deleteFileOpt.get();
+            File file = new File("C:/file/" + deleteFile.getFilePath(), deleteFile.getFileName());
+            if (file.exists()) {
+                file.delete();
+            }
         }
+    }
+
+    @Override
+    public FileDTO saveProfileFile(MultipartFile file, Long memberId) throws IOException {
+        String todayPath = getPath();
+        String rootPath = "C:/reboundFile/" + todayPath;
+
+        if (file.isEmpty()) {
+            throw new IllegalArgumentException("파일이 비어있습니다.");
+        }
+
+        File directory = new File(rootPath);
+        if (!directory.exists()) directory.mkdirs();
+
+        String fileName = UUID.randomUUID().toString() + ".jpg";
+        File fileToSave = new File(rootPath, fileName);
+
+        file.transferTo(fileToSave);
+
+        FileDTO fileDTO = new FileDTO();
+        fileDTO.setFileName(fileName);
+        fileDTO.setFileOriginalName(file.getOriginalFilename() != null ? file.getOriginalFilename() : "kakao_profile.jpg");
+        fileDTO.setFileContentType(file.getContentType() != null ? file.getContentType() : "image/jpeg");
+        fileDTO.setFilePath(todayPath);
+        fileDTO.setFileSize(String.valueOf(file.getSize()));
+
+        fileDAO.uploadFile(fileDTO);
+
+        MemberProfileFileDTO profileDTO = new MemberProfileFileDTO();
+        profileDTO.setMemberId(memberId);
+        profileDTO.setId(fileDTO.getId());
+        memberProfileFileDAO.saveMemberProfileFile(profileDTO);
+
+        return fileDTO;
     }
 
     @Override
