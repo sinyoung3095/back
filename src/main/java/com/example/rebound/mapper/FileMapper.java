@@ -13,7 +13,7 @@ public interface FileMapper {
     public void insertFile(FileDTO fileDTO);
 //    조회
     public Optional<FileDTO> selectFileById(Long id);
-    Optional<FileDTO> selectFileByMemberId(Long memberId);
+    public Optional<FileDTO> selectFileByMemberId(Long memberId);
     public Optional<FileDTO> selectFileByCounselorId(Long counselorId);
 //    삭제
     public void deleteFileById(Long id);

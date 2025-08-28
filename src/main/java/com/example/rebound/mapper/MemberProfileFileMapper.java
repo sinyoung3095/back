@@ -11,7 +11,7 @@ public interface MemberProfileFileMapper {
 //    추가
     public void insertMemberProfileFile(MemberProfileFileDTO memberProfileFileDTO);
 //    조회
-    public Optional<FileDTO> findMemberProfileFileById(Long id);
+    public Optional<FileDTO> selectMemberProfileFileByMemberId(Long id);
 //    삭제
     public void deleteMemberProfileById(Long id);
 }
