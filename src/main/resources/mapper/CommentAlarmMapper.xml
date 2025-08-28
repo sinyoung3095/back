@@ -3,7 +3,9 @@
 <mapper namespace="com.example.rebound.mapper.CommentAlarmMapper">
     <select id="selectCommentAlarmById">
         select c.comment_content, ca.id, ca.member_id, ca.comment_id
-        from tbl_comment c join tbl_comment_alarm ca
-        on c.id = ca.comment_id
+        from tbl_comment_alarm ca join tbl_comment c
+        on c.id = ca.comment_id and ca.member_id = #{id}
+        order by ca.id desc
+        limit 5 offset 0
     </select>
 </mapper>

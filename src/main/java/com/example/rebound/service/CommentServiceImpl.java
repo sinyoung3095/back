@@ -8,6 +8,7 @@ import com.example.rebound.repository.LikeDAO;
 import com.example.rebound.util.PostCriteria;
 import com.example.rebound.util.PostDateUtils;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,16 +16,24 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class CommentServiceImpl implements CommentService {
     private final CommentDAO commentDAO;
     private final LikeDAO likeDAO;
-    private final CommentAlarmDTO commentAlarmDTO;
 
     //    댓글 작성
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void write(CommentDTO commentDTO) {
-        commentDAO.save(toCommentVO(commentDTO));
+        commentDAO.save(commentDTO);
+        commentDTO.setId(commentDTO.getId());
+
+        Long memberId = commentDTO.getMemberId();
+        Long commentId = commentDTO.getId();
+
+        CommentAlarmDTO commentAlarmDTO = new CommentAlarmDTO();
+        commentAlarmDTO.setMemberId(memberId);
+        commentAlarmDTO.setCommentId(commentId);
         commentDAO.saveCommentAlarm(commentAlarmDTO);
     }
 

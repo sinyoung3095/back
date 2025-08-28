@@ -14,3 +14,8 @@ create table tbl_comment_alarm
 
 select * from tbl_comment_alarm;
 select * from tbl_comment;
+select * from tbl_member;
+select * from tbl_post;
+
+# select * from tbl_comment c join tbl_comment_alarm ca
+# on c.id = ca.comment_id and ca.member_id = #{id}
