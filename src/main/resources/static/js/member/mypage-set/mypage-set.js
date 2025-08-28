@@ -1,62 +1,95 @@
-const wrapForm = document.getElementById("wrap");
-const subForm = document.getElementById("sub");
-const editButton = document.getElementById("button");
-const cancelButton = document.getElementById("cancle1");
-const input = document.getElementById("insert1");
-const saveButton = subForm.querySelector("button[type='submit']");
+document.addEventListener("DOMContentLoaded", () => {
+    const wrapForm = document.getElementById("wrap");
+    const subForm = document.getElementById("sub");
+    const editButton = document.getElementById("button");
+    const cancelButton = document.getElementById("cancle1");
+    const input = document.getElementById("insert1");
+    const saveButton = subForm.querySelector("button[type='submit']");
 
-const backButton=document.querySelector(".photo-10");
-const profileWrapArea=document.querySelector(".main-8");
-const profileUpdateList=document.querySelector(".photo-1");
+    const profileImage = document.getElementById("profile-image");
 
-const profileButtons=document.querySelectorAll(".change-profile");
-subForm.style.display = "none";
+    const fileIdSafe = typeof fileId !== 'undefined' ? fileId : null;
+    const filePathSafe = (typeof filePath !== 'undefined' && filePath !== null) ? filePath : '';
+    const fileNameSafe = (typeof fileName !== 'undefined' && fileName !== null) ? fileName : '';
 
-editButton.addEventListener("click", function () {
-    wrapForm.style.display = "none";
-    subForm.style.display = "block";
-    input.focus();
-});
-
-cancelButton.addEventListener("click", function () {
     subForm.style.display = "none";
-    wrapForm.style.display = "block";
-});
 
-input.addEventListener("input", function () {
-    if (input.value.trim() !== "") {
-        saveButton.disabled = false;
-    } else {
-            saveButton.disabled = true;
-    }
-});
+    editButton.addEventListener("click", () => {
+        wrapForm.style.display = "none";
+        subForm.style.display = "block";
+        input.focus();
+    });
 
-profileWrapArea.addEventListener("click", () => {
-    // console.log("버튼 클릭됨")
-    profileUpdateList.classList.add("active");
-});
+    cancelButton.addEventListener("click", () => {
+        subForm.style.display = "none";
+        wrapForm.style.display = "block";
+    });
 
-backButton.addEventListener("click", () => {
-    console.log("취소 버튼 눌림")
-    profileUpdateList.classList.remove("active");
-});
+    input.addEventListener("input", () => {
+        saveButton.disabled = input.value.trim() === "";
+    });
 
-profileButtons.forEach((button)=>{
-    button.addEventListener("click", async (e)=>{
-        console.log("change-button 인식")
-        if(e.target.classList.contains("photo-7")){
-            // myPageSetService.
-        } else if(e.target.classList.contains("photo-9")){
+    document.addEventListener("click", async (e) => {
+        if (e.target.classList.contains("main-8")) {
             console.log("버튼 클릭됨");
-            console.log(fileId);
-            await myPageSetService.profileDelete(fileId);
+            document.querySelector(".photo-1")?.classList.add("active");
         }
-    })
-})
-// noProfileButton.addEventListener("click", async () => {
-//     await myPageSetService.profileDelete(fileId);
-// });
 
-const profileImage = document.getElementById("profile-image");
+        if (e.target.classList.contains("photo-10")) {
+            console.log("취소 버튼 눌림");
+            document.querySelector(".photo-1")?.classList.remove("active");
+        }
 
-profileImage.setAttribute("src",   `/api/display?filePath=${filePath}&fileName=${fileName}`);
+        if (e.target.classList.contains("change-profile")) {
+            console.log("change-button 인식");
+
+            if (e.target.classList.contains("photo-9") && fileIdSafe) {
+                console.log("프로필 삭제 버튼 클릭됨", fileIdSafe);
+                await myPageSetService.profileDelete(fileIdSafe);
+                if (profileImage) {
+                    profileImage.src = "/images/member/no-profile.png";
+                }
+            }
+        }
+    });
+
+    if (profileImage && filePathSafe && fileNameSafe) {
+        profileImage.setAttribute("src", `/api/display?filePath=${filePathSafe}&fileName=${fileNameSafe}`);
+    }
+
+    const fileInput = document.querySelector(".photo-8");
+
+    fileInput.addEventListener("change", async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("memberId", memberId);
+
+        const response = await fetch("/api/profile/upload", {
+            method: "POST",
+            body: formData
+        });
+
+        if (response.ok) {
+            const savedFile = await response.json();
+
+            const existingImage = document.getElementById("profile-image");
+            if (existingImage) {
+                existingImage.src = `/api/display?filePath=${savedFile.filePath}&fileName=${savedFile.fileName}`;
+            } else {
+                const newImage = document.createElement("img");
+                newImage.classList.add("profile-img");
+                newImage.id = "profile-image";
+                newImage.src = `/api/display?filePath=${savedFile.filePath}&fileName=${savedFile.fileName}`;
+
+                const container = document.querySelector(".main-7");
+                container.innerHTML = "";
+                container.appendChild(newImage);
+            }
+        } else {
+            alert("업로드 실패!");
+        }
+    });
+});

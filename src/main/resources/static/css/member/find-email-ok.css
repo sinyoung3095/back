@@ -9,13 +9,13 @@ button {
     padding: 0px;
     cursor: pointer;
 }
+
 a{
-    
     color: rgb(106, 118, 133);
     font-size: 14px;
     font-weight: 400;
     text-decoration-line: underline;
-    display: block;
+    /*display: block;*/
     margin-top: 24px;
     text-decoration: none;
     margin-top: 10px;

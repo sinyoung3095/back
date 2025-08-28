@@ -1,7 +1,10 @@
 package com.example.rebound.service;
 
+import com.example.rebound.dto.FileDTO;
 import com.example.rebound.dto.MemberDTO;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
@@ -31,8 +34,11 @@ public interface  MemberService {
     public void memberRename(MemberDTO memberDTO);
 //    회원 프로필 사진 삭제
     public void deleteProfile(Long id);
-//    회원 비밀번호 변경
+
+    FileDTO saveProfileFile(MultipartFile file, Long memberId) throws IOException;
+
+    //    회원 비밀번호 변경
     public void updateMemberPassword(String memberPassword, String memberEmail);
 //    회원 이메일 찾기
-    public String findEmailByPhone(String memberPhoneNumber);
+    public MemberDTO findEmailByPhone(String memberPhoneNumber);
 }

@@ -10,4 +10,3 @@ create table tbl_member_profile_file
 );
 
 select * from tbl_member_profile_file;
-

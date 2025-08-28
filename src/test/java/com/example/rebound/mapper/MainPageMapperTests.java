@@ -32,18 +32,5 @@ public class MainPageMapperTests {
         log.info(mainpageMapper.noticePreview().toString());
     }
 
-//    전체 개수 조회(검색)
-//    @Test
-//    public void testSelectCountAllSearchMainPage(){
-//        String keyword = "키워드";
-//        log.info("{}", mainpageMapper.selectCountAllSearchMainPage(keyword));
-//    }
-
-////   검색
-//    @Test
-//    public void testSelectPostFromMainPage(PostCriteria postCriteria) {
-//        String keyword = "키워드";
-//        log.info(mainpageMapper.selectPostFromMainPage(postCriteria, keyword).toString());
-//    }
 
 }

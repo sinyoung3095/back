@@ -13,6 +13,3 @@ create table tbl_file
 
 
 select * from tbl_file;
-
-delete FROM tbl_file WHERE id=1;
-

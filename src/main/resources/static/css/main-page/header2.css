@@ -702,7 +702,7 @@ body .no-gutters {
     margin-left: 0;
 }
 
-.row {
+.global-header .row {
     display: flex;
     flex-wrap: wrap;
     margin-right: -.9375rem;
@@ -833,7 +833,7 @@ body .no-gutters {
     font-weight: 400 !important;
 }
 
-.term {
+p.term {
     padding: 2.5rem 0;
     text-align: center;
 }
