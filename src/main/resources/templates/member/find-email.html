@@ -10,6 +10,7 @@
 </head>
 <body>
     <main class="main">
+        <header th:replace="~{/main-page/header}"></header>
         <div class="main-1">
             <div class="main-2">
                 <h1 class="main-3">이메일 찾기</h1>
@@ -26,7 +27,7 @@
                                 <button id="sendButton" type="button" class="main-9">전송</button>
                             </div>
                             <div id="sendMessage" class="main-12" style="display:none;">
-                                    <p class="main-13 sendMessage">인증번호를 전송하였습니다.</p>
+                                <p class="main-13 sendMessage"></p>
                             </div>
                         </div>
                         <div id="verifySection" class="main-5" style="display:none;">
@@ -39,15 +40,16 @@
                                 </div>
                                 <button id="verifyButton" type="button" class="main-9">인증하기</button>
                             </div>
-                            <div id="verifyFail" class="main-12" style="display:none;">
-                                <p class="main-13 failText">인증번호가 틀렸습니다.</p>
+                            <div id="verifyCheck" class="main-12" style="display:none;">
+                                <p class="main-13 verifyCheckText"></p>
                             </div>
                         </div>
-                        <button type="submit" id="correctCode" class="main-6">확인</button>
+                        <button type="submit" id="correctCodeButton" disabled="" class="main-6">확인</button>
                     </form>
                 </div>
             </div>
         </div>
+        <footer th:replace="~{/main-page/footer}"></footer>
     </main>   
 </body>
 <script src="/js/email/module/service.js"></script>

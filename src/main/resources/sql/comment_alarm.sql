@@ -13,3 +13,4 @@ create table tbl_comment_alarm
 );
 
 select * from tbl_comment_alarm;
+select * from tbl_comment;
