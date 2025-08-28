@@ -44,14 +44,16 @@ public class KakaoController {
         }
 
         session.setAttribute("member", foundKakaoMember.get());
+        model.addAttribute("member", foundKakaoMember);
         return "redirect:/member/mypage";
     }
 
     @PostMapping("/member/join-kakao")
-    public String joinKakao(@ModelAttribute MemberDTO memberDTO) {
+    public String joinKakao(@ModelAttribute MemberDTO memberDTO, Model model) {
         memberService.joinKakaoMember(memberDTO);
         memberService.saveKakaoProfile(memberDTO);
         session.setAttribute("member", memberDTO);
+        model.addAttribute("member", session.getAttribute("member"));
         return "redirect:/member/mypage";
     }
 

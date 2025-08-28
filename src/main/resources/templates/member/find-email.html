@@ -15,13 +15,13 @@
             <div class="main-2">
                 <h1 class="main-3">이메일 찾기</h1>
                 <div class="main-4">
-                    <form>
+                    <form id="findEmail" method="post" action="/member/find-email-ok">
                         <div class="main-5">
                             <label for="phone" class="main-7">휴대전화 번호 인증</label>
                             <div class="main-8">
                                 <div class="css-0">
                                     <div class="main-10">
-                                        <input id="phone" class="main-11" placeholder="예) 01012341234" name="phone" autocomplete="off" value="">
+                                        <input id="phone" class="main-11" placeholder="예) 01012341234" name="memberPhoneNumber" autocomplete="off" value="">
                                     </div>
                                 </div>
                                 <button id="sendButton" type="button" class="main-9">전송</button>
@@ -38,13 +38,13 @@
                                         <input id="verify" class="main-11" placeholder="SMS 인증번호를 입력해주세요." name="verify" autocomplete="off" value="">
                                     </div>
                                 </div>
-                                <button id="verifyButton" type="button" class="main-9">인증하기</button>
+                                <button type="button" id="verifyButton" class="main-9">인증하기</button>
                             </div>
                             <div id="verifyCheck" class="main-12" style="display:none;">
                                 <p class="main-13 verifyCheckText"></p>
                             </div>
                         </div>
-                        <button type="submit" id="correctCode" class="main-6">확인</button>
+                        <button type="submit" id="correctCodeButton" disabled="" class="main-6">확인</button>
                     </form>
                 </div>
             </div>
