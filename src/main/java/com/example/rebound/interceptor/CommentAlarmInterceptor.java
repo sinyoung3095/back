@@ -1,17 +1,16 @@
 package com.example.rebound.interceptor;
 
 import com.example.rebound.service.CommentAlarmService;
-import com.example.rebound.service.CommentService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;
-import org.springframework.web.servlet.ModelAndView;
 
 @Slf4j
 @RequiredArgsConstructor
 public class CommentAlarmInterceptor implements HandlerInterceptor {
+    private final CommentAlarmService commentAlarmService;
 
 //    전처리
     @Override

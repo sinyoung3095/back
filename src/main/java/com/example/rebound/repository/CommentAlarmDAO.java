@@ -13,4 +13,7 @@ import java.util.List;
 public class CommentAlarmDAO {
     private final CommentAlarmMapper commentAlarmMapper;
 
+    public List<CommentDTO> getCommentAlarm(Long id) {
+        return commentAlarmMapper.selectCommentAlarmById(id);
+    }
 }
