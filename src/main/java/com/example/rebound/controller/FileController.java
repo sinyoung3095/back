@@ -6,10 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,17 +17,17 @@ import java.io.IOException;
 @RequestMapping("/api/**")
 public class FileController {
     private final CounselorService counselorService;
-    MemberService memberService;
+    private final MemberService memberService;
     @GetMapping("display")
     public byte[] display(String filePath, String fileName) throws IOException {
 //        log.info("{}, {}", filePath, fileName);
         return FileCopyUtils.copyToByteArray(new File("C:/reboundFile/"+filePath, fileName));
     }
-    @GetMapping("delete/{id}")
+    @DeleteMapping("delete/{id}")
     public void deleteMemberProfileFile(@PathVariable Long id) throws IOException {
         memberService.deleteProfile(id);
     }
-    @GetMapping("delete-counselor/{id}")
+    @DeleteMapping("delete-counselor/{id}")
     public void deleteCounselorProfileFile(@PathVariable Long id) throws IOException {
         counselorService.deleteProfile(id);
     }

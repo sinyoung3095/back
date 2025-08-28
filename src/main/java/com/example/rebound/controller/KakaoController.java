@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.Optional;
@@ -44,4 +46,16 @@ public class KakaoController {
         session.setAttribute("member", foundKakaoMember.get());
         return "redirect:/member/mypage";
     }
+
+    @PostMapping("/member/join-kakao")
+    public String joinKakao(@ModelAttribute MemberDTO memberDTO) {
+//        System.out.println(memberDTO.getMemberEmail());
+//        System.out.println(memberDTO.getKakaoProfileUrl());
+//        System.out.println(memberDTO.getMemberProvider());
+        memberService.joinKakaoMember(memberDTO);
+        memberService.saveKakaoProfile(memberDTO);
+        session.setAttribute("member", memberDTO);
+        return "redirect:/member/mypage";
+    }
+
 }
