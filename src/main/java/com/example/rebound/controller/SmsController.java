@@ -21,44 +21,36 @@ public class SmsController {
     @PostMapping("/send")
     public ResponseEntity<?> sendSms(@RequestBody Map<String, String> request) {
         String memberPhoneNumber = request.get("memberPhoneNumber");
-//        log.info("문자 전송 요청: {}", memberPhoneNumber);
         Map<String, Object> body = new HashMap<>();
 
         if (memberPhoneNumber == null) {
             body.put("success", false);
-            body.put("message", "전화번호를 입력해주세요.");
             return ResponseEntity.ok(body);
         }
 
         if(memberService.findEmailByPhone(memberPhoneNumber) == null) {
             body.put("success", false);
-            body.put("message", "가입되지 않은 전화번호입니다.");
             return ResponseEntity.ok(body);
+        } else {
+            body.put("success", true);
+            body.put("code", smsService.send(memberPhoneNumber));
         }
 
-        String code = smsService.send(memberPhoneNumber);
-        body.put(memberPhoneNumber, code);
-        body.put("success", true);
-        body.put("code", code);
         return ResponseEntity.ok(body);
     }
 
-    @PostMapping("/checkCode")
-    public ResponseEntity<?> checkCode(@RequestBody Map<String, String> request) {
-        String inputCode = request.get("code");
+    @PostMapping("/find-email")
+    public ResponseEntity<?> findEmail(@RequestBody Map<String, String> request) {
+        String memberPhoneNumber = request.get("memberPhoneNumber");
         Map<String, Object> body = new HashMap<>();
 
-        if(body.equals(inputCode)) {
-            body.put("success", true);
-            body.put("message", "인증 성공");
-        } else {
+        if (memberService.findEmailByPhone(memberPhoneNumber) == null) {
             body.put("success", false);
-            body.put("message", "인증번호가 일치하지 않습니다.");
+        } else {
+            body.put("success", true);
+            body.put("email", memberService.findEmailByPhone(memberPhoneNumber));
         }
-
         return ResponseEntity.ok(body);
     }
-
-
 
 }
