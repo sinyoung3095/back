@@ -106,13 +106,13 @@ public class MemberController {
         return "redirect:/member/mypage";
     }
 
-
-
-
+//    이메일 찾기
     @GetMapping("find-email")
     public String goToFindEmail(){
         return "member/find-email";
     }
+
+//    인증번호 성공
     @GetMapping("find-email-ok")
     public String goToFindEmailOk(){
         return "member/find-email-ok";
