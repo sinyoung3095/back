@@ -27,4 +27,6 @@ public interface CounselorService {
     public Optional<CounselorDTO> showFileById(Long counselorId);
 //    상담사 이름 변경
     public void counselorRename(CounselorDTO counselorDTO);
+
+    void deleteProfile(Long id);
 }
