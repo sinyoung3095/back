@@ -113,8 +113,14 @@ public class MemberController {
     }
 
 //    인증번호 성공
-    @GetMapping("find-email-ok")
-    public String goToFindEmailOk(){
+    @PostMapping("find-email-ok")
+    public String findEmailOk(@RequestParam("memberPhoneNumber") String memberPhoneNumber, Model model) {
+//        System.out.println("전화번호: " + memberPhoneNumber);
+        MemberDTO member = memberService.findEmailByPhone(memberPhoneNumber);
+//        System.out.println("member: " + member);
+        model.addAttribute("memberEmail", member.getMemberEmail());
+        model.addAttribute("createdDate", member.getCreatedDate());
+
         return "member/find-email-ok";
     }
 

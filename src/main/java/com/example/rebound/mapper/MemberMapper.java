@@ -53,5 +53,5 @@ public interface MemberMapper {
     //    회원 비밀번호 변경
     public void updateMemberPassword(@Param("memberPassword") String memberPassword, @Param("memberEmail") String memberEmail);
     //    회원 이메일 찾기
-    public String selectEmailByPhonerNumber(String memberPhoneNumber);
+    public MemberDTO selectEmailByPhonerNumber(String memberPhoneNumber);
 }

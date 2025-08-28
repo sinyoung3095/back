@@ -60,18 +60,5 @@ verifyButton.addEventListener("click", (e) => {
     }
 });
 
-correctCodeButton.addEventListener("click", async () => {
-    const result = await emailService.getEmailByPhoneNumber({
-        memberPhoneNumber: phoneInput.value
-    });
-
-    if(result.success) {
-        window.location.href = `/member/find-email-ok?email=${result.email}`;
-        console.log(result.memberPhoneNumber);
-        console.log(result.phone);
-        console.log(result.email);
-    }
-})
-
 
 
