@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.rebound.mapper.CounselorProfileFileMapper">
+<!--    파일 추가-->
+    <insert id="insertCounselorProfileFile">
+        INSERT INTO tbl_counselor_profile_file (id, counselor_id)
+        VALUES (#{id}, #{counselorId})
+    </insert>
+<!--    파일 조회-->
+    <select id="selectCounselorProfileFileByCounselorId">
+        select f.id, cp.counselor_id, f.file_path, f.file_name, f.file_size, f.created_date, f.updated_date, f.file_original_name, f.file_content_type
+        from tbl_counselor_profile_file cp
+        join tbl_file f
+        where f.id=cp.id and cp.counselor_id=#{id}
+    </select>
+<!--    파일 삭제-->
+    <delete id="deleteProfileById">
+        delete from tbl_counselor_profile_file
+        where id=#{id}
+    </delete>
+</mapper>

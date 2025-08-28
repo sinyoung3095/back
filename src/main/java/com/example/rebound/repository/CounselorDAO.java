@@ -27,9 +27,15 @@ public class CounselorDAO {
     //    전화번호 중복 검사
     public boolean isExistCounselorPhoneNumber(String counselorPhoneNumber){return counselorMapper.existCounselorPhoneNumber(counselorPhoneNumber);}
 
+//    상담사 이름 변경
+    public void counselorRename(CounselorDTO counselorDTO) { counselorMapper.updateCounselorName(counselorDTO);}
+
 //    상담사 조회
     public Optional<CounselorDTO> findCounselorByEmailAndPassword(CounselorDTO counselorDTO){
         return counselorMapper.selectCounselor(counselorDTO);
+    }
+    public Optional<CounselorDTO> selectCounselorById(Long id){
+        return counselorMapper.selectCounselorById(id);
     }
 //     상담사 통합검색
     public List<CounselorDTO> findCounselorAll(MemberCriteria memberCriteria,String keyword){

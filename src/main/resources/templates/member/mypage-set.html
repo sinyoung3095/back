@@ -19,6 +19,7 @@
 
 </head>
 <body>
+<header th:replace="~{/main-page/header2.html :: #app-header}"></header>
     <main class="main">
         <div class="main-1">
             <h1 class="main-2">계정 설정</h1>
@@ -27,7 +28,7 @@
                     <div class="main-6">
                         <div class="main-7">
                             <img th:if="${file != null}"
-                                 th:src="@{/api/display(filePath=${file.filePath}, fileName=${file.fileName})}"
+                                 id="profile-image"
                                  class="profile-img">
 
                             <img th:if="${file == null}"
@@ -45,10 +46,10 @@
                                     <div class="photo-4">
                                         <h4 class="phtop-5">프로필 사진 등록</h4>
                                         <div class="photo-6">
-                                            <label height="44" class="photo-7">사진 등록하기
-                                                <input type="file" class="photo-8">
+                                            <label height="44" class="photo-7 change-profile">사진 등록하기
+                                                <input type="file" name="file" class="photo-8">
                                             </label>
-                                            <button type="button" class="photo-9">기본 이미지로 변경</button>
+                                            <button type="button" class="photo-9 change-profile">기본 이미지로 변경</button>
                                             <button type="button" class="photo-10">취소</button>
                                         </div>
                                     </div>
@@ -78,7 +79,7 @@
             </div>
             <hr class="main-4">
             <ul>
-                <li id="bt1" class="main-13">
+                <li class="main-13">
                     <button class="main-14">
                         <p class="main-15">개인 정보 관리</p>
                         <div class="main-16">
@@ -112,18 +113,19 @@
             <hr class="main-4">    
         </div>
     </main>
+<footer th:replace="~{/main-page/footer.html :: #app-footer}"></footer>
 </body>
 <script th:inline="javascript">
-    const memberid = [[${session.member.id}]];
+    const memberId = [[${member.id}]];
 </script>
 <script th:inline="javascript">
-    const file = [[${file}]];
+    const fileId = [[${file.id}]];
+    const filePath = [[${file.filePath}]];
+    const fileName = [[${file.fileName}]];
 </script>
-<script>
-    kakaoProfileUrl= [[${member.kakaoProfileUrl}]],
+<script th:inline="javascript">
+    const kakaoProfileUrl = [[${member.kakaoProfileUrl}]];
 </script>
-<script>
-    fileId= [[${member.fileId}]]
-</script>
+<script src="/js/member/mypage-set/module/service.js"></script>
 <script src="/js/member/mypage-set/mypage-set.js"></script>
 </html>

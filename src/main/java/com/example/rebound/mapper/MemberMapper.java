@@ -50,4 +50,6 @@ public interface MemberMapper {
     public void deleteMemberById(int memberId);
     //    이메일(카카오이메일 포함)로 조회
     public MemberDTO selectByMemberEmail(String memberEmail);
+    //    회원 비밀번호 변경
+    public void updateMemberPassword(@Param("memberPassword") String memberPassword, @Param("memberEmail") String memberEmail);
 }

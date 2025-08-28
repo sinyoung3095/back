@@ -17,11 +17,11 @@ create table tbl_post
 
 select * from tbl_post;
 
+select * from tbl_member;
+select * from tbl_category;
 
-
-
-insert into tbl_post(post_content,post_title,member_id)
-values ("테스트내용2","테스트제목2",123);
+insert into tbl_post(post_content, post_title, category_id, member_id)
+values ('테스트내용2','테스트제목2', 1,1);
 
 
 

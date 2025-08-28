@@ -14,6 +14,8 @@ public interface CounselorMapper {
     public List<CounselorDTO> getCounselors();
     //    상담사 추가
     public void insertCounselor(CounselorDTO counselorDTO);
+//    상담사 조회
+    public Optional<CounselorDTO> selectCounselorById(Long id);
 
 
     //    이메일 중복 검사
@@ -25,6 +27,9 @@ public interface CounselorMapper {
 
 //    로그인
     public Optional<CounselorDTO> selectCounselor(CounselorDTO counselorDTO);
+
+//    상담사 이름 변경
+    public void updateCounselorName(CounselorDTO counselorDTO);
 
 //    상담사 통합검색
     public List<CounselorDTO> selectCounselorAll(@Param("memberCriteria") MemberCriteria memberCriteria, @Param("keyword") String keyword);

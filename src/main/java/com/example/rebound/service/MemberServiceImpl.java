@@ -3,6 +3,7 @@ package com.example.rebound.service;
 import com.example.rebound.dto.*;
 import com.example.rebound.repository.*;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,7 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 @Primary
+@Slf4j
 public class MemberServiceImpl implements MemberService {
     private final MemberDAO memberDAO;
     private final PaymentDAO paymentDAO;
@@ -105,7 +107,7 @@ public class MemberServiceImpl implements MemberService {
 
         if (memberOpt.isPresent()) {
             MemberDTO member = memberOpt.get();
-            member.setFile(fileOpt);
+            fileOpt.ifPresent(member::setFile);
             return Optional.of(member);
         }
 
@@ -128,6 +130,11 @@ public class MemberServiceImpl implements MemberService {
         if (file.exists()) {
             file.delete();
         }
+    }
+
+    @Override
+    public void updateMemberPassword(String memberPassword, String memberEmail) {
+        memberDAO.updateMemberPassword(memberPassword, memberEmail);
     }
 
 }

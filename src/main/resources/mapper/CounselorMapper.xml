@@ -11,6 +11,11 @@
         select id, counselor_name, counselor_email, counselor_phone_number, counselor_password, counselor_address, counselor_status, counselor_approval_status, created_date, updated_date from tbl_counselor
         where counselor_status='active' and counselor_email=#{counselorEmail} and counselor_password=#{counselorPassword}
     </select>
+    <select id="selectCounselorById">
+        select id, counselor_name, counselor_email, counselor_phone_number, counselor_password, counselor_address, counselor_status, counselor_approval_status, created_date, updated_date
+        from tbl_counselor
+        where id=#{id}
+    </select>
 <!--    상담사 조회(통합검색)-->
     <select id="selectCounselorAll">
         select id, counselor_name, counselor_email, counselor_phone_number, counselor_password, counselor_address, counselor_status, counselor_approval_status,counselor_license_name, created_date, updated_date from tbl_counselor
@@ -57,4 +62,9 @@
             )
         </if>
     </select>
+<!--    상담사 이름 변경-->
+    <update id="updateCounselorName">
+        update tbl_counselor set counselor_name=#{counselorName}
+        where id=#{id}
+    </update>
 </mapper>

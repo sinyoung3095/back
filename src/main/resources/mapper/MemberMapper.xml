@@ -8,7 +8,7 @@
     </insert>
 <!--    관리자 회원 조회-->
     <select id="selectAdmin">
-        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_status, member_common, created_date, updated_date from tbl_member
+        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_grade, member_status, member_common, created_date, updated_date from tbl_member
         where member_common = 'admin'and member_status='active' and member_email=#{memberEmail} and member_password=#{memberPassword}
     </select>
     <select id="selectGeneralAll">
@@ -83,7 +83,7 @@
     </select>
 <!--    일반 회원 조회-->
     <select id="selectMember">
-        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_status, member_common, created_date, updated_date from tbl_member
+        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_grade, member_status, member_common, created_date, updated_date from tbl_member
         where member_common='none' and member_status='active' and member_email=#{memberEmail} and member_password=#{memberPassword}
     </select>
     <select id="selectMemberById">
@@ -92,7 +92,7 @@
     </select>
 <!--    카카오 중복조회-->
     <select id="selectMemberByKakaoEmail">
-        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_status, member_common, created_date, updated_date
+        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_grade, member_status, member_common, created_date, updated_date
         from tbl_member
         where kakao_email=#{kakaoEmail}
     </select>
@@ -106,8 +106,22 @@
         update tbl_member set member_name=#{memberName}
         where id=#{id}
     </update>
+      
     <select id="selectByMemberEmail">
         select * from tbl_member
         where member_email = #{memberEmail} or kakao_email = #{memberEmail}
+
+    <!-- 회원 비밀번호 변경 -->
+    <update id="updateMemberPassword">
+        update tbl_member
+        set member_password = #{memberPassword}
+        where member_email = #{memberEmail}
+    </update>
+
+    <!-- 회원 이메일 찾기 -->
+    <select id="selectEmailByPhonerNumber">
+        select member_email, kakao_email
+        from tbl_member
+        where member_phone_number = #{memberPhoneNumber}
     </select>
 </mapper>

@@ -102,7 +102,7 @@ public class MemberController {
     public String Login(MemberDTO memberDTO, Model model) {
         MemberDTO member = memberService.login(memberDTO).orElseThrow(LoginFailException::new);
         session.setAttribute("member", member);
-        System.out.println(member.getMemberName());
+//        System.out.println(member.getMemberName());
         return "redirect:/member/mypage";
     }
 
@@ -113,13 +113,27 @@ public class MemberController {
     public String goToFindEmail(){
         return "member/find-email";
     }
-    @GetMapping("find-email/ok")
+    @GetMapping("find-email-ok")
     public String goToFindEmailOk(){
         return "member/find-email-ok";
     }
+
+//    비밀번호 찾기
+    @GetMapping("find-password")
+    public String goToFindPassword() {
+        return "member/find-password";
+    }
+
+//    이메일 확인 안내
+    @GetMapping("find-confirm")
+    public String goToConfirm() {
+        return "member/find-confirm";
+    }
+
+//    새 비밀번호 변경
     @GetMapping("new-password")
     public String goToNewPassword(){
-        return "member/new-fassword";
+        return "member/new-password";
     }
 
 
@@ -141,11 +155,7 @@ public class MemberController {
         MemberDTO fullMember = fullMemberOpt.get();
         if (fullMemberOpt.isPresent()) {
             model.addAttribute("member", fullMember);
-            fullMember.getFile().ifPresent(file -> {
-                model.addAttribute("file", file);
-//                System.out.println("filePath: " + file.getFilePath());
-//                System.out.println("fileName: " + file.getFileName());
-            });
+            model.addAttribute("file", fullMember.getFile());
         } else {
             model.addAttribute("file", null);
         }
@@ -168,7 +178,6 @@ public class MemberController {
 
 
 
-
     @GetMapping("mypage/info")
     public String goToMyPageInfo(){
         return "member/mypage-info";
@@ -182,7 +191,18 @@ public class MemberController {
         return "member/mypage-reply";
     }
     @GetMapping("mypage/set")
-    public String goToMyPageSet(){
+    public String goToMyPageSet(HttpSession session, Model model) {
+        MemberDTO member = (MemberDTO) session.getAttribute("member");
+        Optional<MemberDTO> fullMemberOpt = memberService.showFileById(member.getId());
+
+        if (fullMemberOpt.isEmpty()) {
+            model.addAttribute("member", member);
+            model.addAttribute("file", null);
+            return "member/mypage-set";
+        }
+        MemberDTO fullMember = fullMemberOpt.get();
+        model.addAttribute("member", fullMember);
+        model.addAttribute("file", fullMember.getFile());
         return "member/mypage-set";
     }
     @GetMapping("mypage/consultation/history")

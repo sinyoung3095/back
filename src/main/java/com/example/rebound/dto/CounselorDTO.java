@@ -2,6 +2,7 @@ package com.example.rebound.dto;
 
 import lombok.*;
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,4 +24,6 @@ public class CounselorDTO {
     private String updatedDate;
     private List<FileDTO> counselorQualificationsFiles;
     private String counselorLicenseName;
+    private MultipartFile file;
+    private FileDTO fileInfo;
 }

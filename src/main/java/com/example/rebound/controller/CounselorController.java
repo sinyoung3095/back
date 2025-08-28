@@ -2,6 +2,7 @@ package com.example.rebound.controller;
 
 import com.example.rebound.common.exception.LoginFailCounselorException;
 import com.example.rebound.dto.CounselorDTO;
+import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.service.CounselorService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
@@ -86,13 +88,32 @@ public class CounselorController {
 
     //    로그인 완료
     @PostMapping("login")
-    public RedirectView Login(CounselorDTO counselorDTO) {
+    public String Login(CounselorDTO counselorDTO) {
         CounselorDTO counselor=counselorService.login(counselorDTO).orElseThrow(LoginFailCounselorException::new);
         session.setAttribute("counselor", counselor);
-        return new RedirectView("/main-page/page"); }
+        return "redirect:/counselor/mypage"; }
 
     @GetMapping("mypage")
-    public String goToMyPageCounselor(){
+    public String goToMyPageCounselor(HttpSession session, Model model) {
+        CounselorDTO counselor = (CounselorDTO) session.getAttribute("counselor");
+        if (counselor == null) {
+            return "redirect:/counselor/login";
+        }
+
+        Optional<CounselorDTO> fullCounselorOpt = counselorService.showFileById(counselor.getId());
+
+        if (fullCounselorOpt.isEmpty()) {
+            model.addAttribute("counselor", counselor);
+            model.addAttribute("file", null);
+            return "member/counselor-mypage";
+        }
+        CounselorDTO fullCounselor = fullCounselorOpt.get();
+        if (fullCounselorOpt.isPresent()) {
+            model.addAttribute("counselor", fullCounselor);
+            model.addAttribute("file", fullCounselor.getFile());
+        } else {
+            model.addAttribute("file", null);
+        }
         return "member/counselor-mypage";
     }
     @GetMapping("mypage/info")
@@ -108,7 +129,18 @@ public class CounselorController {
         return "member/mypage-counselor-reply";
     }
     @GetMapping("mypage/set")
-    public String goToMyPageCounselorSet(){
+    public String goToMyPageCounselorSet(HttpSession session, Model model) {
+        CounselorDTO counselor = (CounselorDTO) session.getAttribute("counselor");
+        Optional<CounselorDTO> fullCounselorOpt = counselorService.showFileById(counselor.getId());
+
+        if (fullCounselorOpt.isEmpty()) {
+            model.addAttribute("counselor", counselor);
+            model.addAttribute("file", null);
+            return "member/mypage-counselor-set";
+        }
+        CounselorDTO fullCounselor = fullCounselorOpt.get();
+        model.addAttribute("counselor", fullCounselor);
+        model.addAttribute("file", fullCounselor.getFile());
         return "member/mypage-counselor-set";
     }
     @GetMapping("mypage/consultation/history")

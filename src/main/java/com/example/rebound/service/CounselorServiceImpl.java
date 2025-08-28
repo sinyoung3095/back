@@ -83,4 +83,24 @@ public class CounselorServiceImpl implements CounselorService {
     public Optional<CounselorDTO> login(CounselorDTO counselorDTO) {
         return counselorDAO.findCounselorByEmailAndPassword(counselorDTO);
     }
+
+    @Override
+    public Optional<CounselorDTO> showFileById(Long counselorId) {
+        Optional<CounselorDTO> counselorOpt = counselorDAO.selectCounselorById(counselorId);
+        Optional<FileDTO> fileOpt = fileDAO.findFileByCounselorId(counselorId);
+
+        if (counselorOpt.isPresent()) {
+            CounselorDTO counselor = counselorOpt.get();
+            fileOpt.ifPresent(counselor::setFileInfo);
+            return Optional.of(counselor);
+        }
+
+        return Optional.empty();
+    }
+
+    @Override
+    public void counselorRename(CounselorDTO counselorDTO) {
+        counselorDAO.counselorRename(counselorDTO);
+    }
+//    커밋 테스트
 }
