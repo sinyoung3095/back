@@ -9,7 +9,7 @@ const backButton=document.querySelector(".photo-10");
 const profileWrapArea=document.querySelector(".main-8");
 const profileUpdateList=document.querySelector(".photo-1");
 
-const profileButtons=document.querySelectorAll(".change-profile");
+const profileButtons=document.querySelectorAll(".profile-change");
 subForm.style.display = "none";
 
 editButton.addEventListener("click", function () {
@@ -27,7 +27,7 @@ input.addEventListener("input", function () {
     if (input.value.trim() !== "") {
         saveButton.disabled = false;
     } else {
-            saveButton.disabled = true;
+        saveButton.disabled = true;
     }
 });
 
@@ -37,18 +37,14 @@ profileWrapArea.addEventListener("click", () => {
 });
 
 backButton.addEventListener("click", () => {
-    console.log("취소 버튼 눌림")
     profileUpdateList.classList.remove("active");
 });
 
 profileButtons.forEach((button)=>{
     button.addEventListener("click", async (e)=>{
-        console.log("change-button 인식")
         if(e.target.classList.contains("photo-7")){
             // myPageSetService.
         } else if(e.target.classList.contains("photo-9")){
-            console.log("버튼 클릭됨");
-            console.log(fileId);
             await myPageSetService.profileDelete(fileId);
         }
     })

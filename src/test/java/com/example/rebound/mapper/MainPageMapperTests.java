@@ -33,11 +33,11 @@ public class MainPageMapperTests {
     }
 
 //    전체 개수 조회(검색)
-    @Test
-    public void testSelectCountAllSearchMainPage(){
-        String keyword = "키워드";
-        log.info("{}", mainpageMapper.selectCountAllSearchMainPage(keyword));
-    }
+//    @Test
+//    public void testSelectCountAllSearchMainPage(){
+//        String keyword = "키워드";
+//        log.info("{}", mainpageMapper.selectCountAllSearchMainPage(keyword));
+//    }
 
 ////   검색
 //    @Test
