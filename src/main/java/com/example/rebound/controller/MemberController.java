@@ -104,7 +104,6 @@ public class MemberController {
         session.setAttribute("member", member);
         model.addAttribute("member", member);
         model.addAttribute("file", fileService.findFileByMemberId(member.getId()));
-//        System.out.println(member.getMemberName());
         return "redirect:/member/mypage";
     }
 
