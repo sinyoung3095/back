@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.rebound.mapper.CommentAlarmMapper">
+    <select id="selectCommentAlarmById">
+        select c.comment_content, ca.id, ca.member_id, ca.comment_id
+        from tbl_comment c join tbl_comment_alarm ca
+        on c.id = ca.comment_id
+    </select>
+</mapper>

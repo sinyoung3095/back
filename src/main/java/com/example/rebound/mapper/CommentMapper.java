@@ -1,6 +1,8 @@
 package com.example.rebound.mapper;
 
+import com.example.rebound.domain.CommentAlarmVO;
 import com.example.rebound.domain.CommentVO;
+import com.example.rebound.dto.CommentAlarmDTO;
 import com.example.rebound.dto.CommentDTO;
 import com.example.rebound.dto.PostDTO;
 import com.example.rebound.util.PostCriteria;
@@ -13,6 +15,9 @@ import java.util.List;
 public interface CommentMapper {
 //    추가
     public void insertComment(CommentVO commentVO);
+
+//    댓글 알림 추가
+    public void insertCommentAlarm(CommentAlarmDTO commentAlarmDTO);
 
 //    전체 조회
     public List<CommentDTO> selectCommentsByPostId(@Param("postId") Long postId, @Param("criteria") PostCriteria criteria);

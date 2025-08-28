@@ -1,6 +1,8 @@
 package com.example.rebound.service;
 
+import com.example.rebound.domain.CommentAlarmVO;
 import com.example.rebound.domain.CommentVO;
+import com.example.rebound.dto.CommentAlarmDTO;
 import com.example.rebound.dto.CommentCriteriaDTO;
 import com.example.rebound.dto.CommentDTO;
 import com.example.rebound.dto.PostCriteriaDTO;

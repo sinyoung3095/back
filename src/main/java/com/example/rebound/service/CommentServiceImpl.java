@@ -1,5 +1,6 @@
 package com.example.rebound.service;
 
+import com.example.rebound.dto.CommentAlarmDTO;
 import com.example.rebound.dto.CommentCriteriaDTO;
 import com.example.rebound.dto.CommentDTO;
 import com.example.rebound.repository.CommentDAO;
@@ -8,6 +9,7 @@ import com.example.rebound.util.PostCriteria;
 import com.example.rebound.util.PostDateUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -16,11 +18,14 @@ import java.util.List;
 public class CommentServiceImpl implements CommentService {
     private final CommentDAO commentDAO;
     private final LikeDAO likeDAO;
+    private final CommentAlarmDTO commentAlarmDTO;
 
-//    댓글 작성
+    //    댓글 작성
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void write(CommentDTO commentDTO) {
         commentDAO.save(toCommentVO(commentDTO));
+        commentDAO.saveCommentAlarm(commentAlarmDTO);
     }
 
 //    댓글 조회
