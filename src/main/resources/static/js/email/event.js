@@ -5,9 +5,8 @@ const sendMessageText = document.querySelector(".sendMessage");
 const verifySection = document.querySelector("#verifySection");
 const verifyInput = document.querySelector("#verify");
 const verifyButton = document.querySelector("#verifyButton");
-const verifyFail = document.querySelector("#verifyFail");
-const verifyFailText = document.querySelector(".failText");
-const correctCode = document.querySelector("#correctCode");
+const verifyCheck = document.querySelector("#verifyCheck");
+const verifyCheckText = document.querySelector(".verifyCheckText");
 
 phoneInput.addEventListener("focus", (e) => {
     e.target.classList.add("active")
@@ -42,22 +41,24 @@ sendButton.addEventListener("click", async () => {
 
 verifyButton.addEventListener("click", async () => {
     const code = verifyInput.value;
+    const phone = phoneInput.value;
 
     if (!code) {
-        verifyFail.style.display = "block";
-        verifyFailText.innerHTML = "인증번호를 입력해주세요.";
+        verifyCheck.style.display = "block";
+        verifyCheckText.innerHTML = "인증번호를 확인해주세요.";
         return;
-    } else {
-        verifyFailText.innerHTML = "인증 성공";
     }
 
     const result = await emailService.checkCode({
-        code: code
+        code: code, memberPhoneNumber: phone
     });
 
+    verifyCheck.style.display = "block";
     if(result.success) {
-        verifyFail.style.display = "none";
+        verifyCheckText.innerHTML = "인증을 성공했습니다.";
         window.location.href = "/member/find-email-ok";
+    } else {
+        verifyCheckText.innerHTML = "인증번호가 일치하지 않습니다."
     }
 
 

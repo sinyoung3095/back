@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/images/favicon.png">
     <link rel="stylesheet" href="/css/community-list/community-posts.css">
+    <link rel="stylesheet" href="/css/main-page/header.css">
+    <link rel="stylesheet" href="/css/main-page/header2.css">
     <link rel="stylesheet" href="/font/didactgothic.woff2">
     <title>커뮤니티 목록</title>
 </head>
 <body class="soomgo-life-topic">
 <div id="app" data-browser="Chrome" data-is-loaded="true">
-    <header th:replace="~{/main-page/header2}"></header>
+    <th:block th:if="${session.member != null}">
+        <header th:replace="~{/main-page/header2.html :: #app-header}"></header>
+    </th:block>
+    <th:block th:unless="${session.member !=null}">
+        <header th:replace="~{/main-page/header.html :: #app-header}"></header>
+    </th:block>
     <div id="top"></div>
     <!-- body -->
     <div id="app-body">
