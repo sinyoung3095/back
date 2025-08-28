@@ -10,7 +10,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 @Slf4j
 @RequiredArgsConstructor
 public class CommentAlarmInterceptor implements HandlerInterceptor {
-    private final CommentAlarmService commentAlarmService;
+//    private final CommentAlarmService commentAlarmService;
 
 //    전처리
     @Override
