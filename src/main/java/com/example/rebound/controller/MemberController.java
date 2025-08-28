@@ -104,7 +104,7 @@ public class MemberController {
         session.setAttribute("member", member);
         model.addAttribute("member", member);
         model.addAttribute("file", fileService.findFileByMemberId(member.getId()));
-        return "redirect:/member/mypage";
+        return "redirect:/";
     }
 
 //    이메일 찾기
