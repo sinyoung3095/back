@@ -1,6 +1,7 @@
 package com.example.rebound.mapper;
 
 import com.example.rebound.dto.CommentAlarmDTO;
+import com.example.rebound.dto.CommentDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +12,18 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class CommentTest {
     @Autowired
     CommentMapper commentMapper;
+    @Autowired
+    private CommentAlarmMapper commentAlarmMapper;
 
-    @Test
-    public void testInsertCommentAlarm(){
-        CommentAlarmDTO commentAlarmDTO = new CommentAlarmDTO();
-        commentAlarmDTO.setMemberId(1L);
-        commentAlarmDTO.setCommentId(1L);
-        commentMapper.insertCommentAlarm(commentAlarmDTO);
-    }
+//    @Test
+//    public void testSelectCommentAlarmByMemberId(){
+//        CommentAlarmDTO commentAlarmDTO = new CommentAlarmDTO();
+//        CommentDTO commentDTO = new CommentDTO();
+//        commentAlarmDTO.setMemberId(commentDTO.getId());
+//        commentAlarmDTO.setCommentId(commentDTO.getMemberId());
+//        commentMapper.insertCommentAlarm(commentAlarmDTO);
+//    }
+
+
+
 }

@@ -13,3 +13,8 @@ const alimdiv = document.querySelector("div.alimarea");
 alimbutton.addEventListener("click", (e) => {
     alimdiv.classList.toggle("active");
 });
+
+
+// 알림
+const commentAlarm = document.getElementById("comment-alarm");
+

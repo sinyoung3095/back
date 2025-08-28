@@ -95,7 +95,19 @@ public class MemberDAO {
     }
 
     //    회원 이메일 찾기
-    public String selectEmailByPhonerNumber(String memberPhoneNumber) {
+    public MemberDTO selectEmailByPhonerNumber(String memberPhoneNumber) {
         return memberMapper.selectEmailByPhonerNumber(memberPhoneNumber);
+    }
+    public int findCountByYear(String year) {
+        return memberMapper.selectCountGradeByYear(year);
+    }
+    public int findCountByMonth(String month) {
+        return memberMapper.selectCountGradeByMonth(month);
+    }
+    public int findSubscribeCountByYear(String year) {
+        return memberMapper.selectCountSubscribeByYear(year);
+    }
+    public int findSubscribeCountByMonth(String month) {
+        return memberMapper.selectCountSubscribeByMonth(month);
     }
 }

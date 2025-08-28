@@ -20,6 +20,8 @@ public class CommentDTO {
     private String memberName;
     private String memberGrade;
     private Long postId;
+    private String filePath;
+    private String fileName;
     private String createdDate;
     private String updatedDate;
     private String relativeDate;

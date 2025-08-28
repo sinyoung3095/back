@@ -18,11 +18,11 @@ public class CommentDAO {
     private final CommentMapper commentMapper;
 
 //    추가
-    public void save(CommentVO commentVO) {
-        commentMapper.insertComment(commentVO);
+    public void save(CommentDTO commentDTO) {
+        commentMapper.insertComment(commentDTO);
     }
 
-//    댓글 알람 추가
+//    댓글 알림 추가
     public void saveCommentAlarm(CommentAlarmDTO commentAlarmDTO) {
         commentMapper.insertCommentAlarm(commentAlarmDTO);
     }

@@ -63,4 +63,10 @@ public class PostDAO {
     public int findCountByKeyword(String keyword) {
         return communityListMapper.selectCountAllByKeyword(keyword);
     }
+    public int findPostCountByYear(String year) {
+        return communityListMapper.selectCountPostByYear(year);
+    }
+    public int findPostCountByMonth(String month) {
+        return communityListMapper.selectCountPostByMonth(month);
+    }
 }

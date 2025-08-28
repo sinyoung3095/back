@@ -20,4 +20,6 @@ public class PostVO extends Period {
     private Long categoryId;
     private String categoryName;
     private int commentCount;
+    private String filePath;
+    private String fileName;
 }

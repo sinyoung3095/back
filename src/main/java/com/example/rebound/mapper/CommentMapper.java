@@ -14,7 +14,7 @@ import java.util.List;
 @Mapper
 public interface CommentMapper {
 //    추가
-    public void insertComment(CommentVO commentVO);
+    public void insertComment(CommentDTO commentDTO);
 
 //    댓글 알림 추가
     public void insertCommentAlarm(CommentAlarmDTO commentAlarmDTO);

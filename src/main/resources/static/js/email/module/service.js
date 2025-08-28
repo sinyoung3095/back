@@ -13,7 +13,7 @@ const emailService = (() => {
     };
 
     const getEmailByPhoneNumber = async (member) => {
-        const response = await fetch("/sms/send", {
+        const response = await fetch("/sms/find-email", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
