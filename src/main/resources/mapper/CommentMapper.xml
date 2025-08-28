@@ -6,6 +6,11 @@
         values (#{commentContent}, #{memberId}, #{postId})
     </insert>
 
+    <insert id="insertCommentAlarm">
+        insert into tbl_comment_alarm(member_id, comment_id)
+        values (#{memberId}, #{commentId})
+    </insert>
+
     <select id="selectCommentsByPostId" resultType="com.example.rebound.dto.CommentDTO">
         select member_id, member_name, member_grade, id, comment_content, post_id, created_date, updated_date
         from view_comment_member
