@@ -46,9 +46,6 @@ public class CustomerCenterController {
     @PostMapping("inquiry")
     public RedirectView writeInquiry(InquiryDTO inquiryDTO, List<MultipartFile> files) {
         System.out.println(inquiryDTO);
-//        files.forEach(file -> {
-//            file.getOriginalFilename().equals("")
-//        })
         inquiryService.writeInquiry(inquiryDTO,files);
         return new RedirectView("/") ;
     }
