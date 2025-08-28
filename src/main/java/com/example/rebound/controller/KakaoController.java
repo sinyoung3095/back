@@ -49,9 +49,6 @@ public class KakaoController {
 
     @PostMapping("/member/join-kakao")
     public String joinKakao(@ModelAttribute MemberDTO memberDTO) {
-//        System.out.println(memberDTO.getMemberEmail());
-//        System.out.println(memberDTO.getKakaoProfileUrl());
-//        System.out.println(memberDTO.getMemberProvider());
         memberService.joinKakaoMember(memberDTO);
         memberService.saveKakaoProfile(memberDTO);
         session.setAttribute("member", memberDTO);
