@@ -4,6 +4,7 @@ import com.example.rebound.dto.CounselorDTO;
 import com.example.rebound.dto.CounselorQualificationsFileDTO;
 import com.example.rebound.dto.FileDTO;
 import com.example.rebound.repository.CounselorDAO;
+import com.example.rebound.repository.CounselorProfileFileDAO;
 import com.example.rebound.repository.CounselorQualificationsFileDAO;
 import com.example.rebound.repository.FileDAO;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +27,7 @@ public class CounselorServiceImpl implements CounselorService {
     final CounselorDAO counselorDAO;
     private final FileDAO fileDAO;
     private final CounselorQualificationsFileDAO counselorQualificationsFileDAO;
+    private final CounselorProfileFileDAO counselorProfileFileDAO;
 
     @Override
     public void joinCounselor(CounselorDTO counselorDTO, List<MultipartFile> files) {
@@ -101,6 +103,19 @@ public class CounselorServiceImpl implements CounselorService {
     @Override
     public void counselorRename(CounselorDTO counselorDTO) {
         counselorDAO.counselorRename(counselorDTO);
+    }
+
+    @Override
+    public void deleteProfile(Long id){
+        counselorProfileFileDAO.deleteCounselorProfileById(id);
+        fileDAO.deleteFile(id);
+        Optional<FileDTO> deleteFile=counselorProfileFileDAO.findCounselorProfileFileById(id);
+        String deleteFilePath=deleteFile.get().getFilePath();
+        String deleteFileName=deleteFile.get().getFileName();
+        File file = new File("C:/file/" + deleteFilePath, deleteFileName);
+        if (file.exists()) {
+            file.delete();
+        }
     }
 //    커밋 테스트
 }

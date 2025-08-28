@@ -1,5 +1,6 @@
 package com.example.rebound.controller;
 
+import com.example.rebound.service.CounselorService;
 import com.example.rebound.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +19,7 @@ import java.io.IOException;
 @Slf4j
 @RequestMapping("/api/**")
 public class FileController {
+    private final CounselorService counselorService;
     MemberService memberService;
     @GetMapping("display")
     public byte[] display(String filePath, String fileName) throws IOException {
@@ -27,5 +29,9 @@ public class FileController {
     @GetMapping("delete/{id}")
     public void deleteMemberProfileFile(@PathVariable Long id) throws IOException {
         memberService.deleteProfile(id);
+    }
+    @GetMapping("delete-counselor/{id}")
+    public void deleteCounselorProfileFile(@PathVariable Long id) throws IOException {
+        counselorService.deleteProfile(id);
     }
 }

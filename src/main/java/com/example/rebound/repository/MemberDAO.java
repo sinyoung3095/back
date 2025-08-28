@@ -87,7 +87,7 @@ public class MemberDAO {
     }
     //    이메일(카카오이메일 포함)로 조회
     public MemberDTO findMemberByEmail(String memberEmail){
-        return memberMapper.selectByMemberEmail(memberEmail);
+        return memberMapper.selectByMemberEmail(memberEmail);}
     //    회원 비밀번호 변경
     public void updateMemberPassword(String memberPassword, String memberEmail) {
         memberMapper.updateMemberPassword(memberPassword, memberEmail);
