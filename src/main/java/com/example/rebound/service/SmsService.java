@@ -36,7 +36,7 @@ public class SmsService {
 
         HashMap<String, String> params = new HashMap<>();
         params.put("to", memberPhoneNumber);
-        params.put("from", "");
+        params.put("from", "01055767406");
         params.put("type", "SMS");
         params.put("text", "인증번호: " + code);
         params.put("app_version", "test app 1.2");

@@ -110,6 +110,7 @@
     <select id="selectByMemberEmail">
         select * from tbl_member
         where member_email = #{memberEmail} or kakao_email = #{memberEmail}
+    </select>
 
     <!-- 회원 비밀번호 변경 -->
     <update id="updateMemberPassword">
@@ -120,7 +121,7 @@
 
     <!-- 회원 이메일 찾기 -->
     <select id="selectEmailByPhonerNumber">
-        select member_email, kakao_email
+        select member_email
         from tbl_member
         where member_phone_number = #{memberPhoneNumber}
     </select>

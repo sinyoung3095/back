@@ -137,4 +137,9 @@ public class MemberServiceImpl implements MemberService {
         memberDAO.updateMemberPassword(memberPassword, memberEmail);
     }
 
+    @Override
+    public String findEmailByPhone(String memberPhoneNumber) {
+        return memberDAO.selectEmailByPhonerNumber(memberPhoneNumber);
+    }
+
 }
