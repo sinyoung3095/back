@@ -20,6 +20,9 @@ import java.util.List;
 public class CommentServiceImpl implements CommentService {
     private final CommentDAO commentDAO;
     private final LikeDAO likeDAO;
+    private final FileService fileService;
+    private final MemberService memberService;
+
 
     //    댓글 작성
     @Override
@@ -45,21 +48,47 @@ public class CommentServiceImpl implements CommentService {
 
         List<CommentDTO> comments = commentDAO.findAll(postId, criteria);
 
-        comments.forEach((comment) -> {
+        comments.forEach(comment -> {
             comment.setRelativeDate(PostDateUtils.toRelativeTime(comment.getCreatedDate()));
             comment.setLikesCount(likeDAO.getLikeCount(comment.getId()));
+
+            fileService.findFileByMemberId(comment.getMemberId())
+                    .ifPresentOrElse(fileDTO -> {
+                        comment.setFilePath(fileDTO.getFilePath());
+                        comment.setFileName(fileDTO.getFileName());
+                    }, () -> {
+                        memberService.showFileById(comment.getMemberId()).ifPresentOrElse(member -> {
+                            if (member.getKakaoProfileUrl() != null && !member.getKakaoProfileUrl().isEmpty()) {
+                                comment.setKakaoProfileUrl(member.getKakaoProfileUrl());
+                                comment.setFilePath(null);
+                                comment.setFileName(null);
+                            } else if (member.getFile() != null) {
+                                comment.setFilePath(member.getFile().getFilePath());
+                                comment.setFileName(member.getFile().getFileName());
+                            } else {
+                                comment.setFilePath("images/member");
+                                comment.setFileName("no-profile.png");
+                            }
+                        }, () -> {
+                            comment.setFilePath("images/member");
+                            comment.setFileName("no-profile.png");
+                        });
+                    });
+
+            System.out.println("댓글 작성자 ID: " + comment.getMemberId() +
+                    ", 이미지 경로: " + (comment.getKakaoProfileUrl() != null ? comment.getKakaoProfileUrl() :
+                    comment.getFilePath() + "/" + comment.getFileName()));
         });
 
         criteria.setHasMore(comments.size() > criteria.getRowCount());
-
-        if(criteria.isHasMore()){
-            comments.remove(comments.size() - 1);
-        }
+        if (criteria.isHasMore()) comments.remove(comments.size() - 1);
 
         commentCriteriaDTO.setComments(comments);
         commentCriteriaDTO.setCriteria(criteria);
         return commentCriteriaDTO;
     }
+
+
 
     @Override
     public void update(CommentDTO commentDTO) {

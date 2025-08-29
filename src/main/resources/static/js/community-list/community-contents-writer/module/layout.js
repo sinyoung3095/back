@@ -40,11 +40,11 @@ const commentLayout = (() => {
                 displayGrade = '일반회원';
             }
 
-            let fileUrl;
-            if(comment.filePath && comment.fileName) {
+            let fileUrl = '/images/member/no-profile.png';
+            if(comment.kakaoProfileUrl && comment.kakaoProfileUrl.trim() !== "") {
+                fileUrl = comment.kakaoProfileUrl;
+            } else if(comment.filePath && comment.fileName) {
                 fileUrl = `/api/display?filePath=${comment.filePath}&fileName=${comment.fileName}`;
-            } else {
-                fileUrl = '/images/member/no-profile.png';
             }
 
             text += `
