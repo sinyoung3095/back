@@ -14,6 +14,7 @@ public class FileDTO {
     private String fileSize;
     private String fileContentType;
     private String fileOriginalName;
+    private String kakaoProfileUrl;
     private String createdDate;
     private String updatedDate;
 }

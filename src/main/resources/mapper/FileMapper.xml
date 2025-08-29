@@ -13,10 +13,12 @@
         where id=#{id}
     </select>
     <select id="selectFileByMemberId" parameterType="long" resultType="com.example.rebound.dto.FileDTO">
-        SELECT f.id, mpf.member_id, f.file_path, f.file_name, f.file_size, f.created_date, f.updated_date, f.file_original_name, f.file_content_type
-        FROM tbl_member_profile_file mpf
-        join tbl_file f
-        WHERE member_id = #{memberId} and f.id=mpf.id
+        select f.id, mpf.member_id, f.file_path, f.file_name, f.file_size, f.created_date, f.updated_date, f.file_original_name, f.file_content_type, m.kakao_profile_url
+        from tbl_member_profile_file mpf
+        join tbl_file f on mpf.id = f.id
+        join tbl_member m on mpf.member_id = m.id
+        where member_id = #{memberId}
+        limit 1
     </select>
     <select id="selectFileByCounselorId" parameterType="long" resultType="com.example.rebound.dto.FileDTO">
         select f.id, cp.counselor_id, f.file_path, f.file_name, f.file_size, f.created_date, f.updated_date, f.file_original_name, f.file_content_type

@@ -40,7 +40,12 @@ const commentLayout = (() => {
                 displayGrade = '일반회원';
             }
 
-            let fileUrl = comment.filePath && comment.fileName ? `/api/display?filePath=${comment.filePath}&fileName=${comment.fileName}` : '/images/member/no-profile.png';
+            let fileUrl;
+            if(comment.filePath && comment.fileName) {
+                fileUrl = `/api/display?filePath=${comment.filePath}&fileName=${comment.fileName}`;
+            } else {
+                fileUrl = '/images/member/no-profile.png';
+            }
 
             text += `
             <li class="id${comment.id} post-comments-list-item">   
