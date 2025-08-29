@@ -1,5 +1,18 @@
-const submitButton = document.querySelector("#submitButton");
 const sendButton = document.querySelector("#sendButton");
+
+sendButton.addEventListener("click", () => {
+
+    sendButton.disabled = true;
+    const buttonText = sendButton.querySelector(".button-text");
+    const loadingText = sendButton.querySelector(".loading-send-email");
+
+    buttonText.style.display = "none";
+    loadingText.style.display = "inline-block";
+
+    sendButton.closest("form").submit();
+});
+
+const submitButton = document.querySelector("#submitButton");
 const emailInput = document.getElementById("memberEmail");
 const passwordInput = document.getElementById("newPassword");
 const confirmInput = document.getElementById("newPasswordConfirm");
