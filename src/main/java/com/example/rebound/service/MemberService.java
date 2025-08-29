@@ -34,11 +34,15 @@ public interface  MemberService {
     public void memberRename(MemberDTO memberDTO);
 //    회원 프로필 사진 삭제
     public void deleteProfile(Long id);
-
-    FileDTO saveProfileFile(MultipartFile file, Long memberId) throws IOException;
+//회원 프로필 사진 저장
+    public FileDTO saveProfileFile(MultipartFile file, Long memberId) throws IOException;
 
     //    회원 비밀번호 변경
     public void updateMemberPassword(String memberPassword, String memberEmail);
 //    회원 이메일 찾기
     public MemberDTO findEmailByPhone(String memberPhoneNumber);
+//  회원 전화번호 변경
+    public void updateMemberPhoneNumber(MemberDTO memberDTO);
+//회원 이메일 변경
+    public void updateMemberEmail(MemberDTO memberDTO);
 }

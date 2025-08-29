@@ -6,8 +6,12 @@
     <title>개인정보 관리</title>
     <link data-vue-meta="1" rel="shortcut icon" href="/images/member/icon.png">
     <link rel="stylesheet" href="/css/member/mypage-info.css">
+    <link rel="stylesheet" href="/css/main-page/header.css">
+    <link rel="stylesheet" href="/css/main-page/header2.css">
+    <link rel="stylesheet" href="/css/main-page/footer.css">
 </head>
 <body>
+<header th:replace="~{/main-page/header2.html :: #app-header}"></header>
     <main class="main">
         <div class="main-1">
             <h1 class="main-2">개인 정보 관리</h1>
@@ -17,17 +21,18 @@
                         <button type="button" class="main-5 first">수정</button>
                     </div>
                     <div class="main-6">
-                        <p class="main-7">010-1234-5678</p>
+                        <p class="main-7" th:text="${session.member.memberPhoneNumber}"></p>
                     </div>
                 </form>
-                <form class="sub first">
+                <form class="sub first" id="phone-form" action="/member/update/phoneNumber" method="post">
                     <div class="main-4">전화번호</div>
                     <div class="main-6">
-                        <input id="insert1" type="text" class="main-7" value="010-1234-5678">
+                        <input id="phoneNumberInput" type="text" name="memberPhoneNumber" class="main-7" th:value="${session.member.memberPhoneNumber}">
                     </div>
+                    <div class="exist-phoneNumber-error-message" style="color: red;"></div>
                     <div class="select-1">
                         <button id="cancle1" type="button" class="select-2">취소</button>
-                        <button type="submit" disabled="" class="select-3">저장하기</button>
+                        <button type="button" class="select-3 check" id="phoneNumberButton">저장하기</button>
                     </div>
                 </form>
                 <form class="wrap second">
@@ -35,48 +40,53 @@
                         <button type="button" class="main-5 second">수정</button>
                     </div>
                     <div class="main-6">
-                        <p class="main-7">test1234@gmail.com</p>
+                        <p class="main-7" th:if="${session.member.memberEmail!=null}" th:text="${session.member.memberEmail}"></p>
+                        <p class="main-7" th:if="${session.member.memberEmail==null}">카카오 로그인</p>
                     </div>
                 </form>
-                <form class="sub second">
+                <form class="sub second" id="email-form" action="/member/update/email" method="post">
                     <div class="main-4">이메일</div>
                     <div class="main-6">
-                        <input id="insert2" type="text" class="main-7" value="test1234@gmail.com">
+                        <input id="emailInput" type="text" name="memberEmail" class="main-7" th:value="${session.member.memberEmail}">
                     </div>
+                    <div class="exist-email-error-message" style="color: red;"></div>
                     <div class="select-1">
                         <button id="cancle2" type="button" class="select-2">취소</button>
-                        <button type="submit" disabled="" class="select-3">저장하기</button>
+                        <button type="button" id="emailButton" class="select-3 check">저장하기</button>
                     </div>
                 </form>
-                <form class="wrap third">
-                    <div class="main-4">비밀번호
-                        <button type="button" class="main-5 third">수정</button>
-                    </div>
-                    <div class="main-6">
-                        <p class="main-7">*********</p>
-                    </div>
-                </form>
-                <form class="sub third">
-                    <div class="main-4">기존 비밀번호</div>
-                    <div class="main-6">
-                        <input  type="password" class="main-7" value="">
-                    </div>
-                    <div class="main-4">새로운 비밀번호</div>
-                    <div class="main-6">
-                        <input  type="password" class="main-7" value="">
-                    </div>
-                    <div class="main-4">새로운 비밀번호 확인</div>
-                    <div class="main-6">
-                        <input  type="password" class="main-7" value="">
-                    </div>
-                    <div class="select-1">
-                        <button id="cancle3" type="button" class="select-2">취소</button>
-                        <button type="submit" disabled="" class="select-3">저장하기</button>
-                    </div>
-                </form>
+<!--                <form class="wrap third">-->
+<!--                    <div class="main-4">비밀번호-->
+<!--                        <button type="button" class="main-5 third">수정</button>-->
+<!--                    </div>-->
+<!--                    <div class="main-6">-->
+<!--                        <p class="main-7">*********</p>-->
+<!--                    </div>-->
+<!--                </form>-->
+<!--                <form class="sub third">-->
+<!--                    <div class="main-4">기존 비밀번호</div>-->
+<!--                    <div class="main-6">-->
+<!--                        <input  type="password" class="main-7" value="">-->
+<!--                    </div>-->
+<!--                    <div class="main-4">새로운 비밀번호</div>-->
+<!--                    <div class="main-6">-->
+<!--                        <input  type="password" class="main-7" value="">-->
+<!--                    </div>-->
+<!--                    <div class="main-4">새로운 비밀번호 확인</div>-->
+<!--                    <div class="main-6">-->
+<!--                        <input  type="password" class="main-7" value="">-->
+<!--                    </div>-->
+<!--                    <div class="select-1">-->
+<!--                        <button id="cancle3" type="button" class="select-2">취소</button>-->
+<!--                        <button type="submit" disabled="" class="select-3">저장하기</button>-->
+<!--                    </div>-->
+<!--                </form>-->
             </div>   
         </div>
     </main>
+<footer th:replace="~{/main-page/footer.html :: #app-footer}"></footer>
 </body>
-<script src="/js/member/mypage-info.js"></script>
+<script src="/js/member/mypage-info/module/service.js"></script>
+<script src="/js/member/mypage-info/module/layout.js"></script>
+<script src="/js/member/mypage-info/mypage-info.js"></script>
 </html>

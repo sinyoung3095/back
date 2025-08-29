@@ -1,6 +1,7 @@
 package com.example.rebound.mapper;
 
 import com.example.rebound.dto.CounselorDTO;
+import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.util.MemberCriteria;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -16,6 +17,9 @@ public interface CounselorMapper {
     public void insertCounselor(CounselorDTO counselorDTO);
 //    상담사 조회
     public Optional<CounselorDTO> selectCounselorById(Long id);
+//    수정
+    public void updateCounselorPhoneNumber(CounselorDTO counselorDTO);
+    public void updateCounselorEmail(CounselorDTO counselorDTO);
 
 
     //    이메일 중복 검사

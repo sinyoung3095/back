@@ -30,20 +30,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.addEventListener("click", async (e) => {
-        if (e.target.classList.contains("main-8")) {
+        if (e.target.closest(".main-8")) {
             console.log("버튼 클릭됨");
             document.querySelector(".photo-1")?.classList.add("active");
         }
 
-        if (e.target.classList.contains("photo-10")) {
+        if (e.target.closest(".photo-10")) {
             console.log("취소 버튼 눌림");
             document.querySelector(".photo-1")?.classList.remove("active");
         }
 
-        if (e.target.classList.contains("change-profile")) {
+        if (e.target.closest(".change-profile")) {
             console.log("change-button 인식");
 
-            if (e.target.classList.contains("photo-9") && fileIdSafe) {
+            if (e.target.closest(".photo-9") && fileIdSafe) {
                 console.log("프로필 삭제 버튼 클릭됨", fileIdSafe);
                 await myPageSetService.profileDelete(fileIdSafe);
                 if (profileImage) {

@@ -6,6 +6,8 @@ import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.mapper.CounselorMapper;
 import com.example.rebound.repository.CounselorDAO;
 import com.example.rebound.service.CounselorService;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -97,6 +99,7 @@ public class CounselorController {
         counselorDAO.setLatelyDate(counselorDTO.getCounselorEmail());
         return "redirect:/"; }
 
+//    마이페이지로 이동
     @GetMapping("mypage")
     public String goToMyPageCounselor(HttpSession session, Model model) {
         CounselorDTO counselor = (CounselorDTO) session.getAttribute("counselor");
@@ -150,5 +153,12 @@ public class CounselorController {
     @GetMapping("mypage/consultation/history")
     public String goToMyPageCounselorConsultationHistory(){
         return "member/mypage-counselor-consultation-history";
+    }
+
+    //로그아웃
+    @GetMapping("logout")
+    public RedirectView logout(){
+        session.invalidate();
+        return new RedirectView("/counselor/login");
     }
 }
