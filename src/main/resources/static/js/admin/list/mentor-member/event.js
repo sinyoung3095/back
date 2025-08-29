@@ -177,7 +177,7 @@ memberContainer.addEventListener("click",async (e)=>{
     console.log("모달 들어옴");
     if(e.target.closest(".action-btn")){
         const page =1;
-        const keyword= e.target.dataset.email;
+        const keyword= e.target.dataset.id;
         console.log(keyword);
 
         await service.getMember(layout.showModal, page, keyword);

@@ -58,7 +58,7 @@ public class KakaoController {
         memberService.saveKakaoProfile(memberDTO);
         session.setAttribute("member", memberDTO);
         model.addAttribute("member", session.getAttribute("member"));
-        memberDAO.setLatelyDateKakao(memberDTO.getMemberEmail());
+
         return "redirect:/";
     }
 

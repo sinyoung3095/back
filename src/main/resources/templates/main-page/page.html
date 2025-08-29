@@ -15,10 +15,10 @@
 <body>
     <div id="app">
         <!-- header -->
-        <th:block th:if="${session.member != null}">
+        <th:block th:if="${session.member != null || session.counselor != null}">
             <header th:replace="~{/main-page/header2.html :: #app-header}"></header>
         </th:block>
-        <th:block th:unless="${session.member !=null}">
+        <th:block th:unless="${session.member !=null || session.counselor != null}">
             <header th:replace="~{/main-page/header.html :: #app-header}"></header>
         </th:block>
         <div id="app-body">
@@ -408,6 +408,7 @@
     const todayMessages = [[${todayMessages}]]
     const notices = [[${notices}]]
     const member = [[${session.member}]]
+    const counselor = [[${session.counselor}]]
     const commentAlarms = [[${commentAlarms}]];
 </script>
 <script src="/js/main-page/header2.js"></script>

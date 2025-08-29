@@ -1,4 +1,5 @@
 const mtbutton = document.querySelector(".mybutton");
+const notificationDot = document.querySelector("notification-dot");
 
 if (mtbutton) {
     const mydiv = document.querySelector("div.mydiv");
@@ -16,7 +17,6 @@ if (mtbutton) {
         alimdiv.classList.toggle("active");
     });
 }
-
 
 
 // 알림
@@ -47,3 +47,5 @@ console.log(commentAlarms);
     });
     commentAlarmContainer.innerHTML = text;
 }
+
+// 새 알림

@@ -1,5 +1,6 @@
 package com.example.rebound.controller;
 
+import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.service.MailService;
 import com.example.rebound.service.MemberService;
 import jakarta.mail.MessagingException;
@@ -7,10 +8,14 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/mail/**")
@@ -57,10 +62,13 @@ public class MailController {
         return "member/new-password";
     }
 
-    @PostMapping("update-password")
-    public RedirectView updatePassword(String newPassword, String memberEmail) {
-        memberService.updateMemberPassword(newPassword, memberEmail);
-        return new RedirectView("/member/login");
+    @PostMapping("new-password")
+    @ResponseBody
+    public ResponseEntity<?> newPassword(@RequestBody MemberDTO memberDTO) {
+        memberService.updateMemberPassword(memberDTO.getMemberPassword(), memberDTO.getMemberEmail());
+        Map<String, String> body = new HashMap<>();
+        body.put("message", "비밀번호 변경 완료");
+        return ResponseEntity.ok(body);
     }
 
     @GetMapping("/find-fail")
