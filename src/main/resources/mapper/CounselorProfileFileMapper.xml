@@ -14,7 +14,7 @@
         where f.id=cp.id and cp.counselor_id=#{id}
     </select>
 <!--    파일 삭제-->
-    <delete id="deleteProfileById">
+    <delete id="deleteCounselorProfileById">
         delete from tbl_counselor_profile_file
         where id=#{id}
     </delete>

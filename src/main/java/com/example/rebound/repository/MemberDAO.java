@@ -93,6 +93,10 @@ public class MemberDAO {
     public void updateMemberPassword(String memberPassword, String memberEmail) {
         memberMapper.updateMemberPassword(memberPassword, memberEmail);
     }
+//    회원 전화번호 변경
+    public void updateMemberPhoneNumber(MemberDTO memberDTO) {memberMapper.updateMemberPhoneNumber(memberDTO);}
+//    회원 이메일 변경
+    public void updateMemberEmail(MemberDTO memberDTO) {memberMapper.updateMemberEmail(memberDTO);}
 
     //    회원 이메일 찾기
     public MemberDTO selectEmailByPhonerNumber(String memberPhoneNumber) {

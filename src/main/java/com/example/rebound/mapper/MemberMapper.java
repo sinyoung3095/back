@@ -46,6 +46,8 @@ public interface MemberMapper {
     public int selectSubscribeAllCount(String keyword);
     //    수정
     public void updateMemberName(MemberDTO memberDTO);
+    public void updateMemberPhoneNumber(MemberDTO memberDTO);
+    public void updateMemberEmail(MemberDTO memberDTO);
     //    삭제
     public void deleteMemberById(int memberId);
     //    이메일(카카오이메일 포함)로 조회

@@ -181,4 +181,14 @@ public class MemberServiceImpl implements MemberService {
         return memberDAO.selectEmailByPhonerNumber(memberPhoneNumber);
     }
 
+    @Override
+    public void updateMemberPhoneNumber(MemberDTO memberDTO){
+        memberDAO.updateMemberPhoneNumber(memberDTO);
+    }
+
+    @Override
+    public void updateMemberEmail(MemberDTO memberDTO){
+        memberDAO.updateMemberEmail(memberDTO);
+    }
+
 }

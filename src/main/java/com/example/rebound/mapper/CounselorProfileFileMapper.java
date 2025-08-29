@@ -11,7 +11,7 @@ public interface CounselorProfileFileMapper {
 //    추가
     public void insertCounselorProfileFile(CounselorProfileFileDTO counselorProfileFileDTO);
 //    조회
-    public Optional<FileDTO> findCounselorProfileFileById(Long id);
+    public Optional<FileDTO> selectCounselorProfileFileByCounselorId(Long id);
 //    삭제
     public void deleteCounselorProfileById(Long id);
 }
