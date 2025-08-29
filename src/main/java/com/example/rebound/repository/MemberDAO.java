@@ -110,4 +110,7 @@ public class MemberDAO {
     public int findSubscribeCountByMonth(String month) {
         return memberMapper.selectCountSubscribeByMonth(month);
     }
+    public void setLatelyDate(Long Id) {
+        memberMapper.updateLatelyDate(Id);
+    }
 }

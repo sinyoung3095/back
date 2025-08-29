@@ -3,6 +3,7 @@ package com.example.rebound.controller;
 import com.example.rebound.common.exception.LoginFailException;
 import com.example.rebound.dto.*;
 import com.example.rebound.repository.FileDAO;
+import com.example.rebound.repository.MemberDAO;
 import com.example.rebound.service.FileService;
 import com.example.rebound.service.MemberService;
 import jakarta.servlet.http.HttpSession;
@@ -29,6 +30,7 @@ public class MemberController {
     private final FileDTO fileDTO;
     private final FileDAO fileDAO;
     private final FileService fileService;
+    private final MemberDAO memberDAO;
 
 //    회원가입 페이지로 이동
     @GetMapping("join")
@@ -102,6 +104,7 @@ public class MemberController {
     public String Login(MemberDTO memberDTO, Model model) {
         MemberDTO member = memberService.login(memberDTO).orElseThrow(LoginFailException::new);
         session.setAttribute("member", member);
+        memberDAO.setLatelyDate(memberDTO.getId());
 //        System.out.println(member.getMemberName());
         return "redirect:/member/mypage";
     }

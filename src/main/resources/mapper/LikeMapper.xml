@@ -23,4 +23,9 @@
         where member_id = #{memberId} and comment_id = #{commentId}
         limit 1
     </select>
+    <select id="countByMemberId" resultType="int">
+        select count(*)
+        from tbl_like
+        where comment_id = #{memberId} and created_date Like concat('%-',#{month},'-%')
+    </select>
 </mapper>

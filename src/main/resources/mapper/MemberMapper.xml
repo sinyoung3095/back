@@ -141,4 +141,9 @@
         select count(*) from tbl_member
         where created_date like concat('%-',#{month},'-%') and member_status = 'active' and member_grade= 'subscribe'
     </select>
+    <update id="updateLatelyDate">
+        update tbl_member
+        set lately_date = CURRENT_TIMESTAMP
+        where id = #{memberid}
+    </update>
 </mapper>

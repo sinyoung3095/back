@@ -111,7 +111,7 @@ const layout = (()=>{
                                                                 </tr>
                                                                 <tr>
                                                                     <th>8월 채택 수</th>
-                                                                    <td>10</td>
+                                                                    <td>${memberCriteriaDTO.members[0].likeMonthCount}</td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -134,7 +134,7 @@ const layout = (()=>{
                                                                 </tr>
                                                                 <tr>
                                                                     <th>7월 채택 수</th>
-                                                                    <td>10</td>
+                                                                    <td>${memberCriteriaDTO.members[0].likeBeforeMonthCount}</td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>

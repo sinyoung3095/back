@@ -23,3 +23,8 @@ create table tbl_member
         unique (member_phone_number)
 );
 select * from tbl_member;
+
+update tbl_member
+set lately_date = CURRENT_TIMESTAMP
+where id =1
+   ;
