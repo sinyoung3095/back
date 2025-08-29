@@ -19,6 +19,12 @@
 
 </head>
 <body>
+<th:block th:if="${session.member != null || session.counselor != null}">
+            <header th:replace="~{/main-page/header2.html :: #app-header}"></header>
+        </th:block>
+        <th:block th:unless="${session.member !=null || session.counselor != null}">
+            <header th:replace="~{/main-page/header.html :: #app-header}"></header>
+        </th:block>
     <main class="main">
         <div class="main-1">
             <h1 class="main-2">개인 정보 관리</h1>
@@ -39,7 +45,7 @@
                     <div class="exist-phoneNumber-error-message" style="color: red;"></div>
                     <div class="select-1">
                         <button id="cancle1" type="button" class="select-2">취소</button>
-                        <button type="submit" disabled="" class="select-3">저장하기</button>
+                        <button type="submit" id="phoneNumberButton" class="select-3">저장하기</button>
                     </div>
                 </form>
                 <form class="wrap second">
@@ -58,7 +64,7 @@
                     <div class="exist-email-error-message" style="color: red;"></div>
                     <div class="select-1">
                         <button id="cancle" type="button" class="select-2">취소</button>
-                        <button type="submit" disabled="" class="select-3">저장하기</button>
+                        <button type="submit" id="emailButton" class="select-3">저장하기</button>
                     </div>
                 </form>
 <!--                <form class="wrap third">-->
@@ -105,9 +111,10 @@
 <!--                        <button type="submit" disabled="" class="select-3">저장하기</button>-->
 <!--                    </div>-->
 <!--                </form>-->
-            </div>   
+            </div>
         </div>
     </main>
+<footer th:replace="~{/main-page/footer.html :: #app-footer}"></footer>
 </body>
 <script src="/js/counselor/mypage-info/module/service.js"></script>
 <script src="/js/counselor/mypage-info/module/layout.js"></script>
