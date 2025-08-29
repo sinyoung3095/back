@@ -1,6 +1,8 @@
 package com.example.rebound.repository;
 
+import com.example.rebound.domain.CommentAlarmVO;
 import com.example.rebound.domain.CommentVO;
+import com.example.rebound.dto.CommentAlarmDTO;
 import com.example.rebound.dto.CommentDTO;
 import com.example.rebound.dto.PostDTO;
 import com.example.rebound.mapper.CommentMapper;
@@ -16,8 +18,13 @@ public class CommentDAO {
     private final CommentMapper commentMapper;
 
 //    추가
-    public void save(CommentVO commentVO) {
-        commentMapper.insertComment(commentVO);
+    public void save(CommentDTO commentDTO) {
+        commentMapper.insertComment(commentDTO);
+    }
+
+//    댓글 알림 추가
+    public void saveCommentAlarm(CommentAlarmDTO commentAlarmDTO) {
+        commentMapper.insertCommentAlarm(commentAlarmDTO);
     }
 
 //    전제 조회

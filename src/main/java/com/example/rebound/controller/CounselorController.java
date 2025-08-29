@@ -91,7 +91,7 @@ public class CounselorController {
     public String Login(CounselorDTO counselorDTO) {
         CounselorDTO counselor=counselorService.login(counselorDTO).orElseThrow(LoginFailCounselorException::new);
         session.setAttribute("counselor", counselor);
-        return "redirect:/counselor/mypage"; }
+        return "redirect:/"; }
 
     @GetMapping("mypage")
     public String goToMyPageCounselor(HttpSession session, Model model) {

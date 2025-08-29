@@ -104,9 +104,15 @@ public class MemberController {
     public String Login(MemberDTO memberDTO, Model model) {
         MemberDTO member = memberService.login(memberDTO).orElseThrow(LoginFailException::new);
         session.setAttribute("member", member);
+<<<<<<< HEAD
         memberDAO.setLatelyDate(memberDTO.getId());
 //        System.out.println(member.getMemberName());
         return "redirect:/member/mypage";
+=======
+        model.addAttribute("member", member);
+        model.addAttribute("file", fileService.findFileByMemberId(member.getId()));
+        return "redirect:/";
+>>>>>>> a39a216eccf7243cbec70ff7eda0e0cba6f0c638
     }
 
 //    이메일 찾기
@@ -116,8 +122,14 @@ public class MemberController {
     }
 
 //    인증번호 성공
-    @GetMapping("find-email-ok")
-    public String goToFindEmailOk(){
+    @PostMapping("find-email-ok")
+    public String findEmailOk(@RequestParam("memberPhoneNumber") String memberPhoneNumber, Model model) {
+//        System.out.println("전화번호: " + memberPhoneNumber);
+        MemberDTO member = memberService.findEmailByPhone(memberPhoneNumber);
+//        System.out.println("member: " + member);
+        model.addAttribute("memberEmail", member.getMemberEmail());
+        model.addAttribute("createdDate", member.getCreatedDate());
+
         return "member/find-email-ok";
     }
 

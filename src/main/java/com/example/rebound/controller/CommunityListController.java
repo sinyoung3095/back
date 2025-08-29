@@ -46,7 +46,7 @@ public class CommunityListController {
 //    게시글 작성자 기준 조회
     @GetMapping(value = "{id}")
     public String readPostWriter(@PathVariable Long id, Model model, HttpSession session) {
-        log.info(((MemberDTO)session.getAttribute("member")).toString());
+//        log.info(((MemberDTO)session.getAttribute("member")).toString());
         model.addAttribute("post", communityPostService.getPost(id).orElseThrow(PostNotFoundException::new));
         return "community-list/community-contents-writer";
     }

@@ -197,7 +197,7 @@
                         <div class="overlay-body">
                             <section class="notification-body">
                                 <div class="user-notifications infinite-scroll-box">
-                                    <ul>
+                                    <ul id="comment-alarm">
                                         <li class="">
                                             <a class="card-container">
                                                 <div class="category-icon">
@@ -216,48 +216,6 @@
                                                     </div>
                                                     <p class="prisma-typography body14:medium primary content line-clamp2" >댓글 내용1 </p>
                                                     <p class="prisma-typography body12:regular tertiary" >11분 전 </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="">
-                                            <a class="card-container">
-                                                <div class="category-icon">
-                                                    <span class="icon-wrapper">
-                                                        <img src="https://soomgo-assets.s3.ap-northeast-2.amazonaws.com/notification-center/production/notification_graphic_chat.svg" alt="카테고리 아이콘">
-                                                    </span>
-                                                </div>
-                                                <div class="info">
-                                                    <div class="row title no-gutters">
-                                                        <p class="prisma-typography body14:semibold secondary" >새 댓글 </p>
-                                                        <span >
-                                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="prisma-icon tertiary" >
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.5008 12.077C17.4995 12.3557 17.3875 12.6224 17.1895 12.8184L9.73949 20.1961C9.3272 20.6044 8.66197 20.6011 8.25368 20.1888C7.84539 19.7765 7.84863 19.1113 8.26093 18.703L14.9644 12.0647L8.25372 5.28886C7.84541 4.87658 7.84862 4.21136 8.2609 3.80304C8.67318 3.39473 9.3384 3.39795 9.74672 3.81023L17.1967 11.3326C17.3928 11.5306 17.5022 11.7984 17.5008 12.077Z" fill="black"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </div>
-                                                    <p class="prisma-typography body14:medium primary content line-clamp2" >댓글 내용2 </p>
-                                                    <p class="prisma-typography body12:regular tertiary" >57분 전 </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="">
-                                            <a class="card-container">
-                                                <div class="category-icon">
-                                                    <span class="icon-wrapper">
-                                                        <img src="https://soomgo-assets.s3.ap-northeast-2.amazonaws.com/notification-center/production/notification_graphic_chat.svg" alt="카테고리 아이콘">
-                                                    </span>
-                                                </div>
-                                                <div class="info">
-                                                    <div class="row title no-gutters">
-                                                        <p class="prisma-typography body14:semibold secondary" >새 댓글 </p>
-                                                        <span >
-                                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="prisma-icon tertiary" >
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.5008 12.077C17.4995 12.3557 17.3875 12.6224 17.1895 12.8184L9.73949 20.1961C9.3272 20.6044 8.66197 20.6011 8.25368 20.1888C7.84539 19.7765 7.84863 19.1113 8.26093 18.703L14.9644 12.0647L8.25372 5.28886C7.84541 4.87658 7.84862 4.21136 8.2609 3.80304C8.67318 3.39473 9.3384 3.39795 9.74672 3.81023L17.1967 11.3326C17.3928 11.5306 17.5022 11.7984 17.5008 12.077Z" fill="black"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </div>
-                                                    <p class="prisma-typography body14:medium primary content line-clamp2" >댓글 내용3</p>
-                                                    <p class="prisma-typography body12:regular tertiary" >57분 전 </p>
                                                 </div>
                                             </a>
                                         </li>
@@ -283,7 +241,13 @@
                 </div>
                 <div class="usermenu-dropdown mydiv">
                         <div data-name="user-info">
-                            <span th:text="${session.member.memberName}"></span>
+<!--                            <th:block th:if="${session.counselor != null}">-->
+<!--                                <span th:text="${session.counselor.memberName}"></span>-->
+<!--                            </th:block>-->
+<!--                            <th:block th:unless="${session.counselor != null}">-->
+<!--                                <span th:text="${session.counselor.memberName}"></span>-->
+<!--                            </th:block>-->
+                                <span th:text="${session.member.memberName}"></span>
                             <span data-name="name"> 고객님</span>
                         </div>
                         <ul data-name="usermenu-control">
@@ -315,6 +279,7 @@
             </div>
         </header>
 </body>
-
+<script th:inline="javascript">
+</script>
 <script src="/js/main-page/header2.js"></script>
 </html>

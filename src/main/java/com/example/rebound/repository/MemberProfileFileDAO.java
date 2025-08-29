@@ -23,7 +23,7 @@ public class MemberProfileFileDAO {
 
 //    조회
     public Optional<FileDTO> findMemberProfileFileById(Long id) {
-        return memberProfileFileMapper.findMemberProfileFileById(id);
+        return memberProfileFileMapper.selectMemberProfileFileByMemberId(id);
     }
 //    삭제
     public void deleteMemberProfileById(Long id) {

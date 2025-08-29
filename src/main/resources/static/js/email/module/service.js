@@ -1,5 +1,6 @@
 const emailService = (() => {
-    const findEmail = async (member) => {
+    // 인증번호 발송
+    const sendCode = async (member) => {
         const response = await fetch("/sms/send", {
             method: "POST",
             headers: {
@@ -8,19 +9,11 @@ const emailService = (() => {
             body: JSON.stringify(member)
         });
 
-        const result = await response.json();
-
-        if (response.ok) {
-            console.log("이메일 찾기 성공");
-        } else {
-            console.log("이메일 찾기 실패", response.status);
-        }
-
-        return result;
+        return await response.json();
     };
 
-    const checkCode = async (member) => {
-        const response = await fetch("/sms/send", {
+    const getEmailByPhoneNumber = async (member) => {
+        const response = await fetch("/sms/find-email", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -28,17 +21,9 @@ const emailService = (() => {
             body: JSON.stringify(member)
         });
 
-        const result = await response.json();
-
-        if (response.ok) {
-            console.log("인증번호 검사");
-        } else {
-            console.log("인증번호 검사 실패", response.status);
-        }
-
-        return result;
+        return await response.json();
     };
 
-    return {findEmail:findEmail, checkCode:checkCode};
+    return {sendCode:sendCode, getEmailByPhoneNumber:getEmailByPhoneNumber};
 
 })();
