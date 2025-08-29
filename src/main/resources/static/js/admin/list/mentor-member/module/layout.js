@@ -29,7 +29,7 @@ const layout = (()=>{
                         <td class="td-recent">${member.latelyDate}</td>
                         <td class="td-action text-center">
                             <div class="action-btn">
-                                <i class="mdi mdi-chevron-right" data-email="${member.memberEmail}"></i>
+                                <i class="mdi mdi-chevron-right" data-id="${member.id}"></i>
                             </div>
                         </td>
                     </tr>

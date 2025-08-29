@@ -173,7 +173,7 @@ document.addEventListener("click", (e) => {
 memberContainer.addEventListener("click",async (e)=>{
     if(e.target.closest(".action-btn")){
         const page =1;
-        const keyword= e.target.dataset.email;
+        const keyword= e.target.dataset.id;
         console.log("모달창 이벤트:"+keyword);
         await service.getMember(layout.showModal, page, keyword);
         await service.getPost(layout.showPost,keyword);

@@ -2,8 +2,10 @@ package com.example.rebound.service;
 
 import com.example.rebound.common.enumeration.Provider;
 import com.example.rebound.dto.MemberDTO;
+import com.example.rebound.repository.MemberDAO;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +17,9 @@ import java.util.Optional;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class KakaoService {
+    private final MemberDAO memberDAO;
     public String getKakaoAccessToken(String code) {
         String accessToken = null;
         String requestURI = "https://kauth.kakao.com/oauth/token";
