@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="/font/roboto-latin-ext-700-normal-ed67ad54b1a8f5d21150.woff2">
     <link rel="stylesheet" href="/font/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
     <link rel="stylesheet" href="/css/customer-center/notice-details.css">
+    <link rel="stylesheet" href="/css/main-page/header.css">
+    <link rel="stylesheet" href="/css/main-page/header2.css">
     <link rel="icon" href="/images/favicon.png">
 </head>
 <body>
@@ -86,7 +88,12 @@
         <footer th:replace="~{/main-page/footer.html}"></footer>
     </body>
 </body>
+<script th:inline="javascript">
+    const member = [[${session.member}]]
+    const commentAlarms = [[${commentAlarms}]];
+</script>
 <script src="/js/customer-center/notice-detail/module/service.js"></script>
 <script src="/js/customer-center/notice-detail/module/layout.js"></script>
 <script src="/js/customer-center/notice-detail/event.js"></script>
+<script src="/js/main-page/header2.js"></script>
 </html>

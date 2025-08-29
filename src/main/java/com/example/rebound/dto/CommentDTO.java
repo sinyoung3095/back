@@ -25,4 +25,5 @@ public class CommentDTO {
     private String createdDate;
     private String updatedDate;
     private String relativeDate;
+    private Long postMemberId;
 }

@@ -59,7 +59,12 @@
     </main>
     <footer th:replace="~{/main-page/footer.html}"></footer>
 </body>
+<script th:inline="javascript">
+    const member = [[${session.member}]]
+    const commentAlarms = [[${commentAlarms}]];
+</script>
 <script src="/js/customer-center/notice/module/service.js"></script>
 <script src="/js/customer-center/notice/module/layout.js"></script>
 <script src="/js/customer-center/notice/event.js"></script>
+<script src="/js/main-page/header2.js"></script>
 </html>
