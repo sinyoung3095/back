@@ -1,27 +1,40 @@
-const form = document.querySelector("form");
+const submitButton = document.querySelector("#submitButton");
+const sendButton = document.querySelector("#sendButton");
 const emailInput = document.getElementById("memberEmail");
 const passwordInput = document.getElementById("newPassword");
 const confirmInput = document.getElementById("newPasswordConfirm");
+const passwordError = document.getElementById("passwordError");
+const confirmError = document.getElementById("confirmError");
 
-form.addEventListener("submit", async (e) => {
+submitButton.addEventListener("click", async () => {
 
-    const email = emailInput.value;
-    const password = passwordInput.value;
-    const confirm = confirmInput.value;
+    passwordError.textContent = "";
+    confirmError.textContent = "";
 
-    if (!password || !confirm) {
-        alert("비밀번호를 입력해주세요.");
+    let isValid = true;
+
+    if (!passwordInput.value) {
+        passwordError.textContent = "비밀번호를 입력해주세요.";
+        isValid = false;
     }
-    if (password !== confirm) {
-        alert("비밀번호가 일치하지 않습니다.");
+    if (!confirmInput.value) {
+        confirmError.textContent = "비밀번호 확인을 입력해주세요.";
+        isValid = false;
     }
+    if (passwordInput.value && confirmInput.value && passwordInput.value !== confirmInput.value) {
+        confirmError.textContent = "비밀번호가 일치하지 않습니다.";
+        isValid = false;
+    }
+
+    if (!isValid) return;
 
     const result = await passwordService.updatePassword({
-        memberEmail: email,
-        memberPassword: password
+        memberEmail: emailInput.value,
+        memberPassword: passwordInput.value
     });
 
     if (result) {
+        alert("비밀번호 변경이 완료되었습니다.");
         window.location.href = "/member/login";
     }
 });
