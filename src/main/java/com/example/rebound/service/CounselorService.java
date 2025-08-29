@@ -1,9 +1,11 @@
 package com.example.rebound.service;
 
 import com.example.rebound.dto.CounselorDTO;
+import com.example.rebound.dto.FileDTO;
 import com.example.rebound.dto.MemberDTO;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -28,5 +30,11 @@ public interface CounselorService {
 //    상담사 이름 변경
     public void counselorRename(CounselorDTO counselorDTO);
 
-    void deleteProfile(Long id);
+    public FileDTO saveCounselorProfileFile(MultipartFile file, Long counselorId) throws IOException;
+
+    public void deleteProfile(Long id);
+
+    public void updateCounselorPhoneNumber(CounselorDTO counselorDTO);
+
+    public void updateCounselorEmail(CounselorDTO counselorDTO);
 }

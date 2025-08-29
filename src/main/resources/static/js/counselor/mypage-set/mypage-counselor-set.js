@@ -61,13 +61,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fileInput.addEventListener("change", async (e) => {
         const file = e.target.files[0];
+        console.log(file);
+        console.log(counselorId);
         if (!file) return;
 
         const formData = new FormData();
         formData.append("file", file);
-        formData.append("memberId", memberId);
+        formData.append("counselorId", counselorId);
 
-        const response = await fetch("/api/profile/upload", {
+
+
+        const response = await fetch("/api/profile-counselor/upload", {
             method: "POST",
             body: formData
         });

@@ -4,6 +4,8 @@ import com.example.rebound.common.exception.LoginFailCounselorException;
 import com.example.rebound.dto.CounselorDTO;
 import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.service.CounselorService;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -91,8 +93,9 @@ public class CounselorController {
     public String Login(CounselorDTO counselorDTO) {
         CounselorDTO counselor=counselorService.login(counselorDTO).orElseThrow(LoginFailCounselorException::new);
         session.setAttribute("counselor", counselor);
-        return "redirect:/"; }
+        return "redirect:/counselor/mypage"; }
 
+//    마이페이지로 이동
     @GetMapping("mypage")
     public String goToMyPageCounselor(HttpSession session, Model model) {
         CounselorDTO counselor = (CounselorDTO) session.getAttribute("counselor");
@@ -115,6 +118,35 @@ public class CounselorController {
             model.addAttribute("file", null);
         }
         return "member/counselor-mypage";
+    }
+
+    @PostMapping("update/name")
+    public RedirectView counselorRename(CounselorDTO counselorDTO, HttpSession session) {
+        CounselorDTO counselor = (CounselorDTO) session.getAttribute("counselor");
+        counselorDTO.setId(counselor.getId());
+        counselorService.counselorRename(counselorDTO);
+        counselor.setCounselorName(counselorDTO.getCounselorName());
+        session.setAttribute("counselor", counselor);
+        return new RedirectView("/counselor/mypage/set");
+    }
+
+    @PostMapping("update/phoneNumber")
+    public RedirectView updatePhoneNumber(CounselorDTO counselorDTO, HttpSession session) {
+        CounselorDTO counselor=(CounselorDTO) session.getAttribute("counselor");
+        counselorDTO.setId(counselor.getId());
+        counselorService.updateCounselorPhoneNumber(counselorDTO);
+        counselor.setCounselorPhoneNumber(counselorDTO.getCounselorPhoneNumber());
+        session.setAttribute("counselor", counselor);
+        return new RedirectView("/counselor/mypage/info");
+    }
+    @PostMapping("update/email")
+    public RedirectView updateEmail(CounselorDTO counselorDTO, HttpSession session) {
+        CounselorDTO counselor=(CounselorDTO) session.getAttribute("counselor");
+        counselorDTO.setId(counselor.getId());
+        counselorService.updateCounselorEmail(counselorDTO);
+        counselor.setCounselorEmail(counselorDTO.getCounselorEmail());
+        session.setAttribute("counselor", counselor);
+        return new RedirectView("/counselor/mypage/info");
     }
     @GetMapping("mypage/info")
     public String goToMyPageCouselorInfo(){
@@ -146,5 +178,12 @@ public class CounselorController {
     @GetMapping("mypage/consultation/history")
     public String goToMyPageCounselorConsultationHistory(){
         return "member/mypage-counselor-consultation-history";
+    }
+
+    //로그아웃
+    @GetMapping("logout")
+    public RedirectView logout(){
+        session.invalidate();
+        return new RedirectView("/counselor/login");
     }
 }

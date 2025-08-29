@@ -78,5 +78,16 @@ public class FileController {
         return ResponseEntity.ok(fileDTO);
     }
 
+    @PostMapping("/profile-counselor/upload")
+    public ResponseEntity<FileDTO> uploadCounselorProfile(@RequestParam("file") MultipartFile file,
+                                                 @RequestParam("counselorId") Long counselorId) throws IOException {
+        if(counselorService.showFileById(counselorId).isPresent()) {
+            counselorService.deleteProfile(counselorId);
+        }
+        System.out.println(counselorService.showFileById(counselorId).isPresent());
+        FileDTO fileDTO = counselorService.saveCounselorProfileFile(file, counselorId);
+        return ResponseEntity.ok(fileDTO);
+    }
+
 
 }

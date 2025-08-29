@@ -32,6 +32,7 @@
 
                             <img th:if="${file == null}"
                                  th:src="@{/images/member/no-profile.png}"
+                                 class="profile-img">
                         </div>
                         <button type="button" class="main-8">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" color="#6A7685">
@@ -64,7 +65,7 @@
                         <p class="main-12" th:text="${session.counselor.counselorName}"></p>
                     </div>
                 </form>
-                <form id="sub">
+                <form id="sub" action="/counselor/update/name" method="post">
                     <div class="main-9">이름</div>
                     <div class="main-11">
                         <input id="insert1" type="text" name="counselorName" class="main-12" th:value="${session.counselor.counselorName}">
@@ -88,6 +89,7 @@
                     </button>
                 </li>
                 <li id="bt1" class="main-13">
+                    <form action="/counselor/logout" method="get">
                     <button class="main-14">
                         <p class="main-15">로그아웃</p>
                         <div class="main-16">
@@ -96,17 +98,18 @@
                             </svg>
                         </div>
                     </button>
+                    </form>
                 </li>
-                <li class="main-13">
-                    <button class="main-14">
-                        <p class="main-15">계정 탈퇴</p>
-                        <div class="main-16">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" color="#AAB4BF">
-                                <path fill="currentColor" fill-rule="evenodd" d="M17.3 11.92a.75.75 0 0 0-.222-.528l-7.8-7.725a.75.75 0 1 0-1.056 1.066l7.267 7.197-7.272 7.343a.75.75 0 0 0 1.066 1.055l7.8-7.876a.75.75 0 0 0 .217-.531" clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
-                    </button>
-                </li>
+<!--                <li class="main-13">-->
+<!--                    <button class="main-14">-->
+<!--                        <p class="main-15">계정 탈퇴</p>-->
+<!--                        <div class="main-16">-->
+<!--                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" color="#AAB4BF">-->
+<!--                                <path fill="currentColor" fill-rule="evenodd" d="M17.3 11.92a.75.75 0 0 0-.222-.528l-7.8-7.725a.75.75 0 1 0-1.056 1.066l7.267 7.197-7.272 7.343a.75.75 0 0 0 1.066 1.055l7.8-7.876a.75.75 0 0 0 .217-.531" clip-rule="evenodd"></path>-->
+<!--                            </svg>-->
+<!--                        </div>-->
+<!--                    </button>-->
+<!--                </li>-->
             </ul>
             <hr class="main-4">    
         </div>
@@ -116,10 +119,10 @@
     const counselorId = [[${counselor.id}]];
 </script>
 <script th:inline="javascript">
-    const fileId = [[${file.id}]];
-    const filePath = [[${file.filePath}]];
-    const fileName = [[${file.fileName}]];
+    const fileId = [[${file?.id}]];
+    const filePath = [[${file?.filePath}]];
+    const fileName = [[${file?.fileName}]];
 </script>
-<script src="/js/member/mypage-counselor-set/module/service.js"></script>
-<script src="/js/member/mypage-counselor-set/mypage-counselor-set.js"></script>
+<script src="/js/counselor/mypage-set/module/service.js"></script>
+<script src="/js/counselor/mypage-set/mypage-counselor-set.js"></script>
 </html>

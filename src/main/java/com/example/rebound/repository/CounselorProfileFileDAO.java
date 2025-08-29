@@ -22,7 +22,7 @@ public class CounselorProfileFileDAO {
 
 //    조회
     public Optional<FileDTO> findCounselorProfileFileById(Long id) {
-        return counselorProfileFileMapper.findCounselorProfileFileById(id);
+        return counselorProfileFileMapper.selectCounselorProfileFileByCounselorId(id);
     }
 //    삭제
     public void deleteCounselorProfileById(Long id) {

@@ -29,6 +29,14 @@ public class CounselorDAO {
 
 //    상담사 이름 변경
     public void counselorRename(CounselorDTO counselorDTO) { counselorMapper.updateCounselorName(counselorDTO);}
+//    상담사 전화번호 변경
+    public void updateCounselorPhoneNumber(CounselorDTO counselorDTO){
+        counselorMapper.updateCounselorPhoneNumber(counselorDTO);
+    }
+//    상담사 이메일 변경
+    public void updateCounselorEmail(CounselorDTO counselorDTO){
+        counselorMapper.updateCounselorEmail(counselorDTO);
+    }
 
 //    상담사 조회
     public Optional<CounselorDTO> findCounselorByEmailAndPassword(CounselorDTO counselorDTO){

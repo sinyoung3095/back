@@ -67,4 +67,14 @@
         update tbl_counselor set counselor_name=#{counselorName}
         where id=#{id}
     </update>
+    <!--    상담사 전화번호 변경-->
+    <update id="updateCounselorPhoneNumber">
+        update tbl_counselor set counselor_phone_number=#{counselorPhoneNumber}
+        where id=#{id}
+    </update>
+<!--    상담사 이메일 변경-->
+    <update id="updateCounselorEmail">
+        update tbl_counselor set counselor_email=#{counselorEmail}
+        where id=#{id}
+    </update>
 </mapper>
