@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이메일 찾기</title>
+    <link data-vue-meta="1" rel="shortcut icon" href="/images/member/icon.png">
+    <link rel="stylesheet" href="/css/member/find-email.css">
+    <link rel="stylesheet" href="/font/didactgothic.woff2">
+</head>
+<body>
+    <main class="main">
+        <header th:replace="~{/main-page/header}"></header>
+        <div class="main-1">
+            <div class="main-2">
+                <h1 class="main-3">이메일 찾기</h1>
+                <div class="main-4">
+                    <form id="findEmail" method="post" action="/counselor/find-email-ok">
+                        <div class="main-5">
+                            <label for="phone" class="main-7">휴대전화 번호 인증</label>
+                            <div class="main-8">
+                                <div class="css-0">
+                                    <div class="main-10">
+                                        <input id="phone" class="main-11" placeholder="예) 01012341234" name="counselorPhoneNumber" autocomplete="off" value="">
+                                    </div>
+                                </div>
+                                <button id="sendButton" type="button" class="main-9">전송</button>
+                            </div>
+                            <div id="sendMessage" class="main-12" style="display:none;">
+                                <p class="main-13 sendMessage"></p>
+                            </div>
+                        </div>
+                        <div id="verifySection" class="main-5" style="display:none;">
+                            <label for="verify" class="main-7">인증 번호</label>
+                            <div class="main-8">
+                                <div class="css-0">
+                                    <div class="main-10">
+                                        <input id="verify" class="main-11" placeholder="SMS 인증번호를 입력해주세요." name="verify" autocomplete="off" value="">
+                                    </div>
+                                </div>
+                                <button type="button" id="verifyButton" class="main-9">인증하기</button>
+                            </div>
+                            <div id="verifyCheck" class="main-12" style="display:none;">
+                                <p class="main-13 verifyCheckText"></p>
+                            </div>
+                        </div>
+                        <button type="submit" id="correctCodeButton" disabled="" class="main-6">확인</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer th:replace="~{/main-page/footer}"></footer>
+    </main>   
+</body>
+<script src="/js/counselor/email/module/service.js"></script>
+<script src="/js/counselor/email/event.js"></script>
+</html>

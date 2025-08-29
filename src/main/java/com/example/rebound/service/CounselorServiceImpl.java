@@ -173,4 +173,14 @@ public void deleteProfile(Long counselorId) {
     public void updateCounselorEmail(CounselorDTO counselorDTO){
         counselorDAO.updateCounselorEmail(counselorDTO);
     }
+
+    @Override
+    public void updateCounselorPassword(String counselorPassword, String counselorEmail) {
+        counselorDAO.updateCounselorPassword(counselorPassword, counselorEmail);
+    }
+
+    @Override
+    public CounselorDTO findEmailByPhone(String counselorPhoneNumber) {
+        return counselorDAO.selectEmailByPhoneNumber(counselorPhoneNumber);
+    }
 }

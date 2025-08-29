@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이메일 찾기</title>
+    <link data-vue-meta="1" rel="shortcut icon" href="/images/member/icon.png">
+    <link rel="stylesheet" href="/css/member/find-email-ok.css">
+    <link rel="stylesheet" href="/font/didactgothic.woff2">
+    <link rel="stylesheet" href="/css/main-page/footer.css">
+</head>
+<body>
+    <main class="main">
+        <header th:replace="~{/main-page/header}"></header>
+        <div class="main-1">
+            <div class="main-2">
+                <h1 class="main-3">이메일 찾기</h1>
+                <div class="main-4">
+                    <form>
+                        <div class="main-5">
+                            <div class="main-7">고객님의 계정 정보를 알려드려요</div>
+                            <div class="main-8">
+                                <div class="css-0">
+                                    <div class="main-10">
+                                        <div class="main-11">
+                                            <p>이메일: <span th:text="${counselorEmail}"></span></p>
+                                            <br>
+                                            <p>가입일: <span th:text="${createdDate}"></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/counselor/find-password">비밀번호 찾기</a>
+                        <a href="/member/login-counselor" class="main-6">로그인 하기</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer th:replace="~{/main-page/footer}"></footer>
+    </main>   
+</body>
+<script src="/js/counselor/email/module/service.js"></script>
+<script src="/js/counselor/email/event.js"></script>
+</html>

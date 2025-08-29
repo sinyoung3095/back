@@ -1,5 +1,5 @@
 const submitButton = document.querySelector("#submitButton");
-const emailInput = document.getElementById("memberEmail");
+const emailInput = document.getElementById("counselorEmail");
 const passwordInput = document.getElementById("newPassword");
 const confirmInput = document.getElementById("newPasswordConfirm");
 const passwordError = document.getElementById("passwordError");
@@ -28,12 +28,12 @@ submitButton.addEventListener("click", async () => {
     if (!isValid) return;
 
     const result = await passwordService.updatePassword({
-        memberEmail: emailInput.value,
-        memberPassword: passwordInput.value
+        counselorEmail: emailInput.value,
+        counselorPassword: passwordInput.value
     });
 
     if (result) {
         alert("비밀번호 변경이 완료되었습니다.");
-        window.location.href = "/member/login";
+        window.location.href = "/member/login-counselor";
     }
 });

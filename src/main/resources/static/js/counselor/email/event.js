@@ -28,7 +28,7 @@ sendButton.addEventListener("click", async () => {
     sendButton.disabled = true;
 
     const result = await emailService.sendCode({
-        memberPhoneNumber: phoneInput.value
+        counselorPhoneNumber: phoneInput.value
     });
 
     sendMessage.style.display = "block";

@@ -64,4 +64,12 @@ public int findCounselorQualificationAllCount(String keyword){
     public void setLatelyDate(String counselorEmail) {
         counselorMapper.updateLatelyDate(counselorEmail);
     }
+
+    public void updateCounselorPassword(String counselorPassword, String counselorEmail) {
+        counselorMapper.updateCounselorPassword(counselorPassword, counselorEmail);
+    }
+
+    public CounselorDTO selectEmailByPhoneNumber(String counselorPhoneNumber) {
+        return counselorMapper.selectEmailByPhoneNumber(counselorPhoneNumber);
+    }
 }
