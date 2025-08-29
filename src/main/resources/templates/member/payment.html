@@ -73,7 +73,11 @@
         <input type="hidden" name="subscribePrice" id="subscribePrice">
     </form>
 </body>
+<script th:inline="javascript">
+    const commentAlarms = [[${commentAlarms}]];
+</script>
 <script src="/js/member/payment.js"></script>
+<script src="/js/main-page/header2.js"></script>
 <script src="https://js.bootpay.co.kr/bootpay-5.1.5.min.js"></script>
 <script>
     const pay = async () => {

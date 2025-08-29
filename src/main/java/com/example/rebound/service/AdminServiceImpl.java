@@ -22,6 +22,7 @@ public class AdminServiceImpl implements AdminService {
     private final CommentDAO commentDAO;
     private final CounselorDAO  counselorDAO;
     private final NoticeDAO noticeDAO;
+    private final LikeDAO likeDAO;
 
     @Override
     public MemberDTO checkAdmin(MemberDTO memberDTO) {
@@ -49,6 +50,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public MemberCriteriaDTO findMentorMembers(int page, String keyword) {
+        LocalDateTime localDateTime = LocalDateTime.now();
         MemberCriteriaDTO memberCriteriaDTO = new MemberCriteriaDTO();
         MemberCriteria memberCriteria = new MemberCriteria(page,memberDAO.countMentorMemberAll(keyword));
         memberCriteriaDTO.setMembers(memberDAO.findMentorMemberAll(memberCriteria,keyword));
@@ -59,7 +61,10 @@ public class AdminServiceImpl implements AdminService {
         memberCriteria.setHasMore(members.size() > memberCriteria.getRowCount());
         memberCriteriaDTO.getMembers().forEach((member)->{
             String[] word = member.getCreatedDate().split(" ");
-            member.setCreatedDate(word[0]);});
+            member.setCreatedDate(word[0]);
+            member.setLikeMonthCount(likeDAO.findLikeCount(member.getId(),String.format("%02d",localDateTime.getMonthValue())));
+            member.setLikeBeforeMonthCount(likeDAO.findLikeCount(member.getId(),String.format("%02d",localDateTime.getMonthValue()-1)));
+        });
         return memberCriteriaDTO;
     }
 

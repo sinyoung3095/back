@@ -28,4 +28,6 @@ public class MemberDTO {
     private String latelyDate;
     private boolean remember;
     private FileDTO file;
+    private int likeMonthCount;
+    private int likeBeforeMonthCount;
 }

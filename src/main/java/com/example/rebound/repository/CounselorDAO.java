@@ -61,4 +61,7 @@ public class CounselorDAO {
 public int findCounselorQualificationAllCount(String keyword){
     return counselorMapper.selectCounselorQualificationAllCount(keyword);
 }
+    public void setLatelyDate(String counselorEmail) {
+        counselorMapper.updateLatelyDate(counselorEmail);
+    }
 }

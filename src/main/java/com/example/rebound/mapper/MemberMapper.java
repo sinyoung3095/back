@@ -60,4 +60,6 @@ public interface MemberMapper {
     public int selectCountGradeByMonth(String month);
     public int selectCountSubscribeByYear(String year);
     public int selectCountSubscribeByMonth(String month);
+    public void updateLatelyDate(String memberEmail);
+    public void updateLatelyDateKakao(String kakaoEmail);
 }

@@ -3,7 +3,7 @@ const service = (() => {
     const getCounselor = async(callback, page=1,keyword='') => {
         const response = await fetch(`/api/list/counselor/${page}?keyword=${keyword}`);
         const counselorCriteriaDTO = await response.json();
-        console.log("rest들어옴")
+        console.log(counselorCriteriaDTO)
         if(callback){
             callback(counselorCriteriaDTO);
         }

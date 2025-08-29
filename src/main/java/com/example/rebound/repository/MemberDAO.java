@@ -114,4 +114,10 @@ public class MemberDAO {
     public int findSubscribeCountByMonth(String month) {
         return memberMapper.selectCountSubscribeByMonth(month);
     }
+    public void setLatelyDate(String memberEmail){
+        memberMapper.updateLatelyDate(memberEmail);
+    }
+    public void setLatelyDateKakao(String kakaoEmail){
+        memberMapper.updateLatelyDate(kakaoEmail);
+    }
 }

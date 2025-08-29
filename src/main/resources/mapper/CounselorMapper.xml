@@ -77,4 +77,10 @@
         update tbl_counselor set counselor_email=#{counselorEmail}
         where id=#{id}
     </update>
+
+    <update id="updateLatelyDate">
+        update tbl_counselor
+        set lately_date = CURRENT_TIMESTAMP
+        where counselor_email = #{counselorEmail}
+    </update>
 </mapper>

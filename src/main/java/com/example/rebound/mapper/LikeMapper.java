@@ -17,4 +17,5 @@ public interface LikeMapper {
 
 //    추천 여부 확인
     public boolean checkLiked(@Param("commentId") Long commentId, @Param("memberId") Long memberId);
+    public int countByMemberId(@Param("memberId")Long memberId, @Param("month") String month);
 }

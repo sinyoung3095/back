@@ -124,6 +124,7 @@
 </body>
 <script th:inline="javascript">
     const memberId = [[${member.id}]];
+    const commentAlarms = [[${commentAlarms}]];
 </script>
 <script th:inline="javascript">
     const fileId = [[${file?.id}]];
@@ -136,4 +137,5 @@
 </script>
 <script src="/js/member/mypage-set/module/service.js"></script>
 <script src="/js/member/mypage-set/mypage-set.js"></script>
+<script src="/js/main-page/header2.js"></script>
 </html>

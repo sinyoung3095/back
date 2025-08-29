@@ -28,7 +28,7 @@ public class CommentServiceImpl implements CommentService {
         commentDAO.save(commentDTO);
         commentDTO.setId(commentDTO.getId());
 
-        Long memberId = commentDTO.getMemberId();
+        Long memberId = commentDTO.getPostMemberId();
         Long commentId = commentDTO.getId();
 
         CommentAlarmDTO commentAlarmDTO = new CommentAlarmDTO();

@@ -43,4 +43,5 @@ public interface CounselorMapper {
 public List<CounselorDTO> selectCounselorQualificationAll(@Param("memberCriteria") MemberCriteria memberCriteria, @Param("keyword") String keyword);
 //    상담사 수 통합검색
 public int selectCounselorQualificationAllCount(String keyword);
+public void updateLatelyDate(String counselorEmail);
 }
