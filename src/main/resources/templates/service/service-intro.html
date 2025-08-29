@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main-page/header.css">
+  <link rel="stylesheet" href="/css/main-page/header2.css">
+  <link rel="stylesheet" href="/css/main-page/footer.css">
   <title>리바운드 - 서비스 소개</title>
   <style>
     * {
@@ -29,8 +32,21 @@
   </style>
 </head>
 <body>
+
+  <th:block th:if="${session.member != null}">
+    <header th:replace="~{/main-page/header2.html :: #app-header}"></header>
+  </th:block>
+  <th:block th:unless="${session.member !=null}">
+    <header th:replace="~{/main-page/header.html :: #app-header}"></header>
+  </th:block>
   <img src="/images/service/회사소개이미지.png" alt="" class="full-width-image">
   <img src="/images/service/service-intro-img.jpg" alt="" class="centered-image">
+  <footer th:replace="~{/main-page/footer.html :: #app-footer}"></footer>
 
 </body>
+<script th:inline="javascript">
+  const member = [[${session.member}]]
+  const commentAlarms = [[${commentAlarms}]];
+</script>
+<script src="/js/main-page/header2.js"></script>
 </html>

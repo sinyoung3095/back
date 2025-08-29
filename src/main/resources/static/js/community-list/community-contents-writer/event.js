@@ -40,7 +40,7 @@ commentWriteButton.addEventListener("click", async () => {
         postId: post.id,
         memberId: memberId,
         commentContent: content,
-        memberId: post.memberId
+        postMemberId: post.postMemberId
     };
 
     await commentService.write(comment);

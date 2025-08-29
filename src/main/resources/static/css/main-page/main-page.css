@@ -293,7 +293,7 @@ button, input {
 
 input, button, select, optgroup, textarea {
     margin: 0;
-    font-family: inherit;
+    /*font-family: inherit;*/
     font-size: inherit;
     line-height: inherit;
 }
@@ -329,7 +329,7 @@ svg {
     padding: 0;
     margin: 0;
     letter-spacing: normal !important;
-    font-family: Pretendard, Malgun Gothic, -apple-system, Segoe UI, Roboto, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+    /*font-family: Pretendard, Malgun Gothic, -apple-system, Segoe UI, Roboto, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";*/
     word-break: break-word;
     text-decoration: none;
 }

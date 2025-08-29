@@ -4,7 +4,7 @@
     <select id="selectCommentAlarmById">
         select c.comment_content, ca.id, ca.member_id, ca.comment_id
         from tbl_comment_alarm ca join tbl_comment c
-        on c.id = ca.comment_id and ca.member_id = #{id}
+        on c.id = ca.comment_id and ca.member_id = #{memberId}
         order by ca.id desc
         limit 5 offset 0
     </select>

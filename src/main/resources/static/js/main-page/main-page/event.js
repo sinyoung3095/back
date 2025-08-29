@@ -1,21 +1,3 @@
-// 검색창
-// const searchInput = document.querySelector("#input-group input[type=text]");
-// const inputDeleteButton = document.querySelector("#input-delete img");
-// inputDeleteButton.style.display = "none";
-//
-// searchInput.addEventListener("keyup", (e) => {
-//     if (!searchInput.value) {
-//         inputDeleteButton.style.display = "none";
-//     } else {
-//         inputDeleteButton.style.display = "block";
-//     }
-// });
-//
-// inputDeleteButton.addEventListener("click", (e) => {
-//     searchInput.value = "";
-//     inputDeleteButton.style.display = "none";
-// });
-
 // 공지사항
 const banner = document.querySelector("div.slick-track");
 const firstBanner = document.createElement("div");
@@ -349,7 +331,7 @@ updateBannerIndicator();
 // 실패 게시글(커뮤니티) 목록
 const firstCurationItem = document.getElementById("curation-item1");
 const lastCurationItem = document.getElementById("curation-item2");
-let text = ``
+text = ``
 const firstAreaPosts = posts.slice(0, 3);
 const lastAreaPosts = posts.slice(3, 6);
 
