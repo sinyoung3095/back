@@ -30,6 +30,7 @@ public class CounselorController {
     private final CounselorService counselorService;
     private final HttpSession session;
     private final CounselorDAO counselorDAO;
+    private final CounselorDTO counselorDTO;
 
     //    상담사 회원가입 페이지로 이동
     @GetMapping("join")
@@ -127,14 +128,14 @@ public class CounselorController {
     public String goToMyPageCouselorInfo(){
         return "member/mypage-counselor-info";
     }
-    @GetMapping("mypage/post")
-    public String goToMyPageCounselorPost(){
-        return "member/mypage-counselor-post";
-    }
-    @GetMapping("mypage/reply")
-    public String goToMyPageCounselorReply(){
-        return "member/mypage-counselor-reply";
-    }
+//    @GetMapping("mypage/post")
+//    public String goToMyPageCounselorPost(){
+//        return "member/mypage-counselor-post";
+//    }
+//    @GetMapping("mypage/reply")
+//    public String goToMyPageCounselorReply(){
+//        return "member/mypage-counselor-reply";
+//    }
     @GetMapping("mypage/set")
     public String goToMyPageCounselorSet(HttpSession session, Model model) {
         CounselorDTO counselor = (CounselorDTO) session.getAttribute("counselor");
@@ -150,9 +151,42 @@ public class CounselorController {
         model.addAttribute("file", fullCounselor.getFile());
         return "member/mypage-counselor-set";
     }
-    @GetMapping("mypage/consultation/history")
-    public String goToMyPageCounselorConsultationHistory(){
-        return "member/mypage-counselor-consultation-history";
+//    @GetMapping("mypage/consultation/history")
+//    public String goToMyPageCounselorConsultationHistory(){
+//        return "member/mypage-counselor-consultation-history";
+//    }
+
+//    상담사 이름 변경
+    @PostMapping("update/name")
+    public RedirectView RenameCounselor(CounselorDTO counselorDTO, HttpSession session) {
+        CounselorDTO counselor = (CounselorDTO) session.getAttribute("counselor");
+        counselorDTO.setId(counselor.getId());
+        counselorService.counselorRename(counselorDTO);
+        counselor.setCounselorName(counselorDTO.getCounselorName());
+        session.setAttribute("counselor", counselor);
+        return new RedirectView("/counselor/set");
+    }
+
+//        상담사 이메일 변경
+    @PostMapping("update/email")
+    public RedirectView updateCounselorEmail(CounselorDTO counselorDTO, HttpSession session){
+        CounselorDTO counselor=(CounselorDTO) session.getAttribute("counselor");
+        counselorDTO.setId(counselor.getId());
+        counselorService.updateCounselorEmail(counselorDTO);
+        counselor.setCounselorEmail(counselorDTO.getCounselorEmail());
+        session.setAttribute("counselor", counselor);
+        return new RedirectView("/counselor/info");
+    }
+
+//    상담사 전화번호 변경
+    @PostMapping("update/phoneNumber")
+    public RedirectView updateCounselorPhoneNumber(CounselorDTO counselorDTO, HttpSession session){
+        CounselorDTO counselor=(CounselorDTO) session.getAttribute("counselor");
+        counselorDTO.setId(counselor.getId());
+        counselorService.updateCounselorPhoneNumber(counselorDTO);
+        counselor.setCounselorPhoneNumber(counselorDTO.getCounselorPhoneNumber());
+        session.setAttribute("counselor", counselor);
+        return new RedirectView("/counselor/info");
     }
 
     //로그아웃
