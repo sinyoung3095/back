@@ -25,8 +25,8 @@ console.log("리스트 들어옴")
                         <td class="td-start">${member.createdDate}</td>
                         <td class="td-career">n년</td>
                         <td class="td-action text-center">
-                            <div class="action-btn">
-                                <i class="mdi mdi-chevron-right" data-id="${member.id}"></i>
+                            <div  class="action-btn">
+                                <i class="mdi mdi-chevron-right" data-id="${member.counselorEmail}"></i>
                             </div>
                         </td>
                     </tr>

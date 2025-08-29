@@ -23,7 +23,8 @@
         <if test="keyword != null">
             and (
             counselor_name like concat('%', #{keyword}, '%') or
-            counselor_email like concat('%', #{keyword}, '%')
+            counselor_email like concat('%', #{keyword}, '%')or
+            id like concat('%', #{keyword}, '%')
             )
         </if>
         order by id desc
@@ -35,7 +36,8 @@
         <if test="keyword != null">
             and (
             counselor_name like concat('%', #{keyword}, '%') or
-            counselor_email like concat('%', #{keyword}, '%')
+            counselor_email like concat('%', #{keyword}, '%')or
+            id like concat('%', #{keyword}, '%')
             )
         </if>
     </select>
@@ -46,7 +48,8 @@
         <if test="keyword != null">
             and (
             counselor_name like concat('%', #{keyword}, '%') or
-            counselor_email like concat('%', #{keyword}, '%')
+            counselor_email like concat('%', #{keyword}, '%')or
+            id like concat('%', #{keyword}, '%')
             )
         </if>
         order by id desc
@@ -58,7 +61,8 @@
         <if test="keyword != null">
             and (
             counselor_name like concat('%', #{keyword}, '%') or
-            counselor_email like concat('%', #{keyword}, '%')
+            counselor_email like concat('%', #{keyword}, '%')or
+            id like concat('%', #{keyword}, '%')
             )
         </if>
     </select>
