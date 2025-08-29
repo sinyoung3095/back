@@ -22,6 +22,7 @@ public class PostDTO {
     private Status postStatus;
     private int commentCount;
     private String filePath;
+    private String fileName;
     private String createdDate;
     private String relativeDate;
     private String updatedDate;

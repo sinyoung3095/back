@@ -50,5 +50,9 @@ public class AdminRestController {
         return adminService.findNoticeAll(page,keyword);
 
     }
+    @GetMapping("chart-general")
+    public List<ChartDTO> chartGeneral() {
+        return adminService.findChartGeneralAll();
+    }
 
 }

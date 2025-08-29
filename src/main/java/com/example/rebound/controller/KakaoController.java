@@ -2,6 +2,8 @@ package com.example.rebound.controller;
 
 import com.example.rebound.common.enumeration.Provider;
 import com.example.rebound.dto.MemberDTO;
+import com.example.rebound.repository.CounselorDAO;
+import com.example.rebound.repository.MemberDAO;
 import com.example.rebound.service.KakaoService;
 import com.example.rebound.service.MemberService;
 import jakarta.servlet.http.HttpSession;
@@ -22,6 +24,7 @@ public class KakaoController {
     private final KakaoService kakaoService;
     private final MemberService memberService;
     private final HttpSession session;
+    private final MemberDAO memberDAO;
 
     @GetMapping("/kakao/login")
     public String kakaoLogin(String code, Model model) {
@@ -45,7 +48,8 @@ public class KakaoController {
 
         session.setAttribute("member", foundKakaoMember.get());
         model.addAttribute("member", foundKakaoMember);
-        return "redirect:/member/mypage";
+        memberDAO.setLatelyDateKakao(foundKakaoMember.get().getKakaoEmail());
+        return "redirect:/";
     }
 
     @PostMapping("/member/join-kakao")
@@ -54,7 +58,8 @@ public class KakaoController {
         memberService.saveKakaoProfile(memberDTO);
         session.setAttribute("member", memberDTO);
         model.addAttribute("member", session.getAttribute("member"));
-        return "redirect:/member/mypage";
+        memberDAO.setLatelyDateKakao(memberDTO.getMemberEmail());
+        return "redirect:/";
     }
 
 }

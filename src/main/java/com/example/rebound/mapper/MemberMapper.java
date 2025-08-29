@@ -54,4 +54,10 @@ public interface MemberMapper {
     public void updateMemberPassword(@Param("memberPassword") String memberPassword, @Param("memberEmail") String memberEmail);
     //    회원 이메일 찾기
     public MemberDTO selectEmailByPhonerNumber(String memberPhoneNumber);
+    public int selectCountGradeByYear(String year);
+    public int selectCountGradeByMonth(String month);
+    public int selectCountSubscribeByYear(String year);
+    public int selectCountSubscribeByMonth(String month);
+    public void updateLatelyDate(String memberEmail);
+    public void updateLatelyDateKakao(String kakaoEmail);
 }

@@ -10,6 +10,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
 @SpringBootTest
 @Slf4j
 public class AdminTest {
@@ -44,9 +47,9 @@ public class AdminTest {
     }
     @Test
     public void test(){
-        boolean check = memberDAO.isExistMemberPhoneNumber("10123415645110");
-        System.out.println(check);
-    }
+        LocalDateTime  now = LocalDateTime.now();
+        System.out.println(now);    }
+
 
 }
 

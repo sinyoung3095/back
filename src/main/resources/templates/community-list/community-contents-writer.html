@@ -54,7 +54,9 @@
                                     <!-- 게시글 작성자 정보 -->
                                     <div class="user-profile-wrapper">
                                         <div class="user-profile-area">
-                                            <img alt="직장인" class="profile-image" src="https://static.cdn.soomgo.com/upload/profile/1e2809f2-c3f7-4a59-b156-e4a9161d7d49.jpg?webp=1" lazy="loaded">
+                                            <img class="profile-image"
+                                                 th:src="${post.filePath != null && post.fileName != null ? '/api/display?filePath=' + post.filePath + '&fileName=' + post.fileName : '/images/member/no-profile.png'}"
+                                                 alt="프로필 이미지"/>
                                             <div class="profile-post-info">
                                                 <span class="user-name prisma-typography body14:medium primary" th:text="${post.memberName}"></span>
                                                 <span class="post-created-at prisma-typography body12:regular primary" th:text="${post.createdDate + ' · 조회 ' + post.postReadCount}"></span>

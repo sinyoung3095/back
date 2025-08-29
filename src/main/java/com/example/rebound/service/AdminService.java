@@ -27,5 +27,6 @@ public interface AdminService {
     public NoticeCriteriaDTO findNoticeAll(int page,String keyword);
 //    공지사항 상세 조회
     public NoticeDTO noticeDetail(int id);
-
+//    메인페이지 차트
+    public List<ChartDTO> findChartGeneralAll();
 }

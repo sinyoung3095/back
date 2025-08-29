@@ -22,5 +22,5 @@ create table tbl_member
     constraint member_phone_number
         unique (member_phone_number)
 );
-
 select * from tbl_member;
+

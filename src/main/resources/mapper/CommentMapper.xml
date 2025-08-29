@@ -12,10 +12,13 @@
     </insert>
 
     <select id="selectCommentsByPostId" resultType="com.example.rebound.dto.CommentDTO">
-        select member_id, member_name, member_grade, id, comment_content, post_id, created_date, updated_date
-        from view_comment_member
-        where post_id = #{postId} and comment_status = 'active'
-        order by created_date desc
+        select *
+        from tbl_comment c
+        join tbl_member m on c.member_id = m.id
+        left join tbl_member_profile_file mpf on m.id = mpf.member_id
+        left join tbl_file f on mpf.id = f.id
+        where c.post_id = #{postId} and c.comment_status = 'active'
+        order by c.created_date desc
     </select>
     
     <select id="selectCommentsCountByPostId">
@@ -23,6 +26,7 @@
         from tbl_comment
         where post_id = #{postId} and comment_status = 'active'
     </select>
+
     <select id="selectAllByKeyword">
         select p.post_title, c.comment_content, c.created_date
         from tbl_member m join tbl_comment c

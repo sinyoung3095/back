@@ -65,7 +65,7 @@ console.log("리스트 들어옴")
                 <div class="modal-content">
                     <div class="modal-header">
                         <div class="modal-title">
-                            (${counselorCriteriaDTO.counselor[0].counselorEmail}) ${counselorCriteriaDTO.counselor[0].counselorName}
+                            (${counselorCriteriaDTO.counselors[0].counselorEmail}) ${counselorCriteriaDTO.counselors[0].counselorName}
                             <span class="badge-label text-danger font-weight-bold ml-2">상담사</span>
                         </div>
                         <button class="close">
@@ -94,24 +94,16 @@ console.log("리스트 들어옴")
                                                             <tbody>
                                                                 <tr>
                                                                     <th>이름</th>
-                                                                    <td>${counselorCriteriaDTO.counselor[0].counselorName}</td>
+                                                                    <td>${counselorCriteriaDTO.counselors[0].counselorName}</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <th>핸드폰 번호</th>
-                                                                    <td>${counselorCriteriaDTO.counselor[0].counselorPhoneNumber}</td>
+                                                                    <td>${counselorCriteriaDTO.counselors[0].counselorPhoneNumber}</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <th>가입일</th>
-                                                                    <td>${counselorCriteriaDTO.counselor[0].counselorCreatedDate}</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th>나이</th>
-                                                                    <td>20</td>
-                                                                </tr>                                                                       
-                                                                <tr>
-                                                                    <th>리바운드 경력</th>
-                                                                    <td>n개월</td>
-                                                                </tr>      
+                                                                    <td>${counselorCriteriaDTO.counselors[0].counselorCreatedDate}</td>
+                                                                </tr>       
                                                                 <tr>
                                                                     <th>총 경력</th>
                                                                     <td>n년</td>
@@ -125,84 +117,24 @@ console.log("리스트 들어옴")
                                                             <tbody>
                                                                 <tr>
                                                                     <th>상담사ID</th>
-                                                                    <td>${counselorCriteriaDTO.counselor[0].counselorEmail}</td>
+                                                                    <td>${counselorCriteriaDTO.counselors[0].counselorEmail}</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <th>이메일</th>
-                                                                    <td>${counselorCriteriaDTO.counselor[0].counselorEmail}</td>
+                                                                    <td>${counselorCriteriaDTO.counselors[0].counselorEmail}</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <th>최근 접속일</th>
                                                                     <td>2025-07-29</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <th>성별</th>
-                                                                    <td>남</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th>상담 횟수</th>
-                                                                    <td>n회</td>
-                                                                </tr>
-                                                                <tr>
                                                                     <th>근무지</th>
-                                                                    <td>${counselorCriteriaDTO.counselor[0].counselorAddress}</td>
+                                                                    <td>${counselorCriteriaDTO.counselors[0].counselorAddress}</td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <!-- 상담사 상담 내역 -->
-                                            <div class="info-layout detail-info">
-                                                <div class="info-title justify-content-between">
-                                                    <div class="flex-left d-flex">
-                                                        <!-- 상담내역 클릭 시 상담사 관리 내 상담 내역 페이지로 이동 -->
-                                                        <a href="" class="info-detail">
-                                                            <div class="title">상담 내역
-                                                                <i class="mdi mdi-menu-left ml-2"></i>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                    <div class="flex-right"></div>
-                                                </div>
-                                                <div class="d-table w-100">
-                                                    <table class="info-table">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>상담 회원</th>
-                                                                <th>상담 일자</th>
-                                                                <th>상담 내용</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>test01</td>
-                                                                <td>2025-08-01</td>
-                                                                <td>고민</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>test01</td>
-                                                                <td>2025-08-01</td>
-                                                                <td>고민</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>test01</td>
-                                                                <td>2025-08-01</td>
-                                                                <td>고민</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>test01</td>
-                                                                <td>2025-08-01</td>
-                                                                <td>고민</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>test01</td>
-                                                                <td>2025-08-01</td>
-                                                                <td>고민</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>                             
                                             </div>
                                             <!-- 오늘의 좋은 말 작성 내역 -->
                                             <div class="info-layout detail-info">

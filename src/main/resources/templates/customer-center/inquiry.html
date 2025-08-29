@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>문의 등록 – 자주묻는질문 - 숨고 : 숨은고수</title>
     <link rel="stylesheet" href="/css/customer-center/inquiry.css">
+    <link rel="stylesheet" href="/css/main-page/header.css">
+    <link rel="stylesheet" href="/css/main-page/header2.css">
     <link rel="icon" href="/images/favicon.png">
     <link rel="stylesheet" href="/font/didactgothic.woff2">
     <link rel="stylesheet" href="/font/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
@@ -17,21 +19,12 @@
     <link rel="stylesheet" href="/font/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-            <a onclick="window.location.href='/'">
-                <img src="/images/logo.png" alt="로고">
-            </a>
-        </div>
-        <div class="nav-wrapper">
-            <span class="icon-menu"></span>
-            <nav class="user-nav" id="user-nav">
-                <a href="">공지사항</a>
-                <a class="submit-a-request" href="">문의 등록</a>
-                <a title="홈" href="">자주묻는질문</a>
-            </nav>
-        </div>
-    </header>
+    <th:block th:if="${session.member != null}">
+        <header th:replace="~{/main-page/header2.html :: #app-header}"></header>
+    </th:block>
+    <th:block th:unless="${session.member !=null}">
+        <header th:replace="~{/main-page/header.html :: #app-header}"></header>
+    </th:block>
     <main role="main" style="height: 1000px">
         <div class="container-divider"></div>
         <div class="container">

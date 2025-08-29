@@ -3,7 +3,9 @@ package com.example.rebound.controller;
 import com.example.rebound.dto.CommentAlarmDTO;
 import com.example.rebound.dto.CommentCriteriaDTO;
 import com.example.rebound.dto.CommentDTO;
+import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.service.CommentService;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -20,7 +22,13 @@ public class CommunityCommentController {
     private final CommentService commentService;
 //    추가
     @PostMapping("/write")
-    public ResponseEntity<?> write(@RequestBody CommentDTO commentDTO) {
+    public ResponseEntity<?> write(@RequestBody CommentDTO commentDTO, HttpSession session) {
+        MemberDTO member = (MemberDTO) session.getAttribute("member");
+        if (member == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("로그인이 필요합니다.");
+        }
+        commentDTO.setMemberId(member.getId());
+        commentDTO.setMemberName(member.getMemberName());
         commentService.write(commentDTO);
         return ResponseEntity.ok(commentDTO);
     }

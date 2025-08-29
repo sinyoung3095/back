@@ -98,4 +98,22 @@ public class MemberDAO {
     public MemberDTO selectEmailByPhonerNumber(String memberPhoneNumber) {
         return memberMapper.selectEmailByPhonerNumber(memberPhoneNumber);
     }
+    public int findCountByYear(String year) {
+        return memberMapper.selectCountGradeByYear(year);
+    }
+    public int findCountByMonth(String month) {
+        return memberMapper.selectCountGradeByMonth(month);
+    }
+    public int findSubscribeCountByYear(String year) {
+        return memberMapper.selectCountSubscribeByYear(year);
+    }
+    public int findSubscribeCountByMonth(String month) {
+        return memberMapper.selectCountSubscribeByMonth(month);
+    }
+    public void setLatelyDate(String memberEmail){
+        memberMapper.updateLatelyDate(memberEmail);
+    }
+    public void setLatelyDateKakao(String kakaoEmail){
+        memberMapper.updateLatelyDate(kakaoEmail);
+    }
 }
