@@ -14,9 +14,19 @@
     <link rel="stylesheet" href="/font/roboto-latin-ext-700-normal-ed67ad54b1a8f5d21150.woff2">
     <link rel="stylesheet" href="/font/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
     <link rel="stylesheet" href="/css/counselor-list/good-words.css">
+    <link rel="stylesheet" href="/css/main-page/header.css">
+    <link rel="stylesheet" href="/css/main-page/header2.css">
+    <link rel="stylesheet" href="/css/main-page/footer.css">
     <title>오늘의 좋은 말</title>
 </head>
 <body>
+    <!-- header -->
+    <th:block th:if="${session.member != null || session.counselor != null}">
+        <header th:replace="~{/main-page/header2.html :: #app-header}"></header>
+    </th:block>
+    <th:block th:unless="${session.member !=null || session.counselor != null}">
+        <header th:replace="~{/main-page/header.html :: #app-header}"></header>
+    </th:block>
     <div id="app-body">
         <div id="top"></div>
         <div class="community-container container">
@@ -122,6 +132,14 @@
             <div class="v-portal" style="display: none;"></div>
         </div>
     </div>
+    <!-- footer -->
+    <footer th:replace="~{/main-page/footer.html :: #app-footer}"></footer>
 </body>
+<script th:inline="javascript">
+    const member = [[${session.member}]]
+    const counselor = [[${session.counselor}]]
+    const commentAlarms = [[${commentAlarms}]];
+</script>
 <script src="/js/counselor-list/good-words.js"></script>
+<script src="/js/main-page/header2.js"></script>
 </html>

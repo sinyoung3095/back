@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/images/favicon.png">
     <link rel="stylesheet" href="/font/didactgothic.woff2">
-    <link rel="stylesheet" href="/font/admin/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-cyrillic-700-normal-d010f1f324e111a22e53.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-cyrillic-ext-700-normal-be4d02458ce53887dc37.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-greek-700-normal-50e795c1345353b0e996.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-greek-ext-700-normal-bd9854c751441ccc1a70.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-latin-700-normal-227c93190fe7f82de3f8.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-latin-ext-700-normal-ed67ad54b1a8f5d21150.woff2">
-    <link rel="stylesheet" href="/font/admin/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
     <link rel="stylesheet" href="/css/counselor-list/good-words-member.css">
+    <link rel="stylesheet" href="/css/main-page/header.css">
+    <link rel="stylesheet" href="/css/main-page/header2.css">
+    <link rel="stylesheet" href="/css/main-page/footer.css">
     <title>오늘의 좋은 말</title>
 </head>
 <body>
+    <!-- header -->
+    <th:block th:if="${session.member != null || session.counselor != null}">
+        <header th:replace="~{/main-page/header2.html :: #app-header}"></header>
+    </th:block>
+    <th:block th:unless="${session.member !=null || session.counselor != null}">
+        <header th:replace="~{/main-page/header.html :: #app-header}"></header>
+    </th:block>
     <div id="app-body">
         <div id="top"></div>
         <div class="community-container container">
@@ -54,7 +56,7 @@
                                         <section class="item-wrapper">
                                             <a href="">
                                                 <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/static/images/goodWords/memo00.jpg" lazy="loaded">
+                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo00.jpg" lazy="loaded">
                                                     <div class="item-wrapper-text">
                                                         <div class="text01">오늘의 좋은 말 머리글입니다.</div>
                                                         <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
@@ -68,7 +70,7 @@
                                         <section class="item-wrapper">
                                             <a href="">
                                                 <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/static/images/goodWords/memo01.jpg" lazy="loaded">
+                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo01.jpg" lazy="loaded">
                                                     <div class="item-wrapper-text">
                                                         <div class="text01">오늘의 좋은 말 머리글입니다.</div>
                                                         <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
@@ -82,7 +84,7 @@
                                         <section class="item-wrapper">
                                             <a href="">
                                                 <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/static/images/goodWords/memo02.jpg" lazy="loaded">
+                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo02.jpg" lazy="loaded">
                                                     <div class="item-wrapper-text">
                                                         <div class="text01">오늘의 좋은 말 머리글입니다.</div>
                                                         <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
@@ -96,7 +98,7 @@
                                         <section class="item-wrapper">
                                             <a href="">
                                                 <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/static/images/goodWords/memo03.jpg" lazy="loaded">
+                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo03.jpg" lazy="loaded">
                                                     <div class="item-wrapper-text">
                                                         <div class="text01">오늘의 좋은 말 머리글입니다.</div>
                                                         <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
@@ -110,7 +112,7 @@
                                         <section class="item-wrapper">
                                             <a href="">
                                                 <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/static/images/goodWords/memo00.jpg" lazy="loaded">
+                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo00.jpg" lazy="loaded">
                                                     <div class="item-wrapper-text">
                                                         <div class="text01">오늘의 좋은 말 머리글입니다.</div>
                                                         <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
@@ -124,7 +126,7 @@
                                         <section class="item-wrapper">
                                             <a href="">
                                                 <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/static/images/goodWords/memo01.jpg" lazy="loaded">
+                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo01.jpg" lazy="loaded">
                                                     <div class="item-wrapper-text">
                                                         <div class="text01">오늘의 좋은 말 머리글입니다.</div>
                                                         <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
@@ -138,7 +140,7 @@
                                         <section class="item-wrapper">
                                             <a href="">
                                                 <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/static/images/goodWords/memo02.jpg" lazy="loaded">
+                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo02.jpg" lazy="loaded">
                                                     <div class="item-wrapper-text">
                                                         <div class="text01">오늘의 좋은 말 머리글입니다.</div>
                                                         <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
@@ -152,7 +154,7 @@
                                         <section class="item-wrapper">
                                             <a href="">
                                                 <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/static/images/goodWords/memo03.jpg" lazy="loaded">
+                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo03.jpg" lazy="loaded">
                                                     <div class="item-wrapper-text">
                                                         <div class="text01">오늘의 좋은 말 머리글입니다.</div>
                                                         <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
@@ -166,7 +168,7 @@
                                         <section class="item-wrapper">
                                             <a href="">
                                                 <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/static/images/goodWords/memo00.jpg" lazy="loaded">
+                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo00.jpg" lazy="loaded">
                                                     <div class="item-wrapper-text">
                                                         <div class="text01">오늘의 좋은 말 머리글입니다.</div>
                                                         <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
@@ -180,7 +182,7 @@
                                         <section class="item-wrapper">
                                             <a href="">
                                                 <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/static/images/goodWords/memo01.jpg" lazy="loaded">
+                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo01.jpg" lazy="loaded">
                                                     <div class="item-wrapper-text">
                                                         <div class="text01">오늘의 좋은 말 머리글입니다.</div>
                                                         <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
@@ -194,7 +196,7 @@
                                         <section class="item-wrapper">
                                             <a href="">
                                                 <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/static/images/goodWords/memo02.jpg" lazy="loaded">
+                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo02.jpg" lazy="loaded">
                                                     <div class="item-wrapper-text">
                                                         <div class="text01">오늘의 좋은 말 머리글입니다.</div>
                                                         <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
@@ -208,7 +210,7 @@
                                         <section class="item-wrapper">
                                             <a href="">
                                                 <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/static/images/goodWords/memo03.jpg" lazy="loaded">
+                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo03.jpg" lazy="loaded">
                                                     <div class="item-wrapper-text">
                                                         <div class="text01">오늘의 좋은 말 머리글입니다.</div>
                                                         <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
@@ -222,7 +224,7 @@
                                         <section class="item-wrapper">
                                             <a href="">
                                                 <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/static/images/goodWords/memo00.jpg" lazy="loaded">
+                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo00.jpg" lazy="loaded">
                                                     <div class="item-wrapper-text">
                                                         <div class="text01">오늘의 좋은 말 머리글입니다.</div>
                                                         <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
@@ -236,7 +238,7 @@
                                         <section class="item-wrapper">
                                             <a href="">
                                                 <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/static/images/goodWords/memo01.jpg" lazy="loaded">
+                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo01.jpg" lazy="loaded">
                                                     <div class="item-wrapper-text">
                                                         <div class="text01">오늘의 좋은 말 머리글입니다.</div>
                                                         <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
@@ -250,7 +252,7 @@
                                         <section class="item-wrapper">
                                             <a href="">
                                                 <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/static/images/goodWords/memo02.jpg" lazy="loaded">
+                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo02.jpg" lazy="loaded">
                                                     <div class="item-wrapper-text">
                                                         <div class="text01">오늘의 좋은 말 머리글입니다.</div>
                                                         <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
@@ -264,7 +266,7 @@
                                         <section class="item-wrapper">
                                             <a href="">
                                                 <figure class="image-wrapper">
-                                                    <img alt="커버 이미지" class="content-image" src="/static/images/goodWords/memo03.jpg" lazy="loaded">
+                                                    <img alt="커버 이미지" class="content-image" src="/images/goodWords/memo03.jpg" lazy="loaded">
                                                     <div class="item-wrapper-text">
                                                         <div class="text01">오늘의 좋은 말 머리글입니다.</div>
                                                         <div class="text02">오늘의 좋은 말 텍스트 예시입니다. 해당 공간에는 상담사님들이 작성한 내용이 게시되며, 페이지는 매일 갱신됩니다.</div>
@@ -286,6 +288,14 @@
             <div class="v-portal" style="display: none;"></div>
         </div>
     </div>
+    <!-- footer -->
+    <footer th:replace="~{/main-page/footer.html :: #app-footer}"></footer>
 </body>
+<script th:inline="javascript">
+    const member = [[${session.member}]]
+    const counselor = [[${session.counselor}]]
+    const commentAlarms = [[${commentAlarms}]];
+</script>
 <script src="/js/counselor-list/good-words.js"></script>
+<script src="/js/main-page/header2.js"></script>
 </html>
