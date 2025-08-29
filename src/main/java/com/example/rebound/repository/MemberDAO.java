@@ -114,6 +114,6 @@ public class MemberDAO {
         memberMapper.updateLatelyDate(memberEmail);
     }
     public void setLatelyDateKakao(String kakaoEmail){
-        memberMapper.updateLatelyDate(kakaoEmail);
+        memberMapper.updateLatelyDateByKakao(kakaoEmail);
     }
 }

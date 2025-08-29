@@ -59,5 +59,5 @@ public interface MemberMapper {
     public int selectCountSubscribeByYear(String year);
     public int selectCountSubscribeByMonth(String month);
     public void updateLatelyDate(String memberEmail);
-    public void updateLatelyDateKakao(String kakaoEmail);
+    public void updateLatelyDateByKakao(String kakaoEmail);
 }
