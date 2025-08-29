@@ -478,7 +478,7 @@ notices.forEach((notice) => {
     text += `
         <div tabindex="-1" data-index="0" class="slick-slide slick-active slick-current" style="outline: none; width: 329px;">
             <div>
-                <a href="/customer-center/notice-detail" style="width: 100%; display: inline-block; position: relative">
+                <a href="/customer-center/notice-detail?id=${notice.id}" style="width: 100%; display: inline-block; position: relative">
                     <div class="soomgo-story-image" style="background-image: url(/images/main/공지임시이미지.jpg);"></div>
                     <div class="notice-text">${notice.noticeContent}</div>
                     <p class="soomgo-story-name">${notice.noticeTitle}</p>

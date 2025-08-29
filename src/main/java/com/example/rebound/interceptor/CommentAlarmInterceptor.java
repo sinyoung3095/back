@@ -27,10 +27,6 @@ public class CommentAlarmInterceptor implements HandlerInterceptor {
             request.setAttribute("commentAlarms", commentAlarmService.getComments(member.getId()));
         }
 
-        String uri = request.getRequestURI();
-        String method = request.getMethod();
-        System.out.println("[Interceptor] 요청 URI: " + uri + ", Method: " + method);
-
         return true;
     }
 }
