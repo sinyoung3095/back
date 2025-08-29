@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/images/favicon.png">
     <link rel="stylesheet" href="/css/community-list/community-contents-writer.css">
+    <link rel="stylesheet" href="/css/main-page/header2.css">
+    <link rel="stylesheet" href="/css/main-page/header.css">
     <link rel="stylesheet" href="/font/didactgothic.woff2">
     <title>게시글 제목</title>
 </head>
 <body>
 <div id="app" data-is-loaded="true">
-    <header th:replace="~{/main-page/header2}"></header>
+    <header th:replace="~{/main-page/header2 :: header}"></header>
     <div class="__cov-progress" style="background-color: rgb(105, 59, 242); position: fixed; top: 0px; left: 0px; width: 0%; height: 2px;"></div>
     <ul class="prisma-toast-container"></ul>
     <!-- body -->
@@ -198,10 +200,11 @@
     const memberId = [[${session.member.id}]];
     const post = {
         id: [[${post.id}]],
-        memberId: [[${post.memberId}]]
+        postMemberId: [[${post.memberId}]]
     };
 </script>
 <script src="/js/community-list/community-contents-writer/module/layout.js"></script>
 <script src="/js/community-list/community-contents-writer/module/service.js"></script>
 <script src="/js/community-list/community-contents-writer/event.js"></script>
+<script src="/js/main-page/header2.js"></script>
 </html>
