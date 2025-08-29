@@ -22,6 +22,7 @@ public class CommentDTO {
     private Long postId;
     private String filePath;
     private String fileName;
+    private String kakaoProfileUrl;
     private String createdDate;
     private String updatedDate;
     private String relativeDate;
