@@ -15,6 +15,7 @@
                 left join tbl_member_profile_file mpf on m.id = mpf.member_id
                 left join tbl_file f on mpf.id = f.id
         where p.id = #{id} and p.post_status = 'active'
+        order by p.created_date desc
     </select>
 
     <update id="updatePostReadCount">
