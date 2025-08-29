@@ -7,17 +7,21 @@
     <link data-vue-meta="1" rel="shortcut icon" href="/images/member/icon.png">
     <link rel="stylesheet" href="/css/member/mypage-post.css">
     <link rel="stylesheet" href="/font/didactgothic.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-cyrillic-700-normal-d010f1f324e111a22e53.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-cyrillic-ext-700-normal-be4d02458ce53887dc37.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-greek-700-normal-50e795c1345353b0e996.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-greek-ext-700-normal-bd9854c751441ccc1a70.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-latin-700-normal-227c93190fe7f82de3f8.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-latin-ext-700-normal-ed67ad54b1a8f5d21150.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
+    <link rel="stylesheet" href="/font/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
+    <link rel="stylesheet" href="/font/roboto-cyrillic-700-normal-d010f1f324e111a22e53.woff2">
+    <link rel="stylesheet" href="/font/roboto-cyrillic-ext-700-normal-be4d02458ce53887dc37.woff2">
+    <link rel="stylesheet" href="/font/roboto-greek-700-normal-50e795c1345353b0e996.woff2">
+    <link rel="stylesheet" href="/font/roboto-greek-ext-700-normal-bd9854c751441ccc1a70.woff2">
+    <link rel="stylesheet" href="/font/roboto-latin-700-normal-227c93190fe7f82de3f8.woff2">
+    <link rel="stylesheet" href="/font/roboto-latin-ext-700-normal-ed67ad54b1a8f5d21150.woff2">
+    <link rel="stylesheet" href="/font/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
+    <link rel="stylesheet" href="/css/main-page/header.css">
+    <link rel="stylesheet" href="/css/main-page/header2.css">
+    <link rel="stylesheet" href="/css/main-page/footer.css">
 
 </head>
 <body>
+<header th:replace="~{/main-page/header2.html :: #app-header}"></header>
     <main class="main-1">
         <h1 class="main-2">커뮤니티 작성글/댓글</h1>
         <nav class="main-3">
@@ -26,13 +30,7 @@
         </nav>
         <section>
             <ul id="view">
-                <li>
-                    <button class="main-6">
-                        <p class="main-7">작성 글 제목</p>
-                        <p class="main-10">작성 글 내용 썸네일식 보여주기</p>
-                        <time datetime="2025.07.31" class="main-8">2025.07.31</time>
-                    </button>
-                </li>
+
             </ul>
             <!-- 글이 없을 때 위 #view 안보이고 #none 보임 -->
             <div id="none" class="main-9">
@@ -50,7 +48,7 @@
         </section>
         
     </main>
-    
+<footer th:replace="~{/main-page/footer.html :: #app-footer}"></footer>
 </body>
-<script src="/js/member/mypage-post.js"></script>
+<script src="/js/member/mypage-post/mypage-post.js"></script>
 </html>

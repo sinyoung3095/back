@@ -5,7 +5,10 @@ import com.example.rebound.dto.*;
 import com.example.rebound.repository.FileDAO;
 import com.example.rebound.repository.MemberDAO;
 import com.example.rebound.service.FileService;
+import com.example.rebound.service.KakaoService;
 import com.example.rebound.service.MemberService;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -30,6 +33,7 @@ public class MemberController {
     private final FileDTO fileDTO;
     private final FileDAO fileDAO;
     private final FileService fileService;
+    private final KakaoService kakaoService;
     private final MemberDAO memberDAO;
 
 //    회원가입 페이지로 이동
@@ -184,6 +188,39 @@ public class MemberController {
         return new RedirectView("/member/mypage/set");
     }
 
+    //    전화번호 수정
+    @PostMapping("update/phoneNumber")
+    public RedirectView updatePhone(MemberDTO memberDTO, HttpSession session){
+//        System.out.println("메소드 들어옴");
+        MemberDTO member=(MemberDTO) session.getAttribute("member");
+        memberDTO.setId(member.getId());
+        memberService.updateMemberPhoneNumber(memberDTO);
+        member.setMemberPhoneNumber(memberDTO.getMemberPhoneNumber());
+        session.setAttribute("member", member);
+        return new RedirectView("/member/mypage/info");
+    }
+//    이메일 수정
+    @PostMapping("update/email")
+    public RedirectView updateEmail(MemberDTO memberDTO, HttpSession session){
+        MemberDTO member=(MemberDTO) session.getAttribute("member");
+        memberDTO.setId(member.getId());
+        memberService.updateMemberEmail(memberDTO);
+        member.setMemberEmail(memberDTO.getMemberEmail());
+        session.setAttribute("member", member);
+        return new RedirectView("/member/mypage/info");
+    }
+//    비밀번호 수정
+//    @PostMapping("update/password")
+//    public RedirectView updatePassword(MemberDTO memberDTO, HttpSession session){
+//        MemberDTO member=(MemberDTO) session.getAttribute("member");
+//        String email=member.getMemberEmail();
+//        String password=memberDTO.getMemberPassword();
+//        memberService.updateMemberPassword(email,password);
+//        member.setMemberPassword(password);
+//        session.setAttribute("member", member);
+//        return new RedirectView("/member/mypage/info");
+//    }
+
 
 
 
@@ -222,5 +259,21 @@ public class MemberController {
     @GetMapping("mypage-consultation/review")
     public String goToMyPageConsultationReview(){
         return "member/mypage-consultation-review";
+    }
+
+    //로그아웃
+    @GetMapping("logout")
+    public RedirectView logout(@CookieValue(name="access_token", required = false) String token, HttpServletResponse response){
+        if(token == null){
+            session.invalidate();
+        }else{
+            kakaoService.logout(token);
+            Cookie accessTokenCookie = new Cookie("access_token", token);
+            accessTokenCookie.setPath("/");
+            accessTokenCookie.setMaxAge(0);
+
+            response.addCookie(accessTokenCookie);
+        }
+        return new RedirectView("/member/login");
     }
 }

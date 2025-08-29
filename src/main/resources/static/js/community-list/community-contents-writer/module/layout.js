@@ -3,7 +3,7 @@ const postActionLayout = (() => {
         const actionWrap = document.getElementById("postActionWrap");
         let text = '';
 
-        if(post.memberId === memberId) {
+        if(post.postMemberId === memberId) {
             text += `
             <div class="post-actions">
                 <div class="dropdown b-dropdown btn-group">

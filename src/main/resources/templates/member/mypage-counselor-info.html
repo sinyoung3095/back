@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>개인 정보 관리</title>
     <link data-vue-meta="1" rel="shortcut icon" href="/images/member/icon.png">
-    <link rel="stylesheet" href="/css/member/mypage-info.css">
+    <link rel="stylesheet" href="/css/member/mypage-counselor-info.css">
     
     <link rel="stylesheet" href="/font/didactgothic.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-cyrillic-700-normal-d010f1f324e111a22e53.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-cyrillic-ext-700-normal-be4d02458ce53887dc37.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-greek-700-normal-50e795c1345353b0e996.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-greek-ext-700-normal-bd9854c751441ccc1a70.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-latin-700-normal-227c93190fe7f82de3f8.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-latin-ext-700-normal-ed67ad54b1a8f5d21150.woff2">
-    <link rel="stylesheet" href="/fonts/admin-login-fonts/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
+    <link rel="stylesheet" href="/font/materialdesignicons-webfont-d5cba82059f88bfa469e.woff2">
+    <link rel="stylesheet" href="/font/roboto-cyrillic-700-normal-d010f1f324e111a22e53.woff2">
+    <link rel="stylesheet" href="/font/roboto-cyrillic-ext-700-normal-be4d02458ce53887dc37.woff2">
+    <link rel="stylesheet" href="/font/roboto-greek-700-normal-50e795c1345353b0e996.woff2">
+    <link rel="stylesheet" href="/font/roboto-greek-ext-700-normal-bd9854c751441ccc1a70.woff2">
+    <link rel="stylesheet" href="/font/roboto-latin-700-normal-227c93190fe7f82de3f8.woff2">
+    <link rel="stylesheet" href="/font/roboto-latin-ext-700-normal-ed67ad54b1a8f5d21150.woff2">
+    <link rel="stylesheet" href="/font/roboto-vietnamese-700-normal-3425a701027d0699e369.woff2">
 
 </head>
 <body>
@@ -28,14 +28,15 @@
                         <button type="button" class="main-5 first">수정</button>
                     </div>
                     <div class="main-6">
-                        <p class="main-7">010-1234-5678</p>
+                        <p class="main-7" th:text="${session.counselor.counselorPhoneNumber}"></p>
                     </div>
                 </form>
-                <form class="sub first">
+                <form id="phone-form" class="sub first" action="/counselor/update/phoneNumber" method="post">
                     <div class="main-4">전화번호</div>
                     <div class="main-6">
-                        <input id="insert1" type="text" class="main-7" value="010-1234-5678">
+                        <input id="phoneNumberInput" name="counselorPhoneNumber" type="text" class="main-7" th:value="${session.counselor.counselorPhoneNumber}">
                     </div>
+                    <div class="exist-phoneNumber-error-message" style="color: red;"></div>
                     <div class="select-1">
                         <button id="cancle1" type="button" class="select-2">취소</button>
                         <button type="submit" disabled="" class="select-3">저장하기</button>
@@ -46,66 +47,69 @@
                         <button type="button" class="main-5 second">수정</button>
                     </div>
                     <div class="main-6">
-                        <p class="main-7">test1234@gmail.com</p>
+                        <p class="main-7" th:text="${session.counselor.counselorEmail}"></p>
                     </div>
                 </form>
-                <form class="sub second">
+                <form class="sub second" id="email-form" action="/counselor/update/email" method="post">
                     <div class="main-4">이메일</div>
                     <div class="main-6">
-                        <input id="insert2" type="text" class="main-7" value="test1234@gmail.com">
+                        <input id="emailInput" type="text" name="counselorEmail" class="main-7" th:value="${session.counselor.counselorEmail}">
                     </div>
+                    <div class="exist-email-error-message" style="color: red;"></div>
                     <div class="select-1">
-                        <button id="cancle2" type="button" class="select-2">취소</button>
+                        <button id="cancle" type="button" class="select-2">취소</button>
                         <button type="submit" disabled="" class="select-3">저장하기</button>
                     </div>
                 </form>
-                <form class="wrap third">
-                    <div class="main-4">비밀번호
-                        <button type="button" class="main-5 third">수정</button>
-                    </div>
-                    <div class="main-6">
-                        <p class="main-7">*********</p>
-                    </div>
-                </form>
-                <form class="sub third">
-                    <div class="main-4">기존 비밀번호</div>
-                    <div class="main-6">
-                        <input  type="password" class="main-7" value="">
-                    </div>
-                    <div class="main-4">새로운 비밀번호</div>
-                    <div class="main-6">
-                        <input  type="password" class="main-7" value="">
-                    </div>
-                    <div class="main-4">새로운 비밀번호 확인</div>
-                    <div class="main-6">
-                        <input  type="password" class="main-7" value="">
-                    </div>
-                    <div class="select-1">
-                        <button id="cancle3" type="button" class="select-2">취소</button>
-                        <button type="submit" disabled="" class="select-3">저장하기</button>
-                    </div>
-                </form>
-                <form class="wrap second">
-                    <div class="main-4">상담 주소
-                        <button type="button" class="main-5 second">수정</button>
-                    </div>
-                    <div class="main-6">
-                        <p class="main-7">서울시 강남구 역삼동 여기저기</p>
-                    </div>
-                </form>
-                <form class="sub second">
-                    <div class="main-4">상담 주소</div>
-                    <div class="main-6">
-                        <input id="insert2" type="text" class="main-7" value="서울시 강남구 역삼동 여기저기">
-                    </div>
-                    <div class="select-1">
-                        <button id="cancle2" type="button" class="select-2">취소</button>
-                        <button type="submit" disabled="" class="select-3">저장하기</button>
-                    </div>
-                </form>
+<!--                <form class="wrap third">-->
+<!--                    <div class="main-4">비밀번호-->
+<!--                        <button type="button" class="main-5 third">수정</button>-->
+<!--                    </div>-->
+<!--                    <div class="main-6">-->
+<!--                        <p class="main-7">*********</p>-->
+<!--                    </div>-->
+<!--                </form>-->
+<!--                <form class="sub third">-->
+<!--                    <div class="main-4">기존 비밀번호</div>-->
+<!--                    <div class="main-6">-->
+<!--                        <input  type="password" class="main-7" value="">-->
+<!--                    </div>-->
+<!--                    <div class="main-4">새로운 비밀번호</div>-->
+<!--                    <div class="main-6">-->
+<!--                        <input  type="password" class="main-7" value="">-->
+<!--                    </div>-->
+<!--                    <div class="main-4">새로운 비밀번호 확인</div>-->
+<!--                    <div class="main-6">-->
+<!--                        <input  type="password" class="main-7" value="">-->
+<!--                    </div>-->
+<!--                    <div class="select-1">-->
+<!--                        <button id="cancle3" type="button" class="select-2">취소</button>-->
+<!--                        <button type="submit" disabled="" class="select-3">저장하기</button>-->
+<!--                    </div>-->
+<!--                </form>-->
+<!--                <form class="wrap second">-->
+<!--                    <div class="main-4">상담 주소-->
+<!--                        <button type="button" class="main-5 second">수정</button>-->
+<!--                    </div>-->
+<!--                    <div class="main-6">-->
+<!--                        <p class="main-7">서울시 강남구 역삼동 여기저기</p>-->
+<!--                    </div>-->
+<!--                </form>-->
+<!--                <form class="sub second">-->
+<!--                    <div class="main-4">상담 주소</div>-->
+<!--                    <div class="main-6">-->
+<!--                        <input id="insert2" type="text" class="main-7" value="서울시 강남구 역삼동 여기저기">-->
+<!--                    </div>-->
+<!--                    <div class="select-1">-->
+<!--                        <button id="cancle2" type="button" class="select-2">취소</button>-->
+<!--                        <button type="submit" disabled="" class="select-3">저장하기</button>-->
+<!--                    </div>-->
+<!--                </form>-->
             </div>   
         </div>
     </main>
 </body>
-<script src="/js/member/mypage-info.js"></script>
+<script src="/js/counselor/mypage-info/module/service.js"></script>
+<script src="/js/counselor/mypage-info/module/layout.js"></script>
+<script src="/js/counselor/mypage-info/mypage-counselor-info.js"></script>
 </html>

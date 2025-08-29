@@ -16,8 +16,7 @@ const layout = (()=>{
                                 <span class="badge-label badge text-danger ml-2"
                                       data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class=""
                                       title="" data-original-title="">일반회원</span>
-                            </div>
-                            <div class="member-id">${member.memberEmail}</div>
+                            </div><div class="member-id">${member.memberEmail}</div>
                         </td>
                         <td class="td-amount text-right pr-4 font-weight-bold">${member.memberName}
                             <span class="amount-unit"> 님</span>
@@ -28,7 +27,7 @@ const layout = (()=>{
                         <td class="td-recent">${member.latelyDate}</td>
                         <td class="td-action text-center"  >
                             <div class="action-btn">
-                                <i class="mdi mdi-chevron-right" data-email="${member.memberEmail}"></i>
+                                <i class="mdi mdi-chevron-right" data-id="${member.id}"></i>
                             </div>
                         </td>
                     </tr>
