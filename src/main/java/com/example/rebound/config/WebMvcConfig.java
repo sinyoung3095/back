@@ -16,14 +16,16 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(commentAlarmInterceptor)
 //                아래 경로로만 요청할 때 실행
-                .addPathPatterns("/")                                   //됨OOOOOOOO
-                .addPathPatterns("/community-list/**")                  //됨OOOOOOOO
-                .addPathPatterns("/customer-center/notice-list/**")     //됨OOOOOOOO
-                .addPathPatterns("/customer-center/notice-detail/**")   //됨OOOOOOOO
-                .addPathPatterns("/member/mypage")              //됨OOOOOOOO
-                .addPathPatterns("/member/mypage/set")         //화면이 망가짐
-                .addPathPatterns("/service/service-intro")      //됨OOOOOOOO
-                .addPathPatterns("/pay/");                      //됨OOOOOOOO
+                .addPathPatterns("/")                                   
+                .addPathPatterns("/community-list/**")
+                .addPathPatterns("/api/community-posts/**")
+                .addPathPatterns("/customer-center/notice-list/**")     
+                .addPathPatterns("/customer-center/notice-detail/**")   
+                .addPathPatterns("/member/mypage")              
+                .addPathPatterns("/member/mypage/set")
+                .addPathPatterns("/service/service-intro")
+                .addPathPatterns("/customer-center/inquiry")
+                .addPathPatterns("/pay/");                      
 
 //                아래 경로로 요청할 때는 실행하지 않음
 //                .excludePathPatterns("/test/**");
