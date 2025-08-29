@@ -1,15 +1,4 @@
 const passwordService = (() => {
-    const sendCode = async (member) => {
-        const response = await fetch("/mail/send", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(member)
-        });
-        return await response.json();
-    };
-
     const updatePassword = async (member, callback) => {
         try {
             const response = await fetch("/mail/new-password", {
@@ -36,6 +25,6 @@ const passwordService = (() => {
         }
     };
 
-    return { sendCode:sendCode, updatePassword:updatePassword };
+    return {updatePassword: updatePassword};
 
 })();
