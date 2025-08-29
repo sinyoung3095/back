@@ -164,7 +164,7 @@ public class CounselorController {
         counselorService.counselorRename(counselorDTO);
         counselor.setCounselorName(counselorDTO.getCounselorName());
         session.setAttribute("counselor", counselor);
-        return new RedirectView("/counselor/set");
+        return new RedirectView("/counselor/mypage/set");
     }
 
 //        상담사 이메일 변경
@@ -175,7 +175,7 @@ public class CounselorController {
         counselorService.updateCounselorEmail(counselorDTO);
         counselor.setCounselorEmail(counselorDTO.getCounselorEmail());
         session.setAttribute("counselor", counselor);
-        return new RedirectView("/counselor/info");
+        return new RedirectView("/counselor/mypage/info");
     }
 
 //    상담사 전화번호 변경
@@ -186,7 +186,7 @@ public class CounselorController {
         counselorService.updateCounselorPhoneNumber(counselorDTO);
         counselor.setCounselorPhoneNumber(counselorDTO.getCounselorPhoneNumber());
         session.setAttribute("counselor", counselor);
-        return new RedirectView("/counselor/info");
+        return new RedirectView("/counselor/mypage/info");
     }
 
     //로그아웃
