@@ -35,6 +35,11 @@ public interface CounselorService {
     public void deleteProfile(Long id);
 
     public void updateCounselorPhoneNumber(CounselorDTO counselorDTO);
-
+//    상담사 이메일 변경
     public void updateCounselorEmail(CounselorDTO counselorDTO);
+//    상담사 비밀번호 변경
+    public void updateCounselorPassword(String counselorPassword, String counselorEmail);
+//    상담사 이메일 찾기
+    public CounselorDTO findEmailByPhone(String counselorPhoneNumber);
+
 }

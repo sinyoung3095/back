@@ -127,7 +127,8 @@ public class MemberController {
         MemberDTO member = memberService.findEmailByPhone(memberPhoneNumber);
 //        System.out.println("member: " + member);
         model.addAttribute("memberEmail", member.getMemberEmail());
-        model.addAttribute("createdDate", member.getCreatedDate());
+        String[] word = member.getCreatedDate().split(" ");
+        model.addAttribute("createdDate", word[0]);
 
         return "member/find-email-ok";
     }
@@ -209,17 +210,6 @@ public class MemberController {
         session.setAttribute("member", member);
         return new RedirectView("/member/mypage/info");
     }
-//    비밀번호 수정
-//    @PostMapping("update/password")
-//    public RedirectView updatePassword(MemberDTO memberDTO, HttpSession session){
-//        MemberDTO member=(MemberDTO) session.getAttribute("member");
-//        String email=member.getMemberEmail();
-//        String password=memberDTO.getMemberPassword();
-//        memberService.updateMemberPassword(email,password);
-//        member.setMemberPassword(password);
-//        session.setAttribute("member", member);
-//        return new RedirectView("/member/mypage/info");
-//    }
 
 
 

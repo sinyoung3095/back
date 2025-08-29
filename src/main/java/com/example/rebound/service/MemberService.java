@@ -43,6 +43,6 @@ public interface  MemberService {
     public MemberDTO findEmailByPhone(String memberPhoneNumber);
 //  회원 전화번호 변경
     public void updateMemberPhoneNumber(MemberDTO memberDTO);
-//회원 이메일 변경
+//  회원 이메일 변경
     public void updateMemberEmail(MemberDTO memberDTO);
 }

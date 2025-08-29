@@ -2,7 +2,6 @@ package com.example.rebound.controller;
 
 import com.example.rebound.common.exception.LoginFailCounselorException;
 import com.example.rebound.dto.CounselorDTO;
-import com.example.rebound.dto.MemberDTO;
 import com.example.rebound.mapper.CounselorMapper;
 import com.example.rebound.repository.CounselorDAO;
 import com.example.rebound.service.CounselorService;
@@ -194,5 +193,39 @@ public class CounselorController {
     public RedirectView logout(){
         session.invalidate();
         return new RedirectView("/counselor/login");
+    }
+
+    //    이메일 찾기
+    @GetMapping("find-email")
+    public String goToFindEmail(){
+        return "counselor/find-email";
+    }
+
+    //    인증번호 성공
+    @PostMapping("find-email-ok")
+    public String findEmailOk(@RequestParam("counselorPhoneNumber") String counselorPhoneNumber, Model model) {
+        CounselorDTO counselor = counselorService.findEmailByPhone(counselorPhoneNumber);
+        model.addAttribute("counselorEmail", counselor.getCounselorEmail());
+        String[] word = counselor.getCreatedDate().split(" ");
+        model.addAttribute("createdDate", word[0]);
+        return "counselor/find-email-ok";
+    }
+
+    //    비밀번호 찾기
+    @GetMapping("find-password")
+    public String goToFindPassword() {
+        return "counselor/find-password";
+    }
+
+    //    이메일 확인 안내
+    @GetMapping("find-confirm")
+    public String goToConfirm() {
+        return "counselor/find-confirm";
+    }
+
+    //    새 비밀번호 변경
+    @GetMapping("new-password")
+    public String goToNewPassword(){
+        return "counselor/new-password";
     }
 }
