@@ -45,7 +45,7 @@
                 <div class="article-container" id="article-container">
                     <section class="article-sidebar">
                         <section class="section-articles collapsible-sidebar">
-                            <h3 class="collapsible-sidebar-title sidenav-title">최근 공지사항</h3>
+                            <h2 class="collapsible-sidebar-title sidenav-title" style="font-weight:600;font-size: 24px">최근 공지사항</h2>
                             <ul id="notices">
                             </ul>
                         </section>
@@ -61,17 +61,17 @@
                                         <span style="color: #363a3c; background-color: #ffffff;" th:text="${notice.noticeContent}"></span>
                                     </p>
                                 </div>
+                                <div id="imageContainer">
+
+                                </div>
                             </div>
                         </section>
                         <footer>
                             <div class="article-votes">
                                 <div class="article-votes-controls">
-                                    <a id="pre" class="button article-vote article-vote-up" role="radio">이전</a>
-                                    <a id="next" class="button article-vote article-vote-down" role="radio">다음</a>
+                                    <a onclick="window.location.href='/customer-center/notice-list/1'"  class="button article-vote article-vote-up" role="radio">목록</a>
+                                    <a onclick="window.location.href='/customer-center/inquiry'"  class="button article-vote article-vote-down" role="radio">문의 등록</a>
                                 </div>
-                            </div>
-                            <div class="article-more-questions">또 다른 질문이 있으십니까?
-                                <a onclick="window.location.href='/customer-center/inquiry'">문의 등록</a>
                             </div>
                             <div class="article-return-to-top">
                                 <a href="">
