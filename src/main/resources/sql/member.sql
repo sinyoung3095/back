@@ -24,7 +24,3 @@ create table tbl_member
 );
 select * from tbl_member;
 
-update tbl_member
-set lately_date = CURRENT_TIMESTAMP
-where id =1
-   ;

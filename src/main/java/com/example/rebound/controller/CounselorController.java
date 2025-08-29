@@ -3,6 +3,8 @@ package com.example.rebound.controller;
 import com.example.rebound.common.exception.LoginFailCounselorException;
 import com.example.rebound.dto.CounselorDTO;
 import com.example.rebound.dto.MemberDTO;
+import com.example.rebound.mapper.CounselorMapper;
+import com.example.rebound.repository.CounselorDAO;
 import com.example.rebound.service.CounselorService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -25,6 +27,7 @@ import java.util.Optional;
 public class CounselorController {
     private final CounselorService counselorService;
     private final HttpSession session;
+    private final CounselorDAO counselorDAO;
 
     //    상담사 회원가입 페이지로 이동
     @GetMapping("join")
@@ -91,6 +94,7 @@ public class CounselorController {
     public String Login(CounselorDTO counselorDTO) {
         CounselorDTO counselor=counselorService.login(counselorDTO).orElseThrow(LoginFailCounselorException::new);
         session.setAttribute("counselor", counselor);
+        counselorDAO.setLatelyDate(counselorDTO.getCounselorEmail());
         return "redirect:/"; }
 
     @GetMapping("mypage")

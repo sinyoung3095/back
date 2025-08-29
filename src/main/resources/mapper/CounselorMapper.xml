@@ -8,7 +8,7 @@
     </insert>
 <!--    상담사 조회-->
     <select id="selectCounselor">
-        select id, counselor_name, counselor_email, counselor_phone_number, counselor_password, counselor_address, counselor_status, counselor_approval_status, created_date, updated_date from tbl_counselor
+        select id, counselor_name, counselor_email, counselor_phone_number, counselor_password, counselor_address, counselor_status, counselor_approval_status, created_date, updated_date, lately_date from tbl_counselor
         where counselor_status='active' and counselor_email=#{counselorEmail} and counselor_password=#{counselorPassword}
     </select>
     <select id="selectCounselorById">
@@ -66,5 +66,11 @@
     <update id="updateCounselorName">
         update tbl_counselor set counselor_name=#{counselorName}
         where id=#{id}
+    </update>
+
+    <update id="updateLatelyDate">
+        update tbl_counselor
+        set lately_date = CURRENT_TIMESTAMP
+        where counselor_email = #{counselorEmail}
     </update>
 </mapper>

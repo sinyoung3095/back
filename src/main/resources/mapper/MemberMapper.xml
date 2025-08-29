@@ -12,7 +12,7 @@
         where member_common = 'admin'and member_status='active' and member_email=#{memberEmail} and member_password=#{memberPassword}
     </select>
     <select id="selectGeneralAll">
-        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_status, member_common, created_date, updated_date from tbl_member
+        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_status, member_common, created_date, updated_date,lately_date from tbl_member
         where member_status = 'active' and member_grade = 'none' and member_common='none'
         <if test="keyword != null">
             and (
@@ -34,7 +34,7 @@
         </if>
     </select>
     <select id="selectMentorAll">
-        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_status, member_common, created_date, updated_date from tbl_member
+        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_status, member_common, created_date, updated_date,lately_date from tbl_member
         where member_status = 'active' and member_grade = 'mentor' and member_common='none'
         <if test="keyword != null">
             and (
@@ -58,7 +58,7 @@
         </if>
     </select>
     <select id="selectSubscribeAll">
-        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_status, member_common, created_date, updated_date from tbl_member
+        select id, member_name, member_email, kakao_email, member_provider, member_phone_number, member_password, member_suggestion_count, kakao_profile_url, member_status, member_common, created_date, updated_date, lately_date from tbl_member
         where member_status = 'active' and member_grade = 'subscribe' and member_common='none'
         <if test="keyword != null">
             and (
@@ -144,6 +144,11 @@
     <update id="updateLatelyDate">
         update tbl_member
         set lately_date = CURRENT_TIMESTAMP
-        where id = #{memberid}
+        where member_email = #{memberEmail}
+    </update>
+    <update id="updateLatelyDateByKakao">
+        update tbl_member
+        set lately_date = CURRENT_TIMESTAMP
+        where kakao_email = #{kakaoEmail}
     </update>
 </mapper>
