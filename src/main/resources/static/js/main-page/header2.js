@@ -1,22 +1,26 @@
 const mtbutton = document.querySelector(".mybutton");
+const notificationDot = document.querySelector("notification-dot");
 
 if (mtbutton) {
     const mydiv = document.querySelector("div.mydiv");
     const profile = document.querySelector(".myprofile");
 
-    mtbutton.addEventListener("click", (e) => {
-        mydiv.classList.toggle("active");
-        profile.classList.toggle("active");
-    });
 
     const alimbutton = document.querySelector("button.alimbutton");
     const alimdiv = document.querySelector("div.alimarea");
 
+    mtbutton.addEventListener("click", (e) => {
+        mydiv.classList.toggle("active");
+        profile.classList.toggle("active");
+        alimdiv.classList.remove("active");
+    });
+
     alimbutton.addEventListener("click", (e) => {
         alimdiv.classList.toggle("active");
+        mydiv.classList.remove("active");
+        profile.classList.remove("active");
     });
 }
-
 
 
 // 알림
@@ -47,3 +51,5 @@ console.log(commentAlarms);
     });
     commentAlarmContainer.innerHTML = text;
 }
+
+// 새 알림

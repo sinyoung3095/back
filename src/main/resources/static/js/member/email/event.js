@@ -25,6 +25,8 @@ sendButton.addEventListener("click", async () => {
         return;
     }
 
+    sendButton.disabled = true;
+
     const result = await emailService.sendCode({
         memberPhoneNumber: phoneInput.value
     });
@@ -39,6 +41,7 @@ sendButton.addEventListener("click", async () => {
     } else {
         sendMessageText.innerHTML = "가입되지 않은 전화번호 입니다.";
         verifySection.style.display = "none";
+        sendButton.disabled = false;
     }
 });
 

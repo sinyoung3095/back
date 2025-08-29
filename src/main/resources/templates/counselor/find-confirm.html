@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비밀번호 찾기</title>
+    <link data-vue-meta="1" rel="shortcut icon" href="/images/member/icon.png">
+    <link rel="stylesheet" href="/css/member/find-password.css">
+    <link rel="stylesheet" href="/font/didactgothic.woff2">
+</head>
+<body>
+<main id="main">
+    <header th:replace="~{/main-page/header}"></header>
+    <div class="container">
+        <div class="container-1">
+            <h2>비밀번호 찾기</h2>
+            <div class="card">
+                <form action="/mail/send" method="post">
+                    <div class="row">
+                        <div class="col">
+                            <fieldset class="form-group" id="">
+                                <legend tabindex="-1" class="bv-no-focus-ring col-form-label pt-0" id="__BVID__80__BV_label_" style="text-align: center;">이메일을 전송했습니다.</legend>
+                            </fieldset>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer th:replace="~{/main-page/footer}"></footer>
+</main>
+</body>
+</html>

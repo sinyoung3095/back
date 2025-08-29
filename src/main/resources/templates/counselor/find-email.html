@@ -15,13 +15,13 @@
             <div class="main-2">
                 <h1 class="main-3">이메일 찾기</h1>
                 <div class="main-4">
-                    <form id="findEmail" method="post" action="/member/find-email-ok">
+                    <form id="findEmail" method="post" action="/counselor/find-email-ok">
                         <div class="main-5">
                             <label for="phone" class="main-7">휴대전화 번호 인증</label>
                             <div class="main-8">
                                 <div class="css-0">
                                     <div class="main-10">
-                                        <input id="phone" class="main-11" placeholder="예) 01012341234" name="memberPhoneNumber" autocomplete="off" value="">
+                                        <input id="phone" class="main-11" placeholder="예) 01012341234" name="counselorPhoneNumber" autocomplete="off" value="">
                                     </div>
                                 </div>
                                 <button id="sendButton" type="button" class="main-9">전송</button>
@@ -52,6 +52,6 @@
         <footer th:replace="~{/main-page/footer}"></footer>
     </main>   
 </body>
-<script src="/js/member/email/module/service.js"></script>
-<script src="/js/member/email/event.js"></script>
+<script src="/js/counselor/email/module/service.js"></script>
+<script src="/js/counselor/email/event.js"></script>
 </html>

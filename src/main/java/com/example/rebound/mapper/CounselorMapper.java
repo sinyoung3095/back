@@ -44,4 +44,8 @@ public List<CounselorDTO> selectCounselorQualificationAll(@Param("memberCriteria
 //    상담사 수 통합검색
 public int selectCounselorQualificationAllCount(String keyword);
 public void updateLatelyDate(String counselorEmail);
+
+    public CounselorDTO selectEmailByPhoneNumber(String counselorPhoneNumber);
+
+    public void updateCounselorPassword(@Param("counselorPassword") String counselorPassword, @Param("counselorEmail") String counselorEmail);
 }

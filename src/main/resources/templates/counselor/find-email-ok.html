@@ -23,7 +23,7 @@
                                 <div class="css-0">
                                     <div class="main-10">
                                         <div class="main-11">
-                                            <p>이메일: <span th:text="${memberEmail}"></span></p>
+                                            <p>이메일: <span th:text="${counselorEmail}"></span></p>
                                             <br>
                                             <p>가입일: <span th:text="${createdDate}"></span></p>
                                         </div>
@@ -31,8 +31,8 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="/member/find-password">비밀번호 찾기</a>
-                        <a href="/member/login" class="main-6">로그인 하기</a>
+                        <a href="/counselor/find-password">비밀번호 찾기</a>
+                        <a href="/member/login-counselor" class="main-6">로그인 하기</a>
                     </form>
                 </div>
             </div>
@@ -40,6 +40,6 @@
         <footer th:replace="~{/main-page/footer}"></footer>
     </main>   
 </body>
-<script src="/js/member/email/module/service.js"></script>
-<script src="/js/member/email/event.js"></script>
+<script src="/js/counselor/email/module/service.js"></script>
+<script src="/js/counselor/email/event.js"></script>
 </html>

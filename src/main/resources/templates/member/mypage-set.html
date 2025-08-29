@@ -22,7 +22,12 @@
 
 </head>
 <body>
-<header th:replace="~{/main-page/header2.html :: #app-header}"></header>
+<th:block th:if="${session.member != null || session.counselor != null}">
+            <header th:replace="~{/main-page/header2.html :: #app-header}"></header>
+        </th:block>
+        <th:block th:unless="${session.member !=null || session.counselor != null}">
+            <header th:replace="~{/main-page/header.html :: #app-header}"></header>
+        </th:block>
     <main class="main">
         <div class="main-1">
             <h1 class="main-2">계정 설정</h1>

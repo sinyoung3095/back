@@ -1,6 +1,7 @@
 package com.example.rebound.controller;
 
 import com.example.rebound.dto.MemberDTO;
+import com.example.rebound.service.CounselorService;
 import com.example.rebound.service.MailService;
 import com.example.rebound.service.MemberService;
 import jakarta.mail.MessagingException;
@@ -18,9 +19,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/mail/**")
+@RequestMapping("/member/mail/**")
 @RequiredArgsConstructor
-public class MailController {
+public class MemberMailController {
     private final MailService mailService;
     private final MemberService memberService;
 
@@ -28,10 +29,10 @@ public class MailController {
     @PostMapping("send")
     public RedirectView send(String email, HttpServletRequest request, HttpServletResponse response) throws MessagingException {
         if(!memberService.isExistMemberEmail(email)) {
-            return new RedirectView("/mail/notfound-email");
+            return new RedirectView("/member/mail/notfound-email");
         }
         mailService.sendMail(email, request, response);
-        return new RedirectView("/member/find-confirm");
+        return new RedirectView("/member/mail/find-confirm");
     }
 
 //    메일 인증
@@ -41,7 +42,7 @@ public class MailController {
                                 String memberEmail,
                                 HttpServletResponse response){
         if(cookieCode == null || cookieCode.isEmpty()){
-            return new RedirectView("/mail/find-fail");
+            return new RedirectView("/member/mail/find-fail");
         }
 
         if(cookieCode.equals(code)){
@@ -49,10 +50,10 @@ public class MailController {
             cookie.setMaxAge(0);
             cookie.setPath("/");
             response.addCookie(cookie);
-            return new RedirectView("/mail/new-password?memberEmail=" + memberEmail);
+            return new RedirectView("/member/mail/new-password?memberEmail=" + memberEmail);
         }
 
-        return new RedirectView("/mail/find-fail");
+        return new RedirectView("/member/mail/find-fail");
     }
 
 //    비밀번호 변경
