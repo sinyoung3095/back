@@ -7,8 +7,9 @@ create table tbl_counselor
     counselor_password        varchar(255),
     counselor_address         varchar(255),
     counselor_status          enum ('active', 'inactive') default 'active',
-    counselor_approval_status enum ('approval', 'atmosphere', 'refusal') default 'atmosphere',
+    counselor_approval_status enum ('approval', 'await', 'refusal') default 'await',
     counselor_license_name varchar(255),
+    lately_date datetime,
     created_date              datetime default CURRENT_TIMESTAMP,
     updated_date              datetime default CURRENT_TIMESTAMP
 );
@@ -19,6 +20,6 @@ values ('상담사이름4', 'test4@gmail.com', '0634423456789',
         '1234', '서울특별시 강남구 역삼로7길');
 
 select * from tbl_counselor;
-
+alter table tbl_counselor add lately_date datetime;
 alter table tbl_counselor modify counselor_password varchar(255);
 alter table tbl_counselor modify counselor_address varchar(255);

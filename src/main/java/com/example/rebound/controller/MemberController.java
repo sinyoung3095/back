@@ -103,16 +103,11 @@ public class MemberController {
     @PostMapping("login")
     public String Login(MemberDTO memberDTO, Model model) {
         MemberDTO member = memberService.login(memberDTO).orElseThrow(LoginFailException::new);
+        memberDAO.setLatelyDate(memberDTO.getMemberEmail());
         session.setAttribute("member", member);
-<<<<<<< HEAD
-        memberDAO.setLatelyDate(memberDTO.getId());
-//        System.out.println(member.getMemberName());
-        return "redirect:/member/mypage";
-=======
         model.addAttribute("member", member);
         model.addAttribute("file", fileService.findFileByMemberId(member.getId()));
         return "redirect:/";
->>>>>>> a39a216eccf7243cbec70ff7eda0e0cba6f0c638
     }
 
 //    이메일 찾기
