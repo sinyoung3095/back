@@ -47,8 +47,8 @@ public class AdminTest {
     }
     @Test
     public void test(){
-        System.out.println(adminService.findChartGeneralAll());
-    }
+        LocalDateTime  now = LocalDateTime.now();
+        System.out.println(now);    }
 
 
 }

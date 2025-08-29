@@ -58,4 +58,5 @@ public interface MemberMapper {
     public int selectCountGradeByMonth(String month);
     public int selectCountSubscribeByYear(String year);
     public int selectCountSubscribeByMonth(String month);
+    public void updateLatelyDate(Long Id);
 }

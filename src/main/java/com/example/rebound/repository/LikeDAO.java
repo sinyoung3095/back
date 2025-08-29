@@ -29,6 +29,8 @@ public class LikeDAO {
     public boolean isexist(Long commentId, Long memberId) {
         return likeMapper.checkLiked(commentId, memberId);
     }
-
+    public int findLikeCount(Long memberId,String month) {
+        return likeMapper.countByMemberId(memberId,month);
+    }
 
 }
