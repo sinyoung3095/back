@@ -337,7 +337,7 @@ const lastAreaPosts = posts.slice(3, 6);
 
 firstAreaPosts.forEach((post) => {
     text += `
-        <a href="/community-list/community-contents-member" class="curation-list-wrapper">
+        <a href="/community-list/${post.id}" class="curation-list-wrapper">
             <div class="curation-contents has-thumbnail">
                 <p class="topic-name">실패 경험담</p>
                     <span class="community-preview">
@@ -355,7 +355,7 @@ firstCurationItem.innerHTML = text;
 text = ``;
 lastAreaPosts.forEach((post) => {
     text += `
-        <a href="/community-list/community-contents-member" class="curation-list-wrapper">
+        <a href="/community-list/${post.id}" class="curation-list-wrapper">
             <div class="curation-contents has-thumbnail">
                 <p class="topic-name">실패 경험담</p>
                     <span class="community-preview">
