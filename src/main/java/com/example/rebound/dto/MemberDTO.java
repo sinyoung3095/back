@@ -23,6 +23,8 @@ public class MemberDTO {
     private String memberGrade;
     private String memberStatus;
     private String memberCommon;
+    private String filePath;
+    private String fileName;
     private String createdDate;
     private String updatedDate;
     private String latelyDate;

@@ -1,5 +1,6 @@
 package com.example.rebound.dto;
 
+import com.example.rebound.common.enumeration.Provider;
 import com.example.rebound.common.enumeration.Status;
 import lombok.*;
 import org.springframework.stereotype.Component;
@@ -19,6 +20,7 @@ public class CommentDTO {
     private Long memberId;
     private String memberName;
     private String memberGrade;
+    private Provider memberProvider;
     private Long postId;
     private String filePath;
     private String fileName;
