@@ -1,16 +1,16 @@
 package com.example.rebound.controller;
 
 import com.example.rebound.dto.FileDTO;
-import com.example.rebound.dto.MemberDTO;
-import com.example.rebound.dto.MemberProfileFileDTO;
-import com.example.rebound.repository.MemberProfileFileDAO;
 import com.example.rebound.service.CounselorService;
 import com.example.rebound.service.FileService;
 import com.example.rebound.service.MemberService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -19,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 
 @RestController
 @RequiredArgsConstructor
@@ -27,43 +28,62 @@ import java.io.IOException;
 public class FileController {
     private final CounselorService counselorService;
     private final MemberService memberService;
-    private final MemberProfileFileDAO memberProfileFileDAO;
     private final FileService fileService;
 
-    @GetMapping("display")
-    public ResponseEntity<byte[]> display(String filePath, String fileName) {
-        File file = new File("C:/reboundFile/" + filePath, fileName);
-        if (!file.exists() || !file.isFile()) {
-            return ResponseEntity.notFound().build();
-        }
-
+    @GetMapping("/display")
+    public ResponseEntity<Resource> display(
+            @RequestParam String filePath,
+            @RequestParam String fileName
+    ) {
         try {
-            byte[] fileBytes = FileCopyUtils.copyToByteArray(file);
-            return ResponseEntity.ok(fileBytes);
-        } catch (IOException e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+            String fullPath = "C:/reboundFile/" + filePath + "/" + fileName;
+            File file = new File(fullPath);
+
+            if (!file.exists() || !file.isFile()) {
+                log.warn("파일 없음: {}", fullPath);
+                File defaultFile = new File("src/main/resources/static/images/member/no-profile.png");
+
+                if (!defaultFile.exists()) {
+                    log.error("기본 이미지 없음: {}", defaultFile.getAbsolutePath());
+                    return ResponseEntity.notFound().build();
+                }
+
+                Resource defaultResource = new FileSystemResource(defaultFile);
+                return ResponseEntity.ok()
+                        .header(HttpHeaders.CONTENT_TYPE, MediaType.IMAGE_PNG_VALUE)
+                        .body(defaultResource);
+            }
+
+            Resource resource = new FileSystemResource(file);
+            return ResponseEntity.ok()
+                    .header(HttpHeaders.CONTENT_TYPE, Files.probeContentType(file.toPath()))
+                    .body(resource);
+
+        } catch (Exception e) {
+            log.error("파일 표시 에러", e);
+            return ResponseEntity.internalServerError().build();
         }
     }
 
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteMemberProfileFile(@PathVariable Long id) {
         try {
             memberService.deleteProfile(id);
             return ResponseEntity.ok().build();
         } catch (Exception e) {
             log.error("회원 프로필 삭제 실패: {}", id, e);
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+            return ResponseEntity.internalServerError().build();
         }
     }
 
-    @DeleteMapping("delete-counselor/{id}")
+    @DeleteMapping("/delete-counselor/{id}")
     public ResponseEntity<Void> deleteCounselorProfileFile(@PathVariable Long id) {
         try {
             counselorService.deleteProfile(id);
             return ResponseEntity.ok().build();
         } catch (Exception e) {
             log.error("상담사 프로필 삭제 실패: {}", id, e);
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+            return ResponseEntity.internalServerError().build();
         }
     }
 
@@ -73,21 +93,17 @@ public class FileController {
         if(fileService.findFileByMemberId(memberId).isPresent()) {
             memberService.deleteProfile(memberId);
         }
-        System.out.println(fileService.findFileByMemberId(memberId).isPresent());
         FileDTO fileDTO = memberService.saveProfileFile(file, memberId);
         return ResponseEntity.ok(fileDTO);
     }
 
     @PostMapping("/profile-counselor/upload")
     public ResponseEntity<FileDTO> uploadCounselorProfile(@RequestParam("file") MultipartFile file,
-                                                 @RequestParam("counselorId") Long counselorId) throws IOException {
+                                                          @RequestParam("counselorId") Long counselorId) throws IOException {
         if(counselorService.showFileById(counselorId).isPresent()) {
             counselorService.deleteProfile(counselorId);
         }
-        System.out.println(counselorService.showFileById(counselorId).isPresent());
         FileDTO fileDTO = counselorService.saveCounselorProfileFile(file, counselorId);
         return ResponseEntity.ok(fileDTO);
     }
-
-
 }

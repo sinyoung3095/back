@@ -1,5 +1,6 @@
 package com.example.rebound.service;
 
+import com.example.rebound.common.enumeration.Provider;
 import com.example.rebound.dto.CommentAlarmDTO;
 import com.example.rebound.dto.CommentCriteriaDTO;
 import com.example.rebound.dto.CommentDTO;
@@ -52,33 +53,21 @@ public class CommentServiceImpl implements CommentService {
             comment.setRelativeDate(PostDateUtils.toRelativeTime(comment.getCreatedDate()));
             comment.setLikesCount(likeDAO.getLikeCount(comment.getId()));
 
-            fileService.findFileByMemberId(comment.getMemberId())
-                    .ifPresentOrElse(fileDTO -> {
-                        comment.setFilePath(fileDTO.getFilePath());
-                        comment.setFileName(fileDTO.getFileName());
-                    }, () -> {
-                        memberService.showFileById(comment.getMemberId()).ifPresentOrElse(member -> {
-                            if (member.getKakaoProfileUrl() != null && !member.getKakaoProfileUrl().isEmpty()) {
-                                comment.setKakaoProfileUrl(member.getKakaoProfileUrl());
-                                comment.setFilePath(null);
-                                comment.setFileName(null);
-                            } else if (member.getFile() != null) {
-                                comment.setFilePath(member.getFile().getFilePath());
-                                comment.setFileName(member.getFile().getFileName());
-                            } else {
-                                comment.setFilePath("images/member");
-                                comment.setFileName("no-profile.png");
-                            }
+            if(comment.getMemberProvider() != null && comment.getMemberProvider().name().equals("KAKAO")) {
+                comment.setFilePath("");
+                comment.setFileName("no-profile.png");
+            } else {
+                fileService.findFileByMemberId(comment.getMemberId())
+                        .ifPresentOrElse(fileDTO -> {
+                            comment.setFilePath(fileDTO.getFilePath());
+                            comment.setFileName(fileDTO.getFileName());
                         }, () -> {
-                            comment.setFilePath("images/member");
+                            comment.setFilePath("");
                             comment.setFileName("no-profile.png");
                         });
-                    });
-
-            System.out.println("댓글 작성자 ID: " + comment.getMemberId() +
-                    ", 이미지 경로: " + (comment.getKakaoProfileUrl() != null ? comment.getKakaoProfileUrl() :
-                    comment.getFilePath() + "/" + comment.getFileName()));
+            }
         });
+
 
         criteria.setHasMore(comments.size() > criteria.getRowCount());
         if (criteria.isHasMore()) comments.remove(comments.size() - 1);
@@ -87,8 +76,6 @@ public class CommentServiceImpl implements CommentService {
         commentCriteriaDTO.setCriteria(criteria);
         return commentCriteriaDTO;
     }
-
-
 
     @Override
     public void update(CommentDTO commentDTO) {

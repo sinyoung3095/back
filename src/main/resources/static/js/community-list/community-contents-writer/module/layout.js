@@ -40,10 +40,10 @@ const commentLayout = (() => {
                 displayGrade = '일반회원';
             }
 
-            let fileUrl = '/images/member/no-profile.png';
-            if(comment.kakaoProfileUrl && comment.kakaoProfileUrl.trim() !== "") {
-                fileUrl = comment.kakaoProfileUrl;
-            } else if(comment.filePath && comment.fileName) {
+            let fileUrl;
+            if(comment.memberProvider === 'KAKAO' || !comment.filePath) {
+                fileUrl = '/images/member/no-profile.png';
+            } else {
                 fileUrl = `/api/display?filePath=${comment.filePath}&fileName=${comment.fileName}`;
             }
 
@@ -51,7 +51,7 @@ const commentLayout = (() => {
             <li class="id${comment.id} post-comments-list-item">   
                 <div class="post-comment-wrapper">
                     <div class="profile-image provider">
-                     <img alt="${comment.memberName}" class="image" src="${fileUrl}">
+                        <img alt="${comment.memberName}" class="image" src="${fileUrl}">
                     </div>
                     <div class="comment-information">
                         <div class="user-info provider">
@@ -75,21 +75,21 @@ const commentLayout = (() => {
                         <div class="post-comment-actions">
                             <div class="comment-more-action prisma-typography body12:regular primary">
                                 <span class="comment-create-at">${comment.relativeDate}</span>`;
-                                if(comment.memberId === memberId) {
-                                    text +=`
-                                    <div class="dropdown b-dropdown btn-group" data-v-5c7e5eaa="" id="__BVID__777">
-                                    <button aria-haspopup="true" aria-expanded="false" type="button" class="btn dropdown-toggle btn-secondary" id="__BVID__777__BV_toggle_"></button>
-                                    <ul role="menu" tabindex="-1" class="dropdown-menu dropdown-menu-right" aria-labelledby="__BVID__777__BV_toggle_" style="position: absolute; transform: translate3d(-116px, 24px, 0px); top: 0px; left: 0px; will-change: transform;">
-                                        <li role="presentation">
-                                            <button class="id${comment.id} dropdown-item update-button">댓글 수정</button>
-                                            <button class="id${comment.id} dropdown-item update-ok-button" style="display: none">수정 완료</button>
-                                            <button class="id${comment.id} dropdown-item cancel-button" style="display: none">수정 취소</button>               
-                                            <button class="id${comment.id} dropdown-item delete-button">댓글 삭제</button>
-                                        </li>
-                                    </ul>
-                                </div> `;
-                                }
-                                text += `
+            if(comment.memberId === memberId) {
+                text +=`
+                                    <div class="dropdown b-dropdown btn-group">
+                                        <button type="button" class="btn dropdown-toggle btn-secondary"></button>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li>
+                                                <button class="id${comment.id} dropdown-item update-button">댓글 수정</button>
+                                                <button class="id${comment.id} dropdown-item update-ok-button" style="display: none">수정 완료</button>
+                                                <button class="id${comment.id} dropdown-item cancel-button" style="display: none">수정 취소</button>               
+                                                <button class="id${comment.id} dropdown-item delete-button">댓글 삭제</button>
+                                            </li>
+                                        </ul>
+                                    </div> `;
+            }
+            text += `
                             </div>
                         </div>
                     </div>
@@ -97,7 +97,6 @@ const commentLayout = (() => {
             </li>`;
         });
         commentWrap.innerHTML = text;
-
     };
 
     return {showList:showList};

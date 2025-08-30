@@ -130,7 +130,7 @@ public class MemberServiceImpl implements MemberService {
 
         if (deleteFileOpt.isPresent()) {
             FileDTO deleteFile = deleteFileOpt.get();
-            File file = new File("C:/file/" + deleteFile.getFilePath(), deleteFile.getFileName());
+            File file = new File("C:/reboundFile/" + deleteFile.getFilePath(), deleteFile.getFileName());
             if (file.exists()) {
                 file.delete();
             }
