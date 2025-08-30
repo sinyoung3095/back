@@ -1,5 +1,5 @@
 const mtbutton = document.querySelector(".mybutton");
-const notificationDot = document.querySelector("notification-dot");
+// const notificationDot = document.querySelector("notification-dot");
 
 if (mtbutton) {
     const mydiv = document.querySelector("div.mydiv");
@@ -15,11 +15,13 @@ if (mtbutton) {
         alimdiv.classList.remove("active");
     });
 
-    alimbutton.addEventListener("click", (e) => {
-        alimdiv.classList.toggle("active");
-        mydiv.classList.remove("active");
-        profile.classList.remove("active");
-    });
+    if (alimbutton) {
+        alimbutton.addEventListener("click", (e) => {
+            alimdiv.classList.toggle("active");
+            mydiv.classList.remove("active");
+            profile.classList.remove("active");
+        });
+    }
 }
 
 
