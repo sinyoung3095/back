@@ -4,6 +4,7 @@ import com.example.rebound.common.exception.LoginFailException;
 import com.example.rebound.dto.*;
 import com.example.rebound.repository.FileDAO;
 import com.example.rebound.repository.MemberDAO;
+import com.example.rebound.service.CounselorService;
 import com.example.rebound.service.FileService;
 import com.example.rebound.service.KakaoService;
 import com.example.rebound.service.MemberService;
@@ -28,6 +29,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class MemberController {
     private final MemberService memberService;
+    private final CounselorService counselorService;
     private final MemberDTO memberDTO;
     private final HttpSession session;
     private final FileDTO fileDTO;
@@ -120,15 +122,23 @@ public class MemberController {
         return "member/find-email";
     }
 
-//    인증번호 성공
-    @PostMapping("find-email-ok")
-    public String findEmailOk(@RequestParam("memberPhoneNumber") String memberPhoneNumber, Model model) {
-//        System.out.println("전화번호: " + memberPhoneNumber);
-        MemberDTO member = memberService.findEmailByPhone(memberPhoneNumber);
-//        System.out.println("member: " + member);
-        model.addAttribute("memberEmail", member.getMemberEmail());
-        String[] word = member.getCreatedDate().split(" ");
-        model.addAttribute("createdDate", word[0]);
+    //    인증번호 성공
+    @PostMapping("/find-email-ok")
+    public String findEmailOk(@RequestParam("memberPhoneNumber") String phoneNumber, Model model) {
+        MemberDTO member = memberService.findEmailByPhone(phoneNumber);
+        CounselorDTO counselor = counselorService.findEmailByPhone(phoneNumber);
+
+        if (member != null) {
+            model.addAttribute("memberEmail", member.getMemberEmail());
+            String[] word1 = member.getCreatedDate().split(" ");
+            model.addAttribute("createdDate", word1[0]);
+        }
+
+        if (counselor != null) {
+            model.addAttribute("counselorEmail", counselor.getCounselorEmail());
+            String[] word2 = counselor.getCreatedDate().split(" ");
+            model.addAttribute("createdDate", word2[0]);
+        }
 
         return "member/find-email-ok";
     }

@@ -82,4 +82,16 @@
         set lately_date = CURRENT_TIMESTAMP
         where counselor_email = #{counselorEmail}
     </update>
+
+    <select id="selectEmailByPhoneNumber">
+        select counselor_email, created_date, counselor_phone_number
+        from tbl_counselor
+        where counselor_phone_number = #{counselorPhoneNumber}
+    </select>
+
+    <update id="updateCounselorPassword">
+        update tbl_counselor
+        set counselor_password = #{counselorPassword}
+        where counselor_email = #{counselorEmail}
+    </update>
 </mapper>

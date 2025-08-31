@@ -136,7 +136,7 @@
     </update>
 
     <!-- 회원 이메일 찾기 -->
-    <select id="selectEmailByPhonerNumber">
+    <select id="selectEmailByPhoneNumber">
         select member_email, created_date, member_phone_number
         from tbl_member
         where member_phone_number = #{memberPhoneNumber}

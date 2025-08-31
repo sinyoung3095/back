@@ -178,7 +178,7 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public MemberDTO findEmailByPhone(String memberPhoneNumber) {
-        return memberDAO.selectEmailByPhonerNumber(memberPhoneNumber);
+        return memberDAO.selectEmailByPhoneNumber(memberPhoneNumber);
     }
 
     @Override

@@ -99,8 +99,8 @@ public class MemberDAO {
     public void updateMemberEmail(MemberDTO memberDTO) {memberMapper.updateMemberEmail(memberDTO);}
 
     //    회원 이메일 찾기
-    public MemberDTO selectEmailByPhonerNumber(String memberPhoneNumber) {
-        return memberMapper.selectEmailByPhonerNumber(memberPhoneNumber);
+    public MemberDTO selectEmailByPhoneNumber(String memberPhoneNumber) {
+        return memberMapper.selectEmailByPhoneNumber(memberPhoneNumber);
     }
     public int findCountByYear(String year) {
         return memberMapper.selectCountGradeByYear(year);

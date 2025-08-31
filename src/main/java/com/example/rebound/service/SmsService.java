@@ -27,7 +27,7 @@ public class SmsService {
     }
 
     //    문자 발송
-    public String send(String memberPhoneNumber) {
+    public String send(String phoneNumber) {
         String code = createCode();
 
         String api_key = "";
@@ -35,7 +35,7 @@ public class SmsService {
         Message coolsms = new Message(api_key, api_secret);
 
         HashMap<String, String> params = new HashMap<>();
-        params.put("to", memberPhoneNumber);
+        params.put("to", phoneNumber);
         params.put("from", "01055767406");
         params.put("type", "SMS");
         params.put("text", "인증번호: " + code);
