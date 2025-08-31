@@ -23,9 +23,15 @@
                                 <div class="css-0">
                                     <div class="main-10">
                                         <div class="main-11">
-                                            <p>이메일: <span th:text="${memberEmail}"></span></p>
-                                            <br>
-                                            <p>가입일: <span th:text="${createdDate}"></span></p>
+                                            <div th:if="${memberEmail != null}">
+                                                <p>회원 이메일: <span th:text="${memberEmail}"></span></p>
+                                                <p>가입일: <span th:text="${createdDate}"></span></p>
+                                            </div>
+                                            <div th:if="${memberEmail != null && counselorEmail != null}" class="spacer"></div>
+                                            <div th:if="${counselorEmail != null}">
+                                                <p>상담사 이메일: <span th:text="${counselorEmail}"></span></p>
+                                                <p>가입일: <span th:text="${createdDate}"></span></p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -29,10 +29,21 @@ public class MailController {
 //    메일 전송
     @PostMapping("send")
     public RedirectView send(String email, HttpServletRequest request, HttpServletResponse response) throws MessagingException {
-        if(!memberService.isExistMemberEmail(email)) {
+        boolean memberExists = memberService.isExistMemberEmail(email);
+        boolean counselorExists = counselorService.isExistCounselorEmail(email);
+
+        if (!memberExists && !counselorExists) {
             return new RedirectView("/mail/notfound-email");
         }
-        mailService.sendMail(email, request, response);
+
+        if (memberExists) {
+            mailService.sendMail(email, request, response);
+        }
+
+        if (counselorExists) {
+            mailService.sendMail(email, request, response);
+        }
+
         return new RedirectView("/member/find-confirm");
     }
 
@@ -67,7 +78,14 @@ public class MailController {
     @PostMapping("new-password")
     @ResponseBody
     public ResponseEntity<?> newPassword(@RequestBody MemberDTO memberDTO) {
-        memberService.updateMemberPassword(memberDTO.getMemberPassword(), memberDTO.getMemberEmail());
+        if (memberService.isExistMemberEmail(memberDTO.getMemberEmail())) {
+            memberService.updateMemberPassword(memberDTO.getMemberPassword(), memberDTO.getMemberEmail());
+        }
+
+        if (counselorService.isExistCounselorEmail(memberDTO.getMemberEmail())) {
+            counselorService.updateCounselorPassword(memberDTO.getMemberPassword(), memberDTO.getMemberEmail());
+        }
+
         Map<String, String> body = new HashMap<>();
         body.put("message", "비밀번호 변경 완료");
         return ResponseEntity.ok(body);
