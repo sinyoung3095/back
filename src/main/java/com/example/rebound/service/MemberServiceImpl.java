@@ -178,8 +178,16 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public MemberDTO findEmailByPhone(String memberPhoneNumber) {
-        return memberDAO.selectEmailByPhoneNumber(memberPhoneNumber);
+        MemberDTO member = memberDAO.selectEmailByPhoneNumber(memberPhoneNumber);
+        if (member != null) {
+            if ((member.getMemberEmail() == null) && member.getKakaoEmail() != null) {
+                member.setMemberEmail(member.getKakaoEmail());
+            }
+        }
+
+        return member;
     }
+
 
     @Override
     public void updateMemberPhoneNumber(MemberDTO memberDTO){
