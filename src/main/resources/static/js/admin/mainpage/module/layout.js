@@ -1,6 +1,10 @@
+
 const date = new Date();
 const year = date.getFullYear();
-const month = date.getMonth();
+const month = date.getMonth()+1;
+const preMonth = month-1 > 0?month-1:month+11;
+const preMonth1 = preMonth-1 > 0?preMonth-1:preMonth+11;
+const preMonth2 = preMonth1-1 > 0?preMonth1-1:preMonth1+11;
 const yearJoin = document.getElementById("year-join");
 const monthJoin = document.getElementById("month-join")
 const yearPost = document.getElementById("year-post");
@@ -34,9 +38,9 @@ function drawChart(chartDTO) {
 
     let secondData = google.visualization.arrayToDataTable([
         ['month', '일반 회원(멘토)', '구독 회원'],
-        [month - 3,  chartDTO[3].monthCount ,      chartDTO[3].subscribeMonthCount],
-        [month - 2,  chartDTO[2].monthCount ,       chartDTO[2].subscribeMonthCount],
-        [month - 1,  chartDTO[1].monthCount ,      chartDTO[1].subscribeMonthCount],
+        [preMonth2,  chartDTO[3].monthCount ,      chartDTO[3].subscribeMonthCount],
+        [preMonth1,  chartDTO[2].monthCount ,       chartDTO[2].subscribeMonthCount],
+        [preMonth,  chartDTO[1].monthCount ,      chartDTO[1].subscribeMonthCount],
         [ month ,  chartDTO[0].monthCount ,  chartDTO[0].subscribeMonthCount]
     ]);
 

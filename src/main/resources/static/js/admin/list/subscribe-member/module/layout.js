@@ -17,13 +17,20 @@ const layout = (()=>{
                                 <span class="badge-label badge text-danger ml-2"
                                       data-for="93fee9a1-f685-4eca-ba41-83be3901b9c9" data-toggle="tooltip" data-custom-class=""
                                       title="" data-original-title="">구독회원</span>
-                            </div>
-                            <div class="member-id">${member.memberEmail}</div>
-                        </td>
+                            </div>`
+                        if(member.memberEmail===null){
+                            text += `<div class="member-id">${member.kakaoEmail}</div>`
+                        }else{text += `<div class="member-id">${member.memberEmail}</div>`}
+
+            text += `    </td>
                         <td class="td-amount text-right pr-4 font-weight-bold">${member.memberName}
                             <span class="amount-unit"> 님</span>
-                        </td>
-                        <td class="td-email">${member.memberEmail}</td>
+                        </td>`
+                if(member.memberEmail===null){
+                    text +=`<td class="td-email">${member.kakaoEmail}</td>`
+                }else{text +=`<td class="td-email">${member.memberEmail}</td>`}
+
+            text +=`
                         <td class="td-phone">${member.memberPhoneNumber}</td>
                         <td class="td-start">${member.createdDate}</td>
                         <td class="td-recent">${member.latelyDate}</td>
@@ -69,9 +76,14 @@ const layout = (()=>{
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <div class="modal-title">
-                            (${memberCriteriaDTO.members[0].memberEmail}) ${memberCriteriaDTO.members[0].memberName}
-                            <span class="badge-label text-danger font-weight-bold ml-2">구독회원</span>
+                        <div class="modal-title">`
+            if(memberCriteriaDTO.members[0].memberEmail===null){
+                text+=`(${memberCriteriaDTO.members[0].kakaoEmail})`
+            }else{
+                text+=`(${memberCriteriaDTO.members[0].memberEmail})`
+            }
+                text+=`${memberCriteriaDTO.members[0].memberName}
+                <span class="badge-label text-danger font-weight-bold ml-2">구독회원</span>
                         </div>
                         <button class="close">
                             <i class="mdi mdi-close"></i>
@@ -125,9 +137,11 @@ const layout = (()=>{
                                                                     <td>${memberCriteriaDTO.members[0].memberName}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <th>이메일</th>
-                                                                    <td>${memberCriteriaDTO.members[0].memberEmail}</td>
-                                                                </tr>
+                                                                    <th>이메일</th>`
+                                                        if(memberCriteriaDTO.members[0].memberEmail===null){
+                                                            text+=`<td>${memberCriteriaDTO.members[0].kakaoEmail}</td>`
+                                                        }else{text+=`<td>${memberCriteriaDTO.members[0].memberEmail}</td>`}
+                                                                text+=`</tr>
                                                                 <tr>
                                                                     <th>최근 접속일</th>
                                                                     <td>${memberCriteriaDTO.members[0].latelyDate}</td>
