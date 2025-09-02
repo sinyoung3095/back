@@ -63,8 +63,8 @@ public class AdminController {
                 response.addCookie(rememberCookie);
             }
 
-            return new RedirectView("admin/admin-mainPage");
-        };return new RedirectView("admin/admin-login");
+            return new RedirectView("/admin/admin-mainPage");
+        };return new RedirectView("/admin/admin-login");
     }
 //    관리자 메인페이지 이동
     @GetMapping("admin-mainPage")

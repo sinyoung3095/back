@@ -24,3 +24,6 @@ create table tbl_member
 );
 select * from tbl_member;
 
+insert into tbl_member(member_name,member_password,member_email,member_phone_number)
+values ("관리자","1234","admin@gmail.com",01051133095);
+
